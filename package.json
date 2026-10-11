@@ -1,6 +1,31 @@
 {
+  "name": "revera",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:seed": "node scripts/seed-reference.mjs",
+    "db:import": "node scripts/import-content.mjs",
+    "db:studio": "prisma studio"
+  },
   "dependencies": {
     "@prisma/client": "^6.19.3",
-    "prisma": "^6.19.3"
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "prisma": "^6.19.3",
+    "typescript": "^5"
   }
 }
