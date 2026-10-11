@@ -1,0 +1,2117 @@
+{
+ "slug": "francais",
+ "name": "Français",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Les Fautes de Français à Éviter",
+   "subtitle": "Pléonasmes, barbarismes, solécismes, dix erreurs fréquentes à l'oral et à l'écrit, fautes classiques au bureau et dans les mails professionnels. Tout ce que la grammaire française attend de toi.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la séance</div>\n<p>• Identifier et corriger les pléonasmes, barbarismes et solécismes courants<br/>\n        • Éviter les 10 erreurs fréquentes dans la langue française<br/>\n        • Maîtriser les usages corrects au bureau (dates, ci-joint, accords…)<br/>\n        • Supprimer les 10 fautes classiques des mails professionnels</p>\n</div>\n<h2>1.1 — 📢 Les Pléonasmes</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>Un <strong>pléonasme</strong> (du grec <em>pleonasmós</em> = excès) est une répétition inutile d'une idée déjà contenue dans un mot. En didactique, on parle aussi de <strong>périssologie</strong>.</p>\n<p><em>Exemple : \"projets d'avenir\" → <strong>projets</strong> contient déjà l'idée d'avenir. On dit simplement : \"vos projets\".</em></p>\n</div>\n<div class=\"ex-grid\">\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ Allumer la lumière</div><div class=\"ec-right\">✅ Allumer une lampe</div><div class=\"ec-exp\"><em>Allumer</em> contient déjà le mot <em>lumière</em>.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ L'apparence extérieure</div><div class=\"ec-right\">✅ Les apparences</div><div class=\"ec-exp\"><em>Apparence</em> signifie ce qui est visible de l'extérieur.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ La première priorité</div><div class=\"ec-right\">✅ La priorité</div><div class=\"ec-exp\"><em>Priorité</em> signifie ce qui vient en premier.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ Un hasard imprévu</div><div class=\"ec-right\">✅ Le plus grand des hasards</div><div class=\"ec-exp\">Le hasard est par définition imprévu.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ Divulguer publiquement</div><div class=\"ec-right\">✅ Divulguer</div><div class=\"ec-exp\"><em>Divulguer</em> = porter à la connaissance du public.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ Comparer ensemble</div><div class=\"ec-right\">✅ Comparer</div><div class=\"ec-exp\"><em>Comparer</em> = confronter plusieurs choses entre elles.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ La panacée universelle</div><div class=\"ec-right\">✅ Une panacée</div><div class=\"ec-exp\"><em>Panacée</em> = qui guérit tout (étymologiquement).</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Pléonasme</div><div class=\"ec-wrong\">❌ Au jour d'aujourd'hui</div><div class=\"ec-right\">✅ Aujourd'hui</div><div class=\"ec-exp\"><em>Aujourd'hui</em> = en ce jour.</div></div>\n</div>\n<h2>1.2 — ⚡ Les Barbarismes</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>Un <strong>barbarisme</strong> consiste à déformer un mot, à se servir d'un mot forgé ou impropre. <em>\"Quand on déforme un mot, on commet un barbarisme.\"</em></p>\n</div>\n<div class=\"table-wrap\"><table class=\"table-err\">\n<thead><tr><th>❌ Barbarisme</th><th>✅ Correction</th><th>Explication</th></tr></thead>\n<tbody>\n<tr><td>Il est maline.</td><td>Elle est maligne.</td><td>Féminin de <em>malin</em> = maligne.</td></tr>\n<tr><td>Une maladie bénine.</td><td>Une maladie bénigne.</td><td>Féminin de <em>bénin</em> = bénigne.</td></tr>\n<tr><td>Vous disez.</td><td>Vous dites.</td><td>Conjugaison irrégulière de <em>dire</em>.</td></tr>\n<tr><td>Les empruntes digitales.</td><td>Les empreintes digitales.</td><td>Le mot correct est <em>empreintes</em>.</td></tr>\n<tr><td>Je suis dans un dilemne.</td><td>Je suis dans un dilemme.</td><td>Deux \"m\" dans <em>dilemme</em>.</td></tr>\n<tr><td>Des contreverses.</td><td>Des controverses.</td><td>Mot inexistant — le bon mot est <em>controverses</em>.</td></tr>\n<tr><td>En définitif.</td><td>En définitive.</td><td>L'expression est toujours féminine : <em>en définitive</em>.</td></tr>\n<tr><td>Une marche de manœuvre.</td><td>Une marge de manœuvre.</td><td>Le bon mot est <em>marge</em>, pas <em>marche</em>.</td></tr>\n<tr><td>Nous sommes en liste.</td><td>Nous sommes en lice.</td><td><em>En lice</em> = en compétition.</td></tr>\n</tbody>\n</table></div>\n<h2>1.3 — 📐 Les Solécismes</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>Un <strong>solécisme</strong> est une faute de <strong>syntaxe</strong> — une erreur dans la construction de la phrase (accord, mode verbal, emploi des prépositions).</p>\n<p><em>Astuce mnémotechnique : \"Les poissons scies n'aiment pas les raies\" → Les <strong>si</strong> n'aiment pas les <strong>rais</strong> (conditionnel).</em></p>\n</div>\n<div class=\"table-wrap\"><table class=\"table-err\">\n<thead><tr><th>❌ Solécisme</th><th>✅ Correction</th><th>Règle</th></tr></thead>\n<tbody>\n<tr><td>Si je pourrais…</td><td>Si je pouvais…</td><td>Après <em>si</em> hypothétique → pas de conditionnel.</td></tr>\n<tr><td>Je me rappelle de mon entretien.</td><td>Je me rappelle mon entretien.</td><td><em>Se rappeler</em> = verbe transitif direct (sans <em>de</em>).</td></tr>\n<tr><td>Je me souviens mon entretien.</td><td>Je me souviens de mon entretien.</td><td><em>Se souvenir</em> exige <em>de</em>.</td></tr>\n<tr><td>Pallier à cet incident.</td><td>Pallier cet incident.</td><td><em>Pallier</em> = transitif direct, sans <em>à</em>.</td></tr>\n<tr><td>Il est venu après que je sois parti.</td><td>Il est venu après que je suis parti.</td><td><em>Après que</em> → indicatif (pas subjonctif).</td></tr>\n<tr><td>De manière à ce que…</td><td>De manière que…</td><td>On dit <em>de manière que</em>, <em>de sorte que</em>.</td></tr>\n<tr><td>Je pars au Canada.</td><td>Je pars pour le Canada.</td><td>On part d'un lieu <em>pour</em> un autre.</td></tr>\n</tbody>\n</table></div>\n<h2>1.4 — 🔟 Dix erreurs fréquentes à l'oral et à l'écrit</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💬 Aimé Césaire</div>\n<p><em>\"Quand Aimé parle, la grammaire française sourit.\"</em> — Ce que fait la grammaire lorsque vous parlez français dépend de vous.</p>\n</div>\n<div class=\"table-wrap\"><table class=\"table-err\">\n<thead><tr><th>#</th><th>❌ Erreur</th><th>✅ Correction</th><th>Règle</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>l'harcèlement</td><td>le harcèlement</td><td><em>H aspiré</em> → pas d'élision ni de liaison</td></tr>\n<tr><td>2</td><td>un nhéros</td><td>un héros</td><td><em>H aspiré</em> → pas de liaison au pluriel</td></tr>\n<tr><td>3</td><td>ce faisant → se faisant (confusion)</td><td>ce faisant (= en faisant cela)</td><td><em>Ce faisant</em> ≠ <em>se faisant</em> (participe de <em>se faire</em>)</td></tr>\n<tr><td>4</td><td>Du moment où tu parles…</td><td>Du moment que tu parles…</td><td><em>Du moment que</em> = étant donné que, puisque</td></tr>\n<tr><td>5</td><td>Je suis à la salle une.</td><td>Je suis à la salle un.</td><td>Nombre ordinal après un nom → pas d'accord</td></tr>\n<tr><td>6</td><td>Solutionner ce problème.</td><td>Résoudre ce problème.</td><td><em>Solutionner</em> est un verbe à éviter → <em>résoudre</em></td></tr>\n<tr><td>7</td><td>Il a retrouvé la santé.</td><td>Il a recouvré la santé.</td><td><em>Recouvrer</em> = retrouver (santé, vue, liberté)</td></tr>\n<tr><td>8</td><td>Il fait partir du groupe.</td><td>Il fait partie du groupe.</td><td>L'expression est <em>faire partie de</em></td></tr>\n<tr><td>9</td><td>Pas forcement.</td><td>Pas forcément.</td><td>Accent sur le <em>é</em> final</td></tr>\n<tr><td>10</td><td>Je vais visiter mes amis.</td><td>Je vais rendre visite à mes amis.</td><td>On <em>visite</em> un lieu, on <em>rend visite</em> à une personne</td></tr>\n</tbody>\n</table></div>\n<h2>1.5 — 💼 Fautes de Français à Éviter au Bureau</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ La règle de base</div>\n<p>Maîtriser le français est un <strong>prérequis du monde professionnel</strong>. Chaque détail — la date, l'accord de <em>ci-joint</em>, l'abréviation <em>etc.</em> — est un signal de rigueur ou de négligence.</p>\n</div>\n<h3>1. Les dates — noms communs, pas de majuscule</h3>\n<div class=\"table-wrap\"><table class=\"table-err\">\n<thead><tr><th>❌ Erreur</th><th>✅ Correction</th></tr></thead>\n<tbody>\n<tr><td>Mercredi 26 Juillet 2023</td><td>Mercredi 26 juillet 2023</td></tr>\n<tr><td>Le personnel travaille les jeudi.</td><td>Le personnel travaille les jeudis.</td></tr>\n<tr><td>Tous les samedi, je fais l'inventaire.</td><td>Tous les samedis, je fais l'inventaire.</td></tr>\n</tbody>\n</table></div>\n<h3>2. <em>Etc.</em> — un point, pas de points de suspension</h3>\n<div class=\"table-wrap\"><table class=\"table-err\">\n<tbody>\n<tr><td>etc (sans point)</td><td>etc. (avec un point)</td></tr>\n<tr><td>etc… (avec points de suspension)</td><td>etc. (uniquement un point)</td></tr>\n</tbody>\n</table></div>\n<h3>3. <em>Ci-joint, ci-inclus, ci-annexé</em> — règles d'accord</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Situation</th><th>Accord ?</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>En début de phrase</td><td>❌ Invariable</td><td><em>Ci-joint les pièces exigées.</em></td></tr>\n<tr><td>Entre virgules</td><td>❌ Invariable</td><td><em>Veuillez trouver, ci-joint, les deux requêtes.</em></td></tr>\n<tr><td>Après le nom (adjectif)</td><td>✅ Accordé</td><td><em>Les pièces ci-jointes. Les factures ci-incluses.</em></td></tr>\n</tbody>\n</table></div>\n<h2>1.6 — 📧 Dix Fautes à Éviter dans un E-mail Professionnel</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💬 Anatole France</div>\n<p><em>\"La langue française est une femme. Et cette femme est si belle, si fière, si modeste, si hardie, touchante, voluptueuse, chaste, noble, familière, folle, sage, qu'on l'aime de toute son âme.\"</em></p>\n</div>\n<div class=\"ex-grid\">\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 1</div><div class=\"ec-wrong\">❌ À l'intention de Monsieur Lejeune</div><div class=\"ec-right\">✅ À l'attention de Monsieur Lejeune</div><div class=\"ec-exp\"><em>À l'attention de</em> = destiné à quelqu'un. <em>À l'intention de</em> = en l'honneur de.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 2</div><div class=\"ec-wrong\">❌ Je vous écris par rapport à…</div><div class=\"ec-right\">✅ Je vous écris au sujet de / concernant…</div><div class=\"ec-exp\"><em>Par rapport à</em> est trop familier pour un mail pro. Préférer <em>au sujet de</em>, <em>concernant</em>.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 3</div><div class=\"ec-wrong\">❌ D'avantage d'informations</div><div class=\"ec-right\">✅ Davantage d'informations</div><div class=\"ec-exp\"><em>Davantage</em> (= plus) s'écrit en un seul mot. <em>D'avantage</em> n'existe pas dans ce contexte.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 4</div><div class=\"ec-wrong\">❌ Suite à votre courrier…</div><div class=\"ec-right\">✅ À la suite de votre courrier…</div><div class=\"ec-exp\"><em>Suite à</em> est un solécisme. La locution correcte est <em>à la suite de</em>.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 5</div><div class=\"ec-wrong\">❌ En réponse à votre courriel suite à…</div><div class=\"ec-right\">✅ En réponse à votre courriel du…</div><div class=\"ec-exp\">Préciser la date du courriel auquel on répond est plus clair et professionnel.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 6</div><div class=\"ec-wrong\">❌ Veuillez trouver ci-joint en pièce jointe</div><div class=\"ec-right\">✅ Veuillez trouver ci-joint</div><div class=\"ec-exp\">Pléonasme : <em>ci-joint</em> signifie déjà \"en pièce jointe\".</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 7</div><div class=\"ec-wrong\">❌ Je me permet de vous écrire</div><div class=\"ec-right\">✅ Je me permets de vous écrire</div><div class=\"ec-exp\">Accord du verbe avec <em>je</em> → <em>je me permets</em>.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 8</div><div class=\"ec-wrong\">❌ Dans l'attente de votre retour</div><div class=\"ec-right\">✅ Dans l'attente de votre réponse</div><div class=\"ec-exp\"><em>Retour</em> est un calque de l'anglais (<em>return</em>). En français professionnel, on dit <em>réponse</em>.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 9</div><div class=\"ec-wrong\">❌ Cordialement (fin de mail trop bref)</div><div class=\"ec-right\">✅ Je vous adresse mes cordiales salutations.</div><div class=\"ec-exp\">Une formule de politesse complète est attendue dans un mail professionnel formel.</div></div>\n<div class=\"ex-card\"><div class=\"ec-tag\">Faute mail 10</div><div class=\"ec-wrong\">❌ SVP / ASAP / FYI</div><div class=\"ec-right\">✅ S'il vous plaît / dès que possible / pour votre information</div><div class=\"ec-exp\">Les sigles anglais sont à bannir dans un mail professionnel en français.</div></div>\n</div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Figures de style &amp; Registres →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Laquelle de ces expressions est un pléonasme ?",
+     "options": [
+      {
+       "text": "La voix professionnelle",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "La première priorité",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Les mots déformés",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "La faute de syntaxe",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quel est le féminin correct de \"malin\" ?",
+     "options": [
+      {
+       "text": "Maline",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Maligne",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Malins",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Maligne ou maline, au choix",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle phrase est correcte ?",
+     "options": [
+      {
+       "text": "Si je pourrais venir, je viendrais.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Si je pouvais venir, je viendrais.",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Si je venais, je pourrais venir.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Si je viendrai, je viendrais.",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Laquelle de ces formulations est correcte dans un mail professionnel ?",
+     "options": [
+      {
+       "text": "Je vous écris par rapport à notre réunion.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Je vous écris au sujet de notre réunion.",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Je vous écris concernant notre réunion → SVP répondez ASAP.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "J'aimerais avoir d'avantage d'informations.",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la règle pour \"ci-joint\" en début de phrase ?",
+     "options": [
+      {
+       "text": "Il s'accorde avec le nom qui suit.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il reste toujours invariable en début de phrase.",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Il s'accorde uniquement si le nom est féminin.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il n'existe pas de règle fixe.",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "francais/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Figures de Style, Registres de Langue & Français Professionnel",
+   "subtitle": "Les principales figures de rhétorique à identifier en contexte professionnel, les trois registres de langue (familier, courant, soutenu), le vocabulaire de carrière, et la structure de la lettre de motivation.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la séance</div>\n<p>• Identifier 10 figures de style dans des phrases professionnelles<br/>\n        • Distinguer les trois registres de langue (familier / courant / soutenu) sur des textes<br/>\n        • Maîtriser le vocabulaire de la vie professionnelle et de la carrière<br/>\n        • Structurer et rédiger une lettre de motivation professionnelle</p>\n</div>\n<h2>2.1 — 🎭 Les Figures de Style</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Pourquoi les connaître ?</div>\n<p>Elles apparaissent systématiquement dans la <strong>Section VIII du CC</strong> (5 points). Il faut identifier la figure ET la justifier brièvement.</p>\n</div>\n<div class=\"fig-grid\">\n<div class=\"fig-card\">\n<div class=\"fc-name\">Métaphore</div>\n<div class=\"fc-def\">Comparaison implicite sans mot comparatif (sans <em>comme</em>, <em>tel que</em>…).</div>\n<div class=\"fc-ex\">\"Le ciel n'est pas plus pur que le fond de mon cœur.\" (Racine)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Comparaison</div>\n<div class=\"fc-def\">Rapprochement de deux éléments avec un mot comparatif (comme, ainsi que, tel…).</div>\n<div class=\"fc-ex\">\"Il travaille comme une machine.\"</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Hyperbole</div>\n<div class=\"fc-def\">Exagération de la réalité pour frapper l'esprit.</div>\n<div class=\"fc-ex\">\"Nous recherchons la perle rare, un(e) candidat(e) capable de révolutionner notre entreprise !\"</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Euphémisme</div>\n<div class=\"fc-def\">Atténuer une réalité dure ou choquante par une expression plus douce.</div>\n<div class=\"fc-ex\">\"L'entreprise a procédé à un ajustement de la grille salariale.\" (= baisse des salaires)<br/>\"L'entreprise juge nécessaire un plan de sauvegarde de l'emploi.\" (= licenciements)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Antiphrase</div>\n<div class=\"fc-def\">Dire le contraire de ce qu'on pense, souvent avec ironie.</div>\n<div class=\"fc-ex\">\"Qu'est-ce qu'on ferait sans ces superbes outils informatiques qui plantent en pleine réunion ?\"<br/>\"Votre contrat est renouvelé… pour un mois ! Quelle stabilité !\"</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Métonymie</div>\n<div class=\"fc-def\">Désigner une chose par un mot qui entretient avec elle un rapport logique (contenant pour contenu, cause pour effet…).</div>\n<div class=\"fc-ex\">\"Mange ton assiette !\" (= le contenu de l'assiette)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Synecdoque</div>\n<div class=\"fc-def\">Cas particulier de métonymie : désigner le tout par la partie ou la partie par le tout.</div>\n<div class=\"fc-ex\">\"Les voiles au loin descendant vers Harfleur.\" (= les navires)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Oxymore</div>\n<div class=\"fc-def\">Rapprochement de deux mots contradictoires ou opposés.</div>\n<div class=\"fc-ex\">\"Une obscure clarté qui tombe des étoiles.\" (Corneille)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Personnification</div>\n<div class=\"fc-def\">Attribuer des caractéristiques humaines à un objet, une abstraction ou un animal.</div>\n<div class=\"fc-ex\">\"La grammaire française sourit quand Aimé parle.\"</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Périphrase</div>\n<div class=\"fc-def\">Remplacer un mot par une expression plus longue qui le désigne indirectement.</div>\n<div class=\"fc-ex\">\"Il est allé au cabinet d'aisances.\" (= aux toilettes)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Gradation</div>\n<div class=\"fc-def\">Énumération croissante ou décroissante d'idées ou d'intensité.</div>\n<div class=\"fc-ex\">\"Je me meurs, je suis mort, je suis enterré.\" (Molière — gradation descendante ironique)</div>\n</div>\n<div class=\"fig-card\">\n<div class=\"fc-name\">Prétérition</div>\n<div class=\"fc-def\">Déclarer qu'on ne va pas dire quelque chose… tout en le disant.</div>\n<div class=\"fc-ex\">\"Je ne vous parlerai pas des erreurs commises…\" (et on en parle quand même)</div>\n</div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⭐ Les plus testées au CC (Section VIII)</div>\n<p>D'après le vrai CC B1 IT (correction fournie) : <strong>Euphémisme</strong> et <strong>Antiphrase</strong> (très fréquents en contexte professionnel), puis <strong>Hyperbole</strong>, <strong>Métonymie</strong>, <strong>Oxymore</strong>, <strong>Personnification</strong>.</p>\n</div>\n<h2>2.2 — 🗣️ Les Registres de Langue</h2>\n<p>La pratique de la langue varie selon les lieux, les milieux et les situations. On distingue trois registres principaux :</p>\n<div class=\"registre-grid\">\n<div class=\"reg-card fam\">\n<div class=\"rc-lbl\">Familier (populaire / relâché)</div>\n<div class=\"rc-ex\">\"Vous pensez quoi de c'bouquin ?\"<br/>\"Ces types n'disent pas la même chose.\"<br/>\"Ils ont mis les loubards à l'ombre.\"<br/><em>→ argot, contractions, mots populaires</em></div>\n</div>\n<div class=\"reg-card cour\">\n<div class=\"rc-lbl\">Courant (standard / médian)</div>\n<div class=\"rc-ex\">\"Qu'est-ce que vous pensez de ce livre ?\"<br/>\"Ces deux personnes ont des opinions différentes.\"<br/>\"Les gendarmes ont arrêté les jeunes coupables.\"<br/><em>→ langue quotidienne correcte, neutre</em></div>\n</div>\n<div class=\"reg-card sout\">\n<div class=\"rc-lbl\">Soutenu (recherché / universitaire)</div>\n<div class=\"rc-ex\">\"Quelle réflexion cet ouvrage vous inspire-t-il ?\"<br/>\"Ces deux personnages émettent des points de vue divergents.\"<br/>\"Les gendarmes ont tôt fait d'appréhender les jeunes délinquants.\"<br/><em>→ vocabulaire élaboré, inversions, style académique</em></div>\n</div>\n</div>\n<h3>Exercice type CC : identifier le registre des textes</h3>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Textes du vrai CC — à mémoriser</div>\n<p><strong>Texte 1 (courant) :</strong> <em>\"Dans la salle à manger, très spacieuse, les meubles venaient d'être cirés.\"</em><br/>\n<strong>Texte 2 (soutenu) :</strong> <em>\"…les reflets chatoyants que renvoyaient les meubles, des senteurs rares et raffinées de cire et de miel sauvage, les volutes voluptueuses des lilas…\"</em><br/>\n<strong>Texte 3 (familier) :</strong> <em>\"…on risquait pas de manquer de place. Et ça sentait drôlement bon… Y avait aussi des lilas. Tout ça annonçait des rupins !\"</em></p>\n</div>\n<h2>2.3 — 💼 Vocabulaire de la Vie Professionnelle</h2>\n<h3>Étapes d'une carrière</h3>\n<div class=\"vocab-pills\">\n<span class=\"vocab-pill\">Obtenir un diplôme</span>\n<span class=\"vocab-pill\">Entrer sur le marché du travail</span>\n<span class=\"vocab-pill\">Élaborer un CV</span>\n<span class=\"vocab-pill\">Rédiger une lettre de motivation</span>\n<span class=\"vocab-pill\">Consulter des offres d'emploi</span>\n<span class=\"vocab-pill\">Postuler à un poste</span>\n<span class=\"vocab-pill\">Passer un entretien</span>\n<span class=\"vocab-pill\">Décrocher un emploi</span>\n<span class=\"vocab-pill\">Obtenir un CDI / CDD</span>\n<span class=\"vocab-pill\">Évoluer dans sa carrière</span>\n<span class=\"vocab-pill\">Gravir les échelons</span>\n<span class=\"vocab-pill\">Avoir une promotion</span>\n<span class=\"vocab-pill\">Être muté</span>\n<span class=\"vocab-pill\">Se reconvertir</span>\n<span class=\"vocab-pill\">Démissionner</span>\n<span class=\"vocab-pill\">Être licencié</span>\n<span class=\"vocab-pill\">Partir à la retraite</span>\n</div>\n<h3>Vocabulaire clé de la rémunération</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td><strong>Salaire brut</strong></td><td>Rémunération avant prélèvement des cotisations sociales</td></tr>\n<tr><td><strong>Salaire net</strong></td><td>Rémunération après prélèvements, reçue réellement</td></tr>\n<tr><td><strong>Prime</strong></td><td>Complément de rémunération versé selon des critères de performance ou d'ancienneté</td></tr>\n<tr><td><strong>SMIC</strong></td><td>Salaire Minimum Interprofessionnel de Croissance — plancher légal</td></tr>\n<tr><td><strong>Heures supplémentaires</strong></td><td>Heures travaillées au-delà de la durée légale hebdomadaire</td></tr>\n</tbody>\n</table></div>\n<h3>Termes importants à ne pas confondre</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Définition précise</th></tr></thead>\n<tbody>\n<tr><td><strong>CDI</strong></td><td>Contrat à Durée Indéterminée — sans date de fin</td></tr>\n<tr><td><strong>CDD</strong></td><td>Contrat à Durée Déterminée — date de fin précisée</td></tr>\n<tr><td><strong>Licenciement</strong></td><td>Rupture du contrat à l'initiative de l'<em>employeur</em></td></tr>\n<tr><td><strong>Démission</strong></td><td>Rupture du contrat à l'initiative du <em>salarié</em></td></tr>\n<tr><td><strong>DRH</strong></td><td>Direction des Ressources Humaines</td></tr>\n<tr><td><strong>Hiérarchie</strong></td><td>Organisation où chaque individu est subordonné à un autre</td></tr>\n<tr><td><strong>Recruteur</strong></td><td>Personne chargée d'engager de nouveaux collaborateurs</td></tr>\n</tbody>\n</table></div>\n<h2>2.4 — 📄 La Lettre de Motivation</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📋 Structure officielle</div>\n<p>Une lettre de motivation est un écrit <strong>formel</strong>, <strong>non une répétition du CV</strong> : elle exprime vos motivations, votre personnalité et votre adéquation avec le poste visé.</p>\n</div>\n<div class=\"lm-step\"><div class=\"ls-num\">① En-tête gauche</div><div class=\"ls-label\">Coordonnées du candidat</div><div class=\"ls-desc\">Nom, adresse, email, téléphone. Placé en haut à gauche.</div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">② En-tête droit</div><div class=\"ls-label\">Destinataire + Lieu et date</div><div class=\"ls-desc\"><em>À l'attention de Mme/M. X, Entreprise, Adresse</em>. Puis : <em>Paris, le 20/02/2025</em>.</div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">③ Objet</div><div class=\"ls-label\">Candidature au poste de…</div><div class=\"ls-desc\">Clair et précis : <em>Objet : Candidature au poste de développeur web</em>.</div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">④ Formule d'appel</div><div class=\"ls-label\">Madame, / Monsieur,</div><div class=\"ls-desc\">Jamais \"Madame, Monsieur,\" ensemble sauf si le sexe est inconnu. Toujours suivi d'une virgule.</div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">⑤ Corps — 3 paragraphes max</div><div class=\"ls-label\">Vous → Moi → Nous</div><div class=\"ls-desc\"><strong>§1 Vous</strong> : ce que vous savez de l'entreprise, pourquoi vous la choisissez.<br/><strong>§2 Moi</strong> : vos compétences, votre expérience, vos qualités.<br/><strong>§3 Nous</strong> : ce que vous pouvez apporter ensemble, vœu d'entretien.</div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">⑥ Formule de politesse</div><div class=\"ls-label\">Formule complète obligatoire</div><div class=\"ls-desc\"><em>\"Dans l'attente d'une réponse de votre part, je vous prie, Madame/Monsieur, d'agréer l'expression de mes salutations cordiales.\"</em></div></div>\n<div class=\"lm-step\"><div class=\"ls-num\">⑦ Signature</div><div class=\"ls-label\">Prénom NOM (manuscrit ou numérique)</div><div class=\"ls-desc\">Signé à droite sous la formule de politesse.</div></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">❌ Erreurs fréquentes à éviter</div>\n<p>• La LM n'est <strong>pas</strong> une répétition du CV<br/>\n        • Ne jamais être familier (\"je suis super motivé\")<br/>\n        • Ne jamais écrire \"Madame, Monsieur\" si on connaît le destinataire<br/>\n        • La formule \"Cordialement\" seule est insuffisante dans une LM formelle</p>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1 — Fautes à éviter</a>\n<a class=\"ch-nav-btn\">Ch.3 — Grammaire &amp; Email →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "\"Nous recherchons la perle rare, un candidat capable de révolutionner notre entreprise !\" — Quelle est la figure de style ?",
+     "options": [
+      {
+       "text": "Euphémisme",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Hyperbole",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Antiphrase",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Oxymore",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "\"L'entreprise a procédé à un ajustement de la grille salariale.\" (= baisse des salaires) — Quelle est la figure de style ?",
+     "options": [
+      {
+       "text": "Métaphore",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Antiphrase",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Euphémisme",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Hyperbole",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Parmi ces phrases, laquelle est au registre soutenu ?",
+     "options": [
+      {
+       "text": "\"Ces types n'disent pas la même chose.\"",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "\"Ces deux personnes ont des opinions différentes.\"",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "\"Ces deux personnages émettent des points de vue divergents.\"",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "\"Ils disent pas pareil.\"",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans une lettre de motivation, le corps est structuré en maximum :",
+     "options": [
+      {
+       "text": "5 paragraphes",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "1 seul paragraphe",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "3 paragraphes (Vous / Moi / Nous)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Autant que nécessaire, sans limite",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "\"Mange ton assiette !\" — Quelle est la figure de style ?",
+     "options": [
+      {
+       "text": "Synecdoque",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Métonymie",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Comparaison",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Hyperbole",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "francais/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Grammaire Avancée & Écrit Professionnel",
+   "subtitle": "Connecteurs logiques, accord du participe passé, rédaction de l'e-mail professionnel, 10 nouvelles erreurs fréquentes et usage du subjonctif. Les notions clés des séances 3 à 6.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<ul>\n<li>Employer les connecteurs logiques pour articuler un discours cohérent</li>\n<li>Appliquer les règles d'accord du participe passé dans les écrits professionnels</li>\n<li>Rédiger un e-mail professionnel structuré et efficace</li>\n<li>Éviter 10 nouvelles erreurs fréquentes (séance 6)</li>\n<li>Employer le subjonctif dans les contextes appropriés</li>\n</ul>\n</div>\n<h2>3.1 — 🔗 Les Connecteurs Logiques</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>Les connecteurs logiques (ou termes d'articulation) garantissent la liaison étroite entre les idées. Ils permettent de s'exprimer avec cohérence en montrant le rapport logique entre les parties d'un discours ou d'un texte.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">💡 Exemple d'application</div>\n<p>Il n'a pas obtenu le poste lors de son premier entretien d'embauche. <strong>En revanche</strong>, il a été retenu pour un deuxième entretien.</p>\n<p>Sans connecteur, la relation d'opposition entre les deux phrases est perdue.</p>\n</div>\n<table class=\"conn-table\">\n<thead>\n<tr><th>Relation logique</th><th>Connecteurs à employer</th></tr>\n</thead>\n<tbody>\n<tr><td>Pour commencer</td><td>De prime abord, au premier abord, premièrement, d'abord, avant tout, tout d'abord</td></tr>\n<tr><td>Addition / gradation</td><td>D'une part… d'autre part, non seulement… mais aussi, voire, de surcroît, par ailleurs, outre que, ensuite, de plus</td></tr>\n<tr><td>Pour finir</td><td>Enfin, en fin de compte, au demeurant, en définitive, en somme, somme toute, tout bien considéré, en conclusion, pour conclure</td></tr>\n<tr><td>Restriction / opposition</td><td>Mais, cependant, en revanche, or, toutefois, pourtant, au contraire, par contre, néanmoins, malgré, alors que, tandis que, pendant que, sauf, hormis, excepté</td></tr>\n<tr><td>Cause</td><td>Car, parce que, grâce à, à cause de, en raison de, du fait que, étant donné que, puisque, faute de, sous prétexte que, d'autant plus que, vu que, comme, dans la mesure où</td></tr>\n<tr><td>Conséquence</td><td>Ainsi, en conséquence, dès lors, par conséquent, si bien que, donc, c'est pourquoi, aussi, de ce fait, il s'ensuit que</td></tr>\n<tr><td>But</td><td>Pour, afin de, afin que, pour que, en vue de, dans le but de, de façon à, de sorte que</td></tr>\n<tr><td>Hypothèse / condition</td><td>Si, à condition que, pourvu que, en supposant que, dans le cas où, à moins que, au cas où</td></tr>\n<tr><td>Illustration / explication</td><td>Par exemple, c'est-à-dire, à savoir, notamment, en effet, ainsi, entre autres, c'est le cas de</td></tr>\n<tr><td>Comparaison</td><td>De même que, comme, ainsi que, de la même façon que, contrairement à, par rapport à</td></tr>\n</tbody>\n</table>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">⚡ Astuce examen</div>\n<p>Dans les épreuves CC et de rattrapage, les connecteurs logiques sont fréquemment demandés dans les exercices de <strong>rédaction de paragraphe</strong> et les <strong>QCM de logique textuelle</strong>. Mémorise au moins 2 connecteurs par relation.</p>\n</div>\n<h2>3.2 — ✍️ L'Accord du Participe Passé</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📖 Rappel</div>\n<p>Le participe passé est la forme verbale utilisée dans les temps composés (passé composé, plus-que-parfait…). Son accord dépend de l'auxiliaire utilisé et de la position du complément d'objet direct (COD).</p>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Règle 1 — Employé seul (adjectif verbal)</div>\n<div class=\"rule-body\">Le participe passé employé seul s'accorde en genre et en nombre avec le nom qu'il qualifie, comme un adjectif.</div>\n<div class=\"rule-ex\">\n<div>Les dossiers <strong>classés</strong> sont sur le bureau.</div>\n<div>Les candidates <strong>retenues</strong> passeront un entretien.</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Règle 2 — Auxiliaire ÊTRE</div>\n<div class=\"rule-body\">Avec l'auxiliaire <em>être</em>, le participe passé s'accorde toujours avec le sujet.</div>\n<div class=\"rule-ex\">\n<div>Elle est <strong>partie</strong> tôt. — Les employés sont <strong>arrivés</strong>.</div>\n<div class=\"wrong\">❌ Elles sont partis.</div>\n<div class=\"right\">✅ Elles sont parties.</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Règle 3 — Auxiliaire AVOIR (cas général)</div>\n<div class=\"rule-body\">Avec l'auxiliaire <em>avoir</em>, le participe passé ne s'accorde <strong>pas</strong> avec le sujet.</div>\n<div class=\"rule-ex\">\n<div>Elles ont <strong>travaillé</strong> toute la nuit. (pas de COD antéposé)</div>\n<div>Nous avons <strong>rédigé</strong> le rapport. (COD « le rapport » est après le verbe)</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Règle 4 — Auxiliaire AVOIR avec COD antéposé ⭐ (le plus important)</div>\n<div class=\"rule-body\">Avec <em>avoir</em>, le participe passé s'accorde avec le COD <strong>uniquement si le COD est placé AVANT le verbe</strong> (antéposé). Cette règle est fondamentale et souvent testée à l'examen.</div>\n<div class=\"rule-ex\">\n<div>Les informations que j'ai <strong>incluses</strong> dans le rapport… (« que » = COD = « les informations » → féminin pluriel)</div>\n<div>Les formulaires que les candidats ont <strong>remplis</strong>… (« que » = « les formulaires » → masculin pluriel)</div>\n<div>Quelles démarches ont-ils <strong>effectuées</strong> ? (« quelles démarches » = COD antéposé → féminin pluriel)</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Règle 5 — Cas particuliers à l'examen</div>\n<div class=\"rule-body\">Certains participes ont des formes particulières ou des pièges fréquents.</div>\n<div class=\"rule-ex\">\n<div><strong>Bénir</strong> → <em>bénit/bénite</em> (sens religieux) ou <em>béni/bénie</em> (sens courant)</div>\n<div><strong>Ci-joint, ci-inclus, ci-annexé</strong> → invariables en début de phrase ou avant le nom : <em>Ci-joint la copie.</em> Accordés après le nom : <em>Vous trouverez la copie ci-jointe.</em></div>\n<div><strong>Se permettre</strong> → accord avec le COD : <em>Elles se sont permis des libertés.</em> (COD = « des libertés », après → pas d'accord avec le sujet)</div>\n</div>\n</div>\n<div class=\"table-wrap\">\n<table class=\"conn-table\">\n<thead><tr><th>Phrase de l'examen</th><th>Correction</th><th>Règle</th></tr></thead>\n<tbody>\n<tr><td>Les informations que j'ai inclus…</td><td>incluses</td><td>COD antéposé fém. pl.</td></tr>\n<tr><td>Les formulaires ont été remplis par tous les candidats.</td><td>remplis</td><td>COD « formulaires » masc. pl.</td></tr>\n<tr><td>Les employées se sont permis des libertés.</td><td>permis</td><td>COD « des libertés » après → invariable</td></tr>\n<tr><td>Les photocopies ci-incluses sont adressées…</td><td>ci-incluses</td><td>Après le nom → accordé</td></tr>\n<tr><td>Plusieurs cas de maladies sont signalé.</td><td>signalés</td><td>Avec être → accord sujet masc. pl.</td></tr>\n</tbody>\n</table>\n</div>\n<h2>3.3 — 📧 Rédiger un E-mail Professionnel</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💬 Citation du cours</div>\n<p>« Ce que vous ne feriez pas lors d'une conversation face à votre correspondant, ne prenez pas l'e-mail comme bouclier pour le faire. » — Susan Hambridge</p>\n</div>\n<h3>Les 6 principes fondamentaux</h3>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 1 — Soigner l'objet</div>\n<div class=\"rule-body\">L'objet doit être clair, concis et incitatif. Il résume le contenu de l'e-mail. Un objet flou fait classer l'e-mail en secondaire ou le fait ignorer.</div>\n<div class=\"rule-ex\">\n<div class=\"wrong\">❌ Objet : Question</div>\n<div class=\"right\">✅ Objet : Demande de report de réunion — Jeudi 20 juin</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 2 — La formule d'appel</div>\n<div class=\"rule-body\">Toujours commencer par une formule d'appel adaptée au destinataire. Ne jamais omettre cette formule dans un contexte professionnel.</div>\n<div class=\"rule-ex\">\n<div><strong>Supérieur hiérarchique / inconnu :</strong> <span>Monsieur, / Madame, / Madame, Monsieur,</span></div>\n<div><strong>Collègue connu :</strong> <span>Bonjour Monsieur Dupont, / Bonjour Marie,</span></div>\n<div class=\"wrong\">❌ Bonjour, / Hello,</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 3 — La phrase d'introduction</div>\n<div class=\"rule-body\">Annoncer immédiatement l'objet de l'e-mail dès la première phrase. Pas de préambule inutile.</div>\n<div class=\"rule-ex\">\n<div class=\"wrong\">❌ J'espère que vous allez bien. Je me permets de vous contacter car…</div>\n<div class=\"right\">✅ Je vous contacte concernant votre demande de devis du 15 juin 2026.</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 4 — Le corps : clarté et concision</div>\n<div class=\"rule-body\">Un e-mail professionnel va droit au but. Chaque paragraphe traite une seule idée. Utiliser des connecteurs logiques pour articuler les idées.</div>\n<div class=\"rule-ex\">\n<div>• Un paragraphe = une idée</div>\n<div>• Utiliser des listes à puces pour énumérer</div>\n<div>• Éviter les blocs de texte illisibles</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 5 — La formule de politesse</div>\n<div class=\"rule-body\">La formule de politesse finale est obligatoire. Elle doit être adaptée au niveau de la relation.</div>\n<div class=\"rule-ex\">\n<div><strong>Formel :</strong> <span>Veuillez agréer, Madame/Monsieur, l'expression de mes salutations distinguées.</span></div>\n<div><strong>Semi-formel :</strong> <span>Cordialement, / Bien cordialement,</span></div>\n<div><strong>Courant :</strong> <span>Bien à vous,</span></div>\n<div class=\"wrong\">❌ À plus, / Bonne journée (sans nom ni formule)</div>\n</div>\n</div>\n<div class=\"pp-rule\">\n<div class=\"rule-title\">Principe 6 — La signature</div>\n<div class=\"rule-body\">La signature doit comporter : prénom et nom, poste, entreprise, coordonnées. Elle doit être configurée automatiquement dans le client mail.</div>\n</div>\n<h3>Exemple d'e-mail professionnel annoté</h3>\n<div class=\"email-block\">\n<div class=\"em-line\"><strong>De :</strong> k.mensah@entreprise.tg</div>\n<div class=\"em-line\"><strong>À :</strong> d.ake@client.tg</div>\n<div class=\"em-line\"><strong>Objet :</strong> <span>Envoi du rapport trimestriel — Juin 2026</span> <span class=\"em-ann\">✅ Objet clair et daté</span></div>\n<br/>\n<div class=\"em-line\"><span>Monsieur Aké,</span> <span class=\"em-ann\">✅ Formule d'appel</span></div>\n<br/>\n<div class=\"em-line\">Je vous adresse, en pièce jointe, le rapport trimestriel de notre département pour la période avril–juin 2026. <span class=\"em-ann\">✅ Annonce directe du sujet</span></div>\n<br/>\n<div class=\"em-line\">Ce rapport présente les principaux indicateurs de performance ainsi que les axes d'amélioration identifiés pour le prochain trimestre.</div>\n<br/>\n<div class=\"em-line\">Je reste à votre disposition pour tout renseignement complémentaire.</div>\n<br/>\n<div class=\"em-line\"><span>Veuillez agréer, Monsieur, l'expression de mes salutations distinguées.</span> <span class=\"em-ann\">✅ Formule de politesse</span></div>\n<br/>\n<div class=\"em-line\">Kofi Mensah</div>\n<div class=\"em-line\">Responsable administratif — ACME Lomé</div>\n<div class=\"em-line\">+228 90 00 00 00</div>\n</div>\n<h2>3.4 — 🆕 Dix Nouvelles Erreurs Fréquentes à Éviter</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📖 Séance 6 du cours</div>\n<p>Ces 10 erreurs sont distinctes de celles de la séance 1. Elles portent sur des confusions grammaticales et lexicales fréquentes en contexte professionnel.</p>\n</div>\n<div class=\"ex-grid\">\n<div>\n<div>Erreur 1</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Il lit Wikifrançais, <em>se faisant</em>, il améliore son français.</div>\n<div class=\"er-right\">✅ Il lit Wikifrançais, <em>ce faisant</em>, il améliore son français.</div>\n</div>\n<div><strong>Ce faisant</strong> = en faisant cela. <strong>Se faisant</strong> = participe présent de « se faire » (action en cours).</div>\n</div>\n<div>\n<div>Erreur 2</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ <em>Du moment où</em> tu parles français, nous pouvons discuter.</div>\n<div class=\"er-right\">✅ <em>Du moment que</em> tu parles français, nous pouvons discuter.</div>\n</div>\n<div><strong>Du moment que</strong> = étant donné que, puisque. <strong>Du moment où</strong> = à partir du moment où (temporel).</div>\n</div>\n<div>\n<div>Erreur 3</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Je suis à <em>la salle une</em>.</div>\n<div class=\"er-right\">✅ Je suis à <em>la salle un</em>.</div>\n</div>\n<div>Quand un nombre cardinal exprime un <strong>numéro d'ordre</strong> (placé après un nom), il est <strong>invariable</strong>.</div>\n</div>\n<div>\n<div>Erreur 4</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Nous allons <em>solutionner</em> ce problème.</div>\n<div class=\"er-right\">✅ Nous allons <em>résoudre</em> ce problème.</div>\n</div>\n<div>Éviter les verbes parasites créés par contagion : <strong>solutionner, promotionner, émotionner</strong>. Préférer : résoudre, promouvoir, émouvoir.</div>\n</div>\n<div>\n<div>Erreur 5</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Il a <em>retrouvé</em> la santé.</div>\n<div class=\"er-right\">✅ Il a <em>recouvré</em> la santé.</div>\n</div>\n<div><strong>Recouvrer</strong> = retrouver ce qu'on avait perdu (santé, liberté, argent). <strong>Retrouver</strong> = trouver à nouveau un objet ou une personne.</div>\n</div>\n<div>\n<div>Erreurs 6–7 — Paronymes courants</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Notre comité a donné son <em>adhérence</em> au projet.</div>\n<div class=\"er-right\">✅ Notre comité a donné son <em>adhésion</em> au projet.</div>\n</div>\n<div><strong>Adhésion</strong> = accord, approbation. <strong>Adhérence</strong> = fait d'adhérer physiquement (pneus, colle).</div>\n</div>\n<div>\n<div>Erreur 8 — Confusion de prépositions</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Je me <em>rappelle de</em> mon premier entretien.</div>\n<div class=\"er-right\">✅ Je me <em>rappelle</em> mon premier entretien.</div>\n</div>\n<div><strong>Se rappeler</strong> se construit avec un COD direct (sans « de »). <strong>Se souvenir de</strong> exige « de ».</div>\n</div>\n<div>\n<div>Erreur 9 — Si + conditionnel</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Si je <em>pourrais</em> obtenir l'adresse, j'enverrai le courriel.</div>\n<div class=\"er-right\">✅ Si je <em>pouvais</em> obtenir l'adresse, j'enverrais le courriel.</div>\n</div>\n<div>Après un « si » d'hypothèse, <strong>jamais de conditionnel</strong>. Astuce : <em>« Les si n'aiment pas les rais »</em>.</div>\n</div>\n<div>\n<div>Erreur 10 — Registre inadapté à l'écrit pro</div>\n<div class=\"erreur-row\">\n<div class=\"er-wrong\">❌ Suite à votre mail, je vous envoie…</div>\n<div class=\"er-right\">✅ Comme suite à votre courriel, je vous adresse…</div>\n</div>\n<div>En contexte formel, préférer <strong>courriel</strong> à <em>mail</em>, <strong>comme suite à</strong> à <em>suite à</em>, et <strong>vous adresser</strong> à <em>envoyer</em>.</div>\n</div>\n</div>\n<h2>3.5 — 🔤 Le Subjonctif</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>Le subjonctif est un mode verbal qui exprime un fait envisagé, incertain, souhaité ou dépendant d'une volonté. Il s'emploie principalement dans les propositions subordonnées après des verbes de <strong>volonté, doute, sentiment</strong> ou des expressions impersonnelles.</p>\n</div>\n<h3>Quand employer le subjonctif ?</h3>\n<table class=\"subj-table\">\n<thead><tr><th>Contexte d'emploi</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>Volonté, souhait</td><td>Je veux que tu <strong>viennes</strong>. Il faut que vous <strong>fassiez</strong> attention.</td></tr>\n<tr><td>Doute, incertitude</td><td>Je doute qu'il <strong>soit</strong> présent. Il n'est pas sûr qu'elle <strong>réussisse</strong>.</td></tr>\n<tr><td>Sentiment, émotion</td><td>Je suis heureux que vous <strong>ayez</strong> accepté. Il craint que nous <strong>partions</strong>.</td></tr>\n<tr><td>Expressions impersonnelles</td><td>Il faut que, il est important que, il est possible que, il est dommage que…</td></tr>\n<tr><td>Conjonctions</td><td>Bien que, pour que, afin que, à condition que, avant que, quoique…</td></tr>\n<tr><td>Superlatif / restriction</td><td>C'est le meilleur candidat que nous <strong>ayons</strong> rencontré. Le seul qui <strong>puisse</strong> répondre.</td></tr>\n</tbody>\n</table>\n<h3>Formation du subjonctif présent</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🔑 Règle de formation</div>\n<p>Partir de la 3e personne du pluriel de l'indicatif présent → retirer <strong>-ent</strong> → ajouter <strong>-e, -es, -e, -ions, -iez, -ent</strong>.</p>\n<p>Ils <em>parlent</em> → parl- → que je <strong>parle</strong>, que tu <strong>parles</strong>, qu'il <strong>parle</strong>, que nous <strong>parlions</strong>…</p>\n</div>\n<table class=\"subj-table\">\n<thead><tr><th>Verbe</th><th>que je…</th><th>que nous…</th><th>qu'ils…</th></tr></thead>\n<tbody>\n<tr><td>ÊTRE</td><td>sois</td><td>soyons</td><td>soient</td></tr>\n<tr><td>AVOIR</td><td>aie</td><td>ayons</td><td>aient</td></tr>\n<tr><td>FAIRE</td><td>fasse</td><td>fassions</td><td>fassent</td></tr>\n<tr><td>ALLER</td><td>aille</td><td>allions</td><td>aillent</td></tr>\n<tr><td>POUVOIR</td><td>puisse</td><td>puissions</td><td>puissent</td></tr>\n<tr><td>SAVOIR</td><td>sache</td><td>sachions</td><td>sachent</td></tr>\n<tr><td>VOULOIR</td><td>veuille</td><td>voulions</td><td>veuillent</td></tr>\n<tr><td>VENIR</td><td>vienne</td><td>venions</td><td>viennent</td></tr>\n</tbody>\n</table>\n<h2>🎯 QCM — Testez vos connaissances</h2>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2 — Figures &amp; Registres →</a>\n<a class=\"ch-nav-btn\">Simulateur d'examen →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "« En revanche » marque une opposition/restriction. « Car » exprime la cause, « ainsi » la conséquence, « par exemple » l'illustration.",
+     "text": "Quel connecteur logique exprime une opposition ?",
+     "options": [
+      {
+       "text": "Car",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "En revanche",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Ainsi",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Par exemple",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "« que » reprend « les décisions » = COD antéposé, féminin pluriel → prises.",
+     "text": "Accord du participe passé : « Les décisions que nous avons ______ sont fermes. » (prendre)",
+     "options": [
+      {
+       "text": "pris",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "prises",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "prise",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "prendre",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "La formule complète avec « Veuillez agréer… » est la seule formule de politesse formelle correcte dans un courrier professionnel officiel.",
+     "text": "Laquelle de ces formules de politesse est correcte dans un e-mail formel ?",
+     "options": [
+      {
+       "text": "À bientôt !",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Bonne journée.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Veuillez agréer, Monsieur, l'expression de mes salutations distinguées.",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Cordialement et à plus !",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "Après « vouloir que », le subjonctif est obligatoire → finissiez.",
+     "text": "Choisissez la forme correcte : « Je veux que vous ______ le dossier avant demain. » (finir)",
+     "options": [
+      {
+       "text": "finissez",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "finirez",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "finissiez",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "finir",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "« Solutionner » est un verbe créé par contagion, inexistant en français correct. Il faut dire résoudre. C'est un barbarisme par création de mot inexistant.",
+     "text": "« Nous allons solutionner ce problème. » — Cette phrase contient :",
+     "options": [
+      {
+       "text": "Un solécisme",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un pléonasme",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un barbarisme (verbe parasitaire)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un anglicisme",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "Après « si » d'hypothèse : imparfait dans la subordonnée + conditionnel dans la principale. Jamais de conditionnel après « si ». Astuce : « Les si n'aiment pas les rais. »",
+     "text": "Quelle est la bonne phrase ?",
+     "options": [
+      {
+       "text": "Si je pourrais venir, je vous préviendrais.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Si je pouvais venir, je vous préviendrais.",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Si je viendrais, je vous préviendrais.",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Si je viendrais, je vous préviendrai.",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "« Étant donné que » exprime la cause. « En revanche » = opposition, « ainsi » = conséquence, « bien que » = concession (subjonctif).",
+     "text": "Quel connecteur introduit une cause ?",
+     "options": [
+      {
+       "text": "En revanche",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Ainsi",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Bien que",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Étant donné que",
+       "correct": true,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "« Recouvrer » s'emploie pour la santé, la liberté, une créance. On ne confond pas avec « retrouver » (objet ou personne).",
+     "text": "« Il a recouvré la santé. » Que signifie « recouvrer » ?",
+     "options": [
+      {
+       "text": "Chercher quelque chose de perdu",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Retrouver ce qu'on avait perdu (santé, liberté, argent)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Couvrir à nouveau un objet",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Recevoir une somme d'argent",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "francais/chapitres/chapitre3.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "mcq",
+   "text": "Un pléonasme est :",
+   "options": [
+    {
+     "text": "Une faute de syntaxe",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une répétition inutile d'une idée déjà contenue dans un mot",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Un mot mal orthographié",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un mot étranger introduit dans la langue",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. Ex : \"la première priorité\" — priorité signifie déjà \"ce qui vient en premier\".",
+   "label": "Q1 · Séance 1 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quel est le féminin correct de \"bénin\" ?",
+   "options": [
+    {
+     "text": "Bénine",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Bénigne",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Benigne",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Bénins",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B — Bénigne. Barbarisme classique : le féminin de bénin → bénigne (comme malin → maligne).",
+   "label": "Q2 · Séance 1 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle phrase est un solécisme ?",
+   "options": [
+    {
+     "text": "\"Si je pourrais venir, je viendrais.\"",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "\"Si je pouvais venir, je viendrais.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Je me souviens de mon entretien.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Je pallierai ce problème.\"",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Après \"si\" hypothétique, le conditionnel est interdit. Correct : \"si je pouvais\".",
+   "label": "Q3 · Séance 1 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle formulation est correcte dans un mail professionnel ?",
+   "options": [
+    {
+     "text": "\"Je vous écris par rapport à notre contrat.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Je vous écris au sujet de notre contrat.\"",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "\"Suite à votre mail, voici notre réponse.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Veuillez trouver ci-joint en pièce jointe les documents.\"",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. \"Par rapport à\" est familier, \"Suite à\" est un solécisme, \"ci-joint en pièce jointe\" est un pléonasme.",
+   "label": "Q4 · Séance 1 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "\"Ci-joint\" en début de phrase est :",
+   "options": [
+    {
+     "text": "Toujours invariable",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Toujours accordé",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Accordé uniquement au féminin",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Accordé si suivi d'un nom féminin pluriel",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. En début de phrase ou entre virgules, \"ci-joint/ci-inclus\" reste invariable. Il s'accorde seulement quand il suit le nom.",
+   "label": "Q5 · Séance 1 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Que doit-on écrire à la suite de \"etc.\" ?",
+   "options": [
+    {
+     "text": "Un seul point (etc.)",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Points de suspension (etc…)",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Rien du tout (etc)",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un point virgule (etc;)",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. On écrit \"etc.\" avec un seul point. \"Etc…\" est une faute : on ne cumule pas le point d'abréviation et les points de suspension.",
+   "label": "Q6 · Séance 1 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "On dit :",
+   "options": [
+    {
+     "text": "Je vais visiter mes amis.",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Je vais rendre visite à mes amis.",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Je vais les visiter.",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Je vais visiter chez mes amis.",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. On visite un lieu, un monument. On rend visite à une personne.",
+   "label": "Q7 · Séance 1 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "\"L'entreprise a procédé à un ajustement de la grille salariale\" (= baisse des salaires) est :",
+   "options": [
+    {
+     "text": "Une hyperbole",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une antiphrase",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un euphémisme",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une métaphore",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ C — Euphémisme. Atténuer une réalité dure (\"baisse des salaires\") par une expression plus douce.",
+   "label": "Q8 · Séance 2 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "\"Mange ton assiette !\" est un exemple de :",
+   "options": [
+    {
+     "text": "Synecdoque",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Métonymie",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Comparaison",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Oxymore",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B — Métonymie. Le contenant (l'assiette) désigne le contenu. Rapport logique contenant/contenu.",
+   "label": "Q9 · Séance 2 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "\"Une obscure clarté qui tombe des étoiles.\" (Corneille) — Quelle figure ?",
+   "options": [
+    {
+     "text": "Métaphore",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Hyperbole",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Oxymore",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Gradation",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ C — Oxymore. \"Obscure\" et \"clarté\" sont des termes contradictoires rapprochés.",
+   "label": "Q10 · Séance 2 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Le registre familier se caractérise par :",
+   "options": [
+    {
+     "text": "Un vocabulaire élaboré et des inversions",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "De l'argot, des contractions et un vocabulaire populaire",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Un style neutre et quotidien",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Des structures syntaxiques complexes",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. Ex : \"Ces types n'disent pas la même chose\" = familier. \"Ces deux personnages émettent des points de vue divergents\" = soutenu.",
+   "label": "Q11 · Séance 2 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Dans une lettre de motivation formelle, le corps est structuré selon :",
+   "options": [
+    {
+     "text": "Introduction / développement / conclusion (comme une dissertation)",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Vous / Moi / Nous",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Problème / Analyse / Solution",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Pas de structure imposée",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B — Vous / Moi / Nous. §1 : l'entreprise. §2 : mes compétences. §3 : ce que nous pouvons faire ensemble.",
+   "label": "Q12 · Séance 2 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la différence entre métonymie et synecdoque ?",
+   "options": [
+    {
+     "text": "La synecdoque est un cas particulier de métonymie (partie pour le tout ou tout pour la partie)",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Ce sont deux noms différents pour la même chose",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "La métonymie désigne toujours la partie pour le tout",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "La synecdoque est une forme d'hyperbole",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. La métonymie = rapport logique (contenant/contenu, cause/effet). La synecdoque = cas particulier : partie/tout ou tout/partie.",
+   "label": "Q13 · Mixte ·",
+   "section": "qcm",
+   "level": "hard"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle phrase est correcte ?",
+   "options": [
+    {
+     "text": "\"Il est venu après que je sois parti.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Il est venu après que je suis parti.\"",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "\"Il est venu avant que je pars.\"",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "\"Il vient après que tu es venue.\"",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. \"Après que\" + indicatif (pas subjonctif). \"Avant que\" + subjonctif. Règle souvent inversée par erreur.",
+   "label": "Q14 · Séance 1 ·",
+   "section": "qcm",
+   "level": "hard"
+  },
+  {
+   "type": "mcq",
+   "text": "\"Nous recherchons la perle rare capable de révolutionner notre entreprise !\" — Quelle figure ?",
+   "options": [
+    {
+     "text": "Hyperbole",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Euphémisme",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Antiphrase",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Oxymore",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A — Hyperbole. Exagération volontaire pour frapper l'esprit du lecteur (offre d'emploi).",
+   "label": "Q15 · Séance 2 ·",
+   "section": "qcm",
+   "level": "hard"
+  },
+  {
+   "type": "true_false",
+   "text": "\"Au jour d'aujourd'hui\" est un pléonasme.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. \"Aujourd'hui\" signifie déjà \"en ce jour\" (au + jour + d'hui = au jour de ce jour). Répétition triple.",
+   "label": "Affirmation 1",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un solécisme est une erreur d'orthographe dans un mot.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. Un solécisme = faute de syntaxe (construction de la phrase). Une orthographe incorrecte = barbarisme ou faute d'orthographe.",
+   "label": "Affirmation 2",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "\"Dans l'attente de votre retour\" est une formule à éviter car \"retour\" est un calque de l'anglais.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. \"Retour\" ici calque l'anglais \"return\". En français professionnel, on dit \"dans l'attente de votre réponse\".",
+   "label": "Affirmation 3",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "La comparaison utilise toujours un mot comparatif comme \"comme\" ou \"tel que\".",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. C'est ce qui distingue la comparaison de la métaphore : la comparaison = mot comparatif (comme, ainsi que, tel…). La métaphore = implicite.",
+   "label": "Affirmation 4",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "\"Pallier à ce problème\" est la formulation correcte.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. \"Pallier\" est un verbe transitif direct — on dit \"pallier ce problème\" (sans \"à\").",
+   "label": "Affirmation 5",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Dans une lettre de motivation, \"Madame, Monsieur,\" est la formule d'appel à utiliser quand on connaît le destinataire.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. \"Madame, Monsieur,\" est réservé quand le sexe du destinataire est inconnu. Si on le connaît, on écrit \"Madame,\" ou \"Monsieur,\".",
+   "label": "Affirmation 6",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "\"Je me rappelle de mon entretien\" est une phrase correcte.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. \"Se rappeler\" est transitif direct : \"je me rappelle mon entretien\" (sans \"de\"). C'est \"se souvenir\" qui exige \"de\".",
+   "label": "Affirmation 7",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Une antiphrase consiste à dire le contraire de ce que l'on pense, souvent par ironie.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Ex : \"Quelle stabilité !\" dit de façon ironique après l'annonce d'un CDD d'un mois.",
+   "label": "Affirmation 8",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "\"En définitif\" est la forme correcte de cette expression adverbiale.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. C'est un barbarisme. La forme correcte est toujours \"en définitive\" (féminin).",
+   "label": "Affirmation 9",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Dans \"Mercredi 26 Juillet 2023\", le mot \"Juillet\" prend une majuscule.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. Les noms de jours et de mois sont des noms communs en français — ils s'écrivent en minuscules : \"mercredi 26 juillet 2023\".",
+   "label": "Affirmation 10",
+   "section": "tf"
+  },
+  {
+   "type": "gap",
+   "text": "Je vous prie de bien vouloir répondre à ce courriel _____ nous puissions avancer dans la préparation.",
+   "answers": [
+    "afin que"
+   ],
+   "hint": "📌 locution conjonctive de but (2 mots)",
+   "explanation": "Réponse : afin que",
+   "label": "Lacune 1 · Séance 1 (connecteurs)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Vous trouverez ci-joint notre facture. _____, votre compte est débiteur de 100 000 francs.",
+   "answers": [
+    "par ailleurs"
+   ],
+   "hint": "📌 connecteur d'addition (2 mots)",
+   "explanation": "Réponse : par ailleurs",
+   "label": "Lacune 2 · Séance 1 (connecteurs)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le prisonnier a finalement _____ la liberté.",
+   "answers": [
+    "recouvré"
+   ],
+   "hint": "📌 \"retrouver\" (santé, vue, liberté)",
+   "explanation": "Réponse : recouvré",
+   "label": "Lacune 3 · Séance 1 (mot juste)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Ce courrier est organisé _____ de Madame Dupont.",
+   "answers": [
+    "à l'attention"
+   ],
+   "hint": "📌 destiné à quelqu'un (3 mots)",
+   "explanation": "Réponse : à l'attention",
+   "label": "Lacune 4 · Séance 1 (mot juste)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Les projets d'entreprise, les budgets, les plans RH, _____ font partie des documents à préparer.",
+   "answers": [
+    "etc."
+   ],
+   "hint": "📌 abréviation de \"et cetera\" — 4 caractères avec ponctuation",
+   "explanation": "Réponse : etc.",
+   "label": "Lacune 5 · Séance 1 (orthographe)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "\"Je me meurs, je suis mort, je suis enterré.\" — C'est une _____ (intensification croissante puis ironique).",
+   "answers": [
+    "gradation"
+   ],
+   "hint": "📌 figure d'intensification par degrés",
+   "explanation": "Réponse : gradation",
+   "label": "Lacune 6 · Séance 2 (figures)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "\"Ces types n'disent pas la même chose\" appartient au registre _____.",
+   "answers": [
+    "familier"
+   ],
+   "hint": "📌 un des trois registres de langue",
+   "explanation": "Réponse : familier",
+   "label": "Lacune 7 · Séance 2 (registres)",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "La forme correcte est \"je me rappelle _____ entretien\" (transitif direct, sans \"de\").",
+   "answers": [
+    "mon"
+   ],
+   "hint": "📌 pronom possessif masculin singulier",
+   "explanation": "Réponse : mon",
+   "label": "Lacune 8 · Séance 1 (solécisme)",
+   "section": "gap"
+  },
+  {
+   "type": "open",
+   "text": "\"L'entreprise juge nécessaire un plan de sauvegarde de l'emploi.\" (= licenciements collectifs)",
+   "model_answer": "Euphémisme — \"Plan de sauvegarde de l'emploi\" désigne en réalité des licenciements collectifs. L'expression atténue la réalité par des termes plus acceptables socialement.",
+   "label": "Phrase 1",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "\"Votre contrat est renouvelé… pour un mois ! Quelle stabilité !\"",
+   "model_answer": "Antiphrase — L'auteur dit \"quelle stabilité !\" alors qu'un mois est tout sauf stable. L'ironie est évidente par le contexte.",
+   "label": "Phrase 2",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "\"Les voiles au loin descendant vers Harfleur.\" (Hugo)",
+   "model_answer": "Synecdoque — \"Les voiles\" (une partie du navire) désigne les navires en entier. C'est un cas particulier de métonymie (la partie pour le tout).",
+   "label": "Phrase 3",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Familier : \"Ces types n'disent pas la même chose.\"",
+   "model_answer": "Soutenu : \"Ces deux personnages émettent des points de vue divergents.\" (ou : \"Ces individus défendent des positions irréductiblement opposées.\")",
+   "label": "Exercice 4 — Registre SOUTENU",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Familier : \"Les pandores ont vite mis les loubards à l'ombre.\"",
+   "model_answer": "Courant : \"Les gendarmes ont rapidement arrêté les jeunes coupables.\"",
+   "label": "Exercice 5 — Registre COURANT",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Mail à corriger :\"A l'intention de Monsieur Adrien,Je vous écris par rapport à notre rendez-vous de Mardi 15 Septembre. Suite à vos demandes, veuillez trouver ci-joint en pièce jointe les documents demandés, etc…Dans l'attente de votre retour,Cordialement.\"",
+   "model_answer": "Version corrigée :\"À l'attention de Monsieur Adrien,Je vous écris au sujet de notre rendez-vous de mardi 15 septembre. À la suite de vos demandes, veuillez trouver ci-joint les documents demandés, etc.Dans l'attente de votre réponse, je vous adresse mes cordiales salutations.\"Fautes corrigées : \"à l'intention\" → \"à l'attention\" · \"par rapport à\" → \"au sujet de\" · \"Mardi 15 Septembre\" → \"mardi 15 septembre\" (minuscules) · \"Suite à\" → \"À la suite de\" · \"ci-joint en pièce jointe\" → \"ci-joint\" (pléonasme) · \"etc…\" → \"etc.\" · \"retour\" → \"réponse\" · \"Cordialement\" seul → formule complète.",
+   "label": "Exercice 6",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Tu termines une lettre de motivation adressée à Madame Dupont. Rédige la formule de politesse complète.",
+   "model_answer": "Proposition : \"Dans l'attente d'une réponse favorable de votre part, je vous prie, Madame, d'agréer l'expression de mes salutations cordiales.\"Note : On réutilise le titre de civilité (\"Madame\") dans la formule de politesse.",
+   "label": "Exercice 7",
+   "section": "ateliers"
+  }
+ ],
+ "simulators": [
+  {
+   "source": "francais/chapitres/simulateur-examen.html",
+   "variables": {
+    "VARIANTS": [
+     {
+      "label": "Sujet A",
+      "s1": {
+       "title": "I. Le style administratif",
+       "pts": "2,5 pts",
+       "instr": "Choisissez le connecteur logique qui assure la cohérence. Une seule réponse par question.",
+       "qs": [
+        {
+         "q": "Vous trouverez en pièce jointe le rapport trimestriel, __________ les chiffres clés et les analyses détaillées.",
+         "opts": [
+          "en somme",
+          "y compris",
+          "aussi que"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Je vous prie de bien vouloir répondre à ce courriel __________ nous puissions avancer dans la préparation.",
+         "opts": [
+          "enfin que",
+          "de peur que",
+          "afin que"
+         ],
+         "correct": 2
+        },
+        {
+         "q": "__________ vous avez fourni tous les documents, votre dossier sera traité dans les plus brefs délais.",
+         "opts": [
+          "Parce que",
+          "Dès lors que",
+          "Pendant que"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Votre demande de congé a été acceptée, __________ vous devrez veiller à finaliser vos projets avant votre départ.",
+         "opts": [
+          "en définitive",
+          "cependant",
+          "ainsi"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "La nouvelle politique, __________ elle ait rencontré une forte opposition, a finalement été adoptée.",
+         "opts": [
+          "après que",
+          "bien que",
+          "outre que"
+         ],
+         "correct": 1
+        }
+       ]
+      },
+      "s2": {
+       "title": "II. Écrire avec logique et clarté",
+       "pts": "2,5 pts",
+       "instr": "Cochez la réponse correcte.",
+       "qs": [
+        {
+         "q": "L'employé a été décoré __________ services rendus à la commune.",
+         "opts": [
+          "faute de",
+          "pour"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Pour poser votre candidature, remplissez le formulaire. Il faudra __________ joindre votre CV.",
+         "opts": [
+          "cependant",
+          "également"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Nous ne sommes pas en mesure de satisfaire votre demande. __________ nous conservons vos coordonnées.",
+         "opts": [
+          "Bien que",
+          "Cependant"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Vous souhaitez renouveler votre abonnement ; __________, nous vous adressons l'imprimé ci-joint.",
+         "opts": [
+          "en effet",
+          "à cet effet"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Relisez attentivement le contrat __________ un oubli n'ait été commis.",
+         "opts": [
+          "de peur qu'",
+          "pour qu'"
+         ],
+         "correct": 0
+        }
+       ]
+      },
+      "s3": {
+       "title": "III. Écrire avec logique et cohérence",
+       "pts": "2,5 pts",
+       "instr": "Cochez la réponse correcte.",
+       "qs": [
+        {
+         "q": "Vous trouverez ci-joint notre facture. ________, votre compte est débiteur de 100 000 francs.",
+         "opts": [
+          "Aussi",
+          "En revanche",
+          "Par ailleurs"
+         ],
+         "correct": 2
+        },
+        {
+         "q": "Pensez à confirmer votre présence. N'oubliez pas __________ de réserver votre place.",
+         "opts": [
+          "aussi",
+          "non plus",
+          "par ailleurs"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "La réunion vous permettra __________ de mieux connaître l'entreprise, mais aussi de rencontrer les partenaires.",
+         "opts": [
+          "de prime abord",
+          "non seulement",
+          "d'une part"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Le sport est reconnu comme facteur d'intégration sociale. __________, les municipalités doivent y consacrer un budget.",
+         "opts": [
+          "Sous prétexte que",
+          "En effet",
+          "De surcroît"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "L'employé a été décoré. ___________ les circonstances, mieux vaut éviter de le déranger.",
+         "opts": [
+          "Vu",
+          "Étant données que",
+          "En effet"
+         ],
+         "correct": 0
+        }
+       ]
+      },
+      "s4": {
+       "title": "IV. Choisir le mot juste",
+       "pts": "2,5 pts",
+       "instr": "Cochez la bonne orthographe ou le bon usage.",
+       "qs": [
+        {
+         "q": "Le projet de loi a suscité beaucoup de _______________.",
+         "opts": [
+          "controverses",
+          "contreverses"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Les médias nous ont _______________ les oreilles de cette affaire.",
+         "opts": [
+          "rebattu",
+          "rabattu"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Le prisonnier a finalement _______________ la liberté.",
+         "opts": [
+          "recouvert",
+          "recouvré"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "En l'absence de preuve, on ne peut se livrer qu'à des _______________.",
+         "opts": [
+          "conjonctures",
+          "conjectures"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Aider bénévolement est un grand _______________.",
+         "opts": [
+          "désintérêt",
+          "désintéressement"
+         ],
+         "correct": 1
+        }
+       ]
+      },
+      "s5": {
+       "title": "V. Le bon usage — choisir le mot juste",
+       "pts": "2,5 pts",
+       "instr": "Cochez la formulation correcte.",
+       "qs": [
+        {
+         "q": "________ l'ordonnance relative à la protection des données, il est décidé que…",
+         "opts": [
+          "Vue",
+          "Vu"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "___________, je ferai le nécessaire pour vous envoyer le dossier rapidement.",
+         "opts": [
+          "De toute façon",
+          "De toutes les façons"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Nous organisons ce pot de départ ____________ de la directrice des ressources humaines.",
+         "opts": [
+          "à l'attention",
+          "à l'intention"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Je serai disponible pour vous rencontrer lors d'un ___________.",
+         "opts": [
+          "entretien",
+          "entretient"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Je pense avoir trouvé ma ________ et vous serais reconnaissant de me recevoir en stage.",
+         "opts": [
+          "voie professionnelle",
+          "voix professionnelle"
+         ],
+         "correct": 0
+        }
+       ]
+      },
+      "s6": {
+       "title": "VI. Les registres de langue",
+       "pts": "1,5 pts",
+       "textes": [
+        {
+         "id": "T1",
+         "text": "Dans la salle à manger, très spacieuse, les meubles venaient d'être cirés.",
+         "answer": "courant"
+        },
+        {
+         "id": "T2",
+         "text": "Dans la salle à manger, les reflets chatoyants que renvoyaient les meubles, des senteurs rares et raffinées de cire et de miel sauvage, les volutes voluptueuses des lilas, tout annonçait la liesse des sens et de l'esprit.",
+         "answer": "soutenu"
+        },
+        {
+         "id": "T3",
+         "text": "Dans la salle à manger, on risquait pas de manquer de place. Et ça sentait drôlement bon. La cire, je crois bien. Y avait aussi des lilas. Tout ça annonçait des rupins !",
+         "answer": "familier"
+        }
+       ]
+      },
+      "s7": {
+       "title": "VII. Les registres de langue",
+       "pts": "1,5 pts",
+       "textes": [
+        {
+         "id": "T1",
+         "text": "Deux enfants de 13 et 15 ans ont tiré sur une voiture. Ils ont utilisé deux carabines volées. Avertis par le conducteur, les gendarmes ont arrêté les jeunes coupables.",
+         "answer": "courant"
+        },
+        {
+         "id": "T2",
+         "text": "Deux ados – 13 et 15 ans - ont tiré sur une voiture. Ils les avaient sans doute volées. Il n'a attrapé qu'un petit bobo. Les pandores ont vite mis les loubards à l'ombre.",
+         "answer": "familier"
+        },
+        {
+         "id": "T3",
+         "text": "Deux adolescents, respectivement âgés de 13 et 15 ans, ont tiré sur une voiture avec deux carabines qu'ils avaient dérobées. Les gendarmes ont tôt fait d'appréhender les jeunes délinquants.",
+         "answer": "soutenu"
+        }
+       ]
+      },
+      "s8": {
+       "title": "VIII. Figures de style",
+       "pts": "5 pts",
+       "qs": [
+        {
+         "q": "L'entreprise a procédé à un ajustement de la grille salariale.",
+         "answer": "Euphémisme",
+         "exp": "Atténuer la réalité d'une baisse de salaires par une expression douce."
+        },
+        {
+         "q": "Qu'est-ce qu'on ferait sans ces superbes outils informatiques qui plantent en pleine réunion ?",
+         "answer": "Antiphrase",
+         "exp": "Dire le contraire de ce qu'on pense — ironie évidente (les outils ne sont pas 'superbes')."
+        },
+        {
+         "q": "Votre contrat est renouvelé… pour un mois ! Quelle stabilité !",
+         "answer": "Antiphrase",
+         "exp": "Ironique — un mois n'est pas de la stabilité."
+        },
+        {
+         "q": "Nous recherchons la perle rare, un(e) candidat(e) capable de révolutionner notre entreprise !",
+         "answer": "Hyperbole",
+         "exp": "Exagération pour souligner l'exigence du recruteur."
+        },
+        {
+         "q": "L'entreprise juge nécessaire un plan de sauvegarde de l'emploi.",
+         "answer": "Euphémisme",
+         "exp": "'Plan de sauvegarde de l'emploi' = licenciements collectifs, formulé de manière atténuée."
+        }
+       ]
+      }
+     },
+     {
+      "label": "Sujet B",
+      "s1": {
+       "title": "I. Le style administratif",
+       "pts": "2,5 pts",
+       "instr": "Choisissez le connecteur logique qui assure la cohérence.",
+       "qs": [
+        {
+         "q": "Je vous adresse ce message __________ vous informer des dernières décisions du conseil.",
+         "opts": [
+          "afin de",
+          "malgré",
+          "bien que"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Le projet a été approuvé, __________ les ressources restent limitées.",
+         "opts": [
+          "ainsi",
+          "cependant",
+          "d'ailleurs"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "__________ vous respectez le délai imparti, aucune pénalité ne sera appliquée.",
+         "opts": [
+          "Dès lors que",
+          "Pendant que",
+          "Malgré que"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Veuillez noter que la réunion est reportée __________ au jeudi 15.",
+         "opts": [
+          "en revanche",
+          "notamment",
+          "au contraire"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "La direction a pris acte de vos observations ; __________, elle maintient sa décision.",
+         "opts": [
+          "néanmoins",
+          "en effet",
+          "car"
+         ],
+         "correct": 0
+        }
+       ]
+      },
+      "s2": {
+       "title": "II. Écrire avec logique et clarté",
+       "pts": "2,5 pts",
+       "instr": "Cochez la réponse correcte.",
+       "qs": [
+        {
+         "q": "__________ votre demande, nous avons transmis votre dossier au service compétent.",
+         "opts": [
+          "Suite à",
+          "À la suite de"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Je vous serais __________ de bien vouloir me transmettre ce document.",
+         "opts": [
+          "reconnaissant",
+          "reconnaissante selon le sexe",
+          "réconciliant"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Le rapport sera envoyé __________ dans la semaine.",
+         "opts": [
+          "sous huitaine",
+          "sous la huitaine"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Cette décision a été prise __________ l'accord de tous les membres.",
+         "opts": [
+          "suite à",
+          "en accord avec",
+          "à l'insu de"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Je vous prie de __________ cette inconvénience.",
+         "opts": [
+          "excuser",
+          "m'excuser de"
+         ],
+         "correct": 1
+        }
+       ]
+      },
+      "s3": {
+       "title": "III. Écrire avec logique et cohérence",
+       "pts": "2,5 pts",
+       "instr": "Cochez la réponse correcte.",
+       "qs": [
+        {
+         "q": "Ce candidat est brillant. __________, il manque encore d'expérience terrain.",
+         "opts": [
+          "Cependant",
+          "En effet",
+          "Ainsi"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Nous avons étudié votre demande. __________, nous avons décidé de l'accepter.",
+         "opts": [
+          "En revanche",
+          "Par conséquent",
+          "Malgré tout"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "La formation dure trois semaines __________ les ateliers pratiques.",
+         "opts": [
+          "y compris",
+          "en somme",
+          "quant à"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Le budget est insuffisant. __________, il faudra revoir les priorités.",
+         "opts": [
+          "En effet",
+          "De ce fait",
+          "Cependant"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "D'une part, les résultats sont positifs ; __________, des marges de progrès subsistent.",
+         "opts": [
+          "d'autre part",
+          "par ailleurs",
+          "de plus"
+         ],
+         "correct": 0
+        }
+       ]
+      },
+      "s4": {
+       "title": "IV. Choisir le mot juste",
+       "pts": "2,5 pts",
+       "instr": "Choisissez la bonne orthographe.",
+       "qs": [
+        {
+         "q": "Sa __________ au projet a été déterminante pour son succès.",
+         "opts": [
+          "adhérence",
+          "adhésion"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Cet étudiant a fait un __________ de trois mois dans un cabinet d'avocats.",
+         "opts": [
+          "stade",
+          "stage"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "Les associés ont donné leur __________ au projet final.",
+         "opts": [
+          "acceptation",
+          "acception"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "La directrice a prononcé une __________ de circonstance.",
+         "opts": [
+          "allocation",
+          "allocution"
+         ],
+         "correct": 1
+        },
+        {
+         "q": "L'entraîneur a fait __________ aux erreurs de son joueur étoile.",
+         "opts": [
+          "illusion",
+          "allusion"
+         ],
+         "correct": 1
+        }
+       ]
+      },
+      "s5": {
+       "title": "V. Paronymes et confusions",
+       "pts": "2,5 pts",
+       "instr": "Choisissez le terme correct.",
+       "qs": [
+        {
+         "q": "Nous avons voté l'__________ du nouveau règlement.",
+         "opts": [
+          "adoption",
+          "adaption"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Il a signé son __________ après dix ans dans l'entreprise.",
+         "opts": [
+          "démission",
+          "démence"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Le candidat a eu un entretien avec le __________ RH.",
+         "opts": [
+          "responsable",
+          "répondant"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "Ce poste demande une grande __________ aux contraintes.",
+         "opts": [
+          "adaptabilité",
+          "adoption"
+         ],
+         "correct": 0
+        },
+        {
+         "q": "La prime de __________ sera versée en fin d'année.",
+         "opts": [
+          "bilan",
+          "résultats"
+         ],
+         "correct": 1
+        }
+       ]
+      },
+      "s6": {
+       "title": "VI. Les registres de langue",
+       "pts": "1,5 pts",
+       "textes": [
+        {
+         "id": "T1",
+         "text": "Dans la salle à manger, très spacieuse, les meubles venaient d'être cirés.",
+         "answer": "courant"
+        },
+        {
+         "id": "T2",
+         "text": "Dans la salle à manger, les reflets chatoyants que renvoyaient les meubles, des senteurs rares et raffinées de cire et de miel sauvage, les volutes voluptueuses des lilas, tout annonçait la liesse des sens et de l'esprit.",
+         "answer": "soutenu"
+        },
+        {
+         "id": "T3",
+         "text": "Dans la salle à manger, on risquait pas de manquer de place. Et ça sentait drôlement bon. La cire, je crois bien. Y avait aussi des lilas. Tout ça annonçait des rupins !",
+         "answer": "familier"
+        }
+       ]
+      },
+      "s7": {
+       "title": "VII. Les registres de langue",
+       "pts": "1,5 pts",
+       "textes": [
+        {
+         "id": "Texte a",
+         "text": "Deux enfants de 13 et 15 ans ont tiré sur une voiture avec deux carabines volées. Avertis par le conducteur, légèrement blessé, les gendarmes ont arrêté les jeunes coupables.",
+         "answer": "courant"
+        },
+        {
+         "id": "Texte b",
+         "text": "Deux ados, presque des gosses – 13 et 15 ans - ont tiré sur une voiture. Ils les avaient sans doute volées. Il n'a attrapé qu'un petit bobo. Les pandores ont vite mis les loubards à l'ombre.",
+         "answer": "familier"
+        },
+        {
+         "id": "Texte c",
+         "text": "Deux adolescents, respectivement âgés de 13 et 15 ans, ont tiré sur une voiture avec deux carabines 22 long rifle qu'ils avaient dérobées. Alertés par le pilote de l'automobile, les gendarmes ont tôt fait d'appréhender les jeunes délinquants.",
+         "answer": "soutenu"
+        }
+       ]
+      },
+      "s8": {
+       "title": "VIII. Figures de style",
+       "pts": "5 pts",
+       "qs": [
+        {
+         "q": "Le ciel n'est pas plus pur que le fond de mon cœur. (Racine)",
+         "answer": "Métaphore",
+         "exp": "Comparaison implicite entre la pureté du ciel et celle du cœur, sans mot comparatif."
+        },
+        {
+         "q": "Mange ton assiette !",
+         "answer": "Métonymie",
+         "exp": "L'assiette (contenant) désigne son contenu — figure fréquente en langue quotidienne."
+        },
+        {
+         "q": "Une obscure clarté qui tombe des étoiles. (Corneille)",
+         "answer": "Oxymore",
+         "exp": "Association de deux termes contradictoires : obscure + clarté."
+        },
+        {
+         "q": "Les voiles au loin descendant vers Harfleur. (Hugo)",
+         "answer": "Synecdoque",
+         "exp": "La partie (les voiles) pour le tout (les navires)."
+        },
+        {
+         "q": "Je me meurs, je suis mort, je suis enterré. (Molière)",
+         "answer": "Gradation",
+         "exp": "Intensification croissante (puis décroissante ironique) de l'idée de mourir."
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "flashcards": [
+  {
+   "front": "Pléonasme",
+   "back": "Répétition inutile d'une idée déjà contenue dans le mot. Ex : \"la première priorité\"",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "Barbarisme",
+   "back": "Déformation d'un mot ou usage d'un mot forgé. Ex : \"maline\" → maligne",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "Solécisme",
+   "back": "Faute de syntaxe (construction de la phrase). Ex : \"si je pourrais\"",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"Se rappeler\" — transitif ?",
+   "back": "Oui, direct : je me rappelle mon entretien (sans \"de\")",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"Pallier\" — avec à ?",
+   "back": "Non. \"Pallier ce problème\" (transitif direct, sans \"à\")",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"Après que\" — quel mode ?",
+   "back": "Indicatif ! \"Après que je suis parti\" (pas subjonctif)",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "Règle de \"ci-joint\" en début de phrase",
+   "back": "Invariable. \"Ci-joint les documents.\"",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"etc.\" — comment l'écrire ?",
+   "back": "Un seul point : etc. (jamais etc…)",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"À l'attention\" vs \"à l'intention\"",
+   "back": "Attention = destiné à. Intention = en l'honneur de",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "Jours et mois — majuscule ?",
+   "back": "Non. \"mercredi 26 juillet\" (noms communs)",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "\"Davantage\" — en un ou deux mots ?",
+   "back": "Un seul mot : davantage (= plus). \"D'avantage\" n'existe pas ici",
+   "tag": "Séance 1"
+  },
+  {
+   "front": "Euphémisme",
+   "back": "Atténuer une réalité dure. Ex : \"ajustement de la grille salariale\" = baisse des salaires",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Antiphrase",
+   "back": "Dire le contraire de ce qu'on pense (ironie). Ex : \"Quelle stabilité !\" (pour 1 mois)",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Hyperbole",
+   "back": "Exagération pour frapper l'esprit. Ex : \"la perle rare qui va révolutionner l'entreprise\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Métaphore",
+   "back": "Comparaison implicite sans mot comparatif",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Comparaison",
+   "back": "Rapprochement avec mot comparatif (comme, tel, ainsi que)",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Métonymie",
+   "back": "Rapport logique contenant/contenu. Ex : \"Mange ton assiette !\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Synecdoque",
+   "back": "Cas de métonymie — partie pour le tout. Ex : \"Les voiles\" = les navires",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Oxymore",
+   "back": "Deux termes contradictoires rapprochés. Ex : \"une obscure clarté\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Gradation",
+   "back": "Intensification par degrés. Ex : \"Je me meurs, je suis mort, je suis enterré.\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Personnification",
+   "back": "Attributs humains à une chose. Ex : \"la grammaire française sourit\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Registre familier",
+   "back": "Argot, contractions, ellipses. Ex : \"Ces types n'disent pas la même chose.\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Registre courant",
+   "back": "Langue quotidienne correcte et neutre. Ex : \"Ces deux personnes ont des opinions différentes.\"",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Registre soutenu",
+   "back": "Vocabulaire élaboré, inversions, style académique.",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Structure LM — §1",
+   "back": "VOUS : ce que je sais de l'entreprise, pourquoi je la choisis",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Structure LM — §2",
+   "back": "MOI : mes compétences, mon expérience, mes qualités",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Structure LM — §3",
+   "back": "NOUS : ce que je peux vous apporter + vœu d'entretien",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "CDI vs CDD",
+   "back": "CDI = durée indéterminée (sans fin). CDD = durée déterminée (date de fin fixée)",
+   "tag": "Séance 2"
+  },
+  {
+   "front": "Licenciement vs démission",
+   "back": "Licenciement = à l'initiative de l'employeur. Démission = à l'initiative du salarié",
+   "tag": "Séance 2"
+  }
+ ],
+ "exercises_source": "francais/exercices/exercices.html"
+}

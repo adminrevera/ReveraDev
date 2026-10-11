@@ -1,0 +1,663 @@
+{
+ "slug": "reseaux",
+ "name": "Réseaux Informatiques",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Modèle OSI & Introduction",
+   "subtitle": "Comprendre les 7 couches du modèle OSI — la base de tout réseau.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Identifier les types de réseaux (LAN, WAN, MAN)<br/>\n        • Comprendre les 7 couches du modèle OSI<br/>\n        • Maîtriser l'encapsulation et les PDU par couche</p>\n</div>\n<h2>Qu'est-ce qu'un réseau ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏘️ Analogie du quartier</div>\n<p>Un réseau informatique, c'est comme un quartier de maisons reliées par des routes. Chaque maison (ordinateur) a une adresse. Les routes (câbles/Wi-Fi) permettent d'envoyer des colis (données). La poste (protocoles) s'assure que le bon colis arrive à la bonne maison.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Nom complet</th><th>Portée</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>LAN</strong></td><td>Local Area Network</td><td>Bâtiment, campus</td><td>Réseau d'une école</td></tr>\n<tr><td><strong>WAN</strong></td><td>Wide Area Network</td><td>National / Mondial</td><td>Internet</td></tr>\n<tr><td><strong>MAN</strong></td><td>Metropolitan Area Network</td><td>Ville</td><td>Réseau d'une ville</td></tr>\n</tbody>\n</table></div>\n<h2>Le modèle OSI — 7 couches</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémonique — P.L.R.T.S.P.A.</div>\n<p>De la couche 1 (bas) à la couche 7 (haut) :<br/>\n<strong>P</strong>hysique · <strong>L</strong>iaison · <strong>R</strong>éseau · <strong>T</strong>ransport · <strong>S</strong>ession · <strong>P</strong>résentation · <strong>A</strong>pplication<br/><br/>\n        Phrase mémo : « <em>Pour Le Réseau, Tout Se Passe Automatiquement</em> »</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Couche</th><th>Rôle</th><th>Exemple</th><th>Unité (PDU)</th></tr></thead>\n<tbody>\n<tr><td><strong>7</strong></td><td><strong>Application</strong></td><td>Interface utilisateur</td><td>HTTP, FTP, SMTP</td><td>Données</td></tr>\n<tr><td><strong>6</strong></td><td><strong>Présentation</strong></td><td>Format, chiffrement</td><td>SSL/TLS, JPEG</td><td>Données</td></tr>\n<tr><td><strong>5</strong></td><td><strong>Session</strong></td><td>Ouverture/fermeture session</td><td>NetBIOS, RPC</td><td>Données</td></tr>\n<tr><td><strong>4</strong></td><td><strong>Transport</strong></td><td>Fiabilité, ports</td><td>TCP, UDP</td><td>Segments</td></tr>\n<tr><td><strong>3</strong></td><td><strong>Réseau</strong></td><td>Routage, adresses IP</td><td>IP, ICMP, ARP</td><td>Paquets</td></tr>\n<tr><td><strong>2</strong></td><td><strong>Liaison</strong></td><td>Adresses MAC, trames</td><td>Ethernet, Wi-Fi</td><td>Trames</td></tr>\n<tr><td><strong>1</strong></td><td><strong>Physique</strong></td><td>Câbles, signaux</td><td>RJ45, fibre optique</td><td>Bits</td></tr>\n</tbody>\n</table></div>\n<h2>Les PDU par couche</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — D.S.P.T.B. (Des Singes Pas Très Beaux)</div>\n<p><strong>D</strong>onnées (L7-L5) → <strong>S</strong>egment (L4) → <strong>P</strong>aquet (L3) → <strong>T</strong>rame (L2) → <strong>B</strong>its (L1)</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">PDU à chaque couche OSI</div>\n<pre>Couche 7 – Application  → Données  (Data)\nCouche 6 – Présentation → Données  (Data)\nCouche 5 – Session      → Données  (Data)\nCouche 4 – Transport    → Segment  (TCP) / Datagramme (UDP)\nCouche 3 – Réseau       → Paquet   (Packet)\nCouche 2 – Liaison      → Trame    (Frame)\nCouche 1 – Physique     → Bits     (0 et 1)</pre>\n</div>\n<h2>Encapsulation</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📦 Analogie des poupées russes</div>\n<p>Chaque couche <strong>emballe</strong> les données dans une enveloppe (en-tête). À la réception, c'est l'inverse : <strong>désencapsulation</strong>. Chaque couche enlève son en-tête et passe au-dessus.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Processus d'encapsulation</div>\n<pre>Application  → Données\nTransport    → [En-tête TCP] + Données       = Segment\nRéseau       → [En-tête IP] + Segment        = Paquet\nLiaison      → [En-tête MAC] + Paquet + FCS  = Trame\nPhysique     → Bits sur le câble (010110...)</pre>\n</div>\n<h2>Zoom couches essentielles</h2>\n<h3>Couche 1 — Physique 🔌</h3>\n<p>Les « routes » du réseau : câbles RJ45 (cuivre), fibre optique (lumière), ondes Wi-Fi. Elle transforme les bits en signaux électriques/lumineux.</p>\n<h3>Couche 2 — Liaison 🔗</h3>\n<p>Utilise les <strong>adresses MAC</strong> (uniques pour chaque carte réseau). Le <strong>switch</strong> travaille à cette couche. Format MAC : <code>AA:BB:CC:DD:EE:FF</code> (6 octets en hexadécimal).</p>\n<h3>Couche 3 — Réseau 🗺️</h3>\n<p>Utilise les <strong>adresses IP</strong> pour le routage. Le <strong>routeur</strong> travaille à cette couche. Il choisit le meilleur chemin pour les paquets.</p>\n<h3>Couche 4 — Transport 🚛</h3>\n<p><strong>TCP</strong> (fiable, lent) vs <strong>UDP</strong> (rapide, non fiable). Utilise les <strong>numéros de port</strong> (HTTP=80, HTTPS=443, SSH=22).</p>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — Trame vs Paquet :</strong> Une <strong>trame</strong> (L2) contient des adresses MAC. Un <strong>paquet</strong> (L3) contient des adresses IP.<br/>\n<strong>Piège 2 — Ordre des couches :</strong> L1 est en <strong>bas</strong> (physique). L7 est en <strong>haut</strong> (application). L'envoi descend 7→1, la réception remonte 1→7.<br/>\n<strong>Piège 3 — OSI ≠ TCP/IP :</strong> OSI = 7 couches (théorique). TCP/IP = 4 couches (pratique).</p>\n</div>\n<h2>Exercice guidé — Identifier les couches</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Élément</th><th>Couche</th><th>N°</th><th>Justification</th></tr></thead>\n<tbody>\n<tr><td>Câble Ethernet</td><td>Physique</td><td>1</td><td>Transport du signal électrique</td></tr>\n<tr><td>Adresse MAC</td><td>Liaison</td><td>2</td><td>Identifie une carte réseau</td></tr>\n<tr><td>Adresse IP</td><td>Réseau</td><td>3</td><td>Routage entre réseaux</td></tr>\n<tr><td>TCP</td><td>Transport</td><td>4</td><td>Fiabilité de la transmission</td></tr>\n<tr><td>HTTP</td><td>Application</td><td>7</td><td>Protocole web utilisateur</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — Réseaux</h3>\n<ul>\n<li>LAN (local) · WAN (étendu) · MAN (métropolitain)</li>\n<li>Modèle OSI = 7 couches : <strong>P-L-R-T-S-P-A</strong></li>\n<li>PDU : Données (L7-L5) → Segment (L4) → Paquet (L3) → Trame (L2) → Bits (L1)</li>\n<li>Couche 2 = MAC + switch · Couche 3 = IP + routeur · Couche 4 = TCP/UDP</li>\n<li>Encapsulation : chaque couche ajoute un en-tête (émission) · Désencapsulation : chaque couche retire son en-tête (réception)</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "À quelle couche OSI le routeur opère-t-il principalement ?",
+     "options": [
+      {
+       "text": "Couche 1 — Physique",
+       "correct": false,
+       "explanation": "La couche 1 (Physique) concerne les câbles et signaux, pas le routage."
+      },
+      {
+       "text": "Couche 2 — Liaison",
+       "correct": false,
+       "explanation": "La couche 2 (Liaison) est celle du switch, pas du routeur."
+      },
+      {
+       "text": "Couche 3 — Réseau",
+       "correct": true,
+       "explanation": "Correct ! Le routeur opère à la couche 3 (Réseau). Il utilise les adresses IP pour choisir le meilleur chemin et acheminer les paquets."
+      },
+      {
+       "text": "Couche 4 — Transport",
+       "correct": false,
+       "explanation": "La couche 4 (Transport) gère TCP/UDP et les ports, pas le routage IP."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quel est le nom de l'unité de données (PDU) à la couche Transport ?",
+     "options": [
+      {
+       "text": "Paquet",
+       "correct": false,
+       "explanation": "Un paquet est le PDU de la couche 3 (Réseau), pas Transport."
+      },
+      {
+       "text": "Segment",
+       "correct": true,
+       "explanation": "Correct ! Le PDU de la couche 4 (Transport) est le segment (pour TCP) ou le datagramme (pour UDP)."
+      },
+      {
+       "text": "Trame",
+       "correct": false,
+       "explanation": "Une trame est le PDU de la couche 2 (Liaison)."
+      },
+      {
+       "text": "Bits",
+       "correct": false,
+       "explanation": "Les bits sont le PDU de la couche 1 (Physique)."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "L'encapsulation consiste à :",
+     "options": [
+      {
+       "text": "Supprimer les en-têtes à chaque couche",
+       "correct": false,
+       "explanation": "L'encapsulation est le processus d'AJOUT d'en-têtes, pas leur suppression."
+      },
+      {
+       "text": "Ajouter un en-tête à chaque couche lors de l'émission",
+       "correct": true,
+       "explanation": "Correct ! Lors de l'encapsulation (émission), chaque couche ajoute son en-tête aux données reçues de la couche supérieure."
+      },
+      {
+       "text": "Compresser les données pour les rendre plus petites",
+       "correct": false,
+       "explanation": "La compression est distincte de l'encapsulation."
+      },
+      {
+       "text": "Chiffrer les données",
+       "correct": false,
+       "explanation": "Chiffrer les données relève de la couche 6 (Présentation), pas de l'encapsulation générale."
+      }
+     ]
+    }
+   ],
+   "source": "reseaux/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Modèle TCP/IP & Protocoles",
+   "subtitle": "Architecture TCP/IP, encapsulation et comparaison avec OSI.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Maîtriser les 4 couches TCP/IP · Comprendre l'encapsulation · Comparer OSI et TCP/IP</p></div>\n<h2>2.1 — Le modèle TCP/IP (DoD)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Couche TCP/IP</th><th>Couches OSI équivalentes</th><th>Protocoles clés</th></tr></thead>\n<tbody>\n<tr><td><strong>4. Application</strong></td><td>Application + Présentation + Session</td><td>HTTP, HTTPS, FTP, SMTP, DNS, DHCP, SSH</td></tr>\n<tr><td><strong>3. Transport</strong></td><td>Transport</td><td>TCP, UDP</td></tr>\n<tr><td><strong>2. Internet</strong></td><td>Réseau</td><td>IP, ICMP, ARP</td></tr>\n<tr><td><strong>1. Accès réseau</strong></td><td>Liaison + Physique</td><td>Ethernet, Wi-Fi, PPP</td></tr>\n</tbody></table></div>\n<h2>2.2 — TCP vs UDP</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>TCP</th><th>UDP</th></tr></thead>\n<tbody>\n<tr><td>Connexion</td><td>Orienté connexion (3-way handshake)</td><td>Sans connexion</td></tr>\n<tr><td>Fiabilité</td><td>Garanti (acquittement, retransmission)</td><td>Non garanti</td></tr>\n<tr><td>Vitesse</td><td>Plus lent (overhead)</td><td>Plus rapide</td></tr>\n<tr><td>Usage</td><td>HTTP, FTP, email, SSH</td><td>DNS, DHCP, streaming, jeux</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 TCP = Téléphone · UDP = Courrier</div>\n<p>TCP = comme un appel téléphonique : connexion établie, messages confirmés<br/>\n        UDP = comme envoyer une lettre : on envoie et on espère que ça arrive</p></div>\n<h2>2.3 — L'encapsulation</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Encapsulation à chaque couche</div>\n<pre>Application  : [DONNÉES]\nTransport    : [EN-TÊTE TCP][DONNÉES]           ← segment\nInternet     : [EN-TÊTE IP][SEGMENT]            ← paquet\nAccès réseau : [EN-TÊTE ETH][PAQUET][FCS]       ← trame\nSignal       : 010101011001...                   ← bits</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>TCP/IP = 4 couches : Application · Transport · Internet · Accès réseau</li>\n<li>TCP : fiable, orienté connexion, 3-way handshake (SYN-SYN/ACK-ACK)</li>\n<li>UDP : rapide, sans connexion, non fiable → streaming, DNS</li>\n<li>Encapsulation : données → segment → paquet → trame → bits</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel protocole garantit la livraison des données et leur ordre ?",
+     "options": [
+      {
+       "text": "UDP",
+       "correct": false,
+       "explanation": "UDP est rapide mais non fiable — pas de garantie de livraison."
+      },
+      {
+       "text": "TCP",
+       "correct": true,
+       "explanation": "Correct ! TCP garantit la livraison (acquittements), l'ordre des données et la retransmission en cas de perte."
+      },
+      {
+       "text": "IP",
+       "correct": false,
+       "explanation": "IP est la couche réseau — il route les paquets mais ne garantit pas la livraison."
+      },
+      {
+       "text": "ICMP",
+       "correct": false,
+       "explanation": "ICMP sert aux messages de contrôle (ping), pas à la livraison fiable."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Adressage IPv4",
+   "subtitle": "Structure des adresses IP, classes, masques de sous-réseau et adresses spéciales.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Lire et écrire une adresse IPv4 · Identifier les classes A, B, C · Comprendre les masques</p></div>\n<h2>3.1 — Structure d'une adresse IPv4</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Format</div>\n<p>Une adresse IPv4 = <strong>32 bits</strong> = 4 octets séparés par des points<br/>\n        Chaque octet : valeur de 0 à 255<br/>\n        Exemple : <strong>192.168.1.10</strong> = 11000000.10101000.00000001.00001010</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Classe</th><th>1er octet</th><th>Masque par défaut</th><th>Nb réseaux</th><th>Hôtes/réseau</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>A</strong></td><td>1 – 126</td><td>255.0.0.0 (/8)</td><td>126</td><td>16 millions</td><td>Très grands réseaux</td></tr>\n<tr><td><strong>B</strong></td><td>128 – 191</td><td>255.255.0.0 (/16)</td><td>16 384</td><td>65 534</td><td>Moyens réseaux</td></tr>\n<tr><td><strong>C</strong></td><td>192 – 223</td><td>255.255.255.0 (/24)</td><td>2 millions</td><td>254</td><td>Petits réseaux</td></tr>\n</tbody></table></div>\n<h2>3.2 — Adresses spéciales</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Adresse</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td>127.0.0.1</td><td>Loopback (soi-même) — test de la pile TCP/IP</td></tr>\n<tr><td>0.0.0.0</td><td>Route par défaut / non spécifié</td></tr>\n<tr><td>255.255.255.255</td><td>Broadcast limité (tout le réseau local)</td></tr>\n<tr><td>Hôte = 0</td><td>Adresse réseau (ex: 192.168.1.0)</td></tr>\n<tr><td>Hôte = 255</td><td>Broadcast du réseau (ex: 192.168.1.255)</td></tr>\n</tbody></table></div>\n<h2>3.3 — Adresses privées (RFC 1918)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Plage privée</th><th>Classe</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td>10.0.0.0 – 10.255.255.255</td><td>A</td><td>Grandes entreprises</td></tr>\n<tr><td>172.16.0.0 – 172.31.255.255</td><td>B</td><td>Moyennes entreprises</td></tr>\n<tr><td>192.168.0.0 – 192.168.255.255</td><td>C</td><td>Réseau domestique</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li>IPv4 : 32 bits = 4 octets (0-255 chacun)</li>\n<li>Classe A: 1-126 /8 · B: 128-191 /16 · C: 192-223 /24</li>\n<li>Adresse réseau = hôte tout à 0 · Broadcast = hôte tout à 1</li>\n<li>127.0.0.1 = loopback · Privées : 10.x / 172.16-31.x / 192.168.x</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "L'adresse 172.20.5.1 appartient à la classe :",
+     "options": [
+      {
+       "text": "Classe A",
+       "correct": false,
+       "explanation": "Classe A : premier octet 1–126. 172 > 126."
+      },
+      {
+       "text": "Classe B",
+       "correct": true,
+       "explanation": "Correct ! Classe B : premier octet 128–191. 172 est dans cette plage."
+      },
+      {
+       "text": "Classe C",
+       "correct": false,
+       "explanation": "Classe C : premier octet 192–223. 172 < 192."
+      },
+      {
+       "text": "Classe D",
+       "correct": false,
+       "explanation": "Classe D (multicast) : 224–239. Pas applicable ici."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "Sous-réseaux & VLSM",
+   "subtitle": "Calcul de sous-réseaux, CIDR, VLSM et plan d'adressage.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Calculer l'adresse réseau, broadcast et plage d'hôtes · Comprendre CIDR et VLSM</p></div>\n<h2>4.1 — Masque et CIDR</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Notation CIDR</div>\n<p>192.168.1.0<strong>/24</strong> = le masque a 24 bits à 1<br/>\n        Masque /24 = 255.255.255.0 = 11111111.11111111.11111111.00000000<br/>\n        Les bits à 1 → partie réseau · Les bits à 0 → partie hôte</p></div>\n<h2>4.2 — Calcul de sous-réseau</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Formules essentielles</div>\n<p>Nombre d'hôtes par sous-réseau = <strong>2^(bits hôte) − 2</strong><br/>\n        (−2 : adresse réseau + broadcast non utilisables)<br/>\n        Nombre de sous-réseaux = <strong>2^(bits empruntés)</strong></p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — 192.168.1.0/26</div>\n<pre>Masque /26 = 255.255.255.192\nBits réseau = 26 · Bits hôte = 32-26 = 6\nHôtes max = 2^6 - 2 = 62 hôtes utilisables\nSous-réseaux = 2^(26-24) = 2^2 = 4 sous-réseaux\nSous-réseau 1 : 192.168.1.0   – 192.168.1.63\n  Réseau : .0 · Broadcast : .63 · Hôtes : .1 à .62\nSous-réseau 2 : 192.168.1.64  – 192.168.1.127\nSous-réseau 3 : 192.168.1.128 – 192.168.1.191\nSous-réseau 4 : 192.168.1.192 – 192.168.1.255</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Préfixe</th><th>Masque</th><th>Hôtes max</th><th>Sous-réseaux (/24)</th></tr></thead>\n<tbody>\n<tr><td>/25</td><td>255.255.255.128</td><td>126</td><td>2</td></tr>\n<tr><td>/26</td><td>255.255.255.192</td><td>62</td><td>4</td></tr>\n<tr><td>/27</td><td>255.255.255.224</td><td>30</td><td>8</td></tr>\n<tr><td>/28</td><td>255.255.255.240</td><td>14</td><td>16</td></tr>\n<tr><td>/29</td><td>255.255.255.248</td><td>6</td><td>32</td></tr>\n<tr><td>/30</td><td>255.255.255.252</td><td>2</td><td>64</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>CIDR /n : n bits réseau · (32-n) bits hôte</li>\n<li>Hôtes = 2^(32-n) − 2 (réseau + broadcast non attribuables)</li>\n<li>Adresse réseau = AND entre IP et masque</li>\n<li>Broadcast = IP réseau avec tous les bits hôte à 1</li>\n<li>/30 = 2 hôtes (liaisons point à point) · /24 = 254 hôtes</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Pour un réseau /27, combien d'hôtes sont utilisables ?",
+     "options": [
+      {
+       "text": "32",
+       "correct": false,
+       "explanation": "32 = 2^5 est le nombre total d'adresses, pas d'hôtes utilisables."
+      },
+      {
+       "text": "30",
+       "correct": true,
+       "explanation": "Correct ! /27 → bits hôte = 32-27 = 5 · 2^5 - 2 = 32 - 2 = 30 hôtes."
+      },
+      {
+       "text": "62",
+       "correct": false,
+       "explanation": "62 est pour /26 (6 bits hôte)."
+      },
+      {
+       "text": "14",
+       "correct": false,
+       "explanation": "14 est pour /28 (4 bits hôte)."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Protocoles applicatifs",
+   "subtitle": "HTTP, DNS, DHCP, FTP, SMTP, SSH — fonctionnement et ports.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Connaître les protocoles applicatifs et leurs ports · Comprendre DNS et DHCP</p></div>\n<h2>5.1 — Ports bien connus</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Port</th><th>Protocole</th><th>Rôle</th><th>Transport</th></tr></thead>\n<tbody>\n<tr><td>20/21</td><td>FTP</td><td>Transfert de fichiers</td><td>TCP</td></tr>\n<tr><td>22</td><td>SSH</td><td>Accès distant sécurisé</td><td>TCP</td></tr>\n<tr><td>23</td><td>Telnet</td><td>Accès distant (non sécurisé)</td><td>TCP</td></tr>\n<tr><td>25</td><td>SMTP</td><td>Envoi d'emails</td><td>TCP</td></tr>\n<tr><td>53</td><td>DNS</td><td>Résolution de noms</td><td>UDP (TCP si &gt; 512 octets)</td></tr>\n<tr><td>67/68</td><td>DHCP</td><td>Attribution IP automatique</td><td>UDP</td></tr>\n<tr><td>80</td><td>HTTP</td><td>Web non sécurisé</td><td>TCP</td></tr>\n<tr><td>110</td><td>POP3</td><td>Réception d'emails</td><td>TCP</td></tr>\n<tr><td>143</td><td>IMAP</td><td>Réception emails (synchronisé)</td><td>TCP</td></tr>\n<tr><td>443</td><td>HTTPS</td><td>Web sécurisé (TLS/SSL)</td><td>TCP</td></tr>\n</tbody></table></div>\n<h2>5.2 — DNS — Système de Noms de Domaines</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Fonctionnement DNS</div>\n<p>DNS traduit un nom de domaine en adresse IP :<br/>\n<code>www.google.com</code> → <code>142.250.74.100</code><br/>\n        Processus : Client → Cache local → Résolveur ISP → Root DNS → TLD DNS → DNS autoritaire</p></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Mnémo DNS</div>\n<p>DNS = <strong>D</strong>ictionnaire des <strong>N</strong>oms de <strong>S</strong>ites<br/>\n        Comme un annuaire téléphonique : nom → numéro (IP)</p></div>\n<h2>5.3 — DHCP — Attribution automatique</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Processus DORA</div>\n<pre>1. DISCOVER  → Client broadcast : \"Y a-t-il un serveur DHCP ?\"\n2. OFFER     ← Serveur répond : \"Je t'offre 192.168.1.10\"\n3. REQUEST   → Client : \"J'accepte l'offre !\"\n4. ACK       ← Serveur : \"C'est confirmé, IP valide 24h\"</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Ports clés : 22 SSH · 25 SMTP · 53 DNS · 67 DHCP · 80 HTTP · 443 HTTPS</li>\n<li>DNS : nom → IP · Processus en cascade (cache → résolveur → root → TLD)</li>\n<li>DHCP : DORA (Discover → Offer → Request → Ack)</li>\n<li>FTP 20/21 · Telnet 23 · POP3 110 · IMAP 143</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Sur quel port écoute un serveur web HTTPS ?",
+     "options": [
+      {
+       "text": "80",
+       "correct": false,
+       "explanation": "80 est le port HTTP (non sécurisé)."
+      },
+      {
+       "text": "443",
+       "correct": true,
+       "explanation": "Correct ! HTTPS (HTTP Secure avec TLS/SSL) utilise le port 443."
+      },
+      {
+       "text": "22",
+       "correct": false,
+       "explanation": "22 est SSH (accès distant sécurisé), pas HTTPS."
+      },
+      {
+       "text": "25",
+       "correct": false,
+       "explanation": "25 est SMTP (envoi d'emails), pas HTTPS."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre5.html"
+  },
+  {
+   "number": 6,
+   "title": "Équipements réseau",
+   "subtitle": "Hub, switch, routeur, pare-feu — rôles et différences.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Distinguer hub, switch et routeur · Comprendre leur couche OSI · Connaître le pare-feu</p></div>\n<h2>6.1 — Tableau comparatif</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Équipement</th><th>Couche OSI</th><th>Identifiant</th><th>Rôle</th><th>Intelligence</th></tr></thead>\n<tbody>\n<tr><td><strong>Hub</strong></td><td>1 – Physique</td><td>—</td><td>Répète le signal sur tous les ports</td><td>Aucune</td></tr>\n<tr><td><strong>Switch</strong></td><td>2 – Liaison</td><td>Adresse MAC</td><td>Commute les trames vers le bon port</td><td>Table MAC</td></tr>\n<tr><td><strong>Routeur</strong></td><td>3 – Réseau</td><td>Adresse IP</td><td>Route les paquets entre réseaux</td><td>Table de routage</td></tr>\n<tr><td><strong>Pare-feu</strong></td><td>3 à 7</td><td>IP + Port</td><td>Filtre les paquets selon des règles</td><td>Règles ACL</td></tr>\n</tbody></table></div>\n<h2>6.2 — Le Switch en détail</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Table d'adresses MAC</div>\n<p>Le switch apprend les adresses MAC des équipements connectés à chaque port :<br/>\n        1. Trame reçue sur port 1 depuis MAC AA:BB:CC:DD:EE:01<br/>\n        2. Switch mémorise : port 1 → MAC …01<br/>\n        3. Quand une trame est destinée à …01 → switch l'envoie SEULEMENT sur port 1<br/>\n        → Évite d'inonder tout le réseau (contrairement au hub)</p></div>\n<h2>6.3 — Le Routeur en détail</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Table de routage</div>\n<p>Le routeur consulte sa table de routage pour chaque paquet :<br/>\n        Destination → Via quelle interface / quelle passerelle ?<br/>\n        Route par défaut (0.0.0.0/0) = Internet (si destination inconnue)</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple table de routage simplifiée</div>\n<pre>Réseau destination  | Masque          | Passerelle   | Interface\n192.168.1.0         | 255.255.255.0   | Directement  | eth0\n192.168.2.0         | 255.255.255.0   | Directement  | eth1\n0.0.0.0             | 0.0.0.0         | 203.0.113.1  | eth2 (Internet)</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>Hub : couche 1, diffuse à tous · pas intelligent</li>\n<li>Switch : couche 2, adresses MAC, table MAC → commutation ciblée</li>\n<li>Routeur : couche 3, adresses IP, table de routage → inter-réseaux</li>\n<li>Pare-feu : filtre selon IP + Port + protocole</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Un switch opère à quelle couche du modèle OSI ?",
+     "options": [
+      {
+       "text": "Couche 1 (Physique)",
+       "correct": false,
+       "explanation": "Couche 1 = Hub (physique, répéteur de signal)."
+      },
+      {
+       "text": "Couche 2 (Liaison de données)",
+       "correct": true,
+       "explanation": "Correct ! Le switch opère à la couche 2 (Liaison). Il utilise les adresses MAC pour commuter les trames."
+      },
+      {
+       "text": "Couche 3 (Réseau)",
+       "correct": false,
+       "explanation": "Couche 3 = Routeur (réseau, utilise IP)."
+      },
+      {
+       "text": "Couche 4 (Transport)",
+       "correct": false,
+       "explanation": "Couche 4 = Transport (TCP/UDP). Le switch n'opère pas là."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre6.html"
+  },
+  {
+   "number": 7,
+   "title": "Câblage & Standards",
+   "subtitle": "Câbles Ethernet, normes TIA/EIA, connecteurs et câblage structuré.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Distinguer les catégories de câbles · Connaître les normes 568A/B · Faire un câble droit et croisé</p></div>\n<h2>7.1 — Catégories de câbles UTP</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Catégorie</th><th>Débit max</th><th>Fréquence</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>Cat5</td><td>100 Mbps</td><td>100 MHz</td><td>Fast Ethernet (obsolète)</td></tr>\n<tr><td>Cat5e</td><td>1 Gbps</td><td>100 MHz</td><td>Gigabit Ethernet courant</td></tr>\n<tr><td>Cat6</td><td>1 Gbps (10 Gbps/55m)</td><td>250 MHz</td><td>Réseau entreprise</td></tr>\n<tr><td>Cat6a</td><td>10 Gbps/100m</td><td>500 MHz</td><td>Data centers</td></tr>\n<tr><td>Cat7</td><td>10 Gbps</td><td>600 MHz</td><td>Infrastructure haute perf.</td></tr>\n</tbody></table></div>\n<h2>7.2 — Normes TIA/EIA 568A et 568B</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Broche</th><th>568A</th><th>568B</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Blanc/Vert</td><td>Blanc/Orange</td></tr>\n<tr><td>2</td><td>Vert</td><td>Orange</td></tr>\n<tr><td>3</td><td>Blanc/Orange</td><td>Blanc/Vert</td></tr>\n<tr><td>4</td><td>Bleu</td><td>Bleu</td></tr>\n<tr><td>5</td><td>Blanc/Bleu</td><td>Blanc/Bleu</td></tr>\n<tr><td>6</td><td>Orange</td><td>Vert</td></tr>\n<tr><td>7</td><td>Blanc/Marron</td><td>Blanc/Marron</td></tr>\n<tr><td>8</td><td>Marron</td><td>Marron</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Câble droit vs câble croisé</div>\n<p><strong>Câble droit</strong> (568B–568B) : équipements différents → PC–Switch, Switch–Routeur<br/>\n<strong>Câble croisé</strong> (568A–568B) : mêmes équipements → PC–PC, Switch–Switch<br/>\n        Aujourd'hui la plupart des équipements supportent l'auto-MDIX (détection automatique).</p></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 7</h3>\n<ul>\n<li>Cat5e : 1 Gbps · Cat6 : 1-10 Gbps · Cat6a : 10 Gbps/100m</li>\n<li>568A et 568B : deux normes de câblage RJ45</li>\n<li>Câble droit (568B-568B) : équipements différents (PC–Switch)</li>\n<li>Câble croisé (568A-568B) : même équipements (PC–PC)</li>\n<li>Auto-MDIX : détection automatique sur équipements modernes</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Pour connecter deux PCs directement (sans switch), on utilise :",
+     "options": [
+      {
+       "text": "Un câble droit (568B–568B)",
+       "correct": false,
+       "explanation": "Le câble droit relie des équipements différents (PC-Switch)."
+      },
+      {
+       "text": "Un câble croisé (568A–568B)",
+       "correct": true,
+       "explanation": "Correct ! Le câble croisé (568A–568B) est utilisé pour relier deux équipements identiques (PC-PC, Switch-Switch)."
+      },
+      {
+       "text": "Une fibre optique",
+       "correct": false,
+       "explanation": "La fibre optique est pour les liaisons longue distance ou backbone."
+      },
+      {
+       "text": "Un câble coaxial",
+       "correct": false,
+       "explanation": "Un câble coaxial est obsolète pour ce type de connexion."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre7.html"
+  },
+  {
+   "number": 8,
+   "title": "Wi-Fi & Outils réseau",
+   "subtitle": "Standards Wi-Fi, sécurité sans-fil, commandes ping/traceroute/ipconfig.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Connaître les standards Wi-Fi (802.11) · Distinguer WEP/WPA/WPA2 · Utiliser les outils de diagnostic</p></div>\n<h2>8.1 — Standards Wi-Fi 802.11</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Standard</th><th>Nom</th><th>Fréquence</th><th>Débit max</th><th>Portée</th></tr></thead>\n<tbody>\n<tr><td>802.11b</td><td>Wi-Fi 1</td><td>2,4 GHz</td><td>11 Mbps</td><td>35m intérieur</td></tr>\n<tr><td>802.11g</td><td>Wi-Fi 3</td><td>2,4 GHz</td><td>54 Mbps</td><td>38m</td></tr>\n<tr><td>802.11n</td><td>Wi-Fi 4</td><td>2,4/5 GHz</td><td>600 Mbps</td><td>70m</td></tr>\n<tr><td>802.11ac</td><td>Wi-Fi 5</td><td>5 GHz</td><td>3,5 Gbps</td><td>35m</td></tr>\n<tr><td>802.11ax</td><td>Wi-Fi 6</td><td>2,4/5/6 GHz</td><td>9,6 Gbps</td><td>Optimisé dense</td></tr>\n</tbody></table></div>\n<h2>8.2 — Sécurité Wi-Fi</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Protocole</th><th>Chiffrement</th><th>Sécurité</th></tr></thead>\n<tbody>\n<tr><td>WEP</td><td>RC4 40-104 bits</td><td>❌ Très faible (cracké en minutes)</td></tr>\n<tr><td>WPA</td><td>TKIP</td><td>⚠️ Faible (vulnérable)</td></tr>\n<tr><td>WPA2</td><td>AES-CCMP</td><td>✅ Bon (recommandé)</td></tr>\n<tr><td>WPA3</td><td>AES-256 + SAE</td><td>✅✅ Excellent (actuel)</td></tr>\n</tbody></table></div>\n<h2>8.3 — Outils de diagnostic réseau</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Commandes essentielles</div>\n<pre># ping — tester la connectivité\nping 8.8.8.8           # test vers DNS Google\nping www.google.com    # test résolution + connectivité\n# traceroute (tracert sous Windows)\ntraceroute 8.8.8.8     # afficher les sauts\ntracert 8.8.8.8        # Windows\n# ipconfig (Windows) / ifconfig (Linux)\nipconfig               # voir adresses IP (Windows)\nipconfig /all          # infos complètes + MAC\nifconfig               # Linux/Mac\nip addr show           # Linux moderne\n# nslookup — résolution DNS\nnslookup google.com    # trouver l'IP de google.com\n# netstat — connexions actives\nnetstat -an            # toutes les connexions</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 8</h3>\n<ul>\n<li>Wi-Fi 4 (802.11n) : 600 Mbps · Wi-Fi 5 (ac) : 3,5 Gbps · Wi-Fi 6 (ax) : 9,6 Gbps</li>\n<li>WEP = obsolète · WPA2 = recommandé · WPA3 = optimal</li>\n<li>ping : tester connectivité · traceroute : voir les sauts</li>\n<li>ipconfig/ifconfig : voir config IP · nslookup : résolution DNS</li>\n<li>2,4 GHz : plus de portée · 5 GHz : plus de débit</li>\n</ul></div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel protocole de sécurité Wi-Fi est recommandé en 2024 ?",
+     "options": [
+      {
+       "text": "WEP",
+       "correct": false,
+       "explanation": "WEP est obsolète et cracké en quelques minutes avec les outils modernes."
+      },
+      {
+       "text": "WPA",
+       "correct": false,
+       "explanation": "WPA utilise TKIP qui présente des vulnérabilités connues."
+      },
+      {
+       "text": "WPA2 (minimum) ou WPA3",
+       "correct": true,
+       "explanation": "Correct ! WPA2 (AES-CCMP) est le minimum recommandé, et WPA3 est le plus récent et sûr. WPA2 reste très répandu."
+      },
+      {
+       "text": "802.11n",
+       "correct": false,
+       "explanation": "802.11n est un standard de débit, pas de sécurité."
+      }
+     ]
+    }
+   ],
+   "source": "_private/reseaux/chapitres/chapitre8.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Modèle OSI & Introduction.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Modèle OSI & Introduction.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Modèle OSI & Introduction.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Modèle OSI & Introduction.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Modèle OSI & Introduction.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Modèle TCPIP & Protocoles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Modèle TCPIP & Protocoles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Modèle TCPIP & Protocoles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Modèle TCPIP & Protocoles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Modèle TCPIP & Protocoles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Adressage IPv4.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Adressage IPv4.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Adressage IPv4.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Adressage IPv4.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Adressage IPv4.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Sousréseaux & VLSM.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Sousréseaux & VLSM.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Sousréseaux & VLSM.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Sousréseaux & VLSM.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Sousréseaux & VLSM.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Protocoles applicatifs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Protocoles applicatifs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Protocoles applicatifs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Protocoles applicatifs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Protocoles applicatifs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Équipements réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Équipements réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Équipements réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Équipements réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Équipements réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Câblage & Standards.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Câblage & Standards.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Câblage & Standards.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Câblage & Standards.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Câblage & Standards.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement WiFi & Outils réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de WiFi & Outils réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi WiFi & Outils réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de WiFi & Outils réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à WiFi & Outils réseau.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  }
+ ],
+ "simulators": [],
+ "flashcards": [],
+ "exercises_source": "_private/reseaux/exercices/exercices.html"
+}

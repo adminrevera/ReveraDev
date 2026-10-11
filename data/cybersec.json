@@ -1,0 +1,3869 @@
+{
+ "slug": "cybersec",
+ "name": "Cybersécurité",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Introduction à la Cybersécurité",
+   "subtitle": "Les fondations du cours : la différence entre cybersécurité et sécurité informatique, le triptyque menace/vulnérabilité/risque, la triade CIA, les grandes réglementations, et l'histoire des cyberattaques qui ont façonné la discipline.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Distinguer cybersécurité et sécurité informatique<br/>\n        • Définir menace, vulnérabilité et risque, et calculer le risque<br/>\n        • Maîtriser la triade CIA (Confidentialité, Intégrité, Disponibilité)<br/>\n        • Comprendre les enjeux de protection des données et de conformité<br/>\n        • Connaître les cyberattaques majeures de l'histoire et les tendances actuelles (cloud, IoT, IA)</p>\n</div>\n<h2>1.1 — 📋 Définitions et Concepts Clés</h2>\n<h3>Cybersécurité vs sécurité informatique</h3>\n<p>Ces deux termes sont souvent utilisés indifféremment, mais ils ne se recouvrent pas exactement.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Sécurité informatique</th><th>Cybersécurité</th></tr></thead>\n<tbody>\n<tr><td><strong>Portée</strong></td><td>Sous-ensemble technique</td><td>Approche holistique (technique + organisationnelle + humaine)</td></tr>\n<tr><td><strong>Domaines clés</strong></td><td>Systèmes, réseaux, applications, gestion des accès, sauvegarde</td><td>Infrastructures critiques, données, sécurité opérationnelle, sensibilisation, lutte anti-cybercriminalité</td></tr>\n<tr><td><strong>Objectifs</strong></td><td>Confidentialité, intégrité, disponibilité</td><td>Protection des actifs numériques, gestion des risques, conformité, résilience</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 À retenir</div>\n<p>La sécurité informatique est un <strong>sous-ensemble</strong> de la cybersécurité : elle se concentre sur les aspects techniques, tandis que la cybersécurité intègre aussi les dimensions stratégiques et humaines.</p>\n</div>\n<h3>Menaces, vulnérabilités et risques</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\">\n<div class=\"ic-tag\">1. Menace</div>\n<div class=\"ic-desc\">Événement ou action potentiellement dommageable (intentionnel ou non) qui peut compromettre la sécurité.</div>\n<div class=\"ic-ex\">Ex : malware, phishing, DDoS, catastrophe naturelle, erreur humaine.</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">2. Vulnérabilité</div>\n<div class=\"ic-desc\">Faiblesse ou défaut (technique, organisationnel, humain) qui pourrait être exploité par une menace.</div>\n<div class=\"ic-ex\">Ex : logiciel non mis à jour, mot de passe faible, absence de chiffrement.</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">3. Risque</div>\n<div class=\"ic-desc\">Probabilité qu'une menace exploite une vulnérabilité, entraînant un impact négatif.</div>\n<div class=\"ic-ex\">Ex : perte de données, interruption de service, non-conformité.</div>\n</div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Formule du risque</div>\n<p><strong>Risque = Menace × Vulnérabilité × Impact</strong></p>\n<p>Menace : probabilité qu'elle se produise · Vulnérabilité : probabilité qu'elle soit exploitée · Impact : conséquence si le risque se matérialise.</p>\n</div>\n<h2>1.2 — 🔒 La Triade CIA</h2>\n<p>Trois objectifs fondamentaux guident toute protection des systèmes et des informations.</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔒 Confidentialité</div>\n<p>Garantir que les informations sensibles ne sont accessibles qu'aux personnes autorisées.</p>\n<p><em>Méthodes : chiffrement, contrôle d'accès, masquage des données, politiques de sécurité.</em></p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🛡️ Intégrité</div>\n<p>Garantir que les données ne sont ni modifiées ni corrompues de façon non autorisée.</p>\n<p><em>Méthodes : sommes de contrôle (checksums), contrôle de version, journalisation, signatures numériques.</em></p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚡ Disponibilité</div>\n<p>Garantir que les systèmes et données sont accessibles aux utilisateurs autorisés quand ils en ont besoin.</p>\n<p><em>Méthodes : redondance, sauvegardes, plans de reprise après sinistre (PRA), surveillance.</em></p>\n</div>\n<h3>Scénarios illustratifs</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Scénario</th><th>Confidentialité</th><th>Intégrité</th><th>Disponibilité</th></tr></thead>\n<tbody>\n<tr><td><strong>Banque en ligne</strong></td><td>Transactions chiffrées</td><td>Montants vérifiés avant transfert</td><td>Haute disponibilité des serveurs</td></tr>\n<tr><td><strong>Système de santé</strong></td><td>Dossiers médicaux à accès restreint</td><td>Diagnostics enregistrés précisément</td><td>Fonctionnement continu, même en cas de sinistre</td></tr>\n</tbody>\n</table></div>\n<h2>1.3 — ⚖️ Enjeux : Données Personnelles &amp; Conformité</h2>\n<p>Les données personnelles et sensibles (identité, santé, finances) doivent être protégées pour préserver la confiance des utilisateurs, respecter la loi, et parfois la sécurité nationale.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Réglementation</th><th>Zone</th><th>Sanction maximale</th></tr></thead>\n<tbody>\n<tr><td><strong>RGPD</strong></td><td>Union européenne</td><td>4% du CA mondial ou 20M€</td></tr>\n<tr><td><strong>HIPAA</strong></td><td>États-Unis (santé)</td><td>1,5M$ par an</td></tr>\n<tr><td><strong>ISO/IEC 27001</strong></td><td>Mondiale (norme, pas une loi)</td><td>Perte de certification</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📰 Cas concret — Google / CNIL (2019)</div>\n<p>La CNIL a infligé une amende de <strong>50 millions d'euros</strong> à Google pour non-respect du RGPD : manque de transparence dans la collecte des données et consentement publicitaire ambigu. Même les plus grandes entreprises ne sont pas à l'abri des sanctions.</p>\n</div>\n<h2>1.4 — 🕰️ Historique des Cyberattaques Majeures</h2>\n<div class=\"timeline\">\n<div class=\"timeline-item\"><div class=\"tl-year\">1971</div><div class=\"tl-body\"><strong>Creeper</strong> — premier « ver » expérimental, non malveillant, qui a posé les bases des futurs virus.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">1986</div><div class=\"tl-body\"><strong>Brain</strong> — premier virus connu, propagé par disquette.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">1988</div><div class=\"tl-body\"><strong>Morris Worm</strong> — premier ver à ralentir Internet ; première condamnation sous la loi américaine sur la fraude électronique.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">1999</div><div class=\"tl-body\"><strong>Melissa</strong> — virus macro propagé par email et documents Word, perturbant les infrastructures mail mondiales.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2000</div><div class=\"tl-body\"><strong>ILOVEYOU</strong> — ver par email ayant infecté des millions de machines ; dommages estimés à plus de 10 milliards $.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2003</div><div class=\"tl-body\"><strong>Slammer</strong> — ver exploitant une faille SQL Server, ralentissant le trafic Internet mondial.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2010</div><div class=\"tl-body\"><strong>Stuxnet</strong> — ver ciblant les centrifugeuses nucléaires iraniennes ; première cyberattaque d'État confirmée.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2014</div><div class=\"tl-body\"><strong>Sony Pictures</strong> — vol de données internes attribué à des hackers nord-coréens.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2017</div><div class=\"tl-body\"><strong>WannaCry</strong> — ransomware ayant touché 200 000+ ordinateurs dans 150 pays. <strong>Equifax</strong> — fuite exposant 147 millions de clients, amende de 700M$.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2020</div><div class=\"tl-body\"><strong>SolarWinds</strong> — attaque de supply chain visant des agences gouvernementales américaines.</div></div>\n<div class=\"timeline-item\"><div class=\"tl-year\">2021</div><div class=\"tl-body\"><strong>Colonial Pipeline</strong> — ransomware paralysant un pipeline américain (rançon de 4,4M$). <strong>Log4Shell</strong> — faille critique dans la bibliothèque Java Log4j.</div></div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Évolution des techniques</div>\n<p>Des virus simples → vers ransomwares → attaques <strong>APT</strong> (Advanced Persistent Threat, ciblées et prolongées) → phishing exploitant les faiblesses humaines. Impact économique, réputationnel et stratégique.</p>\n</div>\n<h2>1.5 — 📡 Tendances Actuelles : Cloud, IoT, IA</h2>\n<div class=\"info-grid\">\n<div class=\"info-card\">\n<div class=\"ic-tag\">Cloud Computing</div>\n<div class=\"ic-desc\">Avantages : mises à jour automatiques, sauvegardes centralisées. Défis : partage de responsabilité, attaques multi-locataires, mauvaises configurations.</div>\n<div class=\"ic-ex\">2020 : des millions de fichiers exposés sur Amazon S3 à cause d'une mauvaise configuration.</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">IoT</div>\n<div class=\"ic-desc\">Avantages : surveillance accrue, automatisation. Défis : sécurité souvent faible, volume de données massif, point d'entrée unique pour tout un réseau.</div>\n<div class=\"ic-ex\">2016 : le botnet Mirai a utilisé des objets connectés mal protégés pour paralyser Twitter et Reddit (DDoS).</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Intelligence Artificielle</div>\n<div class=\"ic-desc\">Avantages : détection proactive des menaces, réponse plus rapide. Défis : attaques générées par IA, biais des modèles, vol des modèles eux-mêmes.</div>\n<div class=\"ic-ex\">Darktrace utilise l'IA pour détecter les attaques en temps réel ; des générateurs de texte IA peuvent créer des emails de phishing hyper-réalistes.</div>\n</div>\n</div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Menaces &amp; Vulnérabilités →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La sécurité informatique est :",
+     "options": [
+      {
+       "text": "Identique à la cybersécurité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un sous-ensemble technique de la cybersécurité",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Une discipline sans rapport avec la cybersécurité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Plus large que la cybersécurité",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Comment se calcule le risque ?",
+     "options": [
+      {
+       "text": "Menace + Vulnérabilité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Menace × Vulnérabilité × Impact",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Impact ÷ Vulnérabilité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Vulnérabilité − Menace",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Garantir que les données ne sont pas modifiées sans autorisation relève de :",
+     "options": [
+      {
+       "text": "La confidentialité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "L'intégrité",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "La disponibilité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "L'autorisation",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle attaque historique ciblait les centrifugeuses nucléaires iraniennes ?",
+     "options": [
+      {
+       "text": "WannaCry",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Stuxnet",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "ILOVEYOU",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "SolarWinds",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le botnet Mirai (2016) a exploité principalement :",
+     "options": [
+      {
+       "text": "Des serveurs cloud mal configurés",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des objets connectés (IoT) mal protégés",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Des failles dans l'IA",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des certificats numériques expirés",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "cybersec/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Menaces et Vulnérabilités",
+   "subtitle": "Panorama des attaques informatiques : malwares, phishing et ingénierie sociale, attaques par déni de service, exploitation de vulnérabilités logicielles — et les acteurs qui se cachent derrière (hacktivistes, cybercriminels, États-nations, menaces internes).",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Distinguer les types d'attaques (actives/passives, internes/externes)<br/>\n        • Identifier les familles de malwares et leurs méthodes de protection<br/>\n        • Reconnaître les techniques de phishing et d'ingénierie sociale<br/>\n        • Comprendre le fonctionnement des attaques DoS/DDoS<br/>\n        • Connaître les principales sources de menaces et leurs motivations</p>\n</div>\n<h2>2.1 — ⚔️ Les Attaques Informatiques</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition (RFC 2828)</div>\n<p>Une attaque est <strong>« un assaut sur la sécurité du système qui découle d'une menace intelligente »</strong> — une tentative délibérée pour échapper aux services de sécurité et violer la politique de sécurité d'un système.</p>\n</div>\n<h3>Classification des attaques</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Comportement</strong></td><td>Active</td><td>Tente de modifier les ressources du système ou d'affecter leur fonctionnement</td></tr>\n<tr><td>Passive</td><td>Tente d'apprendre/utiliser des informations sans affecter les ressources (ex : écoute téléphonique)</td></tr>\n<tr><td><strong>Origine</strong></td><td>Interne</td><td>Initiée par une entité autorisée qui détourne son accès</td></tr>\n<tr><td>Externe</td><td>Initiée depuis l'extérieur du périmètre par un utilisateur non autorisé</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📡 Attaques réseau sans fil (802.11)</div>\n<p>Les attaques contre les réseaux Wi-Fi se classent en 5 catégories : contrôle d'accès (ex : <strong>Rogue Access Point</strong>, <strong>MAC Spoofing</strong>), confidentialité (ex : <strong>Man-in-the-Middle</strong>, <strong>AP Phishing</strong>), intégrité, authentification et disponibilité.</p>\n</div>\n<h2>2.2 — 🦠 Malwares</h2>\n<p>« Malware » est un terme générique pour tout logiciel malveillant conçu pour s'infiltrer, endommager ou voler des données à l'insu de l'utilisateur.</p>\n<div class=\"info-grid\">\n<div class=\"info-card\">\n<div class=\"ic-tag\">Virus</div>\n<div class=\"ic-desc\">S'attache à un fichier légitime, nécessite une action humaine (ouverture du fichier) pour se propager.</div>\n<div class=\"ic-ex\">Ex : ILOVEYOU, CryptoLocker</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Vers (Worms)</div>\n<div class=\"ic-desc\">Programmes autonomes qui se propagent via le réseau sans intervention humaine, exploitant des failles réseau.</div>\n<div class=\"ic-ex\">Ex : Conficker, Stuxnet</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Ransomware</div>\n<div class=\"ic-desc\">Chiffre les fichiers ou verrouille le système jusqu'au paiement d'une rançon, souvent en cryptomonnaie.</div>\n<div class=\"ic-ex\">Ex : WannaCry (2017), Locky</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Spyware</div>\n<div class=\"ic-desc\">Espionne les activités de l'utilisateur sans consentement (mots de passe, navigation, données bancaires).</div>\n<div class=\"ic-ex\">Ex : Keyloggers, Adware</div>\n</div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">🛡️ Protection contre les malwares</div>\n<p>Antivirus à jour · mises à jour systèmes régulières · vigilance face au phishing · sauvegardes régulières · formation des utilisateurs · pare-feu configuré.</p>\n</div>\n<h2>2.3 — 🎣 Phishing et Ingénierie Sociale</h2>\n<p>Ces attaques exploitent les <strong>faiblesses humaines</strong> plutôt que les failles techniques, en manipulant les victimes pour obtenir des informations sensibles.</p>\n<h3>Types de phishing</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Vecteur</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Phishing email</strong></td><td>Email</td><td>Faux email bancaire demandant de \"mettre à jour vos informations\"</td></tr>\n<tr><td><strong>Smishing</strong></td><td>SMS</td><td>SMS prétendant venir d'une entreprise connue avec un lien</td></tr>\n<tr><td><strong>Vishing</strong></td><td>Appel téléphonique</td><td>Faux appel du \"service client\" demandant des données bancaires</td></tr>\n<tr><td><strong>Spear Phishing</strong></td><td>Email ciblé</td><td>Email personnalisé visant un employé précis</td></tr>\n<tr><td><strong>Whaling</strong></td><td>Email ciblé</td><td>Spear phishing visant des cadres dirigeants</td></tr>\n</tbody>\n</table></div>\n<h3>Techniques d'ingénierie sociale</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Pretexting</div><div class=\"ic-desc\">Créer un faux scénario pour gagner la confiance de la victime.</div><div class=\"ic-ex\">Se faire passer pour un responsable IT.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Baiting</div><div class=\"ic-desc\">Offrir quelque chose d'attrayant pour inciter à cliquer ou télécharger.</div><div class=\"ic-ex\">Clé USB infectée laissée dans un lieu public.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Quid Pro Quo</div><div class=\"ic-desc\">Promettre un avantage en échange d'informations.</div><div class=\"ic-ex\">\"Support technique gratuit\" en échange d'un accès système.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Tailgating</div><div class=\"ic-desc\">Suivre physiquement une personne autorisée pour entrer dans un lieu sécurisé.</div><div class=\"ic-ex\">Se faufiler derrière un employé badgé.</div></div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📰 Exemples notables</div>\n<p><strong>Google Docs Phishing Attack (2017)</strong> : invitation de partage de document redirigeant vers un site malveillant. <strong>RSA Security (2011)</strong> : spear phishing ayant compromis le système de sécurité de l'entreprise.</p>\n</div>\n<h2>2.4 — 📡 Attaques par Déni de Service (DoS/DDoS)</h2>\n<p>Ces attaques visent à rendre un service indisponible en saturant ses ressources (bande passante, mémoire, CPU).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>DoS</th><th>DDoS</th></tr></thead>\n<tbody>\n<tr><td><strong>Source</strong></td><td>Une seule machine</td><td>Multiples machines compromises (botnet)</td></tr>\n<tr><td><strong>Puissance</strong></td><td>Limitée</td><td>Beaucoup plus puissante</td></tr>\n<tr><td><strong>Difficulté à bloquer</strong></td><td>Relativement simple</td><td>Difficile (IP multiples)</td></tr>\n<tr><td><strong>Exemples</strong></td><td>SYN Flood, Ping of Death, HTTP Flood</td><td>UDP Flood, Slowloris</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🛡️ Méthodes de protection</div>\n<p>Solutions anti-DDoS (Cloudflare, Akamai, AWS Shield) · pare-feu &amp; IDS/IPS · augmentation de la capacité réseau et CDN · surveillance du trafic en temps réel · CAPTCHA contre les bots.</p>\n</div>\n<h3>Exploitation des vulnérabilités logicielles</h3>\n<p>Une vulnérabilité logicielle (débordement de mémoire tampon, faille d'injection, authentification insuffisante, mauvaise configuration) peut être exploitée pour perturber un système ou accéder à des données.</p>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Nessus</span><span class=\"tool-tag\">OpenVAS</span><span class=\"tool-tag\">Qualys</span><span class=\"tool-tag\">SIEM</span>\n</div>\n<p>Protection : mises à jour régulières, scans de vulnérabilités, principe du moindre privilège, validation des entrées utilisateur.</p>\n<h2>2.5 — 👤 Sources des Menaces</h2>\n<div class=\"info-grid\">\n<div class=\"info-card\">\n<div class=\"ic-tag\">Hacktivistes</div>\n<div class=\"ic-desc\">Motivés par des causes idéologiques. Méthodes : DDoS, fuites de données, défiguration de sites web.</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Cybercriminels</div>\n<div class=\"ic-desc\">Motivation principalement financière. Méthodes : phishing, malwares, fraude en ligne.</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">États-nations</div>\n<div class=\"ic-desc\">Ressources importantes, attaques sophistiquées : APT, espionnage, exploits zero-day.</div>\n<div class=\"ic-ex\">NotPetya et BlackEnergy (Russie) · Stuxnet (États-Unis/Israël)</div>\n</div>\n<div class=\"info-card\">\n<div class=\"ic-tag\">Menaces internes</div>\n<div class=\"ic-desc\">Employés malveillants ou simplement négligents — accès déjà légitime au système.</div>\n</div>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1 — Introduction</a>\n<a class=\"ch-nav-btn\">Ch.3 — Sécurité Informatique de Base →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la principale différence entre un virus et un ver (worm) ?",
+     "options": [
+      {
+       "text": "Le virus est toujours plus dangereux",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le ver se propage seul, sans action humaine",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Le virus ne touche que les serveurs",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Aucune différence",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le \"whaling\" est une forme de phishing qui cible :",
+     "options": [
+      {
+       "text": "Des employés au hasard",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des cadres dirigeants",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Uniquement les banques",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les réseaux sociaux",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Qu'est-ce qui distingue une attaque DDoS d'une attaque DoS ?",
+     "options": [
+      {
+       "text": "Le DDoS utilise plusieurs sources distribuées",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Le DDoS est toujours moins puissant",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le DoS cible uniquement les emails",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il n'y a pas de différence",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "\"Laisser une clé USB infectée dans un lieu public\" est un exemple de :",
+     "options": [
+      {
+       "text": "Tailgating",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Baiting",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Pretexting",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Quid Pro Quo",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Stuxnet et NotPetya illustrent des attaques attribuées à :",
+     "options": [
+      {
+       "text": "Des hacktivistes isolés",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des États-nations",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Des employés négligents",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des testeurs de sécurité",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Principes de Base de la Sécurité Informatique",
+   "subtitle": "Le cœur technique du cours : authentification (mots de passe forts, 2FA, IAM), cryptographie symétrique et asymétrique, fonctions de hachage, et sécurité réseau (firewall, VPN, HTTPS/SSH).",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Comprendre pourquoi les mots de passe forts et le 2FA renforcent la sécurité<br/>\n        • Distinguer authentification et autorisation (IAM, RBAC, ABAC)<br/>\n        • Différencier chiffrement symétrique et asymétrique, et connaître leurs algorithmes<br/>\n        • Comprendre le rôle des fonctions de hachage et des certificats numériques<br/>\n        • Maîtriser les bases du firewall, du VPN et des protocoles sécurisés HTTPS/SSH</p>\n</div>\n<h2>3.1 — 🔑 Authentification et Autorisation</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">🔓 Pourquoi les mots de passe forts comptent</div>\n<p>Un mot de passe faible expose à : attaques par <strong>force brute</strong> (essais systématiques), attaques par <strong>dictionnaire</strong> (mots courants), ingénierie sociale, et fuites de données. La complexité augmente le temps nécessaire pour le craquer.</p>\n</div>\n<h3>Authentification à deux facteurs (2FA)</h3>\n<p>Le 2FA combine deux preuves d'identité issues de catégories différentes :</p>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Connaissance</div><div class=\"ic-desc\">Ce que l'utilisateur sait : mot de passe, code PIN, question secrète.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Possession</div><div class=\"ic-desc\">Ce que l'utilisateur possède : smartphone, clé USB, jeton matériel (YubiKey).</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Inhérence</div><div class=\"ic-desc\">Ce que l'utilisateur est : empreinte digitale, reconnaissance faciale, scan de l'iris.</div></div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 TOTP</div>\n<p>Les applications comme Google Authenticator génèrent des codes <strong>TOTP</strong> (Time-based One-Time Password) qui changent toutes les 30 secondes — le 2FA réduit drastiquement le risque même si le mot de passe est volé.</p>\n</div>\n<h3>Gestion des Identités et des Accès (IAM)</h3>\n<p>L'IAM répond à deux questions : <strong>authentification</strong> (\"Qui êtes-vous ?\") et <strong>autorisation</strong> (\"Que pouvez-vous faire ?\").</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Modèle d'autorisation</th><th>Principe</th></tr></thead>\n<tbody>\n<tr><td><strong>RBAC</strong> (Role-Based)</td><td>Permissions attribuées en fonction du rôle (admin, éditeur, lecteur)</td></tr>\n<tr><td><strong>ABAC</strong> (Attribute-Based)</td><td>Permissions selon des critères dynamiques (heure, localisation, appareil)</td></tr>\n<tr><td><strong>ACL</strong> (Access Control List)</td><td>Liste explicite des permissions par utilisateur ou groupe</td></tr>\n</tbody>\n</table></div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">AWS IAM</span><span class=\"tool-tag\">Azure AD</span><span class=\"tool-tag\">Okta</span><span class=\"tool-tag\">Ping Identity</span><span class=\"tool-tag\">Keycloak</span>\n</div>\n<h2>3.2 — 🔐 Cryptographie Symétrique et Asymétrique</h2>\n<p>La cryptographie protège l'information en la rendant illisible sans la clé adaptée.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td><strong>Plaintext</strong></td><td>Le texte en clair, l'information d'origine</td></tr>\n<tr><td><strong>Ciphertext</strong></td><td>Le résultat du chiffrement, illisible sans la clé</td></tr>\n<tr><td><strong>Cipher</strong></td><td>L'algorithme utilisé pour chiffrer/déchiffrer</td></tr>\n<tr><td><strong>Clé cryptographique</strong></td><td>Paramètre qui détermine le résultat du chiffrement</td></tr>\n</tbody>\n</table></div>\n<div class=\"compare-2\">\n<div class=\"cc-box\">\n<div class=\"cc-title\">🔑 Symétrique (clé partagée)</div>\n<p>Même clé pour chiffrer et déchiffrer. Rapide et simple, mais la clé doit être partagée de manière sécurisée.</p>\n<div class=\"tool-tags\"><span class=\"tool-tag\">AES</span><span class=\"tool-tag\">DES</span><span class=\"tool-tag\">3DES</span><span class=\"tool-tag\">ChaCha20</span></div>\n</div>\n<div class=\"cc-box\">\n<div class=\"cc-title\">🔓 Asymétrique (paire de clés)</div>\n<p>Clé publique pour chiffrer, clé privée pour déchiffrer. Plus lent, mais résout le problème de distribution des clés.</p>\n<div class=\"tool-tags\"><span class=\"tool-tag\">RSA</span><span class=\"tool-tag\">ECC</span><span class=\"tool-tag\">Diffie-Hellman</span><span class=\"tool-tag\">EdDSA</span></div>\n</div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Exemple simplifié (asymétrique)</div>\n<p>Alice veut écrire à Bob → Bob partage sa <strong>clé publique</strong> → Alice chiffre avec cette clé publique → Bob déchiffre avec sa <strong>clé privée</strong>, connue de lui seul.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">⚖️ AES vs RSA</div>\n<p>AES (symétrique) chiffre vite de gros volumes — utilisé pour les disques, le Wi-Fi (WPA2/WPA3), Signal. RSA/ECC (asymétrique) sert surtout à l'échange de clés et aux signatures numériques — TLS combine en réalité les deux : RSA/ECC pour échanger une clé AES, puis AES pour chiffrer les données.</p>\n</div>\n<h2>3.3 — #️⃣ Fonctions de Hachage et Certificats Numériques</h2>\n<p>Une fonction de hachage transforme une entrée en une empreinte de taille fixe, <strong>non réversible</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>Déterminisme</strong></td><td>La même entrée produit toujours la même empreinte</td></tr>\n<tr><td><strong>Effet avalanche</strong></td><td>Une petite modification change complètement l'empreinte</td></tr>\n<tr><td><strong>Résistance aux collisions</strong></td><td>Très improbable que deux entrées donnent la même empreinte</td></tr>\n<tr><td><strong>Non-inversibilité</strong></td><td>Impossible de retrouver l'entrée à partir de l'empreinte</td></tr>\n</tbody>\n</table></div>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">⚠️ Obsolète</div><div class=\"ic-desc\"><strong>MD5</strong> (128 bits) et <strong>SHA-1</strong> (160 bits) — déconseillés aujourd'hui, vulnérables aux collisions.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">✅ Recommandé</div><div class=\"ic-desc\"><strong>SHA-2</strong> (SHA-256) et <strong>SHA-3</strong> — largement utilisés en TLS et blockchain.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">🚀 Moderne</div><div class=\"ic-desc\"><strong>BLAKE2/BLAKE3</strong> — plus rapides, utilisés notamment dans Argon2 pour le hachage de mots de passe.</div></div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🔏 Certificat numérique &amp; PKI</div>\n<p>Un <strong>certificat numérique</strong> prouve l'identité d'une entité dans une transaction électronique (l'équivalent d'un passeport). Il est délivré par une <strong>autorité de certification (CA)</strong>. L'ensemble forme l'infrastructure à clé publique (<strong>PKI</strong>), socle de HTTPS.</p>\n</div>\n<h2>3.4 — 🌐 Sécurité des Réseaux</h2>\n<h3>Pare-feu (Firewall)</h3>\n<p>Barrière de sécurité qui filtre le trafic entre un réseau interne et des réseaux externes non fiables.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Principe</th></tr></thead>\n<tbody>\n<tr><td><strong>Filtrage de paquets</strong></td><td>Filtre selon IP/port/protocole — simple et rapide</td></tr>\n<tr><td><strong>Stateful (à état)</strong></td><td>Garde une trace des connexions actives</td></tr>\n<tr><td><strong>Proxy applicatif</strong></td><td>Inspecte le contenu jusqu'à la couche application</td></tr>\n<tr><td><strong>NGFW</strong> (nouvelle génération)</td><td>Combine DPI, IPS et analyse des menaces en temps réel</td></tr>\n</tbody>\n</table></div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Cisco ASA</span><span class=\"tool-tag\">Fortinet</span><span class=\"tool-tag\">Palo Alto</span><span class=\"tool-tag\">pfSense</span><span class=\"tool-tag\">iptables</span><span class=\"tool-tag\">Cloudflare</span>\n</div>\n<h3>VPN (Virtual Private Network)</h3>\n<p>Crée un tunnel chiffré entre un appareil et un réseau distant, protégeant confidentialité et masquant l'adresse IP réelle.</p>\n<div class=\"compare-2\">\n<div class=\"cc-box\"><div class=\"cc-title\">VPN d'accès à distance</div><p>Connecte un utilisateur individuel à un réseau privé (ex : télétravail).</p></div>\n<div class=\"cc-box\"><div class=\"cc-title\">VPN site à site</div><p>Relie deux réseaux privés entre eux (ex : bureaux distants).</p></div>\n</div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">IPsec</span><span class=\"tool-tag\">SSL/TLS</span><span class=\"tool-tag\">OpenVPN</span><span class=\"tool-tag\">WireGuard</span><span class=\"tool-tag\">L2TP/IPsec</span>\n</div>\n<h3>Protocoles sécurisés : HTTPS et SSH</h3>\n<div class=\"compare-2\">\n<div class=\"cc-box\">\n<div class=\"cc-title\">🌍 HTTPS</div>\n<p>HTTP + chiffrement TLS/SSL. Le serveur prouve son identité via un certificat numérique signé par une CA. Protège les mots de passe, numéros de carte, etc.</p>\n</div>\n<div class=\"cc-box\">\n<div class=\"cc-title\">🖥️ SSH</div>\n<p>Accès distant chiffré à une machine. Authentification par mot de passe ou paire de clés publique/privée. Permet aussi SCP/SFTP et le tunneling.</p>\n</div>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2 — Menaces &amp; Vulnérabilités</a>\n<a class=\"ch-nav-btn\">Ch.4 — Systèmes &amp; Applications →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le 2FA combine deux preuves d'identité issues de :",
+     "options": [
+      {
+       "text": "Catégories différentes (connaissance, possession, inhérence)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "La même catégorie, deux fois",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Toujours un mot de passe et un autre mot de passe",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Uniquement la biométrie",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans la cryptographie asymétrique, on chiffre avec :",
+     "options": [
+      {
+       "text": "La clé privée du destinataire",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "La clé publique du destinataire",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Une clé partagée par tous",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Aucune clé n'est nécessaire",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle propriété d'une fonction de hachage garantit qu'une petite modification change tout le résultat ?",
+     "options": [
+      {
+       "text": "Le déterminisme",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "L'effet avalanche",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "La non-inversibilité",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "La rapidité",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Un pare-feu \"stateful\" se distingue d'un simple filtrage de paquets car il :",
+     "options": [
+      {
+       "text": "Bloque tout le trafic par défaut",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Garde une trace de l'état des connexions actives",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Fonctionne uniquement sur les serveurs cloud",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Ne filtre que les emails",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "HTTPS garantit l'authenticité du serveur grâce à :",
+     "options": [
+      {
+       "text": "Un VPN obligatoire",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un certificat numérique signé par une autorité de certification",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un pare-feu personnel",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une clé symétrique partagée publiquement",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "Sécurité des Systèmes et des Applications",
+   "subtitle": "Gestion des utilisateurs et des permissions, mise à jour des correctifs, développement sécurisé (Secure Coding), tests de sécurité (pentesting, audits), et sécurité des bases de données.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Maîtriser les modèles de contrôle d'accès (DAC, MAC, RBAC, ABAC)<br/>\n        • Comprendre l'importance et le processus du patch management<br/>\n        • Connaître les principes du développement sécurisé et de l'OWASP Top Ten<br/>\n        • Différencier pentesting et audit de sécurité<br/>\n        • Appliquer le contrôle d'accès et le chiffrement aux bases de données</p>\n</div>\n<h2>4.1 — 💻 Sécurité des Systèmes d'Exploitation</h2>\n<h3>Gestion des utilisateurs et des permissions</h3>\n<p>Chaque utilisateur (UID) et groupe (GID) dispose de permissions définies : <strong>lecture</strong>, <strong>écriture</strong>, <strong>exécution</strong>.</p>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">DAC</div><div class=\"ic-desc\">Discretionary Access Control — le propriétaire de la ressource décide qui y accède.</div><div class=\"ic-ex\">Systèmes POSIX (Linux, Unix)</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">MAC</div><div class=\"ic-desc\">Mandatory Access Control — permissions imposées par une politique centralisée.</div><div class=\"ic-ex\">SELinux, AppArmor</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">RBAC</div><div class=\"ic-desc\">Role-Based — permissions attribuées selon le rôle de l'utilisateur.</div><div class=\"ic-ex\">Admin / Invité</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">ABAC</div><div class=\"ic-desc\">Attribute-Based — permissions selon des critères dynamiques.</div><div class=\"ic-ex\">Accès limité aux heures de bureau</div></div>\n</div>\n<h3>Mise à jour des correctifs (Patch Management)</h3>\n<p>Ignorer les correctifs expose à des failles connues — comme <strong>Heartbleed</strong>, <strong>Shellshock</strong> ou <strong>EternalBlue</strong>, toutes corrigées par des patchs.</p>\n<div class=\"process-flow\">\n<div class=\"process-step\"><div class=\"ps-num\">1</div><div class=\"ps-name\">Identification</div><div class=\"ps-desc\">Suivre les bulletins de sécurité</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">2</div><div class=\"ps-name\">Test</div><div class=\"ps-desc\">Pré-production avant déploiement</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">3</div><div class=\"ps-name\">Planification</div><div class=\"ps-desc\">Prioriser les correctifs critiques</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">4</div><div class=\"ps-name\">Déploiement</div><div class=\"ps-desc\">Approche progressive, automatisée</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">5</div><div class=\"ps-name\">Validation</div><div class=\"ps-desc\">Vérifier et surveiller</div></div>\n</div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Windows Update / WSUS</span><span class=\"tool-tag\">SCCM</span><span class=\"tool-tag\">apt / yum</span><span class=\"tool-tag\">Ansible</span><span class=\"tool-tag\">AWS Systems Manager</span>\n</div>\n<h2>4.2 — 🧑‍💻 Sécurité des Applications</h2>\n<h3>Développement sécurisé (Secure Coding)</h3>\n<p>Intégrer la sécurité dès la conception évite des failles critiques : injection SQL, XSS, DoS, fuites de données.</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🔁 Cycle de vie du développement sécurisé (SDL)</div>\n<p><strong>Conception</strong> (modéliser les menaces) → <strong>Codage</strong> (bonnes pratiques + analyse statique) → <strong>Tests</strong> (unitaires, intégration, pénétration) → <strong>Déploiement</strong> (environnement sécurisé) → <strong>Maintenance</strong> (correctifs continus).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📋 Normes de référence</div>\n<p><strong>OWASP Top Ten</strong> — les 10 vulnérabilités web les plus critiques (injection SQL, XSS, CSRF…). <strong>ISO/IEC 27034</strong> — sécurité des applications. <strong>NIST SP 800-53</strong> — contrôles de sécurité.</p>\n</div>\n<h3>Tests de sécurité : pentesting et audits</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Pentesting</th><th>Audit de sécurité</th></tr></thead>\n<tbody>\n<tr><td><strong>Approche</strong></td><td>Simule une attaque réelle</td><td>Examine politiques et configurations</td></tr>\n<tr><td><strong>Objectif</strong></td><td>Exploiter activement les failles</td><td>Vérifier la conformité aux bonnes pratiques</td></tr>\n<tr><td><strong>Étapes</strong></td><td>Reconnaissance → analyse → exploitation → post-exploitation → rapport</td><td>Collecte → examen config → analyse logs → revue du code → rapport</td></tr>\n</tbody>\n</table></div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Burp Suite</span><span class=\"tool-tag\">OWASP ZAP</span><span class=\"tool-tag\">Metasploit</span><span class=\"tool-tag\">Nmap</span><span class=\"tool-tag\">Nessus</span><span class=\"tool-tag\">SonarQube</span><span class=\"tool-tag\">SQLmap</span><span class=\"tool-tag\">Hydra</span>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">🕵️ Types de pentesting</div>\n<p><strong>Externe</strong> (depuis Internet) · <strong>Interne</strong> (depuis le réseau) · <strong>Test aveugle</strong> (peu d'infos préalables) · <strong>Double aveugle</strong> (ni l'équipe sécurité ni l'équipe dev n'est informée).</p>\n</div>\n<h2>4.3 — 🗄️ Sécurité des Bases de Données</h2>\n<h3>Contrôle d'accès</h3>\n<p>Les bases de données contiennent souvent des données personnelles, financières ou commerciales sensibles — un contrôle d'accès rigoureux limite l'accès non autorisé, les modifications involontaires et les attaques (injection SQL).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Modèle</th><th>Principe</th></tr></thead>\n<tbody>\n<tr><td><strong>DAC</strong></td><td>Le propriétaire des données décide des accès</td></tr>\n<tr><td><strong>MAC</strong></td><td>Étiquettes de sécurité imposées centralement (ex : \"Confidentiel\")</td></tr>\n<tr><td><strong>RBAC</strong></td><td>Permissions liées aux rôles (\"Administrateur\" vs \"Utilisateur standard\")</td></tr>\n<tr><td><strong>ABAC</strong></td><td>Critères dynamiques (heure, localisation, type d'appareil)</td></tr>\n</tbody>\n</table></div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">MySQL/MariaDB</span><span class=\"tool-tag\">PostgreSQL</span><span class=\"tool-tag\">SQL Server</span><span class=\"tool-tag\">Active Directory</span><span class=\"tool-tag\">LDAP</span>\n</div>\n<h3>Chiffrement des données</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Au repos</div><div class=\"ic-desc\">Protège les données stockées sur disque.</div><div class=\"ic-ex\">Transparent Data Encryption (SQL Server, Oracle)</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">En transit</div><div class=\"ic-desc\">Protège les données pendant leur transmission.</div><div class=\"ic-ex\">TLS/SSL entre application et base</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Champs spécifiques</div><div class=\"ic-desc\">Seules certaines colonnes sensibles sont chiffrées.</div><div class=\"ic-ex\">pgcrypto (PostgreSQL)</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Homomorphe</div><div class=\"ic-desc\">Permet de calculer sur des données chiffrées sans les déchiffrer (encore expérimental).</div></div>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3 — Sécurité Informatique de Base</a>\n<a class=\"ch-nav-btn\">Ch.5 — Gestion des Incidents →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le modèle MAC (Mandatory Access Control) se caractérise par :",
+     "options": [
+      {
+       "text": "Le propriétaire décide librement des accès",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une politique centralisée imposée par l'administrateur",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "L'absence totale de permissions",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des permissions choisies par chaque employé",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Pourquoi le patch management est-il important ?",
+     "options": [
+      {
+       "text": "Pour ralentir volontairement les systèmes",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Pour corriger des vulnérabilités connues avant qu'elles soient exploitées",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Uniquement pour ajouter des fonctionnalités",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Ce n'est pas important si l'antivirus est à jour",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "L'OWASP Top Ten est :",
+     "options": [
+      {
+       "text": "Une liste des 10 meilleurs antivirus",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une liste des 10 vulnérabilités web les plus critiques",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un protocole de chiffrement",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une certification ISO",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la différence principale entre un pentest et un audit de sécurité ?",
+     "options": [
+      {
+       "text": "Le pentest exploite activement les failles, l'audit examine les pratiques et configurations",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Il n'y a aucune différence",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "L'audit est toujours plus rapide",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le pentest ne concerne que les bases de données",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le chiffrement \"en transit\" protège les données :",
+     "options": [
+      {
+       "text": "Stockées sur le disque dur",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Pendant leur transmission entre la base et l'application",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Uniquement dans les sauvegardes",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Jamais, ce type n'existe pas",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Gestion des Incidents de Sécurité",
+   "subtitle": "Détecter un incident (SIEM, analyse de logs), y répondre méthodiquement (identification, confinement, éradication, récupération, leçons apprises), enquêter via la forensique informatique, et assurer la continuité d'activité.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Comprendre le rôle d'un SIEM et de l'analyse des logs dans la détection<br/>\n        • Maîtriser les 5 étapes de la réponse à un incident<br/>\n        • Connaître les bases de la forensique informatique et ses outils<br/>\n        • Distinguer Plan de Continuité des Activités (PCA) et Plan de Reprise après Sinistre (PRA)</p>\n</div>\n<h2>5.1 — 🔍 Détection des Incidents</h2>\n<h3>SIEM (Security Information and Event Management)</h3>\n<p>Un SIEM combine deux fonctions : <strong>SIM</strong> (collecte/stockage des données) et <strong>SEM</strong> (surveillance en temps réel). Il agrège logs serveurs, pare-feu, applications, et alertes de sécurité, puis <strong>corrèle</strong> les événements pour repérer les menaces.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Exemple de corrélation</div>\n<p>Une tentative de connexion échouée suivie d'une élévation de privilèges suspecte peut indiquer une attaque par force brute. Un trafic réseau anormal venant d'une IP interne peut signaler un mouvement latéral d'un attaquant.</p>\n</div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Splunk</span><span class=\"tool-tag\">IBM QRadar</span><span class=\"tool-tag\">ArcSight</span><span class=\"tool-tag\">Elastic SIEM</span><span class=\"tool-tag\">Microsoft Sentinel</span>\n</div>\n<h3>Analyse des logs</h3>\n<p>Les journaux d'événements enregistrent automatiquement les activités, erreurs, accès et performances — une mine d'informations pour repérer les anomalies.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de log</th><th>Exemple de source</th></tr></thead>\n<tbody>\n<tr><td>Logs serveurs</td><td>/var/log/auth.log (Linux), Event Viewer (Windows)</td></tr>\n<tr><td>Logs pare-feu</td><td>Connexions bloquées/autorisées</td></tr>\n<tr><td>Logs applicatifs</td><td>Apache/Nginx, requêtes SQL</td></tr>\n<tr><td>Logs d'authentification</td><td>Tentatives de connexion, changements de mot de passe</td></tr>\n</tbody>\n</table></div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">ELK Stack</span><span class=\"tool-tag\">Graylog</span><span class=\"tool-tag\">OSSEC</span><span class=\"tool-tag\">Wireshark</span>\n</div>\n<h2>5.2 — 🚨 Réponse aux Incidents</h2>\n<p>Cinq étapes structurent toute réponse efficace à un incident de sécurité :</p>\n<div class=\"process-flow\">\n<div class=\"process-step\"><div class=\"ps-num\">1</div><div class=\"ps-name\">Identification</div><div class=\"ps-desc\">Confirmer l'incident, en comprendre la nature</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">2</div><div class=\"ps-name\">Confinement</div><div class=\"ps-desc\">Isoler pour stopper la propagation</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">3</div><div class=\"ps-name\">Éradication</div><div class=\"ps-desc\">Supprimer la menace complètement</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">4</div><div class=\"ps-name\">Récupération</div><div class=\"ps-desc\">Restaurer les systèmes en sécurité</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-num\">5</div><div class=\"ps-name\">Post-Incident</div><div class=\"ps-desc\">Tirer les leçons apprises</div></div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Exemple concret — exfiltration de données</div>\n<p><strong>Identification</strong> : l'analyse des logs réseau révèle un trafic anormal vers une IP externe. <strong>Confinement</strong> : le serveur compromis est déconnecté immédiatement. <strong>Éradication</strong> : le malware est supprimé, les correctifs appliqués. <strong>Récupération</strong> : le serveur restauré est testé puis remis en ligne. <strong>Post-incident</strong> : une formation anti-phishing est rendue obligatoire pour tous les employés.</p>\n</div>\n<h2>5.3 — 🔬 Forensique Informatique</h2>\n<p>La forensique numérique consiste à <strong>collecter, analyser et préserver</strong> des preuves numériques pour comprendre un incident, identifier les responsables, et améliorer les défenses futures.</p>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Acquisition</div><div class=\"ic-desc\">Création d'images forensiques des disques.</div><div class=\"ic-ex\">Autopsy, EnCase, FTK Imager</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Analyse mémoire</div><div class=\"ic-desc\">Examen de la RAM capturée.</div><div class=\"ic-ex\">Volatility, Rekall</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Analyse réseau</div><div class=\"ic-desc\">Capture et inspection du trafic.</div><div class=\"ic-ex\">Wireshark, tcpdump</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Détection malware</div><div class=\"ic-desc\">Analyse comportementale des fichiers suspects.</div><div class=\"ic-ex\">Cuckoo Sandbox, VirusTotal</div></div>\n</div>\n<h2>5.4 — 🔄 Plan de Continuité (PCA) et de Reprise (PRA)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>PCA</th><th>PRA</th></tr></thead>\n<tbody>\n<tr><td><strong>Portée</strong></td><td>Maintenir les activités essentielles pendant la crise</td><td>Sous-ensemble du PCA, focalisé sur la restauration IT</td></tr>\n<tr><td><strong>Objectif</strong></td><td>Minimiser les interruptions de service</td><td>Restaurer systèmes/données dans un délai acceptable</td></tr>\n</tbody>\n</table></div>\n<h3>Cas d'utilisation typiques</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Ransomware</div><div class=\"ic-desc\">PCA : basculer vers un site de secours. PRA : restaurer depuis les sauvegardes et éliminer le malware.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Catastrophe naturelle</div><div class=\"ic-desc\">PCA : activer un centre de reprise. PRA : remplacer les équipements endommagés.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Panne matérielle</div><div class=\"ic-desc\">PCA : rediriger vers des serveurs de secours. PRA : remplacer les composants défaillants.</div></div>\n</div>\n<div class=\"tool-tags\">\n<span class=\"tool-tag\">Veeam</span><span class=\"tool-tag\">Acronis</span><span class=\"tool-tag\">AWS Backup</span><span class=\"tool-tag\">ServiceNow</span><span class=\"tool-tag\">PagerDuty</span>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.4 — Systèmes &amp; Applications</a>\n<a class=\"ch-nav-btn\">Ch.6 — Conformité &amp; Réglementations →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Que signifie SIEM ?",
+     "options": [
+      {
+       "text": "Security Information and Event Management",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "System Internal Encryption Method",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Secure Internet Email Module",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Standard Incident Evaluation Metric",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la 2e étape de la réponse à un incident, après l'identification ?",
+     "options": [
+      {
+       "text": "Récupération",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Confinement",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Éradication",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Post-incident",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La forensique informatique sert principalement à :",
+     "options": [
+      {
+       "text": "Accélérer le réseau",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Collecter et analyser des preuves numériques après un incident",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Remplacer le firewall",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Créer des mots de passe",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quel outil est utilisé pour l'analyse de la mémoire RAM en forensique ?",
+     "options": [
+      {
+       "text": "Wireshark",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Volatility",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Nessus",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Splunk",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le PRA (Plan de Reprise après Sinistre) est :",
+     "options": [
+      {
+       "text": "Identique au PCA",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un sous-ensemble du PCA, focalisé sur la restauration IT",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Une norme ISO",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un type de malware",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre5.html"
+  },
+  {
+   "number": 6,
+   "title": "Conformité et Réglementations",
+   "subtitle": "Les cadres légaux et normatifs qui structurent la cybersécurité : RGPD, directive NIS/NIS2, normes sectorielles PCI DSS et HIPAA, ISO/IEC 27001, et le NIST Cybersecurity Framework.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Connaître les 6 principes fondamentaux du RGPD et ses sanctions<br/>\n        • Comprendre les objectifs de la directive NIS/NIS2 en Europe<br/>\n        • Distinguer PCI DSS (paiement) et HIPAA (santé)<br/>\n        • Comprendre la structure d'ISO/IEC 27001 et du NIST Cybersecurity Framework</p>\n</div>\n<h2>6.1 — 🇪🇺 RGPD (Règlement Général sur la Protection des Données)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Adopté en 2016, en vigueur depuis le <strong>25 mai 2018</strong>, le RGPD protège les données personnelles des citoyens de l'UE — et s'applique à toute organisation traitant ces données, même hors UE.</p>\n</div>\n<h3>Les 6 principes fondamentaux</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">1</div><div class=\"ic-desc\"><strong>Légalité, loyauté, transparence</strong> — collecte légale et claire pour la personne concernée.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">2</div><div class=\"ic-desc\"><strong>Finalité limitée</strong> — données collectées pour un objectif précis et légitime.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">3</div><div class=\"ic-desc\"><strong>Minimisation</strong> — ne collecter que les données strictement nécessaires.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">4</div><div class=\"ic-desc\"><strong>Exactitude</strong> — données exactes, mises à jour si besoin.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">5</div><div class=\"ic-desc\"><strong>Limitation de la conservation</strong> — pas de conservation au-delà du nécessaire.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">6</div><div class=\"ic-desc\"><strong>Intégrité et confidentialité</strong> — sécurité contre tout traitement non autorisé.</div></div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">💰 Sanctions</div>\n<p>Jusqu'à <strong>20 millions d'euros</strong> ou <strong>4% du chiffre d'affaires annuel mondial</strong> (le montant le plus élevé). Exemple réel : 50M€ infligés à Google par la CNIL en 2019.</p>\n</div>\n<h2>6.2 — 🏛️ Directive NIS / NIS2</h2>\n<p>La directive <strong>NIS</strong> (Network and Information Systems, 2016) renforce la cybersécurité des infrastructures critiques en Europe (énergie, transport, santé, finance).</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🆕 NIS2 (décembre 2022) — ce qui change</div>\n<p>• Élargissement à de nouveaux secteurs (administration publique, gestion des déchets, chimie) et aux PME<br/>\n        • Responsabilisation accrue des dirigeants d'entreprise<br/>\n        • Sanctions plus strictes et harmonisées à l'échelle de l'UE<br/>\n        • Partage d'informations renforcé entre États membres</p>\n</div>\n<h2>6.3 — 💳 Normes Sectorielles : PCI DSS et HIPAA</h2>\n<div class=\"reg-card\">\n<div class=\"rc-meta\">Industrie des cartes bancaires</div>\n<div class=\"rc-title\">PCI DSS</div>\n<p>Protège les données des cartes de paiement (numéro, expiration, code de sécurité). Repose sur <strong>12 exigences</strong> réparties en 6 catégories (réseau sécurisé, protection des données, gestion des vulnérabilités, contrôle d'accès, surveillance, politique de sécurité). 4 niveaux de conformité selon le volume annuel de transactions.</p>\n</div>\n<div class=\"reg-card\">\n<div class=\"rc-meta\">Secteur de la santé · États-Unis · 1996</div>\n<div class=\"rc-title\">HIPAA</div>\n<p>Protège les informations de santé personnelles (PHI). S'applique aux hôpitaux, cabinets médicaux, assureurs. 4 règles principales : <strong>Confidentialité</strong> (droits des patients), <strong>Sécurité</strong> (protections administratives/physiques/techniques), <strong>Notification des violations</strong>, <strong>Identifiants nationaux</strong>. Sanctions : 100$ à 50 000$ par violation, plafond annuel de 1,5M$.</p>\n</div>\n<h2>6.4 — 📐 ISO/IEC 27001 et NIST Cybersecurity Framework</h2>\n<h3>ISO/IEC 27001</h3>\n<p>Norme internationale définissant les exigences pour un <strong>Système de Management de la Sécurité de l'Information (SMSI)</strong>. Structure en clauses obligatoires (contexte, leadership, planification, support, opération, évaluation, amélioration) + une <strong>Annexe A</strong> de 114 contrôles répartis en 14 catégories. Certification valable 3 ans.</p>\n<h3>NIST Cybersecurity Framework (CSF)</h3>\n<p>Cadre développé par le NIST (USA), non obligatoire mais largement adopté, structuré en <strong>5 fonctions principales</strong> :</p>\n<div class=\"process-flow\">\n<div class=\"process-step\"><div class=\"ps-name\">Identifier</div><div class=\"ps-desc\">Cartographie des actifs et risques</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-name\">Protéger</div><div class=\"ps-desc\">Contrôle d'accès, chiffrement, formation</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-name\">Détecter</div><div class=\"ps-desc\">Surveillance, détection d'intrusion</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-name\">Répondre</div><div class=\"ps-desc\">Plans de réponse aux incidents</div></div>\n<div class=\"process-arrow\">→</div>\n<div class=\"process-step\"><div class=\"ps-name\">Récupérer</div><div class=\"ps-desc\">PCA, restauration des données</div></div>\n</div>\n<p>Le NIST CSF définit aussi <strong>4 niveaux de maturité</strong> : Partiel, Géré, Répété, Optimisé.</p>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.5 — Gestion des Incidents</a>\n<a class=\"ch-nav-btn\">Ch.7 — Bonnes Pratiques →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Depuis quelle date le RGPD est-il en vigueur ?",
+     "options": [
+      {
+       "text": "1er janvier 2016",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "25 mai 2018",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "1er janvier 2020",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "25 mai 2022",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La directive NIS2 (2022) a notamment pour effet de :",
+     "options": [
+      {
+       "text": "Réduire le nombre de secteurs concernés",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Élargir le champ d'application et responsabiliser les dirigeants",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Supprimer toutes les sanctions",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Ne concerner que les banques",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le PCI DSS protège principalement :",
+     "options": [
+      {
+       "text": "Les dossiers médicaux",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les données des cartes de paiement",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Les infrastructures énergétiques",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les mots de passe Wi-Fi",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "L'ISO/IEC 27001 définit les exigences pour :",
+     "options": [
+      {
+       "text": "Un système de paiement sécurisé",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un Système de Management de la Sécurité de l'Information (SMSI)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un antivirus",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un protocole VPN",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans le NIST CSF, quelle fonction concerne la mise en place de contrôle d'accès et de chiffrement ?",
+     "options": [
+      {
+       "text": "Identifier",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Protéger",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Détecter",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Récupérer",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre6.html"
+  },
+  {
+   "number": 7,
+   "title": "Bonnes Pratiques en Cybersécurité",
+   "subtitle": "Le dernier module, très opérationnel : transformer les utilisateurs en première ligne de défense, gérer les mots de passe intelligemment, et garantir des sauvegardes fiables avec la règle 3-2-1.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du module</div>\n<p>• Connaître les méthodes de formation à la sécurité (simulations de phishing, micro-learning)<br/>\n        • Comprendre le principe du moindre privilège et les politiques de sécurité clés<br/>\n        • Savoir pourquoi les gestionnaires de mots de passe remplacent les anciennes règles de renouvellement<br/>\n        • Appliquer la règle de sauvegarde 3-2-1(-1-0) et comprendre RTO/RPO</p>\n</div>\n<h2>7.1 — 🧑‍🏫 Sensibilisation des Utilisateurs</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎯 L'objectif</div>\n<p>Transformer les utilisateurs de <strong>« cibles potentielles »</strong> en <strong>« capteurs de menaces »</strong> — la première ligne de défense plutôt que le maillon faible.</p>\n</div>\n<h3>Formation à la sécurité</h3>\n<div class=\"info-grid\">\n<div class=\"info-card\"><div class=\"ic-tag\">Simulations de phishing</div><div class=\"ic-desc\">Tests réguliers et non punitifs pour apprendre à repérer les indices (expéditeur suspect, fautes, urgence).</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Micro-learning</div><div class=\"ic-desc\">Modules courts (3-5 min) et interactifs tout au long de l'année, plus efficaces qu'une session annuelle.</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Hygiène numérique</div><div class=\"ic-desc\">Gestionnaire de mots de passe, MFA même sur comptes personnels, verrouillage de session (Windows+L).</div></div>\n<div class=\"info-card\"><div class=\"ic-tag\">Signalement</div><div class=\"ic-desc\">Rendre le signalement d'un doute simple et valorisant, sans peur de la sanction.</div></div>\n</div>\n<h3>Politiques de sécurité</h3>\n<p>Le principe : <strong>« Comprendre, Appliquer, Vérifier »</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Politique</th><th>Contenu</th></tr></thead>\n<tbody>\n<tr><td><strong>Charte informatique</strong></td><td>Droits et devoirs sur l'usage du matériel, d'internet, des réseaux sociaux</td></tr>\n<tr><td><strong>Moindre privilège (PoLP)</strong></td><td>Accès limité aux seules ressources strictement nécessaires</td></tr>\n<tr><td><strong>Mobilité &amp; télétravail</strong></td><td>VPN obligatoire sur Wi-Fi public, chiffrement des disques portables</td></tr>\n<tr><td><strong>BYOD</strong></td><td>Usage encadré des appareils personnels, isolation des données pro</td></tr>\n<tr><td><strong>Bureau propre (Clean Desk)</strong></td><td>Rangement des documents sensibles et clés USB en fin de journée</td></tr>\n</tbody>\n</table></div>\n<h2>7.2 — 🔑 Gestion des Mots de Passe</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🔐 Pourquoi un gestionnaire de mots de passe ?</div>\n<p>Un humain ne peut pas retenir des dizaines de mots de passe complexes et uniques. Le gestionnaire génère des secrets aléatoires pour chaque service, empêchant le <strong>credential stuffing</strong> (la fuite d'un mot de passe ne compromet pas les autres comptes). Il protège aussi contre le phishing : il ne remplit jamais les identifiants sur une URL frauduleuse.</p>\n</div>\n<h3>Politiques de renouvellement : ce qui a changé</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Ancienne pratique</th><th>Nouvelle approche</th></tr></thead>\n<tbody>\n<tr><td>Changer le mot de passe tous les 90 jours</td><td>Changer seulement en cas de suspicion de compromission</td></tr>\n<tr><td>Suites de caractères aléatoires difficiles à retenir</td><td>Phrases de passe longues (12-15+ caractères), ex : <em>LeChatBleuMangeUnePomme!</em></td></tr>\n<tr><td>Le mot de passe comme seule protection</td><td>MFA activé : un mot de passe volé devient inutile sans le second facteur</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pourquoi l'expiration forcée a été abandonnée</div>\n<p>Elle pousse les utilisateurs à créer des suites prévisibles (<em>Ete2025!</em> puis <em>Automne2025!</em>) — l'ANSSI et le NIST recommandent désormais la longueur et le MFA plutôt que le changement systématique.</p>\n</div>\n<p>Outil utile : <strong>Have I Been Pwned</strong> — vérifie si vos identifiants apparaissent dans une fuite de données connue.</p>\n<h2>7.3 — 💾 Sauvegarde et Restauration des Données</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🥇 La règle 3-2-1 — Standard d'or</div>\n<p>La sauvegarde est l'ultime rempart contre les ransomwares et pannes matérielles.</p>\n</div>\n<div class=\"rule-321\">\n<div class=\"r-step\"><div class=\"r-num\">3</div><div class=\"r-label\">copies des données (l'originale + 2 sauvegardes)</div></div>\n<div class=\"r-step\"><div class=\"r-num\">2</div><div class=\"r-label\">supports différents (ex : NAS local + cloud/bande)</div></div>\n<div class=\"r-step\"><div class=\"r-num\">1</div><div class=\"r-label\">copie hors-site, dans un lieu géographique différent</div></div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🆕 Évolution : 3-2-1-1-0</div>\n<p>On ajoute aujourd'hui <strong>1 copie immuable</strong> (hors-ligne / protégée contre l'effacement, \"air-gap\") et <strong>0 erreur</strong> (vérification automatique de l'intégrité).</p>\n</div>\n<h3>Tester la restauration</h3>\n<p><em>« Une sauvegarde dont la restauration n'a jamais été testée est une sauvegarde qui n'existe potentiellement pas. »</em></p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Indicateur</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td><strong>RTO</strong> (Recovery Time Objective)</td><td>Combien de temps l'entreprise peut-elle rester à l'arrêt ?</td></tr>\n<tr><td><strong>RPO</strong> (Recovery Point Objective)</td><td>Quelle quantité de données peut-on se permettre de perdre ?</td></tr>\n</tbody>\n</table></div>\n<p>Tester la restauration granulaire (un fichier) ET complète (un système entier) régulièrement ; documenter le PRA pour qu'il soit actionnable même en l'absence de l'administrateur principal.</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏆 Et maintenant ?</div>\n<p>Tu as parcouru les 7 modules du cours : des fondations (menaces, CIA) à la pratique quotidienne (mots de passe, sauvegardes). Direction le <a>centre d'exercices</a> pour t'entraîner sur l'ensemble du programme.</p>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.6 — Conformité &amp; Réglementations</a>\n<a class=\"ch-nav-btn\">Exercices →</a>\n<a class=\"ch-nav-btn\">Simulateur d'examen →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le principe du moindre privilège (PoLP) consiste à :",
+     "options": [
+      {
+       "text": "Donner tous les droits à tout le monde",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "N'accorder que les accès strictement nécessaires",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Bloquer tous les accès réseau",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Supprimer les comptes inactifs uniquement",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Pourquoi un gestionnaire de mots de passe protège-t-il aussi contre le phishing ?",
+     "options": [
+      {
+       "text": "Il bloque tous les emails",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il ne remplit pas les identifiants sur une URL frauduleuse",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Il supprime les virus",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il n'a aucun lien avec le phishing",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "L'expiration forcée des mots de passe tous les 90 jours a été abandonnée car :",
+     "options": [
+      {
+       "text": "Elle pousse à créer des suites prévisibles",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Elle coûte trop cher",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Elle est interdite par le RGPD",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Elle ralentit les serveurs",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans la règle 3-2-1, le \"1\" représente :",
+     "options": [
+      {
+       "text": "1 seul mot de passe",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "1 copie hors-site",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "1 seul type de support",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "1 sauvegarde par an",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le RPO (Recovery Point Objective) mesure :",
+     "options": [
+      {
+       "text": "Le temps d'arrêt maximal acceptable",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "La quantité de données qu'on accepte de perdre",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Le nombre de sauvegardes par jour",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le coût d'une sauvegarde",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/cybersec/chapitres/chapitre7.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "mcq",
+   "text": "Que signifie le « A » dans la triade CIA ?",
+   "options": [
+    {
+     "text": "Authentication",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Availability (Disponibilité)",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Authorization",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Access",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. CIA = Confidentiality, Integrity, Availability — Confidentialité, Intégrité, Disponibilité.",
+   "label": "Q1 · Mod.1 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle attaque (2010) ciblait les centrifugeuses nucléaires iraniennes ?",
+   "options": [
+    {
+     "text": "Stuxnet",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "WannaCry",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "ILOVEYOU",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "NotPetya",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Stuxnet — première cyberattaque d'État confirmée.",
+   "label": "Q2 · Mod.1 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Un ransomware sert principalement à :",
+   "options": [
+    {
+     "text": "Chiffrer les fichiers et exiger une rançon",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Espionner silencieusement",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Ralentir le réseau Wi-Fi uniquement",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Voler des mots de passe sans rien chiffrer",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le ransomware verrouille l'accès aux données jusqu'au paiement.",
+   "label": "Q3 · Mod.2 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Le \"spear phishing\" cible :",
+   "options": [
+    {
+     "text": "Un individu ou une organisation spécifique",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Le grand public au hasard",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Uniquement les banques",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Uniquement les réseaux sociaux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Contrairement au phishing de masse, le spear phishing est personnalisé.",
+   "label": "Q4 · Mod.2 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Lequel est un algorithme de chiffrement symétrique ?",
+   "options": [
+    {
+     "text": "AES",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "RSA",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "ECC",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Diffie-Hellman",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A — AES. RSA, ECC et Diffie-Hellman sont asymétriques.",
+   "label": "Q5 · Mod.3 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Une fonction de hachage est :",
+   "options": [
+    {
+     "text": "Non réversible",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Réversible avec la bonne clé",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Identique au chiffrement symétrique",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Utilisée uniquement pour les VPN",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Impossible de retrouver l'entrée d'origine à partir de l'empreinte.",
+   "label": "Q6 · Mod.3 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "RBAC signifie :",
+   "options": [
+    {
+     "text": "Role-Based Access Control",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Random-Based Access Control",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Rule-Based Authentication Control",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Remote-Based Access Connection",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Les permissions dépendent du rôle attribué.",
+   "label": "Q7 · Mod.4 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Le pentesting \"en double aveugle\" signifie que :",
+   "options": [
+    {
+     "text": "Ni l'équipe sécurité ni les développeurs ne sont informés",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Le testeur connaît tout à l'avance",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "C'est forcément un test externe",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "C'est un audit et non un test d'intrusion",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le double aveugle teste aussi la réactivité de l'équipe sécurité.",
+   "label": "Q8 · Mod.4 ·",
+   "section": "qcm",
+   "level": "hard"
+  },
+  {
+   "type": "mcq",
+   "text": "Un SIEM sert à :",
+   "options": [
+    {
+     "text": "Centraliser et corréler les événements de sécurité",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Remplacer un pare-feu",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Chiffrer les bases de données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Gérer les mots de passe",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. SIEM = Security Information and Event Management.",
+   "label": "Q9 · Mod.5 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "La 3e étape de la réponse à un incident est :",
+   "options": [
+    {
+     "text": "Identification",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Confinement",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Éradication",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Récupération",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ C. Ordre : Identification → Confinement → Éradication → Récupération → Post-Incident.",
+   "label": "Q10 · Mod.5 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Le RGPD s'applique :",
+   "options": [
+    {
+     "text": "À toute organisation traitant des données de citoyens de l'UE",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Uniquement aux entreprises basées en France",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Uniquement aux banques",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Uniquement aux États-Unis",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Même une entreprise hors UE doit s'y conformer si elle traite des données européennes.",
+   "label": "Q11 · Mod.6 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "ISO/IEC 27001 concerne :",
+   "options": [
+    {
+     "text": "La mise en place d'un SMSI",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Les cartes bancaires uniquement",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Les VPN uniquement",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Le RGPD uniquement",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. SMSI = Système de Management de la Sécurité de l'Information.",
+   "label": "Q12 · Mod.6 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "La règle 3-2-1 recommande :",
+   "options": [
+    {
+     "text": "3 copies, 2 supports, 1 copie hors-site",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "3 mots de passe différents",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "2 pare-feux et 1 antivirus",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "1 sauvegarde par an",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Standard d'or pour éviter les points de défaillance uniques.",
+   "label": "Q13 · Mod.7 ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Pourquoi le renouvellement fréquent de mot de passe a été abandonné ?",
+   "options": [
+    {
+     "text": "Il pousse à créer des suites prévisibles",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "C'est plus rapide",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Le RGPD l'exige",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Il évite un gestionnaire de mots de passe",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. ANSSI et NIST privilégient longueur + MFA à l'expiration forcée.",
+   "label": "Q14 · Mod.7 ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce que le \"credential stuffing\" ?",
+   "options": [
+    {
+     "text": "Réutiliser des identifiants volés sur d'autres comptes",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Deviner un mot de passe au hasard",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Intercepter du trafic Wi-Fi",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Créer un faux certificat",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Un secret unique par service (gestionnaire) rend cette attaque inefficace.",
+   "label": "Q15 · Mixte ·",
+   "section": "qcm",
+   "level": "hard"
+  },
+  {
+   "type": "mcq",
+   "text": "Quel principe limite l'accès aux seules ressources strictement nécessaires ?",
+   "options": [
+    {
+     "text": "Principe du moindre privilège",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "RGPD",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "SIEM",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Règle 3-2-1",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Réduit l'impact en cas de compromission d'un compte.",
+   "label": "Q16 · Mixte ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce qu'une vulnérabilité en cybersécurité ?",
+   "options": [
+    {
+     "text": "Un logiciel malveillant",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un défaut dans un système qui peut être exploité par un attaquant",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une attaque contre un système",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une mesure de sécurité",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. Une vulnérabilité est une faiblesse ou un défaut dans un système susceptible d'être exploité.",
+   "label": "Q17 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est une des principales causes de failles de sécurité dans les systèmes d'information ?",
+   "options": [
+    {
+     "text": "L'utilisation de technologies de pointe",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "L'ignorance des employés en matière de sécurité",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Les mises à jour régulières des logiciels",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "L'utilisation de mots de passe forts",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. Le facteur humain reste la principale cause de failles : phishing, mauvais mots de passe, etc.",
+   "label": "Q18 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce qu'une vulnérabilité de type \"Remote Code Execution\" (RCE) ?",
+   "options": [
+    {
+     "text": "Une vulnérabilité permettant d'exécuter du code à distance",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de voler des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de déchiffrer des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de bloquer un service",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Une RCE est parmi les vulnérabilités les plus critiques — elle donne un contrôle total à distance.",
+   "label": "Q19 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce qu'une vulnérabilité de type \"insufficient data validation\" ?",
+   "options": [
+    {
+     "text": "Une vulnérabilité permettant de voler des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de déchiffrer des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant d'exécuter du code à distance",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant d'injecter des données invalides",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ D. Sans validation des entrées, un attaquant peut injecter des données malveillantes (ex : SQL injection, XSS).",
+   "label": "Q20 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce qu'une attaque de type \"credential stuffing\" ?",
+   "options": [
+    {
+     "text": "Une attaque visant à voler des informations sensibles",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une attaque visant à utiliser des identifiants volés pour accéder à d'autres comptes",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une attaque visant à installer des logiciels malveillants",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une attaque visant à obtenir des informations par tromperie",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ B. Le credential stuffing exploite la réutilisation des mots de passe entre services différents.",
+   "label": "Q21 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la principale caractéristique d'une vulnérabilité zéro-day ?",
+   "options": [
+    {
+     "text": "Elle exploite une faiblesse inconnue des développeurs",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Elle est facile à détecter",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Elle n'a aucun impact sur les systèmes",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Elle nécessite une intervention humaine",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. \"Zéro-day\" signifie qu'aucun correctif n'existe encore — les développeurs ont eu zéro jour pour y remédier.",
+   "label": "Q22 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quel est le rôle d'un \"honeypot\" en cybersécurité ?",
+   "options": [
+    {
+     "text": "Attracteur pour détourner les attaquants des systèmes critiques",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Outil pour détecter les virus",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Logiciel pour chiffrer les données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Dispositif pour sauvegarder les données",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Un honeypot est un système leurre qui attire les attaquants pour les observer et les éloigner des vraies cibles.",
+   "label": "Q23 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la principale différence entre un \"spyware\" et un \"adware\" ?",
+   "options": [
+    {
+     "text": "Le spyware espionne les activités de l'utilisateur, l'adware affiche des publicités",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Le spyware est légal, l'adware est illégal",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Il n'y a aucune différence",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Le spyware est un matériel, l'adware est un logiciel",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Spyware = espionnage silencieux ; Adware = affichage publicitaire non désiré. Les deux sont des malwares.",
+   "label": "Q24 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce qu'une vulnérabilité de type \"cross-site scripting\" (XSS) ?",
+   "options": [
+    {
+     "text": "Une vulnérabilité permettant d'exécuter du code JavaScript malveillant sur une page web",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de voler des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de déchiffrer des données",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une vulnérabilité permettant de bloquer un service",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le XSS injecte des scripts dans des pages web vues par d'autres utilisateurs pour voler des sessions.",
+   "label": "Q25 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Quels sont les trois principes fondamentaux de la sécurité informatique ?",
+   "options": [
+    {
+     "text": "Confidentialité, Intégrité, Disponibilité",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Confidentialité, Authentification, Autorisation",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Authentification, Autorisation, Audit",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Disponibilité, Authentification, Audit",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. C-I-A : Confidentialité (accès restreint), Intégrité (données non altérées), Disponibilité (accès garanti).",
+   "label": "Q26 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la différence entre un \"firewall\" et un \"IDS\" ?",
+   "options": [
+    {
+     "text": "Un firewall bloque le trafic, un IDS surveille et signale les activités suspectes",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Un firewall est un logiciel, un IDS est un matériel",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un firewall est gratuit, un IDS est payant",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Il n'y a aucune différence",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le firewall filtre activement le trafic ; l'IDS analyse et alerte sans bloquer directement.",
+   "label": "Q27 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Qu'est-ce que le RGPD (Règlement Général sur la Protection des Données) ?",
+   "options": [
+    {
+     "text": "Une réglementation sur la protection des données personnelles dans l'UE",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "Une méthode pour accélérer les performances des systèmes",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Un outil pour réduire les coûts des logiciels",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Une stratégie pour simplifier l'utilisation des ordinateurs",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le RGPD encadre la collecte, le traitement et la protection des données personnelles en Europe.",
+   "label": "Q28 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la sanction maximale prévue par le RGPD en cas de non-conformité ?",
+   "options": [
+    {
+     "text": "20 millions d'euros ou 4% du chiffre d'affaires mondial",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "1 million d'euros",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "100 000 euros",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "Aucune sanction",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le RGPD prévoit deux niveaux de sanctions : jusqu'à 10M€/2% CA ou 20M€/4% CA selon l'infraction.",
+   "label": "Q29 · Éval. ·",
+   "section": "qcm",
+   "level": "medium"
+  },
+  {
+   "type": "mcq",
+   "text": "Quelle est la principale réglementation en matière de cybersécurité en Europe ?",
+   "options": [
+    {
+     "text": "GDPR / RGPD",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "CCPA (California Consumer Privacy Act)",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "HIPAA",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "SOX (Sarbanes-Oxley Act)",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ A. Le RGPD est la réglementation européenne de référence pour la protection des données. HIPAA et CCPA sont américains.",
+   "label": "Q30 · Éval. ·",
+   "section": "qcm",
+   "level": "easy"
+  },
+  {
+   "type": "true_false",
+   "text": "Le RGPD ne s'applique qu'aux entreprises situées en Europe.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. Il s'applique à toute organisation traitant des données de citoyens de l'UE.",
+   "label": "Affirmation 1",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un ver (worm) peut se propager sans intervention humaine.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Contrairement au virus, le ver est autonome et exploite des failles réseau.",
+   "label": "Affirmation 2",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le chiffrement asymétrique utilise la même clé pour chiffrer et déchiffrer.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. C'est le symétrique qui utilise la même clé. L'asymétrique utilise une paire publique/privée.",
+   "label": "Affirmation 3",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le 2FA combine deux facteurs issus de catégories différentes.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Deux mots de passe ne constituent pas un vrai 2FA.",
+   "label": "Affirmation 4",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un audit de sécurité exploite activement les vulnérabilités comme un pentest.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. L'audit examine les configurations ; seul le pentest exploite activement les failles.",
+   "label": "Affirmation 5",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le principe du moindre privilège consiste à donner un accès complet à tous.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. C'est l'inverse : limiter à ce qui est strictement nécessaire.",
+   "label": "Affirmation 6",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "SHA-256 est un algorithme de hachage.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. SHA-256 fait partie de la famille SHA-2.",
+   "label": "Affirmation 7",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "La règle 3-2-1 recommande de garder toutes les sauvegardes au même endroit.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. Elle impose 1 copie hors-site dans un lieu géographique différent.",
+   "label": "Affirmation 8",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le PRA est un sous-ensemble du PCA.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Le PRA se concentre sur la récupération technique ; le PCA couvre toute la continuité.",
+   "label": "Affirmation 9",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "MD5 est aujourd'hui recommandé pour sécuriser des mots de passe.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. MD5 est obsolète et vulnérable aux collisions.",
+   "label": "Affirmation 10",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un VPN site à site relie deux réseaux privés entre eux.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Par opposition au VPN d'accès à distance (un utilisateur).",
+   "label": "Affirmation 11",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le NIST CSF comporte 5 fonctions : Identifier, Protéger, Détecter, Répondre, Récupérer.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Ces 5 fonctions structurent l'ensemble du cadre NIST.",
+   "label": "Affirmation 12",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "La mesure de prévention principale contre les vulnérabilités de type \"unpatched software\" est de mettre à jour régulièrement les logiciels.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Les logiciels non mis à jour (unpatched) sont des cibles faciles — les correctifs comblent les failles connues.",
+   "label": "Affirmation 13 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "La principale mesure contre les vulnérabilités de type \"brute force\" est d'utiliser des mots de passe forts et complexes.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Des mots de passe longs et complexes rendent les attaques par force brute exponentiellement plus longues.",
+   "label": "Affirmation 14 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Une clé privée en chiffrement asymétrique est utilisée pour chiffrer les données.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. La clé publique chiffre, la clé privée déchiffre. La clé privée sert aussi à signer numériquement.",
+   "label": "Affirmation 15 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un certificat SSL/TLS garantit l'authenticité d'un site web.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Le certificat SSL/TLS, signé par une Autorité de Certification, prouve que le site est bien celui qu'il prétend être.",
+   "label": "Affirmation 16 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le forensique numérique est une méthode pour accélérer les performances des systèmes.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": false,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": true,
+     "explanation": ""
+    }
+   ],
+   "explanation": "❌ Faux. Le forensique numérique consiste à collecter et analyser des preuves numériques après un incident de sécurité.",
+   "label": "Affirmation 17 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le DPO (Data Protection Officer) a pour principale responsabilité d'assurer la conformité de l'organisation avec le RGPD.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Le DPO (Délégué à la Protection des Données) est le garant de la conformité RGPD au sein de l'organisation.",
+   "label": "Affirmation 18 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Un \"plan de reprise après sinistre\" (PRS) définit des procédures pour restaurer les opérations critiques après un incident.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. Le PRS (ou DRP - Disaster Recovery Plan) définit comment reprendre les activités après un sinistre informatique.",
+   "label": "Affirmation 19 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "true_false",
+   "text": "Le principe de segmentation réseau consiste à diviser un réseau en zones pour limiter la propagation des menaces.",
+   "options": [
+    {
+     "text": "✅ Vrai",
+     "correct": true,
+     "explanation": ""
+    },
+    {
+     "text": "❌ Faux",
+     "correct": false,
+     "explanation": ""
+    }
+   ],
+   "explanation": "✅ Vrai. La segmentation réseau limite le mouvement latéral des attaquants en cas de compromission d'une zone.",
+   "label": "Affirmation 20 · Éval.",
+   "section": "tf"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ centralise et corrèle les événements de sécurité.",
+   "answers": [
+    "SIEM"
+   ],
+   "hint": "📌 Security Information and Event Management",
+   "explanation": "Réponse : SIEM",
+   "label": "Phrase 1 · Mod.5",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Une attaque par déni de service distribué se nomme _____ .",
+   "answers": [
+    "DDoS"
+   ],
+   "hint": "📌 acronyme",
+   "explanation": "Réponse : DDoS",
+   "label": "Phrase 2 · Mod.2",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ est un algorithme de chiffrement symétrique (128, 192 ou 256 bits).",
+   "answers": [
+    "AES"
+   ],
+   "hint": "📌 Advanced Encryption Standard",
+   "explanation": "Réponse : AES",
+   "label": "Phrase 3 · Mod.3",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le modèle d'accès basé sur le rôle s'appelle _____ .",
+   "answers": [
+    "RBAC"
+   ],
+   "hint": "📌 Role-Based Access Control",
+   "explanation": "Réponse : RBAC",
+   "label": "Phrase 4 · Mod.4",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "La règle de sauvegarde recommande 3 copies, 2 supports et _____ copie hors-site.",
+   "answers": [
+    "1"
+   ],
+   "hint": "📌 un chiffre",
+   "explanation": "Réponse : 1",
+   "label": "Phrase 5 · Mod.7",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ exige un délai de 72h pour notifier une violation de données.",
+   "answers": [
+    "RGPD"
+   ],
+   "hint": "📌 réglementation européenne",
+   "explanation": "Réponse : RGPD",
+   "label": "Phrase 6 · Mod.6",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le principe du _____ privilège limite l'accès aux ressources nécessaires.",
+   "answers": [
+    "moindre"
+   ],
+   "hint": "📌 un adjectif",
+   "explanation": "Réponse : moindre",
+   "label": "Phrase 7 · Mod.7",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Une injection _____ permet d'insérer du code malveillant dans une requête de base de données.",
+   "answers": [
+    "SQL"
+   ],
+   "hint": "📌 langage de bases de données relationnelles",
+   "explanation": "Réponse : SQL",
+   "label": "Phrase 8 · Mod.4",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Une vulnérabilité _____ exploite une faiblesse inconnue des développeurs, pour laquelle aucun correctif n'existe encore.",
+   "answers": [
+    "zéro-day"
+   ],
+   "hint": "📌 deux mots avec trait d'union (0 jour)",
+   "explanation": "Réponse : zéro-day",
+   "label": "Phrase 9 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "La triade _____ désigne les trois principes : Confidentialité, Intégrité, Disponibilité.",
+   "answers": [
+    "CIA"
+   ],
+   "hint": "📌 sigle de 3 lettres",
+   "explanation": "Réponse : CIA",
+   "label": "Phrase 10 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ est un système leurre conçu pour attirer et observer les attaquants.",
+   "answers": [
+    "honeypot"
+   ],
+   "hint": "📌 terme anglais = \"pot de miel\"",
+   "explanation": "Réponse : honeypot",
+   "label": "Phrase 11 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ est le Délégué à la Protection des Données, responsable de la conformité RGPD.",
+   "answers": [
+    "DPO"
+   ],
+   "hint": "📌 sigle anglais : Data Protection Officer",
+   "explanation": "Réponse : DPO",
+   "label": "Phrase 12 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ crée un tunnel sécurisé pour transmettre des données sur des réseaux publics.",
+   "answers": [
+    "VPN"
+   ],
+   "hint": "📌 Virtual Private Network",
+   "explanation": "Réponse : VPN",
+   "label": "Phrase 13 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "La sanction maximale du RGPD est de _____ millions d'euros ou 4% du chiffre d'affaires mondial.",
+   "answers": [
+    "20"
+   ],
+   "hint": "📌 un nombre",
+   "explanation": "Réponse : 20",
+   "label": "Phrase 14 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "gap",
+   "text": "Le _____ (Cross-Site Scripting) permet d'injecter du code JavaScript malveillant dans une page web.",
+   "answers": [
+    "XSS"
+   ],
+   "hint": "📌 sigle de 3 lettres",
+   "explanation": "Réponse : XSS",
+   "label": "Phrase 15 · Éval.",
+   "section": "gap"
+  },
+  {
+   "type": "reorder",
+   "text": "Les 5 étapes de réponse à un incident.",
+   "items": [
+    {
+     "text": "Identification — confirmer l'incident",
+     "position": 1
+    },
+    {
+     "text": "Confinement — isoler les systèmes compromis",
+     "position": 2
+    },
+    {
+     "text": "Éradication — supprimer la menace",
+     "position": 3
+    },
+    {
+     "text": "Récupération — restaurer les systèmes",
+     "position": 4
+    },
+    {
+     "text": "Post-Incident — tirer les leçons",
+     "position": 5
+    }
+   ],
+   "label": "Exercice 1 ·",
+   "section": "reorder",
+   "level": "medium"
+  },
+  {
+   "type": "reorder",
+   "text": "Les 5 phases d'un test d'intrusion (pentest).",
+   "items": [
+    {
+     "text": "Reconnaissance — collecte d'informations",
+     "position": 1
+    },
+    {
+     "text": "Analyse des vulnérabilités — identification des failles",
+     "position": 2
+    },
+    {
+     "text": "Exploitation — tenter d'exploiter la faille",
+     "position": 3
+    },
+    {
+     "text": "Post-exploitation — évaluation des dégâts potentiels",
+     "position": 4
+    },
+    {
+     "text": "Rapport — documentation et recommandations",
+     "position": 5
+    }
+   ],
+   "label": "Exercice 2 ·",
+   "section": "reorder",
+   "level": "medium"
+  },
+  {
+   "type": "reorder",
+   "text": "Les 5 étapes du cycle de développement sécurisé (SDL).",
+   "items": [
+    {
+     "text": "Conception — modélisation des menaces",
+     "position": 1
+    },
+    {
+     "text": "Codage — bonnes pratiques et analyse statique",
+     "position": 2
+    },
+    {
+     "text": "Tests — unitaires, intégration, pénétration",
+     "position": 3
+    },
+    {
+     "text": "Déploiement — environnement sécurisé",
+     "position": 4
+    },
+    {
+     "text": "Maintenance — correctifs réguliers",
+     "position": 5
+    }
+   ],
+   "label": "Exercice 3 ·",
+   "section": "reorder",
+   "level": "hard"
+  },
+  {
+   "type": "reorder",
+   "text": "Les 6 étapes complètes de la gestion des incidents de sécurité (selon les bonnes pratiques).",
+   "items": [
+    {
+     "text": "Préparation — mettre en place outils, équipes et procédures",
+     "position": 1
+    },
+    {
+     "text": "Détection — identifier et qualifier l'incident",
+     "position": 2
+    },
+    {
+     "text": "Analyse — déterminer la nature et l'étendue de l'incident",
+     "position": 3
+    },
+    {
+     "text": "Endiguement — limiter l'impact et isoler les systèmes compromis",
+     "position": 4
+    },
+    {
+     "text": "Récupération — restaurer et surveiller les systèmes",
+     "position": 5
+    },
+    {
+     "text": "Activité post-incident — documenter les leçons apprises",
+     "position": 6
+    }
+   ],
+   "label": "Exercice 4 · Éval. ·",
+   "section": "reorder",
+   "level": "hard"
+  },
+  {
+   "type": "reorder",
+   "text": "Procédure de gestion d'une violation de données RGPD.",
+   "items": [
+    {
+     "text": "Découverte et confirmation de la violation de données",
+     "position": 1
+    },
+    {
+     "text": "Évaluation de la nature et de l'étendue des données compromises",
+     "position": 2
+    },
+    {
+     "text": "Notification à l'autorité de contrôle (CNIL) sous 72h",
+     "position": 3
+    },
+    {
+     "text": "Information des personnes concernées si risque élevé",
+     "position": 4
+    },
+    {
+     "text": "Documentation dans le registre et mesures correctives",
+     "position": 5
+    }
+   ],
+   "label": "Exercice 5 · Éval. ·",
+   "section": "reorder",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Un employé reçoit un email personnalisé prétendant venir de son PDG, lui demandant un virement urgent.",
+   "model_answer": "Proposition : Spear phishing (ou whaling) — attaque ciblée utilisant des informations personnalisées pour gagner la confiance de la victime.",
+   "label": "Scénario 1",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Le trafic d'un site e-commerce explose avec des milliers de requêtes depuis des milliers d'IP différentes, rendant le site inaccessible.",
+   "model_answer": "Proposition : Attaque DDoS — un botnet de machines compromises sature les ressources du serveur.",
+   "label": "Scénario 2",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Un attaquant laisse une clé USB étiquetée \"Confidentiel RH\" dans le parking de l'entreprise.",
+   "model_answer": "Proposition : Ingénierie sociale par \"baiting\" — exploiter la curiosité humaine pour faire installer un malware volontairement.",
+   "label": "Scénario 3",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Situation : politique BYOD",
+   "model_answer": "Proposition : Les appareils personnels utilisés pour le travail doivent isoler les données professionnelles dans un espace sécurisé et respecter les exigences de chiffrement de l'entreprise.",
+   "label": "Situation : politique BYOD",
+   "section": "ateliers"
+  },
+  {
+   "type": "open",
+   "text": "Situation : politique Bureau Propre (Clean Desk)",
+   "model_answer": "Proposition : Tout document confidentiel et support amovible doit être rangé sous clé en fin de journée de travail.",
+   "label": "Situation : politique Bureau Propre (Clean Desk)",
+   "section": "ateliers"
+  },
+  {
+   "type": "matching",
+   "text": "Associer chaque terme à son exemple",
+   "pairs": [
+    {
+     "term": "RGPD",
+     "example": "Protection des données personnelles dans l'Union européenne"
+    },
+    {
+     "term": "HIPAA",
+     "example": "Protection des données de santé aux États-Unis"
+    },
+    {
+     "term": "PCI DSS",
+     "example": "Protection des données de cartes bancaires"
+    },
+    {
+     "term": "NIS2",
+     "example": "Sécurité des infrastructures critiques en Europe"
+    },
+    {
+     "term": "ISO/IEC 27001",
+     "example": "Cadre international pour un SMSI"
+    }
+   ],
+   "section": "ateliers"
+  }
+ ],
+ "simulators": [
+  {
+   "source": "_private/cybersec/chapitres/simulateur-examen.html",
+   "variables": {
+    "VARIANTS": [
+     {
+      "label": "Sujet A",
+      "mcq": [
+       {
+        "q": "La triade CIA signifie :",
+        "opts": [
+         "Confidentialité, Identification, Autorisation",
+         "Confidentialité, Intégrité, Disponibilité",
+         "Chiffrement, Intégrité, Accès",
+         "Contrôle, Identification, Accès"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Un ransomware chiffre des fichiers et :",
+        "opts": [
+         "Les supprime définitivement",
+         "Exige une rançon pour les rendre",
+         "Les copie sur Internet",
+         "Les ralentit uniquement"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Quel algorithme de chiffrement symétrique est le plus utilisé aujourd'hui ?",
+        "opts": [
+         "RSA",
+         "ECC",
+         "AES",
+         "SHA-256"
+        ],
+        "correct": 2
+       },
+       {
+        "q": "Dans la réponse à un incident, quelle étape vient après le confinement ?",
+        "opts": [
+         "Identification",
+         "Post-incident",
+         "Éradication",
+         "Récupération"
+        ],
+        "correct": 2
+       }
+      ],
+      "tf": [
+       {
+        "stmt": "Un ver (worm) nécessite une intervention humaine pour se propager.",
+        "correct": false
+       },
+       {
+        "stmt": "Le RGPD s'applique uniquement aux entreprises basées dans l'Union européenne.",
+        "correct": false
+       },
+       {
+        "stmt": "SHA-256 est une fonction de hachage non réversible.",
+        "correct": true
+       },
+       {
+        "stmt": "Le 2FA combine deux facteurs issus de catégories différentes.",
+        "correct": true
+       }
+      ],
+      "scenario": {
+       "source": "Un employé reçoit un SMS prétendant provenir de sa banque, avec un lien demandant de confirmer ses identifiants de connexion.",
+       "model": "Type d'attaque : Smishing (phishing par SMS).\n\nExplication : L'attaquant utilise un faux SMS pour inciter la victime à cliquer sur un lien malveillant et à saisir ses identifiants bancaires. C'est une forme d'ingénierie sociale exploitant la confiance de la victime envers sa banque.\n\nMesures de protection : ne jamais cliquer sur un lien reçu par SMS, vérifier directement sur le site officiel, activer le 2FA sur le compte bancaire."
+      },
+      "reorder": [
+       {
+        "text": "Identification — confirmer et qualifier l'incident",
+        "correct": 1
+       },
+       {
+        "text": "Éradication — supprimer la menace et appliquer les correctifs",
+        "correct": 3
+       },
+       {
+        "text": "Post-Incident — documenter les leçons apprises",
+        "correct": 5
+       },
+       {
+        "text": "Confinement — isoler les systèmes compromis",
+        "correct": 2
+       },
+       {
+        "text": "Récupération — restaurer et surveiller les systèmes",
+        "correct": 4
+       }
+      ],
+      "writing": {
+       "instruction": "Expliquez le principe du moindre privilège (PoLP) et donnez un exemple concret de son application dans un service informatique.",
+       "model": "Le principe du moindre privilège (Principle of Least Privilege) consiste à n'accorder à chaque utilisateur, processus ou système que les droits d'accès strictement nécessaires à l'accomplissement de ses tâches, rien de plus.\n\nExemple : dans un service IT, un technicien de support peut consulter les tickets d'assistance et réinitialiser les mots de passe, mais ne peut pas accéder aux données financières ni modifier les configurations de sécurité réseau. Seul l'administrateur système dispose de ces privilèges élevés.\n\nIntérêt : limiter l'impact d'une compromission de compte — si le compte du technicien est piraté, l'attaquant ne peut pas accéder aux ressources sensibles."
+      }
+     },
+     {
+      "label": "Sujet B",
+      "mcq": [
+       {
+        "q": "Quelle propriété de la triade CIA garantit que les données restent accessibles aux utilisateurs autorisés ?",
+        "opts": [
+         "Confidentialité",
+         "Intégrité",
+         "Disponibilité",
+         "Authenticité"
+        ],
+        "correct": 2
+       },
+       {
+        "q": "Le 'spear phishing' se distingue du phishing classique car il :",
+        "opts": [
+         "Utilise des SMS",
+         "Cible un individu spécifique avec des informations personnalisées",
+         "N'utilise pas l'email",
+         "Concerne uniquement les banques"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Qu'est-ce qu'un SIEM ?",
+        "opts": [
+         "Un antivirus nouvelle génération",
+         "Un système centralisant et corrélant les événements de sécurité",
+         "Un protocole de chiffrement",
+         "Un type de pare-feu"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Le RGPD prévoit une notification de violation de données dans un délai de :",
+        "opts": [
+         "24 heures",
+         "48 heures",
+         "72 heures",
+         "7 jours"
+        ],
+        "correct": 2
+       }
+      ],
+      "tf": [
+       {
+        "stmt": "AES est un algorithme de chiffrement asymétrique.",
+        "correct": false
+       },
+       {
+        "stmt": "Un audit de sécurité exploite activement les vulnérabilités comme un pentest.",
+        "correct": false
+       },
+       {
+        "stmt": "Le PRA (Plan de Reprise après Sinistre) est un sous-ensemble du PCA.",
+        "correct": true
+       },
+       {
+        "stmt": "MD5 est aujourd'hui recommandé pour le hachage de mots de passe.",
+        "correct": false
+       }
+      ],
+      "scenario": {
+       "source": "Le responsable IT d'une PME constate que le trafic réseau vers des serveurs externes inconnus a augmenté de 300 % depuis 3 jours, principalement la nuit. Les logs montrent des accès répétés à des fichiers sensibles.",
+       "model": "Type d'incident probable : exfiltration de données — potentiellement suite à une compromission par un malware (ex : spyware, RAT) ou un accès non autorisé.\n\nÉtapes de réponse immédiates :\n1. Identification : analyser les logs détaillés et identifier les machines concernées.\n2. Confinement : isoler du réseau les machines suspectes.\n3. Éradication : supprimer le malware si détecté, changer tous les identifiants.\n4. Récupération : restaurer depuis des sauvegardes vérifiées, renforcer le monitoring.\n\nOutil recommandé : SIEM pour corréler les événements et identifier la source de la compromission."
+      },
+      "reorder": [
+       {
+        "text": "Analyse des vulnérabilités — identifier les failles potentielles",
+        "correct": 2
+       },
+       {
+        "text": "Reconnaissance — collecter des informations sur la cible",
+        "correct": 1
+       },
+       {
+        "text": "Rapport — documenter les vulnérabilités et recommandations",
+        "correct": 5
+       },
+       {
+        "text": "Post-exploitation — évaluer les dégâts potentiels",
+        "correct": 4
+       },
+       {
+        "text": "Exploitation — tenter d'exploiter une vulnérabilité identifiée",
+        "correct": 3
+       }
+      ],
+      "writing": {
+       "instruction": "Qu'est-ce que la règle de sauvegarde 3-2-1 ? Expliquez ses composantes et pourquoi elle est considérée comme un standard d'or contre les ransomwares.",
+       "model": "La règle 3-2-1 est une stratégie de sauvegarde qui recommande de maintenir :\n• 3 copies des données (l'originale + 2 sauvegardes)\n• Sur 2 supports différents (ex : disque local NAS et cloud)\n• Dont 1 copie hors-site (dans un lieu géographiquement différent)\n\nEfficacité contre les ransomwares : si un ransomware chiffre les fichiers de l'entreprise et les sauvegardes locales, la copie hors-site reste intacte et non chiffrée.\n\nÉvolution moderne 3-2-1-1-0 : on ajoute 1 copie immuable (air-gap, protégée contre l'effacement) et 0 erreur (vérification automatique de l'intégrité des sauvegardes). Il est impératif de tester régulièrement la restauration."
+      }
+     },
+     {
+      "label": "Sujet D",
+      "mcq": [
+       {
+        "q": "Qu'est-ce qu'une vulnérabilité en cybersécurité ?",
+        "opts": [
+         "Un logiciel malveillant",
+         "Un défaut dans un système qui peut être exploité par un attaquant",
+         "Une attaque contre un système",
+         "Une mesure de sécurité"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Qu'est-ce qu'une vulnérabilité de type \"Remote Code Execution\" (RCE) ?",
+        "opts": [
+         "Une vulnérabilité permettant d'exécuter du code à distance",
+         "Une vulnérabilité permettant de voler des données",
+         "Une vulnérabilité permettant de déchiffrer des données",
+         "Une vulnérabilité permettant de bloquer un service"
+        ],
+        "correct": 0
+       },
+       {
+        "q": "Qu'est-ce qu'une attaque de type \"credential stuffing\" ?",
+        "opts": [
+         "Une attaque visant à voler des informations sensibles",
+         "Une attaque visant à utiliser des identifiants volés pour accéder à d'autres comptes",
+         "Une attaque visant à installer des logiciels malveillants",
+         "Une attaque visant à obtenir des informations par tromperie"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Qu'est-ce qu'une vulnérabilité de type \"cross-site scripting\" (XSS) ?",
+        "opts": [
+         "Une vulnérabilité permettant d'exécuter du code JavaScript malveillant sur une page web",
+         "Une vulnérabilité permettant de voler des données",
+         "Une vulnérabilité permettant de déchiffrer des données",
+         "Une vulnérabilité permettant de bloquer un service"
+        ],
+        "correct": 0
+       }
+      ],
+      "tf": [
+       {
+        "stmt": "La principale caractéristique d'une vulnérabilité zéro-day est qu'elle exploite une faiblesse inconnue des développeurs.",
+        "correct": true
+       },
+       {
+        "stmt": "Un honeypot est un outil pour chiffrer les données.",
+        "correct": false
+       },
+       {
+        "stmt": "Les trois principes fondamentaux de la sécurité informatique sont : Confidentialité, Intégrité, Disponibilité.",
+        "correct": true
+       },
+       {
+        "stmt": "La clé privée en chiffrement asymétrique est utilisée pour chiffrer les données.",
+        "correct": false
+       }
+      ],
+      "scenario": {
+       "source": "Une entreprise constate que plusieurs comptes utilisateurs ont été compromis en même temps. L'analyse révèle que les mêmes identifiants (email + mot de passe) avaient été exposés lors d'une violation de données sur un autre site web des mois auparavant.",
+       "model": "Type d'attaque : Credential Stuffing.\n\nExplication : L'attaquant a utilisé des identifiants volés lors d'une précédente violation de données sur un autre service et les a testés en masse sur ce site, exploitant la réutilisation de mots de passe par les utilisateurs.\n\nMesures de protection :\n1. Forcer la réinitialisation des mots de passe des comptes compromis.\n2. Activer l'authentification à deux facteurs (2FA) pour tous les utilisateurs.\n3. Mettre en place un système de détection des connexions anormales (trop de tentatives depuis la même IP).\n4. Sensibiliser les utilisateurs à ne jamais réutiliser leurs mots de passe sur plusieurs services.\n5. Utiliser un gestionnaire de mots de passe pour générer des mots de passe uniques et forts."
+      },
+      "reorder": [
+       {
+        "text": "Préparation — définir les procédures et former les équipes",
+        "correct": 1
+       },
+       {
+        "text": "Endiguement — limiter l'impact de l'incident",
+        "correct": 4
+       },
+       {
+        "text": "Activité post-incident — documenter les leçons apprises",
+        "correct": 6
+       },
+       {
+        "text": "Détection — identifier et détecter l'incident",
+        "correct": 2
+       },
+       {
+        "text": "Récupération — restaurer les systèmes et services",
+        "correct": 5
+       },
+       {
+        "text": "Analyse — analyser la nature et l'étendue de l'incident",
+        "correct": 3
+       }
+      ],
+      "writing": {
+       "instruction": "Expliquez la différence entre un \"firewall\" et un \"IDS\" (Système de Détection d'Intrusion). Quels sont leurs rôles respectifs dans la sécurité d'un réseau ?",
+       "model": "Firewall (Pare-feu) : dispositif de sécurité qui filtre le trafic réseau entrant et sortant selon des règles prédéfinies. Il bloque le trafic non autorisé avant qu'il n'entre dans le réseau. Il agit en prévention.\n\nIDS (Intrusion Detection System) : système qui surveille le trafic réseau et les activités des systèmes pour détecter et signaler les comportements suspects ou malveillants. Il n'agit pas directement sur le trafic, mais alerte les administrateurs. Il agit en détection.\n\nDifférence clé : le firewall bloque le trafic suspect (actif), l'IDS analyse et signale les activités suspectes (passif). Dans une architecture sécurisée, les deux sont complémentaires : le firewall constitue la première ligne de défense, l'IDS surveille ce qui passe à travers ou ce qui se passe à l'intérieur du réseau.\n\nEn pratique, un IPS (Intrusion Prevention System) combine les deux : il détecte ET bloque automatiquement les intrusions."
+      }
+     },
+     {
+      "label": "Sujet E",
+      "mcq": [
+       {
+        "q": "Quelle est la principale conséquence d'une attaque par \"privilege escalation\" ?",
+        "opts": [
+         "L'attaquant obtient des droits d'accès élevés dans un système",
+         "Les communications sont interceptées et espionnées",
+         "Les systèmes sont mis hors ligne",
+         "Les données sont supprimées"
+        ],
+        "correct": 0
+       },
+       {
+        "q": "Qu'est-ce que le RGPD (Règlement Général sur la Protection des Données) ?",
+        "opts": [
+         "Une réglementation sur la protection des données personnelles dans l'UE",
+         "Une méthode pour accélérer les performances des systèmes",
+         "Un outil pour réduire les coûts des logiciels",
+         "Une stratégie pour simplifier l'utilisation des ordinateurs"
+        ],
+        "correct": 0
+       },
+       {
+        "q": "Quelle est la sanction maximale prévue par le RGPD en cas de non-conformité ?",
+        "opts": [
+         "20 millions d'euros ou 4% du chiffre d'affaires mondial",
+         "1 million d'euros",
+         "100 000 euros",
+         "Aucune sanction"
+        ],
+        "correct": 0
+       },
+       {
+        "q": "Qu'est-ce que le CMMC (Cybersecurity Maturity Model Certification) ?",
+        "opts": [
+         "Un modèle de certification en cybersécurité pour les entreprises américaines",
+         "Un modèle de certification en cybersécurité pour les entreprises européennes",
+         "Un modèle de certification en cybersécurité pour les entreprises asiatiques",
+         "Un modèle de certification en cybersécurité pour les entreprises africaines"
+        ],
+        "correct": 0
+       }
+      ],
+      "tf": [
+       {
+        "stmt": "La principale obligation du RGPD pour les organisations est de protéger les données personnelles et d'informer en cas de violation.",
+        "correct": true
+       },
+       {
+        "stmt": "Le forensique numérique est une technique pour accélérer les performances des systèmes.",
+        "correct": false
+       },
+       {
+        "stmt": "Un audit de conformité vérifie si une organisation respecte les réglementations applicables.",
+        "correct": true
+       },
+       {
+        "stmt": "La principale réglementation en matière de cybersécurité en Europe est le HIPAA.",
+        "correct": false
+       }
+      ],
+      "scenario": {
+       "source": "Une organisation européenne subit une violation de données : des noms, adresses e-mail et mots de passe hachés de 50 000 clients ont été exfiltrés. La violation est découverte un vendredi soir à 20h.",
+       "model": "Réglementation applicable : RGPD (Règlement Général sur la Protection des Données).\n\nObligation de notification : l'organisation doit notifier la CNIL (autorité de contrôle) dans les 72 heures suivant la découverte de la violation, soit avant lundi 20h.\n\nÉtapes immédiates :\n1. Contenir la violation (bloquer l'accès non autorisé).\n2. Évaluer la nature des données compromises et le nombre de personnes affectées.\n3. Préparer et envoyer la notification à la CNIL sous 72h.\n4. Si le risque pour les personnes est élevé, informer directement les 50 000 clients.\n5. Documenter l'incident dans le registre des violations.\n\nRisque : les mots de passe hachés pourraient être craqués — recommander aux clients de changer leurs mots de passe sur tous les services utilisant le même.\n\nSanction possible en cas de non-conformité : jusqu'à 20M€ ou 4% du CA annuel mondial."
+      },
+      "reorder": [
+       {
+        "text": "Notification à la CNIL sous 72h",
+        "correct": 3
+       },
+       {
+        "text": "Découverte et confirmation de la violation",
+        "correct": 1
+       },
+       {
+        "text": "Information des personnes concernées si risque élevé",
+        "correct": 4
+       },
+       {
+        "text": "Évaluation de l'étendue et de la nature des données compromises",
+        "correct": 2
+       },
+       {
+        "text": "Documentation dans le registre des violations et mesures correctives",
+        "correct": 5
+       }
+      ],
+      "writing": {
+       "instruction": "Quelles sont les principales étapes de la gestion des incidents de sécurité selon les bonnes pratiques ? Expliquez brièvement le rôle de chaque étape.",
+       "model": "Les 6 étapes de la gestion des incidents de sécurité :\n\n1. Préparation : mettre en place les outils, procédures, équipes et plans avant qu'un incident ne survienne. Former les équipes et définir les rôles.\n\n2. Détection : identifier les indicateurs de compromission (IoC), surveiller les logs, alertes SIEM, rapports d'utilisateurs.\n\n3. Analyse : qualifier l'incident (nature, gravité, étendue), identifier les systèmes touchés et la cause racine.\n\n4. Endiguement (Confinement) : isoler les systèmes compromis pour éviter la propagation, sans effacer les preuves.\n\n5. Récupération : supprimer la menace (éradication), restaurer les systèmes depuis des sauvegardes saines, surveiller pour s'assurer de l'absence de récidive.\n\n6. Activité post-incident : documenter les leçons apprises, améliorer les procédures, mettre à jour les politiques de sécurité. Cette étape est cruciale pour renforcer la posture de sécurité."
+      }
+     },
+     {
+      "label": "Sujet C",
+      "mcq": [
+       {
+        "q": "Quelle attaque utilise un réseau de machines compromises pour saturer un service ?",
+        "opts": [
+         "Spear phishing",
+         "Ransomware",
+         "DDoS",
+         "SQL Injection"
+        ],
+        "correct": 2
+       },
+       {
+        "q": "Le chiffrement asymétrique utilise :",
+        "opts": [
+         "Une seule clé partagée",
+         "Une paire clé publique / clé privée",
+         "Un mot de passe maître",
+         "Aucune clé"
+        ],
+        "correct": 1
+       },
+       {
+        "q": "Quel modèle de contrôle d'accès attribue les permissions selon le rôle ?",
+        "opts": [
+         "DAC",
+         "MAC",
+         "RBAC",
+         "ACL"
+        ],
+        "correct": 2
+       },
+       {
+        "q": "ISO/IEC 27001 est une norme internationale pour :",
+        "opts": [
+         "Les cartes bancaires uniquement",
+         "Un Système de Management de la Sécurité de l'Information",
+         "La santé aux États-Unis",
+         "Les infrastructures énergétiques"
+        ],
+        "correct": 1
+       }
+      ],
+      "tf": [
+       {
+        "stmt": "La règle 3-2-1 recommande d'avoir toutes les sauvegardes au même endroit.",
+        "correct": false
+       },
+       {
+        "stmt": "Le principe du moindre privilège limite chaque utilisateur aux seules ressources nécessaires.",
+        "correct": true
+       },
+       {
+        "stmt": "Un VPN site à site relie deux réseaux privés entre eux.",
+        "correct": true
+       },
+       {
+        "stmt": "Stuxnet est un ransomware qui a ciblé des hôpitaux en 2017.",
+        "correct": false
+       }
+      ],
+      "scenario": {
+       "source": "Une entreprise utilise un logiciel tiers pour gérer sa paie. Suite à une mise à jour du fournisseur, des clients reçoivent des données appartenant à d'autres clients (noms, salaires, numéros de sécurité sociale).",
+       "model": "Type d'incident : violation de données personnelles (data breach) — potentiellement causée par une régression lors d'une mise à jour du logiciel de paie.\n\nObligation RGPD : l'entreprise doit notifier la CNIL dans les 72 heures suivant la découverte de la violation. Si les risques pour les personnes concernées sont élevés, ces dernières doivent aussi être informées directement.\n\nMesures immédiates :\n1. Désactiver la fonctionnalité défectueuse du logiciel.\n2. Évaluer l'étendue de la fuite (combien de personnes, quelles données).\n3. Notifier les autorités compétentes (CNIL) sous 72h.\n4. Informer les personnes dont les données ont été exposées.\n5. Exiger un correctif du fournisseur et vérifier les autres modules.\n\nSanction RGPD potentielle : jusqu'à 4% du CA mondial ou 20M€."
+      },
+      "reorder": [
+       {
+        "text": "Codage — appliquer les bonnes pratiques et l'analyse statique",
+        "correct": 2
+       },
+       {
+        "text": "Conception — modélisation des menaces (threat modeling)",
+        "correct": 1
+       },
+       {
+        "text": "Maintenance — appliquer les correctifs réguliers",
+        "correct": 5
+       },
+       {
+        "text": "Tests — tests unitaires, intégration et de pénétration",
+        "correct": 3
+       },
+       {
+        "text": "Déploiement — environnement sécurisé et surveillé",
+        "correct": 4
+       }
+      ],
+      "writing": {
+       "instruction": "Définissez la cryptographie symétrique et la cryptographie asymétrique. Expliquez comment elles sont combinées dans le protocole HTTPS.",
+       "model": "Cryptographie symétrique : utilise une seule et même clé pour chiffrer et déchiffrer les données. Rapide et efficace pour de gros volumes. Exemples : AES, DES. Problème : la clé partagée doit être transmise de façon sécurisée.\n\nCryptographie asymétrique : utilise une paire de clés — une clé publique (partageable librement) pour chiffrer, et une clé privée (secrète) pour déchiffrer. Plus lente, mais résout le problème de la distribution des clés. Exemples : RSA, ECC.\n\nCombinaison dans HTTPS (TLS) :\n1. Le serveur présente son certificat numérique (clé publique) signé par une Autorité de Certification.\n2. Le navigateur utilise la clé publique RSA/ECC du serveur pour échanger de façon sécurisée une clé de session symétrique (AES).\n3. Toute la suite de la communication est chiffrée avec AES (rapide).\nCette combinaison tire parti de la sécurité de l'asymétrique pour l'échange, et de la rapidité du symétrique pour le transfert de données."
+      }
+     }
+    ],
+    "EVAL_FINALE": {
+     "label": "Évaluation Finale",
+     "duration": 7200,
+     "questions": [
+      {
+       "q": "Qu'est-ce qu'une vulnérabilité en cybersécurité ?",
+       "opts": [
+        "Un logiciel malveillant",
+        "Un défaut dans un système qui peut être exploité par un attaquant",
+        "Une attaque contre un système",
+        "Une mesure de sécurité"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une des principales causes de failles de sécurité dans les systèmes d'information ?",
+       "opts": [
+        "L'utilisation de technologies de pointe",
+        "L'ignorance des employés en matière de sécurité",
+        "Les mises à jour régulières des logiciels",
+        "L'utilisation de mots de passe forts"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'une vulnérabilité de type \"Remote Code Execution\" (RCE) ?",
+       "opts": [
+        "Une vulnérabilité permettant à un attaquant d'exécuter du code à distance",
+        "Une vulnérabilité permettant à un attaquant de voler des données",
+        "Une vulnérabilité permettant à un attaquant de déchiffrer des données",
+        "Une vulnérabilité permettant à un attaquant de bloquer un service"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'une vulnérabilité de type \"insufficient data validation\" ?",
+       "opts": [
+        "Une vulnérabilité permettant à un attaquant de voler des données",
+        "Une vulnérabilité permettant à un attaquant de déchiffrer des données",
+        "Une vulnérabilité permettant à un attaquant d'exécuter du code à distance",
+        "Une vulnérabilité permettant à un attaquant d'injecter des données invalides"
+       ],
+       "correct": 3
+      },
+      {
+       "q": "Qu'est-ce qu'une attaque de type \"credential stuffing\" ?",
+       "opts": [
+        "Une attaque visant à voler des informations sensibles",
+        "Une attaque visant à utiliser des identifiants volés pour accéder à d'autres comptes",
+        "Une attaque visant à installer des logiciels malveillants",
+        "Une attaque visant à obtenir des informations par tromperie"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une des principales mesures de prévention contre les vulnérabilités de type \"misconfigurations\" ?",
+       "opts": [
+        "Ignorer les alertes de sécurité",
+        "Mettre à jour régulièrement les logiciels",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une des principales mesures de prévention contre les vulnérabilités de type \"unpatched software\" ?",
+       "opts": [
+        "Ignorer les alertes de sécurité",
+        "Mettre à jour régulièrement les logiciels",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une des principales mesures de prévention contre les vulnérabilités de type \"excessive use of privileges\" ?",
+       "opts": [
+        "Ignorer les alertes de sécurité",
+        "Mettre à jour régulièrement les logiciels",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une des principales mesures de prévention contre les vulnérabilités de type \"insecure APIs\" ?",
+       "opts": [
+        "Ignorer les alertes de sécurité",
+        "Mettre à jour régulièrement les logiciels",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'une vulnérabilité de type \"cross-site scripting\" (XSS) ?",
+       "opts": [
+        "Une vulnérabilité permettant à un attaquant d'exécuter du code JavaScript malveillant sur une page web",
+        "Une vulnérabilité permettant à un attaquant de voler des données",
+        "Une vulnérabilité permettant à un attaquant de déchiffrer des données",
+        "Une vulnérabilité permettant à un attaquant de bloquer un service"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est une des principales mesures de prévention contre les vulnérabilités de type \"brute force attack\" ?",
+       "opts": [
+        "Ignorer les alertes de sécurité",
+        "Mettre à jour régulièrement les logiciels",
+        "Utiliser des mots de passe forts et complexes",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 2
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'une \"vulnérabilité zéro-day\" ?",
+       "opts": [
+        "Elle exploite une faiblesse inconnue des développeurs",
+        "Elle est facile à détecter",
+        "Elle n'a aucun impact sur les systèmes",
+        "Elle nécessite une intervention humaine"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quel est le rôle d'un \"honeypot\" en cybersécurité ?",
+       "opts": [
+        "Attracteur pour détourner les attaquants des systèmes critiques",
+        "Outil pour détecter les virus",
+        "Logiciel pour chiffrer les données",
+        "Dispositif pour sauvegarder les données"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale différence entre un \"spyware\" et un \"adware\" ?",
+       "opts": [
+        "Le spyware espionne les activités de l'utilisateur, l'adware affiche des publicités",
+        "Le spyware est légal, l'adware est illégal",
+        "Il n'y a aucune différence",
+        "Le spyware est un matériel, l'adware est un logiciel"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale conséquence d'une attaque par \"privilege escalation\" ?",
+       "opts": [
+        "L'attaquant obtient des droits d'accès élevés dans un système",
+        "Les communications sont interceptées et espionnées",
+        "Les systèmes sont mis hors ligne",
+        "Les données sont supprimées"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quels sont les trois principes fondamentaux de la sécurité informatique ?",
+       "opts": [
+        "Confidentialité, Intégrité, Disponibilité",
+        "Confidentialité, Authentification, Autorisation",
+        "Authentification, Autorisation, Audit",
+        "Disponibilité, Authentification, Audit"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce que l'autorisation en sécurité informatique ?",
+       "opts": [
+        "Le processus de vérification de l'identité d'un utilisateur",
+        "Le processus de chiffrement des données",
+        "Le processus de détermination des droits d'un utilisateur",
+        "Le processus de restauration des données"
+       ],
+       "correct": 2
+      },
+      {
+       "q": "Qu'est-ce que la confidentialité des données en sécurité informatique ?",
+       "opts": [
+        "Le processus de garantir que les données ne sont accessibles qu'aux personnes autorisées",
+        "Le processus de chiffrement des données",
+        "Le processus de détermination des droits d'un utilisateur",
+        "Le processus de restauration des données"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce que le chiffrement en sécurité informatique ?",
+       "opts": [
+        "Le processus de conversion des données en texte clair",
+        "Le processus de conversion des données en texte chiffré",
+        "Le processus de détermination des droits d'un utilisateur",
+        "Le processus de restauration des données"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un certificat SSL/TLS ?",
+       "opts": [
+        "Un certificat qui garantit l'authenticité d'un site web",
+        "Un certificat qui garantit l'intégrité des données",
+        "Un certificat qui garantit la confidentialité des données",
+        "Un certificat qui garantit la disponibilité des données"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'une clé privée en chiffrement asymétrique ?",
+       "opts": [
+        "Une clé utilisée pour chiffrer les données",
+        "Une clé utilisée pour déchiffrer les données",
+        "Une clé utilisée pour authentifier les utilisateurs",
+        "Une clé utilisée pour autoriser les utilisateurs"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'une politique de sécurité informatique ?",
+       "opts": [
+        "Un document qui décrit les politiques de l'entreprise en matière de profits",
+        "Un document qui décrit les politiques de l'entreprise en matière de sécurité",
+        "Un document qui décrit les politiques de l'entreprise en matière de recrutement",
+        "Un document qui décrit les politiques de l'entreprise en matière de marketing"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un plan de gestion des identités ?",
+       "opts": [
+        "Un plan pour augmenter les profits de l'entreprise",
+        "Un plan pour gérer les identités des utilisateurs",
+        "Un plan pour former les employés",
+        "Un plan pour réduire les coûts de l'entreprise"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un plan de gestion des certificats ?",
+       "opts": [
+        "Un plan pour augmenter les profits de l'entreprise",
+        "Un plan pour gérer les certificats de sécurité",
+        "Un plan pour former les employés",
+        "Un plan pour réduire les coûts de l'entreprise"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un plan de gestion des audits de sécurité ?",
+       "opts": [
+        "Un plan pour augmenter les profits de l'entreprise",
+        "Un plan pour gérer les audits de sécurité",
+        "Un plan pour former les employés",
+        "Un plan pour réduire les coûts de l'entreprise"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est la principale fonction de la cryptographie ?",
+       "opts": [
+        "Accélérer les performances des systèmes",
+        "Protéger la confidentialité et l'intégrité des données",
+        "Réduire les coûts des logiciels",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un \"contrôle d'accès\" ?",
+       "opts": [
+        "Une méthode pour accélérer les performances des systèmes",
+        "Un mécanisme pour limiter l'accès aux ressources uniquement aux utilisateurs autorisés",
+        "Un outil pour réduire les coûts des logiciels",
+        "Une stratégie pour simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est la différence entre un \"firewall\" et un \"IDS\" (Système de Détection d'Intrusion) ?",
+       "opts": [
+        "Un firewall bloque le trafic, un IDS surveille et signale les activités suspectes",
+        "Un firewall est un logiciel, un IDS est un matériel",
+        "Un firewall est gratuit, un IDS est payant",
+        "Il n'y a aucune différence"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'un \"principe de segmentation réseau\" ?",
+       "opts": [
+        "Diviser un réseau en zones plus petites pour limiter la propagation des menaces",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale méthode pour assurer la disponibilité des systèmes ?",
+       "opts": [
+        "Mettre en place des sauvegardes régulières et des plans de continuité",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'un \"système de gestion des journaux\" (log management) ?",
+       "opts": [
+        "Collecter et analyser les journaux des systèmes pour détecter des anomalies",
+        "Accélérer les performances des systèmes",
+        "Réduire les coûts des logiciels",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'un \"réseau privé virtuel\" (VPN) ?",
+       "opts": [
+        "Créer un tunnel sécurisé pour transmettre des données sur des réseaux publics",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'un \"plan de réponse aux incidents\" ?",
+       "opts": [
+        "Un document qui décrit comment gérer les incidents de sécurité",
+        "Un plan pour améliorer la vitesse des réseaux",
+        "Un guide pour réduire les coûts des logiciels",
+        "Un manuel pour simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce que le \"forensique numérique\" ?",
+       "opts": [
+        "Une méthode pour collecter et analyser des preuves numériques après un incident",
+        "Une technique pour accélérer les performances des systèmes",
+        "Un outil pour réduire les coûts des logiciels",
+        "Une stratégie pour simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'un \"tableau de bord de sécurité\" ?",
+       "opts": [
+        "Un outil pour surveiller et analyser les menaces en temps réel",
+        "Un guide pour réduire les coûts des logiciels",
+        "Un manuel pour simplifier l'utilisation des ordinateurs",
+        "Un plan pour améliorer la vitesse des réseaux"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce que le RGPD (Règlement Général sur la Protection des Données) ?",
+       "opts": [
+        "Une réglementation sur la protection des données personnelles dans l'UE",
+        "Une méthode pour accélérer les performances des systèmes",
+        "Un outil pour réduire les coûts des logiciels",
+        "Une stratégie pour simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la sanction maximale prévue par le RGPD en cas de non-conformité ?",
+       "opts": [
+        "20 millions d'euros ou 4% du chiffre d'affaires mondial",
+        "1 million d'euros",
+        "100 000 euros",
+        "Aucune sanction"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'un \"audit de conformité\" ?",
+       "opts": [
+        "Vérifier si une organisation respecte les réglementations applicables",
+        "Accélérer les performances des systèmes",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale responsabilité d'un DPO (Data Protection Officer) ?",
+       "opts": [
+        "Assurer la conformité de l'organisation avec le RGPD",
+        "Développer des logiciels",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts matériels"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'un \"plan de reprise après sinistre\" (PRS) ?",
+       "opts": [
+        "Définir des procédures pour restaurer les opérations critiques après un incident",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'une \"notification obligatoire de violation de données\" ?",
+       "opts": [
+        "Une obligation légale d'informer les autorités et les utilisateurs en cas de violation de données",
+        "Une méthode pour accélérer les performances des systèmes",
+        "Un outil pour réduire les coûts des logiciels",
+        "Une stratégie pour simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale fonction d'un \"registre des traitements\" dans le cadre du RGPD ?",
+       "opts": [
+        "Documenter les activités de traitement des données personnelles",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelles sont les principales étapes de la gestion des incidents de sécurité ?",
+       "opts": [
+        "Préparation, Détection, Analyse, Endiguement, Récupération",
+        "Préparation, Détection, Analyse, Endiguement, Récupération, Activité post-incident",
+        "Préparation, Détection, Analyse, Endiguement, Récupération, Communication",
+        "Préparation, Détection, Analyse, Endiguement, Récupération, Documentation"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Qu'est-ce qu'un plan de gestion des incidents de sécurité en phase d'endiguement ?",
+       "opts": [
+        "Un plan pour augmenter les profits de l'entreprise",
+        "Un plan pour limiter l'impact des incidents de sécurité",
+        "Un plan pour former les employés",
+        "Un plan pour réduire les coûts de l'entreprise"
+       ],
+       "correct": 1
+      },
+      {
+       "q": "Quelle est une réglementation importante en matière de cybersécurité en Europe ?",
+       "opts": [
+        "GDPR (Règlement Général sur la Protection des Données)",
+        "CCPA (California Consumer Privacy Act)",
+        "HIPAA (Health Insurance Portability and Accountability Act)",
+        "SOX (Sarbanes-Oxley Act)"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est une des principales obligations du HIPAA pour les entreprises ?",
+       "opts": [
+        "Mettre en place des mesures de sécurité pour protéger les données de santé",
+        "Ignorer les alertes de sécurité",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est une des principales obligations du SOX pour les entreprises ?",
+       "opts": [
+        "Mettre en place des mesures de sécurité pour protéger les données financières",
+        "Ignorer les alertes de sécurité",
+        "Utiliser des mots de passe simples",
+        "Partager les mots de passe avec les collègues"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce que le CMMC (Cybersecurity Maturity Model Certification) ?",
+       "opts": [
+        "Un modèle de certification en cybersécurité pour les entreprises américaines",
+        "Un modèle de certification en cybersécurité pour les entreprises européennes",
+        "Un modèle de certification en cybersécurité pour les entreprises asiatiques",
+        "Un modèle de certification en cybersécurité pour les entreprises africaines"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Qu'est-ce qu'un audit de conformité en cybersécurité ?",
+       "opts": [
+        "Un processus de vérification des politiques de sécurité",
+        "Un processus de vérification des profits de l'entreprise",
+        "Un processus de vérification des politiques de formation",
+        "Un processus de vérification des coûts de l'entreprise"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale obligation du RGPD pour les organisations ?",
+       "opts": [
+        "Protéger les données personnelles et informer en cas de violation",
+        "Augmenter la vitesse des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale responsabilité d'un DPO (Data Protection Officer) ?",
+       "opts": [
+        "Assurer la conformité de l'organisation avec le RGPD",
+        "Développer des logiciels",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts matériels"
+       ],
+       "correct": 0
+      },
+      {
+       "q": "Quelle est la principale caractéristique d'un \"registre des traitements\" dans le cadre du RGPD ?",
+       "opts": [
+        "Documenter les activités de traitement des données personnelles",
+        "Accélérer les performances des réseaux",
+        "Réduire les coûts des technologies",
+        "Simplifier l'utilisation des ordinateurs"
+       ],
+       "correct": 0
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "flashcards": [
+  {
+   "front": "Triade CIA",
+   "back": "Confidentialité, Intégrité, Disponibilité",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "Menace",
+   "back": "Événement potentiellement dommageable (intentionnel ou non)",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "Vulnérabilité",
+   "back": "Faiblesse exploitable dans un système",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "Risque = ?",
+   "back": "Menace × Vulnérabilité × Impact",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "Stuxnet",
+   "back": "1er ver d'État ciblant les centrifugeuses iraniennes (2010)",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "WannaCry",
+   "back": "Ransomware mondial ayant touché 200k systèmes en 2017",
+   "tag": "Mod.1"
+  },
+  {
+   "front": "Ransomware",
+   "back": "Chiffre les fichiers, exige une rançon pour les rendre",
+   "tag": "Mod.2"
+  },
+  {
+   "front": "Spear phishing",
+   "back": "Phishing ciblé et personnalisé sur une victime précise",
+   "tag": "Mod.2"
+  },
+  {
+   "front": "Whaling",
+   "back": "Spear phishing visant des cadres dirigeants",
+   "tag": "Mod.2"
+  },
+  {
+   "front": "Baiting",
+   "back": "Attirer la victime avec quelque chose d'attrayant (clé USB)",
+   "tag": "Mod.2"
+  },
+  {
+   "front": "DDoS",
+   "back": "Déni de service distribué via un botnet de machines compromises",
+   "tag": "Mod.2"
+  },
+  {
+   "front": "AES",
+   "back": "Algorithme symétrique (128/192/256 bits) — standard mondial",
+   "tag": "Mod.3"
+  },
+  {
+   "front": "RSA",
+   "back": "Algorithme asymétrique — échange de clés et signatures",
+   "tag": "Mod.3"
+  },
+  {
+   "front": "SHA-256",
+   "back": "Fonction de hachage de la famille SHA-2 — largement recommandé",
+   "tag": "Mod.3"
+  },
+  {
+   "front": "PKI",
+   "back": "Infrastructure à clé publique — socle de HTTPS",
+   "tag": "Mod.3"
+  },
+  {
+   "front": "2FA",
+   "back": "Authentification à 2 facteurs — catégories différentes",
+   "tag": "Mod.3"
+  },
+  {
+   "front": "RBAC",
+   "back": "Role-Based Access Control — permissions selon le rôle",
+   "tag": "Mod.4"
+  },
+  {
+   "front": "OWASP Top 10",
+   "back": "Les 10 vulnérabilités web les plus critiques",
+   "tag": "Mod.4"
+  },
+  {
+   "front": "TDE",
+   "back": "Transparent Data Encryption — chiffrement des BDD au repos",
+   "tag": "Mod.4"
+  },
+  {
+   "front": "SIEM",
+   "back": "Security Information and Event Management — corrélation d'événements",
+   "tag": "Mod.5"
+  },
+  {
+   "front": "5 étapes incident",
+   "back": "Identification → Confinement → Éradication → Récupération → Post-incident",
+   "tag": "Mod.5"
+  },
+  {
+   "front": "PCA",
+   "back": "Plan de Continuité des Activités — maintenir les activités en crise",
+   "tag": "Mod.5"
+  },
+  {
+   "front": "PRA",
+   "back": "Plan de Reprise après Sinistre — récupération technique",
+   "tag": "Mod.5"
+  },
+  {
+   "front": "RGPD",
+   "back": "Réglementation UE sur la protection des données — 4% CA ou 20M€",
+   "tag": "Mod.6"
+  },
+  {
+   "front": "HIPAA",
+   "back": "Protection des données de santé (USA) — 1,5M$/an",
+   "tag": "Mod.6"
+  },
+  {
+   "front": "ISO/IEC 27001",
+   "back": "Norme internationale pour un Système de Management de la Sécurité de l'Information",
+   "tag": "Mod.6"
+  },
+  {
+   "front": "NIST CSF",
+   "back": "Cadre cybersécurité américain : Identifier, Protéger, Détecter, Répondre, Récupérer",
+   "tag": "Mod.6"
+  },
+  {
+   "front": "Règle 3-2-1",
+   "back": "3 copies, 2 supports différents, 1 copie hors-site",
+   "tag": "Mod.7"
+  },
+  {
+   "front": "Moindre privilège",
+   "back": "Limiter chaque accès aux ressources strictement nécessaires",
+   "tag": "Mod.7"
+  },
+  {
+   "front": "RTO",
+   "back": "Recovery Time Objective — durée d'arrêt maximale acceptable",
+   "tag": "Mod.7"
+  },
+  {
+   "front": "RPO",
+   "back": "Recovery Point Objective — perte de données maximale acceptable",
+   "tag": "Mod.7"
+  }
+ ],
+ "exercises_source": "_private/cybersec/exercices/exercices.html"
+}

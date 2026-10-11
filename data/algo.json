@@ -1,0 +1,1151 @@
+{
+ "slug": "algo",
+ "name": "Algorithmique",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Variables & Types de Données",
+   "subtitle": "Les fondations de tout programme : variables, types de données, affectation et entrées/sorties.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est un algorithme et son utilité<br/>\n        • Connaître les structures de base : entrée, sortie, traitement<br/>\n        • Maîtriser variables, types, affectation et entrées/sorties<br/>\n        • Écrire un premier pseudo-code et sa traduction en Pascal</p>\n</div>\n<h2>1.1 — Qu'est-ce qu'un algorithme ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Un <strong>algorithme</strong> est une suite finie d'instructions précises qui, à partir de <strong>données d'entrée</strong>, produit un <strong>résultat de sortie</strong> après un nombre fini d'étapes.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🍳 Analogie — La recette de cuisine</div>\n<p>Un algorithme, c'est comme une recette. Les <em>ingrédients</em> sont les entrées, les <em>instructions</em> sont les étapes, et le <em>plat fini</em> est la sortie. Si tu suis les étapes dans l'ordre, tu obtiens toujours le même résultat !</p>\n</div>\n<h3>Les 3 parties d'un algorithme</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Partie</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>1</strong></td><td><strong>Entrée</strong></td><td>Données reçues par l'algorithme</td><td>Deux nombres à additionner</td></tr>\n<tr><td><strong>2</strong></td><td><strong>Traitement</strong></td><td>Opérations effectuées</td><td>Addition des deux nombres</td></tr>\n<tr><td><strong>3</strong></td><td><strong>Sortie</strong></td><td>Résultat produit</td><td>La somme affichée</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — ETS</div>\n<p><strong>E</strong>ntrée → <strong>T</strong>raitement → <strong>S</strong>ortie<br/>Comme « Entrée en scène, Travail, Sortie de scène » — tout algorithme suit ce schéma !</p>\n</div>\n<h2>1.2 — Les variables</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📦 Définition</div>\n<p>Une <strong>variable</strong> est un espace de stockage en mémoire identifié par un <strong>nom</strong> (identifiant) et qui contient une <strong>valeur</strong> d'un certain <strong>type</strong>.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🗄️ Analogie — Le casier</div>\n<p>Imagine un casier dans un vestiaire. Le <em>numéro du casier</em> c'est le nom de la variable, le <em>contenu</em> c'est la valeur, et le <em>type de casier</em> (petit/grand/avec crochet) c'est le type de données.</p>\n</div>\n<h3>Règles de nommage</h3>\n<ul>\n<li>Commence par une <strong>lettre</strong> (pas un chiffre)</li>\n<li>Contient uniquement lettres, chiffres et <code>_</code> (underscore)</li>\n<li>Pas d'espaces ni de caractères spéciaux</li>\n<li>Pas de mots réservés du langage (si, alors, pour…)</li>\n<li>Choisir des noms <strong>explicites</strong> : <code>age</code> plutôt que <code>a</code></li>\n</ul>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Bonne pratique</div>\n<p>Utilise le <em>camelCase</em> (<code>nombreEleves</code>) ou le <em>snake_case</em> (<code>nombre_eleves</code>) pour les noms composés. Sois cohérent dans tout ton programme !</p>\n</div>\n<h3>Déclaration en pseudocode et Pascal</h3>\n<div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode</div>\n<pre>Variable age : Entier\nVariable nom : Chaîne\nVariable moyenne : Réel\nVariable estInscrit : Booléen</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pascal</div>\n<pre>var\n  age : integer;\n  nom : string;\n  moyenne : real;\n  estInscrit : boolean;</pre>\n</div>\n</div>\n<h2>1.3 — Les types de données</h2>\n<p>Chaque variable a un <strong>type</strong> qui détermine les valeurs possibles et les opérations autorisées.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th><th>Exemples</th><th>Pascal</th></tr></thead>\n<tbody>\n<tr><td><strong>Entier</strong></td><td>Nombre sans virgule</td><td><code>0</code>, <code>42</code>, <code>-7</code></td><td><code>integer</code></td></tr>\n<tr><td><strong>Réel</strong></td><td>Nombre avec virgule</td><td><code>3.14</code>, <code>-0.5</code></td><td><code>real</code></td></tr>\n<tr><td><strong>Caractère</strong></td><td>Un seul symbole</td><td><code>'A'</code>, <code>'3'</code>, <code>'@'</code></td><td><code>char</code></td></tr>\n<tr><td><strong>Chaîne</strong></td><td>Suite de caractères</td><td><code>\"Bonjour\"</code>, <code>\"B1\"</code></td><td><code>string</code></td></tr>\n<tr><td><strong>Booléen</strong></td><td>Vrai ou Faux</td><td><code>VRAI</code>, <code>FAUX</code></td><td><code>boolean</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — ERCBC</div>\n<p><strong>E</strong>ntier · <strong>R</strong>éel · <strong>C</strong>aractère · <strong>B</strong>ooléen · <strong>C</strong>haîne<br/>Retiens : « <em>Elle Rit Car Bob Chante</em> » pour les 5 types fondamentaux.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention</div>\n<p><code>'3'</code> (caractère) ≠ <code>3</code> (entier). Le caractère <code>'3'</code> est un symbole, le nombre <code>3</code> peut être utilisé pour calculer. On ne peut pas additionner <code>'3' + '2'</code> pour obtenir <code>5</code> !</p>\n</div>\n<h2>1.4 — L'affectation</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">⬅️ Définition</div>\n<p>L'<strong>affectation</strong> consiste à <strong>stocker une valeur</strong> dans une variable. En pseudocode, on utilise la flèche <code>←</code>. En Pascal, on utilise <code>:=</code>.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📬 Analogie — La boîte aux lettres</div>\n<p>L'affectation, c'est comme mettre une lettre dans une boîte aux lettres. La boîte (variable) reçoit le courrier (valeur). Si tu mets un nouveau courrier, l'ancien est <em>remplacé</em>.</p>\n</div>\n<div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode</div>\n<pre>age ← 20\nnom ← \"Alice\"\npi ← 3.14159\nsomme ← a + b\ndouble ← nombre * 2</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pascal</div>\n<pre>age := 20;\nnom := 'Alice';\npi := 3.14159;\nsomme := a + b;\ndouble := nombre * 2;</pre>\n</div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège classique</div>\n<p><code>a ← b</code> copie la valeur de <code>b</code> dans <code>a</code>. La variable <code>b</code> garde sa valeur ! Ce n'est <strong>pas</strong> un échange.</p>\n</div>\n<h3>Échange de deux variables</h3>\n<p>Pour échanger les valeurs de <code>a</code> et <code>b</code>, on a besoin d'une variable <strong>temporaire</strong> :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode — Échange correct</div>\n<pre>temp ← a     // Sauvegarder a\na    ← b     // Écraser a avec b\nb    ← temp  // Restaurer l'ancien a dans b</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🥤 Mnémo — Le verre d'eau</div>\n<p>Pour échanger le contenu de deux verres, il faut un <strong>troisième verre vide</strong> (la variable <code>temp</code>). Verse le premier dans le vide, puis remplis le premier avec le second, et le second avec le troisième.</p>\n</div>\n<h2>1.5 — Entrées et Sorties</h2>\n<p>Les <strong>entrées</strong> permettent à l'utilisateur de fournir des données. Les <strong>sorties</strong> affichent des résultats à l'écran.</p>\n<div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode</div>\n<pre>Écrire(\"Quel est votre âge ?\")\nLire(age)\nÉcrire(\"Vous avez \", age, \" ans.\")</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pascal</div>\n<pre>writeln('Quel est votre age ?');\nreadln(age);\nwriteln('Vous avez ', age, ' ans.');</pre>\n</div>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">ℹ️ writeln vs write</div>\n<p><code>writeln</code> ajoute un retour à la ligne après l'affichage. <code>write</code> reste sur la même ligne. Pareil pour <code>readln</code> (lire avec saut de ligne) et <code>read</code>.</p>\n</div>\n<h2>1.6 — Opérations et Expressions</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><code>+</code></td><td>Addition</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>\n<tr><td><code>-</code></td><td>Soustraction</td><td><code>7 - 3</code></td><td><code>4</code></td></tr>\n<tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 3</code></td><td><code>21</code></td></tr>\n<tr><td><code>/</code></td><td>Division réelle</td><td><code>7 / 2</code></td><td><code>3.5</code></td></tr>\n<tr><td><code>DIV</code></td><td>Division entière</td><td><code>7 DIV 2</code></td><td><code>3</code></td></tr>\n<tr><td><code>MOD</code></td><td>Reste (modulo)</td><td><code>7 MOD 2</code></td><td><code>1</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — DIV et MOD</div>\n<p>Pense à la division posée : <code>7 ÷ 2 = 3 reste 1</code>.<br/>\n<strong>DIV</strong> donne le <strong>quotient</strong> (3), <strong>MOD</strong> donne le <strong>reste</strong> (1).<br/>\n        Astuce : si <code>nombre MOD 2 = 0</code>, le nombre est <strong>pair</strong> !</p>\n</div>\n<h2>1.7 — Les constantes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔒 Définition</div>\n<p>Une <strong>constante</strong> est une variable dont la valeur est <strong>fixée une fois pour toutes</strong> et ne peut pas être modifiée pendant l'exécution du programme.</p>\n</div>\n<div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode</div>\n<pre>Constante PI ← 3.14159\nConstante TVA ← 0.20\nConstante MAX_ELEVES ← 35</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pascal</div>\n<pre>const\n  PI = 3.14159;\n  TVA = 0.20;\n  MAX_ELEVES = 35;</pre>\n</div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Convention</div>\n<p>Les constantes s'écrivent souvent en <strong>MAJUSCULES</strong> pour les distinguer des variables. Utilise-les dès qu'une valeur ne doit jamais changer (π, taux de TVA…).</p>\n</div>\n<h2>1.8 — Premier programme complet</h2>\n<p>Programme qui calcule l'aire d'un cercle à partir de son rayon :</p>\n<div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pseudocode</div>\n<pre>Algorithme AireCercle\nConstante PI ← 3.14159\nVariable rayon : Réel\nVariable aire  : Réel\nDébut\n  Écrire(\"Entrez le rayon :\")\n  Lire(rayon)\n  aire ← PI * rayon * rayon\n  Écrire(\"Aire = \", aire)\nFin</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Pascal</div>\n<pre>program AireCercle;\nconst PI = 3.14159;\nvar rayon, aire : real;\nbegin\n  writeln('Entrez le rayon :');\n  readln(rayon);\n  aire := PI * rayon * rayon;\n  writeln('Aire = ', aire:0:2);\nend.</pre>\n</div>\n</div>\n<h2>Exercice guidé — Conversion secondes → h:m:s</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🎯 Énoncé</div>\n<p>On dispose d'une variable <code>duree_sec ← 7384</code>. Calculer les heures, minutes et secondes correspondantes.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution pas à pas</div>\n<pre>Variables :\n  duree_sec : ENTIER ← 7384\n  heures    : ENTIER\n  minutes   : ENTIER\n  secondes  : ENTIER\nheures   ← duree_sec DIV 3600   // 7384 DIV 3600 = 2\nreste    ← duree_sec MOD 3600   // 7384 MOD 3600 = 184\nminutes  ← reste DIV 60          // 184 DIV 60 = 3\nsecondes ← reste MOD 60          // 184 MOD 60 = 4\nÉcrire(heures, \"h\", minutes, \"min\", secondes, \"s\")\n→ 2h 3min 4s ✓</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1</h3>\n<ul>\n<li>Algorithme = Entrée → Traitement → Sortie (<strong>ETS</strong>)</li>\n<li>Variable = espace mémoire nommé contenant une valeur typée</li>\n<li>5 types fondamentaux : <strong>ERCBC</strong> — Entier, Réel, Caractère, Booléen, Chaîne</li>\n<li>Affectation (<code>←</code>) remplace l'ancienne valeur · Échange nécessite une variable <code>temp</code></li>\n<li><code>Écrire</code> = afficher · <code>Lire</code> = saisir au clavier</li>\n<li><code>DIV</code> = quotient entier · <code>MOD</code> = reste de la division entière</li>\n<li>Constante = variable non modifiable (convention : MAJUSCULES)</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel opérateur retourne le reste d'une division entière en algorithmique ?",
+     "options": [
+      {
+       "text": "DIV",
+       "correct": false,
+       "explanation": "DIV donne le quotient entier, pas le reste."
+      },
+      {
+       "text": "MOD",
+       "correct": true,
+       "explanation": "Correct ! MOD (modulo) retourne le reste. Ex : 7 MOD 2 = 1."
+      },
+      {
+       "text": "/",
+       "correct": false,
+       "explanation": "/ est la division réelle, elle donne un résultat décimal."
+      },
+      {
+       "text": "REM",
+       "correct": false,
+       "explanation": "REM n'est pas l'opérateur utilisé en pseudocode standard."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pour échanger les valeurs de deux variables A et B, on a besoin de :",
+     "options": [
+      {
+       "text": "Juste deux affectations : A ← B, B ← A",
+       "correct": false,
+       "explanation": "A ← B, B ← A ne fonctionne pas : on écrase A avant de l'utiliser !"
+      },
+      {
+       "text": "Une variable temporaire (temp ← A, A ← B, B ← temp)",
+       "correct": true,
+       "explanation": "Correct ! Il faut une variable temporaire : temp←A, A←B, B←temp."
+      },
+      {
+       "text": "Une constante intermédiaire",
+       "correct": false,
+       "explanation": "Une constante ne change pas de valeur, elle ne peut pas servir à l'échange."
+      },
+      {
+       "text": "Aucune, le langage le fait automatiquement",
+       "correct": false,
+       "explanation": "Aucune opération ne fait l'échange automatiquement en pseudocode."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quel est le type du résultat de l'expression 7 / 2 en pseudocode algorithmique ?",
+     "options": [
+      {
+       "text": "Entier (valeur = 3)",
+       "correct": false,
+       "explanation": "7 / 2 en pseudocode est une division réelle qui donne 3.5, donc un Réel."
+      },
+      {
+       "text": "Réel (valeur = 3.5)",
+       "correct": true,
+       "explanation": "Correct ! En pseudocode, / est la division réelle : 7 / 2 = 3.5 (Réel). Pour la division entière, on utilise DIV."
+      },
+      {
+       "text": "Booléen",
+       "correct": false,
+       "explanation": "Un booléen est VRAI ou FAUX, pas un résultat de division."
+      },
+      {
+       "text": "Chaîne",
+       "correct": false,
+       "explanation": "Chaîne est un texte, pas un résultat de calcul numérique."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Parmi ces noms de variables, lequel est invalide en algorithmique ?",
+     "options": [
+      {
+       "text": "nombreEleves",
+       "correct": false,
+       "explanation": "nombreEleves est valide : commence par une lettre, pas de caractères spéciaux."
+      },
+      {
+       "text": "prix_unitaire",
+       "correct": false,
+       "explanation": "prix_unitaire est valide : underscore autorisé."
+      },
+      {
+       "text": "3notes",
+       "correct": true,
+       "explanation": "Correct ! 3notes est invalide : un nom de variable ne peut pas commencer par un chiffre."
+      },
+      {
+       "text": "taille",
+       "correct": false,
+       "explanation": "taille est valide : simple, court, commence par une lettre."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "La commande Lire(x) en pseudocode correspond à :",
+     "options": [
+      {
+       "text": "Afficher la valeur de x à l'écran",
+       "correct": false,
+       "explanation": "Écrire affiche quelque chose à l'écran, c'est la sortie."
+      },
+      {
+       "text": "Lire une valeur saisie au clavier et la stocker dans x",
+       "correct": true,
+       "explanation": "Correct ! Lire(x) = l'utilisateur tape une valeur au clavier qui est stockée dans x. C'est une entrée."
+      },
+      {
+       "text": "Déclarer la variable x",
+       "correct": false,
+       "explanation": "Déclarer c'est créer la variable. Lire c'est lui attribuer une valeur saisie."
+      },
+      {
+       "text": "Supprimer la variable x",
+       "correct": false,
+       "explanation": "Lire ne supprime pas une variable."
+      }
+     ]
+    }
+   ],
+   "source": "algo/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Structures conditionnelles",
+   "subtitle": "Si/Sinon, Selon/Cas et opérateurs logiques — contrôler le flux d'exécution.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Écrire des structures Si/Sinon simples et imbriquées<br/>\n        • Utiliser la structure Selon/Cas (switch)<br/>\n        • Combiner les conditions avec ET, OU, NON</p>\n</div>\n<h2>2.1 — La structure Si / Sinon</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Syntaxe</div>\n<p>La structure conditionnelle permet d'exécuter un bloc d'instructions selon qu'une condition est vraie ou fausse.</p>\n</div>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Si condition Alors\n  // instructions si vrai\nSinon\n  // instructions si faux\nFin Si</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pascal</div>\n<pre>if condition then\nbegin\n  { instructions si vrai }\nend\nelse\nbegin\n  { instructions si faux }\nend;</pre>\n</div>\n</div>\n<h2>2.2 — Opérateurs de comparaison</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><code>=</code></td><td>Égal à</td><td><code>5 = 5</code></td><td>VRAI</td></tr>\n<tr><td><code>≠</code> ou <code>&lt;&gt;</code></td><td>Différent de</td><td><code>5 &lt;&gt; 3</code></td><td>VRAI</td></tr>\n<tr><td><code>&lt;</code></td><td>Inférieur à</td><td><code>3 &lt; 5</code></td><td>VRAI</td></tr>\n<tr><td><code>&gt;</code></td><td>Supérieur à</td><td><code>3 &gt; 5</code></td><td>FAUX</td></tr>\n<tr><td><code>&lt;=</code></td><td>Inférieur ou égal</td><td><code>5 &lt;= 5</code></td><td>VRAI</td></tr>\n<tr><td><code>&gt;=</code></td><td>Supérieur ou égal</td><td><code>3 &gt;= 5</code></td><td>FAUX</td></tr>\n</tbody>\n</table></div>\n<h2>2.3 — Opérateurs logiques ET / OU / NON</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Vrai si...</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>ET</strong> (AND)</td><td>Les DEUX conditions sont vraies</td><td><code>age &gt;= 18 ET age &lt;= 65</code></td></tr>\n<tr><td><strong>OU</strong> (OR)</td><td>AU MOINS UNE condition est vraie</td><td><code>note &lt; 0 OU note &gt; 20</code></td></tr>\n<tr><td><strong>NON</strong> (NOT)</td><td>La condition est fausse</td><td><code>NON (age &lt; 18)</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Table de vérité résumée</div>\n<p>ET : les deux doivent être vraies → « les deux mains levées »<br/>\n        OU : au moins une doit être vraie → « au moins une main levée »<br/>\n        NON : inverse → « tête-bêche »</p>\n</div>\n<h2>2.4 — Si / Sinon Si imbriqués</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Mention selon la note</div>\n<pre>Algorithme Mention\nVariable note : Réel\nDébut\n  Écrire(\"Entrez votre note :\")\n  Lire(note)\n  Si note &gt;= 16 Alors\n    Écrire(\"Très Bien\")\n  Sinon Si note &gt;= 14 Alors\n    Écrire(\"Bien\")\n  Sinon Si note &gt;= 12 Alors\n    Écrire(\"Assez Bien\")\n  Sinon Si note &gt;= 10 Alors\n    Écrire(\"Passable\")\n  Sinon\n    Écrire(\"Insuffisant\")\n  Fin Si\nFin</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Ordre des conditions</div>\n<p>L'ordre est crucial ! Si on écrit <code>Si note &gt;= 10</code> en premier, toutes les notes ≥10 passeront là, y compris 18/20. Il faut toujours tester du <strong>plus restrictif au moins restrictif</strong>.</p>\n</div>\n<h2>2.5 — Structure Selon / Cas (switch)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Utilité</div>\n<p>Utilisée quand on teste une variable contre un ensemble de valeurs précises (pas des intervalles).</p>\n</div>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Selon variable Faire\n  Cas valeur1 : instructions\n  Cas valeur2 : instructions\n  Cas valeur3 : instructions\n  Autrement : instructions\nFin Selon</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pascal</div>\n<pre>case variable of\n  valeur1: instruction;\n  valeur2: instruction;\n  valeur3: instruction;\n  else instruction;\nend;</pre>\n</div>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Jour de la semaine</div>\n<pre>Selon jour Faire\n  Cas 1 : Écrire(\"Lundi\")\n  Cas 2 : Écrire(\"Mardi\")\n  Cas 3 : Écrire(\"Mercredi\")\n  Cas 4 : Écrire(\"Jeudi\")\n  Cas 5 : Écrire(\"Vendredi\")\n  Cas 6 : Écrire(\"Samedi\")\n  Cas 7 : Écrire(\"Dimanche\")\n  Autrement : Écrire(\"Jour invalide\")\nFin Selon</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Si condition Alors … Sinon … Fin Si</li>\n<li>Opérateurs : = · &lt;&gt; · &lt; · &gt; · &lt;= · &gt;=</li>\n<li>ET : les deux vraies · OU : au moins une vraie · NON : inverse</li>\n<li>Conditions imbriquées : tester du plus restrictif au moins restrictif</li>\n<li>Selon/Cas : pour des valeurs précises (pas des intervalles)</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle condition vérifie qu'une variable x est comprise entre 10 et 20 inclus ?",
+     "options": [
+      {
+       "text": "x > 10 OU x < 20",
+       "correct": false,
+       "explanation": "OU est incorrect : x>10 OU x<20 est vrai pour presque toutes les valeurs."
+      },
+      {
+       "text": "x >= 10 ET x <= 20",
+       "correct": true,
+       "explanation": "Correct ! x >= 10 ET x <= 20 vérifie les deux bornes simultanément avec ET."
+      },
+      {
+       "text": "NON (x >= 10)",
+       "correct": false,
+       "explanation": "NON (x >= 10) signifie x < 10, ce n'est pas ce qu'on cherche."
+      },
+      {
+       "text": "x > 10 ET x > 20",
+       "correct": false,
+       "explanation": "x > 10 ET x > 20 sélectionne les valeurs supérieures à 20 uniquement."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pour tester une variable jour contre les valeurs 1, 2, 3, 4, 5, quelle structure est la plus adaptée ?",
+     "options": [
+      {
+       "text": "Une boucle Pour",
+       "correct": false,
+       "explanation": "La boucle Pour répète des instructions, elle ne fait pas de sélection sur des valeurs."
+      },
+      {
+       "text": "Un Si/Sinon Si en cascade",
+       "correct": false,
+       "explanation": "Si/Sinon fonctionne mais devient lourd avec de nombreuses valeurs précises."
+      },
+      {
+       "text": "Une structure Selon/Cas",
+       "correct": true,
+       "explanation": "Correct ! Selon/Cas (switch) est conçu pour tester une variable contre plusieurs valeurs précises — plus lisible qu'un Si/Sinon Si en cascade."
+      },
+      {
+       "text": "Une boucle Tant Que",
+       "correct": false,
+       "explanation": "Tant que est une boucle conditionnelle, pas une structure de sélection."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Soit note = 15. Quelle branche s'exécute dans ce code ?Si note >= 16 → \"TB\" / Sinon Si note >= 14 → \"B\" / Sinon Si note >= 10 → \"P\"",
+     "options": [
+      {
+       "text": "\"TB\" (note >= 16)",
+       "correct": false,
+       "explanation": "note = 15 < 16, donc la première condition est fausse."
+      },
+      {
+       "text": "\"B\" (note >= 14)",
+       "correct": true,
+       "explanation": "Correct ! 15 < 16 (première condition fausse), 15 >= 14 (deuxième condition vraie) → 'B'."
+      },
+      {
+       "text": "\"P\" (note >= 10)",
+       "correct": false,
+       "explanation": "On n'atteint pas la 3ème condition car la 2ème (>=14) est déjà vraie pour 15."
+      },
+      {
+       "text": "Aucune branche",
+       "correct": false,
+       "explanation": "note = 15 satisfait la condition >= 14, donc une branche s'exécute."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Les Boucles",
+   "subtitle": "Pour, Tant que, Répéter…Jusqu'à — maîtriser les répétitions.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Utiliser les trois structures de boucle : Pour, Tant que, Répéter…Jusqu'à<br/>\n        • Implémenter des compteurs et accumulateurs<br/>\n        • Construire des boucles imbriquées</p>\n</div>\n<h2>3.1 — Boucle Pour (for)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Utilisation</div>\n<p>Quand on connaît le <strong>nombre exact d'itérations</strong> à l'avance.</p>\n</div>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Pour i ← 1 à N Faire\n  // instructions\nFin Pour</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pascal</div>\n<pre>for i := 1 to N do\nbegin\n  { instructions }\nend;</pre>\n</div>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Somme de 1 à N</div>\n<pre>Variable somme, i, N : Entier\nsomme ← 0\nLire(N)\nPour i ← 1 à N Faire\n  somme ← somme + i\nFin Pour\nÉcrire(\"Somme = \", somme)\n// Pour N=5 : somme = 1+2+3+4+5 = 15</pre>\n</div>\n<h2>3.2 — Boucle Tant Que (while)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Utilisation</div>\n<p>Quand le nombre d'itérations est <strong>inconnu</strong>, et qu'on veut tester la condition <strong>avant</strong> chaque tour.</p>\n</div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Risque de boucle infinie</div>\n<p>Il faut toujours s'assurer que la condition deviendra fausse à un moment, sinon la boucle tourne indéfiniment.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Saisie jusqu'à valeur valide</div>\n<pre>Variable note : Réel\nLire(note)\nTant Que note &lt; 0 OU note &gt; 20 Faire\n  Écrire(\"Note invalide, réessayez :\")\n  Lire(note)\nFin Tant Que\nÉcrire(\"Note valide : \", note)</pre>\n</div>\n<h2>3.3 — Boucle Répéter…Jusqu'à (do-while)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Différence clé</div>\n<p>La condition est testée <strong>APRÈS</strong> le premier tour → le bloc s'exécute au moins une fois.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple</div>\n<pre>Variable reponse : Chaîne\nRépéter\n  Écrire(\"Voulez-vous continuer ? (O/N)\")\n  Lire(reponse)\nJusqu'à reponse = \"N\"</pre>\n</div>\n<h2>3.4 — Comparaison des 3 boucles</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Boucle</th><th>Test condition</th><th>Exécution min.</th><th>Quand l'utiliser</th></tr></thead>\n<tbody>\n<tr><td><strong>Pour</strong></td><td>Avant</td><td>0 fois (si N&lt;1)</td><td>Nombre d'itérations connu</td></tr>\n<tr><td><strong>Tant Que</strong></td><td>Avant</td><td>0 fois</td><td>Nombre inconnu, test préalable</td></tr>\n<tr><td><strong>Répéter…Jusqu'à</strong></td><td>Après</td><td>1 fois minimum</td><td>Saisie, menu (au moins une fois)</td></tr>\n</tbody>\n</table></div>\n<h2>3.5 — Compteurs et accumulateurs</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Patterns classiques</div>\n<p><strong>Compteur :</strong> <code>cpt ← cpt + 1</code> (compte les occurrences)<br/>\n<strong>Accumulateur :</strong> <code>somme ← somme + valeur</code> (cumule des valeurs)<br/>\n<strong>Produit :</strong> <code>prod ← prod × valeur</code> — initialiser à 1 !</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Statistiques simples</div>\n<pre>Variables nb, cpt_sup, somme, note : Réel\ncpt_sup ← 0 ; somme ← 0 ; cpt ← 0\nLire(nb)\nPour i ← 1 à nb Faire\n  Lire(note)\n  somme ← somme + note\n  Si note &gt;= 10 Alors cpt_sup ← cpt_sup + 1 Fin Si\nFin Pour\nÉcrire(\"Moyenne : \", somme/nb)\nÉcrire(\"Admis : \", cpt_sup)</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li><strong>Pour</strong> : nombre d'itérations connu · test avant · min 0 fois</li>\n<li><strong>Tant Que</strong> : test avant · peut ne pas s'exécuter</li>\n<li><strong>Répéter…Jusqu'à</strong> : test après · au moins 1 fois</li>\n<li>Compteur : cpt←cpt+1 · Accumulateur : somme←somme+val</li>\n<li>Produit : prod←prod×val (initialiser à 1 !)</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Combien de fois s'exécute \"Pour i ← 1 à 0 Faire\" ?",
+     "options": [
+      {
+       "text": "0 fois",
+       "correct": true,
+       "explanation": "Correct ! Si la borne finale (0) est inférieure à la borne initiale (1), la boucle Pour ne s'exécute pas du tout."
+      },
+      {
+       "text": "1 fois",
+       "correct": false,
+       "explanation": "La boucle ne s'exécute pas car 0 < 1."
+      },
+      {
+       "text": "En boucle infinie",
+       "correct": false,
+       "explanation": "Elle ne tourne pas — la condition de départ est déjà fausse."
+      },
+      {
+       "text": "2 fois",
+       "correct": false,
+       "explanation": "Elle s'exécute 0 fois, pas 2."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle est la valeur de somme après : somme←0; Pour i←1 à 4 Faire somme←somme+i ?",
+     "options": [
+      {
+       "text": "4",
+       "correct": false,
+       "explanation": "4 est la dernière valeur de i, pas la somme."
+      },
+      {
+       "text": "10",
+       "correct": true,
+       "explanation": "Correct ! somme = 1+2+3+4 = 10."
+      },
+      {
+       "text": "16",
+       "correct": false,
+       "explanation": "16 = 4×4. Ce n'est pas la somme des entiers de 1 à 4."
+      },
+      {
+       "text": "5",
+       "correct": false,
+       "explanation": "5 n'est pas la somme de 1+2+3+4."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle boucle garantit au moins une exécution du bloc ?",
+     "options": [
+      {
+       "text": "Pour",
+       "correct": false,
+       "explanation": "La boucle Pour peut ne pas s'exécuter si N < 1."
+      },
+      {
+       "text": "Tant Que",
+       "correct": false,
+       "explanation": "Tant Que teste la condition avant — si fausse dès le départ, le bloc ne s'exécute pas."
+      },
+      {
+       "text": "Répéter…Jusqu'à",
+       "correct": true,
+       "explanation": "Correct ! Répéter…Jusqu'à teste la condition APRÈS, donc le bloc s'exécute au minimum une fois."
+      },
+      {
+       "text": "Toutes les boucles",
+       "correct": false,
+       "explanation": "Toutes les boucles ne garantissent pas une exécution minimale — seulement Répéter."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "Les Tableaux",
+   "subtitle": "Tableaux à 1D et 2D, parcours, recherche et traitement.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Déclarer et manipuler des tableaux à une dimension<br/>\n        • Parcourir et remplir un tableau avec des boucles<br/>\n        • Faire de la recherche séquentielle dans un tableau</p>\n</div>\n<h2>4.1 — Définition</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Tableau</div>\n<p>Un tableau est une <strong>collection de variables de même type</strong>, rangées sous un même nom et accessibles par un <strong>indice</strong>.</p>\n</div>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Variable T : Tableau[1..N] de Entier\n// T[1], T[2], ..., T[N]</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pascal</div>\n<pre>var T : array[1..N] of integer;</pre>\n</div>\n</div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Dépassement d'indice</div>\n<p>Accéder à T[0] ou T[N+1] est une erreur grave (out of bounds). Toujours vérifier les bornes.</p>\n</div>\n<h2>4.2 — Remplissage et affichage</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple complet</div>\n<pre>Constante N ← 5\nVariable T : Tableau[1..N] de Entier\nVariable i, somme : Entier\n// Remplissage\nPour i ← 1 à N Faire\n  Écrire(\"Entrez T[\", i, \"] :\")\n  Lire(T[i])\nFin Pour\n// Calcul de la somme\nsomme ← 0\nPour i ← 1 à N Faire\n  somme ← somme + T[i]\nFin Pour\nÉcrire(\"Somme = \", somme, \" · Moyenne = \", somme/N)</pre>\n</div>\n<h2>4.3 — Recherche du maximum et minimum</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme</div>\n<pre>max ← T[1]   // hypothèse : premier élément est le max\nPour i ← 2 à N Faire\n  Si T[i] &gt; max Alors\n    max ← T[i]\n  Fin Si\nFin Pour\nÉcrire(\"Maximum = \", max)</pre>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Pattern — Initialisation au premier élément</div>\n<p>Pour max/min, toujours initialiser avec <code>T[1]</code> (pas 0 ou une valeur arbitraire), puis parcourir à partir de <code>i=2</code>.</p>\n</div>\n<h2>4.4 — Recherche séquentielle</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme de recherche</div>\n<pre>Variable trouve : Booléen ; pos : Entier ; val : Entier\nLire(val)\ntrouve ← FAUX ; i ← 1\nTant Que i &lt;= N ET NON trouve Faire\n  Si T[i] = val Alors\n    trouve ← VRAI\n    pos ← i\n  Fin Si\n  i ← i + 1\nFin Tant Que\nSi trouve Alors\n  Écrire(\"Trouvé en position \", pos)\nSinon\n  Écrire(\"Valeur absente\")\nFin Si</pre>\n</div>\n<h2>4.5 — Tableau à deux dimensions (matrice)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Déclaration et parcours</div>\n<pre>// Matrice 3×3\nVariable M : Tableau[1..3, 1..3] de Entier\n// Parcours ligne par ligne\nPour i ← 1 à 3 Faire\n  Pour j ← 1 à 3 Faire\n    Écrire(M[i,j], \" \")\n  Fin Pour\n  Écrire() // retour à la ligne\nFin Pour</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Tableau : collection de N éléments de même type, accès par indice T[i]</li>\n<li>Parcours : Pour i ← 1 à N Faire</li>\n<li>Max/Min : initialiser à T[1], comparer de T[2] à T[N]</li>\n<li>Recherche séquentielle : parcourir jusqu'à trouver ou fin</li>\n<li>Tableau 2D : deux indices M[i,j] — boucles imbriquées</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Un tableau T[1..10] de Entier contient combien d'éléments ?",
+     "options": [
+      {
+       "text": "9",
+       "correct": false,
+       "explanation": "9 = 10-1. Mais on compte de 1 à 10 inclus = 10 éléments."
+      },
+      {
+       "text": "10",
+       "correct": true,
+       "explanation": "Correct ! T[1], T[2], ..., T[10] = 10 éléments (de 1 à 10 inclus)."
+      },
+      {
+       "text": "11",
+       "correct": false,
+       "explanation": "11 serait si on comptait de 0 à 10. Ici c'est de 1 à 10."
+      },
+      {
+       "text": "Variable",
+       "correct": false,
+       "explanation": "Le tableau a une taille fixe de 10 éléments."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pour trouver le maximum d'un tableau, on initialise max à :",
+     "options": [
+      {
+       "text": "0",
+       "correct": false,
+       "explanation": "Initialiser à 0 est dangereux : si tous les éléments sont négatifs, 0 serait faussement le max."
+      },
+      {
+       "text": "T[1] (le premier élément)",
+       "correct": true,
+       "explanation": "Correct ! On initialise max au premier élément T[1], puis on compare avec les suivants à partir de T[2]."
+      },
+      {
+       "text": "N (taille du tableau)",
+       "correct": false,
+       "explanation": "La taille N n'a rien à voir avec la valeur du maximum."
+      },
+      {
+       "text": "-9999",
+       "correct": false,
+       "explanation": "-9999 pourrait fonctionner mais est fragile. T[1] est la meilleure pratique."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Fonctions & Procédures",
+   "subtitle": "Sous-programmes, paramètres, valeur de retour et portée des variables.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Distinguer fonction et procédure<br/>\n        • Écrire des sous-programmes avec paramètres<br/>\n        • Comprendre la portée des variables (locale vs globale)</p>\n</div>\n<h2>5.1 — Pourquoi les sous-programmes ?</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Principe DRY</div>\n<p><strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself : au lieu de copier-coller du code, on crée un sous-programme qu'on appelle autant de fois que nécessaire.<br/>\n        Avantages : lisibilité · maintenance · réutilisabilité · débogage simplifié</p>\n</div>\n<h2>5.2 — Procédure vs Fonction</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Procédure</th><th>Fonction</th></tr></thead>\n<tbody>\n<tr><td><strong>Retour</strong></td><td>Aucune valeur retournée</td><td>Retourne une valeur</td></tr>\n<tr><td><strong>Utilisation</strong></td><td>Instruction (appel seul)</td><td>Expression (dans calcul)</td></tr>\n<tr><td><strong>Exemple</strong></td><td>AfficherMenu()</td><td>Maximum(a, b)</td></tr>\n<tr><td><strong>Pascal</strong></td><td><code>procedure</code></td><td><code>function</code></td></tr>\n</tbody>\n</table></div>\n<h2>5.3 — Définition et appel d'une fonction</h2>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Fonction Max(a, b : Entier) : Entier\nDébut\n  Si a &gt; b Alors\n    Retourner a\n  Sinon\n    Retourner b\n  Fin Si\nFin Fonction\n// Appel\nres ← Max(10, 7)  // res = 10</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pascal</div>\n<pre>function Max(a, b: integer): integer;\nbegin\n  if a &gt; b then\n    Max := a\n  else\n    Max := b;\nend;\n// Appel\nres := Max(10, 7);</pre>\n</div>\n</div>\n<h2>5.4 — Passage de paramètres</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mode</th><th>Description</th><th>Pascal</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><strong>Par valeur</strong></td><td>Copie de l'argument</td><td><code>a: integer</code></td><td>Modif. sans effet extérieur</td></tr>\n<tr><td><strong>Par référence</strong></td><td>Adresse de l'argument</td><td><code>var a: integer</code></td><td>Modif. répercutée à l'appelant</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Échange par référence</div>\n<pre>Procédure Echanger(var x, y : Entier)\nVariable temp : Entier\nDébut\n  temp ← x ; x ← y ; y ← temp\nFin Procédure\n// Appel\na ← 5 ; b ← 3\nEchanger(a, b)  // maintenant a=3, b=5</pre>\n</div>\n<h2>5.5 — Variables locales vs globales</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Portée des variables</div>\n<p>• <strong>Variable locale</strong> : déclarée dans le sous-programme → n'existe que pendant son exécution<br/>\n        • <strong>Variable globale</strong> : déclarée au niveau principal → accessible partout (à éviter si possible)</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Fonction : retourne une valeur · Procédure : pas de retour</li>\n<li>Passage par valeur : copie (modif locale) · Par référence : modif répercutée</li>\n<li>Variable locale : existe uniquement dans le sous-programme</li>\n<li>Principe DRY : ne pas répéter le code → sous-programme</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle est la différence principale entre une fonction et une procédure ?",
+     "options": [
+      {
+       "text": "Une fonction n'a pas de paramètres",
+       "correct": false,
+       "explanation": "Les deux peuvent avoir des paramètres."
+      },
+      {
+       "text": "Une fonction retourne une valeur, une procédure non",
+       "correct": true,
+       "explanation": "Correct ! Une fonction retourne une valeur (utilisable dans une expression), une procédure effectue des actions sans retourner de valeur."
+      },
+      {
+       "text": "Une procédure ne peut être appelée qu'une fois",
+       "correct": false,
+       "explanation": "Les deux peuvent être appelées plusieurs fois."
+      },
+      {
+       "text": "Une procédure ne peut pas avoir de variables locales",
+       "correct": false,
+       "explanation": "Les deux peuvent avoir des variables locales."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pour qu'une procédure modifie la variable de l'appelant, le paramètre doit être passé :",
+     "options": [
+      {
+       "text": "Par valeur",
+       "correct": false,
+       "explanation": "Par valeur, la modification reste locale au sous-programme."
+      },
+      {
+       "text": "Par référence",
+       "correct": true,
+       "explanation": "Correct ! Par référence (mot-clé var en Pascal), la modification se répercute sur la variable originale de l'appelant."
+      },
+      {
+       "text": "En tant qu'entier",
+       "correct": false,
+       "explanation": "Le type entier n'a rien à voir avec le mode de passage."
+      },
+      {
+       "text": "En tant que variable locale",
+       "correct": false,
+       "explanation": "Une variable locale ne permet pas de communiquer vers l'appelant."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre5.html"
+  },
+  {
+   "number": 6,
+   "title": "Algorithmes de tri",
+   "subtitle": "Tri par sélection, à bulles et par insertion — comparaison et implémentation.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Implémenter le tri par sélection, par insertion et à bulles<br/>\n        • Comparer la complexité des algorithmes de tri<br/>\n        • Choisir le bon algorithme selon le contexte</p>\n</div>\n<h2>6.1 — Tri par sélection</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>À chaque étape, on cherche le <strong>minimum</strong> dans la partie non triée et on le place au début.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme</div>\n<pre>Pour i ← 1 à N-1 Faire\n  posMin ← i\n  Pour j ← i+1 à N Faire\n    Si T[j] &lt; T[posMin] Alors posMin ← j Fin Si\n  Fin Pour\n  // Échanger T[i] et T[posMin]\n  temp ← T[i] ; T[i] ← T[posMin] ; T[posMin] ← temp\nFin Pour</pre>\n</div>\n<p>Complexité : <strong>O(n²)</strong> — toujours (pas de meilleur cas)</p>\n<h2>6.2 — Tri à bulles</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>On compare les éléments adjacents et on les échange s'ils sont dans le mauvais ordre. Les plus grands « remontent » comme des bulles.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme avec optimisation</div>\n<pre>Variable échangé : Booléen\nRépéter\n  échangé ← FAUX\n  Pour i ← 1 à N-1 Faire\n    Si T[i] &gt; T[i+1] Alors\n      temp←T[i]; T[i]←T[i+1]; T[i+1]←temp\n      échangé ← VRAI\n    Fin Si\n  Fin Pour\nJusqu'à NON échangé</pre>\n</div>\n<p>Complexité : <strong>O(n²)</strong> moyen/pire · <strong>O(n)</strong> meilleur (déjà trié)</p>\n<h2>6.3 — Tri par insertion</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>On insère chaque élément à sa bonne place dans la partie déjà triée, comme trier des cartes à jouer.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme</div>\n<pre>Pour i ← 2 à N Faire\n  cle ← T[i]\n  j ← i - 1\n  Tant Que j &gt;= 1 ET T[j] &gt; cle Faire\n    T[j+1] ← T[j]\n    j ← j - 1\n  Fin Tant Que\n  T[j+1] ← cle\nFin Pour</pre>\n</div>\n<p>Complexité : <strong>O(n²)</strong> moyen/pire · <strong>O(n)</strong> meilleur · Excellent pour tableaux presque triés</p>\n<h2>6.4 — Comparaison des tris</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Algorithme</th><th>Meilleur</th><th>Moyen</th><th>Pire</th><th>Stable ?</th></tr></thead>\n<tbody>\n<tr><td>Tri sélection</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>Non</td></tr>\n<tr><td>Tri à bulles</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>Oui</td></tr>\n<tr><td>Tri insertion</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>Oui</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li><strong>Sélection</strong> : cherche le min, place en tête · O(n²) toujours</li>\n<li><strong>Bulles</strong> : échanges adjacents · O(n) si trié, O(n²) sinon</li>\n<li><strong>Insertion</strong> : insère à sa place · meilleur pour presque trié</li>\n<li>Tous : O(n²) en moyen/pire → algorithmes de tri simples</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Le tri par sélection recherche à chaque étape :",
+     "options": [
+      {
+       "text": "Les éléments adjacents à échanger",
+       "correct": false,
+       "explanation": "Le tri à bulles compare les éléments adjacents, pas le tri par sélection."
+      },
+      {
+       "text": "Le minimum de la partie non triée",
+       "correct": true,
+       "explanation": "Correct ! Le tri par sélection cherche le minimum de la partie non triée et le place en tête."
+      },
+      {
+       "text": "La position d'insertion de l'élément courant",
+       "correct": false,
+       "explanation": "Le tri par insertion insère à la bonne position, pas le tri par sélection."
+      },
+      {
+       "text": "Le maximum de la partie triée",
+       "correct": false,
+       "explanation": "Le tri par sélection ne cherche pas le maximum pour le placer en fin."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quel tri est le plus efficace si le tableau est déjà presque trié ?",
+     "options": [
+      {
+       "text": "Tri par sélection",
+       "correct": false,
+       "explanation": "Le tri par sélection reste O(n²) même si le tableau est trié."
+      },
+      {
+       "text": "Tri à bulles",
+       "correct": false,
+       "explanation": "Le tri à bulles est O(n) si déjà trié, mais le tri par insertion est aussi O(n) et souvent plus rapide en pratique."
+      },
+      {
+       "text": "Tri par insertion",
+       "correct": true,
+       "explanation": "Correct ! Le tri par insertion est O(n) quand le tableau est presque trié car peu de déplacements sont nécessaires."
+      },
+      {
+       "text": "Tous sont équivalents",
+       "correct": false,
+       "explanation": "Ils ont tous O(n²) en pire cas, mais par insertion est le meilleur pour données presque triées."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre6.html"
+  },
+  {
+   "number": 7,
+   "title": "Algorithmes de recherche",
+   "subtitle": "Recherche séquentielle vs dichotomique — complexité et conditions.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Implémenter la recherche séquentielle (linéaire)<br/>\n        • Implémenter la recherche dichotomique (binaire)<br/>\n        • Comparer les complexités et conditions d'utilisation</p>\n</div>\n<h2>7.1 — Recherche séquentielle</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>On parcourt le tableau de gauche à droite jusqu'à trouver la valeur ou atteindre la fin. Fonctionne sur tout tableau (trié ou non).</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme</div>\n<pre>Fonction RechercheSeq(T, N, val) : Entier\nVariable i : Entier ; trouve : Booléen\nDébut\n  trouve ← FAUX ; i ← 1\n  Tant Que i &lt;= N ET NON trouve Faire\n    Si T[i] = val Alors\n      trouve ← VRAI\n    Sinon\n      i ← i + 1\n    Fin Si\n  Fin Tant Que\n  Si trouve Alors Retourner i\n  Sinon Retourner -1   // -1 = non trouvé\nFin Fonction</pre>\n</div>\n<p>Complexité : <strong>O(n)</strong> — pire cas : N comparaisons</p>\n<h2>7.2 — Recherche dichotomique (binaire)</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Condition préalable</div>\n<p>Le tableau doit être <strong>trié</strong> pour utiliser la recherche dichotomique.</p>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Principe — Diviser pour régner</div>\n<p>On compare la valeur cherchée avec l'élément <strong>médian</strong> du tableau :<br/>\n        • Si égal → trouvé<br/>\n        • Si cherché &lt; médian → chercher dans la moitié gauche<br/>\n        • Si cherché &gt; médian → chercher dans la moitié droite<br/>\n        On divise le problème par 2 à chaque étape !</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme</div>\n<pre>Fonction Dichotomique(T, N, val) : Entier\nVariable debut, fin, milieu : Entier\nDébut\n  debut ← 1 ; fin ← N\n  Tant Que debut &lt;= fin Faire\n    milieu ← (debut + fin) DIV 2\n    Si T[milieu] = val Alors\n      Retourner milieu\n    Sinon Si val &lt; T[milieu] Alors\n      fin ← milieu - 1\n    Sinon\n      debut ← milieu + 1\n    Fin Si\n  Fin Tant Que\n  Retourner -1   // non trouvé\nFin Fonction</pre>\n</div>\n<p>Complexité : <strong>O(log₂ n)</strong> — pour N=1 000 000, au max 20 comparaisons !</p>\n<h2>7.3 — Comparaison</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Séquentielle</th><th>Dichotomique</th></tr></thead>\n<tbody>\n<tr><td><strong>Tableau requis</strong></td><td>Quelconque</td><td>Trié obligatoirement</td></tr>\n<tr><td><strong>Complexité</strong></td><td>O(n)</td><td>O(log₂ n)</td></tr>\n<tr><td><strong>N=1 000</strong></td><td>Max 1000 comparaisons</td><td>Max 10 comparaisons</td></tr>\n<tr><td><strong>N=1 000 000</strong></td><td>Max 1 000 000</td><td>Max 20 comparaisons</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 7</h3>\n<ul>\n<li>Séquentielle : O(n), fonctionne sur tout tableau</li>\n<li>Dichotomique : O(log₂n), tableau <strong>trié obligatoire</strong></li>\n<li>Dichotomique : compare avec le milieu, élimine une moitié à chaque tour</li>\n<li>Pour N=1M : séquentielle = 1M comparaisons · dichotomique = 20 !</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle est la condition pour utiliser la recherche dichotomique ?",
+     "options": [
+      {
+       "text": "Le tableau doit contenir au moins 10 éléments",
+       "correct": false,
+       "explanation": "La taille n'est pas une condition, mais la structure l'est."
+      },
+      {
+       "text": "Le tableau doit être trié",
+       "correct": true,
+       "explanation": "Correct ! La recherche dichotomique ne fonctionne QUE sur un tableau trié. Sans tri préalable, l'algorithme peut donner un mauvais résultat."
+      },
+      {
+       "text": "Le tableau doit contenir des entiers uniquement",
+       "correct": false,
+       "explanation": "Les éléments peuvent être quelconques (entiers, réels, chaînes…)."
+      },
+      {
+       "text": "La valeur cherchée doit être le maximum",
+       "correct": false,
+       "explanation": "On peut chercher n'importe quelle valeur, pas forcément le maximum."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Dans un tableau de 128 éléments, la recherche dichotomique nécessite au maximum combien de comparaisons ?",
+     "options": [
+      {
+       "text": "128",
+       "correct": false,
+       "explanation": "128 est la complexité de la recherche séquentielle, pas dichotomique."
+      },
+      {
+       "text": "64",
+       "correct": false,
+       "explanation": "64 = 128/2. La dichotomie divise par 2 à chaque étape, donc log₂(128) = 7."
+      },
+      {
+       "text": "7",
+       "correct": true,
+       "explanation": "Correct ! log₂(128) = 7 car 2⁷ = 128. La recherche dichotomique divise le problème par 2 à chaque étape."
+      },
+      {
+       "text": "4",
+       "correct": false,
+       "explanation": "4 = log₂(16). Pour 128 éléments : log₂(128) = 7."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre7.html"
+  },
+  {
+   "number": 8,
+   "title": "Récursivité",
+   "subtitle": "Cas de base, appel récursif, factorielle et Fibonacci.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre le principe d'un algorithme récursif<br/>\n        • Identifier le cas de base et l'appel récursif<br/>\n        • Calculer la factorielle et Fibonacci par récursion</p>\n</div>\n<h2>8.1 — Qu'est-ce que la récursivité ?</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Définition</div>\n<p>Une fonction est <strong>récursive</strong> si elle s'appelle elle-même. Chaque appel doit se rapprocher d'un <strong>cas de base</strong> qui arrête la récursion.</p>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Deux conditions obligatoires</div>\n<p>1. <strong>Cas de base</strong> (cas trivial) : condition d'arrêt — sans lui, boucle infinie !<br/>\n        2. <strong>Appel récursif</strong> : vers un problème plus petit / plus proche du cas de base</p>\n</div>\n<h2>8.2 — Exemple : Factorielle</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">📐 Définition mathématique</div>\n<p>n! = n × (n-1) × (n-2) × … × 1<br/>\n        Cas de base : 0! = 1 et 1! = 1<br/>\n        Formule récursive : n! = n × (n-1)!</p>\n</div>\n<div>\n<div class=\"code-block\"><div class=\"code-lbl\">Pseudocode</div>\n<pre>Fonction Fact(n : Entier) : Entier\nDébut\n  Si n &lt;= 1 Alors\n    Retourner 1       // cas de base\n  Sinon\n    Retourner n × Fact(n-1)  // appel récursif\n  Fin Si\nFin Fonction</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Trace — Fact(4)</div>\n<pre>Fact(4) = 4 × Fact(3)\n         = 4 × 3 × Fact(2)\n         = 4 × 3 × 2 × Fact(1)\n         = 4 × 3 × 2 × 1\n         = 24</pre>\n</div>\n</div>\n<h2>8.3 — Exemple : Fibonacci</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Algorithme récursif</div>\n<pre>Fonction Fib(n : Entier) : Entier\nDébut\n  Si n &lt;= 1 Alors\n    Retourner n    // cas de base : Fib(0)=0, Fib(1)=1\n  Sinon\n    Retourner Fib(n-1) + Fib(n-2)\n  Fin Si\nFin Fonction\n// Fib(5) = 5, Fib(6) = 8, Fib(7) = 13</pre>\n</div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Problème de Fibonacci récursif</div>\n<p>Fib récursif calcule les mêmes valeurs plusieurs fois → très lent pour grands n. Solution : mémoïsation ou version itérative.</p>\n</div>\n<h2>8.4 — Récursif vs Itératif</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Récursif</th><th>Itératif</th></tr></thead>\n<tbody>\n<tr><td><strong>Lisibilité</strong></td><td>Souvent plus clair</td><td>Parfois plus long</td></tr>\n<tr><td><strong>Mémoire</strong></td><td>Pile d'appels (risque débordement)</td><td>Variable simple</td></tr>\n<tr><td><strong>Performance</strong></td><td>Peut recalculer inutilement</td><td>Plus efficace</td></tr>\n<tr><td><strong>Usage</strong></td><td>Arbres, diviser-régner</td><td>Boucles simples</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 8</h3>\n<ul>\n<li>Récursivité = fonction qui s'appelle elle-même</li>\n<li>Deux éléments obligatoires : cas de base + appel récursif vers problème plus petit</li>\n<li>n! = n × (n-1)! avec 0! = 1 (cas de base)</li>\n<li>Fib(n) = Fib(n-1) + Fib(n-2) avec Fib(0)=0, Fib(1)=1</li>\n<li>Risque : pile d'appels saturée (stack overflow) si trop profond</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Que se passe-t-il si une fonction récursive n'a pas de cas de base ?",
+     "options": [
+      {
+       "text": "Elle retourne 0",
+       "correct": false,
+       "explanation": "Sans cas de base, la récursion ne s'arrête pas — elle ne retourne pas 0."
+      },
+      {
+       "text": "Erreur de compilation",
+       "correct": false,
+       "explanation": "Sans cas de base, ce n'est pas une erreur de syntaxe mais une erreur d'exécution."
+      },
+      {
+       "text": "Boucle infinie → Stack Overflow",
+       "correct": true,
+       "explanation": "Correct ! Sans cas de base, la fonction s'appelle indéfiniment jusqu'au débordement de la pile (stack overflow)."
+      },
+      {
+       "text": "Elle s'arrête après 100 appels",
+       "correct": false,
+       "explanation": "Sans cas d'arrêt, elle ne se termine pas normalement."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle est la valeur de Fact(3) ?",
+     "options": [
+      {
+       "text": "3",
+       "correct": false,
+       "explanation": "3 est la valeur de n, pas la factorielle."
+      },
+      {
+       "text": "9",
+       "correct": false,
+       "explanation": "9 = 3² ≠ 3!."
+      },
+      {
+       "text": "6",
+       "correct": true,
+       "explanation": "Correct ! 3! = 3 × 2 × 1 = 6."
+      },
+      {
+       "text": "24",
+       "correct": false,
+       "explanation": "24 = 4!. Pour 3!, le résultat est 6."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre8.html"
+  },
+  {
+   "number": 9,
+   "title": "Structures de données",
+   "subtitle": "Piles (LIFO) et files (FIFO) — principes et implémentation.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre le concept de pile et de file<br/>\n        • Implémenter une pile avec un tableau (push/pop)<br/>\n        • Implémenter une file (enqueue/dequeue)</p>\n</div>\n<h2>9.1 — La Pile (Stack)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe LIFO</div>\n<p><strong>L</strong>ast <strong>I</strong>n, <strong>F</strong>irst <strong>O</strong>ut — le dernier entré est le premier sorti.<br/>\n        Analogie : une pile d'assiettes — on pose et on reprend par le haut.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opération</th><th>Description</th><th>Pseudocode</th></tr></thead>\n<tbody>\n<tr><td><strong>Push</strong></td><td>Empiler (ajouter au sommet)</td><td><code>sommet←sommet+1 ; P[sommet]←val</code></td></tr>\n<tr><td><strong>Pop</strong></td><td>Dépiler (retirer du sommet)</td><td><code>val←P[sommet] ; sommet←sommet-1</code></td></tr>\n<tr><td><strong>Peek</strong></td><td>Lire le sommet sans retirer</td><td><code>val←P[sommet]</code></td></tr>\n<tr><td><strong>EstVide</strong></td><td>Vérifier si vide</td><td><code>sommet = 0</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Vérifier les parenthèses</div>\n<pre>// Vérifier si \"((a+b)*(c-d))\" est bien parenthésé\nPile ← vide\nPour chaque caractère c dans expression Faire\n  Si c = \"(\" Alors Push(Pile, c)\n  Sinon Si c = \")\" Alors\n    Si EstVide(Pile) Alors Retourner FAUX\n    Pop(Pile)\n  Fin Si\nFin Pour\nRetourner EstVide(Pile)  // VRAI si tout est équilibré</pre>\n</div>\n<h2>9.2 — La File (Queue)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe FIFO</div>\n<p><strong>F</strong>irst <strong>I</strong>n, <strong>F</strong>irst <strong>O</strong>ut — le premier entré est le premier sorti.<br/>\n        Analogie : une file d'attente à la caisse.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opération</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Enqueue</strong></td><td>Enfiler (ajouter en queue)</td></tr>\n<tr><td><strong>Dequeue</strong></td><td>Défiler (retirer en tête)</td></tr>\n<tr><td><strong>EstVide</strong></td><td>Vérifier si la file est vide</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Pile vs File</div>\n<p><strong>Pile</strong> LIFO : dernier entré, premier sorti → comme une pile d'assiettes<br/>\n<strong>File</strong> FIFO : premier entré, premier sorti → comme une file d'attente<br/><br/>\n        Usages :<br/>\n        Pile → undo/redo, appels de fonctions, évaluation d'expressions<br/>\n        File → impression, gestion de tâches, BFS (parcours de graphe)</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 9</h3>\n<ul>\n<li><strong>Pile</strong> : LIFO (Last In, First Out) · Push/Pop/Peek</li>\n<li><strong>File</strong> : FIFO (First In, First Out) · Enqueue/Dequeue</li>\n<li>Pile → undo, appels récursifs · File → impression, BFS</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "On empile successivement 1, 2, 3 dans une pile. Quel élément sort en premier avec Pop ?",
+     "options": [
+      {
+       "text": "1",
+       "correct": false,
+       "explanation": "1 est le premier entré — dans une pile LIFO, il sort en dernier."
+      },
+      {
+       "text": "2",
+       "correct": false,
+       "explanation": "2 est au milieu — avec LIFO, c'est 3 qui sort en premier."
+      },
+      {
+       "text": "3",
+       "correct": true,
+       "explanation": "Correct ! Pile = LIFO (Last In First Out). 3 est le dernier entré, donc le premier sorti."
+      },
+      {
+       "text": "La pile est vide",
+       "correct": false,
+       "explanation": "La pile n'est pas vide — on a empilé 3 éléments."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle structure de données convient le mieux pour gérer une file d'impression ?",
+     "options": [
+      {
+       "text": "Une pile (Stack)",
+       "correct": false,
+       "explanation": "Une pile imprime en dernier les premières demandes — ce n'est pas équitable."
+      },
+      {
+       "text": "Une file (Queue)",
+       "correct": true,
+       "explanation": "Correct ! Une file (FIFO) imprime dans l'ordre d'arrivée — le premier document demandé est le premier imprimé."
+      },
+      {
+       "text": "Un tableau non ordonné",
+       "correct": false,
+       "explanation": "Un tableau simple sans ordre n'est pas adapté à la gestion d'une file d'attente."
+      },
+      {
+       "text": "Les deux conviennent",
+       "correct": false,
+       "explanation": "Les deux ne conviennent pas simultanément — c'est la file (FIFO) qui est appropriée."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre9.html"
+  },
+  {
+   "number": 10,
+   "title": "Complexité algorithmique",
+   "subtitle": "Notation O, calcul de complexité et comparaison des algorithmes.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre la notation O (grand O)<br/>\n        • Calculer la complexité d'algorithmes simples<br/>\n        • Comparer les ordres de grandeur courants</p>\n</div>\n<h2>10.1 — Pourquoi la complexité ?</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 La question fondamentale</div>\n<p>Si on double la taille des données, comment évolue le temps d'exécution ?<br/>\n        La complexité algorithmique mesure l'<strong>efficacité</strong> d'un algorithme indépendamment du matériel.</p>\n</div>\n<h2>10.2 — Notation O (Big O)</h2>\n<p>O(f(n)) décrit le comportement <strong>dans le pire cas</strong> quand n → ∞.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Notation</th><th>Nom</th><th>Exemple</th><th>n=1000 comparaisons</th></tr></thead>\n<tbody>\n<tr><td><strong>O(1)</strong></td><td>Constant</td><td>Accès tableau T[i]</td><td>1</td></tr>\n<tr><td><strong>O(log n)</strong></td><td>Logarithmique</td><td>Recherche dichotomique</td><td>≈10</td></tr>\n<tr><td><strong>O(n)</strong></td><td>Linéaire</td><td>Recherche séquentielle</td><td>1 000</td></tr>\n<tr><td><strong>O(n log n)</strong></td><td>Quasi-linéaire</td><td>Tri rapide (Quicksort)</td><td>≈10 000</td></tr>\n<tr><td><strong>O(n²)</strong></td><td>Quadratique</td><td>Tri à bulles, sélection</td><td>1 000 000</td></tr>\n<tr><td><strong>O(2ⁿ)</strong></td><td>Exponentiel</td><td>Fibonacci récursif naïf</td><td>10³⁰⁰ 😱</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Ordre croissant de complexité</div>\n<p>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ)<br/>\n        « <em>Constant, Logarithmique, Linéaire, Quasi-linéaire, Quadratique, Exponentiel</em> »</p>\n</div>\n<h2>10.3 — Calculer la complexité</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Règles simples</div>\n<p>• Instruction simple → O(1)<br/>\n        • Boucle de 1 à n → O(n)<br/>\n        • Deux boucles imbriquées → O(n²)<br/>\n        • Appel récursif divisant par 2 → O(log n)<br/>\n        • On garde seulement le terme dominant : O(3n² + 2n + 1) = <strong>O(n²)</strong></p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>// O(1) — accès direct\nx ← T[5]\n// O(n) — une boucle\nPour i ← 1 à N Faire\n  Écrire(T[i])\n// O(n²) — deux boucles imbriquées\nPour i ← 1 à N Faire\n  Pour j ← 1 à N Faire\n    Écrire(i, j)\n// O(log n) — divise par 2 à chaque itération\ndebut ← 1 ; fin ← N\nTant Que debut &lt;= fin Faire\n  milieu ← (debut+fin) DIV 2\n  fin ← milieu - 1  // ou debut ← milieu + 1</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 10</h3>\n<ul>\n<li>Complexité = mesure de l'efficacité algorithmique selon la taille n des données</li>\n<li>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ)</li>\n<li>Instruction simple = O(1) · Boucle = O(n) · Boucles imbriquées = O(n²)</li>\n<li>On garde le terme dominant uniquement</li>\n<li>O(n²) : doubler n → temps × 4 · O(n) : doubler n → temps × 2</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle est la complexité de deux boucles imbriquées de 1 à N ?",
+     "options": [
+      {
+       "text": "O(n)",
+       "correct": false,
+       "explanation": "O(n) est pour une seule boucle de 1 à N."
+      },
+      {
+       "text": "O(2n)",
+       "correct": false,
+       "explanation": "O(2n) = O(n) — deux boucles séquentielles, pas imbriquées."
+      },
+      {
+       "text": "O(n²)",
+       "correct": true,
+       "explanation": "Correct ! Deux boucles imbriquées de 1 à N → N × N = N² itérations → O(n²)."
+      },
+      {
+       "text": "O(log n)",
+       "correct": false,
+       "explanation": "O(log n) est pour la dichotomie. Pas pour des boucles imbriquées."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pour un algorithme O(n²), si n double (passe de 100 à 200), le temps d'exécution est multiplié par :",
+     "options": [
+      {
+       "text": "2",
+       "correct": false,
+       "explanation": "×2 serait pour O(n). O(n²) réagit au carré du facteur de multiplication."
+      },
+      {
+       "text": "4",
+       "correct": true,
+       "explanation": "Correct ! Si n double → (2n)² = 4n². Le temps est multiplié par 4. C'est le carré du facteur multiplicatif (2² = 4)."
+      },
+      {
+       "text": "8",
+       "correct": false,
+       "explanation": "×8 serait pour O(n³). Pour O(n²) : doubler n multiplie par 4."
+      },
+      {
+       "text": "100",
+       "correct": false,
+       "explanation": "×100 serait si n passait de 1 à 10 (10² = 100). Ici n double, donc ×4."
+      }
+     ]
+    }
+   ],
+   "source": "_private/algo/chapitres/chapitre10.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Variables & Types de Données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Variables & Types de Données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Variables & Types de Données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Variables & Types de Données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Variables & Types de Données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Complexité algorithmique.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Complexité algorithmique.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Complexité algorithmique.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Complexité algorithmique.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Complexité algorithmique.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Structures conditionnelles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Structures conditionnelles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Structures conditionnelles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Structures conditionnelles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Structures conditionnelles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Les Boucles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Les Boucles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Les Boucles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Les Boucles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Les Boucles.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Les Tableaux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Les Tableaux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Les Tableaux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Les Tableaux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Les Tableaux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Fonctions & Procédures.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Fonctions & Procédures.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Fonctions & Procédures.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Fonctions & Procédures.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Fonctions & Procédures.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Algorithmes de tri.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Algorithmes de tri.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Algorithmes de tri.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Algorithmes de tri.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Algorithmes de tri.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Algorithmes de recherche.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Algorithmes de recherche.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Algorithmes de recherche.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Algorithmes de recherche.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Algorithmes de recherche.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Récursivité.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Récursivité.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Récursivité.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Récursivité.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Récursivité.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Structures de données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Structures de données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Structures de données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Structures de données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Structures de données.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  }
+ ],
+ "simulators": [],
+ "flashcards": [],
+ "exercises_source": "_private/algo/exercices/exercices.html"
+}

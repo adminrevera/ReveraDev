@@ -1,0 +1,1045 @@
+{
+ "slug": "git",
+ "name": "Git & GitHub",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Introduction à Git",
+   "subtitle": "Comprendre le versioning, installer Git, configurer son identité et créer son premier dépôt.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le besoin de contrôle de version<br/>\n        • Installer et configurer Git<br/>\n        • Maîtriser le cycle de base : init → add → commit<br/>\n        • Comprendre les 3 zones de Git (Working Dir, Staging, Repository)<br/>\n        • Lire le statut d'un dépôt avec git status</p>\n</div>\n<h2>1.1 — Pourquoi le contrôle de version ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Le problème sans Git</div>\n<p>Sans outil de versioning, les développeurs en sont réduits à nommer leurs fichiers <code>projet_v1.py</code>, <code>projet_v2_final.py</code>, <code>projet_VRAIMENT_final.py</code>… C'est ingérable dès qu'on travaille à plusieurs ou qu'on veut retrouver une ancienne version.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🕹️ Analogie — La sauvegarde dans un jeu vidéo</div>\n<p>Git, c'est comme un système de sauvegardes pour ton code. Tu peux créer un point de sauvegarde à tout moment (<em>commit</em>), revenir en arrière si tu fais une erreur, et même avoir plusieurs <em>parties</em> en parallèle (<em>branches</em>).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Sans Git</th><th>Avec Git</th></tr></thead>\n<tbody>\n<tr><td>projet_final_v3_BIS.py 😱</td><td>Un seul fichier, un historique propre ✅</td></tr>\n<tr><td>Impossible de revenir en arrière</td><td>git checkout pour tout annuler</td></tr>\n<tr><td>Partage par email / clé USB</td><td>Push/pull sur GitHub en 1 commande</td></tr>\n<tr><td>Travail en équipe = chaos</td><td>Branches + merge = collaboration fluide</td></tr>\n</tbody>\n</table></div>\n<h2>1.2 — Qu'est-ce que Git ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📦 Définition</div>\n<p><strong>Git</strong> est un système de contrôle de version <strong>distribué</strong> (DVCS — Distributed Version Control System). Créé en 2005 par <strong>Linus Torvalds</strong> (le créateur de Linux), il permet de suivre l'historique des modifications d'un projet, de collaborer à plusieurs et de revenir à n'importe quel état passé du code.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Caractéristique</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>Distribué</strong></td><td>Chaque développeur possède une copie complète du dépôt en local</td></tr>\n<tr><td><strong>Rapide</strong></td><td>Les opérations sont locales — pas besoin d'internet pour commiter</td></tr>\n<tr><td><strong>Intègre</strong></td><td>Chaque commit est identifié par un hash SHA-1 unique et infalsifiable</td></tr>\n<tr><td><strong>Non-linéaire</strong></td><td>Supporte des milliers de branches parallèles</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Git ≠ GitHub</div>\n<p><strong>Git</strong> est l'outil en ligne de commande qui tourne sur ta machine. <strong>GitHub</strong> est une plateforme web qui héberge des dépôts Git dans le cloud. Il existe aussi GitLab, Bitbucket… On peut utiliser Git sans GitHub, mais pas l'inverse.</p>\n</div>\n<h2>1.3 — Installation et configuration</h2>\n<h3>Installation</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Système</th><th>Commande / Méthode</th></tr></thead>\n<tbody>\n<tr><td><strong>Linux (Debian/Ubuntu)</strong></td><td><code>sudo apt install git</code></td></tr>\n<tr><td><strong>macOS</strong></td><td><code>brew install git</code> ou Xcode Command Line Tools</td></tr>\n<tr><td><strong>Windows</strong></td><td>Télécharger Git Bash sur git-scm.com</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Vérifier l'installation</div>\n<pre>git --version\n# → git version 2.44.0</pre>\n</div>\n<h3>Configuration initiale (obligatoire)</h3>\n<p>Avant tout commit, Git a besoin de connaître ton identité. Cette configuration est globale (pour tous tes projets) :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Configuration de l'identité</div>\n<pre>git config --global user.name \"Ton Nom\"\ngit config --global user.email \"ton@email.com\"\ngit config --global core.editor \"code --wait\"   # VS Code comme éditeur\ngit config --global init.defaultBranch main      # branche principale = main</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Vérifier la configuration</div>\n<pre>git config --list\n# Affiche toutes les options configurées</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ --global vs --local</div>\n<p><code>--global</code> s'applique à tous tes dépôts sur ta machine. <code>--local</code> (ou sans option) s'applique uniquement au dépôt courant. Pour un projet pro avec un email différent, utilise <code>--local</code> dans ce dépôt spécifique.</p>\n</div>\n<h2>1.4 — Les 3 zones de Git</h2>\n<p>C'est le concept le plus important à comprendre. Git divise ton espace de travail en <strong>3 zones distinctes</strong> :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">🗂️ Zone 1 — Working Directory (Répertoire de travail)</div>\n<p>C'est ton dossier de projet tel que tu le vois dans ton explorateur de fichiers. Tu y crées, modifies et supprimes des fichiers librement. Git <em>observe</em> ces changements mais ne les enregistre pas encore.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📦 Zone 2 — Staging Area (Index / Zone d'index)</div>\n<p>C'est une zone intermédiaire où tu <em>prépares</em> ton prochain commit. Tu y places exactement les fichiers que tu veux inclure dans le prochain instantané. Commande : <code>git add</code>.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📚 Zone 3 — Repository (Dépôt local)</div>\n<p>C'est la base de données Git dans le dossier caché <code>.git/</code>. Elle contient l'historique complet et immuable de tous tes commits. Commande : <code>git commit</code>.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — WSD : « Work → Stage → Done »</div>\n<p><strong>W</strong>orking Directory → tu travailles<br/>\n<strong>S</strong>taging Area → tu sélectionnes ce que tu veux sauvegarder<br/>\n<strong>D</strong>epôt (Repository) → Git sauvegarde définitivement<br/>\n        Comme préparer un colis : tu ramasses les affaires (W), tu les mets dans la boîte (S), tu fermes et envoies (D).</p>\n</div>\n<h2>1.5 — Créer son premier dépôt</h2>\n<h3>Initialiser un nouveau dépôt</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Créer un projet Git from scratch</div>\n<pre>mkdir mon-projet         # Créer le dossier\ncd mon-projet            # Entrer dans le dossier\ngit init                 # Initialiser Git → crée le dossier .git/\n# → Initialized empty Git repository in .../mon-projet/.git/</pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📁 Que contient le dossier .git/ ?</div>\n<p>Le dossier <code>.git/</code> est le cœur du dépôt. Il contient la base de données des commits, les branches, la configuration locale, les hooks… <strong>Ne jamais le modifier manuellement</strong>. Si tu supprimes ce dossier, tu perds tout l'historique Git (mais pas tes fichiers).</p>\n</div>\n<h3>Le cycle de base : modifier → ajouter → commiter</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Workflow fondamental</div>\n<pre># 1. Créer un fichier\necho \"# Mon Projet\" &gt; README.md\n# 2. Vérifier le statut\ngit status\n# → Untracked files: README.md (en rouge)\n# 3. Ajouter au staging\ngit add README.md\n# (ou git add . pour tout ajouter)\n# 4. Vérifier à nouveau\ngit status\n# → Changes to be committed: README.md (en vert)\n# 5. Commiter\ngit commit -m \"Premier commit : ajout du README\"\n# → [main (root-commit) a1b2c3d] Premier commit : ajout du README</pre>\n</div>\n<h2>1.6 — Commandes essentielles</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Description</th><th>Zone impliquée</th></tr></thead>\n<tbody>\n<tr><td><code>git init</code></td><td>Initialise un dépôt Git dans le dossier courant</td><td>→ Crée .git/</td></tr>\n<tr><td><code>git status</code></td><td>Affiche l'état des fichiers (modifiés, stagés, non suivis)</td><td>WD + Staging</td></tr>\n<tr><td><code>git add &lt;fichier&gt;</code></td><td>Ajoute un fichier au staging</td><td>WD → Staging</td></tr>\n<tr><td><code>git add .</code></td><td>Ajoute TOUS les fichiers modifiés au staging</td><td>WD → Staging</td></tr>\n<tr><td><code>git commit -m \"msg\"</code></td><td>Crée un commit avec le message donné</td><td>Staging → Repo</td></tr>\n<tr><td><code>git commit -am \"msg\"</code></td><td>Add + commit en une seule commande (fichiers déjà suivis)</td><td>WD → Repo</td></tr>\n<tr><td><code>git log</code></td><td>Affiche l'historique des commits</td><td>Repo (lecture)</td></tr>\n<tr><td><code>git log --oneline</code></td><td>Historique condensé, une ligne par commit</td><td>Repo (lecture)</td></tr>\n</tbody>\n</table></div>\n<h2>1.7 — Comprendre git status</h2>\n<p>La commande <code>git status</code> est ton meilleur outil de diagnostic. Elle peut afficher 4 états différents :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Statut</th><th>Signification</th><th>Action suggérée</th></tr></thead>\n<tbody>\n<tr><td><strong>Untracked</strong></td><td>Fichier nouveau, jamais ajouté à Git</td><td><code>git add</code> pour commencer à le suivre</td></tr>\n<tr><td><strong>Modified</strong></td><td>Fichier déjà connu de Git, mais modifié depuis le dernier commit</td><td><code>git add</code> pour staguer les modifications</td></tr>\n<tr><td><strong>Staged</strong></td><td>Fichier prêt à être commité (dans le staging)</td><td><code>git commit</code> pour enregistrer</td></tr>\n<tr><td><strong>Unmodified</strong></td><td>Fichier identique au dernier commit — rien à faire</td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple de sortie git status</div>\n<pre>On branch main\nChanges to be committed:         ← Staging (vert)\n  new file:   index.html\nChanges not staged for commit:   ← Modified (rouge)\n  modified:   style.css\nUntracked files:                 ← Nouveau fichier (rouge)\n  script.js</pre>\n</div>\n<h2>1.8 — Rédiger de bons messages de commit</h2>\n<p>Le message de commit est crucial : c'est la documentation de ton historique. Un bon message doit expliquer <em>pourquoi</em> le changement a été fait, pas seulement <em>quoi</em>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>❌ Mauvais message</th><th>✅ Bon message</th></tr></thead>\n<tbody>\n<tr><td><code>fix</code></td><td><code>fix: corrige le crash au démarrage si la DB est vide</code></td></tr>\n<tr><td><code>update</code></td><td><code>feat: ajoute la pagination à la liste des utilisateurs</code></td></tr>\n<tr><td><code>wip</code></td><td><code>refactor: simplifie la fonction de calcul de TVA</code></td></tr>\n<tr><td><code>changes</code></td><td><code>docs: met à jour le README avec les instructions d'installation</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Convention Conventional Commits</div>\n<p>En entreprise, on utilise souvent la convention : <code>type(scope): description</code><br/>\n        Types courants : <code>feat</code> (nouvelle fonctionnalité) · <code>fix</code> (correction de bug) · <code>docs</code> (documentation) · <code>style</code> (formatage) · <code>refactor</code> · <code>test</code> · <code>chore</code> (maintenance).</p>\n</div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Commits &amp; Historique</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle commande initialise un nouveau dépôt Git dans un dossier ?",
+     "options": [
+      {
+       "text": "git start",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git create",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git init",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "git new",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quel est le rôle de la Staging Area (zone d'index) dans Git ?",
+     "options": [
+      {
+       "text": "Stocker définitivement les commits",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Préparer les fichiers à inclure dans le prochain commit",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Synchroniser avec GitHub",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Afficher l'historique des modifications",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle commande ajoute TOUS les fichiers modifiés au staging ?",
+     "options": [
+      {
+       "text": "git commit -a",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git push .",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git stage all",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git add .",
+       "correct": true,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la différence entre Git et GitHub ?",
+     "options": [
+      {
+       "text": "Ce sont deux noms pour le même outil",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Git est payant, GitHub est gratuit",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Git est l'outil local de versioning, GitHub est la plateforme cloud d'hébergement",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Git fonctionne seulement sur Linux",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans la convention Conventional Commits, quel type utilise-t-on pour une correction de bug ?",
+     "options": [
+      {
+       "text": "feat",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "fix",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "chore",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "patch",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "git/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Commits & Historique",
+   "subtitle": "Anatomie d'un commit, git log, git diff, navigation dans l'historique et .gitignore.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre l'anatomie d'un commit Git<br/>\n  • Lire et filtrer l'historique avec git log<br/>\n  • Comparer des fichiers avec git diff<br/>\n  • Naviguer dans l'historique (git checkout, git show)<br/>\n  • Configurer un fichier .gitignore efficace</p>\n</div>\n<h2>2.1 — Anatomie d'un commit</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📦 Ce que contient un commit</div>\n<p>Chaque commit est un instantané (snapshot) de l'intégralité du projet à un instant t, identifié par un <strong>hash SHA-1</strong> unique de 40 caractères (on utilise généralement les 7 premiers).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Structure interne d'un commit</div>\n<pre>commit a1b2c3d4e5f6...   ← Hash SHA-1 unique\nAuthor: Alice &lt;alice@mail.com&gt;\nDate:   Mon Apr 20 10:30:00 2026\nParent: 9f8e7d6...          ← Commit précédent\n    feat: ajoute la validation du formulaire</pre></div>\n<div class=\"box tip\"><div class=\"box-lbl\">💡 Le DAG (Directed Acyclic Graph)</div>\n<p>Les commits forment un graphe orienté acyclique : chaque commit pointe vers son(ses) parent(s). C'est ce qui permet à Git d'avoir des branches et de fusionner l'historique.</p></div>\n<h2>2.2 — Explorer l'historique</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Commandes git log</div>\n<pre>git log                    # Historique complet\ngit log --oneline          # Une ligne par commit\ngit log --oneline --graph  # Visualiser les branches\ngit log --author=\"Alice\"   # Filtrer par auteur\ngit log --since=\"1 week ago\"  # Filtrer par date\ngit log -n 5               # Les 5 derniers commits\ngit log -- fichier.py      # Historique d'un fichier\ngit show a1b2c3d            # Détail d'un commit précis</pre></div>\n<h2>2.3 — Comparer avec git diff</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">git diff — Comparer des versions</div>\n<pre>git diff              # WD vs Staging (modifs non stagées)\ngit diff --staged     # Staging vs dernier commit\ngit diff HEAD         # WD vs dernier commit\ngit diff a1b2 c3d4    # Comparer deux commits\ngit diff main feature # Comparer deux branches</pre></div>\n<div class=\"box info\"><div class=\"box-lbl\">📖 Lire un diff</div>\n<pre>--- a/fichier.py   ← Ancienne version\n+++ b/fichier.py   ← Nouvelle version\n@@ -3,7 +3,8 @@   ← Position dans le fichier\n def hello():\n-    print(\"Bonjour\")   ← Ligne supprimée (rouge)\n+    print(\"Hello\")    ← Ligne ajoutée (vert)\n+    return True</pre></div>\n<h2>2.4 — Le fichier .gitignore</h2>\n<div class=\"box info\"><div class=\"box-lbl\">🚫 Exclure des fichiers de Git</div>\n<p>Le <code>.gitignore</code> liste les fichiers/dossiers que Git doit ignorer (ne jamais traquer). Il se place à la racine du projet et est lui-même versionné.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple de .gitignore (projet Python)</div>\n<pre># Environnements virtuels\nvenv/\n.env/\n__pycache__/\n*.pyc\n# Fichiers sensibles\n.env              # Variables d'environnement (mots de passe !)\nconfig/secrets.py\n# Éditeur et OS\n.vscode/\n.DS_Store         # macOS\nThumbs.db         # Windows\n# Build artifacts\ndist/\nbuild/\n*.egg-info/</pre></div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Ne JAMAIS commiter des secrets</div>\n<p>Si tu commites accidentellement une clé API ou un mot de passe, <strong>change-le immédiatement</strong> — supprimer le fichier ne suffit pas, il reste dans l'historique Git !</p></div>\n<h2>2.5 — Annuler des modifications</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Situation</th><th>Commande</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td>Annuler modifs non stagées</td><td><code>git restore fichier.py</code></td><td>Revient au dernier commit</td></tr>\n<tr><td>Déstaguer un fichier</td><td><code>git restore --staged fichier.py</code></td><td>Retire du staging, garde les modifs</td></tr>\n<tr><td>Modifier le dernier commit</td><td><code>git commit --amend</code></td><td>Remplace le dernier commit</td></tr>\n<tr><td>Annuler un commit (proprement)</td><td><code>git revert &lt;hash&gt;</code></td><td>Crée un commit inverse</td></tr>\n<tr><td>Revenir en arrière (dangereux)</td><td><code>git reset --hard &lt;hash&gt;</code></td><td>Supprime les commits après</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1</a>\n<a class=\"ch-nav-btn\">Ch.3 →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle commande affiche l'historique en une ligne par commit ?",
+     "options": [
+      {
+       "text": "git log --short",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git log --oneline",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "git history",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git show --brief",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Que montre 'git diff --staged' ?",
+     "options": [
+      {
+       "text": "Les différences entre le WD et le staging",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les différences entre le staging et le dernier commit",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Les différences entre deux branches",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les fichiers ignorés",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Pourquoi ne faut-il jamais commiter un fichier .env ?",
+     "options": [
+      {
+       "text": "Il est trop volumineux",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il contient des secrets (mots de passe, clés API) qui resteraient dans l'historique",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Git ne supporte pas ce format",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Il ralentit git log",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La commande 'git revert ' :",
+     "options": [
+      {
+       "text": "Supprime le commit ciblé de l'historique",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Crée un nouveau commit qui annule les changements du commit ciblé",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Revient en arrière de façon destructive",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Modifie le message du commit",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Que fait 'git restore fichier.py' (sans --staged) ?",
+     "options": [
+      {
+       "text": "Supprime le fichier",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Annule les modifications non stagées et revient au dernier commit",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Ajoute le fichier au staging",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Crée une branche",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/git/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Branches",
+   "subtitle": "Créer, naviguer et fusionner des branches — résolution de conflits et stratégies de merge.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le concept de branche dans Git<br/>\n  • Créer, basculer et supprimer des branches<br/>\n  • Fusionner des branches (git merge)<br/>\n  • Résoudre des conflits de merge<br/>\n  • Comprendre git rebase</p>\n</div>\n<h2>3.1 — Qu'est-ce qu'une branche ?</h2>\n<div class=\"box info\"><div class=\"box-lbl\">🌿 Définition</div>\n<p>Une <strong>branche</strong> est simplement un pointeur mobile vers un commit. Créer une branche est instantané et ne copie aucun fichier. C'est pour ça que Git est si rapide comparé à d'autres VCS.</p></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Analogie — La branche d'un arbre</div>\n<p>Imagine l'historique Git comme un arbre. Le tronc c'est <code>main</code>. Chaque branche part d'un point précis pour explorer une direction différente. On peut ensuite ramener la branche vers le tronc (merge).</p></div>\n<h2>3.2 — Commandes essentielles sur les branches</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Gestion des branches</div>\n<pre>git branch                    # Lister les branches locales\ngit branch -a                 # Lister toutes (locales + distantes)\ngit branch feature/login      # Créer une branche\ngit switch feature/login      # Basculer sur la branche\ngit switch -c feature/login   # Créer ET basculer (raccourci)\ngit branch -d feature/login   # Supprimer (si mergée)\ngit branch -D feature/login   # Forcer la suppression</pre></div>\n<div class=\"box tip\"><div class=\"box-lbl\">💡 Nommage des branches</div>\n<p>Convention courante : <code>feature/nom</code> · <code>fix/description</code> · <code>hotfix/urgent</code> · <code>release/v1.2</code><br/>\nUtilise des tirets et minuscules — pas d'espaces ni caractères spéciaux.</p></div>\n<h2>3.3 — Fusionner des branches (git merge)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Merger feature dans main</div>\n<pre>git switch main               # Se placer sur la branche cible\ngit merge feature/login       # Fusionner feature dans main\ngit merge --no-ff feature/login  # Forcer un merge commit</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de merge</th><th>Description</th><th>Quand</th></tr></thead>\n<tbody>\n<tr><td><strong>Fast-forward</strong></td><td>Git avance juste le pointeur, pas de commit de merge</td><td>Pas de divergence d'historique</td></tr>\n<tr><td><strong>Recursive (3-way)</strong></td><td>Crée un commit de merge avec 2 parents</td><td>Historiques divergents</td></tr>\n<tr><td><strong>--no-ff</strong></td><td>Force un commit de merge même si fast-forward possible</td><td>Pour garder trace de la branche</td></tr>\n</tbody></table></div>\n<h2>3.4 — Résoudre les conflits</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Conflit de merge</div>\n<p>Un conflit survient quand deux branches ont modifié <strong>la même ligne</strong> d'un fichier. Git ne sait pas quelle version choisir et marque le conflit.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Marqueurs de conflit dans un fichier</div>\n<pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nprint(\"Version de main\")       ← Votre version (HEAD)\n=======\nprint(\"Version de feature\")    ← Version entrante\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login</pre></div>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Processus de résolution</div>\n<p>1. Ouvrir le fichier en conflit<br/>\n2. Choisir quelle version garder (ou combiner les deux)<br/>\n3. Supprimer les marqueurs <code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code><br/>\n4. <code>git add fichier.py</code> pour marquer comme résolu<br/>\n5. <code>git commit</code> pour finaliser le merge</p></div>\n<h2>3.5 — Rebase vs Merge</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>git merge</th><th>git rebase</th></tr></thead>\n<tbody>\n<tr><td><strong>Historique</strong></td><td>Conserve l'historique réel avec commit de merge</td><td>Réécrit l'historique — linéaire et propre</td></tr>\n<tr><td><strong>Conflits</strong></td><td>Résolus une fois</td><td>Résolus commit par commit</td></tr>\n<tr><td><strong>Usage</strong></td><td>Branches de fonctionnalité → main</td><td>Mettre à jour sa branche avec main</td></tr>\n<tr><td><strong>Règle d'or</strong></td><td>Sûr dans tous les cas</td><td>Ne jamais rebase une branche partagée !</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2</a>\n<a class=\"ch-nav-btn\">Ch.4 →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle commande crée une branche ET bascule dessus en une seule fois ?",
+     "options": [
+      {
+       "text": "git branch -m",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git switch -c",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git checkout -b feature (ancienne syntaxe)",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les deux b et c sont correctes",
+       "correct": true,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quand un conflit de merge survient-il ?",
+     "options": [
+      {
+       "text": "Quand une branche est trop longue",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Quand deux branches ont modifié la même ligne d'un fichier",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Quand on oublie de faire git add",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Quand le message de commit est vide",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la règle d'or du rebase ?",
+     "options": [
+      {
+       "text": "Toujours rebase avant de push",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Ne jamais rebase une branche partagée / déjà publiée",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Le rebase est interdit dans les équipes",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Toujours préférer le rebase au merge",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Un merge fast-forward signifie :",
+     "options": [
+      {
+       "text": "Il y a eu des conflits",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Git avance juste le pointeur sans créer de commit de merge",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "La branche a été supprimée",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le merge a échoué",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Pour marquer un conflit comme résolu, il faut :",
+     "options": [
+      {
+       "text": "git merge --continue",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git conflict --resolve",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git add sur le fichier résolu puis git commit",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "git reset --hard",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/git/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "GitHub & Dépôts distants",
+   "subtitle": "Créer un dépôt GitHub, git clone, push, pull, fetch — connexion SSH et gestion des remotes.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Créer un dépôt sur GitHub<br/>\n  • Cloner, pousser et récupérer des modifications<br/>\n  • Configurer une connexion SSH sécurisée<br/>\n  • Gérer plusieurs remotes<br/>\n  • Comprendre la différence entre fetch et pull</p>\n</div>\n<h2>4.1 — GitHub et les dépôts distants</h2>\n<div class=\"box info\"><div class=\"box-lbl\">☁️ Remote (dépôt distant)</div>\n<p>Un <strong>remote</strong> est une version du dépôt hébergée sur un serveur (GitHub, GitLab, Bitbucket). Par convention, le remote principal s'appelle <code>origin</code>.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Lier un dépôt local à GitHub</div>\n<pre># Méthode 1 : cloner depuis GitHub\ngit clone https://github.com/user/repo.git\ngit clone git@github.com:user/repo.git      # Via SSH\n# Méthode 2 : lier un dépôt local existant\ngit remote add origin git@github.com:user/repo.git\ngit remote -v                               # Vérifier les remotes\ngit push -u origin main                    # Premier push</pre></div>\n<h2>4.2 — SSH vs HTTPS</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>HTTPS</th><th>SSH</th></tr></thead>\n<tbody>\n<tr><td><strong>Authentification</strong></td><td>Login/Token PAT</td><td>Clé SSH (publique/privée)</td></tr>\n<tr><td><strong>Sécurité</strong></td><td>Bonne (avec token)</td><td>Excellente</td></tr>\n<tr><td><strong>Commodité</strong></td><td>Facile à démarrer</td><td>Plus pratique à long terme (pas de token à saisir)</td></tr>\n<tr><td><strong>URL</strong></td><td>https://github.com/...</td><td>git@github.com:...</td></tr>\n</tbody></table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Configurer SSH pour GitHub</div>\n<pre># Générer une paire de clés SSH\nssh-keygen -t ed25519 -C \"ton@email.com\"\n# Copier la clé publique\ncat ~/.ssh/id_ed25519.pub\n# → Coller dans GitHub : Settings → SSH Keys → New SSH Key\n# Tester la connexion\nssh -T git@github.com\n# → Hi username! You've successfully authenticated.</pre></div>\n<h2>4.3 — Push, Pull, Fetch</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Synchronisation avec le remote</div>\n<pre>git push origin main         # Envoyer commits locaux → remote\ngit push -u origin main      # + tracking (première fois)\ngit push --force-with-lease  # Force push (sécurisé)\ngit fetch origin             # Télécharger sans fusionner\ngit pull origin main         # fetch + merge automatique\ngit pull --rebase origin main # fetch + rebase</pre></div>\n<div class=\"box info\"><div class=\"box-lbl\">🔄 fetch vs pull</div>\n<p><code>git fetch</code> télécharge les nouvelles données du remote mais <strong>ne modifie pas</strong> ta branche locale. Tu peux inspecter avant de fusionner.<br/>\n<code>git pull</code> = fetch + merge automatique. Plus rapide mais moins de contrôle.</p></div>\n<h2>4.4 — Branches de tracking</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Branches distantes</div>\n<pre>git branch -r              # Lister les branches distantes\ngit branch -vv             # Voir le tracking (local ↔ remote)\ngit push origin :feature   # Supprimer une branche distante\ngit push origin --delete feature  # Idem (syntaxe moderne)</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3</a>\n<a class=\"ch-nav-btn\">Ch.5 →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quelle est la différence entre git fetch et git pull ?",
+     "options": [
+      {
+       "text": "Aucune, ce sont des synonymes",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "fetch télécharge sans modifier la branche locale ; pull fait fetch + merge",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "pull est plus sécurisé que fetch",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "fetch supprime les branches distantes",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La commande pour lier un dépôt local à un remote GitHub est :",
+     "options": [
+      {
+       "text": "git link origin",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git remote add origin",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "git connect github",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "git push --setup",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Quel algorithme de clé SSH est recommandé aujourd'hui ?",
+     "options": [
+      {
+       "text": "RSA 1024",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "DSA",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "ed25519",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "ECDSA P-256",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Que fait 'git push -u origin main' ?",
+     "options": [
+      {
+       "text": "Supprime la branche main du remote",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Envoie les commits ET configure le tracking entre local main et origin/main",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Force le push même s'il y a des conflits",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Crée une nouvelle branche sur GitHub",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "L'avantage de SSH sur HTTPS pour GitHub est :",
+     "options": [
+      {
+       "text": "SSH est plus rapide",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "SSH ne nécessite pas d'authentification",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "SSH utilise une clé au lieu d'un token — plus pratique au quotidien",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "SSH n'est disponible que sous Linux",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/git/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Collaboration & Pull Requests",
+   "subtitle": "Fork, pull request, code review, gestion des conflits en équipe et protection de branches.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le flux de contribution fork/PR<br/>\n  • Créer et gérer une pull request sur GitHub<br/>\n  • Réaliser une code review constructive<br/>\n  • Gérer les Issues et les milestones<br/>\n  • Configurer la protection de branches</p>\n</div>\n<h2>5.1 — Le modèle Fork &amp; Pull Request</h2>\n<div class=\"box info\"><div class=\"box-lbl\">🍴 Fork</div>\n<p>Un <strong>fork</strong> est une copie d'un dépôt dans votre espace GitHub. Utilisé pour contribuer à des projets open source où vous n'avez pas accès en écriture direct.</p></div>\n<div class=\"box tip\"><div class=\"box-lbl\">🔃 Pull Request (PR)</div>\n<p>Une <strong>pull request</strong> est une demande de fusion de votre branche vers une autre (souvent main). Elle inclut une description des changements, permet la discussion et la revue de code.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Workflow Fork/PR</div>\n<pre>1. Fork le dépôt original sur GitHub\n2. git clone git@github.com:TOI/repo-forke.git\n3. git remote add upstream git@github.com:ORIGINAL/repo.git\n4. git switch -c feature/ma-contribution\n5. # Faire les modifications + commits\n6. git push origin feature/ma-contribution\n7. GitHub → \"Compare &amp; pull request\"\n8. Rédiger description, assigner reviewers\n9. Intégrer les retours, pousser des commits\n10. L'équipe approuve → merge</pre></div>\n<h2>5.2 — Code Review</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de commentaire</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>Comment</strong></td><td>Observation neutre, question, suggestion</td></tr>\n<tr><td><strong>Request changes</strong></td><td>Modifications obligatoires avant le merge</td></tr>\n<tr><td><strong>Approve</strong></td><td>La PR est prête à être mergée</td></tr>\n</tbody></table></div>\n<div class=\"box tip\"><div class=\"box-lbl\">💡 Bonnes pratiques de code review</div>\n<p>• Critiquer le <em>code</em>, jamais la personne<br/>\n• Être précis dans les suggestions<br/>\n• Expliquer le <em>pourquoi</em>, pas seulement le <em>quoi</em><br/>\n• Garder les PR petites et ciblées (max ~400 lignes)<br/>\n• Répondre à tous les commentaires avant de merger</p></div>\n<h2>5.3 — Issues et gestion de projet</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Issues GitHub</div>\n<p>Les <strong>Issues</strong> servent à rapporter des bugs, demander des fonctionnalités ou discuter d'amélioration. On peut les lier à des PR (<code>Fixes #42</code> dans le message de commit ferme automatiquement l'issue).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Lier un commit à une issue</div>\n<pre>git commit -m \"fix: corrige le crash au démarrage\nFixes #42\"\n# → quand ce commit est mergé dans main,\n# l'issue #42 se ferme automatiquement</pre></div>\n<h2>5.4 — Protection de branches</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">🛡️ Branch Protection Rules (GitHub)</div>\n<p>Settings → Branches → Add rule → <code>main</code> :<br/>\n• ✅ Require a pull request before merging<br/>\n• ✅ Require approvals (ex : 1 reviewer minimum)<br/>\n• ✅ Require status checks to pass (CI/CD)<br/>\n• ✅ Restrict who can push to matching branches<br/><br/>\nRésultat : personne ne peut pousser directement sur <code>main</code>, tout passe par une PR approuvée.</p></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.4</a>\n<a class=\"ch-nav-btn\">Ch.6 →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Un fork GitHub est :",
+     "options": [
+      {
+       "text": "Une branche locale",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une copie d'un dépôt dans votre espace GitHub",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un alias pour git clone",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une nouvelle version du projet",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Que se passe-t-il quand on écrit 'Fixes #42' dans un message de commit mergé dans main ?",
+     "options": [
+      {
+       "text": "Rien de spécial",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "L'issue #42 se ferme automatiquement",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Un email est envoyé au créateur de l'issue",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Le commit est rejeté",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Pourquoi maintenir des pull requests petites (max ~400 lignes) ?",
+     "options": [
+      {
+       "text": "Pour respecter les limites GitHub",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Pour faciliter la code review et réduire les risques",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Pour économiser de la bande passante",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Git ne supporte pas les gros commits",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "La branch protection 'Require approvals' signifie :",
+     "options": [
+      {
+       "text": "Les branches sont protégées contre la suppression",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Un nombre minimum de reviewers doit approuver avant le merge",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Seul l'admin peut pousser",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Les CI/CD doivent passer",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans une code review, 'Request changes' signifie :",
+     "options": [
+      {
+       "text": "La PR est approuvée",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Une simple question",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Des modifications obligatoires sont requises avant le merge",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Le reviewer n'a pas terminé sa revue",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/git/chapitres/chapitre5.html"
+  },
+  {
+   "number": 6,
+   "title": "Workflows Git",
+   "subtitle": "Git Flow, GitHub Flow, tags, releases, git stash et bonnes pratiques en entreprise.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre et appliquer Git Flow<br/>\n  • Utiliser GitHub Flow (plus simple)<br/>\n  • Créer des tags et releases<br/>\n  • Utiliser git stash pour sauvegarder son travail<br/>\n  • Appliquer git cherry-pick</p>\n</div>\n<h2>6.1 — Git Flow</h2>\n<div class=\"box info\"><div class=\"box-lbl\">🌊 Vincent Driessen, 2010</div>\n<p><strong>Git Flow</strong> est un modèle de workflow avec deux branches permanentes et trois types de branches temporaires.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Branche</th><th>Type</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>main</strong></td><td>Permanente</td><td>Code en production, toujours stable</td></tr>\n<tr><td><strong>develop</strong></td><td>Permanente</td><td>Intégration des fonctionnalités</td></tr>\n<tr><td><strong>feature/*</strong></td><td>Temporaire</td><td>Développement d'une nouvelle feature → merge dans develop</td></tr>\n<tr><td><strong>release/*</strong></td><td>Temporaire</td><td>Préparation d'une version → merge dans main + develop</td></tr>\n<tr><td><strong>hotfix/*</strong></td><td>Temporaire</td><td>Correction urgente en prod → merge dans main + develop</td></tr>\n</tbody></table></div>\n<h2>6.2 — GitHub Flow (simplifié)</h2>\n<div class=\"box tip\"><div class=\"box-lbl\">🚀 Pour les équipes avec déploiement continu</div>\n<p>GitHub Flow est bien plus simple que Git Flow :<br/>\n1. <code>main</code> est toujours déployable<br/>\n2. Créer une branche descriptive<br/>\n3. Commit régulièrement<br/>\n4. Ouvrir une PR dès que possible<br/>\n5. Après revue + CI vert → merge dans main<br/>\n6. Déployer immédiatement après le merge</p></div>\n<h2>6.3 — Tags et Releases</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Créer et pousser un tag</div>\n<pre>git tag v1.0.0                     # Tag léger\ngit tag -a v1.0.0 -m \"Version 1.0 stable\"  # Tag annoté (recommandé)\ngit push origin v1.0.0              # Pousser le tag\ngit push origin --tags              # Pousser tous les tags\ngit tag -l                          # Lister les tags\ngit show v1.0.0                     # Détails du tag</pre></div>\n<div class=\"box info\"><div class=\"box-lbl\">📦 Versioning sémantique (SemVer)</div>\n<p>Format : <code>MAJEUR.MINEUR.PATCH</code> — ex: <code>v2.4.1</code><br/>\n• <strong>MAJEUR</strong> : changement incompatible (breaking change)<br/>\n• <strong>MINEUR</strong> : nouvelle fonctionnalité rétrocompatible<br/>\n• <strong>PATCH</strong> : correction de bug rétrocompatible</p></div>\n<h2>6.4 — git stash</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📦 Sauvegarder son travail en cours</div>\n<p><code>git stash</code> met de côté les modifications non commitées pour un usage ultérieur, sans créer de commit.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Commandes git stash</div>\n<pre>git stash                    # Sauvegarder les modifs en cours\ngit stash save \"WIP: login\"  # Avec un message\ngit stash list               # Lister les stashs\ngit stash pop                # Restaurer le dernier stash\ngit stash apply stash@{1}   # Restaurer un stash précis\ngit stash drop stash@{0}    # Supprimer un stash\ngit stash clear              # Tout supprimer</pre></div>\n<h2>6.5 — git cherry-pick</h2>\n<div class=\"box tip\"><div class=\"box-lbl\">🍒 Appliquer un commit précis sur une autre branche</div>\n<p><code>git cherry-pick &lt;hash&gt;</code> copie un commit spécifique sur la branche courante, sans merger toute la branche source. Utile pour appliquer un hotfix sur plusieurs branches.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple cherry-pick</div>\n<pre>git switch main\ngit cherry-pick a1b2c3d    # Applique ce commit sur main\ngit cherry-pick a1b2..e5f6  # Appliquer une plage de commits</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.5</a>\n<a class=\"ch-nav-btn\">Voir le cours →</a>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans Git Flow, quelle branche reçoit les features terminées avant la release ?",
+     "options": [
+      {
+       "text": "main",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "hotfix",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "develop",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "release",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "git stash sert à :",
+     "options": [
+      {
+       "text": "Supprimer les fichiers non suivis",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Sauvegarder des modifications en cours sans créer de commit",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Créer une branche temporaire",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Compresser le dépôt",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Le versioning sémantique v2.4.1 : que signifie le '4' ?",
+     "options": [
+      {
+       "text": "Version majeure",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Version mineure (nouvelles fonctionnalités rétrocompatibles)",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Numéro de patch (correction de bug)",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Build number",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "git cherry-pick permet de :",
+     "options": [
+      {
+       "text": "Supprimer des commits sélectifs",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Appliquer un commit précis sur la branche courante",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Choisir des fichiers pour le staging",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Lister les branches distantes",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    },
+    {
+     "type": "mcq",
+     "explanation": "",
+     "text": "Dans GitHub Flow, main doit toujours être :",
+     "options": [
+      {
+       "text": "En branche protégée",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "En état déployable",
+       "correct": true,
+       "explanation": ""
+      },
+      {
+       "text": "Identique à develop",
+       "correct": false,
+       "explanation": ""
+      },
+      {
+       "text": "Taguée avec une version",
+       "correct": false,
+       "explanation": ""
+      }
+     ],
+     "_answer_missing": false
+    }
+   ],
+   "source": "_private/git/chapitres/chapitre6.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "open",
+   "text": "Ex 1.1 — Explique la différence entre Git et GitHub en une phrase chacun. Puis donne un exemple concret où tu utiliserais l'un sans l'autre.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Git</strong> : outil de versioning en ligne de commande qui s'exécute localement sur ta machine — tu peux commiter sans connexion internet.<br/>\n<strong>GitHub</strong> : plateforme web qui héberge des dépôts Git dans le cloud pour collaborer, partager et sauvegarder à distance.</p>\n<p><em>Exemple :</em> tu utilises Git seul quand tu travailles sur un projet perso sans le publier. Tu utilises GitHub (mais pas Git) uniquement pour consulter le code d'un projet via l'interface web sans cloner.</p>\n</div>\n</details>",
+   "model_answer": "Git : outil de versioning en ligne de commande qui s'exécute localement sur ta machine — tu peux commiter sans connexion internet. GitHub : plateforme web qui héberge des dépôts Git dans le cloud pour collaborer, partager et sauvegarder à distance. Exemple : tu utilises Git seul quand tu travailles sur un projet perso sans le publier. Tu utilises GitHub (mais pas Git) uniquement pour consulter le code d'un projet via l'interface web sans cloner.",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 1.2 (Pratique) — Dans un terminal, crée un dossier tp-git, entre dedans, initialise un dépôt Git, crée un fichier README.md avec le texte \"Mon premier repo\", puis fais un premier commit. Écris toutes les commandes dans l'ordre.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution complète</div>\n<pre>mkdir tp-git\ncd tp-git\ngit init\necho \"Mon premier repo\" &gt; README.md\ngit status               # vérifie : README.md en rouge (Untracked)\ngit add README.md\ngit status               # vérifie : README.md en vert (Staged)\ngit commit -m \"feat: premier commit avec README\"\ngit log --oneline        # vérifie : 1 commit affiché</pre>\n</div>\n</details>",
+   "model_answer": "Solution complète mkdir tp-git cd tp-git git init echo \"Mon premier repo\" > README.md git status # vérifie : README.md en rouge (Untracked) git add README.md git status # vérifie : README.md en vert (Staged) git commit -m \"feat: premier commit avec README\" git log --oneline # vérifie : 1 commit affiché",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 1.3 — Schématise les 3 zones de Git (Working Directory, Staging Area, Repository) et indique pour chaque zone : quelle commande y fait passer un fichier, et comment revenir en arrière depuis cette zone.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Les 3 zones et leurs commandes</div>\n<pre>[Working Directory] → git add → [Staging Area] → git commit → [Repository]\nRetour arrière :\n• Staging → Working Dir  :  git restore --staged &lt;fichier&gt;\n• Working Dir (annuler modifs) :  git restore &lt;fichier&gt;  ⚠️ irréversible\n• Dépublier le dernier commit :   git reset --soft HEAD~1  (garde les fichiers)</pre>\n</div>\n</details>",
+   "model_answer": "Les 3 zones et leurs commandes [Working Directory] → git add → [Staging Area] → git commit → [Repository] Retour arrière : • Staging → Working Dir : git restore --staged <fichier> • Working Dir (annuler modifs) : git restore <fichier> ⚠️ irréversible • Dépublier le dernier commit : git reset --soft HEAD~1 (garde les fichiers)",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 1.4 — Tu reçois la sortie git status suivante. Pour chaque fichier, indique dans quelle zone il se trouve et quelle commande utiliser pour le commiter : modified: app.js (rouge) · new file: utils.py (vert) · Untracked: test.txt",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p>• <code>app.js</code> rouge → Working Directory (modifié mais pas stagé) → <code>git add app.js</code> puis <code>git commit</code><br/>\n        • <code>utils.py</code> vert → Staging Area (déjà stagé, prêt) → <code>git commit</code> directement<br/>\n        • <code>test.txt</code> → Untracked (jamais suivi) → <code>git add test.txt</code> puis <code>git commit</code></p>\n<p>Pour tout commiter en une fois : <code>git add app.js test.txt</code> puis <code>git commit -m \"message\"</code> (utils.py déjà stagé)</p>\n</div>\n</details>",
+   "model_answer": "• app.js rouge → Working Directory (modifié mais pas stagé) → git add app.js puis git commit • utils.py vert → Staging Area (déjà stagé, prêt) → git commit directement • test.txt → Untracked (jamais suivi) → git add test.txt puis git commit Pour tout commiter en une fois : git add app.js test.txt puis git commit -m \"message\" (utils.py déjà stagé)",
+   "level": "hard"
+  },
+  {
+   "type": "open",
+   "text": "Ex 2.1 — Classe ces messages de commit du pire au meilleur et justifie : A) \"fix bug\" B) \"update\" C) \"fix: corrige le NullPointerException dans login() quand email vide\" D) \"feat: ajoute la validation du formulaire d'inscription\"",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Classement : B → A → D → C</strong></p>\n<p>• B \"update\" — inutile, ne dit rien sur ce qui a changé<br/>\n        • A \"fix bug\" — dit qu'un bug est corrigé mais lequel ? où ?<br/>\n        • D bonne convention, clair et actionnable<br/>\n        • C excellent : convention Conventional Commits, type + contexte + cause précise</p>\n</div>\n</details>",
+   "model_answer": "Classement : B → A → D → C • B \"update\" — inutile, ne dit rien sur ce qui a changé • A \"fix bug\" — dit qu'un bug est corrigé mais lequel ? où ? • D bonne convention, clair et actionnable • C excellent : convention Conventional Commits, type + contexte + cause précise",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 2.2 (Pratique) — Dans ton dépôt tp-git, fais 3 commits distincts : un qui ajoute un fichier index.html, un qui modifie le README.md, un qui ajoute style.css. Ensuite affiche l'historique en mode compact. Que vois-tu ?",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution</div>\n<pre>echo \"&lt;h1&gt;Hello&lt;/h1&gt;\" &gt; index.html\ngit add index.html &amp;&amp; git commit -m \"feat: ajout page index\"\necho \"## Description du projet\" &gt;&gt; README.md\ngit add README.md &amp;&amp; git commit -m \"docs: mise à jour README\"\necho \"body { margin: 0; }\" &gt; style.css\ngit add style.css &amp;&amp; git commit -m \"style: ajout feuille CSS de base\"\ngit log --oneline\n# Résultat (du plus récent au plus ancien) :\n# a3f2c1b style: ajout feuille CSS de base\n# 8d4e9f2 docs: mise à jour README\n# 1c7b3a0 feat: ajout page index\n# e5a2d8f feat: premier commit avec README</pre>\n</div>\n</details>",
+   "model_answer": "Solution echo \"<h1>Hello</h1>\" > index.html git add index.html && git commit -m \"feat: ajout page index\" echo \"## Description du projet\" >> README.md git add README.md && git commit -m \"docs: mise à jour README\" echo \"body { margin: 0; }\" > style.css git add style.css && git commit -m \"style: ajout feuille CSS de base\" git log --oneline # Résultat (du plus récent au plus ancien) : # a3f2c1b style: ajout feuille CSS de base # 8d4e9f2 docs: mise à jour README # 1c7b3a0 feat: ajout page index # e5a2d8f feat: premier commit avec README",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 2.3 — Quelle est la différence entre git reset --soft HEAD~1, git reset --mixed HEAD~1 et git reset --hard HEAD~1 ? Dans quel cas utilises-tu chacun ?",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Commit annulé ?</th><th>Staging conservé ?</th><th>Fichiers conservés ?</th><th>Quand l'utiliser</th></tr></thead>\n<tbody>\n<tr><td><code>--soft</code></td><td>✅ Oui</td><td>✅ Oui</td><td>✅ Oui</td><td>Reformuler le message de commit</td></tr>\n<tr><td><code>--mixed</code> (défaut)</td><td>✅ Oui</td><td>❌ Non</td><td>✅ Oui</td><td>Modifier les fichiers avant de re-commiter</td></tr>\n<tr><td><code>--hard</code></td><td>✅ Oui</td><td>❌ Non</td><td>❌ Non ⚠️</td><td>Abandonner complètement les changements</td></tr>\n</tbody>\n</table></div>\n<p>⚠️ <code>--hard</code> est <strong>irréversible</strong> — les modifications non commitées sont perdues définitivement.</p>\n</div>\n</details>",
+   "model_answer": "CommandeCommit annulé ?Staging conservé ?Fichiers conservés ?Quand l'utiliser --soft✅ Oui✅ Oui✅ OuiReformuler le message de commit --mixed (défaut)✅ Oui❌ Non✅ OuiModifier les fichiers avant de re-commiter --hard✅ Oui❌ Non❌ Non ⚠️Abandonner complètement les changements ⚠️ --hard est irréversible — les modifications non commitées sont perdues définitivement.",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 2.4 — Tu as commité un mot de passe en clair dans un fichier config.py il y a 3 commits. Quelle est la bonne procédure pour l'effacer de l'historique Git ? (Attention : git reset seul ne suffit pas si tu as déjà pusher.)",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box warn\">\n<p><strong>Procédure d'urgence :</strong></p>\n<p>1. <strong>Immédiatement</strong> : change le mot de passe/la clé exposée — considère-la compromise<br/>\n        2. Utilise <code>git filter-branch</code> ou l'outil <code>git-filter-repo</code> (recommandé) pour réécrire l'historique :<br/>\n<code>git filter-repo --path config.py --invert-paths</code><br/>\n        3. Force-push : <code>git push --force</code><br/>\n        4. Demande à tous les collaborateurs de re-cloner le dépôt<br/><br/>\n<strong>Prévention :</strong> utilise un fichier <code>.env</code> jamais commité + <code>.gitignore</code> pour les secrets.</p>\n</div>\n</details>",
+   "model_answer": "Procédure d'urgence : 1. Immédiatement : change le mot de passe/la clé exposée — considère-la compromise 2. Utilise git filter-branch ou l'outil git-filter-repo (recommandé) pour réécrire l'historique : git filter-repo --path config.py --invert-paths 3. Force-push : git push --force 4. Demande à tous les collaborateurs de re-cloner le dépôt Prévention : utilise un fichier .env jamais commité + .gitignore pour les secrets.",
+   "level": "hard"
+  },
+  {
+   "type": "open",
+   "text": "Ex 3.1 (Pratique) — Depuis ton dépôt tp-git, crée une branche feature/navbar, bascule dessus, ajoute un fichier navbar.html avec un commit, puis reviens sur main. Vérifie que navbar.html a disparu sur main.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution</div>\n<pre>git branch feature/navbar           # créer la branche\ngit checkout feature/navbar         # basculer dessus\n# (ou en une commande : git checkout -b feature/navbar)\necho \"&lt;nav&gt;Menu&lt;/nav&gt;\" &gt; navbar.html\ngit add navbar.html\ngit commit -m \"feat: ajout de la navbar\"\ngit checkout main                   # retour sur main\nls                                  # navbar.html n'apparaît plus → normal !\ngit log --oneline --all --graph     # voir les deux branches</pre>\n</div>\n</details>",
+   "model_answer": "Solution git branch feature/navbar # créer la branche git checkout feature/navbar # basculer dessus # (ou en une commande : git checkout -b feature/navbar) echo \"<nav>Menu</nav>\" > navbar.html git add navbar.html git commit -m \"feat: ajout de la navbar\" git checkout main # retour sur main ls # navbar.html n'apparaît plus → normal ! git log --oneline --all --graph # voir les deux branches",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 3.2 — Tu es sur main. Tu veux fusionner feature/navbar. Écris la séquence de commandes. Puis explique la différence entre un fast-forward merge et un merge commit — dans quel cas Git choisit l'un ou l'autre ?",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Fusion</div>\n<pre>git checkout main\ngit merge feature/navbar\n# Si fast-forward possible :\n# → Updating e5a2d8f..3b1c9f0\n# → Fast-forward\ngit branch -d feature/navbar        # supprimer la branche fusionnée</pre>\n</div>\n<div class=\"box info\">\n<p><strong>Fast-forward</strong> : possible quand <code>main</code> n'a pas avancé depuis la création de la branche. Git \"déplace\" simplement le pointeur main → pas de commit de merge créé. Historique linéaire.<br/><br/>\n<strong>Merge commit</strong> : quand <code>main</code> ET la branche ont avancé en parallèle, Git crée un commit de fusion avec 2 parents. Historique non-linéaire mais plus fidèle à la réalité.</p>\n</div>\n</details>",
+   "model_answer": "Fusion git checkout main git merge feature/navbar # Si fast-forward possible : # → Updating e5a2d8f..3b1c9f0 # → Fast-forward git branch -d feature/navbar # supprimer la branche fusionnée Fast-forward : possible quand main n'a pas avancé depuis la création de la branche. Git \"déplace\" simplement le pointeur main → pas de commit de merge créé. Historique linéaire. Merge commit : quand main ET la branche ont avancé en parallèle, Git crée un commit de fusion avec 2 parents. Historique non-linéaire mais plus fidèle à la réalité.",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 3.3 — Conflit de merge — Dans tp-git, modifie la ligne 1 de README.md sur main (commit), crée une branche fix/readme, modifie aussi la ligne 1 différemment (commit), puis essaie de merger. Git va signaler un conflit. Résous-le manuellement.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Reproduire et résoudre le conflit</div>\n<pre># Sur main :\necho \"# Projet Web FKMOTT\" &gt; README.md\ngit add README.md &amp;&amp; git commit -m \"docs: titre principal\"\n# Créer branche et modifier la même ligne :\ngit checkout -b fix/readme\necho \"# Application FKMOTT B1\" &gt; README.md\ngit add README.md &amp;&amp; git commit -m \"docs: titre alternatif\"\n# Tenter de merger sur main :\ngit checkout main\ngit merge fix/readme\n# → CONFLICT (content): Merge conflict in README.md\n# Ouvrir README.md — Git a inséré :\n# &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\n# # Projet Web FKMOTT\n# =======\n# # Application FKMOTT B1\n# &gt;&gt;&gt;&gt;&gt;&gt;&gt; fix/readme\n# Résoudre : choisir ce que tu veux garder, supprimer les marqueurs\necho \"# Projet FKMOTT B1\" &gt; README.md\n# Finaliser :\ngit add README.md\ngit commit -m \"merge: résolution conflit titre README\"</pre>\n</div>\n</details>",
+   "model_answer": "Reproduire et résoudre le conflit # Sur main : echo \"# Projet Web FKMOTT\" > README.md git add README.md && git commit -m \"docs: titre principal\" # Créer branche et modifier la même ligne : git checkout -b fix/readme echo \"# Application FKMOTT B1\" > README.md git add README.md && git commit -m \"docs: titre alternatif\" # Tenter de merger sur main : git checkout main git merge fix/readme # → CONFLICT (content): Merge conflict in README.md # Ouvrir README.md — Git a inséré : # <<<<<<< HEAD # # Projet Web FKMOTT # ======= # # Application FKMOTT B1 # >>>>>>> fix/readme # Résoudre : choisir ce que tu veux garder, supprimer les marqueurs echo \"# Projet FKMOTT B1\" > README.md # Finaliser : git add README.md git commit -m \"merge: résolution conflit titre README\"",
+   "level": "hard"
+  },
+  {
+   "type": "open",
+   "text": "Ex 4.1 — Explique la différence entre git fetch et git pull. Donne un exemple de situation où tu préfèrerais fetch plutôt que pull.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong><code>git fetch</code></strong> : télécharge les nouveaux commits du distant <em>sans</em> modifier ta branche locale. Les changements atterrissent dans <code>origin/main</code> (branche de suivi). Tu peux inspecter avant d'intégrer.</p>\n<p><strong><code>git pull</code></strong> : = <code>git fetch</code> + <code>git merge</code>. Intègre immédiatement les changements dans ta branche locale.</p>\n<p><em>Quand préférer fetch :</em> quand tu veux voir ce que tes collègues ont poussé avant de décider si tu veux l'intégrer. <code>git fetch</code> → <code>git diff main origin/main</code> → <code>git merge</code> si ça convient.</p>\n</div>\n</details>",
+   "model_answer": "git fetch : télécharge les nouveaux commits du distant sans modifier ta branche locale. Les changements atterrissent dans origin/main (branche de suivi). Tu peux inspecter avant d'intégrer. git pull : = git fetch + git merge. Intègre immédiatement les changements dans ta branche locale. Quand préférer fetch : quand tu veux voir ce que tes collègues ont poussé avant de décider si tu veux l'intégrer. git fetch → git diff main origin/main → git merge si ça convient.",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 4.2 (Pratique) — Crée un dépôt public sur GitHub, relie ton dépôt local tp-git à ce remote, puis pousse toutes tes branches. Écris la séquence complète de commandes depuis la création du remote.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Lier un dépôt local à GitHub</div>\n<pre># 1. Sur GitHub : créer un repo vide (sans README, sans .gitignore)\n# 2. Dans ton terminal :\ngit remote add origin https://github.com/ton-user/tp-git.git\n# Vérifier :\ngit remote -v\n# origin  https://github.com/ton-user/tp-git.git (fetch)\n# origin  https://github.com/ton-user/tp-git.git (push)\n# Pousser main :\ngit push -u origin main\n# -u = --set-upstream : lie la branche locale à origin/main\n# Pousser toutes les branches :\ngit push --all origin</pre>\n</div>\n</details>",
+   "model_answer": "Lier un dépôt local à GitHub # 1. Sur GitHub : créer un repo vide (sans README, sans .gitignore) # 2. Dans ton terminal : git remote add origin https://github.com/ton-user/tp-git.git # Vérifier : git remote -v # origin https://github.com/ton-user/tp-git.git (fetch) # origin https://github.com/ton-user/tp-git.git (push) # Pousser main : git push -u origin main # -u = --set-upstream : lie la branche locale à origin/main # Pousser toutes les branches : git push --all origin",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 4.3 — Tu essaies de faire git push et Git te répond : \"rejected — non-fast-forward\". Qu'est-ce que ça signifie ? Quelle est la bonne procédure pour résoudre ça ? Pourquoi ne faut-il jamais faire git push --force sur une branche partagée ?",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Signification :</strong> le dépôt distant a des commits que tu n'as pas en local. Si tu pushais, tu écraserait le travail de tes collègues.</p>\n<p><strong>Bonne procédure :</strong></p>\n<div class=\"code-block\">\n<pre>git pull origin main          # récupère + merge les commits distants\n# → résoudre les éventuels conflits\ngit push origin main          # maintenant ça passe</pre>\n</div>\n<p><strong>Pourquoi pas <code>--force</code> sur une branche partagée :</strong> <code>--force</code> réécrit l'historique distant et efface les commits de tes collègues. Leurs dépôts locaux deviennent incohérents. C'est une catastrophe en équipe. <code>--force</code> n'est acceptable que sur <em>ta propre branche feature</em> que personne d'autre n'utilise.</p>\n</div>\n</details>",
+   "model_answer": "Signification : le dépôt distant a des commits que tu n'as pas en local. Si tu pushais, tu écraserait le travail de tes collègues. Bonne procédure : git pull origin main # récupère + merge les commits distants # → résoudre les éventuels conflits git push origin main # maintenant ça passe Pourquoi pas --force sur une branche partagée : --force réécrit l'historique distant et efface les commits de tes collègues. Leurs dépôts locaux deviennent incohérents. C'est une catastrophe en équipe. --force n'est acceptable que sur ta propre branche feature que personne d'autre n'utilise.",
+   "level": "hard"
+  },
+  {
+   "type": "open",
+   "text": "Ex 5.1 — Qu'est-ce qu'une Pull Request (PR) ? Décris les étapes du cycle de vie d'une PR depuis la création de la branche jusqu'à la fusion, en 5 étapes.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Pull Request</strong> = demande formelle de fusionner une branche dans une autre, via l'interface GitHub. C'est le cœur du workflow collaboratif.</p>\n<p><strong>Cycle de vie :</strong><br/>\n        1. 🌿 Créer une branche feature : <code>git checkout -b feature/mon-ajout</code><br/>\n        2. 💾 Commiter son travail et pusher : <code>git push origin feature/mon-ajout</code><br/>\n        3. 🔁 Ouvrir la PR sur GitHub : choisir la branche source et la branche cible (souvent <code>main</code>), écrire une description claire<br/>\n        4. 👁️ Code review : les collègues lisent, commentent, demandent des modifications<br/>\n        5. ✅ Merge : le responsable approuve et fusionne, la branche est supprimée</p>\n</div>\n</details>",
+   "model_answer": "Pull Request = demande formelle de fusionner une branche dans une autre, via l'interface GitHub. C'est le cœur du workflow collaboratif. Cycle de vie : 1. 🌿 Créer une branche feature : git checkout -b feature/mon-ajout 2. 💾 Commiter son travail et pusher : git push origin feature/mon-ajout 3. 🔁 Ouvrir la PR sur GitHub : choisir la branche source et la branche cible (souvent main), écrire une description claire 4. 👁️ Code review : les collègues lisent, commentent, demandent des modifications 5. ✅ Merge : le responsable approuve et fusionne, la branche est supprimée",
+   "level": "easy"
+  },
+  {
+   "type": "open",
+   "text": "Ex 5.2 — Explique la différence entre fork et clone. Dans quel contexte utilise-t-on un fork ? Décris comment contribuer à un projet open-source que tu ne possèdes pas.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Clone</strong> : copie locale d'un dépôt (sur ta machine). Tu peux pusher si tu as les droits.<br/>\n<strong>Fork</strong> : copie du dépôt <em>sur ton compte GitHub</em>. Tu peux y pusher librement, même sans droits sur l'original.</p>\n<p><strong>Contribuer à un projet open-source :</strong><br/>\n        1. Fork le dépôt sur GitHub (bouton \"Fork\")<br/>\n        2. Clone <em>ton fork</em> en local : <code>git clone https://github.com/toi/projet.git</code><br/>\n        3. Crée une branche : <code>git checkout -b fix/mon-correctif</code><br/>\n        4. Modifie, commite, pousse sur ton fork<br/>\n        5. Ouvre une PR depuis ton fork vers le dépôt original<br/>\n        6. Le mainteneur original review et merge (ou non)</p>\n</div>\n</details>",
+   "model_answer": "Clone : copie locale d'un dépôt (sur ta machine). Tu peux pusher si tu as les droits. Fork : copie du dépôt sur ton compte GitHub. Tu peux y pusher librement, même sans droits sur l'original. Contribuer à un projet open-source : 1. Fork le dépôt sur GitHub (bouton \"Fork\") 2. Clone ton fork en local : git clone https://github.com/toi/projet.git 3. Crée une branche : git checkout -b fix/mon-correctif 4. Modifie, commite, pousse sur ton fork 5. Ouvre une PR depuis ton fork vers le dépôt original 6. Le mainteneur original review et merge (ou non)",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 5.3 — Qu'est-ce que git rebase ? Compare-le à git merge. Dans quel cas utilises-tu git rebase -i et qu'est-ce que le squash de commits ?",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>git merge</strong> : crée un commit de fusion avec 2 parents — historique non-linéaire mais fidèle à la réalité.</p>\n<p><strong>git rebase</strong> : réapplique tes commits <em>au-dessus</em> de la branche cible — historique linéaire et propre, comme si tu avais travaillé depuis le dernier commit de main. Tes commits sont réécrits (nouveaux hashes).</p>\n<div class=\"code-block\"><pre># Rebase feature/navbar sur main :\ngit checkout feature/navbar\ngit rebase main\n# → Git rejoue tes commits un à un par-dessus main</pre></div>\n<p><strong>Rebase interactif</strong> (<code>git rebase -i HEAD~3</code>) : permet de réécrire les 3 derniers commits — changer les messages, réordonner, supprimer, ou <strong>squasher</strong>.</p>\n<p><strong>Squash</strong> : fusionner plusieurs commits en un seul. Utile pour nettoyer \"wip\", \"fix typo\", \"encore fix\" avant de merger une PR → un seul commit propre et logique.</p>\n<p>⚠️ Ne jamais rebase une branche déjà partagée avec d'autres — tu réécriras l'historique et casseras leurs dépôts locaux.</p>\n</div>\n</details>",
+   "model_answer": "git merge : crée un commit de fusion avec 2 parents — historique non-linéaire mais fidèle à la réalité. git rebase : réapplique tes commits au-dessus de la branche cible — historique linéaire et propre, comme si tu avais travaillé depuis le dernier commit de main. Tes commits sont réécrits (nouveaux hashes). # Rebase feature/navbar sur main : git checkout feature/navbar git rebase main # → Git rejoue tes commits un à un par-dessus main Rebase interactif (git rebase -i HEAD~3) : permet de réécrire les 3 derniers commits — changer les messages, réordonner, supprimer, ou squasher. Squash : fusionner plusieurs commits en un seul. Utile pour nettoyer \"wip\", \"fix typo\", \"encore fix\" avant de merger une PR → un seul commit propre et logique. ⚠️ Ne jamais rebase une branche déjà partagée avec d'autres — tu réécriras l'historique et casseras leurs dépôts locaux.",
+   "level": "hard"
+  },
+  {
+   "type": "open",
+   "text": "Ex 6.1 — Décris le Git Flow. Quelles sont les branches permanentes ? Quelles sont les branches temporaires ? Pour chaque type de branche, donne un exemple de nom concret.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"box info\">\n<p><strong>Branches permanentes :</strong><br/>\n        • <code>main</code> (ou <code>master</code>) : code en production, toujours stable<br/>\n        • <code>develop</code> : intégration continue des nouvelles fonctionnalités</p>\n<p><strong>Branches temporaires :</strong><br/>\n        • <code>feature/login-oauth</code> — nouvelle fonctionnalité<br/>\n        • <code>release/v2.1.0</code> — préparation d'une mise en production<br/>\n        • <code>hotfix/crash-paiement</code> — correction urgente en production</p>\n<p><strong>Cycle :</strong> feature → develop → release → main + tag de version</p>\n</div>\n</details>",
+   "model_answer": "Branches permanentes : • main (ou master) : code en production, toujours stable • develop : intégration continue des nouvelles fonctionnalités Branches temporaires : • feature/login-oauth — nouvelle fonctionnalité • release/v2.1.0 — préparation d'une mise en production • hotfix/crash-paiement — correction urgente en production Cycle : feature → develop → release → main + tag de version",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 6.2 — Qu'est-ce que git stash ? Tu es sur une branche en train de travailler, un bug urgent arrive sur main. Écris la séquence exacte de commandes pour gérer ça sans perdre ton travail.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">git stash — sauvegarder temporairement</div>\n<pre># Tu es sur feature/dashboard avec des modifs non commitées\ngit stash                           # met les modifs de côté\ngit stash list                      # vérifie : stash@{0}: WIP on feature/dashboard\n# Corriger le bug urgent\ngit checkout main\ngit checkout -b hotfix/bug-login\n# ... correction ...\ngit add . &amp;&amp; git commit -m \"fix: corrige crash login mobile\"\ngit checkout main &amp;&amp; git merge hotfix/bug-login\ngit push origin main\n# Reprendre ton travail interrompu\ngit checkout feature/dashboard\ngit stash pop                       # récupère tes modifs\n# → Continue comme si rien ne s'était passé</pre>\n</div>\n</details>",
+   "model_answer": "git stash — sauvegarder temporairement # Tu es sur feature/dashboard avec des modifs non commitées git stash # met les modifs de côté git stash list # vérifie : stash@{0}: WIP on feature/dashboard # Corriger le bug urgent git checkout main git checkout -b hotfix/bug-login # ... correction ... git add . && git commit -m \"fix: corrige crash login mobile\" git checkout main && git merge hotfix/bug-login git push origin main # Reprendre ton travail interrompu git checkout feature/dashboard git stash pop # récupère tes modifs # → Continue comme si rien ne s'était passé",
+   "level": "medium"
+  },
+  {
+   "type": "open",
+   "text": "Ex 6.3 — Cas réel complet — Tu travailles en équipe de 3 sur un site web. Décris le workflow Git complet pour qu'un développeur ajoute une fonctionnalité de recherche, sans bloquer les 2 autres, avec validation par PR.",
+   "model_answer_html": "<details style=\"margin-top:.8rem;\">\n<div class=\"code-block\">\n<div class=\"code-lbl\">Workflow équipe complet</div>\n<pre># 1. Partir d'un develop à jour\ngit checkout develop\ngit pull origin develop\n# 2. Créer sa branche feature\ngit checkout -b feature/search-bar\n# 3. Travailler en commitant régulièrement\ngit add src/search.js\ngit commit -m \"feat(search): ajout composant SearchBar\"\ngit add src/search.css\ngit commit -m \"style(search): mise en page SearchBar responsive\"\n# 4. Mettre à jour depuis develop (si d'autres ont pushé entre-temps)\ngit fetch origin\ngit rebase origin/develop           # garder un historique propre\n# 5. Pousser sa branche\ngit push origin feature/search-bar\n# 6. Ouvrir une PR sur GitHub :\n#    → base: develop  ←  compare: feature/search-bar\n#    → Décrire ce qui a été fait, pourquoi, comment tester\n# 7. Les 2 coéquipiers font la review, laissent des commentaires\n# 8. Corrections si nécessaire → nouveaux commits sur la même branche\n# 9. Approbation → Merge (Squash and merge pour historique propre)\n# 10. Supprimer la branche feature après merge</pre>\n</div>\n<div class=\"box tip\">\n<p>Les 2 autres développeurs ne sont <strong>jamais bloqués</strong> car ils travaillent sur leurs propres branches. Seul <code>develop</code> est partagé, et il n'est mis à jour que via des PRs validées.</p>\n</div>\n</details>",
+   "model_answer": "Workflow équipe complet # 1. Partir d'un develop à jour git checkout develop git pull origin develop # 2. Créer sa branche feature git checkout -b feature/search-bar # 3. Travailler en commitant régulièrement git add src/search.js git commit -m \"feat(search): ajout composant SearchBar\" git add src/search.css git commit -m \"style(search): mise en page SearchBar responsive\" # 4. Mettre à jour depuis develop (si d'autres ont pushé entre-temps) git fetch origin git rebase origin/develop # garder un historique propre # 5. Pousser sa branche git push origin feature/search-bar # 6. Ouvrir une PR sur GitHub : # → base: develop ← compare: feature/search-bar # → Décrire ce qui a été fait, pourquoi, comment tester # 7. Les 2 coéquipiers font la review, laissent des commentaires # 8. Corrections si nécessaire → nouveaux commits sur la même branche # 9. Approbation → Merge (Squash and merge pour historique propre) # 10. Supprimer la branche feature après merge Les 2 autres développeurs ne sont jamais bloqués car ils travaillent sur leurs propres branches. Seul develop est partagé, et il n'est mis à jour que via des PRs validées.",
+   "level": "hard"
+  }
+ ],
+ "simulators": [],
+ "flashcards": [],
+ "exercises_source": "_private/git/exercices/exercices.html"
+}

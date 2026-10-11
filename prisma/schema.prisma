@@ -1,0 +1,897 @@
+// Astyns — schéma de base de données (Supabase PostgreSQL via Prisma)
+// Lecture : "model" = une table. "@@unique" = interdit les doublons. "Json" = données souples.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // connexion poolée (pgbouncer) pour l'application
+  directUrl = env("DIRECT_URL")   // connexion directe pour les migrations
+}
+
+// ───────────────────────── Énumérations ─────────────────────────
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum ContentKind {
+  CHAPTER         // cours
+  EXERCISE_SET    // série d'exercices
+  SIMULATOR       // simulateur d'examen
+  FLASHCARD_DECK  // fiches de révision
+  PAST_EXAM       // ancien examen corrigé
+}
+
+// États d'un contenu dans le studio (l'IA ne publie jamais seule)
+enum ContentStatus {
+  AI_DRAFT
+  IN_REVIEW
+  APPROVED
+  PUBLISHED
+  ARCHIVED
+}
+
+// Qui peut voir le contenu (séparé de l'état ci-dessus)
+enum Visibility {
+  PUBLIC   // gratuit
+  PREMIUM  // réservé aux abonnés (rare : les offres jouent surtout sur les limites et les fonctions)
+  SOON     // « bientôt »
+  HIDDEN
+}
+
+enum QuestionType {
+  MCQ
+  MCQ_MULTI
+  TRUE_FALSE
+  GAP
+  REORDER
+  MATCHING
+  DRAG            // glisser (principe à préciser) — format de lancement
+  SWIPE           // swipe, carte à glisser à gauche ou à droite (principe à préciser) — format de lancement
+  OPEN            // aussi utilisé pour les exercices corrigés : data.modelAnswer = la correction
+}
+// Formats de lancement (6) : MCQ (quiz), GAP (texte à trous), DRAG (glisser), TRUE_FALSE (vrai ou faux), MATCHING (assemblage), SWIPE.
+// MCQ_MULTI, REORDER et OPEN existent pour le contenu déjà importé : à conserver ou convertir (point ouvert).
+// D'autres formats (inspirés de Cybismo) s'ajoutent ici sans toucher au reste : une valeur d'enum + un type de data.
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  CANCELED
+}
+
+enum JobStatus {
+  QUEUED
+  RUNNING
+  DONE
+  FAILED
+}
+
+// Offre vue par l'étudiant : Gratuit, Plus, Réussite
+enum PlanTier {
+  FREE
+  PLUS
+  SUCCESS
+}
+
+enum BadgeCategory {
+  DISCOVERY   // Découverte
+  REGULARITY  // Régularité
+  MASTERY     // Maîtrise
+  COMPETITION // Compétition
+  EVENT       // Événements
+}
+
+enum QuestMetric {
+  ANSWERS   // répondre à N questions
+  XP        // gagner N XP
+  CHAPTERS  // valider N chapitres
+}
+
+enum EventKind {
+  SOLO
+  TEAM  // l'objectif est atteint par toute la promo ensemble
+}
+
+enum EventStatus {
+  SOON
+  ACTIVE
+  ENDED
+}
+
+enum LeagueOutcome {
+  PROMOTED
+  STAYED
+  DEMOTED
+}
+
+enum GameKind {
+  BINARY_SUDOKU
+  WORDS_404
+}
+
+enum AnnouncementAudience {
+  ALL
+  SUBSCRIBERS
+  FREE
+  LEVEL
+}
+
+// ───────────────────────── Structure scolaire ─────────────────────────
+// Ajouter B2 IT ou Marketing Digital = ajouter des lignes, pas du code.
+
+model Institution {
+  id     String  @id @default(uuid()) @db.Uuid
+  slug   String  @unique
+  name   String
+  tracks Track[]
+}
+
+model Track { // filière
+  id            String      @id @default(uuid()) @db.Uuid
+  institutionId String      @db.Uuid
+  slug          String
+  name          String
+  institution   Institution @relation(fields: [institutionId], references: [id])
+  levels        Level[]
+
+  @@unique([institutionId, slug])
+}
+
+model Level { // niveau : B1, B2…
+  id        String     @id @default(uuid()) @db.Uuid
+  trackId   String     @db.Uuid
+  slug      String
+  name      String
+  position  Int        @default(0)
+  track     Track      @relation(fields: [trackId], references: [id])
+  subjects  Subject[]
+  templates Template[]
+  profiles  Profile[]
+
+  @@unique([trackId, slug])
+}
+
+model Subject { // matière
+  id         String        @id @default(uuid()) @db.Uuid
+  levelId    String        @db.Uuid
+  slug       String
+  name       String
+  semester   Int?
+  position   Int           @default(0)
+  color      String?
+  visibility Visibility    @default(PUBLIC)
+  level      Level         @relation(fields: [levelId], references: [id])
+  items      ContentItem[]
+  sources    SourceFile[]
+  helpGroups HelpGroup[]
+
+  @@unique([levelId, slug])
+}
+
+// ───────────────────────── Contenu et versions ─────────────────────────
+// Un contenu publié n'est jamais modifié : on crée une nouvelle version.
+
+model ContentItem {
+  id                 String           @id @default(uuid()) @db.Uuid
+  subjectId          String           @db.Uuid
+  kind               ContentKind
+  number             Int              @default(1) // n° de chapitre, de série…
+  title              String
+  visibility         Visibility       @default(PUBLIC) // les résumés sont gratuits ; les limites viennent de l'offre (TierLimits)
+  publishedVersionId String?          @unique @db.Uuid // version vue par les étudiants
+  createdAt          DateTime         @default(now())
+  subject            Subject          @relation(fields: [subjectId], references: [id])
+  versions           ContentVersion[] @relation("ItemVersions")
+  publishedVersion   ContentVersion?  @relation("PublishedVersion", fields: [publishedVersionId], references: [id])
+  progress           ChapterProgress[]
+  quizAttempts       QuizAttempt[]
+  jobs               GenerationJob[]
+
+  @@unique([subjectId, kind, number])
+  @@index([subjectId, kind])
+}
+
+model ContentVersion {
+  id           String        @id @default(uuid()) @db.Uuid
+  itemId       String        @db.Uuid
+  version      Int
+  status       ContentStatus @default(AI_DRAFT)
+  title        String
+  subtitle     String?
+  bodyHtml     String?       // texte du cours (HTML nettoyé)
+  data         Json?         // reste de la structure (objectifs, sections, barème, variantes de simulateur…)
+  templateId   String?       @db.Uuid
+  origin       String        @default("import") // import | studio | manuel
+  note         String?       // « ce qui change » par rapport à la version précédente
+  createdById  String?       @db.Uuid
+  reviewedById String?       @db.Uuid
+  createdAt    DateTime      @default(now())
+  reviewedAt   DateTime?
+  publishedAt  DateTime?
+
+  item         ContentItem     @relation("ItemVersions", fields: [itemId], references: [id])
+  publishedFor ContentItem?    @relation("PublishedVersion")
+  template     Template?       @relation(fields: [templateId], references: [id])
+  questions    Question[]
+  flashcards   Flashcard[]
+  sources      VersionSource[]
+  examAttempts ExamAttempt[]
+  createdBy    Profile?        @relation("VersionCreator", fields: [createdById], references: [id])
+  reviewedBy   Profile?        @relation("VersionReviewer", fields: [reviewedById], references: [id])
+  jobs         GenerationJob[]
+
+  @@unique([itemId, version])
+  @@index([status])
+}
+
+model Question {
+  id            String         @id @default(uuid()) @db.Uuid
+  versionId     String         @db.Uuid
+  key           String         // identifiant stable d'une version à l'autre (suivi des statistiques)
+  position      Int            @default(0)
+  type          QuestionType
+  text          String
+  data          Json           // options + bonnes réponses, trous, ordre, paires… selon le type
+  explanation   String?
+  level         String?        // easy | medium | hard
+  section       String?        // sous-partie dans un simulateur
+  isPlaceholder Boolean        @default(false) // gabarit non publiable
+  version       ContentVersion @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  attempts      Attempt[]
+
+  @@unique([versionId, key])
+  @@index([versionId, position])
+  @@index([key])
+}
+
+model Flashcard {
+  id        String         @id @default(uuid()) @db.Uuid
+  versionId String         @db.Uuid
+  position  Int            @default(0)
+  front     String
+  back      String
+  tag       String?
+  version   ContentVersion @relation(fields: [versionId], references: [id], onDelete: Cascade)
+
+  @@index([versionId, position])
+}
+
+// ───────────────────────── Studio de contenu (IA) ─────────────────────────
+
+// Structure attendue pour un type de contenu à un niveau donné.
+model Template {
+  id        String           @id @default(uuid()) @db.Uuid
+  levelId   String?          @db.Uuid // vide = valable pour tous les niveaux
+  kind      ContentKind
+  version   Int              @default(1)
+  schema    Json             // description des champs ; sert aussi à valider la sortie de l'IA
+  active    Boolean          @default(true)
+  createdAt DateTime         @default(now())
+  level     Level?           @relation(fields: [levelId], references: [id])
+  versions  ContentVersion[]
+  jobs      GenerationJob[]
+
+  @@unique([levelId, kind, version])
+}
+
+model SourceFile {
+  id           String          @id @default(uuid()) @db.Uuid
+  subjectId    String?         @db.Uuid
+  filename     String
+  mimeType     String
+  storagePath  String          // chemin dans Supabase Storage
+  pages        Int?
+  uploadedById String?         @db.Uuid
+  createdAt    DateTime        @default(now())
+  subject      Subject?        @relation(fields: [subjectId], references: [id])
+  uploadedBy   Profile?        @relation(fields: [uploadedById], references: [id])
+  versions     VersionSource[]
+  jobs         JobSource[]
+}
+
+// Quelles sources ont servi à quelle version (traçabilité)
+model VersionSource {
+  versionId    String         @db.Uuid
+  sourceFileId String         @db.Uuid
+  pages        String?        // ex. « 12-15 »
+  version      ContentVersion @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  sourceFile   SourceFile     @relation(fields: [sourceFileId], references: [id])
+
+  @@id([versionId, sourceFileId])
+}
+
+model GenerationJob {
+  id              String          @id @default(uuid()) @db.Uuid
+  itemId          String?         @db.Uuid
+  templateId      String?         @db.Uuid
+  resultVersionId String?         @db.Uuid
+  status          JobStatus       @default(QUEUED)
+  model           String?         // modèle d'IA utilisé
+  inputTokens     Int?
+  outputTokens    Int?
+  costUsd         Decimal?        @db.Decimal(10, 4)
+  error           String?
+  requestedById   String?         @db.Uuid
+  createdAt       DateTime        @default(now())
+  finishedAt      DateTime?
+  item            ContentItem?    @relation(fields: [itemId], references: [id])
+  template        Template?       @relation(fields: [templateId], references: [id])
+  resultVersion   ContentVersion? @relation(fields: [resultVersionId], references: [id])
+  requestedBy     Profile?        @relation(fields: [requestedById], references: [id])
+  sources         JobSource[]
+
+  @@index([status, createdAt])
+}
+
+model JobSource {
+  jobId        String        @db.Uuid
+  sourceFileId String        @db.Uuid
+  job          GenerationJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  sourceFile   SourceFile    @relation(fields: [sourceFileId], references: [id])
+
+  @@id([jobId, sourceFileId])
+}
+
+// ───────────────────────── Utilisateurs ─────────────────────────
+
+// id = identifiant du compte Supabase Auth (auth.users.id). Créé par un déclencheur SQL (voir supabase-setup.sql).
+model Profile {
+  id            String    @id @db.Uuid
+  email         String    @unique
+  displayName   String?
+  role          Role      @default(STUDENT)
+  levelId       String?   @db.Uuid // niveau suivi par l'étudiant
+  timezone      String    @default("Africa/Lome") // sert à calculer les séries de jours
+  xpTotal       Int       @default(0)              // total de XpEvent, mis à jour dans la même transaction
+  streakFreezes Int       @default(0)
+  bestStreak    Int       @default(0)              // record personnel (jours de suite)
+  tier          PlanTier  @default(FREE)           // offre en cours, recalculée depuis l'abonnement
+  premiumUntil  DateTime?                          // copie pratique de l'abonnement en cours
+  leagueTierId  String?   @db.Uuid                 // ligue actuelle (vide tant que la ligue n'est pas ouverte)
+  suspendedAt   DateTime?                          // compte suspendu par un admin
+  createdAt     DateTime  @default(now())
+
+  level            Level?            @relation(fields: [levelId], references: [id])
+  attempts         Attempt[]
+  examAttempts     ExamAttempt[]
+  quizAttempts     QuizAttempt[]
+  progress         ChapterProgress[]
+  xpEvents         XpEvent[]
+  streakDays       StreakDay[]
+  reviews          ReviewSchedule[]
+  badges           UserBadge[]
+  payments         Payment[]
+  subscriptions    Subscription[]
+  accessKeys       AccessKey[]       @relation("KeyUser")
+  notifications    Notification[]
+  tickets          SupportTicket[]
+  auditLogs        AuditLog[]
+  createdVersions  ContentVersion[]  @relation("VersionCreator")
+  reviewedVersions ContentVersion[]  @relation("VersionReviewer")
+  uploads          SourceFile[]
+  jobs             GenerationJob[]
+  leagueTier       LeagueTier?       @relation(fields: [leagueTierId], references: [id])
+  leagueSlots      LeagueMember[]
+  questProgress    QuestProgress[]
+  eventEntries     EventParticipation[]
+  gameSessions     GameSession[]
+  usageDays        UsageDay[]
+  notificationReads NotificationRead[]
+  announcements    Announcement[]
+  ticketMessages   SupportMessage[]
+  keysCreated      AccessKey[]       @relation("KeyCreator")
+  pushSubscriptions PushSubscription[]
+  notificationPrefs NotificationPreference?
+  helpMemberships  HelpMember[]
+  helpMessages     HelpMessage[]
+}
+
+// ───────────────────────── Progression et gamification ─────────────────────────
+
+model Attempt { // une réponse à une question
+  id            String       @id @default(uuid()) @db.Uuid
+  userId        String       @db.Uuid
+  questionId    String       @db.Uuid
+  quizAttemptId String?      @db.Uuid // vide hors quiz de chapitre (exercices, révision…)
+  answer        Json         // réponse donnée, par identifiant de choix (jamais par position)
+  isCorrect     Boolean
+  answeredAt    DateTime     @default(now())
+  user          Profile      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question      Question     @relation(fields: [questionId], references: [id])
+  quizAttempt   QuizAttempt? @relation(fields: [quizAttemptId], references: [id], onDelete: Cascade)
+
+  @@index([userId, answeredAt])
+  @@index([questionId])
+  @@index([quizAttemptId])
+}
+
+// Une tentative de quiz de chapitre. Le serveur tire une question par format dans la banque du chapitre
+// (voir « Tirage » dans le cahier des charges), mélange l'ordre des questions et des réponses, et enregistre
+// ici ce qu'il a présenté (layout) pour corriger et rejouer. Le chapitre est validé si percent ≥ réglage « quiz.validationPercent » (100 par défaut).
+model QuizAttempt {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @db.Uuid
+  itemId     String    @db.Uuid
+  layout     Json      // questions tirées, dans l'ordre présenté, avec l'ordre des choix de chacune
+  correct    Int       @default(0)
+  total      Int
+  percent    Int       @default(0)
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  user       Profile     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item       ContentItem @relation(fields: [itemId], references: [id])
+  answers    Attempt[]
+
+  @@index([userId, itemId, startedAt])
+}
+
+model ExamAttempt { // un passage de simulateur
+  id         String         @id @default(uuid()) @db.Uuid
+  userId     String         @db.Uuid
+  versionId  String         @db.Uuid
+  variant    String?        // « Sujet A »…
+  score      Decimal        @db.Decimal(5, 2)
+  maxScore   Decimal        @db.Decimal(5, 2)
+  answers    Json
+  startedAt  DateTime       @default(now())
+  finishedAt DateTime?
+  user       Profile        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  version    ContentVersion @relation(fields: [versionId], references: [id])
+
+  @@index([userId, startedAt])
+}
+
+// Règles : le quiz d'un chapitre se débloque quand le cours est lu jusqu'en bas (readAt) ;
+// le chapitre suivant s'ouvre quand le quiz est validé (completedAt : pourcentage atteint = 100 par défaut, réglable).
+model ChapterProgress {
+  userId        String      @db.Uuid
+  itemId        String      @db.Uuid
+  readAt        DateTime?   // cours lu jusqu'au bout
+  bestQuizScore Int?        // meilleur score au quiz du chapitre, en pourcentage (100 = validé par défaut)
+  completedAt   DateTime?   // chapitre validé
+  lastVisitedAt DateTime    @default(now())
+  user          Profile     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item          ContentItem @relation(fields: [itemId], references: [id])
+
+  @@id([userId, itemId])
+}
+
+model XpEvent {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  eventKey  String   // ex. « answer:<questionId> » : la même clé ne rapporte qu'une fois
+  kind      String
+  amount    Int
+  createdAt DateTime @default(now())
+  user      Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventKey])
+  @@index([userId, createdAt])
+}
+
+model StreakDay { // un jour d'activité (jour local de l'étudiant)
+  userId String   @db.Uuid
+  day    DateTime @db.Date
+  user   Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+}
+
+// Répétition espacée : quand revoir une question (règle simple de demi-vie)
+model ReviewSchedule {
+  userId         String   @db.Uuid
+  questionKey    String
+  halfLifeHours  Float    @default(24)
+  lastReviewedAt DateTime @default(now())
+  dueAt          DateTime
+  user           Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, questionKey])
+  @@index([userId, dueAt])
+}
+
+model Badge {
+  id          String        @id @default(uuid()) @db.Uuid
+  slug        String        @unique
+  name        String
+  description String?
+  category    BadgeCategory @default(DISCOVERY)
+  position    Int           @default(0)
+  rule        Json?         // règle d'attribution évaluée par le serveur : { "metric": "streak_days", "threshold": 7 }
+  eventId     String?       @db.Uuid // badge remis à la fin d'un événement
+  event       Event?        @relation(fields: [eventId], references: [id])
+  users       UserBadge[]
+}
+
+model UserBadge {
+  userId    String   @db.Uuid
+  badgeId   String   @db.Uuid
+  awardedAt DateTime @default(now())
+  user      Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge     Badge    @relation(fields: [badgeId], references: [id])
+
+  @@id([userId, badgeId])
+}
+
+// ───────────────────────── Abonnement et paiement ─────────────────────────
+
+// Une ligne par offre ET par durée (ex. « plus-mensuel », « reussite-semestre »). L'offre Gratuit n'a pas de ligne payante.
+model Plan {
+  id            String         @id @default(uuid()) @db.Uuid
+  slug          String         @unique
+  name          String
+  tier          PlanTier       @default(PLUS)
+  priceXof      Int            // prix en FCFA, à définir
+  durationDays  Int
+  active        Boolean        @default(true)
+  payments      Payment[]
+  subscriptions Subscription[]
+  keys          AccessKey[]
+}
+
+model Payment {
+  id            String        @id @default(uuid()) @db.Uuid
+  userId        String        @db.Uuid
+  planId        String        @db.Uuid
+  provider      String        @default("paydunya")
+  method        String?       // tmoney | moov
+  providerToken String?       @unique // jeton de la facture chez PayDunya
+  amountXof     Int
+  status        PaymentStatus @default(PENDING)
+  rawCallback   Json?         // dernière notification reçue de PayDunya
+  createdAt     DateTime      @default(now())
+  paidAt        DateTime?
+  user          Profile       @relation(fields: [userId], references: [id])
+  plan          Plan          @relation(fields: [planId], references: [id])
+  subscription  Subscription?
+
+  @@index([userId, createdAt])
+}
+
+model Subscription {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  planId    String   @db.Uuid
+  paymentId String?  @unique @db.Uuid
+  startsAt  DateTime
+  endsAt    DateTime
+  source    String   @default("payment") // payment | key | admin
+  user      Profile  @relation(fields: [userId], references: [id])
+  plan      Plan     @relation(fields: [planId], references: [id])
+  payment   Payment? @relation(fields: [paymentId], references: [id])
+
+  @@index([userId, endsAt])
+}
+
+model AccessKey { // clé d'activation (ex. vendue hors ligne)
+  id          String    @id @default(uuid()) @db.Uuid
+  code        String    @unique
+  planId      String    @db.Uuid
+  batch       String?   // lot (ex. « Boutique campus »)
+  createdById String?   @db.Uuid
+  usedById    String?   @db.Uuid
+  usedAt      DateTime?
+  createdAt   DateTime  @default(now())
+  plan        Plan      @relation(fields: [planId], references: [id])
+  usedBy      Profile?  @relation("KeyUser", fields: [usedById], references: [id])
+  createdBy   Profile?  @relation("KeyCreator", fields: [createdById], references: [id])
+}
+
+// Limites de chaque offre. Une seule ligne par offre : on change un chiffre ici, pas dans le code.
+// null = illimité.
+model TierLimits {
+  tier                   PlanTier @id
+  dailyTrainingSessions  Int?     // Gratuit : 2
+  dailyGames             Int?     // Gratuit : 1
+  examsPerSubject        Int?     // Gratuit : 1
+  spacedReview           Boolean  @default(false)
+  streakFreezesPerMonth  Int      @default(0)
+  detailedExamCorrection Boolean  @default(false)
+  helpGroup              Boolean  @default(false)
+}
+
+// Compteur d'usage du jour (pour appliquer les limites du Gratuit)
+model UsageDay {
+  userId           String  @db.Uuid
+  day              DateTime @db.Date
+  trainingSessions Int     @default(0)
+  games            Int     @default(0)
+  user             Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day])
+}
+
+// ───────────────────────── Ligue ─────────────────────────
+// Chaque semaine (lundi → dimanche) les étudiants d'un palier sont répartis en groupes (cible : 10), classés par XP.
+// Tous les niveaux scolaires sont mélangés. Le nombre de montées et de descentes dépend du palier :
+// réglage AppSetting « league.tierRules » (montées du palier N = descentes du palier N+1). Ce sont des réglages, pas du code.
+// La ligue s'ouvre après 2 chapitres validés (AppSetting « league.unlockAfterChapters »).
+
+model LeagueTier {
+  id       String   @id @default(uuid()) @db.Uuid
+  position Int      @unique // 1 = Bit … 8 = Exa
+  slug     String   @unique
+  name     String
+  groups   LeagueGroup[]
+  profiles Profile[]
+}
+
+model LeagueWeek {
+  id        String        @id @default(uuid()) @db.Uuid
+  startsOn  DateTime      @unique @db.Date // le lundi
+  closedAt  DateTime?     // promotions et descentes appliquées
+  groups    LeagueGroup[]
+}
+
+model LeagueGroup {
+  id       String         @id @default(uuid()) @db.Uuid
+  weekId   String         @db.Uuid
+  tierId   String         @db.Uuid
+  week     LeagueWeek     @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  tier     LeagueTier     @relation(fields: [tierId], references: [id])
+  members  LeagueMember[]
+
+  @@index([weekId, tierId])
+}
+
+model LeagueMember {
+  groupId   String         @db.Uuid
+  userId    String         @db.Uuid
+  weekXp    Int            @default(0)
+  finalRank Int?
+  outcome   LeagueOutcome?
+  group     LeagueGroup    @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user      Profile        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([groupId, userId])
+  @@index([userId])
+}
+
+// ───────────────────────── Quêtes et événements ─────────────────────────
+
+// Catalogue de quêtes. Chaque jour, le serveur en tire quelques-unes (DailyQuest) : elles changent chaque jour et sont communes à tous.
+model QuestDefinition {
+  id       String          @id @default(uuid()) @db.Uuid
+  slug     String          @unique
+  title    String
+  metric   QuestMetric
+  target   Int
+  rewardXp Int
+  active   Boolean         @default(true)
+  progress QuestProgress[]
+  days     DailyQuest[]
+}
+
+// Quêtes actives un jour donné
+model DailyQuest {
+  day     DateTime        @db.Date
+  questId String          @db.Uuid
+  quest   QuestDefinition @relation(fields: [questId], references: [id])
+
+  @@id([day, questId])
+}
+
+model QuestProgress {
+  userId      String          @db.Uuid
+  questId     String          @db.Uuid
+  day         DateTime        @db.Date
+  value       Int             @default(0)
+  completedAt DateTime?
+  user        Profile         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quest       QuestDefinition @relation(fields: [questId], references: [id])
+
+  @@id([userId, questId, day])
+}
+
+// Défi solo (ex. « Défi de la rentrée ») ou défi d'équipe (ex. « La promo contre la montre »)
+model Event {
+  id          String               @id @default(uuid()) @db.Uuid
+  slug        String               @unique
+  title       String
+  description String?
+  kind        EventKind
+  status      EventStatus          @default(SOON)
+  goal        Int?                 // objectif (ex. 60 questions, ou 2 000 bonnes réponses pour toute la promo)
+  unit        String?              // « questions », « bonnes réponses »
+  levelId     String?              @db.Uuid
+  startsAt    DateTime?
+  endsAt      DateTime?
+  rewardXp    Int?
+  createdAt   DateTime             @default(now())
+  entries     EventParticipation[]
+  badges      Badge[]
+}
+
+model EventParticipation {
+  eventId      String    @db.Uuid
+  userId       String    @db.Uuid
+  contribution Int       @default(0) // pour un défi d'équipe, le total de la promo = somme des contributions
+  rewardedAt   DateTime?
+  event        Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user         Profile   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([eventId, userId])
+}
+
+// ───────────────────────── Jeux ─────────────────────────
+// Une grille par jour et par jeu, la même pour tout le monde (jeu asynchrone, chacun joue quand il veut).
+
+model GamePuzzle {
+  id       String        @id @default(uuid()) @db.Uuid
+  kind     GameKind
+  day      DateTime      @db.Date
+  data     Json          // grille de départ, ou mots du jour
+  solution Json
+  sessions GameSession[]
+
+  @@unique([kind, day])
+}
+
+model GameSession {
+  id         String     @id @default(uuid()) @db.Uuid
+  userId     String     @db.Uuid
+  puzzleId   String     @db.Uuid
+  startedAt  DateTime   @default(now())
+  finishedAt DateTime?
+  success    Boolean    @default(false)
+  seconds    Int?
+  user       Profile    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  puzzle     GamePuzzle @relation(fields: [puzzleId], references: [id])
+
+  @@unique([userId, puzzleId])
+}
+
+// ───────────────────────── Divers ─────────────────────────
+
+model Notification {
+  id             String         @id @default(uuid()) @db.Uuid
+  userId         String?        @db.Uuid // vide = message pour plusieurs étudiants (voir annonce)
+  announcementId String?        @db.Uuid
+  title          String
+  body           String?
+  readAt         DateTime?      // lecture d'un message personnel
+  createdAt      DateTime       @default(now())
+  user           Profile?       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  announcement   Announcement?  @relation(fields: [announcementId], references: [id])
+  reads          NotificationRead[]
+
+  @@index([userId, createdAt])
+}
+
+// Lecture d'un message diffusé à plusieurs étudiants (chacun a sa propre lecture)
+model NotificationRead {
+  userId         String       @db.Uuid
+  notificationId String       @db.Uuid
+  readAt         DateTime     @default(now())
+  user           Profile      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notification   Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+
+  @@id([userId, notificationId])
+}
+
+// Annonce écrite par un admin ; elle apparaît dans la cloche des étudiants concernés
+model Announcement {
+  id          String               @id @default(uuid()) @db.Uuid
+  title       String
+  body        String
+  audience    AnnouncementAudience @default(ALL)
+  levelId     String?              @db.Uuid // utilisé quand audience = LEVEL
+  createdById String?              @db.Uuid
+  sendAt      DateTime             @default(now())
+  createdAt   DateTime             @default(now())
+  createdBy   Profile?             @relation(fields: [createdById], references: [id])
+  notifications Notification[]
+}
+
+model SupportTicket {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  subject   String
+  message   String   // premier message de l'étudiant ; la suite est dans SupportMessage
+  status    String   @default("open") // open | resolved
+  createdAt DateTime @default(now())
+  resolvedAt DateTime?
+  user      Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  SupportMessage[]
+}
+
+model SupportMessage {
+  id        String        @id @default(uuid()) @db.Uuid
+  ticketId  String        @db.Uuid
+  authorId  String?       @db.Uuid
+  fromStaff Boolean       @default(false)
+  body      String
+  createdAt DateTime      @default(now())
+  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  author    Profile?      @relation(fields: [authorId], references: [id])
+
+  @@index([ticketId, createdAt])
+}
+
+// ───────────────────────── Notifications push et préférences ─────────────────────────
+// PROPOSITION à valider avec le développeur.
+
+model PushSubscription { // un navigateur ou un appareil abonné aux notifications push (Web Push)
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  userAgent String?
+  createdAt DateTime @default(now())
+  user      Profile  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model NotificationPreference {
+  userId       String  @id @db.Uuid
+  pushEnabled  Boolean @default(true)
+  emailEnabled Boolean @default(true)
+  topics       Json    @default("{}") // choix par type de message (à définir)
+  user         Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ───────────────────────── Groupe d'entraide (offre Réussite) ─────────────────────────
+// PROPOSITION à valider : le fonctionnement exact (par matière ? par promo ? modération) reste à décider.
+
+model HelpGroup {
+  id        String        @id @default(uuid()) @db.Uuid
+  name      String
+  subjectId String?       @db.Uuid // vide = groupe général
+  createdAt DateTime      @default(now())
+  subject   Subject?      @relation(fields: [subjectId], references: [id])
+  members   HelpMember[]
+  messages  HelpMessage[]
+}
+
+model HelpMember {
+  groupId  String    @db.Uuid
+  userId   String    @db.Uuid
+  joinedAt DateTime  @default(now())
+  group    HelpGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user     Profile   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([groupId, userId])
+}
+
+model HelpMessage {
+  id       String    @id @default(uuid()) @db.Uuid
+  groupId  String    @db.Uuid
+  authorId String?   @db.Uuid
+  body     String
+  hiddenAt DateTime? // masqué par un admin (modération)
+  createdAt DateTime @default(now())
+  group    HelpGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  author   Profile?  @relation(fields: [authorId], references: [id])
+
+  @@index([groupId, createdAt])
+}
+
+// Réglages modifiables depuis l'administration (fonctions activées, durée minimale de lecture, règles de ligue, budget IA…)
+model AppSetting {
+  key       String   @id // ex. « league.enabled », « help.whatsappUrl », « ai.monthlyBudgetUsd »
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+// Journal des actions sensibles (publication, rôle, abonnement…)
+model AuditLog {
+  id        String   @id @default(uuid()) @db.Uuid
+  actorId   String?  @db.Uuid
+  action    String
+  entity    String
+  entityId  String?
+  meta      Json?
+  createdAt DateTime @default(now())
+  actor     Profile? @relation(fields: [actorId], references: [id])
+
+  @@index([entity, entityId])
+  @@index([createdAt])
+}

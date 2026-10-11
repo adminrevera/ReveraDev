@@ -1,0 +1,767 @@
+{
+ "slug": "c_cpp",
+ "name": "C / C++",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Bases du Langage C",
+   "subtitle": "Votre premier programme, les variables, les types et les opérateurs — tout pour démarrer solidement.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Installer l'environnement (GCC) et comprendre le cycle compilation → exécution<br/>\n        • Écrire un premier programme avec printf et scanf<br/>\n        • Maîtriser variables, types, opérateurs et conversions de types</p>\n</div>\n<h2>1.1 — Pourquoi apprendre le C ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏗️ Le C, fondation de tout</div>\n<p>Le langage C a été créé en <strong>1972</strong> par Dennis Ritchie aux laboratoires Bell. Aujourd'hui il est partout :<br/>\n        • <strong>Systèmes d'exploitation</strong> — Linux, Windows, macOS sont écrits en C<br/>\n        • <strong>Embarqué</strong> — voitures, robots, microcontrôleurs<br/>\n        • <strong>Langages dérivés</strong> — Python, PHP, Java sont eux-mêmes écrits en C</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📖 Analogie — L'alphabet latin</div>\n<p>Si tous les langages de programmation sont des langues (français, anglais…), le <strong>C est l'alphabet latin</strong> : presque tous l'utilisent. Maîtriser le C, c'est maîtriser les fondations de tous les autres.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Cycle de compilation</div>\n<pre>Code source (.c)  →  Compilateur (gcc)  →  Exécutable\n$ gcc mon_programme.c -o mon_programme\n$ ./mon_programme</pre>\n</div>\n<h2>1.2 — Premier programme : Hello World</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">hello.c</div>\n<pre>#include &lt;stdio.h&gt;    // Bibliothèque d'entrées/sorties\nint main() {           // Point d'entrée du programme\n    printf(\"Hello, World!\\n\");  // Affiche un message\n    return 0;          // Fin normale (0 = tout va bien)\n}</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — I.M.P.R.</div>\n<p>Tout programme C contient ces 4 parties :<br/>\n<strong>I</strong> — <code>#include</code> (les bibliothèques)<br/>\n<strong>M</strong> — <code>main()</code> (la fonction principale)<br/>\n<strong>P</strong> — <code>printf()</code> (afficher quelque chose)<br/>\n<strong>R</strong> — <code>return 0;</code> (fin du programme)</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Erreurs fréquentes</div>\n<p>• Oublier le <code>;</code> en fin de ligne<br/>\n        • Oublier <code>#include &lt;stdio.h&gt;</code><br/>\n        • Écrire <code>Main</code> au lieu de <code>main</code> (le C est <strong>sensible à la casse</strong> !)</p>\n</div>\n<h2>1.3 — Variables et types de données</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📦 Analogie — Les boîtes étiquetées</div>\n<p>Une variable est une <strong>boîte</strong> en mémoire avec :<br/>\n        • Un <strong>nom</strong> (l'étiquette) — ex: <code>age</code><br/>\n        • Un <strong>type</strong> (la taille de la boîte) — ex: <code>int</code><br/>\n        • Une <strong>valeur</strong> (ce qu'il y a dedans) — ex: <code>20</code></p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Taille</th><th>Plage</th><th>Usage</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>int</code></td><td>4 octets</td><td>−2³¹ à 2³¹−1</td><td>Entiers</td><td><code>int age = 20;</code></td></tr>\n<tr><td><code>float</code></td><td>4 octets</td><td>±3.4×10³⁸</td><td>Décimaux (6 chiffres)</td><td><code>float pi = 3.14f;</code></td></tr>\n<tr><td><code>double</code></td><td>8 octets</td><td>±1.7×10³⁰⁸</td><td>Décimaux précis (15 ch.)</td><td><code>double e = 2.71828;</code></td></tr>\n<tr><td><code>char</code></td><td>1 octet</td><td>−128 à 127</td><td>Caractère unique</td><td><code>char lettre = 'A';</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — I.F.D.C. (Il Fait Du Chaud)</div>\n<p><strong>I</strong>nt · <strong>F</strong>loat · <strong>D</strong>ouble · <strong>C</strong>har — les 4 types fondamentaux du C !</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Déclaration et initialisation</div>\n<pre>// Déclaration simple\nint age;\nfloat note;\n// Déclaration + initialisation (recommandé !)\nint score = 100;\nchar grade = 'A';\ndouble moyenne = 15.75;\n// Constante\nconst float PI = 3.14159f;\n#define TVA 0.20  // Macro préprocesseur</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Conseil</div>\n<p>Toujours initialiser vos variables ! En C, une variable non initialisée contient une valeur <em>aléatoire</em> (poubelle en mémoire). C'est une source de bugs très fréquente.</p>\n</div>\n<h2>1.4 — printf et scanf</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Spécificateur</th><th>Type</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>%d</code></td><td>int</td><td><code>printf(\"%d\", 42);</code> → 42</td></tr>\n<tr><td><code>%f</code></td><td>float/double</td><td><code>printf(\"%.2f\", 3.14);</code> → 3.14</td></tr>\n<tr><td><code>%c</code></td><td>char</td><td><code>printf(\"%c\", 'A');</code> → A</td></tr>\n<tr><td><code>%s</code></td><td>chaîne</td><td><code>printf(\"%s\", \"Bonjour\");</code></td></tr>\n<tr><td><code>\n</code></td><td>saut de ligne</td><td><code>printf(\"Ligne1\nLigne2\");</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — %D.F.C.S. (Des Frites Chaudes, Svp !)</div>\n<p><strong>%d</strong> → Décimal (entier) · <strong>%f</strong> → Flottant · <strong>%c</strong> → Caractère · <strong>%s</strong> → String</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples printf et scanf</div>\n<pre>int age;\nfloat taille;\nprintf(\"Entrez votre âge : \");\nscanf(\"%d\", &amp;age);       // &amp; = adresse de la variable !\nprintf(\"Entrez votre taille : \");\nscanf(\"%f\", &amp;taille);\nprintf(\"Vous avez %d ans et mesurez %.2f m\\n\", age, taille);</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Le piège du &amp;</div>\n<p>Oublier le <code>&amp;</code> dans <code>scanf</code> est l'<strong>erreur n°1</strong> des débutants ! Sans <code>&amp;</code>, le programme peut planter. Pensez : « scanf a besoin de l'<strong>adresse</strong> → le <strong>&amp;</strong> est comme un GPS qui donne l'adresse de la boîte en mémoire ».</p>\n</div>\n<h2>1.5 — Opérateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Nom</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><code>+</code> <code>-</code> <code>*</code></td><td>Addition, soustraction, multiplication</td><td><code>5 + 3</code></td><td>8</td></tr>\n<tr><td><code>/</code></td><td>Division</td><td><code>7 / 2</code></td><td><strong>3</strong> (entière !)</td></tr>\n<tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>7 % 2</code></td><td>1</td></tr>\n<tr><td><code>++</code> <code>--</code></td><td>Incrémentation / Décrémentation</td><td><code>x++</code></td><td>x + 1</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ La division entière</div>\n<p><code>7 / 2 = 3</code> (pas 3.5 !) en C quand les deux opérandes sont des <code>int</code>.<br/>\n        Pour avoir 3.5 : écrire <code>7.0 / 2</code> ou faire un cast : <code>(float)7 / 2</code>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Raccourcis d'affectation</div>\n<pre>int x = 10;\nx += 5;   // x = x + 5  → 15\nx -= 3;   // x = x - 3  → 12\nx *= 2;   // x = x * 2  → 24\nx /= 4;   // x = x / 4  → 6\nx %= 5;   // x = x % 5  → 1</pre>\n</div>\n<h2>Exercice guidé — Calculer l'aire d'un cercle</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution complète</div>\n<pre>#include &lt;stdio.h&gt;\n#define PI 3.14159\nint main() {\n    float rayon, aire;\n    printf(\"Rayon du cercle : \");\n    scanf(\"%f\", &amp;rayon);  // &amp; obligatoire !\n    aire = PI * rayon * rayon;\n    printf(\"Aire = %.2f\\n\", aire);  // 2 décimales\n    return 0;\n}\n// Exécution : Rayon : 5 → Aire = 78.54</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — C</h3>\n<ul>\n<li>Structure obligatoire : <code>#include</code> + <code>main()</code> + <code>return 0;</code></li>\n<li>4 types fondamentaux : <strong>I.F.D.C.</strong> — int, float, double, char</li>\n<li><code>printf(\"%d\", x)</code> pour afficher · <code>scanf(\"%d\", &amp;x)</code> pour lire</li>\n<li>Spécificateurs : <code>%d</code> (int) · <code>%f</code> (float) · <code>%c</code> (char) · <code>%s</code> (chaîne)</li>\n<li>Division entière : <code>7/2 = 3</code> · Cast pour avoir 3.5 : <code>(float)7/2</code></li>\n<li>Ne jamais oublier le <code>&amp;</code> dans <code>scanf</code> !</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel spécificateur de format utiliser avec printf pour afficher un int ?",
+     "options": [
+      {
+       "text": "%f",
+       "correct": false,
+       "explanation": "%f est pour float/double."
+      },
+      {
+       "text": "%d",
+       "correct": true,
+       "explanation": "Correct ! %d (d = décimal) est le spécificateur pour les entiers int."
+      },
+      {
+       "text": "%s",
+       "correct": false,
+       "explanation": "%s est pour les chaînes de caractères (strings)."
+      },
+      {
+       "text": "%c",
+       "correct": false,
+       "explanation": "%c est pour un seul caractère (char)."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Que vaut l'expression 7 / 2 en C (avec 7 et 2 de type int) ?",
+     "options": [
+      {
+       "text": "3.5",
+       "correct": false,
+       "explanation": "3.5 serait le résultat si au moins un des opérandes était float."
+      },
+      {
+       "text": "3",
+       "correct": true,
+       "explanation": "Correct ! En C, 7/2 avec deux int donne une division entière : le résultat est 3 (la partie décimale est tronquée)."
+      },
+      {
+       "text": "4",
+       "correct": false,
+       "explanation": "7/2 = 3 en division entière, pas 4."
+      },
+      {
+       "text": "0",
+       "correct": false,
+       "explanation": "7/2 en division entière donne bien 3, pas 0."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pourquoi doit-on écrire &age (avec &) dans scanf ?",
+     "options": [
+      {
+       "text": "C'est la syntaxe pour l'addition",
+       "correct": false,
+       "explanation": "& n'est pas un opérateur d'addition en C. C'est l'opérateur adresse-de."
+      },
+      {
+       "text": "Pour protéger contre les erreurs",
+       "correct": false,
+       "explanation": "& dans scanf n'est pas lié à la protection contre les erreurs directement."
+      },
+      {
+       "text": "Pour passer l'adresse mémoire de la variable",
+       "correct": true,
+       "explanation": "Correct ! & retourne l'adresse mémoire de la variable. scanf a besoin de savoir OÙ stocker la valeur en mémoire, d'où l'adresse."
+      },
+      {
+       "text": "Pour déclarer la variable dynamiquement",
+       "correct": false,
+       "explanation": "& ne sert pas à déclarer une variable."
+      }
+     ]
+    }
+   ],
+   "source": "c_cpp/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Contrôle de flux",
+   "subtitle": "if/else, switch, boucles for/while/do-while en C.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Écrire des conditions if/else et switch en C<br/>\n        • Utiliser les boucles for, while, do-while<br/>\n        • Comprendre break et continue</p>\n</div>\n<h2>2.1 — if / else</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe C</div>\n<pre>#include &lt;stdio.h&gt;\nint main() {\n    int note = 15;\n    if (note &gt;= 16) {\n        printf(\"Très Bien\\n\");\n    } else if (note &gt;= 14) {\n        printf(\"Bien\\n\");         // ← exécuté\n    } else if (note &gt;= 10) {\n        printf(\"Passable\\n\");\n    } else {\n        printf(\"Insuffisant\\n\");\n    }\n    return 0;\n}</pre>\n</div>\n<h2>2.2 — switch / case</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple switch</div>\n<pre>int jour = 3;\nswitch (jour) {\n    case 1: printf(\"Lundi\\n\");    break;\n    case 2: printf(\"Mardi\\n\");    break;\n    case 3: printf(\"Mercredi\\n\"); break;  // ← exécuté\n    case 4: printf(\"Jeudi\\n\");    break;\n    default: printf(\"Autre\\n\");\n}</pre>\n</div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Ne pas oublier break !</div>\n<p>Sans <code>break</code>, l'exécution continue dans les cases suivants (<strong>fall-through</strong>). Toujours mettre <code>break</code> à la fin de chaque case sauf si le fall-through est intentionnel.</p>\n</div>\n<h2>2.3 — Les 3 boucles en C</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Boucle</th><th>Syntaxe</th><th>Quand l'utiliser</th></tr></thead>\n<tbody>\n<tr><td><strong>for</strong></td><td><code>for(init; cond; incr)</code></td><td>Nombre d'itérations connu</td></tr>\n<tr><td><strong>while</strong></td><td><code>while(cond)</code></td><td>Nb inconnu, test avant</td></tr>\n<tr><td><strong>do-while</strong></td><td><code>do {...} while(cond);</code></td><td>Au moins une exécution</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Les 3 boucles — exemples</div>\n<pre>// for — somme de 1 à 10\nint somme = 0;\nfor (int i = 1; i &lt;= 10; i++) {\n    somme += i;\n}  // somme = 55\n// while — saisie valide\nint n;\nprintf(\"Entrez un entier positif : \");\nscanf(\"%d\", &amp;n);\nwhile (n &lt;= 0) {\n    printf(\"Invalide, réessayez : \");\n    scanf(\"%d\", &amp;n);\n}\n// do-while — menu\nint choix;\ndo {\n    printf(\"1.Nouveau 2.Quitter : \");\n    scanf(\"%d\", &amp;choix);\n} while (choix != 2);</pre>\n</div>\n<h2>2.4 — break et continue</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">break / continue</div>\n<pre>// break : quitter la boucle immédiatement\nfor (int i = 0; i &lt; 10; i++) {\n    if (i == 5) break;   // sort quand i=5\n    printf(\"%d \", i);    // affiche 0 1 2 3 4\n}\n// continue : passer à l'itération suivante\nfor (int i = 0; i &lt; 10; i++) {\n    if (i % 2 == 0) continue;  // saute les pairs\n    printf(\"%d \", i);  // affiche 1 3 5 7 9\n}</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>if/else if/else — conditions imbriquées</li>\n<li>switch/case : toujours mettre break ! · default = sinon</li>\n<li>for(init;cond;incr) · while(cond) · do{...}while(cond)</li>\n<li>break : quitter boucle · continue : itération suivante</li>\n<li>i%2 == 0 → pair · i%2 == 1 → impair</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Que fait i % 2 == 0 ?",
+     "options": [
+      {
+       "text": "Teste si i est supérieur à 2",
+       "correct": false,
+       "explanation": "% est le modulo — reste de la division. i%2 == 0 signifie que i est divisible par 2."
+      },
+      {
+       "text": "Teste si i est un nombre pair",
+       "correct": true,
+       "explanation": "Correct ! % est l'opérateur modulo. i%2 vaut 0 si i est pair (divisible par 2 sans reste)."
+      },
+      {
+       "text": "Teste si i est impair",
+       "correct": false,
+       "explanation": "i%2 == 1 testerait si i est impair."
+      },
+      {
+       "text": "Divise i par 2",
+       "correct": false,
+       "explanation": "% ne divise pas, il retourne le RESTE de la division."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Dans un switch, que se passe-t-il si on oublie un break ?",
+     "options": [
+      {
+       "text": "Erreur de compilation",
+       "correct": false,
+       "explanation": "Pas d'erreur de compilation — c'est légal en C mais souvent un bug."
+      },
+      {
+       "text": "Exécution continue dans le case suivant (fall-through)",
+       "correct": true,
+       "explanation": "Correct ! Sans break, l'exécution continue dans le case suivant (fall-through). C'est souvent un bug involontaire."
+      },
+      {
+       "text": "Le switch s'arrête automatiquement",
+       "correct": false,
+       "explanation": "Le switch ne s'arrête pas automatiquement — il faut break."
+      },
+      {
+       "text": "Le case default s'exécute",
+       "correct": false,
+       "explanation": "default ne suffit pas à arrêter — c'est break qui stoppe."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Fonctions en C",
+   "subtitle": "Déclaration, définition, passage de paramètres, valeur de retour.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Déclarer et appeler une fonction en C<br/>\n        • Distinguer passage par valeur et par pointeur<br/>\n        • Comprendre la récursivité en C</p>\n</div>\n<h2>3.1 — Déclaration, définition, appel</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Structure d'une fonction</div>\n<pre>// 1. Prototype (déclaration) — avant main\nint addition(int a, int b);\n// 2. Définition — le code\nint addition(int a, int b) {\n    return a + b;\n}\n// 3. Appel\nint main() {\n    int resultat = addition(5, 3);  // resultat = 8\n    printf(\"%d\\n\", resultat);\n    return 0;\n}</pre>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Types de retour courants</div>\n<p><code>int</code> → entier · <code>float/double</code> → décimal · <code>char</code> → caractère<br/>\n<code>void</code> → pas de valeur retournée (procédure)<br/>\n<code>return;</code> seul pour quitter une fonction void</p>\n</div>\n<h2>3.2 — Passage par valeur vs par pointeur</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Comparaison</div>\n<pre>// PAR VALEUR — la modification ne sort pas\nvoid doubler_val(int x) {\n    x = x * 2;  // x local, l'original n'est pas modifié\n}\n// PAR POINTEUR — modifie la variable originale\nvoid doubler_ptr(int *x) {\n    *x = *x * 2;  // *x déréférence le pointeur\n}\nint main() {\n    int a = 5;\n    doubler_val(a);  // a reste 5\n    doubler_ptr(&amp;a); // a devient 10\n    printf(\"%d\\n\", a);  // 10\n    return 0;\n}</pre>\n</div>\n<h2>3.3 — Fonctions récursives</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Factorielle récursive</div>\n<pre>int factorielle(int n) {\n    if (n &lt;= 1) return 1;        // cas de base\n    return n * factorielle(n-1); // appel récursif\n}\n// factorielle(5) = 5*4*3*2*1 = 120</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li>Prototype : type nom(params); avant main</li>\n<li>Par valeur : copie → modif locale · Par pointeur : adresse → modif réelle</li>\n<li>void : pas de retour · return val; pour retourner</li>\n<li>Récursif : cas de base + appel vers problème plus petit</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Pour qu'une fonction modifie une variable de l'appelant, on lui passe :",
+     "options": [
+      {
+       "text": "La valeur de la variable",
+       "correct": false,
+       "explanation": "Passer la valeur crée une copie — la modification reste locale."
+      },
+      {
+       "text": "L'adresse de la variable (&var)",
+       "correct": true,
+       "explanation": "Correct ! En passant l'adresse (&var), la fonction reçoit un pointeur et peut modifier la variable originale avec *ptr."
+      },
+      {
+       "text": "La taille de la variable",
+       "correct": false,
+       "explanation": "La taille n'est pas ce qu'on passe pour modifier une variable."
+      },
+      {
+       "text": "Le type de la variable",
+       "correct": false,
+       "explanation": "Le type n'est pas passé en C — c'est connu à la compilation."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Que signifie void comme type de retour ?",
+     "options": [
+      {
+       "text": "La fonction retourne 0",
+       "correct": false,
+       "explanation": "void ne retourne rien — ni 0 ni autre chose."
+      },
+      {
+       "text": "La fonction ne retourne aucune valeur",
+       "correct": true,
+       "explanation": "Correct ! void = aucune valeur de retour. La fonction effectue des actions sans retourner de résultat."
+      },
+      {
+       "text": "La fonction signale une erreur",
+       "correct": false,
+       "explanation": "void n'est pas réservé aux erreurs."
+      },
+      {
+       "text": "La fonction est un pointeur",
+       "correct": false,
+       "explanation": "void s'applique aux fonctions, pas uniquement aux pointeurs."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "Tableaux & Chaînes",
+   "subtitle": "Tableaux 1D/2D, chaînes de caractères et fonctions string.h.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Déclarer et parcourir des tableaux 1D et 2D en C<br/>\n        • Manipuler des chaînes de caractères avec string.h<br/>\n        • Passer des tableaux aux fonctions</p>\n</div>\n<h2>4.1 — Tableaux 1D</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Déclaration et utilisation</div>\n<pre>int notes[5] = {12, 15, 8, 17, 10};  // initialisation directe\nint tab[100];  // tableau non initialisé\n// Parcours\nfor (int i = 0; i &lt; 5; i++) {\n    printf(\"notes[%d] = %d\\n\", i, notes[i]);\n}\n// Indice : 0 à N-1 (pas 1 à N !)</pre>\n</div>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Indice 0-based en C</div>\n<p>En C, les tableaux commencent à l'indice <strong>0</strong> (pas 1). Un tableau de 5 éléments : indices 0, 1, 2, 3, 4. Accéder à tab[5] est une erreur (out of bounds).</p>\n</div>\n<h2>4.2 — Tableaux 2D (matrices)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Matrice 3×3</div>\n<pre>int M[3][3] = {{1,2,3},{4,5,6},{7,8,9}};\n// Parcours ligne par ligne\nfor (int i = 0; i &lt; 3; i++) {\n    for (int j = 0; j &lt; 3; j++) {\n        printf(\"%d \", M[i][j]);\n    }\n    printf(\"\\n\");\n}</pre>\n</div>\n<h2>4.3 — Chaînes de caractères</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>En C, une chaîne est un tableau de <code>char</code> terminé par <code>'\\0'</code> (caractère nul).<br/>\n<code>\"Bonjour\"</code> = {B, o, n, j, o, u, r, <strong>\\0</strong>} → 8 octets</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Fonctions string.h</div>\n<pre>#include &lt;string.h&gt;\nchar s1[20] = \"Bonjour\";\nchar s2[20] = \"Monde\";\nstrlen(s1)           // 7  (longueur sans \\0)\nstrcpy(s1, s2)       // copie s2 dans s1\nstrcat(s1, \" !\")     // concatène \" !\" à s1\nstrcmp(s1, s2)       // 0 si égaux, &lt;0 ou &gt;0 sinon\nprintf(\"%s\\n\", s1);  // affichage</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Tableaux : indices de 0 à N-1 (jamais N !)</li>\n<li>int T[5] = {1,2,3,4,5}; · Parcours : for(i=0; i&lt;5; i++)</li>\n<li>Chaîne = tableau de char terminé par \\0</li>\n<li>string.h : strlen · strcpy · strcat · strcmp</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Pour un tableau int T[10], quel est le dernier indice valide ?",
+     "options": [
+      {
+       "text": "10",
+       "correct": false,
+       "explanation": "T[10] est hors bornes — c'est un bug classique en C."
+      },
+      {
+       "text": "9",
+       "correct": true,
+       "explanation": "Correct ! Les indices vont de 0 à N-1. Pour T[10], le dernier indice valide est 9."
+      },
+      {
+       "text": "1",
+       "correct": false,
+       "explanation": "L'indice commence à 0 en C, pas à 1."
+      },
+      {
+       "text": "10 et 0",
+       "correct": false,
+       "explanation": "Le premier indice est 0, le dernier est 9 (pas 10)."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Que retourne strlen(\"Bonjour\") ?",
+     "options": [
+      {
+       "text": "8",
+       "correct": false,
+       "explanation": "8 inclurait le \\0 terminal. strlen ne compte pas le \\0."
+      },
+      {
+       "text": "7",
+       "correct": true,
+       "explanation": "Correct ! strlen compte le nombre de caractères SANS le \\0 terminal. 'Bonjour' = 7 lettres."
+      },
+      {
+       "text": "6",
+       "correct": false,
+       "explanation": "6 serait si on oubliait un caractère. 'B-o-n-j-o-u-r' = 7 caractères."
+      },
+      {
+       "text": "L'adresse de la chaîne",
+       "correct": false,
+       "explanation": "strlen retourne un entier, pas un pointeur."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Pointeurs",
+   "subtitle": "Adresses mémoire, pointeurs, arithmétique des pointeurs, passage par adresse.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre les adresses mémoire et la déclaration de pointeurs<br/>\n        • Utiliser &amp; (adresse) et * (déréférencement)<br/>\n        • Maîtriser l'arithmétique des pointeurs</p>\n</div>\n<h2>5.1 — Adresses et pointeurs</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>Chaque variable en mémoire a une <strong>adresse</strong>. Un pointeur est une variable qui <strong>stocke une adresse</strong>.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Déclaration et utilisation</div>\n<pre>int a = 42;\nint *p;          // p est un pointeur vers un int\np = &amp;a;          // p pointe vers a (&amp;a = adresse de a)\nprintf(\"%d\\n\", a);   // 42  — valeur de a\nprintf(\"%p\\n\", p);   // 0x... — adresse stockée dans p\nprintf(\"%d\\n\", *p);  // 42  — valeur pointée par p (*p = déréférencement)\n*p = 100;  // modifie a via le pointeur\nprintf(\"%d\\n\", a);   // 100</pre>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 &amp; et * — aide mémoire</div>\n<p><code>&amp;var</code> → \"donne-moi l'<strong>A</strong>dresse de var\"<br/>\n<code>*ptr</code> → \"donne-moi la <strong>V</strong>aleur à l'adresse ptr\"<br/>\n        Phrase : <em>\"et commercial = adresse · étoile = valeur\"</em></p>\n</div>\n<h2>5.2 — Pointeurs et tableaux</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Arithmétique des pointeurs</div>\n<pre>int T[5] = {10, 20, 30, 40, 50};\nint *p = T;   // T = adresse du premier élément\nprintf(\"%d\\n\", *p);     // 10  (T[0])\nprintf(\"%d\\n\", *(p+1)); // 20  (T[1])\nprintf(\"%d\\n\", *(p+2)); // 30  (T[2])\np++;  // p pointe maintenant sur T[1]</pre>\n</div>\n<h2>5.3 — Pointeurs et fonctions</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Échange par pointeur</div>\n<pre>void echanger(int *x, int *y) {\n    int temp = *x;\n    *x = *y;\n    *y = temp;\n}\nint a=5, b=3;\nechanger(&amp;a, &amp;b);  // maintenant a=3, b=5</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>int *p; → pointeur vers int · p = &amp;a; → p pointe sur a</li>\n<li>&amp;a = adresse de a · *p = valeur à l'adresse p</li>\n<li>Arithmétique : p+1 pointe sur l'élément suivant</li>\n<li>Tableau = pointeur sur son premier élément</li>\n<li>Passage par adresse : echanger(int *x, int *y)</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Si int a = 10; int *p = &a;, que vaut *p ?",
+     "options": [
+      {
+       "text": "L'adresse de a",
+       "correct": false,
+       "explanation": "&a est l'adresse, pas 10. *p déréférence et donne la valeur."
+      },
+      {
+       "text": "10 (la valeur de a)",
+       "correct": true,
+       "explanation": "Correct ! *p déréférence le pointeur p qui pointe vers a. *p retourne donc la valeur de a, soit 10."
+      },
+      {
+       "text": "L'adresse de p",
+       "correct": false,
+       "explanation": "p (sans *) vaut l'adresse de a. *p vaut la valeur."
+      },
+      {
+       "text": "Une valeur indéfinie",
+       "correct": false,
+       "explanation": "*p accède bien à une valeur — celle de la variable pointée."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre5.html"
+  },
+  {
+   "number": 6,
+   "title": "Structures & Unions",
+   "subtitle": "struct, union, typedef, tableaux de structures.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir et utiliser des structures (struct)<br/>\n        • Utiliser typedef pour simplifier la syntaxe<br/>\n        • Manipuler des tableaux de structures</p>\n</div>\n<h2>6.1 — struct — Définition</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>Une <code>struct</code> regroupe plusieurs variables de types différents sous un même nom — contrairement aux tableaux qui n'acceptent qu'un type.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Définition et utilisation</div>\n<pre>// Définition\nstruct Etudiant {\n    char nom[50];\n    int age;\n    float note;\n};\n// Déclaration et initialisation\nstruct Etudiant e1 = {\"Kofi\", 20, 15.5};\nstruct Etudiant e2;\n// Accès aux champs\ne2.age = 22;\nstrcpy(e2.nom, \"Ama\");\nprintf(\"%s a %d ans, note: %.1f\\n\", e1.nom, e1.age, e1.note);</pre>\n</div>\n<h2>6.2 — typedef</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Simplifier avec typedef</div>\n<pre>typedef struct {\n    char nom[50];\n    int age;\n    float note;\n} Etudiant;  // maintenant Etudiant est un type\n// Plus besoin d'écrire \"struct\"\nEtudiant e1 = {\"Kofi\", 20, 15.5};\nEtudiant e2;</pre>\n</div>\n<h2>6.3 — Tableau de structures</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Classe de 30 étudiants</div>\n<pre>Etudiant classe[30];\nfloat somme = 0;\n// Remplissage\nfor (int i = 0; i &lt; 30; i++) {\n    printf(\"Nom étudiant %d: \", i+1);\n    scanf(\"%s\", classe[i].nom);\n    printf(\"Note: \");\n    scanf(\"%f\", &amp;classe[i].note);\n    somme += classe[i].note;\n}\nprintf(\"Moyenne: %.2f\\n\", somme/30);</pre>\n</div>\n<h2>6.4 — Passage de structure à une fonction</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Par valeur et par pointeur</div>\n<pre>// Par valeur (copie) — lent pour grandes structures\nvoid afficher(Etudiant e) {\n    printf(\"%s : %.1f\\n\", e.nom, e.note);\n}\n// Par pointeur — plus efficace\nvoid modifier(Etudiant *e, float n) {\n    e-&gt;note = n;  // flèche -&gt; pour pointeur vers struct\n}\n// Appel\nafficher(e1);\nmodifier(&amp;e1, 18.0);  // e1.note = 18.0</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>struct : regroupe des variables de types différents</li>\n<li>typedef struct {...} NomType; → simplifie la déclaration</li>\n<li>Accès : var.champ · Pointeur : ptr-&gt;champ</li>\n<li>Tableau de structures : Etudiant classe[30];</li>\n<li>Passer par pointeur (Etudiant *e) pour modifier et économiser la mémoire</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Pour accéder au champ note d'un pointeur Etudiant *p, on écrit :",
+     "options": [
+      {
+       "text": "p.note",
+       "correct": false,
+       "explanation": "p.note est pour une variable de type struct, pas un pointeur."
+      },
+      {
+       "text": "p->note",
+       "correct": true,
+       "explanation": "Correct ! Pour un pointeur vers une structure, on utilise -> (flèche). p->note est équivalent à (*p).note."
+      },
+      {
+       "text": "*p.note",
+       "correct": false,
+       "explanation": "*p.note serait (*p).note avec priorité d'opérateurs erronée — écrire (*p).note ou p->note."
+      },
+      {
+       "text": "&p.note",
+       "correct": false,
+       "explanation": "&p.note retournerait l'adresse du champ."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre6.html"
+  },
+  {
+   "number": 7,
+   "title": "Fichiers en C",
+   "subtitle": "Lecture/écriture de fichiers texte et binaires avec stdio.h.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Ouvrir, lire et écrire dans des fichiers texte<br/>\n        • Utiliser les fonctions fopen, fclose, fprintf, fscanf, fgets<br/>\n        • Détecter la fin de fichier avec feof</p>\n</div>\n<h2>7.1 — Ouverture et fermeture</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Modes d'ouverture</div>\n<pre>#include &lt;stdio.h&gt;\nFILE *f = fopen(\"fichier.txt\", mode);\n// Toujours vérifier si l'ouverture a réussi !\nif (f == NULL) {\n    printf(\"Erreur ouverture\\n\");\n    return 1;\n}\n// ... utiliser f ...\nfclose(f);  // TOUJOURS fermer !</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mode</th><th>Description</th><th>Si fichier inexistant</th></tr></thead>\n<tbody>\n<tr><td><code>\"r\"</code></td><td>Lecture seule</td><td>Erreur (NULL)</td></tr>\n<tr><td><code>\"w\"</code></td><td>Écriture (écrase)</td><td>Crée le fichier</td></tr>\n<tr><td><code>\"a\"</code></td><td>Ajout en fin</td><td>Crée le fichier</td></tr>\n<tr><td><code>\"r+\"</code></td><td>Lecture + écriture</td><td>Erreur (NULL)</td></tr>\n<tr><td><code>\"rb\"</code></td><td>Lecture binaire</td><td>Erreur (NULL)</td></tr>\n</tbody>\n</table></div>\n<h2>7.2 — Écriture et lecture texte</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples complets</div>\n<pre>// ÉCRITURE\nFILE *f = fopen(\"notes.txt\", \"w\");\nif (f) {\n    fprintf(f, \"Kofi 15.5\\n\");\n    fprintf(f, \"Ama 17.0\\n\");\n    fclose(f);\n}\n// LECTURE\nFILE *f = fopen(\"notes.txt\", \"r\");\nchar nom[50]; float note;\nwhile (fscanf(f, \"%s %f\", nom, ¬e) == 2) {\n    printf(\"%s : %.1f\\n\", nom, note);\n}\nfclose(f);\n// Lire ligne par ligne\nchar ligne[256];\nFILE *f = fopen(\"fichier.txt\", \"r\");\nwhile (fgets(ligne, sizeof(ligne), f) != NULL) {\n    printf(\"%s\", ligne);\n}\nfclose(f);</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 7</h3>\n<ul>\n<li>FILE *f = fopen(\"nom\", mode); → toujours vérifier f != NULL</li>\n<li>Modes : \"r\" lire · \"w\" écrire (écrase) · \"a\" ajouter</li>\n<li>fprintf(f, ...) · fscanf(f, ...) · fgets(buf, size, f)</li>\n<li>fclose(f); → TOUJOURS fermer en fin de traitement</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle vérification est indispensable après fopen() ?",
+     "options": [
+      {
+       "text": "Vérifier la taille du fichier",
+       "correct": false,
+       "explanation": "La taille n'est pas à vérifier immédiatement après l'ouverture."
+      },
+      {
+       "text": "Vérifier que f != NULL",
+       "correct": true,
+       "explanation": "Correct ! fopen() retourne NULL si l'ouverture échoue (fichier inexistant, permissions…). Toujours tester if (f == NULL)."
+      },
+      {
+       "text": "Fermer le fichier avec fclose",
+       "correct": false,
+       "explanation": "fclose se fait à la fin, pas après fopen."
+      },
+      {
+       "text": "Lire le premier caractère",
+       "correct": false,
+       "explanation": "On ne lit pas immédiatement après l'ouverture sans vérifier NULL."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre7.html"
+  },
+  {
+   "number": 8,
+   "title": "Introduction au C++",
+   "subtitle": "Classes, objets, constructeurs, surcharge, namespace std.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre les classes et objets en C++<br/>\n        • Écrire des constructeurs et des méthodes<br/>\n        • Distinguer C et C++ (namespace, cin/cout, surcharge)</p>\n</div>\n<h2>8.1 — De C à C++ — Différences clés</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonctionnalité</th><th>C</th><th>C++</th></tr></thead>\n<tbody>\n<tr><td>Entrée/Sortie</td><td><code>printf/scanf</code></td><td><code>cout/cin</code></td></tr>\n<tr><td>Déclaration var.</td><td>Début du bloc</td><td>N'importe où</td></tr>\n<tr><td>Commentaire</td><td><code>/* ... */</code></td><td><code>// ...</code> (aussi)</td></tr>\n<tr><td>Booléen</td><td>int (0/1)</td><td><code>bool</code> (true/false)</td></tr>\n<tr><td>Classes</td><td>Pas de classes</td><td><code>class</code></td></tr>\n<tr><td>Surcharge</td><td>Impossible</td><td>Possible</td></tr>\n</tbody>\n</table></div>\n<h2>8.2 — Premier programme C++</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Hello World C++</div>\n<pre>#include &lt;iostream&gt;\nusing namespace std;\nint main() {\n    cout &lt;&lt; \"Bonjour le monde !\" &lt;&lt; endl;\n    int age;\n    cout &lt;&lt; \"Votre age : \";\n    cin &gt;&gt; age;\n    cout &lt;&lt; \"Vous avez \" &lt;&lt; age &lt;&lt; \" ans.\" &lt;&lt; endl;\n    return 0;\n}</pre>\n</div>\n<h2>8.3 — Classes et Objets</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Classe Etudiant</div>\n<pre>#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\nclass Etudiant {\npublic:          // public = accessible de l'extérieur\n    string nom;\n    int age;\n    float note;\n    // Constructeur\n    Etudiant(string n, int a, float nt) {\n        nom = n; age = a; note = nt;\n    }\n    // Méthode\n    void afficher() {\n        cout &lt;&lt; nom &lt;&lt; \" (\" &lt;&lt; age &lt;&lt; \" ans) - \" &lt;&lt; note &lt;&lt; \"/20\" &lt;&lt; endl;\n    }\n    bool estAdmis() {\n        return note &gt;= 10;\n    }\n};\nint main() {\n    Etudiant e1(\"Kofi\", 20, 15.5);\n    e1.afficher();   // Kofi (20 ans) - 15.5/20\n    if (e1.estAdmis()) cout &lt;&lt; \"Admis !\" &lt;&lt; endl;\n    return 0;\n}</pre>\n</div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 public / private</div>\n<p><code>public</code> : accessible depuis l'extérieur de la classe<br/>\n<code>private</code> : accessible seulement depuis l'intérieur de la classe (encapsulation)<br/>\n        Bonne pratique : attributs <code>private</code>, méthodes accesseurs <code>public</code></p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 8</h3>\n<ul>\n<li>C++ = C + Classes + Namespaces + surcharge + bool + cin/cout</li>\n<li>cout &lt;&lt; val · cin &gt;&gt; var · endl = retour à la ligne</li>\n<li>class NomClasse { public: attributs; méthodes; };</li>\n<li>Constructeur : même nom que la classe, pas de type de retour</li>\n<li>public : accessible partout · private : seulement dans la classe</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "En C++, comment afficher \"Bonjour\" à la console ?",
+     "options": [
+      {
+       "text": "printf(\"Bonjour\");",
+       "correct": false,
+       "explanation": "printf fonctionne en C++ mais c'est le style C. La façon C++ est cout."
+      },
+      {
+       "text": "cout << \"Bonjour\";",
+       "correct": true,
+       "explanation": "Correct ! cout << est l'opérateur de sortie C++ (avec using namespace std; ou std::cout)."
+      },
+      {
+       "text": "print(\"Bonjour\");",
+       "correct": false,
+       "explanation": "print n'existe pas en C/C++ (c'est Python)."
+      },
+      {
+       "text": "Console.Write(\"Bonjour\");",
+       "correct": false,
+       "explanation": "Console.Write est C# (Microsoft)."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Dans une classe C++, private: signifie :",
+     "options": [
+      {
+       "text": "Les membres sont supprimés",
+       "correct": false,
+       "explanation": "private ne supprime pas les membres."
+      },
+      {
+       "text": "Les membres sont accessibles seulement depuis l'intérieur de la classe",
+       "correct": true,
+       "explanation": "Correct ! private = les membres ne sont accessibles que depuis l'intérieur de la classe. C'est le principe d'encapsulation."
+      },
+      {
+       "text": "Les membres sont accessibles de partout",
+       "correct": false,
+       "explanation": "public signifie accessible de partout. private c'est l'opposé."
+      },
+      {
+       "text": "La classe ne peut pas être héritée",
+       "correct": false,
+       "explanation": "private n'est pas lié aux héritages."
+      }
+     ]
+    }
+   ],
+   "source": "_private/c_cpp/chapitres/chapitre8.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Bases du Langage C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Bases du Langage C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Bases du Langage C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Bases du Langage C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Bases du Langage C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Contrôle de flux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Contrôle de flux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Contrôle de flux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Contrôle de flux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Contrôle de flux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Fonctions en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Fonctions en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Fonctions en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Fonctions en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Fonctions en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Tableaux & Chaînes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Tableaux & Chaînes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Tableaux & Chaînes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Tableaux & Chaînes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Tableaux & Chaînes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Pointeurs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Pointeurs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Pointeurs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Pointeurs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Pointeurs.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Structures & Unions.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Structures & Unions.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Structures & Unions.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Structures & Unions.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Structures & Unions.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Fichiers en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Fichiers en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Fichiers en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Fichiers en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Fichiers en C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Introduction au C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Introduction au C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Introduction au C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Introduction au C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Introduction au C.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  }
+ ],
+ "simulators": [],
+ "flashcards": [],
+ "exercises_source": "_private/c_cpp/exercices/exercices.html"
+}

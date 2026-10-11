@@ -1,0 +1,906 @@
+{
+ "slug": "linux",
+ "name": "Système Linux",
+ "chapters": [
+  {
+   "number": 1,
+   "title": "Présentation générale du système GNU/Linux",
+   "subtitle": "Comprendre ce qu'est Linux, son histoire, son architecture et ses licences.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Rappeler l'historique d'UNIX et de GNU/Linux<br/>\n        • Distinguer l'architecture logique d'un système UNIX<br/>\n        • Identifier les quatre libertés de la licence GPL<br/>\n        • Connaître les fonctions et types de licence d'un système GNU/Linux</p>\n</div>\n<h2>Qu'est-ce qu'un système d'exploitation ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Définition</div>\n<p>Un <strong>système d'exploitation (OS)</strong> est un programme ou un ensemble de programmes assurant la gestion de l'ordinateur et des périphériques. Il sert d'interface entre le matériel (hardware) et le logiciel (software).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Rôle de l'OS</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>Gestion de la mémoire</td><td>Alloue et libère la RAM pour les programmes</td></tr>\n<tr><td>Gestion des périphériques</td><td>Pilotes pour clavier, souris, disque, réseau…</td></tr>\n<tr><td>Gestion des données</td><td>Organisation des fichiers sur le disque</td></tr>\n<tr><td>Gestion des programmes</td><td>Lance, suspend, arrête les processus</td></tr>\n<tr><td>Gestion de la sécurité</td><td>Contrôle des accès, journaux système</td></tr>\n</tbody>\n</table></div>\n<h2>Linux est un système d'exploitation</h2>\n<p>Linux est un système d'exploitation au même titre que Windows ou Mac OS. Il est réputé pour sa <strong>sécurité</strong>, ses <strong>mises à jour fréquentes</strong> et surtout pour être <strong>gratuit</strong> et <strong>open source</strong>.</p>\n<h2>Architecture logique d'un système Linux</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏗️ Les trois couches</div>\n<p>De bas en haut : <strong>Matériel</strong> → <strong>Kernel (noyau)</strong> → <strong>Shell</strong> → <strong>Applications utilisateur</strong>. Le noyau gère la mémoire, le processeur et les entrées/sorties. Le Shell est l'interpréteur de commandes (ex : bash).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Matériel</strong></td><td>Ressources physiques</td><td>CPU, RAM, disque</td></tr>\n<tr><td><strong>Kernel</strong></td><td>Gestion mémoire, processeur, E/S</td><td>Linux Kernel</td></tr>\n<tr><td><strong>Shell</strong></td><td>Interpréteur de commandes</td><td>bash, sh, zsh</td></tr>\n<tr><td><strong>Applications</strong></td><td>Programmes utilisateur</td><td>ls, Firefox, vim</td></tr>\n</tbody>\n</table></div>\n<h2>Historique d'UNIX et Linux</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Année</th><th>Événement clé</th></tr></thead>\n<tbody>\n<tr><td><strong>1969</strong></td><td>Création d'UNIX aux laboratoires Bell (AT&amp;T) par Ken Thompson et Dennis Ritchie</td></tr>\n<tr><td><strong>1973</strong></td><td>UNIX réécrit en langage C — devient portable</td></tr>\n<tr><td><strong>1974</strong></td><td>Version 4 donnée à l'Université de Berkeley → naissance de BSD</td></tr>\n<tr><td><strong>1984</strong></td><td>Richard Stallman lance le projet GNU (GNU is Not Unix)</td></tr>\n<tr><td><strong>1985</strong></td><td>Création de la FSF (Free Software Foundation) et de la licence GPL</td></tr>\n<tr><td><strong>1991</strong></td><td>Linus Torvalds crée le noyau Linux et le publie sous licence GPL</td></tr>\n<tr><td><strong>1991–1994</strong></td><td>Linux devient un système UNIX complet et mature</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 À retenir — Le nom Linux</div>\n<p><strong>Linux</strong> = contraction de <strong>Linus</strong> (Torvalds) + <strong>Unix</strong>. Le projet GNU fournissait les outils (gcc, bash…), et Linus a fourni le noyau. C'est pourquoi on dit <strong>GNU/Linux</strong>.</p>\n</div>\n<h2>Le projet GNU et la licence GPL</h2>\n<p>En 1984, Richard Stallman initie le projet GNU pour développer un OS libre. La <strong>GPL (General Public License)</strong> garantit 4 libertés fondamentales :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Liberté</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Liberté 0</strong></td><td>Utiliser le logiciel quel que soit l'usage</td></tr>\n<tr><td><strong>Liberté 1</strong></td><td>Étudier le fonctionnement et l'adapter à ses besoins</td></tr>\n<tr><td><strong>Liberté 2</strong></td><td>Redistribuer des copies librement</td></tr>\n<tr><td><strong>Liberté 3</strong></td><td>Améliorer le programme et diffuser les améliorations</td></tr>\n</tbody>\n</table></div>\n<h2>Types de licences des logiciels libres</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Licence</th><th>Caractéristiques</th></tr></thead>\n<tbody>\n<tr><td><strong>BSD</strong></td><td>Restriction possible · Création de versions propriétaires autorisée · Restrictions sur redistribution possibles</td></tr>\n<tr><td><strong>GNU / Copyleft</strong></td><td>Le code source reste libre · Toute version modifiée doit rester sous GPL · Restrictions sur redistribution INTERDITES</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Copyright ≠ Copyleft</div>\n<p>Le <strong>copyright</strong> protège l'auteur en limitant les droits des utilisateurs. Le <strong>copyleft</strong> (GNU) utilise le droit d'auteur pour garantir les libertés des utilisateurs. C'est l'inverse philosophique du copyright !</p>\n</div>\n<h2>Les distributions Linux</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📦 Définition</div>\n<p>Une <strong>distribution</strong> est un ensemble de programmes (noyau, utilitaires, commandes, applications) formant un système complet. Chaque distrib a ses avantages selon l'usage.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Distribution</th><th>Type</th><th>Usage typique</th></tr></thead>\n<tbody>\n<tr><td><strong>Debian</strong></td><td>Gratuite</td><td>Serveurs, stabilité maximale</td></tr>\n<tr><td><strong>Ubuntu</strong></td><td>Gratuite</td><td>Desktop, débutants</td></tr>\n<tr><td><strong>RedHat / CentOS</strong></td><td>Gratuite / Pro</td><td>Entreprise, serveurs</td></tr>\n<tr><td><strong>Kali Linux</strong></td><td>Gratuite</td><td>Sécurité, pentesting</td></tr>\n<tr><td><strong>Fedora</strong></td><td>Gratuite</td><td>Utilisateurs avancés</td></tr>\n</tbody>\n</table></div>\n<h2>Fonctions de base des systèmes UNIX</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Multitâches</strong></td><td>Temps processeur partagé entre plusieurs programmes</td></tr>\n<tr><td><strong>Multi-utilisateurs</strong></td><td>Système partagé entre plusieurs utilisateurs simultanément</td></tr>\n<tr><td><strong>Portabilité</strong></td><td>Peut être adapté à différents environnements matériels</td></tr>\n<tr><td><strong>Bibliothèques standard</strong></td><td>Optimisation des développements via code partagé</td></tr>\n</tbody>\n</table></div>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — GNU vs Linux :</strong> Linux = le noyau seul. GNU/Linux = le système complet (noyau + outils GNU).<br/>\n<strong>Piège 2 — Libre ≠ Gratuit :</strong> \"Libre\" (free software) désigne les libertés d'utilisation, pas forcément la gratuité. Mais en pratique la plupart sont gratuits.<br/>\n<strong>Piège 3 — Copyleft :</strong> Une œuvre sous copyleft oblige toute version dérivée à rester sous la même licence. C'est \"viral\".</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — Système Linux</h3>\n<ul>\n<li>UNIX créé en 1969 (Bell Labs) → réécrit en C en 1973 → GNU en 1984 → Linux en 1991</li>\n<li>Architecture : Matériel → Kernel → Shell → Applications</li>\n<li>4 libertés GPL : Utiliser · Étudier · Redistribuer · Améliorer</li>\n<li>BSD = restrictions possibles · GNU/Copyleft = toujours libre</li>\n<li>Une distribution = noyau + outils GNU + applications packagés ensemble</li>\n<li>UNIX = Multitâches + Multi-utilisateurs + Portable</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Qui a créé le noyau Linux en 1991 ?",
+     "options": [
+      {
+       "text": "Richard Stallman",
+       "correct": false,
+       "explanation": "Richard Stallman a créé le projet GNU en 1984, pas Linux."
+      },
+      {
+       "text": "Dennis Ritchie",
+       "correct": false,
+       "explanation": "Dennis Ritchie a co-créé UNIX en 1969 et le langage C."
+      },
+      {
+       "text": "Linus Torvalds",
+       "correct": true,
+       "explanation": "Correct ! Linus Torvalds, étudiant finlandais, a créé le noyau Linux en 1991 et l'a publié sous licence GPL."
+      },
+      {
+       "text": "Ken Thompson",
+       "correct": false,
+       "explanation": "Ken Thompson a co-créé UNIX en 1969 avec Dennis Ritchie."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Que garantit la Liberté 1 de la GPL ?",
+     "options": [
+      {
+       "text": "Utiliser le logiciel librement",
+       "correct": false,
+       "explanation": "La liberté 0 concerne l'utilisation libre du logiciel."
+      },
+      {
+       "text": "Étudier et adapter le code source",
+       "correct": true,
+       "explanation": "Correct ! La liberté 1 garantit le droit d'étudier le code source et d'adapter le logiciel à ses besoins."
+      },
+      {
+       "text": "Redistribuer des copies",
+       "correct": false,
+       "explanation": "La liberté 2 garantit la redistribution de copies."
+      },
+      {
+       "text": "Améliorer et diffuser les améliorations",
+       "correct": false,
+       "explanation": "La liberté 3 garantit le droit d'améliorer et de diffuser les améliorations."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle est la différence entre la licence BSD et la licence GNU ?",
+     "options": [
+      {
+       "text": "BSD interdit les versions propriétaires, GNU les autorise",
+       "correct": false,
+       "explanation": "C'est l'inverse : BSD permet des versions propriétaires, pas GNU."
+      },
+      {
+       "text": "BSD autorise les versions propriétaires, GNU les interdit (copyleft)",
+       "correct": true,
+       "explanation": "Correct ! BSD autorise la création de versions propriétaires. La licence GNU (copyleft) interdit toute restriction sur la redistribution : toute version dérivée doit rester libre."
+      },
+      {
+       "text": "BSD et GNU sont identiques",
+       "correct": false,
+       "explanation": "Les deux sont des licences libres, mais avec des règles différentes sur la redistribution."
+      },
+      {
+       "text": "BSD est une licence propriétaire",
+       "correct": false,
+       "explanation": "BSD est aussi une licence libre, pas propriétaire."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "UNIX a été créé aux laboratoires Bell en :",
+     "options": [
+      {
+       "text": "1984",
+       "correct": false,
+       "explanation": "1984 est l'année du projet GNU de Stallman, pas la création d'UNIX."
+      },
+      {
+       "text": "1969",
+       "correct": true,
+       "explanation": "Correct ! UNIX a été créé en 1969 aux laboratoires Bell (AT&T) par Ken Thompson et Dennis Ritchie."
+      },
+      {
+       "text": "1991",
+       "correct": false,
+       "explanation": "1991 est l'année de création du noyau Linux par Linus Torvalds."
+      },
+      {
+       "text": "1973",
+       "correct": false,
+       "explanation": "1973 est l'année où UNIX a été réécrit en langage C, pas sa création initiale."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Le Shell dans l'architecture Linux joue quel rôle ?",
+     "options": [
+      {
+       "text": "Gérer la mémoire et les ressources matérielles",
+       "correct": false,
+       "explanation": "Le noyau (Kernel) gère la mémoire et les ressources matérielles."
+      },
+      {
+       "text": "Piloter les périphériques matériels",
+       "correct": false,
+       "explanation": "Les pilotes (drivers) gèrent les périphériques."
+      },
+      {
+       "text": "Interpréter les commandes utilisateur",
+       "correct": true,
+       "explanation": "Correct ! Le Shell (ex : bash) est l'interpréteur de commandes. Il fait le lien entre l'utilisateur et le noyau en interprétant les commandes saisies."
+      },
+      {
+       "text": "Fournir l'interface graphique",
+       "correct": false,
+       "explanation": "Les applications (couche haute) fournissent l'interface graphique."
+      }
+     ]
+    }
+   ],
+   "source": "linux/chapitres/chapitre1.html"
+  },
+  {
+   "number": 2,
+   "title": "Système de fichiers Linux",
+   "subtitle": "Arborescence Linux, types de systèmes de fichiers, partitionnement et montage.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Connaître l'arborescence d'un système Linux et les rôles de chaque répertoire<br/>\n        • Distinguer les principaux systèmes de fichiers sous Linux<br/>\n        • Partitionner un disque dur et monter/démonter des systèmes de fichiers</p>\n</div>\n<h2>Définition d'un système de fichiers</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Définition</div>\n<p>Un <strong>système de fichiers (File System / FS)</strong> définit l'organisation des données sur un support de stockage. Il détermine comment les fichiers sont gérés et organisés par le système d'exploitation. Sous Linux, <strong>tout est fichier</strong> : données, périphériques, processus, sockets…</p>\n</div>\n<h2>Arborescence d'un système Linux</h2>\n<p>Le système de fichiers Linux est <strong>hiérarchique</strong>, en partant d'une racine unique notée <code>/</code> (root directory). Tout part de là.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Répertoire</th><th>Contenu / Rôle</th></tr></thead>\n<tbody>\n<tr><td><code><strong>/</strong></code></td><td>Racine de l'arborescence — point de départ</td></tr>\n<tr><td><code><strong>/boot</strong></code></td><td>Noyau Linux et fichiers de démarrage</td></tr>\n<tr><td><code><strong>/dev</strong></code></td><td>Fichiers des périphériques (devices) : disques, USB…</td></tr>\n<tr><td><code><strong>/home</strong></code></td><td>Répertoires personnels des utilisateurs (/home/alice, /home/bob)</td></tr>\n<tr><td><code><strong>/etc</strong></code></td><td>Fichiers de configuration du système — à sauvegarder !</td></tr>\n<tr><td><code><strong>/proc</strong></code></td><td>Informations sur le noyau et les processus (virtuel, en lecture seule)</td></tr>\n<tr><td><code><strong>/root</strong></code></td><td>Répertoire personnel du super-utilisateur (root)</td></tr>\n<tr><td><code><strong>/tmp</strong></code></td><td>Fichiers temporaires — effacé au redémarrage</td></tr>\n<tr><td><code><strong>/usr</strong></code></td><td>Applications, documentation, manuels, bibliothèques</td></tr>\n<tr><td><code><strong>/usr/local</strong></code></td><td>Logiciels supplémentaires installés manuellement</td></tr>\n<tr><td><code><strong>/var</strong></code></td><td>Fichiers journaux (logs), spools de mail, d'impression…</td></tr>\n<tr><td><code><strong>/bin</strong></code></td><td>Commandes essentielles pour tous les utilisateurs (ls, cp, mv…)</td></tr>\n<tr><td><code><strong>/sbin</strong></code></td><td>Commandes d'administration système (fsck, iptables…)</td></tr>\n<tr><td><code><strong>/lib</strong></code></td><td>Bibliothèques partagées nécessaires aux commandes de /bin et /sbin</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Les répertoires importants</div>\n<p><strong>/etc</strong> = \"Et Tout Ce qui Configure\" · <strong>/var</strong> = \"Variable\" (fichiers qui changent) · <strong>/tmp</strong> = \"Temporaire\" (effacé au boot) · <strong>/home</strong> = dossiers utilisateurs · <strong>/dev</strong> = \"Devices\" (périphériques)</p>\n</div>\n<h2>Les systèmes de fichiers sous Linux</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Système de fichiers</th><th>Caractéristiques</th></tr></thead>\n<tbody>\n<tr><td><strong>ext2</strong></td><td>Premier FS Linux. Non journalisé. Peu utilisé aujourd'hui.</td></tr>\n<tr><td><strong>ext3</strong></td><td>Successeur d'ext2 (1999). Journalisé. Compatible avec ext2. Très utilisé.</td></tr>\n<tr><td><strong>ext4</strong></td><td>Évolution d'ext4. Journalisé, rétrocompatible, plus performant. Recommandé.</td></tr>\n<tr><td><strong>xfs</strong></td><td>Journalisation très performante. Défragmentation en ligne. Snapshots.</td></tr>\n<tr><td><strong>reiserfs</strong></td><td>Journal + indexation des répertoires. Efficace pour petits fichiers.</td></tr>\n<tr><td><strong>vfat / FAT32</strong></td><td>Compatibilité Windows. Utilisé sur clés USB, supports amovibles.</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Journalisation — C'est quoi ?</div>\n<p>Un système de fichiers <strong>journalisé</strong> enregistre les opérations avant de les effectuer (dans un \"journal\"). En cas de coupure de courant, le système peut <strong>reprendre là où il s'est arrêté</strong> sans corruption des données. ext2 ne l'est pas, ext3/ext4 oui.</p>\n</div>\n<h2>Les iNodes</h2>\n<p>Sous Linux, chaque fichier est décrit par des <strong>métadonnées</strong> appelées <strong>inode</strong>. L'inode contient : propriétaire, permissions, dates d'accès/modification, taille, localisation des blocs de données. Le contenu réel est stocké séparément dans des blocs.</p>\n<h2>Disques durs et partitionnement</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Définitions</div>\n<p><strong>Partitionner</strong> = diviser le disque en espaces logiques indépendants.<br/>\n<strong>Formater</strong> = préparer une partition pour recevoir des données en y appliquant un système de fichiers.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de partition</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Partition principale</strong></td><td>Max 4 par disque. Supporte tout type de FS.</td></tr>\n<tr><td><strong>Partition étendue</strong></td><td>Contient des partitions logiques. Ne peut pas contenir un FS directement.</td></tr>\n<tr><td><strong>Partition logique</strong></td><td>Contenues dans la partition étendue. Illimitées en nombre. Supportent tout FS.</td></tr>\n</tbody>\n</table></div>\n<h2>Nommage des disques sous Linux</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Préfixe</th><th>Type</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>hd</code></td><td>Disques IDE</td><td>hda (maître primaire), hdb (esclave primaire)</td></tr>\n<tr><td><code>sd</code></td><td>Disques SCSI / SATA / USB</td><td>sda (1er disque), sdb (2e disque)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de nommage</div>\n<pre>sda      → 1er disque SCSI/SATA\nsda1     → 1ère partition du 1er disque\nsda2     → 2ème partition du 1er disque\nsdb      → 2ème disque SCSI/SATA\nsdb3     → 3ème partition du 2ème disque</pre>\n</div>\n<h2>Partitionner avec fdisk</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Commande fdisk</div>\n<pre># fdisk /dev/sda    ← configurer les partitions du 1er disque</pre>\n</div>\n<h2>Montage et démontage d'un système de fichiers</h2>\n<p>Pour utiliser un FS, il faut le <strong>monter</strong> sur un point de montage de l'arborescence. Son contenu devient alors accessible comme un simple répertoire.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Commandes mount / umount</div>\n<pre># mount /dev/sda1 /mnt/flashdisk   ← monter une clé USB\n# umount /mnt/flashdisk             ← démonter la clé USB\n# df -h    ← afficher l'utilisation de toutes les partitions montées\n# du -ks /usr/local   ← espace occupé par /usr/local</pre>\n</div>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — /root vs /home :</strong> <code>/root</code> est le dossier personnel de l'administrateur. <code>/home</code> contient les dossiers des utilisateurs normaux.<br/>\n<strong>Piège 2 — /tmp :</strong> Les fichiers dans /tmp sont effacés au redémarrage. Ne jamais y stocker des données importantes !<br/>\n<strong>Piège 3 — ext2 non journalisé :</strong> ext2 est le seul parmi ext2/ext3/ext4 à ne pas être journalisé.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2 — Système de fichiers</h3>\n<ul>\n<li>Tout part de <strong>/</strong> (racine) — arborescence hiérarchique</li>\n<li><strong>/etc</strong> = config · <strong>/home</strong> = utilisateurs · <strong>/tmp</strong> = temporaire · <strong>/var</strong> = logs · <strong>/dev</strong> = périphériques</li>\n<li>ext2 (non journalisé) → ext3 (journalisé) → ext4 (recommandé)</li>\n<li>inode = métadonnées d'un fichier (permissions, propriétaire, taille…)</li>\n<li>Max 4 partitions principales · partition étendue → partitions logiques illimitées</li>\n<li>Disques : hda/hdb (IDE) ou sda/sdb (SCSI/SATA) + chiffre pour la partition</li>\n<li><code>mount</code> / <code>umount</code> · <code>df -h</code> pour l'espace disque · <code>fdisk</code> pour partitionner</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel répertoire contient les fichiers de configuration du système ?",
+     "options": [
+      {
+       "text": "/home",
+       "correct": false,
+       "explanation": "/home contient les répertoires personnels des utilisateurs."
+      },
+      {
+       "text": "/var",
+       "correct": false,
+       "explanation": "/var contient les fichiers variables comme les journaux et spools."
+      },
+      {
+       "text": "/etc",
+       "correct": true,
+       "explanation": "Correct ! /etc contient tous les fichiers de configuration du système. C'est LE répertoire à sauvegarder pour restaurer la configuration d'une machine."
+      },
+      {
+       "text": "/bin",
+       "correct": false,
+       "explanation": "/bin contient les commandes essentielles, pas les fichiers de configuration."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quel système de fichiers Linux est journalisé ET recommandé aujourd'hui ?",
+     "options": [
+      {
+       "text": "ext2",
+       "correct": false,
+       "explanation": "ext2 n'est PAS journalisé. C'est son principal défaut."
+      },
+      {
+       "text": "ext3",
+       "correct": false,
+       "explanation": "ext3 est journalisé mais ext4 est son évolution plus performante."
+      },
+      {
+       "text": "ext4",
+       "correct": true,
+       "explanation": "Correct ! ext4 est l'évolution d'ext3. Il est journalisé, rétrocompatible avec ext3/ext2, et offre de meilleures performances. C'est le FS par défaut de la plupart des distributions Linux."
+      },
+      {
+       "text": "vfat",
+       "correct": false,
+       "explanation": "vfat est un système de fichiers Windows (FAT32). Il n'est pas natif Linux."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande permet de monter un système de fichiers ?",
+     "options": [
+      {
+       "text": "fdisk",
+       "correct": false,
+       "explanation": "fdisk est utilisé pour partitionner un disque, pas le monter."
+      },
+      {
+       "text": "df",
+       "correct": false,
+       "explanation": "df affiche l'utilisation des partitions déjà montées, sans en monter de nouvelles."
+      },
+      {
+       "text": "mount",
+       "correct": true,
+       "explanation": "Correct ! mount permet de monter un système de fichiers sur un point de montage. Ex : mount /dev/sda1 /mnt/usb"
+      },
+      {
+       "text": "umount",
+       "correct": false,
+       "explanation": "umount permet de DÉmonter un système de fichiers."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Que contient le répertoire /dev sous Linux ?",
+     "options": [
+      {
+       "text": "Le noyau Linux et les fichiers de boot",
+       "correct": false,
+       "explanation": "/boot contient le noyau Linux et les fichiers de démarrage."
+      },
+      {
+       "text": "Les fichiers des périphériques (disques, USB, terminaux…)",
+       "correct": true,
+       "explanation": "Correct ! /dev contient les fichiers représentant les périphériques (devices) : disques durs (sda), clés USB, terminaux, carte son, etc. Sous Linux, tout est fichier, même les périphériques."
+      },
+      {
+       "text": "Les fichiers temporaires du système",
+       "correct": false,
+       "explanation": "/tmp contient les fichiers temporaires."
+      },
+      {
+       "text": "Les journaux système (logs)",
+       "correct": false,
+       "explanation": "/var contient les journaux et les fichiers variables."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Combien de partitions principales peut-on avoir au maximum sur un disque ?",
+     "options": [
+      {
+       "text": "2",
+       "correct": false,
+       "explanation": "2 partitions principales, c'est trop peu."
+      },
+      {
+       "text": "4",
+       "correct": true,
+       "explanation": "Correct ! Un disque peut avoir au maximum 4 partitions principales. Pour en avoir plus, on crée une partition étendue qui contient des partitions logiques (illimitées)."
+      },
+      {
+       "text": "8",
+       "correct": false,
+       "explanation": "8 partitions principales n'est pas la limite standard."
+      },
+      {
+       "text": "Illimitées",
+       "correct": false,
+       "explanation": "Les partitions logiques (dans une partition étendue) sont illimitées, pas les principales."
+      }
+     ]
+    }
+   ],
+   "source": "_private/linux/chapitres/chapitre2.html"
+  },
+  {
+   "number": 3,
+   "title": "Commandes de base Unix",
+   "subtitle": "Maîtriser les commandes essentielles du terminal Linux.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Manipuler les commandes Unix de base<br/>\n        • Naviguer dans l'arborescence, gérer fichiers et répertoires<br/>\n        • Utiliser la recherche, l'affichage et la redirection</p>\n</div>\n<h2>Syntaxe générale d'une commande</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📌 Syntaxe</div>\n<p><strong>COMMANDE [OPTIONS] [ARGUMENTS]</strong><br/><br/>\n        Exemple : <code>ls -a /home</code><br/>\n        → <strong>ls</strong> = commande · <strong>-a</strong> = option (inclure fichiers cachés) · <strong>/home</strong> = argument (répertoire cible)</p>\n</div>\n<h2>Navigation dans l'arborescence</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>pwd</strong></code></td><td>Affiche le répertoire courant (Print Working Directory)</td><td><code>pwd</code> → /home/alice</td></tr>\n<tr><td><code><strong>cd</strong></code></td><td>Change de répertoire courant</td><td><code>cd /home</code></td></tr>\n<tr><td><code><strong>cd ..</strong></code></td><td>Remonte d'un niveau dans l'arborescence</td><td><code>cd ..</code></td></tr>\n<tr><td><code><strong>cd ~</strong></code></td><td>Aller dans son répertoire home</td><td><code>cd ~</code></td></tr>\n<tr><td><code><strong>ls</strong></code></td><td>Lister les fichiers d'un répertoire</td><td><code>ls /etc</code></td></tr>\n<tr><td><code><strong>ls -l</strong></code></td><td>Liste détaillée (permissions, taille, date)</td><td><code>ls -l</code></td></tr>\n<tr><td><code><strong>ls -a</strong></code></td><td>Inclure les fichiers cachés (commençant par .)</td><td><code>ls -a</code></td></tr>\n<tr><td><code><strong>ls -la</strong></code></td><td>Liste détaillée avec fichiers cachés</td><td><code>ls -la</code></td></tr>\n</tbody>\n</table></div>\n<h2>Gestion des répertoires</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>mkdir</strong></code></td><td>Crée un répertoire</td><td><code>mkdir monDossier</code></td></tr>\n<tr><td><code><strong>mkdir -p</strong></code></td><td>Crée un répertoire et ses parents si nécessaire</td><td><code>mkdir -p a/b/c</code></td></tr>\n<tr><td><code><strong>rmdir</strong></code></td><td>Supprime un répertoire vide</td><td><code>rmdir monDossier</code></td></tr>\n</tbody>\n</table></div>\n<h2>Gestion des fichiers</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>touch</strong></code></td><td>Crée un fichier vide (ou met à jour la date d'accès)</td><td><code>touch fichier.txt</code></td></tr>\n<tr><td><code><strong>cp</strong></code></td><td>Copie un fichier</td><td><code>cp source destination</code></td></tr>\n<tr><td><code><strong>cp -r</strong></code></td><td>Copie un répertoire récursivement</td><td><code>cp -r dossier/ copie/</code></td></tr>\n<tr><td><code><strong>mv</strong></code></td><td>Déplace ou renomme un fichier/répertoire</td><td><code>mv ancien nouveau</code></td></tr>\n<tr><td><code><strong>rm</strong></code></td><td>Supprime un fichier (⚠️ irréversible)</td><td><code>rm fichier.txt</code></td></tr>\n<tr><td><code><strong>rm -r</strong></code></td><td>Supprime un répertoire et son contenu</td><td><code>rm -r dossier/</code></td></tr>\n<tr><td><code><strong>rm -rf</strong></code></td><td>Suppression forcée et récursive (⚠️ DANGER)</td><td><code>rm -rf /tmp/test/</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ DANGER — rm -rf</div>\n<p>La commande <code>rm -rf</code> supprime tout de manière <strong>irréversible</strong> sans demander de confirmation. Ne jamais exécuter <code>rm -rf /</code> ou <code>rm -rf *</code> à la racine du système — cela détruirait l'intégralité de votre système !</p>\n</div>\n<h2>Affichage du contenu des fichiers</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>cat</strong></code></td><td>Affiche le contenu entier d'un fichier</td><td><code>cat /etc/hostname</code></td></tr>\n<tr><td><code><strong>more</strong></code></td><td>Affiche le contenu page par page (avancer avec espace)</td><td><code>more fichier.txt</code></td></tr>\n<tr><td><code><strong>less</strong></code></td><td>Affichage paginé avec défilement (↑↓, q pour quitter)</td><td><code>less fichier.txt</code></td></tr>\n<tr><td><code><strong>head</strong></code></td><td>Affiche les 10 premières lignes (par défaut)</td><td><code>head -5 fichier.txt</code></td></tr>\n<tr><td><code><strong>tail</strong></code></td><td>Affiche les 10 dernières lignes (par défaut)</td><td><code>tail -20 fichier.txt</code></td></tr>\n</tbody>\n</table></div>\n<h2>Écriture et redirection</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">echo + redirections</div>\n<pre># Afficher du texte\necho \"Bonjour Linux\"\n# Écrire dans un fichier (écrase le contenu)\necho \"ligne1\" &gt; fichier.txt\n# Ajouter à la fin d'un fichier (ne pas écraser)\necho \"ligne2\" &gt;&gt; fichier.txt\n# Vérifier le résultat\ncat fichier.txt\nligne1\nligne2</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Retenir &gt; vs &gt;&gt;</div>\n<p><strong>&gt;</strong> = remplace (écrase) · <strong>&gt;&gt;</strong> = ajoute (append)<br/>\n        Pensez-y : <strong>&gt;&gt;</strong> a un &gt; de plus → il fait \"plus\" (ajoute au lieu d'écraser).</p>\n</div>\n<h2>Liens symboliques</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de lien</th><th>Commande</th><th>Comportement</th></tr></thead>\n<tbody>\n<tr><td><strong>Lien physique</strong></td><td><code>ln source cible</code></td><td>Deux noms pour le même fichier sur le disque</td></tr>\n<tr><td><strong>Lien symbolique</strong></td><td><code>ln -s source cible</code></td><td>Raccourci vers le fichier source (comme un alias)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple de lien symbolique</div>\n<pre>touch fichiersource\necho \"contenu\" &gt; fichiersource\nln -s fichiersource fichiercible\ncat fichiercible      # affiche le contenu de fichiersource\necho \"plus\" &gt;&gt; fichiersource\ncat fichiercible      # affiche aussi \"plus\" → lien actif !</pre>\n</div>\n<h2>Commandes utiles diverses</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>man</strong></code></td><td>Manuel d'aide d'une commande</td><td><code>man ls</code></td></tr>\n<tr><td><code><strong>which</strong></code></td><td>Affiche l'emplacement d'une commande</td><td><code>which pwd</code> → /bin/pwd</td></tr>\n<tr><td><code><strong>find</strong></code></td><td>Recherche de fichiers dans l'arborescence</td><td><code>find /tmp -name \"*.txt\"</code></td></tr>\n</tbody>\n</table></div>\n<h2>La commande find — en détail</h2>\n<p>Syntaxe : <code>find répertoire critères</code></p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Option</th><th>Filtre par</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>-name</code></td><td>Nom du fichier</td><td><code>find /tmp -name \"fich*\"</code></td></tr>\n<tr><td><code>-type</code></td><td>Type (f=fichier, d=dossier)</td><td><code>find / -type d -name \"etc\"</code></td></tr>\n<tr><td><code>-size</code></td><td>Taille</td><td><code>find / -size +10M</code></td></tr>\n<tr><td><code>-user</code></td><td>Propriétaire</td><td><code>find /home -user alice</code></td></tr>\n<tr><td><code>-perm</code></td><td>Permissions</td><td><code>find / -perm 777</code></td></tr>\n<tr><td><code>-mtime</code></td><td>Date de modification</td><td><code>find / -mtime -7</code> (7 derniers jours)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples find</div>\n<pre># Trouver les fichiers commençant par \"fich\" dans /tmp\nfind /tmp -name \"fich*\"\n# Trouver les fichiers commençant par \"fich\" OU \"test\"\nfind /tmp -name \"fich*\" -o -name \"test*\"\n# Trouver tous les fichiers dans /tmp\nfind /tmp -type f</pre>\n</div>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — mv vs cp :</strong> <code>cp source dest</code> = copie (source reste). <code>mv source dest</code> = déplace (source disparaît). <code>mv</code> peut aussi renommer !<br/>\n<strong>Piège 2 — rmdir vs rm -r :</strong> <code>rmdir</code> ne fonctionne que si le répertoire est <strong>vide</strong>. Pour supprimer un répertoire avec contenu, utiliser <code>rm -r</code>.<br/>\n<strong>Piège 3 — touch :</strong> Si le fichier existe déjà, <code>touch</code> ne l'écrase pas — il met à jour sa date d'accès. Si le fichier n'existe pas, il le crée vide.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3 — Commandes Unix</h3>\n<ul>\n<li>Syntaxe : <strong>COMMANDE [OPTIONS] [ARGUMENTS]</strong></li>\n<li>Navigation : <strong>pwd</strong> (où suis-je) · <strong>cd</strong> (changer) · <strong>ls</strong> (lister)</li>\n<li>Répertoires : <strong>mkdir</strong> (créer) · <strong>rmdir</strong> (supprimer vide uniquement)</li>\n<li>Fichiers : <strong>touch</strong> (créer vide) · <strong>cp</strong> (copier) · <strong>mv</strong> (déplacer/renommer) · <strong>rm</strong> (supprimer)</li>\n<li>Affichage : <strong>cat</strong> (tout) · <strong>head</strong> (début) · <strong>tail</strong> (fin) · <strong>more/less</strong> (paginé)</li>\n<li>Redirection : <strong>&gt;</strong> écrase · <strong>&gt;&gt;</strong> ajoute</li>\n<li>Recherche : <strong>find répertoire -name \"motif\"</strong></li>\n<li>Aide : <strong>man commande</strong> pour le manuel</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quelle commande affiche le répertoire courant ?",
+     "options": [
+      {
+       "text": "cd",
+       "correct": false,
+       "explanation": "cd change de répertoire, il ne l'affiche pas."
+      },
+      {
+       "text": "ls",
+       "correct": false,
+       "explanation": "ls liste le contenu d'un répertoire, pas le répertoire courant."
+      },
+      {
+       "text": "pwd",
+       "correct": true,
+       "explanation": "Correct ! pwd (Print Working Directory) affiche le chemin absolu du répertoire courant."
+      },
+      {
+       "text": "find",
+       "correct": false,
+       "explanation": "find recherche des fichiers selon des critères, il n'affiche pas le répertoire courant."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle est la différence entre echo \"texte\" > fichier et echo \"texte\" >> fichier ?",
+     "options": [
+      {
+       "text": "> ajoute au fichier, >> l'écrase",
+       "correct": false,
+       "explanation": "C'est l'inverse : > écrase et >> ajoute."
+      },
+      {
+       "text": "> écrase le fichier, >> ajoute à la fin",
+       "correct": true,
+       "explanation": "Correct ! > redirige et ÉCRASE le contenu existant. >> redirige et AJOUTE à la fin du fichier sans effacer ce qui existe déjà."
+      },
+      {
+       "text": "Les deux font la même chose",
+       "correct": false,
+       "explanation": "Les deux redirigent vers un fichier, mais avec un comportement différent."
+      },
+      {
+       "text": ">> crée un nouveau fichier",
+       "correct": false,
+       "explanation": ">> ne crée pas de nouveau fichier, il ajoute dans l'existant."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande permet de renommer un fichier ?",
+     "options": [
+      {
+       "text": "cp",
+       "correct": false,
+       "explanation": "cp copie le fichier mais l'original reste sous l'ancien nom."
+      },
+      {
+       "text": "mv",
+       "correct": true,
+       "explanation": "Correct ! mv (move) sert à déplacer OU renommer. Ex : mv ancien.txt nouveau.txt renomme le fichier. mv fichier.txt /tmp/ le déplace."
+      },
+      {
+       "text": "touch",
+       "correct": false,
+       "explanation": "touch crée un fichier vide ou met à jour sa date d'accès."
+      },
+      {
+       "text": "ln",
+       "correct": false,
+       "explanation": "ln crée des liens (physiques ou symboliques), pas de renommage."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "La commande head -5 fichier.txt affiche :",
+     "options": [
+      {
+       "text": "Les 5 dernières lignes du fichier",
+       "correct": false,
+       "explanation": "tail affiche les dernières lignes, pas head."
+      },
+      {
+       "text": "Les 5 premières lignes du fichier",
+       "correct": true,
+       "explanation": "Correct ! head affiche le DÉBUT du fichier. Sans option, les 10 premières lignes. Avec -5, les 5 premières lignes."
+      },
+      {
+       "text": "La ligne numéro 5 du fichier",
+       "correct": false,
+       "explanation": "head affiche les lignes du début, pas une ligne précise."
+      },
+      {
+       "text": "Tout le contenu du fichier",
+       "correct": false,
+       "explanation": "head n'affiche pas le fichier entier, seulement les premières lignes."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pourquoi rmdir dossier échoue-t-il si le dossier contient des fichiers ?",
+     "options": [
+      {
+       "text": "Il faut être root pour utiliser rmdir",
+       "correct": false,
+       "explanation": "rmdir ne nécessite pas de droits root pour supprimer un répertoire vide."
+      },
+      {
+       "text": "rmdir efface le contenu puis le dossier",
+       "correct": false,
+       "explanation": "rmdir ne supprime pas de fichiers, il n'efface donc pas le contenu avant."
+      },
+      {
+       "text": "rmdir ne fonctionne que sur les répertoires vides",
+       "correct": true,
+       "explanation": "Correct ! rmdir ne peut supprimer que des répertoires VIDES. Pour supprimer un répertoire avec son contenu, il faut utiliser rm -r dossier/"
+      },
+      {
+       "text": "Il manque l'option -f",
+       "correct": false,
+       "explanation": "rmdir n'a pas d'option -f nécessaire."
+      }
+     ]
+    }
+   ],
+   "source": "_private/linux/chapitres/chapitre3.html"
+  },
+  {
+   "number": 4,
+   "title": "Gestion des utilisateurs & groupes",
+   "subtitle": "Créer, modifier, supprimer des utilisateurs et des groupes sous Linux.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Créer et modifier des utilisateurs sous Linux<br/>\n        • Comprendre les fichiers /etc/passwd, /etc/shadow et /etc/group<br/>\n        • Créer des groupes et y intégrer des utilisateurs</p>\n</div>\n<h2>Le fichier /etc/passwd</h2>\n<p>Ce fichier contient les informations de tous les utilisateurs du système. Accessible à tous (certaines commandes en ont besoin).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Format d'une ligne dans /etc/passwd</div>\n<pre>login:mot-de-passe:UID:GID:info-utilisateur:répertoire-home:shell\nExemple :\nalice:x:1001:1001:Alice Martin:/home/alice:/bin/bash\nroot:x:0:0:root:/root:/bin/bash</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>login</strong></td><td>Identifiant de connexion de l'utilisateur</td></tr>\n<tr><td><strong>mot-de-passe</strong></td><td><code>x</code> = mot de passe dans /etc/shadow · <code>*</code> = connexion impossible · <code>!!</code> = compte désactivé · vide = pas de mot de passe</td></tr>\n<tr><td><strong>UID</strong></td><td>Identifiant unique numérique de l'utilisateur. root = 0. UID &lt; 100 = comptes système.</td></tr>\n<tr><td><strong>GID</strong></td><td>Identifiant du groupe principal de l'utilisateur</td></tr>\n<tr><td><strong>info-utilisateur</strong></td><td>Nom complet et autres infos (séparés par virgule)</td></tr>\n<tr><td><strong>répertoire-home</strong></td><td>Répertoire personnel (/home/alice)</td></tr>\n<tr><td><strong>shell</strong></td><td>Interpréteur de commandes lancé à la connexion (/bin/bash)</td></tr>\n</tbody>\n</table></div>\n<h2>Le fichier /etc/shadow</h2>\n<p>Les <strong>mots de passe chiffrés</strong> sont stockés dans <code>/etc/shadow</code>. Ce fichier n'est lisible que par l'administrateur (root). C'est une mesure de sécurité : même si quelqu'un lit /etc/passwd, il ne voit pas les mots de passe.</p>\n<h2>Le fichier /etc/group</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Format d'une ligne dans /etc/group</div>\n<pre>nom-groupe:*:GID:liste-utilisateurs\nExemple :\nsudo:*:27:alice,bob\ndevelopers:*:1005:alice,charlie,diana</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>nom-groupe</strong></td><td>Nom du groupe</td></tr>\n<tr><td><strong>*</strong></td><td>Héritage des anciennes versions Unix, non utilisé</td></tr>\n<tr><td><strong>GID</strong></td><td>Identifiant unique du groupe (valeur numérique)</td></tr>\n<tr><td><strong>liste-utilisateurs</strong></td><td>Membres du groupe, séparés par des virgules</td></tr>\n</tbody>\n</table></div>\n<h2>Commandes de gestion des utilisateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Action</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>useradd login</strong></code></td><td>Créer un utilisateur</td><td><code>useradd alice</code></td></tr>\n<tr><td><code><strong>useradd -m login</strong></code></td><td>Créer un utilisateur avec son répertoire home</td><td><code>useradd -m alice</code></td></tr>\n<tr><td><code><strong>useradd -g groupe login</strong></code></td><td>Créer un utilisateur avec groupe principal</td><td><code>useradd -g staff alice</code></td></tr>\n<tr><td><code><strong>userdel login</strong></code></td><td>Supprimer un utilisateur (garde le répertoire home)</td><td><code>userdel alice</code></td></tr>\n<tr><td><code><strong>userdel -r login</strong></code></td><td>Supprimer utilisateur ET son répertoire home</td><td><code>userdel -r alice</code></td></tr>\n<tr><td><code><strong>usermod options login</strong></code></td><td>Modifier un compte utilisateur existant</td><td>voir exemples ci-dessous</td></tr>\n<tr><td><code><strong>passwd login</strong></code></td><td>Changer le mot de passe d'un utilisateur</td><td><code>passwd alice</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples usermod</div>\n<pre># Changer le répertoire home (et déplacer le contenu avec -m)\nusermod -d /home/alice -m alice\n# Renommer un utilisateur (l'utilisateur ne doit pas être connecté)\nusermod -l nouveau_login ancien_login\n# Changer le shell\nusermod -s /bin/zsh alice\n# Ajouter à un groupe secondaire\nusermod -aG sudo alice</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 passwd selon qui l'utilise</div>\n<p>• <strong>Root</strong> : peut changer n'importe quel mot de passe sans connaître l'ancien.<br/>\n        • <strong>Utilisateur normal</strong> : ne peut changer que son propre mot de passe, et l'ancien lui est demandé.<br/>\n        • <code>passwd</code> sans argument = change le mot de passe de l'utilisateur courant.</p>\n</div>\n<h2>Commandes d'information sur les utilisateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><code><strong>whoami</strong></code></td><td>Affiche l'identité de l'utilisateur courant</td></tr>\n<tr><td><code><strong>who</strong></code></td><td>Liste les utilisateurs actuellement connectés</td></tr>\n<tr><td><code><strong>users</strong></code></td><td>Affiche les noms des utilisateurs connectés</td></tr>\n<tr><td><code><strong>w</strong></code></td><td>Affiche les utilisateurs connectés avec leur activité</td></tr>\n<tr><td><code><strong>id</strong></code></td><td>Affiche l'UID et les GID de l'utilisateur courant</td></tr>\n</tbody>\n</table></div>\n<h2>Commandes de gestion des groupes</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Commande</th><th>Action</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code><strong>groupadd groupe</strong></code></td><td>Créer un nouveau groupe</td><td><code>groupadd developers</code></td></tr>\n<tr><td><code><strong>groupdel groupe</strong></code></td><td>Supprimer un groupe (⚠️ pas si groupe principal)</td><td><code>groupdel developers</code></td></tr>\n<tr><td><code><strong>groupmod -n nouveau ancien</strong></code></td><td>Renommer un groupe</td><td><code>groupmod -n devs developers</code></td></tr>\n<tr><td><code><strong>usermod -aG groupe user</strong></code></td><td>Ajouter un utilisateur à un groupe</td><td><code>usermod -aG sudo alice</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention — groupdel</div>\n<p>On ne peut pas supprimer un groupe s'il est le <strong>groupe principal</strong> d'un utilisateur. Il faut d'abord changer le groupe principal de cet utilisateur.</p>\n</div>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — UID 0 :</strong> L'UID 0 est réservé à <strong>root</strong>. Tout utilisateur avec UID 0 est administrateur, peu importe son nom de login.<br/>\n<strong>Piège 2 — userdel sans -r :</strong> Sans l'option <code>-r</code>, <code>userdel</code> supprime le compte mais GARDE le répertoire home et les fichiers.<br/>\n<strong>Piège 3 — usermod -aG :</strong> Le <code>-a</code> (append) est crucial ! Sans lui, <code>usermod -G groupe user</code> remplace TOUS les groupes de l'utilisateur par ce seul groupe.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4 — Utilisateurs &amp; Groupes</h3>\n<ul>\n<li><strong>/etc/passwd</strong> : infos utilisateurs (login:x:UID:GID:info:home:shell)</li>\n<li><strong>/etc/shadow</strong> : mots de passe chiffrés (root uniquement)</li>\n<li><strong>/etc/group</strong> : infos groupes (nom:*:GID:membres)</li>\n<li>root = UID 0 · UID &lt; 100 = comptes système</li>\n<li><strong>useradd</strong> · <strong>userdel [-r]</strong> · <strong>usermod</strong> · <strong>passwd</strong></li>\n<li><strong>groupadd</strong> · <strong>groupdel</strong> (sauf groupe principal)</li>\n<li><code>usermod -aG groupe user</code> → ajouter sans écraser les autres groupes</li>\n<li><code>whoami</code> · <code>who</code> · <code>w</code> → voir qui est connecté</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Quel est l'UID de l'utilisateur root ?",
+     "options": [
+      {
+       "text": "1",
+       "correct": false,
+       "explanation": "L'UID 1 n'est pas réservé à root, il appartient à un utilisateur système."
+      },
+      {
+       "text": "0",
+       "correct": true,
+       "explanation": "Correct ! L'UID 0 est réservé à root. C'est ce qui lui donne ses privilèges d'administrateur."
+      },
+      {
+       "text": "100",
+       "correct": false,
+       "explanation": "Les UID inférieurs à 100 sont réservés aux comptes système, mais root a spécifiquement l'UID 0."
+      },
+      {
+       "text": "Un UID aléatoire",
+       "correct": false,
+       "explanation": "root n'a pas d'UID aléatoire, il a toujours l'UID 0."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande supprime un utilisateur ET son répertoire home ?",
+     "options": [
+      {
+       "text": "userdel alice",
+       "correct": false,
+       "explanation": "userdel sans option supprime le compte mais garde le répertoire home."
+      },
+      {
+       "text": "userdel -r alice",
+       "correct": true,
+       "explanation": "Correct ! L'option -r (remove) de userdel supprime l'utilisateur ET son répertoire home avec tout son contenu."
+      },
+      {
+       "text": "usermod -r alice",
+       "correct": false,
+       "explanation": "usermod modifie un compte, il ne le supprime pas."
+      },
+      {
+       "text": "rmuser alice",
+       "correct": false,
+       "explanation": "rmuser n'existe pas en standard sous Linux/Debian."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Dans /etc/passwd, que signifie le champ x à la place du mot de passe ?",
+     "options": [
+      {
+       "text": "Le compte est désactivé",
+       "correct": false,
+       "explanation": "x ne signifie pas que le compte est désactivé. !! signifie compte désactivé."
+      },
+      {
+       "text": "Il n'y a pas de mot de passe",
+       "correct": false,
+       "explanation": "x ne signifie pas absence de mot de passe. Un champ vide signifierait pas de mot de passe."
+      },
+      {
+       "text": "Le mot de passe est stocké dans /etc/shadow",
+       "correct": true,
+       "explanation": "Correct ! x signifie que le mot de passe chiffré est stocké dans /etc/shadow (accessible uniquement par root). C'est une mesure de sécurité."
+      },
+      {
+       "text": "La connexion est impossible",
+       "correct": false,
+       "explanation": "* signifie qu'il est impossible de s'authentifier avec ce compte, pas x."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande affiche l'identité de l'utilisateur courant ?",
+     "options": [
+      {
+       "text": "who",
+       "correct": false,
+       "explanation": "who affiche tous les utilisateurs connectés au système, pas seulement l'utilisateur courant."
+      },
+      {
+       "text": "users",
+       "correct": false,
+       "explanation": "users affiche les noms des utilisateurs connectés, pas l'utilisateur courant spécifiquement."
+      },
+      {
+       "text": "whoami",
+       "correct": true,
+       "explanation": "Correct ! whoami affiche uniquement le nom de l'utilisateur courant — celui avec lequel vous êtes connecté."
+      },
+      {
+       "text": "w",
+       "correct": false,
+       "explanation": "w affiche les utilisateurs connectés avec leur activité (temps, commande en cours)."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Pourquoi utiliser usermod -aG sudo alice plutôt que usermod -G sudo alice ?",
+     "options": [
+      {
+       "text": "-a permet d'avoir les droits root",
+       "correct": false,
+       "explanation": "-a ne signifie pas root. -a signifie 'append' (ajouter sans supprimer les autres groupes)."
+      },
+      {
+       "text": "Sans -a, les autres groupes seraient effacés",
+       "correct": true,
+       "explanation": "Correct ! Sans -a, usermod -G remplace TOUS les groupes secondaires de l'utilisateur par le seul groupe spécifié. Avec -aG, le groupe est AJOUTÉ aux groupes existants."
+      },
+      {
+       "text": "Les deux commandes font la même chose",
+       "correct": false,
+       "explanation": "Les deux commandes modifient les groupes, mais de façon différente."
+      },
+      {
+       "text": "-G ne fonctionne pas sans -a",
+       "correct": false,
+       "explanation": "-G seul peut être utilisé, mais il efface les groupes existants."
+      }
+     ]
+    }
+   ],
+   "source": "_private/linux/chapitres/chapitre4.html"
+  },
+  {
+   "number": 5,
+   "title": "Droits d'accès aux fichiers Unix",
+   "subtitle": "Comprendre et manipuler les permissions, chown, chgrp et chmod.",
+   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre le système de permissions rwx sous Linux<br/>\n        • Lire et interpréter les droits affichés par <code>ls -l</code><br/>\n        • Modifier les permissions avec chmod (notation symbolique et octale)<br/>\n        • Changer propriétaire et groupe avec chown et chgrp</p>\n</div>\n<h2>Lire les permissions avec ls -l</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple de sortie ls -l</div>\n<pre>-rwxr-xr-- 1 alice developers 4096 Apr 10 2025 script.sh\ndrwxr-xr-x 2 alice developers 4096 Apr 10 2025 dossier/\n ↑        ↑  ↑     ↑           ↑\n |        |  |     |           └─ Nom du fichier\n |        |  |     └─ Groupe propriétaire\n |        |  └─ Propriétaire (owner)\n |        └─ Nombre de liens\n └─ Permissions (10 caractères)</pre>\n</div>\n<h2>Décoder les 10 caractères de permission</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure des 10 caractères</div>\n<pre>- r w x r - x r - -\n↑ ↑↑↑ ↑↑↑ ↑↑↑\n│ │   │   └─ Autres (others) : r--\n│ │   └─ Groupe (group) : r-x\n│ └─ Propriétaire (user) : rwx\n└─ Type : - (fichier) ou d (dossier) ou l (lien)</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Caractère 1</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><code>-</code></td><td>Fichier ordinaire</td></tr>\n<tr><td><code>d</code></td><td>Répertoire (directory)</td></tr>\n<tr><td><code>l</code></td><td>Lien symbolique (link)</td></tr>\n</tbody>\n</table></div>\n<h2>Les trois permissions de base</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Lettre</th><th>Nom</th><th>Sur un fichier</th><th>Sur un répertoire</th></tr></thead>\n<tbody>\n<tr><td><strong>r</strong></td><td>Read (lecture)</td><td>Lire le contenu du fichier</td><td>Lister le contenu (<code>ls</code>)</td></tr>\n<tr><td><strong>w</strong></td><td>Write (écriture)</td><td>Modifier/écrire dans le fichier</td><td>Créer/supprimer des fichiers dans ce répertoire</td></tr>\n<tr><td><strong>x</strong></td><td>Execute (exécution)</td><td>Exécuter le fichier comme programme</td><td>Entrer dans le répertoire (<code>cd</code>)</td></tr>\n<tr><td><strong>-</strong></td><td>Absence de droit</td><td>Le droit n'est pas accordé</td></tr>\n</tbody>\n</table></div>\n<h2>Les trois classes d'utilisateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Classe</th><th>Symbole</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Propriétaire</strong></td><td><code>u</code> (user)</td><td>L'utilisateur propriétaire du fichier</td></tr>\n<tr><td><strong>Groupe</strong></td><td><code>g</code> (group)</td><td>Les membres du groupe propriétaire</td></tr>\n<tr><td><strong>Autres</strong></td><td><code>o</code> (others)</td><td>Tous les autres utilisateurs</td></tr>\n<tr><td><strong>Tous</strong></td><td><code>a</code> (all)</td><td>u + g + o ensemble</td></tr>\n</tbody>\n</table></div>\n<h2>Notation octale des permissions</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Valeurs octales à mémoriser</div>\n<p><strong>r = 4</strong> · <strong>w = 2</strong> · <strong>x = 1</strong> · <strong>- = 0</strong><br/><br/>\n        On additionne pour chaque classe : rwx = 4+2+1 = <strong>7</strong> · rw- = 4+2+0 = <strong>6</strong> · r-x = 4+0+1 = <strong>5</strong> · r-- = 4+0+0 = <strong>4</strong></p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Octal</th><th>Symbolique</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>7</strong></td><td>rwx</td><td>Lecture + écriture + exécution</td></tr>\n<tr><td><strong>6</strong></td><td>rw-</td><td>Lecture + écriture</td></tr>\n<tr><td><strong>5</strong></td><td>r-x</td><td>Lecture + exécution</td></tr>\n<tr><td><strong>4</strong></td><td>r--</td><td>Lecture seule</td></tr>\n<tr><td><strong>3</strong></td><td>-wx</td><td>Écriture + exécution</td></tr>\n<tr><td><strong>2</strong></td><td>-w-</td><td>Écriture seule</td></tr>\n<tr><td><strong>1</strong></td><td>--x</td><td>Exécution seule</td></tr>\n<tr><td><strong>0</strong></td><td>---</td><td>Aucun droit</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples courants en octal</div>\n<pre>chmod 755 fichier.sh  → rwxr-xr-x (propriétaire tout, groupe et autres r+x)\nchmod 644 fichier.txt → rw-r--r-- (propriétaire rw, groupe et autres r)\nchmod 700 secret.sh   → rwx------ (propriétaire seul a tous les droits)\nchmod 770 fichier.sh  → rwxrwx--- (propriétaire et groupe tout, autres rien)\nchmod 777 fichier.sh  → rwxrwxrwx (tout le monde, DÉCONSEILLÉ)</pre>\n</div>\n<h2>La commande chmod — modifier les permissions</h2>\n<p>Syntaxe : <code>chmod [classes][opérateur][droits] fichier</code></p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Action</th></tr></thead>\n<tbody>\n<tr><td><code>+</code></td><td>Ajoute le droit</td></tr>\n<tr><td><code>-</code></td><td>Retire le droit</td></tr>\n<tr><td><code>=</code></td><td>Fixe exactement ces droits (remplace)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples chmod symbolique</div>\n<pre># Retirer le droit de lecture aux \"autres\"\nchmod o-r toto\n# Ajouter l'exécution pour le propriétaire\nchmod u+x script.sh\n# Fixer exactement rwx pour propriétaire et groupe\nchmod ug=rwx dossier\n# Appliquer récursivement à tout un répertoire\nchmod -R ug=rwx dossier/\n# Notation octale (équivalente)\nchmod 770 toto          # rwxrwx--- \nchmod 755 script.sh     # rwxr-xr-x</pre>\n</div>\n<h2>La commande chown — changer le propriétaire</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemples chown</div>\n<pre># Changer le propriétaire d'un fichier\nchown alice toto\n# Changer propriétaire ET groupe en une commande\nchown alice:developers toto\n# Appliquer récursivement\nchown -R alice dossier/\n# Changer propriétaire et groupe récursivement\nchown -R alice:root dossier/</pre>\n</div>\n<h2>La commande chgrp — changer le groupe</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemples chgrp</div>\n<pre># Changer le groupe d'un fichier\nchgrp developers toto\n# Appliquer récursivement\nchgrp -R developers dossier/</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Récapitulatif des commandes</div>\n<p><strong>chmod</strong> = change les permissions (r/w/x)<br/>\n<strong>chown</strong> = change le propriétaire (et optionnellement le groupe)<br/>\n<strong>chgrp</strong> = change uniquement le groupe<br/>\n        Toutes acceptent l'option <strong>-R</strong> pour une action récursive sur les répertoires.</p>\n</div>\n<h2>Pièges classiques à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p><strong>Piège 1 — x sur répertoire :</strong> Sans le droit <code>x</code> sur un répertoire, on ne peut pas y entrer avec <code>cd</code>, même si on a <code>r</code>.<br/>\n<strong>Piège 2 — chmod 777 :</strong> Éviter 777. Tout le monde peut lire, modifier et exécuter — risque de sécurité majeur.<br/>\n<strong>Piège 3 — chown vs chgrp :</strong> <code>chown user:group fichier</code> change les deux d'un coup. <code>chown user fichier</code> change seulement le propriétaire.<br/>\n<strong>Piège 4 — ls -Rl :</strong> L'option <code>-R</code> est une majuscule dans <code>ls -Rl</code> (récursif + liste détaillée).</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5 — Droits d'accès</h3>\n<ul>\n<li>3 droits : <strong>r</strong> (4) · <strong>w</strong> (2) · <strong>x</strong> (1) · absence = <strong>-</strong> (0)</li>\n<li>3 classes : <strong>u</strong> (propriétaire) · <strong>g</strong> (groupe) · <strong>o</strong> (autres)</li>\n<li>Octal : rwx=7 · rw-=6 · r-x=5 · r--=4 · ---=0</li>\n<li>Permissions courantes : 755 (rwxr-xr-x) · 644 (rw-r--r--) · 700 (rwx------)</li>\n<li><strong>chmod</strong> : change les permissions (symbolique ou octale)</li>\n<li><strong>chown user[:groupe] fichier</strong> : change le propriétaire (et groupe)</li>\n<li><strong>chgrp groupe fichier</strong> : change uniquement le groupe</li>\n<li>Option <strong>-R</strong> : applique récursivement aux répertoires</li>\n<li>Sur répertoire : <strong>r</strong> = lister · <strong>x</strong> = entrer · <strong>w</strong> = créer/supprimer</li>\n</ul>\n</div>\n</div>",
+   "questions": [
+    {
+     "type": "mcq",
+     "text": "Que signifie la permission rw-r--r-- ?",
+     "options": [
+      {
+       "text": "Propriétaire : rwx · Groupe : r-- · Autres : r--",
+       "correct": false,
+       "explanation": "rw-r--r-- donne rw au propriétaire, r au groupe et r aux autres. Ce n'est pas la même chose."
+      },
+      {
+       "text": "Propriétaire : rw- · Groupe : r-- · Autres : r--",
+       "correct": true,
+       "explanation": "Correct ! rw- = lecture+écriture (propriétaire) · r-- = lecture seule (groupe) · r-- = lecture seule (autres). C'est la permission classique des fichiers de configuration (644)."
+      },
+      {
+       "text": "Propriétaire : rw- · Groupe : rwx · Autres : r--",
+       "correct": false,
+       "explanation": "rw-r--r-- donne lecture+écriture au propriétaire, pas exécution."
+      },
+      {
+       "text": "Propriétaire : rw- · Groupe : r-- · Autres : ---",
+       "correct": false,
+       "explanation": "rw-r--r-- n'interdit pas tout pour les autres, il leur donne la lecture."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle est la valeur octale de la permission rwxr-x--- ?",
+     "options": [
+      {
+       "text": "777",
+       "correct": false,
+       "explanation": "777 signifie rwxrwxrwx — tout le monde a tous les droits."
+      },
+      {
+       "text": "644",
+       "correct": false,
+       "explanation": "644 signifie rw-r--r-- — utilisé pour les fichiers de config ordinaires."
+      },
+      {
+       "text": "750",
+       "correct": true,
+       "explanation": "Correct ! rwx=7 · r-x=5 · ---=0 → 750. Propriétaire tout, groupe lecture+exécution, autres rien."
+      },
+      {
+       "text": "755",
+       "correct": false,
+       "explanation": "755 signifie rwxr-xr-x — les autres auraient r-x aussi."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande retire le droit de lecture aux \"autres\" sur le fichier toto ?",
+     "options": [
+      {
+       "text": "chmod o+r toto",
+       "correct": false,
+       "explanation": "chmod o+r ajoute le droit de lecture aux autres, ne le retire pas."
+      },
+      {
+       "text": "chmod o-r toto",
+       "correct": true,
+       "explanation": "Correct ! chmod o-r retire (-) le droit de lecture (r) aux autres (o) sur le fichier toto."
+      },
+      {
+       "text": "chmod u-r toto",
+       "correct": false,
+       "explanation": "chmod u-r retire la lecture au propriétaire (u), pas aux autres (o)."
+      },
+      {
+       "text": "chown o-r toto",
+       "correct": false,
+       "explanation": "chown modifie le propriétaire, pas les permissions."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Quelle commande change le propriétaire ET le groupe du fichier toto en une seule commande ?",
+     "options": [
+      {
+       "text": "chgrp alice toto",
+       "correct": false,
+       "explanation": "chgrp alice toto change seulement le groupe, pas le propriétaire."
+      },
+      {
+       "text": "chown alice toto",
+       "correct": false,
+       "explanation": "chown alice toto change seulement le propriétaire, pas le groupe."
+      },
+      {
+       "text": "chown alice:developers toto",
+       "correct": true,
+       "explanation": "Correct ! La syntaxe chown utilisateur:groupe fichier permet de changer le propriétaire ET le groupe en une seule commande."
+      },
+      {
+       "text": "chmod alice:developers toto",
+       "correct": false,
+       "explanation": "chmod ne change pas le propriétaire, seulement les permissions rwx."
+      }
+     ]
+    },
+    {
+     "type": "mcq",
+     "text": "Un utilisateur a le droit r sur un répertoire mais pas x. Que peut-il faire ?",
+     "options": [
+      {
+       "text": "Entrer dans le répertoire et lister son contenu",
+       "correct": false,
+       "explanation": "Sans x, on ne peut pas entrer dans le répertoire avec cd."
+      },
+      {
+       "text": "Créer des fichiers dans le répertoire",
+       "correct": false,
+       "explanation": "Sans x, on ne peut ni entrer ni créer de fichiers."
+      },
+      {
+       "text": "Lister le contenu du répertoire, mais pas y entrer",
+       "correct": true,
+       "explanation": "Correct ! r sur un répertoire permet de LISTER son contenu (ls), mais sans x on ne peut pas y ENTRER (cd). C'est une distinction fondamentale."
+      },
+      {
+       "text": "Modifier les fichiers qu'il contient",
+       "correct": false,
+       "explanation": "r seul sans x ne permet pas d'entrer dans le répertoire ni de modifier ses fichiers."
+      }
+     ]
+    }
+   ],
+   "source": "_private/linux/chapitres/chapitre5.html"
+  }
+ ],
+ "exercises": [
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Présentation générale du système GNULinux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Présentation générale du système GNULinux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Présentation générale du système GNULinux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Présentation générale du système GNULinux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Présentation générale du système GNULinux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Système de fichiers Linux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Système de fichiers Linux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Système de fichiers Linux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Système de fichiers Linux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Système de fichiers Linux.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Commandes de base Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Commandes de base Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Commandes de base Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Commandes de base Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Commandes de base Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Gestion des utilisateurs & groupes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Gestion des utilisateurs & groupes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Gestion des utilisateurs & groupes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Gestion des utilisateurs & groupes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Gestion des utilisateurs & groupes.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "1. Définissez simplement Droits daccès aux fichiers Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "2. Citez une notion ou un outil clé de Droits daccès aux fichiers Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+   "level": "easy",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "3. Expliquez pourquoi Droits daccès aux fichiers Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "4. Donnez un exemple concret d’application de Droits daccès aux fichiers Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+   "level": "medium",
+   "status": "placeholder"
+  },
+  {
+   "type": "open",
+   "text": "5. Proposez une démarche complète pour un problème lié à Droits daccès aux fichiers Unix.",
+   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+   "level": "hard",
+   "status": "placeholder"
+  }
+ ],
+ "simulators": [],
+ "flashcards": [],
+ "exercises_source": "_private/linux/exercices/exercices.html"
+}
