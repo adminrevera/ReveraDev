@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Authentification
+
+Les pages de connexion, d’inscription, de récupération du mot de passe et l’espace étudiant
+utilisent Supabase Auth. Configure `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+`DATABASE_URL` et `DIRECT_URL` dans `.env`. Dans Supabase Auth, ajoute `/auth/callback` aux
+Redirect URLs autorisées pour `http://localhost:3000` et pour le domaine de production.
+Le script `supabase-setup.sql` doit avoir été appliqué afin que les nouveaux comptes aient un
+profil associé dans la base.
+
+Pour activer l’inscription et la connexion Google, active le fournisseur Google dans
+**Supabase → Authentication → Sign In / Providers**, puis renseigne le Client ID et le Client
+Secret OAuth créés dans Google Cloud Console. Dans Google Cloud, ajoute comme URI de redirection
+autorisée l’URL de callback affichée par Supabase (habituellement
+`https://<project-ref>.supabase.co/auth/v1/callback`). Garde `/auth/callback` de l’application
+dans les Redirect URLs autorisées par Supabase pour les environnements local et de production.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
