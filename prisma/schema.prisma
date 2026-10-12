@@ -1,4 +1,4 @@
-// Astyns — schéma de base de données (Supabase PostgreSQL via Prisma)
+// Revera — schéma de base de données (Supabase PostgreSQL via Prisma)
 // Lecture : "model" = une table. "@@unique" = interdit les doublons. "Json" = données souples.
 
 generator client {
