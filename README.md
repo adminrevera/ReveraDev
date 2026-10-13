@@ -20,6 +20,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+Prisma + Supabase pooler
+
+DATABASE_URL doit utiliser le port 6543 (transaction pooler) avec ?pgbouncer=true.
+
+connection_limit=5 en local, connection_limit=1 sur Vercel (serverless).
+
+Si erreur Timed out fetching a new connection, augmenter connection_limit ou pool_timeout.
+
 ## Authentification
 
 Les pages de connexion, d’inscription, de récupération du mot de passe et l’espace étudiant
