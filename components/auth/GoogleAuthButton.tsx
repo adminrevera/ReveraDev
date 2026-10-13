@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
-export default function GoogleAuthButton({ label }: { label: string }) {
+export default function GoogleAuthButton({
+  label,
+  selectedPlan,
+}: {
+  label: string;
+  selectedPlan?: "free" | "plus" | "success";
+}) {
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -14,7 +20,10 @@ export default function GoogleAuthButton({ label }: { label: string }) {
     try {
       const supabase = createClient();
       const redirectTo = new URL("/auth/callback", window.location.origin);
-      redirectTo.searchParams.set("next", "/onboarding");
+      redirectTo.searchParams.set(
+        "next",
+        selectedPlan ? `/onboarding?plan=${selectedPlan}` : "/onboarding",
+      );
 
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",

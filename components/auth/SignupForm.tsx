@@ -6,7 +6,7 @@ import GoogleAuthButton from "@/components/auth/GoogleAuthButton";
 import { createClient } from "@/lib/supabase/client";
 import { getSupabaseConfig } from "@/lib/supabase/config";
 
-export default function SignupForm() {
+export default function SignupForm({ selectedPlan }: { selectedPlan: "free" | "plus" | "success" }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,6 +42,7 @@ export default function SignupForm() {
         password,
         options: {
           emailRedirectTo: `${window.location.origin}/auth/callback?next=/onboarding`,
+          data: { requestedPlan: selectedPlan },
         },
       });
 
@@ -87,7 +88,7 @@ export default function SignupForm() {
 
   return (
     <div className="grid gap-4">
-      <GoogleAuthButton label="S’inscrire avec Google" />
+      <GoogleAuthButton label="S’inscrire avec Google" selectedPlan={selectedPlan} />
       <div className="flex items-center gap-3 py-1" aria-hidden="true">
         <span className="h-px flex-1 bg-line" />
         <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">ou par e-mail</span>
@@ -109,7 +110,7 @@ export default function SignupForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="toi@exemple.com"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -127,7 +128,7 @@ export default function SignupForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder="8 caractères minimum"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -145,7 +146,7 @@ export default function SignupForm() {
           value={confirmation}
           onChange={(event) => setConfirmation(event.target.value)}
           placeholder="Saisis à nouveau ton mot de passe"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -161,7 +162,7 @@ export default function SignupForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 inline-flex min-h-12 items-center justify-center rounded-full border border-lime bg-lime px-5 text-[15px] font-semibold text-lime-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px hover:shadow-[0_0_0_6px_rgba(212,255,61,.14),0_10px_40px_-8px_var(--glow)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-1 inline-flex min-h-12 items-center justify-center rounded-full border border-accent bg-accent px-5 text-[15px] font-semibold text-accent-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Création du compte…" : "Créer mon compte"}
       </button>

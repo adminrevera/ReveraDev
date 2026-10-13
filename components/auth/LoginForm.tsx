@@ -81,7 +81,7 @@ export default function LoginForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="toi@exemple.com"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -92,7 +92,7 @@ export default function LoginForm() {
           </label>
           <Link
             href="/mot-de-passe-oublie"
-            className="text-xs font-medium text-lime no-underline hover:underline"
+            className="text-xs font-medium text-accent no-underline hover:underline"
           >
             Mot de passe oublié?
           </Link>
@@ -106,7 +106,7 @@ export default function LoginForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Ton mot de passe"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -122,7 +122,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 inline-flex min-h-12 items-center justify-center rounded-full border border-lime bg-lime px-5 text-[15px] font-semibold text-lime-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px hover:shadow-[0_0_0_6px_rgba(212,255,61,.14),0_10px_40px_-8px_var(--glow)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-1 inline-flex min-h-12 items-center justify-center rounded-full border border-accent bg-accent px-5 text-[15px] font-semibold text-accent-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Connexion…" : "Se connecter"}
       </button>

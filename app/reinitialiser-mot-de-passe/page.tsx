@@ -15,12 +15,12 @@ export default function ReinitialiserMotDePassePage() {
       title={
         <>
           Choisis un nouveau
-          <span className="font-serif font-normal italic text-lime"> mot de passe.</span>
+          <span className="font-serif font-normal italic text-accent"> mot de passe.</span>
         </>
       }
       subtitle="Utilise un mot de passe d’au moins 8 caractères que tu n’emploies pas ailleurs."
       footer={
-        <Link href="/connexion" className="font-semibold text-lime no-underline hover:underline">
+        <Link href="/connexion" className="font-semibold text-accent no-underline hover:underline">
           Retour à la connexion
         </Link>
       }

@@ -1,7 +1,19 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const protectedPaths = ["/dashboard", "/onboarding", "/reinitialiser-mot-de-passe"];
+const protectedPaths = [
+  "/dashboard",
+  "/onboarding",
+  "/reinitialiser-mot-de-passe",
+  "/admin",
+  "/parcours",
+  "/quiz",
+  "/entrainement",
+  "/ligue",
+  "/quetes",
+  "/reviser",
+  "/profil",
+];
 const authPaths = ["/connexion", "/inscription", "/mot-de-passe-oublie"];
 
 function matchesPath(pathname: string, paths: string[]) {
@@ -56,15 +68,6 @@ export async function middleware(request: NextRequest) {
   }
 
   if (user && matchesPath(request.nextUrl.pathname, authPaths)) {
-    const destination = user.user_metadata?.onboardingCompleted ? "/dashboard" : "/onboarding";
-    return redirectWithCookies(request, destination, response);
-  }
-
-  if (user && request.nextUrl.pathname === "/dashboard" && !user.user_metadata?.onboardingCompleted) {
-    return redirectWithCookies(request, "/onboarding", response);
-  }
-
-  if (user && request.nextUrl.pathname === "/onboarding" && user.user_metadata?.onboardingCompleted) {
     return redirectWithCookies(request, "/dashboard", response);
   }
 

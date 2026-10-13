@@ -36,7 +36,7 @@ export default function SignOutButton() {
         type="button"
         onClick={handleSignOut}
         disabled={isSubmitting}
-        className="rounded-full border border-line px-4 py-2 text-sm font-medium text-muted transition hover:border-lime/50 hover:text-fg disabled:opacity-60"
+        className="rounded-full border border-line px-4 py-2 text-sm font-medium text-muted transition hover:border-accent/50 hover:text-fg disabled:opacity-60"
       >
         {isSubmitting ? "Déconnexion…" : "Se déconnecter"}
       </button>

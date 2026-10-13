@@ -15,12 +15,12 @@ export default function MotDePasseOubliePage() {
       title={
         <>
           On va retrouver
-          <span className="font-serif font-normal italic text-lime"> l’accès.</span>
+          <span className="font-serif font-normal italic text-accent"> l’accès.</span>
         </>
       }
       subtitle="Indique l’adresse e-mail associée à ton compte. Nous t’enverrons un lien sécurisé."
       footer={
-        <Link href="/connexion" className="font-semibold text-lime no-underline hover:underline">
+        <Link href="/connexion" className="font-semibold text-accent no-underline hover:underline">
           Retour à la connexion
         </Link>
       }

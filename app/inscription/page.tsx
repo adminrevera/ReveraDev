@@ -9,27 +9,34 @@ export const metadata: Metadata = {
   description: "Crée ton compte Revera et commence à préparer tes examens.",
 };
 
-export default function InscriptionPage() {
+export default async function InscriptionPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ plan?: string }>;
+}) {
+  const { plan } = await searchParams;
+  const selectedPlan = plan === "plus" || plan === "success" ? plan : "free";
+
   return (
     <AuthShell
       eyebrow="Ton prochain chapitre commence ici"
       title={
         <>
           Crée ton compte
-          <span className="font-serif font-normal italic text-lime"> gratuitement.</span>
+          <span className="font-serif font-normal italic text-accent"> gratuitement.</span>
         </>
       }
       subtitle="Rejoins Revera et prépare tes examens à ton rythme."
       footer={
         <>
           Tu as déjà un compte?{" "}
-          <Link href="/connexion" className="font-semibold text-lime no-underline hover:underline">
+          <Link href="/connexion" className="font-semibold text-accent no-underline hover:underline">
             Se connecter
           </Link>
         </>
       }
     >
-      <SignupForm />
+      <SignupForm selectedPlan={selectedPlan} />
     </AuthShell>
   );
 }

@@ -29,14 +29,14 @@ export default async function ConnexionPage({
       title={
         <>
           Reprends là où tu
-          <span className="font-serif font-normal italic text-lime"> en étais.</span>
+          <span className="font-serif font-normal italic text-accent"> en étais.</span>
         </>
       }
       subtitle="Connecte-toi pour retrouver ton espace de révision."
       footer={
         <>
           Pas encore de compte?{" "}
-          <Link href="/inscription" className="font-semibold text-lime no-underline hover:underline">
+          <Link href="/inscription" className="font-semibold text-accent no-underline hover:underline">
             Créer mon compte
           </Link>
         </>

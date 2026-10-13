@@ -1,6 +1,6 @@
 "use client";
 
-import { createElement, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 type AuroraProps = {
   base: number;
@@ -27,6 +27,7 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
     let w = 0;
     let h = 0;
     let raf = 0;
+    let scrollY = window.scrollY;
 
     const size = () => {
       const r = canvas.getBoundingClientRect();
@@ -39,8 +40,30 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
 
     const draw = (t: number) => {
       ctx.clearRect(0, 0, w, h);
+      if (w === 0 || h === 0) return;
       ctx.globalCompositeOperation = "lighter";
-      const N = 46;
+
+      const drift = Math.sin(t * 0.00016 + scrollY * 0.0012);
+      const haze = ctx.createRadialGradient(
+        w * (0.52 + drift * 0.12),
+        h * (base + Math.sin(t * 0.00012) * 0.06),
+        0,
+        w * 0.52,
+        h * base,
+        Math.max(w, h) * 0.66,
+      );
+      haze.addColorStop(0, "rgba(150,164,255,0.13)");
+      haze.addColorStop(0.38, "rgba(138,119,220,0.07)");
+      haze.addColorStop(1, "rgba(255,210,122,0)");
+      ctx.fillStyle = haze;
+      ctx.fillRect(0, 0, w, h);
+
+      const gradient = ctx.createLinearGradient(0, 0, w, 0);
+      gradient.addColorStop(0, "rgba(170,181,255,0.9)");
+      gradient.addColorStop(0.48, "rgba(184,176,240,0.82)");
+      gradient.addColorStop(1, "rgba(255,210,122,0.88)");
+      const N = 56;
+      const scrollPhase = scrollY * 0.0012;
       for (let i = 0; i < N; i++) {
         const k = i / (N - 1);
         ctx.beginPath();
@@ -48,17 +71,23 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
           const u = x / w;
           const y =
             h * base +
-            Math.sin(u * f1 + t * 0.00028 + k * 1.6) * h * a1 * (0.4 + u) +
-            Math.sin(u * f2 - t * 0.0002 + k * 3.2) * h * a2 +
+            Math.sin(u * f1 + t * 0.00034 + k * 1.6 + scrollPhase) * h * a1 * (0.4 + u) +
+            Math.sin(u * f2 - t * 0.00025 + k * 3.2 - scrollPhase * 0.65) * h * a2 +
             (k - 0.5) * h * spread * (0.3 + u * 1.1);
           if (x === -20) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
-        const alpha = 0.05 + 0.18 * Math.pow(1 - Math.abs(k - 0.5) * 2, 2);
-        ctx.strokeStyle = `rgba(${150 + Math.round(90 * k)},255,${30 + Math.round(40 * k)},${alpha})`;
-        ctx.lineWidth = 1.1;
+        const center = Math.pow(1 - Math.abs(k - 0.5) * 2, 2);
+        const alpha = 0.1 + 0.3 * center;
+        ctx.strokeStyle = gradient;
+        ctx.globalAlpha = alpha;
+        ctx.lineWidth = 0.8 + center * 1.1;
+        ctx.shadowColor = "rgba(170,181,255,0.22)";
+        ctx.shadowBlur = center > 0.45 ? 10 : 0;
         ctx.stroke();
       }
+      ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1;
     };
 
     const loop = (t: number) => {
@@ -70,10 +99,14 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
       size();
       draw(2500);
     };
+    const onScroll = () => {
+      scrollY = window.scrollY;
+    };
 
     size();
     draw(2500);
     window.addEventListener("resize", onResize);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     let observer: IntersectionObserver | undefined;
     if (!reduce) {
@@ -90,6 +123,7 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
 
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScroll);
       observer?.disconnect();
       cancelAnimationFrame(raf);
     };

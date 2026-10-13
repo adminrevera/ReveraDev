@@ -67,7 +67,7 @@ export default function ForgotPasswordForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="toi@exemple.com"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
 
@@ -80,7 +80,7 @@ export default function ForgotPasswordForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex min-h-12 items-center justify-center rounded-full border border-lime bg-lime px-5 text-[15px] font-semibold text-lime-ink transition hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex min-h-12 items-center justify-center rounded-full border border-accent bg-accent px-5 text-[15px] font-semibold text-accent-ink transition hover:-translate-y-px hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Envoi du lien…" : "Envoyer le lien"}
       </button>

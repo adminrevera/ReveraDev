@@ -10,10 +10,19 @@ const goals = [
   { value: "confidence", label: "Gagner en confiance", description: "Mieux comprendre et voir mes progrès." },
 ];
 
-export default function OnboardingForm({ initialName }: { initialName: string }) {
+export default function OnboardingForm({
+  initialName,
+  requestedPlan,
+  levels,
+}: {
+  initialName: string;
+  requestedPlan: "free" | "plus" | "success" | null;
+  levels: { id: string; name: string; track: { name: string; institution: { name: string } } }[];
+}) {
   const router = useRouter();
   const [displayName, setDisplayName] = useState(initialName);
   const [goal, setGoal] = useState("exams");
+  const [levelId, setLevelId] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isPending, startTransition] = useTransition();
 
@@ -23,7 +32,7 @@ export default function OnboardingForm({ initialName }: { initialName: string })
     if (!event.currentTarget.reportValidity()) return;
 
     startTransition(async () => {
-      const result = await completeOnboarding(displayName, goal);
+      const result = await completeOnboarding(displayName, goal, requestedPlan, levelId || null);
       if (result.error) {
         setErrorMessage(result.error);
         return;
@@ -35,6 +44,12 @@ export default function OnboardingForm({ initialName }: { initialName: string })
 
   return (
     <form className="grid gap-5" onSubmit={handleSubmit} noValidate>
+      {requestedPlan && requestedPlan !== "free" && (
+        <p className="rounded-xl border border-accent/25 bg-accent/[.07] px-4 py-3 text-sm text-fg/90">
+          Offre souhaitée : <strong>{requestedPlan === "plus" ? "Plus" : "Réussite"}</strong>.
+          Cette préférence sera conservée dans ton compte.
+        </p>
+      )}
       <div className="grid gap-2">
         <label htmlFor="onboarding-name" className="text-sm font-medium">
           Comment t’appelles-tu?
@@ -50,9 +65,32 @@ export default function OnboardingForm({ initialName }: { initialName: string })
           value={displayName}
           onChange={(event) => setDisplayName(event.target.value)}
           placeholder="Ton prénom"
-          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-lime/70 focus:ring-2 focus:ring-lime/15"
+          className="min-h-12 rounded-xl border border-line bg-black/25 px-4 text-[15px] text-fg outline-none transition placeholder:text-muted/70 focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
         />
       </div>
+
+      {levels.length > 0 && (
+        <div className="grid gap-2">
+          <label htmlFor="onboarding-level" className="text-sm font-medium">
+            Quel est ton parcours d’études?
+          </label>
+          <select
+            id="onboarding-level"
+            name="levelId"
+            required
+            value={levelId}
+            onChange={(event) => setLevelId(event.target.value)}
+            className="min-h-12 rounded-xl border border-line bg-[#111611] px-4 text-[15px] text-fg outline-none transition focus:border-accent/70 focus:ring-2 focus:ring-accent/15"
+          >
+            <option value="">Sélectionne ton niveau</option>
+            {levels.map((level) => (
+              <option key={level.id} value={level.id}>
+                {level.name} · {level.track.name} · {level.track.institution.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <fieldset className="grid gap-2.5">
         <legend className="mb-1 text-sm font-medium">Quel est ton objectif principal?</legend>
@@ -61,8 +99,8 @@ export default function OnboardingForm({ initialName }: { initialName: string })
             key={option.value}
             className={`flex cursor-pointer gap-3 rounded-xl border p-3.5 transition ${
               goal === option.value
-                ? "border-lime/60 bg-lime/[.07]"
-                : "border-line bg-black/15 hover:border-lime/30"
+                ? "border-accent/60 bg-accent/[.07]"
+                : "border-line bg-black/15 hover:border-accent/30"
             }`}
           >
             <input
@@ -71,7 +109,7 @@ export default function OnboardingForm({ initialName }: { initialName: string })
               value={option.value}
               checked={goal === option.value}
               onChange={() => setGoal(option.value)}
-              className="mt-1 accent-lime"
+              className="mt-1 accent-accent"
             />
             <span>
               <span className="block text-sm font-semibold">{option.label}</span>
@@ -92,7 +130,7 @@ export default function OnboardingForm({ initialName }: { initialName: string })
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex min-h-12 items-center justify-center rounded-full border border-lime bg-lime px-5 text-[15px] font-semibold text-lime-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex min-h-12 items-center justify-center rounded-full border border-accent bg-accent px-5 text-[15px] font-semibold text-accent-ink shadow-[0_10px_40px_-10px_var(--glow)] transition hover:-translate-y-px hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? "Enregistrement…" : "Continuer vers mon espace"}
       </button>
