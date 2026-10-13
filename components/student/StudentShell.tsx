@@ -1,19 +1,9 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Role } from "@prisma/client";
 import SignOutButton from "@/components/auth/SignOutButton";
 import Logo from "@/components/brand/Logo";
-import { APP_NAME } from "@/lib/config";
-
-const links = [
-  ["/dashboard", "Accueil"],
-  ["/parcours", "Parcours"],
-  ["/entrainement", "Entraînement"],
-  ["/ligue", "Ligue"],
-  ["/quetes", "Quêtes"],
-  ["/reviser", "Réviser"],
-  ["/profil", "Profil"],
-];
+import Link from "next/link";
+import StudentNavLinks from "@/components/student/StudentNavLinks";
 
 export default function StudentShell({
   role,
@@ -23,28 +13,41 @@ export default function StudentShell({
   children: ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-bg">
-      <header className="border-b border-line bg-bg2/90">
-        <div className="mx-auto flex w-[min(1200px,calc(100%-32px))] items-center justify-between gap-4 py-4">
-          <Link href="/dashboard" className="min-w-0 text-fg no-underline" aria-label={`${APP_NAME}, espace étudiant`}>
-            <Logo height={32} />
+    <div className="min-h-screen bg-bg lg:flex">
+      <aside className="sticky top-0 hidden h-screen w-[258px] shrink-0 flex-col border-r border-line bg-bg2/70 px-4 py-6 lg:flex">
+        <Link href="/dashboard" className="mb-9 flex items-center px-2 text-fg no-underline" aria-label="Revera, espace étudiant">
+          <Logo height={35} />
+        </Link>
+        <StudentNavLinks layout="sidebar" />
+        <div className="mt-auto space-y-4 pt-8">
+          <Link href="/#offres" className="block rounded-2xl border border-accent/20 bg-[linear-gradient(135deg,rgba(170,181,255,.1),rgba(255,210,122,.05))] p-4 text-fg no-underline transition hover:border-accent/40">
+            <span className="font-mono text-[10px] uppercase tracking-[.16em] text-amber">Pour aller plus loin</span>
+            <span className="mt-2 block text-sm font-semibold">Découvre les offres</span>
+            <span className="mt-1 block text-xs leading-relaxed text-muted">Trouve la formule adaptée à ta façon de réviser.</span>
+            <span className="mt-3 inline-flex text-xs font-semibold text-accent">En savoir plus <span aria-hidden="true" className="ml-1">↗</span></span>
           </Link>
-          <div className="flex shrink-0 items-center gap-3">
-            {role === "ADMIN" && <Link href="/admin" className="text-sm text-amber no-underline hover:text-fg">Administration</Link>}
+          {role === "ADMIN" && <Link href="/admin" className="rounded-xl px-3 py-2 text-sm text-amber no-underline transition hover:bg-white/[.04]">Ouvrir l’administration</Link>}
+          <div className="flex items-center justify-between border-t border-line pt-4">
+            <Link href="/profil" className="text-xs text-muted no-underline transition hover:text-fg">Mon profil</Link>
             <SignOutButton />
           </div>
         </div>
-      </header>
-      <nav aria-label="Navigation étudiante" className="border-b border-line bg-bg2/50">
-        <div className="mx-auto flex w-[min(1200px,calc(100%-32px))] gap-1 overflow-x-auto py-2">
-          {links.map(([href, label]) => (
-            <Link key={href} href={href} className="shrink-0 rounded-full px-3.5 py-2 text-sm text-muted no-underline transition hover:bg-panel hover:text-fg">
-              {label}
-            </Link>
-          ))}
+      </aside>
+      <div className="min-w-0 flex-1">
+        <header className="border-b border-line bg-bg2/80 lg:hidden">
+          <div className="flex items-center justify-between gap-3 px-4 py-3">
+            <Link href="/dashboard" className="text-fg no-underline" aria-label="Revera, espace étudiant"><Logo height={30} /></Link>
+            <div className="flex items-center gap-3">
+              {role === "ADMIN" && <Link href="/admin" className="text-xs text-amber no-underline">Administration</Link>}
+              <SignOutButton />
+            </div>
+          </div>
+        </header>
+        <div className="border-b border-line bg-bg2/45 px-3 lg:hidden">
+          <StudentNavLinks layout="mobile" />
         </div>
-      </nav>
-      <div className="mx-auto w-[min(1200px,calc(100%-32px))] py-7 sm:py-10">{children}</div>
-    </main>
+        <div className="mx-auto w-full max-w-[1500px] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">{children}</div>
+      </div>
+    </div>
   );
 }

@@ -20,37 +20,62 @@ export default function AdminShell({
   children: ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-bg text-fg">
-      <header className="border-b border-line bg-bg2/90">
-        <div className="mx-auto flex w-[min(1440px,calc(100%-32px))] items-center justify-between gap-4 py-4">
-          <Link href="/admin" className="text-lg font-semibold tracking-tight text-fg no-underline">
-            {APP_NAME}<span className="ml-2 text-xs font-mono uppercase tracking-widest text-amber">Admin</span>
-          </Link>
-          <Link href="/dashboard" className="text-sm text-muted transition hover:text-fg">
-            Retour à l’application
-          </Link>
-        </div>
-      </header>
-      <div className="mx-auto grid w-[min(1440px,calc(100%-32px))] gap-6 py-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:py-10">
-        <nav aria-label="Navigation administration" className="flex gap-2 overflow-x-auto pb-1 lg:sticky lg:top-5 lg:h-fit lg:flex-col lg:overflow-visible">
+    <div className="min-h-screen bg-bg text-fg lg:flex">
+      <aside className="sticky top-0 hidden h-screen w-[258px] shrink-0 flex-col border-r border-line bg-bg2/70 px-4 py-6 lg:flex">
+        <Link href="/admin" className="mb-2 px-3 text-lg font-semibold tracking-tight text-fg no-underline">
+          {APP_NAME}<span className="ml-2 font-mono text-[10px] uppercase tracking-[.16em] text-amber">Admin</span>
+        </Link>
+        <p className="mb-8 px-3 text-xs text-muted">Pilotage de Revera</p>
+        <nav aria-label="Navigation administration" className="grid gap-1">
           {sections.map(([id, label]) => (
             <Link
               key={id}
               href={id === "overview" ? "/admin" : `/admin?section=${id}`}
               aria-current={section === id ? "page" : undefined}
-              className={`shrink-0 rounded-xl border px-3.5 py-2.5 text-sm no-underline transition lg:w-full ${
+              className={`rounded-xl border px-3.5 py-3 text-sm no-underline transition ${
                 section === id
-                  ? "border-accent/40 bg-accent/[.08] font-semibold text-fg"
-                  : "border-line bg-panel text-muted hover:border-accent/25 hover:text-fg"
+                  ? "border-accent/25 bg-accent/[.10] font-semibold text-fg shadow-[inset_3px_0_0_var(--accent)]"
+                  : "border-transparent text-muted hover:border-line hover:bg-white/[.035] hover:text-fg"
               }`}
             >
               {label}
             </Link>
           ))}
         </nav>
-        <div className="min-w-0">{children}</div>
+        <Link href="/dashboard" className="mt-auto rounded-xl border border-line px-3.5 py-3 text-sm text-muted no-underline transition hover:text-fg">
+          ← Retour à l’application
+        </Link>
+      </aside>
+      <div className="min-w-0 flex-1">
+        <header className="border-b border-line bg-bg2/80 px-4 py-3 lg:hidden">
+          <div className="flex items-center justify-between gap-3">
+            <Link href="/admin" className="text-base font-semibold tracking-tight text-fg no-underline">
+              {APP_NAME}<span className="ml-2 font-mono text-[10px] uppercase tracking-[.16em] text-amber">Admin</span>
+            </Link>
+            <Link href="/dashboard" className="text-xs text-muted no-underline hover:text-fg">Application ↗</Link>
+          </div>
+        </header>
+        <div className="border-b border-line bg-bg2/45 px-3 lg:hidden">
+          <nav aria-label="Navigation administration" className="flex gap-1 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {sections.map(([id, label]) => (
+              <Link
+                key={id}
+                href={id === "overview" ? "/admin" : `/admin?section=${id}`}
+                aria-current={section === id ? "page" : undefined}
+                className={`shrink-0 rounded-full border px-3 py-2 text-xs no-underline transition ${
+                  section === id ? "border-accent/30 bg-accent/[.1] font-semibold text-fg" : "border-transparent text-muted hover:bg-white/[.04] hover:text-fg"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div className="mx-auto w-full max-w-[1500px] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
+          <div className="min-w-0">{children}</div>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 

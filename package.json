@@ -20,6 +20,7 @@
     "next": "15.5.27",
     "react": "19.1.9",
     "react-dom": "19.1.9",
+    "sanitize-html": "^2.18.0",
     "zod": "^4.6.6"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/sanitize-html": "^2.16.2",
     "eslint": "^9",
     "eslint-config-next": "15.5.27",
     "postcss": "^8.5.29",

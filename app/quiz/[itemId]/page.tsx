@@ -5,7 +5,6 @@ import QuizPlayer from "@/components/student/QuizPlayer";
 import StudentShell from "@/components/student/StudentShell";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { getStudentChapter } from "@/lib/student/content";
-import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = { title: "Quiz du chapitre · Revera" };
 
@@ -14,10 +13,7 @@ export default async function ChapterQuizPage({ params }: { params: Promise<{ it
   const { itemId } = await params;
   const item = await getStudentChapter(profile, itemId);
   if (!item?.publishedVersion) notFound();
-  const progress = await prisma.chapterProgress.findUnique({
-    where: { userId_itemId: { userId: profile.id, itemId: item.id } },
-    select: { readAt: true, completedAt: true },
-  });
+  const progress = item.progress[0];
   if (!progress?.readAt) notFound();
 
   return (

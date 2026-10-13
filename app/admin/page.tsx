@@ -14,6 +14,7 @@ import {
 } from "@/app/admin/actions";
 import AdminShell, { AdminHeading, AdminPanel, adminButton, adminInput } from "@/components/admin/AdminShell";
 import AccessKeyGenerator from "@/components/admin/AccessKeyGenerator";
+import LumiCompanion from "@/components/brand/LumiCompanion";
 import { requireAdminPage } from "@/lib/auth/access";
 import { APP_NAME } from "@/lib/config";
 import { prisma } from "@/lib/prisma";
@@ -81,7 +82,7 @@ async function Overview() {
           </article>
         ))}
       </div>
-      <div className="mt-5 grid gap-5 xl:grid-cols-[1.2fr_.8fr]">
+      <div className="mt-5 grid items-start gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(280px,.8fr)]">
         <AdminPanel title="Activité administrative récente">
           {logs.length === 0 ? <p className="text-sm text-muted">Les actions sensibles apparaîtront ici.</p> : (
             <ul className="divide-y divide-line">
@@ -92,11 +93,24 @@ async function Overview() {
             </ul>
           )}
         </AdminPanel>
-        <AdminPanel title="Budget IA · mois en cours">
-          <p className="text-3xl font-semibold">${generation._sum.costUsd?.toFixed(2) ?? "0.00"}</p>
-          <p className="mt-1 text-sm text-muted">{generation._count} génération(s) enregistrée(s) depuis le début du mois.</p>
-          <p className="mt-4 rounded-xl border border-amber/20 bg-amber/[.06] p-3 text-xs leading-relaxed text-muted">La génération Claude et l’envoi des sources ne sont pas encore connectés. Aucun brouillon n’est généré ni publié par cette console.</p>
-        </AdminPanel>
+        <div className="grid gap-4">
+          <LumiCompanion
+            context="État de l’administration"
+            message={pendingReview
+              ? `${pendingReview} version${pendingReview === 1 ? "" : "s"} attend${pendingReview === 1 ? "" : "ent"} une relecture humaine.`
+              : openTickets
+                ? `${openTickets} ticket${openTickets === 1 ? "" : "s"} ouvert${openTickets === 1 ? "" : "s"} à suivre.`
+                : pendingPayments
+                  ? `${pendingPayments} paiement${pendingPayments === 1 ? "" : "s"} en attente de suivi.`
+                  : "Tout est calme pour le moment. Tu peux consulter les dernières actions ci-contre."}
+            initialMood={pendingReview ? "studieuse" : openTickets ? "fatiguee" : pendingPayments ? "base" : "contente"}
+          />
+          <AdminPanel title="Budget IA · mois en cours">
+            <p className="text-3xl font-semibold">${generation._sum.costUsd?.toFixed(2) ?? "0.00"}</p>
+            <p className="mt-1 text-sm text-muted">{generation._count} génération(s) enregistrée(s) depuis le début du mois.</p>
+            <p className="mt-4 rounded-xl border border-amber/20 bg-amber/[.06] p-3 text-xs leading-relaxed text-muted">La génération Claude et l’envoi des sources ne sont pas encore connectés. Aucun brouillon n’est généré ni publié par cette console.</p>
+          </AdminPanel>
+        </div>
       </div>
     </>
   );
