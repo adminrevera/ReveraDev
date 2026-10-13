@@ -1,4 +1,4 @@
--- À exécuter UNE FOIS après chaque migration Prisma, dans l'éditeur SQL Supabase.
+-- À exécuter une FOIS après chaque migration Prisma, dans l'éditeur SQL Supabase.
 
 -- ────────────────────────────────────────────────────────────
 -- 1. Créer automatiquement un profil à chaque nouveau compte
