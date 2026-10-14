@@ -10,7 +10,7 @@ import {
   Role,
 } from "@prisma/client";
 import { randomBytes } from "node:crypto";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { z } from "zod";
 import { requireAdminAction } from "@/lib/auth/access";
 import { localCalendarDay } from "@/lib/local-day";
@@ -92,6 +92,7 @@ export async function reviewContent(formData: FormData) {
 
   revalidatePath("/admin");
   revalidatePath("/parcours");
+  if (parsed.data.action === "publish") revalidateTag("student-catalog");
 }
 
 export async function createContentRevision(formData: FormData) {
@@ -399,6 +400,7 @@ export async function updateReadingMinimum(formData: FormData) {
       },
     }),
   ]);
+  revalidateTag("app-settings");
   revalidatePath("/admin");
 }
 
@@ -425,6 +427,7 @@ export async function updateQuizValidationPercent(formData: FormData) {
       },
     }),
   ]);
+  revalidateTag("app-settings");
   revalidatePath("/admin");
 }
 

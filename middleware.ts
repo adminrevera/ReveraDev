@@ -32,9 +32,14 @@ export async function middleware(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const isProtected = matchesPath(request.nextUrl.pathname, protectedPaths);
+  const needsAuthCheck = isProtected || matchesPath(request.nextUrl.pathname, authPaths);
 
   const forwardedHeaders = new Headers(request.headers);
   forwardedHeaders.delete(VERIFIED_USER_ID_HEADER);
+
+  if (!needsAuthCheck) {
+    return NextResponse.next({ request: { headers: forwardedHeaders } });
+  }
 
   if (!url || !key) {
     if (isProtected) {
@@ -67,11 +72,15 @@ export async function middleware(request: NextRequest) {
     },
   });
 
+  // getClaims() vérifie la signature du jeton localement quand le projet Supabase utilise des clés de signature
+  // asymétriques (réglage par défaut des projets récents) : plus d'appel réseau à chaque page. Sinon, la
+  // bibliothèque retombe toute seule sur la vérification serveur (comportement précédent).
   const { data, error } = await measureServerOperation(
-    "auth.middleware.getUser",
-    () => supabase.auth.getUser(),
+    "auth.middleware.getClaims",
+    () => supabase.auth.getClaims(),
   );
-  verifiedUserId = data.user?.id ?? null;
+  const subject = data?.claims?.sub;
+  verifiedUserId = typeof subject === "string" ? subject : null;
   const refreshedCookies = response.cookies.getAll();
   response = nextResponse();
   refreshedCookies.forEach((cookie) => response.cookies.set({ ...cookie }));

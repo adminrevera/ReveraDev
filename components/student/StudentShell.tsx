@@ -7,9 +7,11 @@ import StudentNavLinks from "@/components/student/StudentNavLinks";
 
 export default function StudentShell({
   role,
+  xp,
   children,
 }: {
   role: Role;
+  xp?: number;
   children: ReactNode;
 }) {
   return (
@@ -38,16 +40,19 @@ export default function StudentShell({
           <div className="flex items-center justify-between gap-3 px-4 py-3">
             <Link href="/dashboard" className="text-fg no-underline" aria-label="Revera, espace étudiant"><Logo height={30} /></Link>
             <div className="flex items-center gap-3">
+              {typeof xp === "number" && (
+                <Link href="/profil" className="rounded-full border border-amber/25 bg-amber/[.07] px-3 py-1 text-xs font-semibold text-amber no-underline" aria-label={`${xp} points d’expérience`}>
+                  ✦ {xp.toLocaleString("fr-FR")} XP
+                </Link>
+              )}
               {role === "ADMIN" && <Link href="/admin" className="text-xs text-amber no-underline">Administration</Link>}
               <SignOutButton />
             </div>
           </div>
         </header>
-        <div className="border-b border-line bg-bg2/45 px-3 lg:hidden">
-          <StudentNavLinks layout="mobile" />
-        </div>
-        <div className="mx-auto w-full max-w-[1500px] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">{children}</div>
+        <div className="mx-auto w-full max-w-[1500px] px-4 py-6 pb-28 sm:px-6 sm:py-8 lg:px-10 lg:py-10">{children}</div>
       </div>
+      <StudentNavLinks layout="mobile" />
     </div>
   );
 }

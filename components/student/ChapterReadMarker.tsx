@@ -119,8 +119,24 @@ export default function ChapterReadMarker({ itemId }: { itemId: string }) {
     void confirmRead();
   }
 
-  return <div ref={markerRef} className="mt-8 min-h-14 rounded-xl border border-line bg-bg2 p-4 text-sm text-muted" aria-live="polite">
-    <p>{message}</p>
-    {canConfirm && <button type="button" onClick={handleConfirm} className="mt-3 inline-flex min-h-10 items-center rounded-full border border-accent/40 px-4 text-sm font-semibold text-fg">J’ai terminé la lecture</button>}
-  </div>;
+  return (
+    <>
+      {/* Repère invisible placé à la fin du cours : quand il apparaît à l'écran, la lecture est terminée. */}
+      <div ref={markerRef} aria-hidden="true" className="h-px" />
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bg/95 px-4 py-3 backdrop-blur sm:px-8" aria-live="polite">
+        <div className="mx-auto flex max-w-3xl flex-col gap-2">
+          <p className="text-center text-xs leading-relaxed text-muted">{message}</p>
+          {canConfirm ? (
+            <button type="button" onClick={handleConfirm} className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-accent bg-accent px-6 text-[15px] font-semibold text-accent-ink transition hover:brightness-110">
+              J’ai terminé la lecture
+            </button>
+          ) : (
+            <span className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-dashed border-line px-6 text-center text-sm text-muted">
+              Lis le cours jusqu’au bout pour débloquer le quiz
+            </span>
+          )}
+        </div>
+      </div>
+    </>
+  );
 }

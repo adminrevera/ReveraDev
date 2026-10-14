@@ -10,6 +10,7 @@ import { getStudentChapter } from "@/lib/student/content";
 import { prisma } from "@/lib/prisma";
 import { getReadingMinimumSeconds } from "@/lib/reading-settings";
 import { getQuizValidationPercent } from "@/lib/quiz-settings";
+import { measureServerOperation } from "@/lib/server-performance";
 
 type Option = { text: string; correct: boolean; explanation: string | null };
 type SupportedQuestionType = "MCQ" | "TRUE_FALSE" | "GAP" | "MATCHING";
@@ -458,12 +459,18 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
   });
   const correct = results.filter((result) => result.isCorrect).length;
   const percent = Math.round((correct / attempt.total) * 100);
-  const validationPercent = await getQuizValidationPercent();
+  const [validationPercent, tierLimits] = await Promise.all([
+    getQuizValidationPercent(),
+    prisma.tierLimits.findUnique({
+      where: { tier: profile.tier },
+      select: { spacedReview: true },
+    }),
+  ]);
   const finishedAt = new Date();
   const today = localCalendarDay(finishedAt, profile.timezone);
   const questDay = localCalendarDay(finishedAt, "Africa/Lome");
 
-  await prisma.$transaction(async (tx) => {
+  await measureServerOperation("quiz.submit.transaction", () => prisma.$transaction(async (tx) => {
     const changed = await tx.quizAttempt.updateMany({
       where: { id: attempt.id, userId: profile.id, finishedAt: null },
       data: { correct, percent, finishedAt },
@@ -609,37 +616,34 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
       });
     }
 
-    const tierLimits = await tx.tierLimits.findUnique({
-      where: { tier: profile.tier },
-      select: { spacedReview: true },
-    });
-    if (tierLimits?.spacedReview) {
-      for (const answer of results) {
-        const existingReview = await tx.reviewSchedule.findUnique({
-          where: { userId_questionKey: { userId: profile.id, questionKey: answer.questionKey } },
-          select: { halfLifeHours: true },
-        });
-        const halfLifeHours = answer.isCorrect
-          ? Math.min((existingReview?.halfLifeHours ?? 24) * 2, 24 * 30)
-          : 24;
-        await tx.reviewSchedule.upsert({
-          where: { userId_questionKey: { userId: profile.id, questionKey: answer.questionKey } },
-          create: {
-            userId: profile.id,
-            questionKey: answer.questionKey,
-            halfLifeHours,
-            lastReviewedAt: finishedAt,
-            dueAt: new Date(finishedAt.getTime() + halfLifeHours * 3_600_000),
-          },
-          update: {
-            halfLifeHours,
-            lastReviewedAt: finishedAt,
-            dueAt: new Date(finishedAt.getTime() + halfLifeHours * 3_600_000),
-          },
-        });
-      }
+    if (tierLimits?.spacedReview && results.length) {
+      const reviewValues = results.map((answer) =>
+        Prisma.sql`(
+          ${profile.id}::uuid,
+          ${answer.questionKey},
+          ${answer.isCorrect ? 48 : 24},
+          ${finishedAt},
+          ${new Date(finishedAt.getTime() + (answer.isCorrect ? 48 : 24) * 3_600_000)}
+        )`,
+      );
+      await tx.$executeRaw(Prisma.sql`
+        INSERT INTO "ReviewSchedule" ("userId", "questionKey", "halfLifeHours", "lastReviewedAt", "dueAt")
+        VALUES ${Prisma.join(reviewValues)}
+        ON CONFLICT ("userId", "questionKey") DO UPDATE SET
+          "halfLifeHours" = CASE
+            WHEN EXCLUDED."halfLifeHours" = 24 THEN 24
+            ELSE LEAST("ReviewSchedule"."halfLifeHours" * 2, 720)
+          END,
+          "lastReviewedAt" = EXCLUDED."lastReviewedAt",
+          "dueAt" = EXCLUDED."lastReviewedAt" + (
+            CASE
+              WHEN EXCLUDED."halfLifeHours" = 24 THEN 24
+              ELSE LEAST("ReviewSchedule"."halfLifeHours" * 2, 720)
+            END
+          ) * interval '1 hour'
+      `);
     }
-  });
+  }, { timeout: 30_000 }));
 
   revalidatePath("/dashboard");
   revalidatePath("/parcours");

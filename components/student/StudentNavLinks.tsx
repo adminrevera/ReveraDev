@@ -49,16 +49,87 @@ export default function StudentNavLinks({ layout }: { layout: "sidebar" | "mobil
   const pathname = usePathname();
   const mobile = layout === "mobile";
 
+  if (mobile) {
+    const primaryLinks = links.slice(0, 4);
+    const moreLinks = links.slice(4);
+    const moreIsCurrent = moreLinks.some(({ href }) => isCurrent(pathname, href));
+
+    return (
+      <nav
+        aria-label="Navigation étudiante"
+        className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-bg/95 px-2 pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_24px_rgba(0,0,0,.18)] backdrop-blur lg:hidden"
+      >
+        <div className="mx-auto grid max-w-xl grid-cols-5">
+          {primaryLinks.map(({ href, label, icon }) => {
+            const current = isCurrent(pathname, href);
+            return (
+              <Link
+                key={href}
+                href={href}
+                aria-current={current ? "page" : undefined}
+                className={`flex min-h-[68px] flex-col items-center justify-center gap-1 px-1 text-[11px] no-underline transition ${
+                  current ? "bg-accent/[.10] font-semibold text-fg" : "text-muted hover:text-fg"
+                }`}
+              >
+                <span className={current ? "text-accent" : "text-muted"}><NavIcon name={icon} /></span>
+                <span className="truncate">{label === "Entraînement" ? "Entraîn." : label}</span>
+              </Link>
+            );
+          })}
+          <details className="group relative">
+            <summary
+              aria-current={moreIsCurrent ? "page" : undefined}
+              className={`flex min-h-[68px] cursor-pointer list-none flex-col items-center justify-center gap-1 px-1 text-[11px] transition marker:hidden [&::-webkit-details-marker]:hidden ${
+                moreIsCurrent ? "bg-accent/[.10] font-semibold text-fg" : "text-muted hover:text-fg"
+              }`}
+            >
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden="true">
+                <circle cx="5" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" />
+              </svg>
+              <span>Plus</span>
+            </summary>
+            <div className="absolute bottom-[calc(100%+12px)] right-0 w-[min(22rem,calc(100vw-1rem))] rounded-2xl border border-line bg-bg p-3 shadow-[0_16px_48px_rgba(0,0,0,.4)]">
+              <div className="grid gap-2">
+                {moreLinks.map(({ href, label, icon }) => {
+                  const current = isCurrent(pathname, href);
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      aria-current={current ? "page" : undefined}
+                      className={`flex min-h-14 items-center gap-3 rounded-xl border px-3.5 text-sm no-underline ${
+                        current ? "border-accent/30 bg-accent/[.10] font-semibold text-fg" : "border-line text-fg"
+                      }`}
+                    >
+                      <span className="text-accent"><NavIcon name={icon} /></span>
+                      <span>{label}</span>
+                      <span className="ml-auto text-muted" aria-hidden="true">›</span>
+                    </Link>
+                  );
+                })}
+                <Link
+                  href="/#offres"
+                  className="rounded-xl border border-dashed border-line px-3.5 py-3 text-fg no-underline"
+                >
+                  <span className="block text-sm font-semibold">Passe à Plus</span>
+                  <span className="mt-1 block text-xs leading-relaxed text-muted">Entraînement sans limite et révision espacée.</span>
+                </Link>
+              </div>
+            </div>
+          </details>
+        </div>
+      </nav>
+    );
+  }
+
   return (
     <nav
       aria-label="Navigation étudiante"
-      className={mobile
-        ? "flex gap-1 overflow-x-auto py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        : "grid gap-1"}
+      className="grid gap-1"
     >
       {links.map(({ href, label, icon }, index) => {
         const current = isCurrent(pathname, href);
-        const groupTitle = index === 4 && !mobile;
+        const groupTitle = index === 4;
         return (
           <div key={href}>
             {groupTitle && <p className="mb-2 mt-5 px-3 font-mono text-[10px] uppercase tracking-[.18em] text-muted/75">Ta progression</p>}
@@ -69,7 +140,7 @@ export default function StudentNavLinks({ layout }: { layout: "sidebar" | "mobil
                 current
                   ? "border border-accent/25 bg-accent/[.10] font-semibold text-fg shadow-[inset_3px_0_0_var(--accent)]"
                   : "border border-transparent text-muted hover:border-line hover:bg-white/[.035] hover:text-fg"
-              } ${mobile ? "py-2.5" : ""}`}
+              }`}
             >
               <span className={`transition ${current ? "text-accent" : "text-muted group-hover:text-fg"}`}><NavIcon name={icon} /></span>
               <span>{label}</span>

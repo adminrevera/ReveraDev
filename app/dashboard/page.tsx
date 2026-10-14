@@ -8,6 +8,7 @@ import { localCalendarDay } from "@/lib/local-day";
 import { prisma } from "@/lib/prisma";
 import { APP_NAME } from "@/lib/config";
 import { measureServerOperation } from "@/lib/server-performance";
+import { getStudentCatalog } from "@/lib/student/catalog";
 
 export const metadata: Metadata = { title: `Mon espace · ${APP_NAME}` };
 
@@ -64,30 +65,12 @@ async function DashboardContent({ profile }: { profile: DashboardProfile }) {
   const today = localCalendarDay(now, profile.timezone);
   const questDay = localCalendarDay(now, "Africa/Lome");
   const yearDay = Math.floor((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(now.getFullYear(), 0, 0)) / dayMs);
-  const visibleKinds = profile.tier === "FREE" ? ["PUBLIC"] as const : ["PUBLIC", "PREMIUM"] as const;
-  const itemWhere = {
-    kind: "CHAPTER" as const,
-    publishedVersionId: { not: null },
-    visibility: { in: [...visibleKinds] },
-    publishedVersion: { is: { status: "PUBLISHED" as const } },
-    subject: {
-      levelId: profile.levelId ?? "__no-level__",
-      visibility: { in: [...visibleKinds] },
-    },
-  };
-
-  const [chapters, activeEvent, reviewCount, badgeCount, streakDays, dailyQuests, membership, dailyQuestions] = await measureServerOperation("dashboard.prismaQueries", () => Promise.all([
-    profile.levelId ? prisma.contentItem.findMany({
-      where: itemWhere,
-      orderBy: [{ subject: { position: "asc" } }, { number: "asc" }],
-      select: {
-        id: true,
-        number: true,
-        title: true,
-        subject: { select: { name: true } },
-        progress: { where: { userId: profile.id }, take: 1, select: { completedAt: true } },
-      },
-    }) : Promise.resolve(null),
+  const [catalog, progressRows, activeEvent, reviewCount, badgeCount, streakDays, dailyQuests, membership] = await measureServerOperation("dashboard.prismaQueries", () => Promise.all([
+    profile.levelId ? getStudentCatalog(profile.levelId, profile.tier) : Promise.resolve(null),
+    prisma.chapterProgress.findMany({
+      where: { userId: profile.id },
+      select: { itemId: true, completedAt: true },
+    }),
     prisma.event.findFirst({
       where: {
         status: "ACTIVE",
@@ -125,20 +108,20 @@ async function DashboardContent({ profile }: { profile: DashboardProfile }) {
       orderBy: { group: { week: { startsOn: "desc" } } },
       select: { weekXp: true, group: { select: { tier: { select: { name: true } } } } },
     }),
-    profile.levelId ? prisma.question.findMany({
-      where: {
-        type: "MCQ",
-        isPlaceholder: false,
-        version: { status: "PUBLISHED", item: { subject: { levelId: profile.levelId }, kind: "CHAPTER" } },
-      },
-      orderBy: { id: "asc" },
-      take: 7,
-      select: { text: true },
-    }) : Promise.resolve(null),
   ]));
 
-  const dailyQuestion = dailyQuestions?.length ? dailyQuestions[yearDay % dailyQuestions.length] : null;
-  const availableChapters = chapters ?? [];
+  const dailyQuestions = catalog?.questions ?? [];
+  const dailyQuestion = dailyQuestions.length ? dailyQuestions[yearDay % dailyQuestions.length] : null;
+  const progressByItem = new Map(progressRows.map(({ itemId, completedAt }) => [itemId, completedAt]));
+  const availableChapters = [...(catalog?.subjects ?? [])]
+    .sort((left, right) => left.position - right.position)
+    .flatMap((subject) =>
+    subject.items.map((item) => ({
+      ...item,
+      subject: { name: subject.name },
+      progress: [{ completedAt: progressByItem.get(item.id) ?? null }],
+    })),
+  );
   const chapterCount = availableChapters.length;
   const completedCount = availableChapters.filter(({ progress }) => !!progress[0]?.completedAt).length;
   const current = availableChapters.find(({ progress }) => !progress[0]?.completedAt) ?? null;

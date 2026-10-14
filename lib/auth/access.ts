@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { headers } from "next/headers";
 import { Role } from "@prisma/client";
 import { z } from "zod";
@@ -7,7 +8,8 @@ import { createClient } from "@/lib/supabase/server";
 import { VERIFIED_USER_ID_HEADER } from "./request-context";
 import { measureServerOperation } from "@/lib/server-performance";
 
-export async function getSignedInProfile() {
+// cache() : un seul chargement du profil par requête, même si le layout, la page et le shell le demandent.
+export const getSignedInProfile = cache(async () => {
   const requestHeaders = await headers();
   const headerUserId = requestHeaders.get(VERIFIED_USER_ID_HEADER);
   let userId = headerUserId && z.string().uuid().safeParse(headerUserId).success ? headerUserId : null;
@@ -25,6 +27,8 @@ export async function getSignedInProfile() {
 
   const profile = await measureServerOperation("auth.profile.findUnique", () => prisma.profile.findUnique({
     where: { id: userId },
+    // Une seule requête SQL (JOIN) au lieu de 4 allers-retours : profil, niveau, filière, établissement.
+    relationLoadStrategy: "join",
     select: {
       id: true,
       email: true,
@@ -51,7 +55,7 @@ export async function getSignedInProfile() {
   }));
 
   return profile ? { user: { id: profile.id }, profile } : null;
-}
+});
 
 export async function requireStudentProfile() {
   const session = await getSignedInProfile();

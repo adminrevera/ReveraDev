@@ -3,38 +3,27 @@ import Link from "next/link";
 import StudentShell from "@/components/student/StudentShell";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { prisma } from "@/lib/prisma";
+import { getStudentCatalog } from "@/lib/student/catalog";
 
 export const metadata: Metadata = { title: "Mon parcours · Revera" };
 
 export default async function LearningPathPage() {
   const { profile } = await requireStudentProfile();
-  const subjects = profile.levelId ? await prisma.subject.findMany({
-    where: {
-      levelId: profile.levelId,
-      visibility: profile.tier === "FREE" ? "PUBLIC" : { in: ["PUBLIC", "PREMIUM"] },
-    },
-    orderBy: [{ semester: "asc" }, { position: "asc" }],
-    select: {
-      id: true,
-      name: true,
-      semester: true,
-      items: {
-        where: {
-          kind: "CHAPTER",
-          publishedVersionId: { not: null },
-          visibility: profile.tier === "FREE" ? "PUBLIC" : { in: ["PUBLIC", "PREMIUM"] },
-          publishedVersion: { is: { status: "PUBLISHED" } },
-        },
-        orderBy: { number: "asc" },
-        select: {
-          id: true,
-          number: true,
-          title: true,
-          progress: { where: { userId: profile.id }, take: 1, select: { readAt: true, bestQuizScore: true, completedAt: true } },
-        },
-      },
-    },
-  }) : [];
+  const [catalog, progressRows] = profile.levelId ? await Promise.all([
+    getStudentCatalog(profile.levelId, profile.tier),
+    prisma.chapterProgress.findMany({
+      where: { userId: profile.id },
+      select: { itemId: true, readAt: true, bestQuizScore: true, completedAt: true },
+    }),
+  ]) : [null, []];
+  const progressByItem = new Map(progressRows.map((progress) => [progress.itemId, progress]));
+  const subjects = (catalog?.subjects ?? []).map((subject) => ({
+    ...subject,
+    items: subject.items.map((item) => ({
+      ...item,
+      progress: progressByItem.has(item.id) ? [progressByItem.get(item.id)!] : [],
+    })),
+  }));
 
   const semesters = new Map<number | null, typeof subjects>();
   for (const subject of subjects) {

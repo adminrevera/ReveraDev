@@ -11,7 +11,8 @@
     "db:generate": "prisma generate",
     "db:seed": "node scripts/seed-reference.mjs",
     "db:import": "node scripts/import-content.mjs",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "db:ping": "node --env-file=.env scripts/db-ping.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

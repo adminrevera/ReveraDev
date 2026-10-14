@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AuthShell from "@/components/auth/AuthShell";
 import OnboardingForm from "@/components/auth/OnboardingForm";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
@@ -26,20 +25,20 @@ export default async function OnboardingPage({
     throw new Error(`Impossible de vérifier la session : ${error.message}`);
   }
   if (!user) redirect("/connexion");
-  const profile = await prisma.profile.findUnique({
-    where: { id: user.id },
-    select: { displayName: true },
-  });
-  if (profile?.displayName) redirect("/dashboard");
 
-  const levels = await prisma.level.findMany({
-    orderBy: [{ position: "asc" }, { name: "asc" }],
-    select: {
-      id: true,
-      name: true,
-      track: { select: { name: true, institution: { select: { name: true } } } },
-    },
-  });
+  // Les deux lectures sont indépendantes : on les lance en même temps.
+  const [profile, levels] = await Promise.all([
+    prisma.profile.findUnique({ where: { id: user.id }, select: { displayName: true } }),
+    prisma.level.findMany({
+      orderBy: [{ position: "asc" }, { name: "asc" }],
+      select: {
+        id: true,
+        name: true,
+        track: { select: { name: true, institution: { select: { name: true } } } },
+      },
+    }),
+  ]);
+  if (profile?.displayName) redirect("/dashboard");
 
   const initialName =
     (typeof user.user_metadata?.displayName === "string" && user.user_metadata.displayName) ||
@@ -52,18 +51,5 @@ export default async function OnboardingPage({
       ? (user.user_metadata.requestedPlan as "free" | "plus" | "success")
       : null;
 
-  return (
-    <AuthShell
-      eyebrow="Bienvenue chez Revera"
-      title={
-        <>
-          Faisons connaissance
-          <span className="font-serif font-normal italic text-accent">.</span>
-        </>
-      }
-      subtitle="Quelques détails suffisent pour préparer un espace qui te ressemble."
-    >
-      <OnboardingForm initialName={initialName} requestedPlan={requestedPlan} levels={levels} />
-    </AuthShell>
-  );
+  return <OnboardingForm initialName={initialName} requestedPlan={requestedPlan} levels={levels} />;
 }
