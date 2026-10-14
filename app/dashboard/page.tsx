@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import LumiCompanion from "@/components/brand/LumiCompanion";
 import StudentShell from "@/components/student/StudentShell";
@@ -6,6 +7,7 @@ import { requireStudentProfile } from "@/lib/auth/access";
 import { localCalendarDay } from "@/lib/local-day";
 import { prisma } from "@/lib/prisma";
 import { APP_NAME } from "@/lib/config";
+import { measureServerOperation } from "@/lib/server-performance";
 
 export const metadata: Metadata = { title: `Mon espace · ${APP_NAME}` };
 
@@ -13,6 +15,51 @@ const dayMs = 86_400_000;
 
 export default async function DashboardPage() {
   const { profile } = await requireStudentProfile();
+  return (
+    <StudentShell role={profile.role}>
+      <Suspense fallback={<DashboardLoading profile={profile} />}>
+        <DashboardContent profile={profile} />
+      </Suspense>
+    </StudentShell>
+  );
+}
+
+type DashboardProfile = Awaited<ReturnType<typeof requireStudentProfile>>["profile"];
+
+function DashboardLoading({ profile }: { profile: DashboardProfile }) {
+  const firstName = profile.displayName?.trim().split(/\s+/)[0] || "Étudiant";
+  const levelLabel = profile.level ? `${profile.level.name} · ${profile.level.track.name} · ${profile.level.track.institution.name}` : null;
+  return (
+    <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_330px]" aria-busy="true">
+      <div className="min-w-0">
+        <header className="mb-5 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[.16em] text-amber">Ton espace Revera</p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-[-.045em] sm:text-4xl">
+              Bonjour, <span className="font-serif font-normal italic text-accent">{firstName}.</span>
+            </h1>
+            <p className="mt-2 text-sm text-muted">{levelLabel ? `Ton parcours : ${levelLabel}.` : "Choisis ton niveau dans le profil pour découvrir tes cours."}</p>
+          </div>
+          <Link href="/parcours" className="inline-flex min-h-10 items-center rounded-full border border-line bg-panel px-4 text-sm text-fg no-underline">Voir mon parcours</Link>
+        </header>
+        <div className="grid gap-4" aria-hidden="true">
+          <div className="h-56 animate-pulse rounded-[24px] border border-line bg-panel" />
+          <div className="grid gap-4 lg:grid-cols-2">
+            <div className="h-44 animate-pulse rounded-2xl border border-line bg-panel" />
+            <div className="h-44 animate-pulse rounded-2xl border border-line bg-panel" />
+          </div>
+        </div>
+      </div>
+      <aside className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1" aria-hidden="true">
+        <div className="h-48 animate-pulse rounded-2xl border border-line bg-panel" />
+        <div className="h-48 animate-pulse rounded-2xl border border-line bg-panel" />
+        <div className="h-28 animate-pulse rounded-2xl border border-line bg-panel" />
+      </aside>
+    </div>
+  );
+}
+
+async function DashboardContent({ profile }: { profile: DashboardProfile }) {
   const now = new Date();
   const today = localCalendarDay(now, profile.timezone);
   const questDay = localCalendarDay(now, "Africa/Lome");
@@ -29,7 +76,7 @@ export default async function DashboardPage() {
     },
   };
 
-  const [chapters, activeEvent, reviewCount, badgeCount, streakDays, dailyQuests, membership, dailyQuestions] = await Promise.all([
+  const [chapters, activeEvent, reviewCount, badgeCount, streakDays, dailyQuests, membership, dailyQuestions] = await measureServerOperation("dashboard.prismaQueries", () => Promise.all([
     profile.levelId ? prisma.contentItem.findMany({
       where: itemWhere,
       orderBy: [{ subject: { position: "asc" } }, { number: "asc" }],
@@ -44,7 +91,7 @@ export default async function DashboardPage() {
     prisma.event.findFirst({
       where: {
         status: "ACTIVE",
-        OR: [{ levelId: null }, { levelId: profile.levelId ?? "__no-level__" }],
+        OR: [{ levelId: null }, ...(profile.levelId ? [{ levelId: profile.levelId }] : [])],
         AND: [
           { OR: [{ startsAt: null }, { startsAt: { lte: now } }] },
           { OR: [{ endsAt: null }, { endsAt: { gte: now } }] },
@@ -88,7 +135,7 @@ export default async function DashboardPage() {
       take: 7,
       select: { text: true },
     }) : Promise.resolve(null),
-  ]);
+  ]));
 
   const dailyQuestion = dailyQuestions?.length ? dailyQuestions[yearDay % dailyQuestions.length] : null;
   const availableChapters = chapters ?? [];
@@ -117,7 +164,6 @@ export default async function DashboardPage() {
         : "Une première séance aujourd’hui et on décolle ensemble.";
 
   return (
-    <StudentShell role={profile.role}>
       <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_330px]">
         <div className="min-w-0">
           <header className="mb-5 flex flex-wrap items-end justify-between gap-4">
@@ -259,6 +305,5 @@ export default async function DashboardPage() {
           </Link>
         </aside>
       </div>
-    </StudentShell>
   );
 }

@@ -272,7 +272,6 @@ button {
   mask-image: linear-gradient(transparent, black 34%, transparent 92%);
   transform: rotateX(68deg);
   transform-origin: center top;
-  animation: cinematic-grid-drift 15s linear infinite;
 }
 
 .cinematic-portal {
@@ -1319,11 +1318,6 @@ button {
 @keyframes scene-atmosphere {
   from { background-position: 0% 0%, 0 0; transform: scale(1); }
   to { background-position: 100% 100%, 0 0; transform: scale(1.035); }
-}
-
-@keyframes cinematic-grid-drift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 0 54px, 54px 0; }
 }
 
 @keyframes portal-breathe {

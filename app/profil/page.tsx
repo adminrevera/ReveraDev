@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "Mon profil · Revera" };
 const tierLabels: Record<string, string> = { FREE: "Gratuit", PLUS: "Plus", SUCCESS: "Réussite" };
 
 export default async function ProfilePage() {
-  const { user, profile } = await requireStudentProfile();
+  const { profile } = await requireStudentProfile();
   const today = localCalendarDay(new Date(), profile.timezone);
   const firstDay = new Date(today.getTime() - 13 * 86_400_000);
   const [levels, badges, streakDays] = await Promise.all([
@@ -45,7 +45,7 @@ export default async function ProfilePage() {
       <div className="grid gap-4 lg:grid-cols-[1fr_.8fr]">
         <section className="rounded-2xl border border-line bg-panel p-5 sm:p-6">
           <h2 className="text-xl font-semibold">{profile.displayName ?? "Étudiant"}</h2>
-          <p className="mt-1 break-all text-sm text-muted">{user.email}</p>
+          <p className="mt-1 break-all text-sm text-muted">{profile.email}</p>
           <div className="mt-5 grid gap-3 border-t border-line pt-4 sm:grid-cols-3">
             <div><p className="text-xs text-muted">Offre</p><p className="mt-1 font-semibold">{tierLabels[profile.tier]}</p></div>
             <div><p className="text-xs text-muted">XP total</p><p className="mt-1 font-semibold">{profile.xpTotal.toLocaleString("fr-FR")}</p></div>

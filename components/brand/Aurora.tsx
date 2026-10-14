@@ -22,17 +22,20 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const reduce = motionPreference.matches;
     let w = 0;
     let h = 0;
     let raf = 0;
+    let lastFrame = 0;
+    let visible = false;
     let scrollY = window.scrollY;
 
     const size = () => {
       const r = canvas.getBoundingClientRect();
       w = r.width;
       h = r.height;
+      const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 640 ? 1.25 : 1.5);
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -62,12 +65,13 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
       gradient.addColorStop(0, "rgba(170,181,255,0.9)");
       gradient.addColorStop(0.48, "rgba(184,176,240,0.82)");
       gradient.addColorStop(1, "rgba(255,210,122,0.88)");
-      const N = 56;
+      const N = window.innerWidth < 640 ? 24 : 36;
+      const step = window.innerWidth < 640 ? 28 : 22;
       const scrollPhase = scrollY * 0.0012;
       for (let i = 0; i < N; i++) {
         const k = i / (N - 1);
         ctx.beginPath();
-        for (let x = -20; x <= w + 20; x += 14) {
+        for (let x = -20; x <= w + 20; x += step) {
           const u = x / w;
           const y =
             h * base +
@@ -83,7 +87,7 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
         ctx.globalAlpha = alpha;
         ctx.lineWidth = 0.8 + center * 1.1;
         ctx.shadowColor = "rgba(170,181,255,0.22)";
-        ctx.shadowBlur = center > 0.45 ? 10 : 0;
+        ctx.shadowBlur = center > 0.8 ? 5 : 0;
         ctx.stroke();
       }
       ctx.shadowBlur = 0;
@@ -91,41 +95,53 @@ export default function Aurora({ base, a1, a2, f1, f2, spread, className }: Auro
     };
 
     const loop = (t: number) => {
-      draw(t);
+      if (!visible || document.hidden) {
+        raf = 0;
+        return;
+      }
+      if (t - lastFrame >= 1000 / 30) {
+        draw(t);
+        lastFrame = t;
+      }
       raf = requestAnimationFrame(loop);
     };
 
+    const start = () => {
+      if (!reduce && visible && !document.hidden && !raf) {
+        lastFrame = 0;
+        raf = requestAnimationFrame(loop);
+      }
+    };
+    const stop = () => {
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
     const onResize = () => {
       size();
       draw(2500);
     };
-    const onScroll = () => {
-      scrollY = window.scrollY;
-    };
+    const onScroll = () => { scrollY = window.scrollY; };
+    const onVisibilityChange = () => document.hidden ? stop() : start();
 
     size();
     draw(2500);
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
-    let observer: IntersectionObserver | undefined;
-    if (!reduce) {
-      observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          if (!raf) raf = requestAnimationFrame(loop);
-        } else {
-          cancelAnimationFrame(raf);
-          raf = 0;
-        }
-      });
-      observer.observe(canvas);
-    }
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) start();
+      else stop();
+    });
+    observer.observe(canvas);
 
     return () => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onScroll);
-      observer?.disconnect();
-      cancelAnimationFrame(raf);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      observer.disconnect();
+      stop();
     };
   }, [base, a1, a2, f1, f2, spread]);
 

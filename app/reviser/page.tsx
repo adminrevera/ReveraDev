@@ -13,6 +13,7 @@ export default async function ReviewPage() {
     where: { userId: profile.id, dueAt: { lte: new Date() } },
     orderBy: { dueAt: "asc" },
     take: 50,
+    select: { questionKey: true },
   });
   const questions = profile.levelId && schedules.length ? await prisma.question.findMany({
     where: {

@@ -27,8 +27,8 @@ const courseClasses = [
 
 const allowedTags = [
   "a", "b", "br", "caption", "code", "dd", "div", "dl", "dt", "em", "h2", "h3", "h4",
-  "hr", "i", "li", "ol", "p", "pre", "s", "small", "span", "strong", "sub", "sup",
-  "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
+  "blockquote", "hr", "i", "li", "ol", "p", "pre", "s", "small", "span", "strong",
+  "sub", "sup", "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
 ];
 
 export default function CourseBody({ html }: { html: string }) {

@@ -2,21 +2,43 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { markChapterRead } from "@/app/actions/quiz";
+import { markChapterRead, startChapterReading } from "@/app/actions/quiz";
 
 export default function ChapterReadMarker({ itemId }: { itemId: string }) {
   const markerRef = useRef<HTMLDivElement>(null);
   const startedRef = useRef(false);
+  const readyRef = useRef(false);
+  const bottomReachedRef = useRef(false);
+  const minimumSecondsRef = useRef(0);
+  const timerStartedAtRef = useRef(0);
+  const timerRef = useRef<number | null>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const generationRef = useRef(0);
   const router = useRouter();
-  const [message, setMessage] = useState("Poursuis jusqu’ici pour débloquer le quiz du chapitre.");
+  const [message, setMessage] = useState("Préparation de la lecture…");
   const [canConfirm, setCanConfirm] = useState(false);
 
   const confirmRead = useCallback(async () => {
+    if (!readyRef.current || !bottomReachedRef.current || startedRef.current) return;
+
+    const elapsedSeconds = (performance.now() - timerStartedAtRef.current) / 1000;
+    const remainingSeconds = minimumSecondsRef.current - elapsedSeconds;
+    if (remainingSeconds > 0) {
+      setMessage(`Tu as atteint la fin du cours. Patiente encore ${Math.ceil(remainingSeconds)} seconde${remainingSeconds >= 1.5 ? "s" : ""} pour valider ta lecture.`);
+      if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+      timerRef.current = window.setTimeout(() => {
+        timerRef.current = null;
+        void confirmRead();
+      }, Math.ceil(remainingSeconds * 1000));
+      return;
+    }
+
+    startedRef.current = true;
     setCanConfirm(false);
     setMessage("Enregistrement de la lecture…");
     try {
       const result = await markChapterRead(itemId);
-      if (result.error) {
+      if (result.error !== null) {
         setMessage(result.error);
         setCanConfirm(true);
         startedRef.current = false;
@@ -31,24 +53,74 @@ export default function ChapterReadMarker({ itemId }: { itemId: string }) {
     }
   }, [itemId, router]);
 
-  useEffect(() => {
-    const marker = markerRef.current;
-    if (!marker || !("IntersectionObserver" in window)) {
-      setMessage("Lis le chapitre jusqu’au bout et valide sa lecture pour débloquer le quiz.");
+  const startReading = useCallback(async (generation: number) => {
+    setCanConfirm(false);
+    setMessage("Démarrage du chronomètre de lecture…");
+    try {
+      const result = await startChapterReading(itemId);
+      if (generation !== generationRef.current) return;
+      if (result.error !== null) {
+        setMessage(result.error);
+        setCanConfirm(true);
+        return;
+      }
+
+      readyRef.current = true;
+      minimumSecondsRef.current = result.minimumSeconds;
+      timerStartedAtRef.current = performance.now();
+      setMessage(
+        result.minimumSeconds
+          ? `Lis le cours jusqu’à la fin et prends au moins ${result.minimumSeconds} secondes pour cette lecture.`
+          : "Lis le cours jusqu’à la fin pour débloquer le quiz.",
+      );
+
+      const marker = markerRef.current;
+      if (!marker || !("IntersectionObserver" in window)) {
+        setCanConfirm(true);
+        return;
+      }
+
+      observerRef.current?.disconnect();
+      observerRef.current = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting || bottomReachedRef.current) return;
+        bottomReachedRef.current = true;
+        void confirmRead();
+      }, { threshold: 0.1 });
+      observerRef.current.observe(marker);
+    } catch (error) {
+      if (generation !== generationRef.current) return;
+      console.error("Chapter reading could not be started:", error);
+      setMessage("Le chronomètre n’a pas pu démarrer. Réessaie.");
       setCanConfirm(true);
+    }
+  }, [confirmRead, itemId]);
+
+  useEffect(() => {
+    const generation = ++generationRef.current;
+    const generationTracker = generationRef;
+    startedRef.current = false;
+    readyRef.current = false;
+    bottomReachedRef.current = false;
+    void startReading(generation);
+    return () => {
+      if (generationTracker.current === generation) generationTracker.current++;
+      observerRef.current?.disconnect();
+      observerRef.current = null;
+      if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+    };
+  }, [startReading]);
+
+  function handleConfirm() {
+    if (!readyRef.current) {
+      void startReading(generationRef.current);
       return;
     }
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || startedRef.current) return;
-      startedRef.current = true;
-      void confirmRead();
-    }, { threshold: 0.1 });
-    observer.observe(marker);
-    return () => observer.disconnect();
-  }, [confirmRead]);
+    bottomReachedRef.current = true;
+    void confirmRead();
+  }
 
   return <div ref={markerRef} className="mt-8 min-h-14 rounded-xl border border-line bg-bg2 p-4 text-sm text-muted" aria-live="polite">
     <p>{message}</p>
-    {canConfirm && <button type="button" onClick={() => void confirmRead()} className="mt-3 inline-flex min-h-10 items-center rounded-full border border-accent/40 px-4 text-sm font-semibold text-fg">J’ai terminé la lecture</button>}
+    {canConfirm && <button type="button" onClick={handleConfirm} className="mt-3 inline-flex min-h-10 items-center rounded-full border border-accent/40 px-4 text-sm font-semibold text-fg">J’ai terminé la lecture</button>}
   </div>;
 }

@@ -3,12 +3,13 @@ import Link from "next/link";
 import StudentShell from "@/components/student/StudentShell";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { prisma } from "@/lib/prisma";
+import { getQuizValidationPercent } from "@/lib/quiz-settings";
 
 export const metadata: Metadata = { title: "Entraînement · Revera" };
 
 export default async function TrainingPage() {
   const { profile } = await requireStudentProfile();
-  const subjects = profile.levelId ? await prisma.subject.findMany({
+  const [subjects, validationPercent] = await Promise.all([profile.levelId ? prisma.subject.findMany({
     where: {
       levelId: profile.levelId,
       visibility: profile.tier === "FREE" ? "PUBLIC" : { in: ["PUBLIC", "PREMIUM"] },
@@ -30,14 +31,14 @@ export default async function TrainingPage() {
         },
       },
     },
-  }) : [];
+  }) : Promise.resolve([]), getQuizValidationPercent()]);
 
   return (
     <StudentShell role={profile.role}>
       <header className="mb-7">
         <p className="font-mono text-[11px] uppercase tracking-widest text-amber">Pratique</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Entraînement</h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">Les QCM de chapitre sont corrigés côté serveur. Lis d’abord le cours : le quiz se débloque ensuite et le chapitre est validé à 100 %.</p>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">Les QCM de chapitre sont corrigés côté serveur. Lis d’abord le cours : le quiz se débloque ensuite et valide le chapitre à partir de {validationPercent} %.</p>
       </header>
       {!profile.levelId ? <p className="rounded-2xl border border-line bg-panel p-5 text-sm text-muted">Renseigne ton niveau depuis la page Profil pour trouver des exercices adaptés.</p> : subjects.length === 0 ? <p className="rounded-2xl border border-line bg-panel p-5 text-sm text-muted">Aucun cours n’est encore publié pour ton niveau.</p> : (
         <div className="grid gap-4 md:grid-cols-2">

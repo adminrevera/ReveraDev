@@ -8,25 +8,36 @@ import { requireStudentProfile } from "@/lib/auth/access";
 import { localCalendarDay } from "@/lib/local-day";
 import { getStudentChapter } from "@/lib/student/content";
 import { prisma } from "@/lib/prisma";
+import { getReadingMinimumSeconds } from "@/lib/reading-settings";
+import { getQuizValidationPercent } from "@/lib/quiz-settings";
 
 type Option = { text: string; correct: boolean; explanation: string | null };
+type SupportedQuestionType = "MCQ" | "TRUE_FALSE" | "GAP" | "MATCHING";
+type MatchingPair = { term: string; example: string };
 type QuizLayout = { questionId: string; optionOrder: number[] };
+type QuizQuestion =
+  | { id: string; text: string; type: "MCQ" | "TRUE_FALSE"; choices: string[] }
+  | { id: string; text: string; type: "GAP"; hint: string | null }
+  | { id: string; text: string; type: "MATCHING"; terms: string[]; examples: string[] };
+type QuizAnswer = number | string | number[];
+const SUPPORTED_QUIZ_TYPES: SupportedQuestionType[] = ["MCQ", "TRUE_FALSE", "GAP", "MATCHING"];
 type StartQuizResult =
   | { error: string }
-  | { error: null; attemptId: string; questions: { id: string; text: string; choices: string[] }[] };
+  | { error: null; attemptId: string; questions: QuizQuestion[]; missingTypes: SupportedQuestionType[] };
 type SubmitQuizResult =
   | { error: string }
   | {
       error: null;
       correct: number;
       total: number;
+      percent: number;
       passed: boolean;
+      validationPercent: number;
       results: {
         questionId: string;
         text: string;
-        selectedIndex: number;
-        correctPresentedIndex: number;
         isCorrect: boolean;
+        selectedText: string;
         correctText: string;
         explanation: string | null;
       }[];
@@ -48,6 +59,80 @@ function optionsFromJson(value: Prisma.JsonValue): Option[] {
       explanation: typeof entry.explanation === "string" ? entry.explanation : null,
     }];
   });
+}
+
+function gapDataFromJson(value: Prisma.JsonValue): { hint: string | null; answers: string[] } | null {
+  if (!value || typeof value !== "object" || Array.isArray(value) || !Array.isArray(value.answers)) return null;
+  const answers = value.answers.filter((answer): answer is string => typeof answer === "string" && answer.trim().length > 0);
+  if (!answers.length || answers.length !== value.answers.length) return null;
+  return { hint: typeof value.hint === "string" ? value.hint : null, answers };
+}
+
+function matchingPairsFromJson(value: Prisma.JsonValue): MatchingPair[] {
+  if (!value || typeof value !== "object" || Array.isArray(value) || !Array.isArray(value.pairs)) return [];
+  const pairs = value.pairs.flatMap((entry) => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) return [];
+    return typeof entry.term === "string" && entry.term.trim() &&
+      typeof entry.example === "string" && entry.example.trim()
+      ? [{ term: entry.term, example: entry.example }]
+      : [];
+  });
+  return pairs.length === value.pairs.length ? pairs : [];
+}
+
+function isSupportedType(type: string): type is SupportedQuestionType {
+  return type === "MCQ" || type === "TRUE_FALSE" || type === "GAP" || type === "MATCHING";
+}
+
+function isValidQuizQuestion(question: { type: string; data: Prisma.JsonValue }) {
+  if (question.type === "MCQ" || question.type === "TRUE_FALSE") {
+    const options = optionsFromJson(question.data);
+    return options.length >= 2 && options.filter((option) => option.correct).length === 1;
+  }
+  if (question.type === "GAP") return gapDataFromJson(question.data) !== null;
+  if (question.type === "MATCHING") return matchingPairsFromJson(question.data).length >= 2;
+  return false;
+}
+
+function presentQuestion(
+  question: { id: string; text: string; type: string; data: Prisma.JsonValue },
+  optionOrder: number[],
+): QuizQuestion {
+  if (question.type === "MCQ" || question.type === "TRUE_FALSE") {
+    const options = optionsFromJson(question.data);
+    if (optionOrder.length !== options.length || optionOrder.some((index) => index < 0 || index >= options.length)) {
+      throw new Error("L’ordre des réponses de cette tentative est invalide.");
+    }
+    return {
+      id: question.id,
+      text: question.text,
+      type: question.type,
+      choices: optionOrder.map((index) => options[index].text),
+    };
+  }
+  if (question.type === "GAP") {
+    const gap = gapDataFromJson(question.data);
+    if (!gap || optionOrder.length) throw new Error("Les données de cette question à trous sont invalides.");
+    return { id: question.id, text: question.text, type: "GAP", hint: gap.hint };
+  }
+  if (question.type === "MATCHING") {
+    const pairs = matchingPairsFromJson(question.data);
+    if (pairs.length < 2 || optionOrder.length !== pairs.length || optionOrder.some((index) => index < 0 || index >= pairs.length)) {
+      throw new Error("Les associations de cette tentative sont invalides.");
+    }
+    return {
+      id: question.id,
+      text: question.text,
+      type: "MATCHING",
+      terms: pairs.map((pair) => pair.term),
+      examples: optionOrder.map((index) => pairs[index].example),
+    };
+  }
+  throw new Error("Ce format de question ne peut pas être présenté dans le quiz.");
+}
+
+function normalizeGapAnswer(answer: string) {
+  return answer.trim().toLocaleLowerCase("fr-FR");
 }
 
 function shuffle<T>(values: T[]) {
@@ -83,15 +168,43 @@ export async function markChapterRead(itemIdInput: string) {
 
   const existing = await prisma.chapterProgress.findUnique({
     where: { userId_itemId: { userId: profile.id, itemId: item.id } },
-    select: { readAt: true },
+    select: { readAt: true, lastVisitedAt: true },
   });
-  await prisma.chapterProgress.upsert({
+  if (existing?.readAt) return { error: null };
+  if (!existing) return { error: "Ouvre d’abord le chapitre pour démarrer ta lecture." };
+
+  const minimumSeconds = await getReadingMinimumSeconds();
+  const elapsedSeconds = Math.floor((Date.now() - existing.lastVisitedAt.getTime()) / 1000);
+  if (elapsedSeconds < minimumSeconds) {
+    const remainingSeconds = minimumSeconds - elapsedSeconds;
+    return {
+      error: `Continue ta lecture encore ${remainingSeconds} seconde${remainingSeconds === 1 ? "" : "s"} avant de valider.`,
+    };
+  }
+
+  await prisma.chapterProgress.update({
     where: { userId_itemId: { userId: profile.id, itemId: item.id } },
-    create: { userId: profile.id, itemId: item.id, readAt: new Date() },
-    update: { readAt: existing?.readAt ?? new Date(), lastVisitedAt: new Date() },
+    data: { readAt: new Date(), lastVisitedAt: new Date() },
   });
   revalidatePath(`/parcours/${item.id}`);
   return { error: null };
+}
+
+export async function startChapterReading(itemIdInput: string) {
+  const { profile } = await requireStudentProfile();
+  const parsedId = z.string().uuid().safeParse(itemIdInput);
+  if (!parsedId.success) return { error: "Ce chapitre n’est pas disponible." };
+  const item = await getStudentChapter(profile, parsedId.data);
+  if (!item) return { error: "Ce chapitre n’est pas encore accessible." };
+
+  const minimumSeconds = await getReadingMinimumSeconds();
+  const startedAt = new Date();
+  await prisma.chapterProgress.upsert({
+    where: { userId_itemId: { userId: profile.id, itemId: item.id } },
+    create: { userId: profile.id, itemId: item.id, lastVisitedAt: startedAt },
+    update: { lastVisitedAt: startedAt },
+  });
+  return { error: null, minimumSeconds };
 }
 
 export async function startChapterQuiz(itemIdInput: string): Promise<StartQuizResult> {
@@ -116,25 +229,20 @@ export async function startChapterQuiz(itemIdInput: string): Promise<StartQuizRe
     const layout = parseLayout(existing.layout);
     const savedQuestions = await prisma.question.findMany({
       where: { id: { in: layout.map(({ questionId }) => questionId) } },
-      select: { id: true, text: true, data: true },
+      select: { id: true, text: true, type: true, data: true },
     });
     const savedMap = new Map(savedQuestions.map((question) => [question.id, question]));
+    const questions = layout.map((row) => {
+      const question = savedMap.get(row.questionId);
+      if (!question) throw new Error("Une question de cette tentative n’est plus disponible.");
+      return presentQuestion(question, row.optionOrder);
+    });
+    const includedTypes = new Set(questions.map((question) => question.type));
     return {
       error: null,
       attemptId: existing.id,
-      questions: layout.map((row) => {
-        const question = savedMap.get(row.questionId);
-        if (!question) throw new Error("Une question de cette tentative n’est plus disponible.");
-        const options = optionsFromJson(question.data);
-        return {
-          id: row.questionId,
-          text: question.text,
-          choices: row.optionOrder.map((index) => {
-            if (index < 0 || index >= options.length) throw new Error("L’ordre des réponses de cette tentative est invalide.");
-            return options[index].text;
-          }),
-        };
-      }),
+      questions,
+      missingTypes: SUPPORTED_QUIZ_TYPES.filter((type) => !includedTypes.has(type)),
     };
   }
 
@@ -155,31 +263,47 @@ export async function startChapterQuiz(itemIdInput: string): Promise<StartQuizRe
   }
 
   const candidates = await prisma.question.findMany({
-    where: { versionId: item.publishedVersionId!, type: "MCQ", isPlaceholder: false },
+    where: {
+      versionId: item.publishedVersionId!,
+      type: { in: ["MCQ", "TRUE_FALSE", "GAP", "MATCHING"] },
+      isPlaceholder: false,
+    },
     orderBy: { position: "asc" },
-    select: { id: true, text: true, data: true },
+    select: { id: true, text: true, type: true, data: true },
   });
-  const valid = candidates.flatMap((question) => {
-    const options = optionsFromJson(question.data);
-    const correctCount = options.filter((option) => option.correct).length;
-    return options.length >= 2 && correctCount === 1
-      ? [{ question, options }]
-      : [];
-  });
+  const valid = candidates.filter((question) => isValidQuizQuestion(question));
   if (valid.length !== candidates.length) {
-    console.error(`Chapter quiz contains invalid MCQ content: item=${item.id}; invalid=${candidates.length - valid.length}`);
+    console.error(`Chapter quiz contains invalid supported question content: item=${item.id}; invalid=${candidates.length - valid.length}`);
   }
-  if (!valid.length) return { error: "Aucune question à choix multiple valide n’est disponible pour ce chapitre." };
+  if (!valid.length) return { error: "Aucune question valide parmi les formats de quiz disponibles n’est présente dans ce chapitre." };
 
-  const questions = shuffle(valid).slice(0, 10).map(({ question, options }) => {
-    const optionOrder = shuffle(options.map((_, index) => index));
+  const byType = new Map<SupportedQuestionType, typeof valid>();
+  for (const question of valid) {
+    if (!isSupportedType(question.type)) continue;
+    byType.set(question.type, [...(byType.get(question.type) ?? []), question]);
+  }
+  const firstByType = [...byType.values()].flatMap((questionsOfType) => shuffle(questionsOfType).slice(0, 1));
+  const firstIds = new Set(firstByType.map((question) => question.id));
+  const selection = [
+    ...firstByType,
+    ...shuffle(valid.filter((question) => !firstIds.has(question.id))).slice(0, Math.max(0, 10 - firstByType.length)),
+  ];
+  const questions = shuffle(selection).map((question) => {
+    const optionCount = question.type === "MCQ" || question.type === "TRUE_FALSE"
+      ? optionsFromJson(question.data).length
+      : question.type === "MATCHING"
+        ? matchingPairsFromJson(question.data).length
+        : 0;
+    const optionOrder = shuffle(Array.from({ length: optionCount }, (_, index) => index));
     return {
       questionId: question.id,
-      text: question.text,
-      choices: optionOrder.map((index) => options[index].text),
+      type: question.type,
       optionOrder,
+      presented: presentQuestion(question, optionOrder),
     };
   });
+  const includedTypes = new Set(questions.map(({ type }) => type));
+  const missingTypes = SUPPORTED_QUIZ_TYPES.filter((type) => !includedTypes.has(type));
   const layout = questions.map(({ questionId, optionOrder }) => ({ questionId, optionOrder }));
   let attempt: { id: string };
   try {
@@ -219,15 +343,20 @@ export async function startChapterQuiz(itemIdInput: string): Promise<StartQuizRe
   return {
     error: null,
     attemptId: attempt.id,
-    questions: questions.map(({ questionId, text, choices }) => ({ id: questionId, text, choices })),
+    questions: questions.map(({ presented }) => presented),
+    missingTypes,
   };
 }
 
-export async function submitChapterQuiz(attemptIdInput: string, answersInput: Record<string, number>): Promise<SubmitQuizResult> {
+export async function submitChapterQuiz(attemptIdInput: string, answersInput: Record<string, QuizAnswer>): Promise<SubmitQuizResult> {
   const { profile } = await requireStudentProfile();
   const parsed = z.object({
     attemptId: z.string().uuid(),
-    answers: z.record(z.string(), z.number().int().min(0).max(20)),
+    answers: z.record(z.string(), z.union([
+      z.number().int().min(0).max(20),
+      z.string().max(500),
+      z.array(z.number().int().min(0).max(20)).max(20),
+    ])),
   }).safeParse({ attemptId: attemptIdInput, answers: answersInput });
   if (!parsed.success || Object.keys(parsed.data.answers).length > 10) return { error: "Les réponses envoyées sont invalides." };
 
@@ -252,33 +381,84 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
       id: { in: layout.map(({ questionId }) => questionId) },
       version: { itemId: attempt.itemId },
     },
-    select: { id: true, key: true, text: true, data: true, explanation: true },
+    select: { id: true, key: true, text: true, type: true, data: true, explanation: true },
   });
   const questionMap = new Map(questions.map((question) => [question.id, question]));
   const results = layout.map((row) => {
     const question = questionMap.get(row.questionId);
     if (!question) throw new Error("Une question de cette tentative n’est plus disponible.");
-    const options = optionsFromJson(question.data);
-    if (row.optionOrder.some((index) => !Number.isInteger(index) || index < 0 || index >= options.length)) {
-      throw new Error("L’ordre des réponses de cette tentative est invalide.");
+    const submittedAnswer = parsed.data.answers[row.questionId];
+    let isCorrect = false;
+    let selectedText: string;
+    let correctText: string;
+    let storedAnswer: Prisma.InputJsonValue;
+
+    if (question.type === "MCQ" || question.type === "TRUE_FALSE") {
+      const options = optionsFromJson(question.data);
+      if (
+        options.length < 2 ||
+        row.optionOrder.length !== options.length ||
+        new Set(row.optionOrder).size !== options.length ||
+        row.optionOrder.some((index) => index < 0 || index >= options.length)
+      ) {
+        throw new Error("L’ordre des réponses de cette tentative est invalide.");
+      }
+      if (typeof submittedAnswer !== "number" || submittedAnswer >= row.optionOrder.length) {
+        throw new Error("Une réponse sélectionnée est invalide.");
+      }
+      const selectedOptionIndex = row.optionOrder[submittedAnswer];
+      const correctOptionIndex = options.findIndex((option) => option.correct);
+      if (correctOptionIndex < 0) throw new Error("La correction de cette question est invalide.");
+      isCorrect = selectedOptionIndex === correctOptionIndex;
+      selectedText = options[selectedOptionIndex].text;
+      correctText = options[correctOptionIndex].text;
+      storedAnswer = { choiceIndex: submittedAnswer, optionIndex: selectedOptionIndex };
+    } else if (question.type === "GAP") {
+      const gap = gapDataFromJson(question.data);
+      if (!gap || row.optionOrder.length || typeof submittedAnswer !== "string" || !submittedAnswer.trim()) {
+        throw new Error("La réponse à cette question à trous est invalide.");
+      }
+      isCorrect = gap.answers.some((answer) => normalizeGapAnswer(answer) === normalizeGapAnswer(submittedAnswer));
+      selectedText = submittedAnswer.trim();
+      correctText = gap.answers.join(" / ");
+      storedAnswer = { text: submittedAnswer.trim() };
+    } else if (question.type === "MATCHING") {
+      const pairs = matchingPairsFromJson(question.data);
+      if (
+        pairs.length < 2 ||
+        row.optionOrder.length !== pairs.length ||
+        new Set(row.optionOrder).size !== pairs.length ||
+        row.optionOrder.some((index) => index < 0 || index >= pairs.length) ||
+        !Array.isArray(submittedAnswer) ||
+        submittedAnswer.length !== pairs.length ||
+        new Set(submittedAnswer).size !== pairs.length ||
+        submittedAnswer.some((index) => index < 0 || index >= pairs.length)
+      ) {
+        throw new Error("Les associations envoyées pour cette question sont invalides.");
+      }
+      const expectedOrder = pairs.map((_, pairIndex) => row.optionOrder.indexOf(pairIndex));
+      isCorrect = submittedAnswer.every((exampleIndex, termIndex) => exampleIndex === expectedOrder[termIndex]);
+      selectedText = pairs.map((pair, termIndex) => `${pair.term} → ${pairs[row.optionOrder[submittedAnswer[termIndex]]].example}`).join(" · ");
+      correctText = pairs.map((pair) => `${pair.term} → ${pair.example}`).join(" · ");
+      storedAnswer = { exampleIndexes: submittedAnswer.map((index) => row.optionOrder[index]) };
+    } else {
+      throw new Error("Ce format de question ne peut pas être corrigé dans ce quiz.");
     }
-    const selectedIndex = parsed.data.answers[row.questionId];
-    if (selectedIndex < 0 || selectedIndex >= row.optionOrder.length) throw new Error("Une réponse sélectionnée est invalide.");
-    const correctPresentedIndex = row.optionOrder.findIndex((optionIndex) => options[optionIndex]?.correct);
-    if (correctPresentedIndex < 0) throw new Error("La correction de cette question est invalide.");
+
     return {
       questionId: row.questionId,
       questionKey: question.key,
       text: question.text,
-      selectedIndex,
-      correctPresentedIndex,
-      isCorrect: selectedIndex === correctPresentedIndex,
-      correctText: options[row.optionOrder[correctPresentedIndex]].text,
+      isCorrect,
+      selectedText,
+      correctText,
       explanation: question.explanation,
+      storedAnswer,
     };
   });
   const correct = results.filter((result) => result.isCorrect).length;
   const percent = Math.round((correct / attempt.total) * 100);
+  const validationPercent = await getQuizValidationPercent();
   const finishedAt = new Date();
   const today = localCalendarDay(finishedAt, profile.timezone);
   const questDay = localCalendarDay(finishedAt, "Africa/Lome");
@@ -292,15 +472,11 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
 
     await tx.attempt.createMany({
       data: results.map((result) => {
-        const row = layout.find((entry) => entry.questionId === result.questionId)!;
         return {
           userId: profile.id,
           questionId: result.questionId,
           quizAttemptId: attempt.id,
-          answer: {
-            choiceIndex: result.selectedIndex,
-            optionIndex: row.optionOrder[result.selectedIndex],
-          } as Prisma.InputJsonValue,
+          answer: result.storedAnswer,
           isCorrect: result.isCorrect,
         };
       }),
@@ -310,7 +486,7 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
       where: { userId_itemId: { userId: profile.id, itemId: attempt.itemId } },
       select: { completedAt: true, bestQuizScore: true },
     });
-    const completed = percent === 100;
+    const completed = percent >= validationPercent;
     const firstCompletion = completed && !prior?.completedAt;
     await tx.chapterProgress.upsert({
       where: { userId_itemId: { userId: profile.id, itemId: attempt.itemId } },
@@ -474,13 +650,14 @@ export async function submitChapterQuiz(attemptIdInput: string, answersInput: Re
     error: null,
     correct,
     total: attempt.total,
-    passed: percent === 100,
+    percent,
+    passed: percent >= validationPercent,
+    validationPercent,
     results: results.map((answer) => ({
       questionId: answer.questionId,
       text: answer.text,
-      selectedIndex: answer.selectedIndex,
-      correctPresentedIndex: answer.correctPresentedIndex,
       isCorrect: answer.isCorrect,
+      selectedText: answer.selectedText,
       correctText: answer.correctText,
       explanation: answer.explanation,
     })),

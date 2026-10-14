@@ -96,32 +96,67 @@ const previews = [LessonPreview, QuizPreview, ProgressPreview, ExamPreview];
 
 export default function CinematicJourney() {
   const trackRef = useRef<HTMLElement>(null);
-  const [progress, setProgress] = useState(0);
-  const phase = progress * (scenes.length - 1);
-  const activeIndex = Math.min(scenes.length - 1, Math.round(phase));
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const backPortalRef = useRef<HTMLDivElement>(null);
+  const frontPortalRef = useRef<HTMLDivElement>(null);
+  const leftLightRef = useRef<HTMLDivElement>(null);
+  const rightLightRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLElement>(null);
+  const progressFillRef = useRef<HTMLSpanElement>(null);
   const scene = scenes[activeIndex];
   const Preview = previews[activeIndex];
-  const focus = 1 - Math.abs(phase - activeIndex);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
+    let visible = false;
     const update = () => {
+      if (!visible) return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const rect = track.getBoundingClientRect();
         const distance = track.offsetHeight - window.innerHeight;
-        setProgress(distance > 0 ? Math.min(1, Math.max(0, -rect.top / distance)) : 0);
+        const progress = distance > 0 ? Math.min(1, Math.max(0, -rect.top / distance)) : 0;
+        const phase = progress * (scenes.length - 1);
+        const nextIndex = Math.min(scenes.length - 1, Math.round(phase));
+        const focus = 1 - Math.abs(phase - nextIndex);
+
+        if (nextIndex !== activeIndexRef.current) {
+          activeIndexRef.current = nextIndex;
+          setActiveIndex(nextIndex);
+        }
+
+        if (gridRef.current) {
+          gridRef.current.style.transform = `perspective(900px) rotateX(${68 - progress * 8}deg) scale(${1 + progress * 0.2}) translateY(${progress * 24}px)`;
+        }
+        const portalTransform = `translate(-50%, -50%) rotateX(${67 - progress * 13}deg)`;
+        if (backPortalRef.current) backPortalRef.current.style.transform = `${portalTransform} scale(${0.78 + progress * 0.55})`;
+        if (frontPortalRef.current) frontPortalRef.current.style.transform = `${portalTransform} scale(${0.9 + progress * 0.48})`;
+        const lightOpacity = String(0.13 + progress * 0.12);
+        if (leftLightRef.current) leftLightRef.current.style.opacity = lightOpacity;
+        if (rightLightRef.current) rightLightRef.current.style.opacity = lightOpacity;
+        if (cardRef.current) {
+          cardRef.current.style.transform = `perspective(1200px) translate3d(0, ${Math.abs(phase - nextIndex) * 22}px, ${-80 + progress * 160 + focus * 12}px) rotateY(${(phase - nextIndex) * 7}deg)`;
+        }
+        if (progressFillRef.current) progressFillRef.current.style.transform = `scaleX(${progress})`;
       });
     };
 
-    update();
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) update();
+      else cancelAnimationFrame(frame);
+    }, { rootMargin: "100px 0px" });
+    observer.observe(track);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
       cancelAnimationFrame(frame);
+      observer.disconnect();
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
@@ -137,25 +172,19 @@ export default function CinematicJourney() {
       <div className="cinematic-stage">
         <div className="cinematic-world" aria-hidden="true">
           <div
+            ref={gridRef}
             className="cinematic-grid"
-            style={{
-              transform: `perspective(900px) rotateX(${68 - progress * 8}deg) scale(${1 + progress * 0.2}) translateY(${progress * 24}px)`,
-            }}
           />
           <div
+            ref={backPortalRef}
             className="cinematic-portal cinematic-portal-back"
-            style={{
-              transform: `translate(-50%, -50%) rotateX(${67 - progress * 13}deg) scale(${0.78 + progress * 0.55})`,
-            }}
           />
           <div
+            ref={frontPortalRef}
             className="cinematic-portal cinematic-portal-front"
-            style={{
-              transform: `translate(-50%, -50%) rotateX(${67 - progress * 13}deg) scale(${0.9 + progress * 0.48})`,
-            }}
           />
-          <div className="cinematic-light cinematic-light-left" style={{ opacity: 0.13 + progress * 0.12 }} />
-          <div className="cinematic-light cinematic-light-right" style={{ opacity: 0.13 + progress * 0.12 }} />
+          <div ref={leftLightRef} className="cinematic-light cinematic-light-left" />
+          <div ref={rightLightRef} className="cinematic-light cinematic-light-right" />
         </div>
 
         <div className="cinematic-heading">
@@ -173,11 +202,9 @@ export default function CinematicJourney() {
         <div className="cinematic-card-stack">
           <article
             key={scene.label}
+            ref={cardRef}
             className="cinematic-scene-card"
             aria-live="polite"
-            style={{
-              transform: `perspective(1200px) translate3d(0, ${Math.abs(phase - activeIndex) * 22}px, ${-80 + progress * 160 + focus * 12}px) rotateY(${(phase - activeIndex) * 7}deg)`,
-            }}
           >
             <div className="cinematic-copy">
               <span className="font-mono text-[10px] uppercase tracking-[.14em] text-amber sm:text-[11px]">{scene.label}</span>
@@ -209,7 +236,7 @@ export default function CinematicJourney() {
         </ol>
 
         <div className="cinematic-progress" aria-hidden="true">
-          <span className="cinematic-progress-fill" style={{ transform: `scaleX(${progress})` }} />
+          <span ref={progressFillRef} className="cinematic-progress-fill" />
         </div>
         <p className="cinematic-scroll-label" aria-hidden="true">CONTINUE À DÉFILER <span>↓</span></p>
       </div>

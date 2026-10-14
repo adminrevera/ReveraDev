@@ -14,7 +14,10 @@ export default async function LearningPathPage() {
       visibility: profile.tier === "FREE" ? "PUBLIC" : { in: ["PUBLIC", "PREMIUM"] },
     },
     orderBy: [{ semester: "asc" }, { position: "asc" }],
-    include: {
+    select: {
+      id: true,
+      name: true,
+      semester: true,
       items: {
         where: {
           kind: "CHAPTER",

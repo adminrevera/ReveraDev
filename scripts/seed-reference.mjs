@@ -83,7 +83,7 @@ const SETTINGS = {
   'league.minPlayersForMoves': null, // seuil sous lequel il n'y a ni montée ni descente : à fixer
   'quiz.validationPercent': 100,
   'quiz.questionsPerFormat': 1,
-  'reading.minSeconds': null, // durée minimale de lecture : à fixer (6 s jugées trop courtes)
+  'reading.minSeconds': 60, // durée minimale provisoire, modifiable depuis l'administration
   'quests.perDay': 3,
   'help.channel': 'in-app',
   'ai.defaultModel': 'claude',

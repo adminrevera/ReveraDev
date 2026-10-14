@@ -1,7 +1,9 @@
 import type { Profile } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 
-export async function getStudentChapter(profile: Profile, itemId: string) {
+type StudentContentAccess = Pick<Profile, "id" | "levelId" | "tier">;
+
+export async function getStudentChapter(profile: StudentContentAccess, itemId: string) {
   if (!profile.levelId) return null;
   const item = await prisma.contentItem.findFirst({
     where: {

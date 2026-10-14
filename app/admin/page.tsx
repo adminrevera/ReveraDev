@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { PlanTier, Role } from "@prisma/client";
 import {
-  createContentRevision,
   createEvent,
   createQuest,
   publishAnnouncement,
@@ -10,14 +10,21 @@ import {
   setStudentSuspended,
   updateAiBudget,
   updatePlanPrice,
+  updateQuizValidationPercent,
+  updateReadingMinimum,
   updateTierLimits,
 } from "@/app/admin/actions";
 import AdminShell, { AdminHeading, AdminPanel, adminButton, adminInput } from "@/components/admin/AdminShell";
 import AccessKeyGenerator from "@/components/admin/AccessKeyGenerator";
+import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
+import ContentRevisionDisclosure from "@/components/admin/ContentRevisionDisclosure";
 import LumiCompanion from "@/components/brand/LumiCompanion";
 import { requireAdminPage } from "@/lib/auth/access";
 import { APP_NAME } from "@/lib/config";
 import { prisma } from "@/lib/prisma";
+import { getReadingMinimumSeconds, MAX_READING_MIN_SECONDS } from "@/lib/reading-settings";
+import { getQuizValidationPercent } from "@/lib/quiz-settings";
+import { measureServerOperation } from "@/lib/server-performance";
 
 export const metadata: Metadata = { title: `Administration · ${APP_NAME}` };
 
@@ -43,7 +50,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   return (
     <AdminShell section={section}>
       {section === "overview" && <Overview />}
-      {section === "content" && <ContentStudio />}
+      {section === "content" && <Suspense fallback={<ContentStudioLoading />}><ContentStudio /></Suspense>}
       {section === "students" && <Students query={query} />}
       {section === "payments" && <Payments />}
       {section === "operations" && <Operations />}
@@ -63,7 +70,17 @@ async function Overview() {
     prisma.payment.count({ where: { status: "PENDING" } }),
     prisma.supportTicket.count({ where: { status: "open" } }),
     prisma.generationJob.aggregate({ where: { createdAt: { gte: monthStart } }, _sum: { costUsd: true }, _count: true }),
-    prisma.auditLog.findMany({ orderBy: { createdAt: "desc" }, take: 8, include: { actor: { select: { displayName: true, email: true } } } }),
+    prisma.auditLog.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 8,
+      select: {
+        id: true,
+        createdAt: true,
+        action: true,
+        entity: true,
+        actor: { select: { displayName: true, email: true } },
+      },
+    }),
   ]);
 
   const cards = [
@@ -117,12 +134,26 @@ async function Overview() {
 }
 
 async function ContentStudio() {
-  const versions = await prisma.contentVersion.findMany({
+  const versions = await measureServerOperation("admin.contentVersions.findMany", () => prisma.contentVersion.findMany({
     where: { status: { in: ["AI_DRAFT", "IN_REVIEW", "APPROVED"] } },
     orderBy: { createdAt: "desc" },
     take: 40,
-    include: { item: { include: { subject: { include: { level: { include: { track: { include: { institution: true } } } } } } } } },
-  });
+    select: {
+      id: true,
+      itemId: true,
+      version: true,
+      status: true,
+      title: true,
+      note: true,
+      createdAt: true,
+      item: {
+        select: {
+          kind: true,
+          subject: { select: { name: true, level: { select: { name: true } } } },
+        },
+      },
+    },
+  }));
   return (
     <>
       <AdminHeading eyebrow="Studio de contenu" title="Relire et publier" description="Toute modification crée une nouvelle version. Une version doit être approuvée explicitement avant de pouvoir être publiée." />
@@ -139,25 +170,32 @@ async function ContentStudio() {
                   {version.note && <p className="mt-2 text-sm text-muted">{version.note}</p>}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><button className={adminButton} name="action" value="approve" disabled={version.status === "APPROVED"}>Approuver</button></form>
-                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><button className={adminButton} name="action" value="publish" disabled={version.status !== "APPROVED"}>Publier</button></form>
+                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><AdminSubmitButton className={adminButton} name="action" value="approve" disabled={version.status === "APPROVED"}>Approuver</AdminSubmitButton></form>
+                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><AdminSubmitButton className={adminButton} name="action" value="publish" disabled={version.status !== "APPROVED"}>Publier</AdminSubmitButton></form>
                 </div>
               </div>
               {version.item.kind === "CHAPTER" && (
-                <details className="mt-4 border-t border-line pt-3">
-                  <summary className="cursor-pointer text-sm text-muted">Créer une nouvelle version corrigée</summary>
-                  <form action={createContentRevision} className="mt-3 grid gap-3">
-                    <input type="hidden" name="itemId" value={version.itemId} />
-                    <label className="grid gap-1 text-xs text-muted">Titre<input className={adminInput} name="title" defaultValue={version.title} required maxLength={180} /></label>
-                    <label className="grid gap-1 text-xs text-muted">Texte du cours<textarea className={`${adminInput} min-h-36 py-3`} name="body" defaultValue={version.bodyHtml ?? ""} maxLength={100000} /></label>
-                    <label className="grid gap-1 text-xs text-muted">Résumé de la correction<input className={adminInput} name="note" required minLength={3} maxLength={500} placeholder="Ex. Clarification de la définition…" /></label>
-                    <p className="text-xs leading-relaxed text-muted">Les questions et fiches de la version précédente sont reprises. Cette saisie est du texte ; l’import HTML ou PDF et la génération Claude sont à connecter.</p>
-                    <button className={adminButton}>Enregistrer en « à relire »</button>
-                  </form>
-                </details>
+                <ContentRevisionDisclosure
+                  versionId={version.id}
+                  itemId={version.itemId}
+                  title={version.title}
+                />
               )}
             </article>
           ))}
+        </div>
+      </AdminPanel>
+    </>
+  );
+}
+
+function ContentStudioLoading() {
+  return (
+    <>
+      <AdminHeading eyebrow="Studio de contenu" title="Relire et publier" description="Chargement des versions à relire…" />
+      <AdminPanel title="Versions en attente">
+        <div className="grid gap-4" aria-busy="true">
+          {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-24 animate-pulse rounded-xl border border-line bg-bg2/60" />)}
         </div>
       </AdminPanel>
     </>
@@ -172,7 +210,15 @@ async function Students({ query }: { query: string }) {
     },
     orderBy: { createdAt: "desc" },
     take: 50,
-    include: { level: { select: { name: true } }, _count: { select: { attempts: true, payments: true, tickets: true } } },
+    select: {
+      id: true,
+      email: true,
+      displayName: true,
+      createdAt: true,
+      suspendedAt: true,
+      level: { select: { name: true } },
+      _count: { select: { attempts: true, payments: true, tickets: true } },
+    },
   });
   return (
     <>
@@ -203,7 +249,20 @@ async function Students({ query }: { query: string }) {
 
 async function Payments() {
   const [payments, counts] = await Promise.all([
-    prisma.payment.findMany({ orderBy: { createdAt: "desc" }, take: 60, include: { user: { select: { displayName: true, email: true } }, plan: { select: { name: true } } } }),
+    prisma.payment.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 60,
+      select: {
+        id: true,
+        createdAt: true,
+        amountXof: true,
+        status: true,
+        method: true,
+        provider: true,
+        user: { select: { displayName: true, email: true } },
+        plan: { select: { name: true } },
+      },
+    }),
     prisma.payment.groupBy({ by: ["status"], _count: { _all: true }, _sum: { amountXof: true } }),
   ]);
   return (
@@ -227,10 +286,10 @@ async function Payments() {
 async function Operations() {
   const [levels, events, quests, tickets, announcements] = await Promise.all([
     prisma.level.findMany({ orderBy: [{ position: "asc" }, { name: "asc" }], select: { id: true, name: true } }),
-    prisma.event.findMany({ orderBy: { createdAt: "desc" }, take: 10 }),
-    prisma.questDefinition.findMany({ orderBy: { title: "asc" }, take: 20 }),
+    prisma.event.findMany({ orderBy: { createdAt: "desc" }, take: 10, select: { id: true, title: true, status: true } }),
+    prisma.questDefinition.findMany({ orderBy: { title: "asc" }, take: 20, select: { id: true, title: true, active: true } }),
     prisma.supportTicket.findMany({ where: { status: "open" }, orderBy: { createdAt: "asc" }, take: 20, include: { user: { select: { displayName: true, email: true } } } }),
-    prisma.announcement.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
+    prisma.announcement.findMany({ orderBy: { createdAt: "desc" }, take: 8, select: { id: true, title: true, audience: true, createdAt: true } }),
   ]);
   return (
     <>
@@ -284,11 +343,37 @@ async function Operations() {
 }
 
 async function Settings() {
-  const [plans, limits, budgetSetting, keys] = await Promise.all([
-    prisma.plan.findMany({ orderBy: { tier: "asc" } }),
-    prisma.tierLimits.findMany({ orderBy: { tier: "asc" } }),
-    prisma.appSetting.findUnique({ where: { key: "ai.monthlyBudgetUsd" } }),
-    prisma.accessKey.findMany({ orderBy: { createdAt: "desc" }, take: 12, include: { plan: { select: { name: true } }, usedBy: { select: { email: true } } } }),
+  const [plans, limits, budgetSetting, readingMinimumSeconds, quizValidationPercent, keys] = await Promise.all([
+    prisma.plan.findMany({
+      orderBy: { tier: "asc" },
+      select: { id: true, name: true, tier: true, durationDays: true, priceXof: true },
+    }),
+    prisma.tierLimits.findMany({
+      orderBy: { tier: "asc" },
+      select: {
+        tier: true,
+        dailyTrainingSessions: true,
+        dailyGames: true,
+        examsPerSubject: true,
+        streakFreezesPerMonth: true,
+        spacedReview: true,
+        detailedExamCorrection: true,
+        helpGroup: true,
+      },
+    }),
+    prisma.appSetting.findUnique({ where: { key: "ai.monthlyBudgetUsd" }, select: { value: true } }),
+    getReadingMinimumSeconds(),
+    getQuizValidationPercent(),
+    prisma.accessKey.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 12,
+      select: {
+        id: true,
+        code: true,
+        plan: { select: { name: true } },
+        usedBy: { select: { email: true } },
+      },
+    }),
   ]);
   const budget = typeof budgetSetting?.value === "number" ? budgetSetting.value : 0;
   return (
@@ -318,6 +403,26 @@ async function Settings() {
           })}</div>
         </AdminPanel>
         <div className="grid gap-5 xl:grid-cols-2">
+          <AdminPanel title="Durée minimale de lecture">
+            <form action={updateReadingMinimum} className="flex flex-wrap items-end gap-3">
+              <label className="grid min-w-48 flex-1 gap-1 text-xs text-muted">
+                Secondes avant validation du chapitre
+                <input className={adminInput} name="readingMinSeconds" type="number" min={0} max={MAX_READING_MIN_SECONDS} step={1} defaultValue={readingMinimumSeconds} required />
+              </label>
+              <button className={adminButton}>Enregistrer la durée</button>
+            </form>
+            <p className="mt-3 text-xs text-muted">La fin du cours reste nécessaire. 0 seconde désactive uniquement l’attente, pas le défilement jusqu’au bas. Maximum : {MAX_READING_MIN_SECONDS} secondes.</p>
+          </AdminPanel>
+          <AdminPanel title="Seuil de validation des quiz">
+            <form action={updateQuizValidationPercent} className="flex flex-wrap items-end gap-3">
+              <label className="grid min-w-48 flex-1 gap-1 text-xs text-muted">
+                Score minimum en pourcentage
+                <input className={adminInput} name="quizValidationPercent" type="number" min={1} max={100} step={1} defaultValue={quizValidationPercent} required />
+              </label>
+              <button className={adminButton}>Enregistrer le seuil</button>
+            </form>
+            <p className="mt-3 text-xs text-muted">Le serveur applique ce seuil pour valider les chapitres. Valeur initiale : 100 %.</p>
+          </AdminPanel>
           <AdminPanel title="Budget IA mensuel">
             <form action={updateAiBudget} className="flex flex-wrap items-end gap-3"><label className="grid min-w-48 flex-1 gap-1 text-xs text-muted">Plafond en USD<input className={adminInput} name="monthlyBudgetUsd" type="number" min={0} step="0.01" defaultValue={budget} required /></label><button className={adminButton}>Enregistrer le budget</button></form>
             <p className="mt-3 text-xs text-muted">Valeur enregistrée. Le service de génération ne lit pas encore ce réglage.</p>
@@ -345,7 +450,14 @@ async function Audit() {
   const logs = await prisma.auditLog.findMany({
     orderBy: { createdAt: "desc" },
     take: 100,
-    include: { actor: { select: { displayName: true, email: true } } },
+    select: {
+      id: true,
+      createdAt: true,
+      action: true,
+      entity: true,
+      meta: true,
+      actor: { select: { displayName: true, email: true } },
+    },
   });
   return (
     <>

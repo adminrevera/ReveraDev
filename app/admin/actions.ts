@@ -15,6 +15,8 @@ import { z } from "zod";
 import { requireAdminAction } from "@/lib/auth/access";
 import { localCalendarDay } from "@/lib/local-day";
 import { prisma } from "@/lib/prisma";
+import { MAX_READING_MIN_SECONDS } from "@/lib/reading-settings";
+import { measureServerOperation } from "@/lib/server-performance";
 
 const uuid = z.string().uuid();
 const getText = (formData: FormData, key: string) => String(formData.get(key) ?? "").trim();
@@ -31,40 +33,47 @@ export async function reviewContent(formData: FormData) {
   });
   if (!parsed.success) throw new Error("Demande de modération invalide.");
 
-  await prisma.$transaction(async (tx) => {
-    const version = await tx.contentVersion.findUnique({
-      where: { id: parsed.data.versionId },
-      select: { id: true, itemId: true, status: true, reviewedById: true, title: true },
-    });
-    if (!version) throw new Error("Cette version de contenu n’existe plus.");
-
+  await measureServerOperation("admin.reviewContent.transaction", () => prisma.$transaction(async (tx) => {
     if (parsed.data.action === "approve") {
-      if (version.status !== "IN_REVIEW" && version.status !== "AI_DRAFT") {
-        throw new Error("Cette version ne peut plus être approuvée dans son état actuel.");
-      }
-      await tx.contentVersion.update({
-        where: { id: version.id },
+      const updated = await tx.contentVersion.updateMany({
+        where: { id: parsed.data.versionId, status: { in: ["IN_REVIEW", "AI_DRAFT"] } },
         data: { status: "APPROVED", reviewedById: profile.id, reviewedAt: new Date() },
       });
+      if (updated.count !== 1) {
+        const version = await tx.contentVersion.findUnique({
+          where: { id: parsed.data.versionId },
+          select: { id: true },
+        });
+        if (!version) throw new Error("Cette version de contenu n’existe plus.");
+        throw new Error("Cette version ne peut plus être approuvée dans son état actuel.");
+      }
       await tx.auditLog.create({
-        data: { actorId: user.id, action: "content.approve", entity: "ContentVersion", entityId: version.id },
+        data: { actorId: user.id, action: "content.approve", entity: "ContentVersion", entityId: parsed.data.versionId },
       });
       return;
     }
 
+    const version = await tx.contentVersion.findUnique({
+      where: { id: parsed.data.versionId },
+      select: {
+        id: true,
+        itemId: true,
+        status: true,
+        reviewedById: true,
+        title: true,
+        item: { select: { publishedVersionId: true } },
+      },
+    });
+    if (!version) throw new Error("Cette version de contenu n’existe plus.");
     if (version.status !== "APPROVED" || !version.reviewedById) {
       throw new Error("Une version doit être relue et approuvée avant publication.");
     }
-    const item = await tx.contentItem.findUnique({
-      where: { id: version.itemId },
-      select: { title: true, publishedVersionId: true },
-    });
-    if (!item) throw new Error("Le contenu associé à cette version est introuvable.");
-    if (item.publishedVersionId === version.id) return;
+    if (!version.item) throw new Error("Le contenu associé à cette version est introuvable.");
+    if (version.item.publishedVersionId === version.id) return;
 
-    if (item.publishedVersionId) {
+    if (version.item.publishedVersionId) {
       await tx.contentVersion.update({
-        where: { id: item.publishedVersionId },
+        where: { id: version.item.publishedVersionId },
         data: { status: "ARCHIVED" },
       });
     }
@@ -79,7 +88,7 @@ export async function reviewContent(formData: FormData) {
     await tx.auditLog.create({
       data: { actorId: user.id, action: "content.publish", entity: "ContentVersion", entityId: version.id },
     });
-  });
+  }));
 
   revalidatePath("/admin");
   revalidatePath("/parcours");
@@ -155,6 +164,20 @@ export async function createContentRevision(formData: FormData) {
   });
 
   revalidatePath("/admin");
+}
+
+export async function getContentVersionBodyHtml(versionId: string) {
+  await requireAdminAction();
+  const parsedVersionId = uuid.safeParse(versionId);
+  if (!parsedVersionId.success) throw new Error("Identifiant de version invalide.");
+
+  const version = await prisma.contentVersion.findUnique({
+    where: { id: parsedVersionId.data },
+    select: { bodyHtml: true },
+  });
+  if (!version) throw new Error("Version de contenu introuvable.");
+
+  return version.bodyHtml;
 }
 
 export async function setStudentSuspended(formData: FormData) {
@@ -348,6 +371,58 @@ export async function updateAiBudget(formData: FormData) {
     }),
     prisma.auditLog.create({
       data: { actorId: user.id, action: "settings.ai-budget.update", entity: "AppSetting", entityId: "ai.monthlyBudgetUsd", meta: { monthlyBudgetUsd: parsed.data } },
+    }),
+  ]);
+  revalidatePath("/admin");
+}
+
+export async function updateReadingMinimum(formData: FormData) {
+  const { user } = await requireAdminAction();
+  const parsed = z.coerce.number().int().min(0).max(MAX_READING_MIN_SECONDS).safeParse(
+    getText(formData, "readingMinSeconds"),
+  );
+  if (!parsed.success) throw new Error(`La durée minimale doit être comprise entre 0 et ${MAX_READING_MIN_SECONDS} secondes.`);
+
+  await prisma.$transaction([
+    prisma.appSetting.upsert({
+      where: { key: "reading.minSeconds" },
+      create: { key: "reading.minSeconds", value: parsed.data },
+      update: { value: parsed.data },
+    }),
+    prisma.auditLog.create({
+      data: {
+        actorId: user.id,
+        action: "settings.reading-minimum.update",
+        entity: "AppSetting",
+        entityId: "reading.minSeconds",
+        meta: { readingMinSeconds: parsed.data },
+      },
+    }),
+  ]);
+  revalidatePath("/admin");
+}
+
+export async function updateQuizValidationPercent(formData: FormData) {
+  const { user } = await requireAdminAction();
+  const parsed = z.coerce.number().int().min(1).max(100).safeParse(
+    getText(formData, "quizValidationPercent"),
+  );
+  if (!parsed.success) throw new Error("Le seuil de validation du quiz doit être un entier compris entre 1 et 100 %.");
+
+  await prisma.$transaction([
+    prisma.appSetting.upsert({
+      where: { key: "quiz.validationPercent" },
+      create: { key: "quiz.validationPercent", value: parsed.data },
+      update: { value: parsed.data },
+    }),
+    prisma.auditLog.create({
+      data: {
+        actorId: user.id,
+        action: "settings.quiz-validation.update",
+        entity: "AppSetting",
+        entityId: "quiz.validationPercent",
+        meta: { quizValidationPercent: parsed.data },
+      },
     }),
   ]);
   revalidatePath("/admin");

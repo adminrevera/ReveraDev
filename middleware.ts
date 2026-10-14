@@ -1,5 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { VERIFIED_USER_ID_HEADER } from "@/lib/auth/request-context";
+import { measureServerOperation } from "@/lib/server-performance";
 
 const protectedPaths = [
   "/dashboard",
@@ -31,14 +33,25 @@ export async function middleware(request: NextRequest) {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const isProtected = matchesPath(request.nextUrl.pathname, protectedPaths);
 
+  const forwardedHeaders = new Headers(request.headers);
+  forwardedHeaders.delete(VERIFIED_USER_ID_HEADER);
+
   if (!url || !key) {
     if (isProtected) {
       return NextResponse.redirect(new URL("/connexion?error=auth-not-configured", request.url));
     }
-    return NextResponse.next({ request });
+    return NextResponse.next({ request: { headers: forwardedHeaders } });
   }
 
-  let response = NextResponse.next({ request });
+  let verifiedUserId: string | null = null;
+  const nextResponse = () => {
+    const headers = new Headers(request.headers);
+    headers.delete(VERIFIED_USER_ID_HEADER);
+    if (verifiedUserId) headers.set(VERIFIED_USER_ID_HEADER, verifiedUserId);
+    return NextResponse.next({ request: { headers } });
+  };
+
+  let response = nextResponse();
   const supabase = createServerClient(url, key, {
     cookies: {
       getAll() {
@@ -46,7 +59,7 @@ export async function middleware(request: NextRequest) {
       },
       setAll(cookiesToSet) {
         cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
-        response = NextResponse.next({ request });
+        response = nextResponse();
         cookiesToSet.forEach(({ name, value, options }) => {
           response.cookies.set(name, value, options);
         });
@@ -54,20 +67,24 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
+  const { data, error } = await measureServerOperation(
+    "auth.middleware.getUser",
+    () => supabase.auth.getUser(),
+  );
+  verifiedUserId = data.user?.id ?? null;
+  const refreshedCookies = response.cookies.getAll();
+  response = nextResponse();
+  refreshedCookies.forEach((cookie) => response.cookies.set({ ...cookie }));
 
   if (error && error.name !== "AuthSessionMissingError" && isProtected) {
     return redirectWithCookies(request, "/connexion?error=session-check-failed", response);
   }
 
-  if (isProtected && !user) {
+  if (isProtected && !verifiedUserId) {
     return redirectWithCookies(request, "/connexion", response);
   }
 
-  if (user && matchesPath(request.nextUrl.pathname, authPaths)) {
+  if (verifiedUserId && matchesPath(request.nextUrl.pathname, authPaths)) {
     return redirectWithCookies(request, "/dashboard", response);
   }
 
@@ -75,5 +92,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|manifest\\.webmanifest|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"],
 };
