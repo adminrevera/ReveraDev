@@ -1,695 +1,695 @@
 {
- "slug": "fbd",
- "name": "Fondamentaux des BDD",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Le modèle relationnel",
-   "subtitle": "Relations, attributs, tuples, clés primaires et étrangères — les fondations des bases de données.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre le rôle d'un SGBD et du modèle relationnel<br/>\n        • Maîtriser le vocabulaire R.A.T.D. (Relation, Attribut, Tuple, Domaine)<br/>\n        • Identifier clés primaires et clés étrangères · Comprendre les cardinalités</p>\n</div>\n<h2>Pourquoi les bases de données ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🔧 Analogie du catalogue de bibliothèque</div>\n<p>Imagine un bibliothécaire qui gère des milliers de livres. Sans système, retrouver un livre prendrait des heures. Une base de données, c'est le <strong>catalogue organisé</strong> qui permet de retrouver n'importe quel livre en secondes !<br/><br/>\n        Avant les BDD, on utilisait des fichiers plats → redondance, incohérence, pas de sécurité. Le <strong>SGBD</strong> (Système de Gestion de Base de Données) résout tous ces problèmes.</p>\n</div>\n<h2>Le modèle relationnel — R.A.T.D.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémonique R.A.T.D.</div>\n<p><strong>R</strong>elation = Table · <strong>A</strong>ttribut = Colonne · <strong>T</strong>uple = Ligne · <strong>D</strong>omaine = Type de valeurs</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme technique</th><th>Équivalent courant</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Relation</strong></td><td>Table</td><td>ETUDIANTS</td></tr>\n<tr><td><strong>Attribut</strong></td><td>Colonne</td><td>nom, prenom, age</td></tr>\n<tr><td><strong>Tuple</strong></td><td>Ligne / Enregistrement</td><td>(1, \"Ali\", \"Ben\", 20)</td></tr>\n<tr><td><strong>Domaine</strong></td><td>Type de valeurs</td><td>INTEGER, VARCHAR, DATE</td></tr>\n<tr><td><strong>Schéma</strong></td><td>Structure de la table</td><td>ETUDIANTS(id, nom, prenom, age)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Notation schéma relationnel</div>\n<pre>ETUDIANTS(id, nom, prenom, date_naissance, email)\n          ──                                         ← souligné = clé primaire\nCOURS(code_cours, intitule, credits)\n      ──────────\nINSCRIPTIONS(#id_etudiant, #code_cours, note)\n              ──────────────────────────────── ← # = clé étrangère</pre>\n</div>\n<h2>La clé primaire (PK)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — U.N.I. (Unique, Non-null, Immuable)</div>\n<p>Analogie : La clé primaire, c'est comme ton <strong>numéro de sécurité sociale</strong> — chaque personne en a un et un seul, et deux personnes ne partagent jamais le même.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Signification</th><th>Violation</th></tr></thead>\n<tbody>\n<tr><td><strong>Unique</strong></td><td>Pas de doublon dans la colonne</td><td>Deux étudiants avec id=1 → ❌</td></tr>\n<tr><td><strong>Non-null</strong></td><td>Jamais vide</td><td>Un étudiant sans id → ❌</td></tr>\n<tr><td><strong>Immuable</strong></td><td>Ne change pas après création</td><td>Modifier l'id d'un étudiant → ❌</td></tr>\n</tbody>\n</table></div>\n<h2>La clé étrangère (FK)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎫 Analogie du ticket de cinéma</div>\n<p>Le numéro de salle sur ton ticket (clé étrangère) pointe vers une salle précise dans le cinéma (clé primaire de la table SALLES). Le ticket n'invente pas de salle — il <em>référence</em> une salle existante.<br/><br/>\n        ⚠️ <strong>Intégrité référentielle :</strong> On ne peut PAS insérer un id_etudiant dans NOTES qui n'existe pas dans ETUDIANTS. Le SGBD bloque l'opération.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple FK</div>\n<pre>ETUDIANTS(id, nom, prenom)\nNOTES(id_note, #id_etudiant, matiere, valeur)\n                └── clé étrangère → ETUDIANTS.id</pre>\n</div>\n<h2>Types de relations (cardinalités)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — 1:1 / 1:N / M:N</div>\n<p><strong>1:1</strong> = Personne ↔ Passeport  |  <strong>1:N</strong> = Professeur → Cours  |  <strong>M:N</strong> = Étudiants ↔ Cours</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Signification</th><th>Implémentation SQL</th></tr></thead>\n<tbody>\n<tr><td><strong>1:1</strong></td><td>Un enregistrement lié à un seul autre</td><td>FK UNIQUE dans l'une des tables</td></tr>\n<tr><td><strong>1:N</strong></td><td>Un enregistrement lié à plusieurs</td><td>FK dans la table côté N</td></tr>\n<tr><td><strong>M:N</strong></td><td>Plusieurs liés à plusieurs</td><td>Table de jonction (pivot)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Relation M:N → table de jonction</div>\n<pre>ETUDIANTS(id_etu, nom, prenom)\nCOURS(id_cours, intitule, credits)\nINSCRIPTIONS(#id_etu, #id_cours, date_inscription, note)\n              └─ table de jonction avec 2 clés étrangères</pre>\n</div>\n<h2>Exercice guidé — Identifier PK et FK</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exercice</div>\n<pre>ETUDIANT(NumEtu, Nom, Prenom, DateNaissance)\nINSCRIPTION(NumEtu, CodeModule, Annee, Note)\nClés primaires :\n  ETUDIANT     → NumEtu (identifie chaque étudiant)\n  INSCRIPTION  → (NumEtu, CodeModule, Annee) ← clé composée !\nClé étrangère :\n  INSCRIPTION.NumEtu → ETUDIANT.NumEtu\n  (garantit qu'on ne peut pas inscrire un étudiant inexistant)</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — BDD</h3>\n<ul>\n<li><strong>R.A.T.D.</strong> : Relation (table) · Attribut (colonne) · Tuple (ligne) · Domaine (type)</li>\n<li>Clé primaire : <strong>U.N.I.</strong> — Unique, Non-null, Immuable</li>\n<li>Clé étrangère : lien entre tables → intégrité référentielle</li>\n<li>1:1 · 1:N (FK côté N) · M:N (table de jonction)</li>\n<li>Notation : souligné = PK · # = FK</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "fbd",
+  "name": "Fondamentaux des BDD",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Dans le modèle relationnel, un « tuple » correspond à :",
-     "options": [
-      {
-       "text": "Une colonne de la table",
-       "correct": false,
-       "explanation": "Un attribut est une colonne, pas une ligne."
-      },
-      {
-       "text": "La table entière",
-       "correct": false,
-       "explanation": "La table entière est la relation, pas un tuple."
-      },
-      {
-       "text": "Une ligne (enregistrement)",
-       "correct": true,
-       "explanation": "Correct ! Un tuple est une ligne (enregistrement) de la table. Ex : (1, 'Ali', 'Ben', 20)."
-      },
-      {
-       "text": "Le type de valeurs autorisées",
-       "correct": false,
-       "explanation": "Le type de valeurs est le domaine, pas le tuple."
-      }
-     ]
+      "number": 1,
+      "title": "Le modèle relationnel",
+      "subtitle": "Relations, attributs, tuples, clés primaires et étrangères — les fondations des bases de données.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Comprendre le rôle d'un SGBD et du modèle relationnel</li><li>Maîtriser le vocabulaire R.A.T.D. (Relation, Attribut, Tuple, Domaine)</li><li>Identifier clés primaires et clés étrangères · Comprendre les cardinalités</li></ul></div>\n<h2>Pourquoi les bases de données ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie du catalogue de bibliothèque</div>\n<p>Imagine un bibliothécaire qui gère des milliers de livres. Sans système, retrouver un livre prendrait des heures. Une base de données, c'est le <strong>catalogue organisé</strong> qui permet de retrouver n'importe quel livre en secondes !<br/><br/>\n        Avant les BDD, on utilisait des fichiers plats → redondance, incohérence, pas de sécurité. Le <strong>SGBD</strong> (Système de Gestion de Base de Données) résout tous ces problèmes.</p></div>\n<h2>Le modèle relationnel — R.A.T.D.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémonique R.A.T.D.</div>\n<p><strong>R</strong>elation = Table · <strong>A</strong>ttribut = Colonne · <strong>T</strong>uple = Ligne · <strong>D</strong>omaine = Type de valeurs</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme technique</th><th>Équivalent courant</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Relation</strong></td><td>Table</td><td>ETUDIANTS</td></tr>\n<tr><td><strong>Attribut</strong></td><td>Colonne</td><td>nom, prenom, age</td></tr>\n<tr><td><strong>Tuple</strong></td><td>Ligne / Enregistrement</td><td>(1, \"Ali\", \"Ben\", 20)</td></tr>\n<tr><td><strong>Domaine</strong></td><td>Type de valeurs</td><td>INTEGER, VARCHAR, DATE</td></tr>\n<tr><td><strong>Schéma</strong></td><td>Structure de la table</td><td>ETUDIANTS(id, nom, prenom, age)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Notation schéma relationnel</div>\n<pre>ETUDIANTS(id, nom, prenom, date_naissance, email)\n          ──                                         ← souligné = clé primaire\nCOURS(code_cours, intitule, credits)\n      ──────────\nINSCRIPTIONS(#id_etudiant, #code_cours, note)\n              ──────────────────────────────── ← # = clé étrangère</pre></div>\n<h2>La clé primaire (PK)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — U.N.I. (Unique, Non-null, Immuable)</div>\n<p>Analogie : La clé primaire, c'est comme ton <strong>numéro de sécurité sociale</strong> — chaque personne en a un et un seul, et deux personnes ne partagent jamais le même.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Signification</th><th>Violation</th></tr></thead>\n<tbody>\n<tr><td><strong>Unique</strong></td><td>Pas de doublon dans la colonne</td><td>Deux étudiants avec id=1 → </td></tr>\n<tr><td><strong>Non-null</strong></td><td>Jamais vide</td><td>Un étudiant sans id → </td></tr>\n<tr><td><strong>Immuable</strong></td><td>Ne change pas après création</td><td>Modifier l'id d'un étudiant → </td></tr>\n</tbody>\n</table></div>\n<h2>La clé étrangère (FK)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie du ticket de cinéma</div>\n<p>Le numéro de salle sur ton ticket (clé étrangère) pointe vers une salle précise dans le cinéma (clé primaire de la table SALLES). Le ticket n'invente pas de salle — il <em>référence</em> une salle existante.<br/><br/>\n         <strong>Intégrité référentielle :</strong> On ne peut PAS insérer un id_etudiant dans NOTES qui n'existe pas dans ETUDIANTS. Le SGBD bloque l'opération.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple FK</div>\n<pre>ETUDIANTS(id, nom, prenom)\nNOTES(id_note, #id_etudiant, matiere, valeur)\n                └── clé étrangère → ETUDIANTS.id</pre></div>\n<h2>Types de relations (cardinalités)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — 1:1 / 1:N / M:N</div>\n<p><strong>1:1</strong> = Personne  Passeport  |  <strong>1:N</strong> = Professeur → Cours  |  <strong>M:N</strong> = Étudiants  Cours</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Signification</th><th>Implémentation SQL</th></tr></thead>\n<tbody>\n<tr><td><strong>1:1</strong></td><td>Un enregistrement lié à un seul autre</td><td>FK UNIQUE dans l'une des tables</td></tr>\n<tr><td><strong>1:N</strong></td><td>Un enregistrement lié à plusieurs</td><td>FK dans la table côté N</td></tr>\n<tr><td><strong>M:N</strong></td><td>Plusieurs liés à plusieurs</td><td>Table de jonction (pivot)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Relation M:N → table de jonction</div>\n<pre>ETUDIANTS(id_etu, nom, prenom)\nCOURS(id_cours, intitule, credits)\nINSCRIPTIONS(#id_etu, #id_cours, date_inscription, note)\n              └─ table de jonction avec 2 clés étrangères</pre></div>\n<h2>Exercice guidé — Identifier PK et FK</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exercice</div>\n<pre>ETUDIANT(NumEtu, Nom, Prenom, DateNaissance)\nINSCRIPTION(NumEtu, CodeModule, Annee, Note)\nClés primaires :\n  ETUDIANT     → NumEtu (identifie chaque étudiant)\n  INSCRIPTION  → (NumEtu, CodeModule, Annee) ← clé composée !\nClé étrangère :\n  INSCRIPTION.NumEtu → ETUDIANT.NumEtu\n  (garantit qu'on ne peut pas inscrire un étudiant inexistant)</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — BDD</h3>\n<ul>\n<li><strong>R.A.T.D.</strong> : Relation (table) · Attribut (colonne) · Tuple (ligne) · Domaine (type)</li>\n<li>Clé primaire : <strong>U.N.I.</strong> — Unique, Non-null, Immuable</li>\n<li>Clé étrangère : lien entre tables → intégrité référentielle</li>\n<li>1:1 · 1:N (FK côté N) · M:N (table de jonction)</li>\n<li>Notation : souligné = PK · # = FK</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans le modèle relationnel, un « tuple » correspond à :",
+          "options": [
+            {
+              "text": "Une colonne de la table",
+              "correct": false,
+              "explanation": "Un attribut est une colonne, pas une ligne."
+            },
+            {
+              "text": "La table entière",
+              "correct": false,
+              "explanation": "La table entière est la relation, pas un tuple."
+            },
+            {
+              "text": "Une ligne (enregistrement)",
+              "correct": true,
+              "explanation": "Correct ! Un tuple est une ligne (enregistrement) de la table. Ex : (1, 'Ali', 'Ben', 20)."
+            },
+            {
+              "text": "Le type de valeurs autorisées",
+              "correct": false,
+              "explanation": "Le type de valeurs est le domaine, pas le tuple."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la propriété U.N.I. d'une clé primaire ?",
+          "options": [
+            {
+              "text": "Universelle, Nulle, Indéfinie",
+              "correct": false,
+              "explanation": "Les propriétés de la clé primaire sont Unique, Non-null et Immuable, pas Universelle."
+            },
+            {
+              "text": "Unique, Non-null, Immuable",
+              "correct": true,
+              "explanation": "Correct ! U.N.I. = Unique (pas de doublon), Non-null (jamais vide), Immuable (ne change pas)."
+            },
+            {
+              "text": "Unaire, Négative, Identique",
+              "correct": false,
+              "explanation": "Ces 3 propriétés ne correspondent pas à la définition de clé primaire."
+            },
+            {
+              "text": "Updatable, Nullable, Indexed",
+              "correct": false,
+              "explanation": "Updatable n'est pas une propriété de clé primaire — au contraire, elle est Immuable."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Une relation M:N entre ÉTUDIANTS et COURS est implémentée via :",
+          "options": [
+            {
+              "text": "Une clé étrangère directe dans COURS",
+              "correct": false,
+              "explanation": "Une FK directe ne peut représenter qu'une relation 1:N."
+            },
+            {
+              "text": "Une clé étrangère dans ÉTUDIANTS",
+              "correct": false,
+              "explanation": "Une FK directe dans ÉTUDIANTS représente une relation 1:N, pas M:N."
+            },
+            {
+              "text": "Une table de jonction avec deux clés étrangères",
+              "correct": true,
+              "explanation": "Correct ! Une relation M:N nécessite une table de jonction (ex: INSCRIPTIONS) avec deux clés étrangères pointant vers les deux tables."
+            },
+            {
+              "text": "La duplication des données dans les deux tables",
+              "correct": false,
+              "explanation": "La duplication est une mauvaise pratique (redondance), pas la solution."
+            }
+          ]
+        }
+      ],
+      "source": "fbd/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle est la propriété U.N.I. d'une clé primaire ?",
-     "options": [
-      {
-       "text": "Universelle, Nulle, Indéfinie",
-       "correct": false,
-       "explanation": "Les propriétés de la clé primaire sont Unique, Non-null et Immuable, pas Universelle."
-      },
-      {
-       "text": "Unique, Non-null, Immuable",
-       "correct": true,
-       "explanation": "Correct ! U.N.I. = Unique (pas de doublon), Non-null (jamais vide), Immuable (ne change pas)."
-      },
-      {
-       "text": "Unaire, Négative, Identique",
-       "correct": false,
-       "explanation": "Ces 3 propriétés ne correspondent pas à la définition de clé primaire."
-      },
-      {
-       "text": "Updatable, Nullable, Indexed",
-       "correct": false,
-       "explanation": "Updatable n'est pas une propriété de clé primaire — au contraire, elle est Immuable."
-      }
-     ]
+      "number": 2,
+      "title": "Algèbre relationnelle",
+      "subtitle": "Sélection, projection, jointure et opérateurs ensemblistes.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Maîtriser les opérateurs unaires : sélection (σ) et projection (π)</li><li>Maîtriser les opérateurs binaires : jointure, union, intersection, différence</li><li>Combiner les opérateurs pour formuler des requêtes complexes</li></ul></div>\n<h2>Qu'est-ce que l'algèbre relationnelle ?</h2>\n<p>L'algèbre relationnelle est un <strong>langage formel</strong> pour manipuler des tables (relations). Elle est la base théorique du SQL. Chaque opération prend une ou deux tables en entrée et produit une <strong>nouvelle table</strong> en sortie.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — les 6 opérations fondamentales</div>\n<p><strong>σ</strong> Sélection · <strong>π</strong> Projection · <strong>⋈</strong> Jointure<br/>\n<strong>∪</strong> Union · <strong>∩</strong> Intersection · <strong>−</strong> Différence</p></div>\n<h2>Opérateurs unaires</h2>\n<h3>σ — Sélection (Selection)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Extrait les <strong>lignes (tuples)</strong> qui vérifient une condition.<br/>\n<strong>Notation :</strong> σ<sub>condition</sub>(Relation)<br/>\n        Analogue SQL : clause <code>WHERE</code></p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>σ(age &gt; 18)(ETUDIANTS)          → étudiants de plus de 18 ans\nσ(plan = 'premium')(ABONNES)   → abonnés premium\nσ(ville = 'Lomé' AND age &lt; 25)(CLIENTS)  → combinaison</pre></div>\n<h3>π — Projection (Projection)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Extrait des <strong>colonnes (attributs)</strong> spécifiques. Élimine les doublons.<br/>\n<strong>Notation :</strong> π<sub>A1,A2,…</sub>(Relation)<br/>\n        Analogue SQL : clause <code>SELECT col1, col2</code></p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>π(nom, prenom)(ETUDIANTS)          → seulement nom et prénom\nπ(ville)(CLIENTS)                  → liste des villes (sans doublons)\nπ(nom)(σ(age &gt; 18)(ETUDIANTS))   → combinaison sélection + projection</pre></div>\n<h2>La Jointure ⋈</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Combine deux tables selon une <strong>condition de rapprochement</strong> (souvent une clé étrangère = clé primaire).<br/>\n<strong>Notation :</strong> R ⋈<sub>condition</sub> S<br/>\n        Analogue SQL : <code>JOIN … ON …</code></p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de jointure</th><th>Notation</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><strong>Equi-jointure</strong></td><td>R ⋈(R.id = S.id) S</td><td>Tuples où les valeurs sont égales</td></tr>\n<tr><td><strong>Jointure naturelle</strong></td><td>R ⋈ S</td><td>Jointure sur attributs de même nom</td></tr>\n<tr><td><strong>Produit cartésien</strong></td><td>R × S</td><td>Toutes les combinaisons (sans condition)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple</div>\n<pre>ETUDIANTS ⋈(ETUDIANTS.id = NOTES.id_etudiant) NOTES\n→ Obtenir les notes avec les noms des étudiants</pre></div>\n<h2>Opérateurs ensemblistes (tables compatibles)</h2>\n<p>Ces opérateurs s'appliquent à deux tables de <strong>même schéma</strong> (mêmes attributs dans le même ordre).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Symbole</th><th>Résultat</th><th>Analogue SQL</th></tr></thead>\n<tbody>\n<tr><td><strong>Union</strong></td><td>R ∪ S</td><td>Tous les tuples de R OU de S (sans doublons)</td><td>UNION</td></tr>\n<tr><td><strong>Intersection</strong></td><td>R ∩ S</td><td>Tuples présents dans R ET dans S</td><td>INTERSECT</td></tr>\n<tr><td><strong>Différence</strong></td><td>R − S</td><td>Tuples de R qui NE SONT PAS dans S</td><td>EXCEPT / MINUS</td></tr>\n</tbody>\n</table></div>\n<h2>Exemple combiné</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Énoncé</div>\n<p>Tables : ETUDIANTS(id, nom, ville) · INSCRIPTIONS(id_etu, cours, note)<br/>\n        Question : Noms des étudiants de Lomé ayant une note &gt; 12</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Solution algèbre relationnelle</div>\n<pre>1. Sélectionner les étudiants de Lomé :\n   E_lome = σ(ville='Lomé')(ETUDIANTS)\n2. Sélectionner les bonnes notes :\n   I_bien = σ(note &gt; 12)(INSCRIPTIONS)\n3. Jointure sur id :\n   EI = E_lome ⋈(id = id_etu) I_bien\n4. Projeter sur le nom :\n   π(nom)(EI)</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2</h3>\n<ul>\n<li><strong>σ</strong> (sélection) = filtrer les lignes (≡ WHERE en SQL)</li>\n<li><strong>π</strong> (projection) = choisir les colonnes (≡ SELECT en SQL)</li>\n<li><strong>⋈</strong> (jointure) = combiner deux tables sur une condition (≡ JOIN)</li>\n<li><strong>∪, ∩, −</strong> = union, intersection, différence (tables de même schéma)</li>\n<li>Combiner les opérateurs : commencer par σ (réduire les lignes), puis ⋈, puis π</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "L'opérateur σ (sigma) en algèbre relationnelle correspond à :",
+          "options": [
+            {
+              "text": "La projection (sélection de colonnes)",
+              "correct": false,
+              "explanation": "π (pi) est l'opérateur de projection (sélection de colonnes)."
+            },
+            {
+              "text": "La sélection de lignes selon une condition",
+              "correct": true,
+              "explanation": "Correct ! σ (sigma) = sélection de lignes selon une condition. Équivalent SQL : WHERE."
+            },
+            {
+              "text": "La jointure de deux tables",
+              "correct": false,
+              "explanation": "⋈ (bowtie) est l'opérateur de jointure."
+            },
+            {
+              "text": "L'union de deux tables",
+              "correct": false,
+              "explanation": "∪ est l'union, pas la sélection."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour que l'opération R ∪ S (union) soit possible, il faut que :",
+          "options": [
+            {
+              "text": "R et S aient le même nombre de lignes",
+              "correct": false,
+              "explanation": "Le nombre de lignes n'a aucune importance pour l'union."
+            },
+            {
+              "text": "R et S aient la même clé primaire",
+              "correct": false,
+              "explanation": "Les clés primaires doivent être différentes, mais c'est la structure (schéma) qui doit correspondre."
+            },
+            {
+              "text": "R et S aient le même schéma (mêmes attributs)",
+              "correct": true,
+              "explanation": "Correct ! L'union, l'intersection et la différence exigent des tables compatibles : même nombre d'attributs, mêmes domaines dans le même ordre."
+            },
+            {
+              "text": "R et S partagent une clé étrangère",
+              "correct": false,
+              "explanation": "La jointure n'est pas une condition préalable à l'union."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Que retourne π(nom, prenom)(ETUDIANTS) ?",
+          "options": [
+            {
+              "text": "Les lignes qui ont un nom et un prénom",
+              "correct": false,
+              "explanation": "σ sélectionne des lignes selon une condition, pas des colonnes."
+            },
+            {
+              "text": "Une table avec seulement les colonnes nom et prenom",
+              "correct": true,
+              "explanation": "Correct ! π (projection) sélectionne des colonnes. π(nom,prenom)(ETUDIANTS) retourne une table ne contenant que les colonnes nom et prenom."
+            },
+            {
+              "text": "Le produit cartésien des noms et prénoms",
+              "correct": false,
+              "explanation": "Le produit cartésien multiplie deux tables. Ici on a une seule table."
+            },
+            {
+              "text": "Le nombre d'étudiants",
+              "correct": false,
+              "explanation": "COUNT est une fonction SQL d'agrégation, pas une projection."
+            }
+          ]
+        }
+      ],
+      "source": "_private/fbd/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Une relation M:N entre ÉTUDIANTS et COURS est implémentée via :",
-     "options": [
-      {
-       "text": "Une clé étrangère directe dans COURS",
-       "correct": false,
-       "explanation": "Une FK directe ne peut représenter qu'une relation 1:N."
-      },
-      {
-       "text": "Une clé étrangère dans ÉTUDIANTS",
-       "correct": false,
-       "explanation": "Une FK directe dans ÉTUDIANTS représente une relation 1:N, pas M:N."
-      },
-      {
-       "text": "Une table de jonction avec deux clés étrangères",
-       "correct": true,
-       "explanation": "Correct ! Une relation M:N nécessite une table de jonction (ex: INSCRIPTIONS) avec deux clés étrangères pointant vers les deux tables."
-      },
-      {
-       "text": "La duplication des données dans les deux tables",
-       "correct": false,
-       "explanation": "La duplication est une mauvaise pratique (redondance), pas la solution."
-      }
-     ]
+      "number": 3,
+      "title": "SQL — Fondamentaux",
+      "subtitle": "SELECT, WHERE, INSERT, UPDATE, DELETE et CREATE TABLE.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Écrire des requêtes SELECT avec WHERE, ORDER BY, LIMIT</li><li>Utiliser INSERT, UPDATE, DELETE pour modifier les données</li><li>Créer des tables avec CREATE TABLE et les contraintes de base</li></ul></div>\n<h2>Structure générale d'une requête SELECT</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe complète</div>\n<pre>SELECT  colonne1, colonne2, ...   -- quoi afficher\nFROM    table                       -- quelle table\nWHERE   condition                   -- filtre les lignes\nORDER BY colonne [ASC|DESC]         -- tri\nLIMIT   n;                          -- nombre de résultats</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Ordre d'exécution SQL</div>\n<p>SQL s'exécute dans cet ordre (différent de l'ordre d'écriture) :<br/>\n<strong>FROM → WHERE → SELECT → ORDER BY → LIMIT</strong><br/>\n        Phrase : « <em>From Where SELECT ORDER LIMIT</em> »</p></div>\n<h2>SELECT — Les essentiels</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples SELECT</div>\n<pre>-- Tout afficher\nSELECT * FROM ETUDIANTS;\n-- Colonnes spécifiques\nSELECT nom, prenom, age FROM ETUDIANTS;\n-- Alias (renommer l'affichage)\nSELECT nom AS \"Nom de l'étudiant\", age AS \"Age\" FROM ETUDIANTS;\n-- Éviter les doublons\nSELECT DISTINCT ville FROM ETUDIANTS;\n-- Expressions calculées\nSELECT nom, salaire * 1.1 AS salaire_augmente FROM EMPLOYES;</pre></div>\n<h2>WHERE — Filtres et opérateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>=</code></td><td>Égal</td><td><code>WHERE age = 20</code></td></tr>\n<tr><td><code>&lt;&gt;</code> ou <code>!=</code></td><td>Différent</td><td><code>WHERE plan &lt;&gt; 'free'</code></td></tr>\n<tr><td><code>&lt; &gt; &lt;= &gt;=</code></td><td>Comparaisons</td><td><code>WHERE note &gt;= 12</code></td></tr>\n<tr><td><code>BETWEEN … AND …</code></td><td>Intervalle inclusif</td><td><code>WHERE note BETWEEN 10 AND 14</code></td></tr>\n<tr><td><code>IN (…)</code></td><td>Dans une liste</td><td><code>WHERE ville IN ('Lomé','Kara')</code></td></tr>\n<tr><td><code>LIKE</code></td><td>Motif texte (% = n'importe quoi)</td><td><code>WHERE nom LIKE 'K%'</code></td></tr>\n<tr><td><code>IS NULL</code></td><td>Valeur manquante</td><td><code>WHERE telephone IS NULL</code></td></tr>\n<tr><td><code>AND OR NOT</code></td><td>Combinaisons logiques</td><td><code>WHERE age &gt; 18 AND ville = 'Lomé'</code></td></tr>\n</tbody>\n</table></div>\n<h2>Fonctions d'agrégation</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>COUNT(*)</code></td><td>Nombre de lignes</td><td><code>SELECT COUNT(*) FROM ETUDIANTS;</code></td></tr>\n<tr><td><code>SUM(col)</code></td><td>Somme</td><td><code>SELECT SUM(montant) FROM PAIEMENTS;</code></td></tr>\n<tr><td><code>AVG(col)</code></td><td>Moyenne</td><td><code>SELECT AVG(note) FROM NOTES;</code></td></tr>\n<tr><td><code>MAX(col)</code></td><td>Maximum</td><td><code>SELECT MAX(age) FROM ETUDIANTS;</code></td></tr>\n<tr><td><code>MIN(col)</code></td><td>Minimum</td><td><code>SELECT MIN(note) FROM NOTES;</code></td></tr>\n</tbody>\n</table></div>\n<h2>INSERT, UPDATE, DELETE</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Manipulation des données (DML)</div>\n<pre>-- INSERT : ajouter une ligne\nINSERT INTO ETUDIANTS (nom, prenom, age, ville)\nVALUES ('Mensah', 'Kofi', 20, 'Lomé');\n-- UPDATE : modifier des lignes existantes\nUPDATE ETUDIANTS\nSET age = 21, ville = 'Kara'\nWHERE nom = 'Mensah';\n-- DELETE : supprimer des lignes\nDELETE FROM ETUDIANTS\nWHERE age &lt; 18;\n--  ATTENTION : sans WHERE, UPDATE et DELETE affectent TOUTES les lignes !</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Danger — WHERE obligatoire !</div>\n<p><code>DELETE FROM ETUDIANTS;</code> → supprime TOUS les étudiants !<br/>\n<code>UPDATE ETUDIANTS SET age = 0;</code> → remet tous les âges à 0 !<br/>\n        Toujours vérifier sa clause <code>WHERE</code> avant d'exécuter.</p></div>\n<h2>CREATE TABLE</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Création de table avec contraintes</div>\n<pre>CREATE TABLE ETUDIANTS (\n    id       SERIAL PRIMARY KEY,        -- clé primaire auto-incrémentée\n    nom      VARCHAR(50) NOT NULL,      -- obligatoire\n    prenom   VARCHAR(50) NOT NULL,\n    age      INTEGER CHECK (age &gt;= 0),  -- contrainte de valeur\n    email    VARCHAR(100) UNIQUE,       -- unicité\n    ville    VARCHAR(50) DEFAULT 'Lomé' -- valeur par défaut\n);\nCREATE TABLE NOTES (\n    id_note    SERIAL PRIMARY KEY,\n    id_etudiant INTEGER NOT NULL\n        REFERENCES ETUDIANTS(id)        -- clé étrangère\n        ON DELETE CASCADE,              -- suppression en cascade\n    matiere    VARCHAR(30) NOT NULL,\n    note       NUMERIC(4,2) CHECK (note BETWEEN 0 AND 20)\n);</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3</h3>\n<ul>\n<li>Ordre SQL : FROM → WHERE → SELECT → ORDER BY → LIMIT</li>\n<li>WHERE : =, &lt;&gt;, BETWEEN, IN, LIKE '%…%', IS NULL, AND/OR</li>\n<li>Agrégations : COUNT · SUM · AVG · MAX · MIN</li>\n<li>INSERT INTO … VALUES · UPDATE … SET … WHERE · DELETE … WHERE</li>\n<li>CREATE TABLE : SERIAL · VARCHAR · NOT NULL · UNIQUE · REFERENCES · CHECK · DEFAULT</li>\n<li> Toujours mettre WHERE dans UPDATE et DELETE !</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle requête affiche les noms des étudiants de plus de 20 ans, triés par nom ?",
+          "options": [
+            {
+              "text": "SELECT nom FROM ETUDIANTS ORDER BY nom WHERE age > 20;",
+              "correct": false,
+              "explanation": "WHERE vient avant ORDER BY dans l'écriture SQL. Ici WHERE est absent et ORDER BY est mal placé."
+            },
+            {
+              "text": "SELECT nom FROM ETUDIANTS WHERE age > 20 ORDER BY nom;",
+              "correct": true,
+              "explanation": "Correct ! SELECT → FROM → WHERE → ORDER BY. La syntaxe est parfaite."
+            },
+            {
+              "text": "SELECT nom FROM ETUDIANTS FILTER BY age > 20 ORDER nom;",
+              "correct": false,
+              "explanation": "FILTER BY n'existe pas en SQL standard. C'est WHERE."
+            },
+            {
+              "text": "SELECT nom FROM ETUDIANTS HAVING age > 20 ORDER BY nom;",
+              "correct": false,
+              "explanation": "HAVING est utilisé après GROUP BY pour filtrer les groupes, pas les lignes individuelles."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La contrainte NOT NULL sur une colonne signifie :",
+          "options": [
+            {
+              "text": "La colonne ne peut pas contenir de valeurs en double",
+              "correct": false,
+              "explanation": "Les valeurs peuvent se répéter avec NOT NULL. C'est UNIQUE qui interdit les doublons."
+            },
+            {
+              "text": "La colonne doit toujours avoir une valeur (pas NULL)",
+              "correct": true,
+              "explanation": "Correct ! NOT NULL interdit d'insérer NULL dans cette colonne. Elle doit toujours avoir une valeur."
+            },
+            {
+              "text": "La colonne est une clé primaire",
+              "correct": false,
+              "explanation": "PRIMARY KEY impose NOT NULL + UNIQUE, mais NOT NULL seul n'interdit pas les doublons."
+            },
+            {
+              "text": "La colonne ne peut contenir que des nombres",
+              "correct": false,
+              "explanation": "NOT NULL n'a rien à voir avec le type de données (numérique ou texte)."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Que fait la requête : DELETE FROM NOTES; (sans WHERE) ?",
+          "options": [
+            {
+              "text": "Supprime la table NOTES et sa structure",
+              "correct": false,
+              "explanation": "Sans WHERE, DELETE supprime TOUTES les lignes. Il ne supprime pas seulement la table."
+            },
+            {
+              "text": "Supprime toutes les lignes de NOTES (table vide mais conservée)",
+              "correct": true,
+              "explanation": "Correct ! Sans clause WHERE, DELETE supprime TOUTES les lignes de la table NOTES (mais garde la structure vide)."
+            },
+            {
+              "text": "Supprime les lignes en double",
+              "correct": false,
+              "explanation": "Sans WHERE, toutes les lignes sont supprimées, pas seulement les doublons."
+            },
+            {
+              "text": "Génère une erreur car la clé primaire est manquante",
+              "correct": false,
+              "explanation": "DELETE sans WHERE ne nécessite pas de clé — il supprime tout."
+            }
+          ]
+        }
+      ],
+      "source": "_private/fbd/chapitres/chapitre3.html"
+    },
+    {
+      "number": 4,
+      "title": "SQL — Avancé",
+      "subtitle": "Jointures, GROUP BY, HAVING et sous-requêtes.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Écrire des jointures (INNER, LEFT, RIGHT, FULL)</li><li>Grouper les résultats avec GROUP BY et HAVING</li><li>Utiliser des sous-requêtes</li></ul></div>\n<h2>Les Jointures SQL</h2>\n<p>Les jointures permettent de <strong>combiner des données de plusieurs tables</strong> dans une seule requête.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Résultat</th><th>Analogie</th></tr></thead>\n<tbody>\n<tr><td><strong>INNER JOIN</strong></td><td>Lignes ayant une correspondance dans les DEUX tables</td><td>Intersection ∩</td></tr>\n<tr><td><strong>LEFT JOIN</strong></td><td>TOUTES les lignes de la table gauche + correspondances droite (NULL si absent)</td><td>R ∪ (R∩S) côté gauche</td></tr>\n<tr><td><strong>RIGHT JOIN</strong></td><td>TOUTES les lignes de la table droite + correspondances gauche (NULL si absent)</td><td>Symétrique du LEFT</td></tr>\n<tr><td><strong>FULL JOIN</strong></td><td>TOUTES les lignes des deux tables (NULL là où pas de correspondance)</td><td>Union ∪</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples de jointures</div>\n<pre>-- INNER JOIN : étudiants qui ont des notes\nSELECT e.nom, n.matiere, n.note\nFROM ETUDIANTS e\nINNER JOIN NOTES n ON e.id = n.id_etudiant;\n-- LEFT JOIN : TOUS les étudiants, même sans note\nSELECT e.nom, n.matiere, n.note\nFROM ETUDIANTS e\nLEFT JOIN NOTES n ON e.id = n.id_etudiant;\n-- Les étudiants sans notes apparaissent avec NULL\n-- Jointure multi-tables\nSELECT e.nom, c.intitule, i.note\nFROM ETUDIANTS e\nJOIN INSCRIPTIONS i ON e.id = i.id_etudiant\nJOIN COURS c ON i.id_cours = c.id;</pre></div>\n<h2>GROUP BY et fonctions d'agrégation</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Principe</div>\n<p>GROUP BY regroupe les lignes ayant la même valeur dans une colonne, puis applique une fonction d'agrégation (COUNT, SUM, AVG…) à chaque groupe.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples GROUP BY</div>\n<pre>-- Nombre d'étudiants par ville\nSELECT ville, COUNT(*) AS nb_etudiants\nFROM ETUDIANTS\nGROUP BY ville;\n-- Moyenne des notes par matière\nSELECT matiere, AVG(note) AS moyenne, MAX(note) AS max, MIN(note) AS min\nFROM NOTES\nGROUP BY matiere\nORDER BY moyenne DESC;\n-- Notes par étudiant\nSELECT e.nom, COUNT(n.note) AS nb_notes, AVG(n.note) AS moy\nFROM ETUDIANTS e\nJOIN NOTES n ON e.id = n.id_etudiant\nGROUP BY e.id, e.nom;</pre></div>\n<h2>HAVING — Filtrer les groupes</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">WHERE vs HAVING</div>\n<ul><li><strong>WHERE</strong> filtre les <em>lignes</em> AVANT le groupement</li><li><strong>HAVING</strong> filtre les <em>groupes</em> APRÈS le groupement (s'utilise avec GROUP BY)</li></ul></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples HAVING</div>\n<pre>-- Villes avec plus de 5 étudiants\nSELECT ville, COUNT(*) AS nb\nFROM ETUDIANTS\nGROUP BY ville\nHAVING COUNT(*) &gt; 5;\n-- Matières avec une moyenne &gt; 12\nSELECT matiere, AVG(note) AS moyenne\nFROM NOTES\nGROUP BY matiere\nHAVING AVG(note) &gt; 12\nORDER BY moyenne DESC;</pre></div>\n<h2>Sous-requêtes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Une sous-requête est un SELECT <strong>imbriqué dans une autre requête</strong>. Elle peut s'utiliser dans WHERE, FROM ou SELECT.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples de sous-requêtes</div>\n<pre>-- Étudiants avec une note supérieure à la moyenne\nSELECT nom FROM ETUDIANTS\nWHERE id IN (\n    SELECT id_etudiant FROM NOTES\n    WHERE note &gt; (SELECT AVG(note) FROM NOTES)\n);\n-- Avec EXISTS\nSELECT nom FROM ETUDIANTS e\nWHERE EXISTS (\n    SELECT 1 FROM NOTES n\n    WHERE n.id_etudiant = e.id AND n.note &gt;= 15\n);\n-- Sous-requête dans FROM (table dérivée)\nSELECT matiere, moy FROM (\n    SELECT matiere, AVG(note) AS moy FROM NOTES GROUP BY matiere\n) AS moyennes\nWHERE moy &gt; 12;</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 4</h3>\n<ul>\n<li>INNER JOIN = intersection · LEFT JOIN = toutes lignes gauche + NULL à droite</li>\n<li>GROUP BY : regroupe par colonne + agrégation (COUNT, SUM, AVG, MAX, MIN)</li>\n<li>WHERE = avant groupement (lignes) · HAVING = après groupement (groupes)</li>\n<li>Sous-requête dans WHERE (IN, EXISTS), FROM (table dérivée) ou SELECT</li>\n<li>Ordre complet : FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence entre WHERE et HAVING ?",
+          "options": [
+            {
+              "text": "WHERE est pour les nombres, HAVING pour les textes",
+              "correct": false,
+              "explanation": "WHERE et HAVING peuvent tous deux utiliser des conditions, mais pas de la même façon."
+            },
+            {
+              "text": "HAVING s'utilise avant GROUP BY, WHERE après",
+              "correct": false,
+              "explanation": "C'est l'inverse : WHERE vient avant GROUP BY, HAVING après."
+            },
+            {
+              "text": "WHERE filtre les lignes avant le groupement, HAVING filtre les groupes après",
+              "correct": true,
+              "explanation": "Correct ! WHERE filtre les lignes individuelles AVANT le groupement. HAVING filtre les groupes APRÈS le groupement. HAVING nécessite GROUP BY."
+            },
+            {
+              "text": "Ils sont interchangeables, c'est juste une question de style",
+              "correct": false,
+              "explanation": "WHERE et HAVING ne sont pas interchangeables — ils opèrent à des étapes différentes."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Un LEFT JOIN entre ETUDIANTS et NOTES retourne :",
+          "options": [
+            {
+              "text": "Seulement les étudiants qui ont au moins une note",
+              "correct": false,
+              "explanation": "INNER JOIN retourne uniquement les correspondances dans les deux tables."
+            },
+            {
+              "text": "Tous les étudiants, avec NULL pour ceux sans notes",
+              "correct": true,
+              "explanation": "Correct ! LEFT JOIN retourne TOUS les enregistrements de la table gauche (ETUDIANTS), et les correspondances de droite — NULL si l'étudiant n'a pas de note."
+            },
+            {
+              "text": "Toutes les lignes des deux tables",
+              "correct": false,
+              "explanation": "FULL JOIN retourne toutes les lignes des deux tables."
+            },
+            {
+              "text": "Toutes les notes, même sans étudiant associé",
+              "correct": false,
+              "explanation": "RIGHT JOIN retourne toutes les lignes de la table droite (NOTES), pas de la gauche."
+            }
+          ]
+        }
+      ],
+      "source": "_private/fbd/chapitres/chapitre4.html"
+    },
+    {
+      "number": 5,
+      "title": "Normalisation",
+      "subtitle": "1NF, 2NF, 3NF — éliminer la redondance.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Comprendre les problèmes de redondance et d'anomalies</li><li>Appliquer les formes normales 1NF, 2NF, 3NF</li><li>Décomposer une table non normalisée étape par étape</li></ul></div>\n<h2>Pourquoi normaliser ?</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Les 3 anomalies d'une base mal conçue</div>\n<p><strong>Anomalie d'insertion :</strong> impossible d'insérer des données partielles (ex : un cours sans étudiant inscrit)<br/>\n<strong>Anomalie de mise à jour :</strong> modifier une donnée à un seul endroit ne la corrige pas partout<br/>\n<strong>Anomalie de suppression :</strong> supprimer une ligne fait perdre d'autres informations utiles</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Objectif de la normalisation</div>\n<p>Éliminer la redondance → éviter les anomalies → améliorer la cohérence<br/>\n        Chaque fait est stocké <strong>une seule fois</strong>, au bon endroit.</p></div>\n<h2>Dépendances fonctionnelles (DF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>On dit que Y dépend fonctionnellement de X (noté <strong>X → Y</strong>) si, pour toute valeur de X, il y a au plus une valeur de Y.<br/>\n        Ex : NumEtu → NomEtu (le numéro étudiant détermine le nom)</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Notation</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>DF directe</td><td>A → B</td><td>NumEtu → Nom</td></tr>\n<tr><td>DF partielle</td><td>(A,B) → C mais A → C</td><td>(NumEtu,NumCours) → Note mais NumEtu → Nom</td></tr>\n<tr><td>DF transitive</td><td>A → B → C</td><td>NumEtu → CodeVille → NomVille</td></tr>\n</tbody>\n</table></div>\n<h2>Première Forme Normale (1NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 1NF</div>\n<p>Une table est en 1NF si :<br/>\n        ✓ Chaque attribut contient des valeurs <strong>atomiques</strong> (indivisibles)<br/>\n        ✓ Pas de groupes répétitifs ni de valeurs multiples dans une cellule</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 1NF</div>\n<pre>NON 1NF :\n| NumEtu | Nom   | Cours                     |   ← plusieurs cours dans une cellule !\n| E01    | Kofi  | Maths, Info, Anglais       |\n1NF :\n| NumEtu | Nom   | Cours  |\n| E01    | Kofi  | Maths  |\n| E01    | Kofi  | Info   |\n| E01    | Kofi  | Anglais|</pre></div>\n<h2>Deuxième Forme Normale (2NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 2NF</div>\n<p>Une table est en 2NF si :<br/>\n        ✓ Elle est en 1NF<br/>\n        ✓ Tout attribut non-clé dépend de <strong>TOUTE la clé primaire</strong> (pas d'une partie seulement)<br/>\n        → S'applique uniquement si la clé est <strong>composée</strong></p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 2NF → Décomposition</div>\n<pre>NON 2NF (clé = NumEtu+NumCours) :\nINSCRIPTION(NumEtu, NumCours, NomEtu, NomCours, Note)\n  NumEtu → NomEtu       ← DF PARTIELLE (dépend d'une partie de la clé)\n  NumCours → NomCours   ← DF PARTIELLE\n2NF — décomposition :\nETUDIANT(NumEtu, NomEtu)\nCOURS(NumCours, NomCours)\nINSCRIPTION(NumEtu, NumCours, Note)   ← Note dépend de la clé ENTIÈRE</pre></div>\n<h2>Troisième Forme Normale (3NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 3NF</div>\n<p>Une table est en 3NF si :<br/>\n        ✓ Elle est en 2NF<br/>\n        ✓ Aucun attribut non-clé ne dépend d'un autre attribut non-clé (<strong>pas de dépendance transitive</strong>)</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 3NF → Décomposition</div>\n<pre>NON 3NF :\nETUDIANT(NumEtu, NomEtu, CodeVille, NomVille)\n  NumEtu → CodeVille → NomVille   ← TRANSITIVE !\n3NF — décomposition :\nETUDIANT(NumEtu, NomEtu, CodeVille)\nVILLE(CodeVille, NomVille)</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 5</h3>\n<ul>\n<li>3 anomalies à éviter : insertion · mise à jour · suppression</li>\n<li>DF : X → Y signifie que X détermine Y de façon unique</li>\n<li><strong>1NF</strong> : valeurs atomiques, pas de groupes répétitifs</li>\n<li><strong>2NF</strong> : 1NF + tout attribut non-clé dépend de TOUTE la clé (pas de DF partielle)</li>\n<li><strong>3NF</strong> : 2NF + pas de dépendance transitive entre attributs non-clés</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Une table avec une cellule contenant \"Maths, Info, Anglais\" viole :",
+          "options": [
+            {
+              "text": "La 1NF (valeurs non atomiques)",
+              "correct": true,
+              "explanation": "Correct ! 1NF exige des valeurs atomiques (indivisibles). Une cellule multi-valeurs viole 1NF."
+            },
+            {
+              "text": "La 2NF (dépendance partielle)",
+              "correct": false,
+              "explanation": "La 2NF concerne les dépendances partielles sur une clé composée, pas les valeurs multiples."
+            },
+            {
+              "text": "La 3NF (dépendance transitive)",
+              "correct": false,
+              "explanation": "La 3NF concerne les dépendances transitives, pas les valeurs multiples."
+            },
+            {
+              "text": "La BCNF",
+              "correct": false,
+              "explanation": "BCNF est une forme avancée, mais le problème ici est d'abord 1NF."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans la table INSCRIPTION(NumEtu, NumCours, NomEtu, Note) avec clé (NumEtu, NumCours), la dépendance NumEtu → NomEtu est :",
+          "options": [
+            {
+              "text": "Une dépendance transitive",
+              "correct": false,
+              "explanation": "NumEtu → NomEtu n'est pas transitive — il n'y a pas d'intermédiaire entre NumEtu et NomEtu."
+            },
+            {
+              "text": "Une dépendance partielle (violation de 2NF)",
+              "correct": true,
+              "explanation": "Correct ! NumEtu → NomEtu est une dépendance PARTIELLE : NomEtu dépend d'UNE PARTIE seulement de la clé composée (NumEtu, NumCours). Cela viole la 2NF."
+            },
+            {
+              "text": "Une dépendance directe sur la clé entière",
+              "correct": false,
+              "explanation": "Une DF directe totale serait (NumEtu, NumCours) → Note — toute la clé détermine Note."
+            },
+            {
+              "text": "Une dépendance inexistante",
+              "correct": false,
+              "explanation": "NumEtu → NomEtu est une vraie dépendance fonctionnelle, pas inexistante."
+            }
+          ]
+        }
+      ],
+      "source": "_private/fbd/chapitres/chapitre5.html"
+    },
+    {
+      "number": 6,
+      "title": "Conception & Contraintes",
+      "subtitle": "Schéma E-A, passage au relationnel et contraintes d'intégrité.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Lire et construire un schéma Entité-Association (E-A)</li><li>Passer d'un schéma E-A au schéma relationnel</li><li>Maîtriser les contraintes d'intégrité</li></ul></div>\n<h2>Le modèle Entité-Association (E-A)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Éléments du schéma E-A</div>\n<ul><li><strong>Entité</strong> : objet du monde réel (rectangle) — ex : ETUDIANT, COURS</li><li><strong>Attribut</strong> : propriété d'une entité (ellipse) — ex : nom, age</li><li><strong>Identifiant</strong> : attribut unique (souligné) — ex : <u>NumEtu</u></li><li><strong>Association</strong> : lien entre entités (losange) — ex : INSCRIT</li><li><strong>Cardinalités</strong> : (min,max) des deux côtés de l'association</li></ul></div>\n<h3>Cardinalités principales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Notation</th><th>Lecture</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>(0,1)</td><td>Au plus un (optionnel)</td><td>Un étudiant peut avoir 0 ou 1 tuteur</td></tr>\n<tr><td>(1,1)</td><td>Exactement un (obligatoire)</td><td>Un étudiant est inscrit dans 1 seule filière</td></tr>\n<tr><td>(0,n)</td><td>Zéro ou plusieurs</td><td>Un cours peut avoir 0 ou plusieurs étudiants</td></tr>\n<tr><td>(1,n)</td><td>Un ou plusieurs (au moins un)</td><td>Un prof enseigne au moins 1 cours</td></tr>\n</tbody>\n</table></div>\n<h2>Passage E-A → Schéma relationnel</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Les 3 règles de passage</div>\n<p><strong>Règle 1 — Association 1:N</strong><br/>\n        La clé de l'entité côté \"1\" migre comme clé étrangère dans la table côté \"N\".<br/><br/>\n<strong>Règle 2 — Association N:M</strong><br/>\n        Créer une <em>table de jonction</em> avec les clés des deux entités (+ attributs de l'association).<br/><br/>\n<strong>Règle 3 — Association 1:1</strong><br/>\n        La clé d'une entité migre dans l'autre (choisir selon l'optionnalité).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Auto-école</div>\n<pre>Schéma E-A :\n  ELEVE ──(0,n)── PASSE ──(1,n)── EXAMEN\n  ELEVE ──(0,n)── CONDUIT ──(1,n)── VEHICULE (avec MONITEUR)\nRègle 1 (1:N) : ELEVE possède UN permis\n  PERMIS(NumPermis, DateObtention, NumEleve#)\nRègle 2 (N:M) : ELEVE passe plusieurs EXAMENS, un EXAMEN a plusieurs élèves\n  PASSAGE(NumEleve#, NumExamen#, Date, Resultat)\nSchéma final :\n  ELEVE(NumEleve, Nom, Prenom, DateNaiss)\n  EXAMEN(NumExamen, Type, Lieu)\n  PASSAGE(NumEleve#, NumExamen#, Date, Resultat)</pre></div>\n<h2>Contraintes d'intégrité SQL</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Contrainte</th><th>Mot-clé SQL</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td>Clé primaire</td><td>PRIMARY KEY</td><td>Unique + Not Null</td></tr>\n<tr><td>Unicité</td><td>UNIQUE</td><td>Pas de doublon (NULL autorisé)</td></tr>\n<tr><td>Non nul</td><td>NOT NULL</td><td>La valeur est obligatoire</td></tr>\n<tr><td>Référence</td><td>REFERENCES / FOREIGN KEY</td><td>Valeur doit exister dans l'autre table</td></tr>\n<tr><td>Valeur</td><td>CHECK</td><td>Condition sur la valeur</td></tr>\n<tr><td>Défaut</td><td>DEFAULT</td><td>Valeur par défaut si non fournie</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Contraintes ON DELETE/UPDATE</div>\n<pre>FOREIGN KEY (id_etudiant) REFERENCES ETUDIANTS(id)\n  ON DELETE CASCADE     -- Si l'étudiant est supprimé, ses notes aussi\n  ON DELETE RESTRICT    -- Interdit de supprimer si des notes existent\n  ON DELETE SET NULL    -- Met NULL dans id_etudiant si l'étudiant est supprimé\n  ON UPDATE CASCADE     -- Propage le changement de la clé référencée</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 6</h3>\n<ul>\n<li>E-A : Entités (rectangles) + Associations (losanges) + Cardinalités</li>\n<li>Règle 1 (1:N) → FK migre côté N · Règle 2 (N:M) → table de jonction · Règle 3 (1:1) → FK dans la moins obligatoire</li>\n<li>Contraintes : PRIMARY KEY · UNIQUE · NOT NULL · REFERENCES · CHECK · DEFAULT</li>\n<li>ON DELETE : CASCADE (supprime les dépendants) · RESTRICT (bloque) · SET NULL</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Une association N:M entre ETUDIANTS et COURS se traduit en relationnel par :",
+          "options": [
+            {
+              "text": "Une clé étrangère dans COURS",
+              "correct": false,
+              "explanation": "Une seule clé étrangère suffit pour une relation 1:N, pas N:M."
+            },
+            {
+              "text": "Une clé étrangère dans ETUDIANTS",
+              "correct": false,
+              "explanation": "Une clé étrangère dans ETUDIANTS suffit pour 1:N, pas N:M."
+            },
+            {
+              "text": "Une table de jonction avec deux clés étrangères",
+              "correct": true,
+              "explanation": "Correct ! Une association N:M nécessite une table de jonction (ex: INSCRIPTIONS) avec deux clés étrangères pointant vers les deux tables."
+            },
+            {
+              "text": "La fusion des deux tables en une seule",
+              "correct": false,
+              "explanation": "Fusionner les tables créerait de la redondance — c'est l'opposé de la bonne pratique."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La contrainte ON DELETE CASCADE signifie :",
+          "options": [
+            {
+              "text": "La suppression est interdite si des lignes liées existent",
+              "correct": false,
+              "explanation": "RESTRICT interdit la suppression si des dépendances existent."
+            },
+            {
+              "text": "La FK devient NULL si la ligne référencée est supprimée",
+              "correct": false,
+              "explanation": "SET NULL met NULL dans la FK, pas CASCADE."
+            },
+            {
+              "text": "La suppression se propage aux lignes liées (suppression en cascade)",
+              "correct": true,
+              "explanation": "Correct ! CASCADE propage la suppression : si on supprime l'étudiant, toutes ses notes sont aussi supprimées automatiquement."
+            },
+            {
+              "text": "Les lignes supprimées sont archivées automatiquement",
+              "correct": false,
+              "explanation": "Il n'y a pas d'archive automatique avec CASCADE."
+            }
+          ]
+        }
+      ],
+      "source": "_private/fbd/chapitres/chapitre6.html"
     }
-   ],
-   "source": "fbd/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Algèbre relationnelle",
-   "subtitle": "Sélection, projection, jointure et opérateurs ensemblistes.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Maîtriser les opérateurs unaires : sélection (σ) et projection (π)<br/>\n        • Maîtriser les opérateurs binaires : jointure, union, intersection, différence<br/>\n        • Combiner les opérateurs pour formuler des requêtes complexes</p>\n</div>\n<h2>2.1 — Qu'est-ce que l'algèbre relationnelle ?</h2>\n<p>L'algèbre relationnelle est un <strong>langage formel</strong> pour manipuler des tables (relations). Elle est la base théorique du SQL. Chaque opération prend une ou deux tables en entrée et produit une <strong>nouvelle table</strong> en sortie.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — les 6 opérations fondamentales</div>\n<p><strong>σ</strong> Sélection · <strong>π</strong> Projection · <strong>⋈</strong> Jointure<br/>\n<strong>∪</strong> Union · <strong>∩</strong> Intersection · <strong>−</strong> Différence</p>\n</div>\n<h2>2.2 — Opérateurs unaires</h2>\n<h3>σ — Sélection (Selection)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Extrait les <strong>lignes (tuples)</strong> qui vérifient une condition.<br/>\n<strong>Notation :</strong> σ<sub>condition</sub>(Relation)<br/>\n        Analogue SQL : clause <code>WHERE</code></p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>σ(age &gt; 18)(ETUDIANTS)          → étudiants de plus de 18 ans\nσ(plan = 'premium')(ABONNES)   → abonnés premium\nσ(ville = 'Lomé' AND age &lt; 25)(CLIENTS)  → combinaison</pre>\n</div>\n<h3>π — Projection (Projection)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Extrait des <strong>colonnes (attributs)</strong> spécifiques. Élimine les doublons.<br/>\n<strong>Notation :</strong> π<sub>A1,A2,…</sub>(Relation)<br/>\n        Analogue SQL : clause <code>SELECT col1, col2</code></p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>π(nom, prenom)(ETUDIANTS)          → seulement nom et prénom\nπ(ville)(CLIENTS)                  → liste des villes (sans doublons)\nπ(nom)(σ(age &gt; 18)(ETUDIANTS))   → combinaison sélection + projection</pre>\n</div>\n<h2>2.3 — La Jointure ⋈</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Combine deux tables selon une <strong>condition de rapprochement</strong> (souvent une clé étrangère = clé primaire).<br/>\n<strong>Notation :</strong> R ⋈<sub>condition</sub> S<br/>\n        Analogue SQL : <code>JOIN … ON …</code></p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de jointure</th><th>Notation</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><strong>Equi-jointure</strong></td><td>R ⋈(R.id = S.id) S</td><td>Tuples où les valeurs sont égales</td></tr>\n<tr><td><strong>Jointure naturelle</strong></td><td>R ⋈ S</td><td>Jointure sur attributs de même nom</td></tr>\n<tr><td><strong>Produit cartésien</strong></td><td>R × S</td><td>Toutes les combinaisons (sans condition)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple</div>\n<pre>ETUDIANTS ⋈(ETUDIANTS.id = NOTES.id_etudiant) NOTES\n→ Obtenir les notes avec les noms des étudiants</pre>\n</div>\n<h2>2.4 — Opérateurs ensemblistes (tables compatibles)</h2>\n<p>Ces opérateurs s'appliquent à deux tables de <strong>même schéma</strong> (mêmes attributs dans le même ordre).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Symbole</th><th>Résultat</th><th>Analogue SQL</th></tr></thead>\n<tbody>\n<tr><td><strong>Union</strong></td><td>R ∪ S</td><td>Tous les tuples de R OU de S (sans doublons)</td><td>UNION</td></tr>\n<tr><td><strong>Intersection</strong></td><td>R ∩ S</td><td>Tuples présents dans R ET dans S</td><td>INTERSECT</td></tr>\n<tr><td><strong>Différence</strong></td><td>R − S</td><td>Tuples de R qui NE SONT PAS dans S</td><td>EXCEPT / MINUS</td></tr>\n</tbody>\n</table></div>\n<h2>2.5 — Exemple combiné</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📝 Énoncé</div>\n<p>Tables : ETUDIANTS(id, nom, ville) · INSCRIPTIONS(id_etu, cours, note)<br/>\n        Question : Noms des étudiants de Lomé ayant une note &gt; 12</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Solution algèbre relationnelle</div>\n<pre>1. Sélectionner les étudiants de Lomé :\n   E_lome = σ(ville='Lomé')(ETUDIANTS)\n2. Sélectionner les bonnes notes :\n   I_bien = σ(note &gt; 12)(INSCRIPTIONS)\n3. Jointure sur id :\n   EI = E_lome ⋈(id = id_etu) I_bien\n4. Projeter sur le nom :\n   π(nom)(EI)</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li><strong>σ</strong> (sélection) = filtrer les lignes (≡ WHERE en SQL)</li>\n<li><strong>π</strong> (projection) = choisir les colonnes (≡ SELECT en SQL)</li>\n<li><strong>⋈</strong> (jointure) = combiner deux tables sur une condition (≡ JOIN)</li>\n<li><strong>∪, ∩, −</strong> = union, intersection, différence (tables de même schéma)</li>\n<li>Combiner les opérateurs : commencer par σ (réduire les lignes), puis ⋈, puis π</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "L'opérateur σ (sigma) en algèbre relationnelle correspond à :",
-     "options": [
-      {
-       "text": "La projection (sélection de colonnes)",
-       "correct": false,
-       "explanation": "π (pi) est l'opérateur de projection (sélection de colonnes)."
-      },
-      {
-       "text": "La sélection de lignes selon une condition",
-       "correct": true,
-       "explanation": "Correct ! σ (sigma) = sélection de lignes selon une condition. Équivalent SQL : WHERE."
-      },
-      {
-       "text": "La jointure de deux tables",
-       "correct": false,
-       "explanation": "⋈ (bowtie) est l'opérateur de jointure."
-      },
-      {
-       "text": "L'union de deux tables",
-       "correct": false,
-       "explanation": "∪ est l'union, pas la sélection."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Le modèle relationnel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Pour que l'opération R ∪ S (union) soit possible, il faut que :",
-     "options": [
-      {
-       "text": "R et S aient le même nombre de lignes",
-       "correct": false,
-       "explanation": "Le nombre de lignes n'a aucune importance pour l'union."
-      },
-      {
-       "text": "R et S aient la même clé primaire",
-       "correct": false,
-       "explanation": "Les clés primaires doivent être différentes, mais c'est la structure (schéma) qui doit correspondre."
-      },
-      {
-       "text": "R et S aient le même schéma (mêmes attributs)",
-       "correct": true,
-       "explanation": "Correct ! L'union, l'intersection et la différence exigent des tables compatibles : même nombre d'attributs, mêmes domaines dans le même ordre."
-      },
-      {
-       "text": "R et S partagent une clé étrangère",
-       "correct": false,
-       "explanation": "La jointure n'est pas une condition préalable à l'union."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Le modèle relationnel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Que retourne π(nom, prenom)(ETUDIANTS) ?",
-     "options": [
-      {
-       "text": "Les lignes qui ont un nom et un prénom",
-       "correct": false,
-       "explanation": "σ sélectionne des lignes selon une condition, pas des colonnes."
-      },
-      {
-       "text": "Une table avec seulement les colonnes nom et prenom",
-       "correct": true,
-       "explanation": "Correct ! π (projection) sélectionne des colonnes. π(nom,prenom)(ETUDIANTS) retourne une table ne contenant que les colonnes nom et prenom."
-      },
-      {
-       "text": "Le produit cartésien des noms et prénoms",
-       "correct": false,
-       "explanation": "Le produit cartésien multiplie deux tables. Ici on a une seule table."
-      },
-      {
-       "text": "Le nombre d'étudiants",
-       "correct": false,
-       "explanation": "COUNT est une fonction SQL d'agrégation, pas une projection."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Le modèle relationnel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Le modèle relationnel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Le modèle relationnel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Algèbre relationnelle.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Algèbre relationnelle.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Algèbre relationnelle.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Algèbre relationnelle.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Algèbre relationnelle.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement SQL Fondamentaux.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de SQL Fondamentaux.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi SQL Fondamentaux.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de SQL Fondamentaux.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à SQL Fondamentaux.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement SQL Avancé.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de SQL Avancé.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi SQL Avancé.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de SQL Avancé.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à SQL Avancé.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Normalisation.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Normalisation.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Normalisation.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Normalisation.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Normalisation.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Conception & Contraintes.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Conception & Contraintes.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Conception & Contraintes.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Conception & Contraintes.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Conception & Contraintes.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/fbd/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "SQL — Fondamentaux",
-   "subtitle": "SELECT, WHERE, INSERT, UPDATE, DELETE et CREATE TABLE.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Écrire des requêtes SELECT avec WHERE, ORDER BY, LIMIT<br/>\n        • Utiliser INSERT, UPDATE, DELETE pour modifier les données<br/>\n        • Créer des tables avec CREATE TABLE et les contraintes de base</p>\n</div>\n<h2>3.1 — Structure générale d'une requête SELECT</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe complète</div>\n<pre>SELECT  colonne1, colonne2, ...   -- quoi afficher\nFROM    table                       -- quelle table\nWHERE   condition                   -- filtre les lignes\nORDER BY colonne [ASC|DESC]         -- tri\nLIMIT   n;                          -- nombre de résultats</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Ordre d'exécution SQL</div>\n<p>SQL s'exécute dans cet ordre (différent de l'ordre d'écriture) :<br/>\n<strong>FROM → WHERE → SELECT → ORDER BY → LIMIT</strong><br/>\n        Phrase : « <em>From Where SELECT ORDER LIMIT</em> »</p>\n</div>\n<h2>3.2 — SELECT — Les essentiels</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples SELECT</div>\n<pre>-- Tout afficher\nSELECT * FROM ETUDIANTS;\n-- Colonnes spécifiques\nSELECT nom, prenom, age FROM ETUDIANTS;\n-- Alias (renommer l'affichage)\nSELECT nom AS \"Nom de l'étudiant\", age AS \"Age\" FROM ETUDIANTS;\n-- Éviter les doublons\nSELECT DISTINCT ville FROM ETUDIANTS;\n-- Expressions calculées\nSELECT nom, salaire * 1.1 AS salaire_augmente FROM EMPLOYES;</pre>\n</div>\n<h2>3.3 — WHERE — Filtres et opérateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>=</code></td><td>Égal</td><td><code>WHERE age = 20</code></td></tr>\n<tr><td><code>&lt;&gt;</code> ou <code>!=</code></td><td>Différent</td><td><code>WHERE plan &lt;&gt; 'free'</code></td></tr>\n<tr><td><code>&lt; &gt; &lt;= &gt;=</code></td><td>Comparaisons</td><td><code>WHERE note &gt;= 12</code></td></tr>\n<tr><td><code>BETWEEN … AND …</code></td><td>Intervalle inclusif</td><td><code>WHERE note BETWEEN 10 AND 14</code></td></tr>\n<tr><td><code>IN (…)</code></td><td>Dans une liste</td><td><code>WHERE ville IN ('Lomé','Kara')</code></td></tr>\n<tr><td><code>LIKE</code></td><td>Motif texte (% = n'importe quoi)</td><td><code>WHERE nom LIKE 'K%'</code></td></tr>\n<tr><td><code>IS NULL</code></td><td>Valeur manquante</td><td><code>WHERE telephone IS NULL</code></td></tr>\n<tr><td><code>AND OR NOT</code></td><td>Combinaisons logiques</td><td><code>WHERE age &gt; 18 AND ville = 'Lomé'</code></td></tr>\n</tbody>\n</table></div>\n<h2>3.4 — Fonctions d'agrégation</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>COUNT(*)</code></td><td>Nombre de lignes</td><td><code>SELECT COUNT(*) FROM ETUDIANTS;</code></td></tr>\n<tr><td><code>SUM(col)</code></td><td>Somme</td><td><code>SELECT SUM(montant) FROM PAIEMENTS;</code></td></tr>\n<tr><td><code>AVG(col)</code></td><td>Moyenne</td><td><code>SELECT AVG(note) FROM NOTES;</code></td></tr>\n<tr><td><code>MAX(col)</code></td><td>Maximum</td><td><code>SELECT MAX(age) FROM ETUDIANTS;</code></td></tr>\n<tr><td><code>MIN(col)</code></td><td>Minimum</td><td><code>SELECT MIN(note) FROM NOTES;</code></td></tr>\n</tbody>\n</table></div>\n<h2>3.5 — INSERT, UPDATE, DELETE</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Manipulation des données (DML)</div>\n<pre>-- INSERT : ajouter une ligne\nINSERT INTO ETUDIANTS (nom, prenom, age, ville)\nVALUES ('Mensah', 'Kofi', 20, 'Lomé');\n-- UPDATE : modifier des lignes existantes\nUPDATE ETUDIANTS\nSET age = 21, ville = 'Kara'\nWHERE nom = 'Mensah';\n-- DELETE : supprimer des lignes\nDELETE FROM ETUDIANTS\nWHERE age &lt; 18;\n-- ⚠️ ATTENTION : sans WHERE, UPDATE et DELETE affectent TOUTES les lignes !</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Danger — WHERE obligatoire !</div>\n<p><code>DELETE FROM ETUDIANTS;</code> → supprime TOUS les étudiants !<br/>\n<code>UPDATE ETUDIANTS SET age = 0;</code> → remet tous les âges à 0 !<br/>\n        Toujours vérifier sa clause <code>WHERE</code> avant d'exécuter.</p>\n</div>\n<h2>3.6 — CREATE TABLE</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Création de table avec contraintes</div>\n<pre>CREATE TABLE ETUDIANTS (\n    id       SERIAL PRIMARY KEY,        -- clé primaire auto-incrémentée\n    nom      VARCHAR(50) NOT NULL,      -- obligatoire\n    prenom   VARCHAR(50) NOT NULL,\n    age      INTEGER CHECK (age &gt;= 0),  -- contrainte de valeur\n    email    VARCHAR(100) UNIQUE,       -- unicité\n    ville    VARCHAR(50) DEFAULT 'Lomé' -- valeur par défaut\n);\nCREATE TABLE NOTES (\n    id_note    SERIAL PRIMARY KEY,\n    id_etudiant INTEGER NOT NULL\n        REFERENCES ETUDIANTS(id)        -- clé étrangère\n        ON DELETE CASCADE,              -- suppression en cascade\n    matiere    VARCHAR(30) NOT NULL,\n    note       NUMERIC(4,2) CHECK (note BETWEEN 0 AND 20)\n);</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li>Ordre SQL : FROM → WHERE → SELECT → ORDER BY → LIMIT</li>\n<li>WHERE : =, &lt;&gt;, BETWEEN, IN, LIKE '%…%', IS NULL, AND/OR</li>\n<li>Agrégations : COUNT · SUM · AVG · MAX · MIN</li>\n<li>INSERT INTO … VALUES · UPDATE … SET … WHERE · DELETE … WHERE</li>\n<li>CREATE TABLE : SERIAL · VARCHAR · NOT NULL · UNIQUE · REFERENCES · CHECK · DEFAULT</li>\n<li>⚠️ Toujours mettre WHERE dans UPDATE et DELETE !</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle requête affiche les noms des étudiants de plus de 20 ans, triés par nom ?",
-     "options": [
-      {
-       "text": "SELECT nom FROM ETUDIANTS ORDER BY nom WHERE age > 20;",
-       "correct": false,
-       "explanation": "WHERE vient avant ORDER BY dans l'écriture SQL. Ici WHERE est absent et ORDER BY est mal placé."
-      },
-      {
-       "text": "SELECT nom FROM ETUDIANTS WHERE age > 20 ORDER BY nom;",
-       "correct": true,
-       "explanation": "Correct ! SELECT → FROM → WHERE → ORDER BY. La syntaxe est parfaite."
-      },
-      {
-       "text": "SELECT nom FROM ETUDIANTS FILTER BY age > 20 ORDER nom;",
-       "correct": false,
-       "explanation": "FILTER BY n'existe pas en SQL standard. C'est WHERE."
-      },
-      {
-       "text": "SELECT nom FROM ETUDIANTS HAVING age > 20 ORDER BY nom;",
-       "correct": false,
-       "explanation": "HAVING est utilisé après GROUP BY pour filtrer les groupes, pas les lignes individuelles."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La contrainte NOT NULL sur une colonne signifie :",
-     "options": [
-      {
-       "text": "La colonne ne peut pas contenir de valeurs en double",
-       "correct": false,
-       "explanation": "Les valeurs peuvent se répéter avec NOT NULL. C'est UNIQUE qui interdit les doublons."
-      },
-      {
-       "text": "La colonne doit toujours avoir une valeur (pas NULL)",
-       "correct": true,
-       "explanation": "Correct ! NOT NULL interdit d'insérer NULL dans cette colonne. Elle doit toujours avoir une valeur."
-      },
-      {
-       "text": "La colonne est une clé primaire",
-       "correct": false,
-       "explanation": "PRIMARY KEY impose NOT NULL + UNIQUE, mais NOT NULL seul n'interdit pas les doublons."
-      },
-      {
-       "text": "La colonne ne peut contenir que des nombres",
-       "correct": false,
-       "explanation": "NOT NULL n'a rien à voir avec le type de données (numérique ou texte)."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Que fait la requête : DELETE FROM NOTES; (sans WHERE) ?",
-     "options": [
-      {
-       "text": "Supprime la table NOTES et sa structure",
-       "correct": false,
-       "explanation": "Sans WHERE, DELETE supprime TOUTES les lignes. Il ne supprime pas seulement la table."
-      },
-      {
-       "text": "Supprime toutes les lignes de NOTES (table vide mais conservée)",
-       "correct": true,
-       "explanation": "Correct ! Sans clause WHERE, DELETE supprime TOUTES les lignes de la table NOTES (mais garde la structure vide)."
-      },
-      {
-       "text": "Supprime les lignes en double",
-       "correct": false,
-       "explanation": "Sans WHERE, toutes les lignes sont supprimées, pas seulement les doublons."
-      },
-      {
-       "text": "Génère une erreur car la clé primaire est manquante",
-       "correct": false,
-       "explanation": "DELETE sans WHERE ne nécessite pas de clé — il supprime tout."
-      }
-     ]
-    }
-   ],
-   "source": "_private/fbd/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "SQL — Avancé",
-   "subtitle": "Jointures, GROUP BY, HAVING et sous-requêtes.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Écrire des jointures (INNER, LEFT, RIGHT, FULL)<br/>\n        • Grouper les résultats avec GROUP BY et HAVING<br/>\n        • Utiliser des sous-requêtes</p>\n</div>\n<h2>4.1 — Les Jointures SQL</h2>\n<p>Les jointures permettent de <strong>combiner des données de plusieurs tables</strong> dans une seule requête.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Résultat</th><th>Analogie</th></tr></thead>\n<tbody>\n<tr><td><strong>INNER JOIN</strong></td><td>Lignes ayant une correspondance dans les DEUX tables</td><td>Intersection ∩</td></tr>\n<tr><td><strong>LEFT JOIN</strong></td><td>TOUTES les lignes de la table gauche + correspondances droite (NULL si absent)</td><td>R ∪ (R∩S) côté gauche</td></tr>\n<tr><td><strong>RIGHT JOIN</strong></td><td>TOUTES les lignes de la table droite + correspondances gauche (NULL si absent)</td><td>Symétrique du LEFT</td></tr>\n<tr><td><strong>FULL JOIN</strong></td><td>TOUTES les lignes des deux tables (NULL là où pas de correspondance)</td><td>Union ∪</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples de jointures</div>\n<pre>-- INNER JOIN : étudiants qui ont des notes\nSELECT e.nom, n.matiere, n.note\nFROM ETUDIANTS e\nINNER JOIN NOTES n ON e.id = n.id_etudiant;\n-- LEFT JOIN : TOUS les étudiants, même sans note\nSELECT e.nom, n.matiere, n.note\nFROM ETUDIANTS e\nLEFT JOIN NOTES n ON e.id = n.id_etudiant;\n-- Les étudiants sans notes apparaissent avec NULL\n-- Jointure multi-tables\nSELECT e.nom, c.intitule, i.note\nFROM ETUDIANTS e\nJOIN INSCRIPTIONS i ON e.id = i.id_etudiant\nJOIN COURS c ON i.id_cours = c.id;</pre>\n</div>\n<h2>4.2 — GROUP BY et fonctions d'agrégation</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Principe</div>\n<p>GROUP BY regroupe les lignes ayant la même valeur dans une colonne, puis applique une fonction d'agrégation (COUNT, SUM, AVG…) à chaque groupe.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples GROUP BY</div>\n<pre>-- Nombre d'étudiants par ville\nSELECT ville, COUNT(*) AS nb_etudiants\nFROM ETUDIANTS\nGROUP BY ville;\n-- Moyenne des notes par matière\nSELECT matiere, AVG(note) AS moyenne, MAX(note) AS max, MIN(note) AS min\nFROM NOTES\nGROUP BY matiere\nORDER BY moyenne DESC;\n-- Notes par étudiant\nSELECT e.nom, COUNT(n.note) AS nb_notes, AVG(n.note) AS moy\nFROM ETUDIANTS e\nJOIN NOTES n ON e.id = n.id_etudiant\nGROUP BY e.id, e.nom;</pre>\n</div>\n<h2>4.3 — HAVING — Filtrer les groupes</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ WHERE vs HAVING</div>\n<p>• <strong>WHERE</strong> filtre les <em>lignes</em> AVANT le groupement<br/>\n        • <strong>HAVING</strong> filtre les <em>groupes</em> APRÈS le groupement (s'utilise avec GROUP BY)</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples HAVING</div>\n<pre>-- Villes avec plus de 5 étudiants\nSELECT ville, COUNT(*) AS nb\nFROM ETUDIANTS\nGROUP BY ville\nHAVING COUNT(*) &gt; 5;\n-- Matières avec une moyenne &gt; 12\nSELECT matiere, AVG(note) AS moyenne\nFROM NOTES\nGROUP BY matiere\nHAVING AVG(note) &gt; 12\nORDER BY moyenne DESC;</pre>\n</div>\n<h2>4.4 — Sous-requêtes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Une sous-requête est un SELECT <strong>imbriqué dans une autre requête</strong>. Elle peut s'utiliser dans WHERE, FROM ou SELECT.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples de sous-requêtes</div>\n<pre>-- Étudiants avec une note supérieure à la moyenne\nSELECT nom FROM ETUDIANTS\nWHERE id IN (\n    SELECT id_etudiant FROM NOTES\n    WHERE note &gt; (SELECT AVG(note) FROM NOTES)\n);\n-- Avec EXISTS\nSELECT nom FROM ETUDIANTS e\nWHERE EXISTS (\n    SELECT 1 FROM NOTES n\n    WHERE n.id_etudiant = e.id AND n.note &gt;= 15\n);\n-- Sous-requête dans FROM (table dérivée)\nSELECT matiere, moy FROM (\n    SELECT matiere, AVG(note) AS moy FROM NOTES GROUP BY matiere\n) AS moyennes\nWHERE moy &gt; 12;</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>INNER JOIN = intersection · LEFT JOIN = toutes lignes gauche + NULL à droite</li>\n<li>GROUP BY : regroupe par colonne + agrégation (COUNT, SUM, AVG, MAX, MIN)</li>\n<li>WHERE = avant groupement (lignes) · HAVING = après groupement (groupes)</li>\n<li>Sous-requête dans WHERE (IN, EXISTS), FROM (table dérivée) ou SELECT</li>\n<li>Ordre complet : FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle est la différence entre WHERE et HAVING ?",
-     "options": [
-      {
-       "text": "WHERE est pour les nombres, HAVING pour les textes",
-       "correct": false,
-       "explanation": "WHERE et HAVING peuvent tous deux utiliser des conditions, mais pas de la même façon."
-      },
-      {
-       "text": "HAVING s'utilise avant GROUP BY, WHERE après",
-       "correct": false,
-       "explanation": "C'est l'inverse : WHERE vient avant GROUP BY, HAVING après."
-      },
-      {
-       "text": "WHERE filtre les lignes avant le groupement, HAVING filtre les groupes après",
-       "correct": true,
-       "explanation": "Correct ! WHERE filtre les lignes individuelles AVANT le groupement. HAVING filtre les groupes APRÈS le groupement. HAVING nécessite GROUP BY."
-      },
-      {
-       "text": "Ils sont interchangeables, c'est juste une question de style",
-       "correct": false,
-       "explanation": "WHERE et HAVING ne sont pas interchangeables — ils opèrent à des étapes différentes."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Un LEFT JOIN entre ETUDIANTS et NOTES retourne :",
-     "options": [
-      {
-       "text": "Seulement les étudiants qui ont au moins une note",
-       "correct": false,
-       "explanation": "INNER JOIN retourne uniquement les correspondances dans les deux tables."
-      },
-      {
-       "text": "Tous les étudiants, avec NULL pour ceux sans notes",
-       "correct": true,
-       "explanation": "Correct ! LEFT JOIN retourne TOUS les enregistrements de la table gauche (ETUDIANTS), et les correspondances de droite — NULL si l'étudiant n'a pas de note."
-      },
-      {
-       "text": "Toutes les lignes des deux tables",
-       "correct": false,
-       "explanation": "FULL JOIN retourne toutes les lignes des deux tables."
-      },
-      {
-       "text": "Toutes les notes, même sans étudiant associé",
-       "correct": false,
-       "explanation": "RIGHT JOIN retourne toutes les lignes de la table droite (NOTES), pas de la gauche."
-      }
-     ]
-    }
-   ],
-   "source": "_private/fbd/chapitres/chapitre4.html"
-  },
-  {
-   "number": 5,
-   "title": "Normalisation",
-   "subtitle": "1NF, 2NF, 3NF — éliminer la redondance.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre les problèmes de redondance et d'anomalies<br/>\n        • Appliquer les formes normales 1NF, 2NF, 3NF<br/>\n        • Décomposer une table non normalisée étape par étape</p>\n</div>\n<h2>5.1 — Pourquoi normaliser ?</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Les 3 anomalies d'une base mal conçue</div>\n<p><strong>Anomalie d'insertion :</strong> impossible d'insérer des données partielles (ex : un cours sans étudiant inscrit)<br/>\n<strong>Anomalie de mise à jour :</strong> modifier une donnée à un seul endroit ne la corrige pas partout<br/>\n<strong>Anomalie de suppression :</strong> supprimer une ligne fait perdre d'autres informations utiles</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Objectif de la normalisation</div>\n<p>Éliminer la redondance → éviter les anomalies → améliorer la cohérence<br/>\n        Chaque fait est stocké <strong>une seule fois</strong>, au bon endroit.</p>\n</div>\n<h2>5.2 — Dépendances fonctionnelles (DF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>On dit que Y dépend fonctionnellement de X (noté <strong>X → Y</strong>) si, pour toute valeur de X, il y a au plus une valeur de Y.<br/>\n        Ex : NumEtu → NomEtu (le numéro étudiant détermine le nom)</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Notation</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>DF directe</td><td>A → B</td><td>NumEtu → Nom</td></tr>\n<tr><td>DF partielle</td><td>(A,B) → C mais A → C</td><td>(NumEtu,NumCours) → Note mais NumEtu → Nom</td></tr>\n<tr><td>DF transitive</td><td>A → B → C</td><td>NumEtu → CodeVille → NomVille</td></tr>\n</tbody>\n</table></div>\n<h2>5.3 — Première Forme Normale (1NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 1NF</div>\n<p>Une table est en 1NF si :<br/>\n        ✓ Chaque attribut contient des valeurs <strong>atomiques</strong> (indivisibles)<br/>\n        ✓ Pas de groupes répétitifs ni de valeurs multiples dans une cellule</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 1NF</div>\n<pre>NON 1NF :\n| NumEtu | Nom   | Cours                     |   ← plusieurs cours dans une cellule !\n| E01    | Kofi  | Maths, Info, Anglais       |\n1NF :\n| NumEtu | Nom   | Cours  |\n| E01    | Kofi  | Maths  |\n| E01    | Kofi  | Info   |\n| E01    | Kofi  | Anglais|</pre>\n</div>\n<h2>5.4 — Deuxième Forme Normale (2NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 2NF</div>\n<p>Une table est en 2NF si :<br/>\n        ✓ Elle est en 1NF<br/>\n        ✓ Tout attribut non-clé dépend de <strong>TOUTE la clé primaire</strong> (pas d'une partie seulement)<br/>\n        → S'applique uniquement si la clé est <strong>composée</strong></p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 2NF → Décomposition</div>\n<pre>NON 2NF (clé = NumEtu+NumCours) :\nINSCRIPTION(NumEtu, NumCours, NomEtu, NomCours, Note)\n  NumEtu → NomEtu       ← DF PARTIELLE (dépend d'une partie de la clé)\n  NumCours → NomCours   ← DF PARTIELLE\n2NF — décomposition :\nETUDIANT(NumEtu, NomEtu)\nCOURS(NumCours, NomCours)\nINSCRIPTION(NumEtu, NumCours, Note)   ← Note dépend de la clé ENTIÈRE</pre>\n</div>\n<h2>5.5 — Troisième Forme Normale (3NF)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 3NF</div>\n<p>Une table est en 3NF si :<br/>\n        ✓ Elle est en 2NF<br/>\n        ✓ Aucun attribut non-clé ne dépend d'un autre attribut non-clé (<strong>pas de dépendance transitive</strong>)</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Violation 3NF → Décomposition</div>\n<pre>NON 3NF :\nETUDIANT(NumEtu, NomEtu, CodeVille, NomVille)\n  NumEtu → CodeVille → NomVille   ← TRANSITIVE !\n3NF — décomposition :\nETUDIANT(NumEtu, NomEtu, CodeVille)\nVILLE(CodeVille, NomVille)</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>3 anomalies à éviter : insertion · mise à jour · suppression</li>\n<li>DF : X → Y signifie que X détermine Y de façon unique</li>\n<li><strong>1NF</strong> : valeurs atomiques, pas de groupes répétitifs</li>\n<li><strong>2NF</strong> : 1NF + tout attribut non-clé dépend de TOUTE la clé (pas de DF partielle)</li>\n<li><strong>3NF</strong> : 2NF + pas de dépendance transitive entre attributs non-clés</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Une table avec une cellule contenant \"Maths, Info, Anglais\" viole :",
-     "options": [
-      {
-       "text": "La 1NF (valeurs non atomiques)",
-       "correct": true,
-       "explanation": "Correct ! 1NF exige des valeurs atomiques (indivisibles). Une cellule multi-valeurs viole 1NF."
-      },
-      {
-       "text": "La 2NF (dépendance partielle)",
-       "correct": false,
-       "explanation": "La 2NF concerne les dépendances partielles sur une clé composée, pas les valeurs multiples."
-      },
-      {
-       "text": "La 3NF (dépendance transitive)",
-       "correct": false,
-       "explanation": "La 3NF concerne les dépendances transitives, pas les valeurs multiples."
-      },
-      {
-       "text": "La BCNF",
-       "correct": false,
-       "explanation": "BCNF est une forme avancée, mais le problème ici est d'abord 1NF."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Dans la table INSCRIPTION(NumEtu, NumCours, NomEtu, Note) avec clé (NumEtu, NumCours), la dépendance NumEtu → NomEtu est :",
-     "options": [
-      {
-       "text": "Une dépendance transitive",
-       "correct": false,
-       "explanation": "NumEtu → NomEtu n'est pas transitive — il n'y a pas d'intermédiaire entre NumEtu et NomEtu."
-      },
-      {
-       "text": "Une dépendance partielle (violation de 2NF)",
-       "correct": true,
-       "explanation": "Correct ! NumEtu → NomEtu est une dépendance PARTIELLE : NomEtu dépend d'UNE PARTIE seulement de la clé composée (NumEtu, NumCours). Cela viole la 2NF."
-      },
-      {
-       "text": "Une dépendance directe sur la clé entière",
-       "correct": false,
-       "explanation": "Une DF directe totale serait (NumEtu, NumCours) → Note — toute la clé détermine Note."
-      },
-      {
-       "text": "Une dépendance inexistante",
-       "correct": false,
-       "explanation": "NumEtu → NomEtu est une vraie dépendance fonctionnelle, pas inexistante."
-      }
-     ]
-    }
-   ],
-   "source": "_private/fbd/chapitres/chapitre5.html"
-  },
-  {
-   "number": 6,
-   "title": "Conception & Contraintes",
-   "subtitle": "Schéma E-A, passage au relationnel et contraintes d'intégrité.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Lire et construire un schéma Entité-Association (E-A)<br/>\n        • Passer d'un schéma E-A au schéma relationnel<br/>\n        • Maîtriser les contraintes d'intégrité</p>\n</div>\n<h2>6.1 — Le modèle Entité-Association (E-A)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Éléments du schéma E-A</div>\n<p>• <strong>Entité</strong> : objet du monde réel (rectangle) — ex : ETUDIANT, COURS<br/>\n        • <strong>Attribut</strong> : propriété d'une entité (ellipse) — ex : nom, age<br/>\n        • <strong>Identifiant</strong> : attribut unique (souligné) — ex : <u>NumEtu</u><br/>\n        • <strong>Association</strong> : lien entre entités (losange) — ex : INSCRIT<br/>\n        • <strong>Cardinalités</strong> : (min,max) des deux côtés de l'association</p>\n</div>\n<h3>Cardinalités principales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Notation</th><th>Lecture</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>(0,1)</td><td>Au plus un (optionnel)</td><td>Un étudiant peut avoir 0 ou 1 tuteur</td></tr>\n<tr><td>(1,1)</td><td>Exactement un (obligatoire)</td><td>Un étudiant est inscrit dans 1 seule filière</td></tr>\n<tr><td>(0,n)</td><td>Zéro ou plusieurs</td><td>Un cours peut avoir 0 ou plusieurs étudiants</td></tr>\n<tr><td>(1,n)</td><td>Un ou plusieurs (au moins un)</td><td>Un prof enseigne au moins 1 cours</td></tr>\n</tbody>\n</table></div>\n<h2>6.2 — Passage E-A → Schéma relationnel</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Les 3 règles de passage</div>\n<p><strong>Règle 1 — Association 1:N</strong><br/>\n        La clé de l'entité côté \"1\" migre comme clé étrangère dans la table côté \"N\".<br/><br/>\n<strong>Règle 2 — Association N:M</strong><br/>\n        Créer une <em>table de jonction</em> avec les clés des deux entités (+ attributs de l'association).<br/><br/>\n<strong>Règle 3 — Association 1:1</strong><br/>\n        La clé d'une entité migre dans l'autre (choisir selon l'optionnalité).</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Auto-école</div>\n<pre>Schéma E-A :\n  ELEVE ──(0,n)── PASSE ──(1,n)── EXAMEN\n  ELEVE ──(0,n)── CONDUIT ──(1,n)── VEHICULE (avec MONITEUR)\nRègle 1 (1:N) : ELEVE possède UN permis\n  PERMIS(NumPermis, DateObtention, NumEleve#)\nRègle 2 (N:M) : ELEVE passe plusieurs EXAMENS, un EXAMEN a plusieurs élèves\n  PASSAGE(NumEleve#, NumExamen#, Date, Resultat)\nSchéma final :\n  ELEVE(NumEleve, Nom, Prenom, DateNaiss)\n  EXAMEN(NumExamen, Type, Lieu)\n  PASSAGE(NumEleve#, NumExamen#, Date, Resultat)</pre>\n</div>\n<h2>6.3 — Contraintes d'intégrité SQL</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Contrainte</th><th>Mot-clé SQL</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td>Clé primaire</td><td>PRIMARY KEY</td><td>Unique + Not Null</td></tr>\n<tr><td>Unicité</td><td>UNIQUE</td><td>Pas de doublon (NULL autorisé)</td></tr>\n<tr><td>Non nul</td><td>NOT NULL</td><td>La valeur est obligatoire</td></tr>\n<tr><td>Référence</td><td>REFERENCES / FOREIGN KEY</td><td>Valeur doit exister dans l'autre table</td></tr>\n<tr><td>Valeur</td><td>CHECK</td><td>Condition sur la valeur</td></tr>\n<tr><td>Défaut</td><td>DEFAULT</td><td>Valeur par défaut si non fournie</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Contraintes ON DELETE/UPDATE</div>\n<pre>FOREIGN KEY (id_etudiant) REFERENCES ETUDIANTS(id)\n  ON DELETE CASCADE     -- Si l'étudiant est supprimé, ses notes aussi\n  ON DELETE RESTRICT    -- Interdit de supprimer si des notes existent\n  ON DELETE SET NULL    -- Met NULL dans id_etudiant si l'étudiant est supprimé\n  ON UPDATE CASCADE     -- Propage le changement de la clé référencée</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>E-A : Entités (rectangles) + Associations (losanges) + Cardinalités</li>\n<li>Règle 1 (1:N) → FK migre côté N · Règle 2 (N:M) → table de jonction · Règle 3 (1:1) → FK dans la moins obligatoire</li>\n<li>Contraintes : PRIMARY KEY · UNIQUE · NOT NULL · REFERENCES · CHECK · DEFAULT</li>\n<li>ON DELETE : CASCADE (supprime les dépendants) · RESTRICT (bloque) · SET NULL</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Une association N:M entre ETUDIANTS et COURS se traduit en relationnel par :",
-     "options": [
-      {
-       "text": "Une clé étrangère dans COURS",
-       "correct": false,
-       "explanation": "Une seule clé étrangère suffit pour une relation 1:N, pas N:M."
-      },
-      {
-       "text": "Une clé étrangère dans ETUDIANTS",
-       "correct": false,
-       "explanation": "Une clé étrangère dans ETUDIANTS suffit pour 1:N, pas N:M."
-      },
-      {
-       "text": "Une table de jonction avec deux clés étrangères",
-       "correct": true,
-       "explanation": "Correct ! Une association N:M nécessite une table de jonction (ex: INSCRIPTIONS) avec deux clés étrangères pointant vers les deux tables."
-      },
-      {
-       "text": "La fusion des deux tables en une seule",
-       "correct": false,
-       "explanation": "Fusionner les tables créerait de la redondance — c'est l'opposé de la bonne pratique."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La contrainte ON DELETE CASCADE signifie :",
-     "options": [
-      {
-       "text": "La suppression est interdite si des lignes liées existent",
-       "correct": false,
-       "explanation": "RESTRICT interdit la suppression si des dépendances existent."
-      },
-      {
-       "text": "La FK devient NULL si la ligne référencée est supprimée",
-       "correct": false,
-       "explanation": "SET NULL met NULL dans la FK, pas CASCADE."
-      },
-      {
-       "text": "La suppression se propage aux lignes liées (suppression en cascade)",
-       "correct": true,
-       "explanation": "Correct ! CASCADE propage la suppression : si on supprime l'étudiant, toutes ses notes sont aussi supprimées automatiquement."
-      },
-      {
-       "text": "Les lignes supprimées sont archivées automatiquement",
-       "correct": false,
-       "explanation": "Il n'y a pas d'archive automatique avec CASCADE."
-      }
-     ]
-    }
-   ],
-   "source": "_private/fbd/chapitres/chapitre6.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Le modèle relationnel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Le modèle relationnel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Le modèle relationnel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Le modèle relationnel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Le modèle relationnel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Algèbre relationnelle.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Algèbre relationnelle.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Algèbre relationnelle.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Algèbre relationnelle.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Algèbre relationnelle.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement SQL Fondamentaux.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de SQL Fondamentaux.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi SQL Fondamentaux.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de SQL Fondamentaux.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à SQL Fondamentaux.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement SQL Avancé.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de SQL Avancé.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi SQL Avancé.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de SQL Avancé.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à SQL Avancé.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Normalisation.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Normalisation.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Normalisation.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Normalisation.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Normalisation.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Conception & Contraintes.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Conception & Contraintes.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Conception & Contraintes.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Conception & Contraintes.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Conception & Contraintes.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/fbd/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/fbd/exercices/exercices.html"
 }

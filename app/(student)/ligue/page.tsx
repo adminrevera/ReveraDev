@@ -3,6 +3,8 @@ import { unstable_cache } from "next/cache";
 import { Eyebrow, PageHeader, ProgressBar } from "@/components/student/ui";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { getAppSetting } from "@/lib/app-settings";
+import { redirect } from "next/navigation";
+import { ensureLeagueMembership, leagueUnlockThreshold } from "@/lib/gamification/league";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = { title: "Ligue · Revera" };
@@ -33,7 +35,7 @@ function timeLeft(endsAt: Date) {
 
 export default async function LeaguePage() {
   const { profile } = await requireStudentProfile();
-  const [membership, tiers, rulesValue, unlockValue] = await Promise.all([
+  const [membership, tiers, rulesValue] = await Promise.all([
     prisma.leagueMember.findFirst({
       relationLoadStrategy: "join",
       where: { userId: profile.id, group: { week: { closedAt: null } } },
@@ -54,19 +56,20 @@ export default async function LeaguePage() {
     }),
     getTiers(),
     getAppSetting("league.tierRules"),
-    getAppSetting("league.unlockAfterChapters"),
   ]);
 
   if (!membership) {
-    const unlockAfter = typeof unlockValue === "number" && unlockValue > 0 ? unlockValue : 2;
+    // La ligue s'ouvre après N chapitres validés, tous cours confondus.
+    if (await ensureLeagueMembership(profile.id)) redirect("/ligue");
+    const unlockAfter = await leagueUnlockThreshold();
     const validated = await prisma.chapterProgress.count({ where: { userId: profile.id, completedAt: { not: null } } });
     return (
       <>
-        <PageHeader eyebrow="Compétition" title="Ligue">La ligue hebdomadaire se débloque après {unlockAfter} chapitres validés.</PageHeader>
+        <PageHeader eyebrow="Compétition" title="Ligue">La ligue hebdomadaire se débloque dès {unlockAfter} chapitres validés, tous cours confondus.</PageHeader>
         <section className="max-w-xl rounded-2xl border border-line bg-panel p-6">
           <Eyebrow>Prochaine étape</Eyebrow>
           <h2 className="mt-3 text-xl font-semibold">La ligue t’attend</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">Valide {unlockAfter} chapitres. Tu rejoindras ensuite un groupe d’étudiants et tu verras ton classement de la semaine.</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">Valide {unlockAfter} chapitres, dans les cours que tu veux. Tu rejoindras ensuite un groupe d’étudiants et tu verras ton classement de la semaine.</p>
           <div className="mt-5 flex items-center justify-between text-xs text-muted"><span>Chapitres validés</span><span>{Math.min(validated, unlockAfter)} / {unlockAfter}</span></div>
           <ProgressBar percent={(Math.min(validated, unlockAfter) / unlockAfter) * 100} className="mt-2" />
           {tiers.length > 0 && (

@@ -4,7 +4,10 @@ import { APP_NAME } from "@/lib/config";
 
 const sections = [
   ["overview", "Vue d’ensemble"],
-  ["content", "Contenus"],
+  ["review", "Relecture"],
+  ["studio", "Studio"],
+  ["gamification", "Gamification"],
+  ["assistant", "Assistant IA"],
   ["students", "Étudiants"],
   ["payments", "Paiements"],
   ["operations", "Animation"],

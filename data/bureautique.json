@@ -1,1095 +1,1095 @@
 {
- "slug": "bureautique",
- "name": "Bureautique",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Introduction à la Bureautique",
-   "subtitle": "Découvrez les fondements de la bureautique : matériel, logiciels et la suite Microsoft Office.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Définir la bureautique et son importance<br/>\n        • Identifier les composants matériels d'un ordinateur<br/>\n        • Distinguer logiciels systèmes et logiciels applicatifs<br/>\n        • Se repérer dans l'environnement Microsoft Office<br/>\n        • Comprendre les formats de fichiers courants</p>\n</div>\n<h2>1.1 — Qu'est-ce que la bureautique ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La <strong>bureautique</strong> désigne l'ensemble des techniques informatiques appliquées aux activités de bureau : rédaction, calcul, présentation et communication. Elle combine <strong>matériel</strong> (ordinateur, imprimante…) et <strong>logiciels</strong> (traitement de texte, tableur…) pour automatiser les tâches administratives.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Étymologie</div>\n<p>Le mot <em>bureautique</em> vient de la contraction de <strong>bureau</strong> + <strong>informatique</strong>. Il a été créé en France dans les années 1970 pour désigner l'application de l'informatique aux tâches de bureau.</p>\n</div>\n<h3>Pourquoi maîtriser la bureautique ?</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Domaine</th><th>Utilité</th><th>Outil principal</th></tr></thead>\n<tbody>\n<tr><td>Rédaction</td><td>Rapports, courriers, CV</td><td>Microsoft Word</td></tr>\n<tr><td>Calcul</td><td>Budgets, statistiques, tableaux de bord</td><td>Microsoft Excel</td></tr>\n<tr><td>Présentation</td><td>Exposés, réunions, pitch</td><td>Microsoft PowerPoint</td></tr>\n<tr><td>Communication</td><td>Emails, agenda, contacts</td><td>Microsoft Outlook</td></tr>\n<tr><td>Stockage</td><td>Organisation de fichiers</td><td>OneDrive / Explorateur</td></tr>\n</tbody>\n</table></div>\n<h2>1.2 — Les composants matériels</h2>\n<p>Un ordinateur est constitué de plusieurs composants qui travaillent ensemble :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">🖥️ Les composants principaux</div>\n<p><strong>Unité centrale (UC/CPU)</strong> — Le cerveau de l'ordinateur. Il exécute les instructions des programmes. Sa vitesse se mesure en GHz (gigahertz).</p>\n<p><strong>Mémoire RAM</strong> — Mémoire vive temporaire. Elle stocke les données en cours d'utilisation. Plus il y en a, plus l'ordinateur est fluide. Se mesure en Go (gigaoctets).</p>\n<p><strong>Disque dur / SSD</strong> — Stockage permanent des fichiers et du système. Le SSD est beaucoup plus rapide que le HDD classique.</p>\n<p><strong>Carte mère</strong> — Le circuit principal qui relie tous les composants entre eux.</p>\n<p><strong>Périphériques d'entrée</strong> — Clavier, souris, scanner, webcam… permettent d'envoyer des données à l'ordinateur.</p>\n<p><strong>Périphériques de sortie</strong> — Écran, imprimante, haut-parleurs… permettent de recevoir des résultats de l'ordinateur.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — CREAM</div>\n<p><strong>C</strong>PU · <strong>R</strong>AM · <strong>E</strong>cran · <strong>A</strong>limentaton · <strong>M</strong>ère (carte mère)<br/>\n        Retiens : « <em>La CREAM de l'ordinateur</em> » pour les 5 composants essentiels.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Unité de mesure</th></tr></thead>\n<tbody>\n<tr><td><strong>CPU</strong></td><td>Traitement des instructions</td><td>GHz (vitesse), cœurs</td></tr>\n<tr><td><strong>RAM</strong></td><td>Mémoire de travail temporaire</td><td>Go (gigaoctets)</td></tr>\n<tr><td><strong>Stockage</strong></td><td>Conservation permanente des données</td><td>Go / To (téraoctets)</td></tr>\n<tr><td><strong>GPU</strong></td><td>Traitement graphique</td><td>VRAM en Go</td></tr>\n<tr><td><strong>Réseau</strong></td><td>Connexion Internet / LAN</td><td>Mbps / Gbps</td></tr>\n</tbody>\n</table></div>\n<h2>1.3 — Les logiciels</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📦 Définition</div>\n<p>Un <strong>logiciel</strong> (ou software) est un ensemble de programmes qui permettent à l'ordinateur d'effectuer des tâches spécifiques. Sans logiciel, le matériel est inutilisable.</p>\n</div>\n<h3>Deux grandes catégories</h3>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⚙️ Logiciels systèmes</div>\n<p>Gèrent le matériel et fournissent une base pour les autres logiciels.</p>\n<ul>\n<li>Windows 11, macOS, Linux</li>\n<li>Pilotes (drivers)</li>\n<li>BIOS / UEFI</li>\n</ul>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📝 Logiciels applicatifs</div>\n<p>Permettent à l'utilisateur d'effectuer des tâches précises.</p>\n<ul>\n<li>Microsoft Office (bureautique)</li>\n<li>Chrome, Firefox (navigation)</li>\n<li>VLC, Photoshop (multimédia)</li>\n</ul>\n</div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — SA</div>\n<p><strong>S</strong>ystème → gère la machine · <strong>A</strong>pplicatif → sert l'utilisateur.<br/>\n        Analogie : le système c'est l'infrastructure de la ville, l'applicatif c'est les bâtiments que tu utilises.</p>\n</div>\n<h2>1.4 — La suite Microsoft Office</h2>\n<p>Microsoft Office est la suite bureautique la plus utilisée au monde. Elle regroupe plusieurs applications complémentaires :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Application</th><th>Icône</th><th>Usage principal</th><th>Extension</th></tr></thead>\n<tbody>\n<tr><td><strong>Word</strong></td><td>🔵 W</td><td>Traitement de texte, rédaction</td><td>.docx</td></tr>\n<tr><td><strong>Excel</strong></td><td>🟢 X</td><td>Tableur, calculs, graphiques</td><td>.xlsx</td></tr>\n<tr><td><strong>PowerPoint</strong></td><td>🔴 P</td><td>Présentations, diaporamas</td><td>.pptx</td></tr>\n<tr><td><strong>Outlook</strong></td><td>🔵 O</td><td>Messagerie, agenda, contacts</td><td>.pst</td></tr>\n<tr><td><strong>OneNote</strong></td><td>🟣 N</td><td>Prise de notes, organisation</td><td>.one</td></tr>\n<tr><td><strong>Access</strong></td><td>🔴 A</td><td>Base de données simple</td><td>.accdb</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Le format « x » dans .docx, .xlsx, .pptx</div>\n<p>Depuis Office 2007, Microsoft utilise le format <strong>Office Open XML</strong> (norme ISO). Le « x » à la fin signifie que le fichier est basé sur XML, un format texte standardisé. Ces fichiers sont en réalité des archives ZIP contenant des fichiers XML.</p>\n</div>\n<h2>1.5 — L'interface Windows de base</h2>\n<p>Avant d'utiliser les logiciels Office, il faut maîtriser les éléments fondamentaux de l'environnement Windows :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">🖥️ Éléments de l'interface Windows</div>\n<p><strong>Bureau (Desktop)</strong> — L'espace de travail principal. On peut y placer des raccourcis et des fichiers.</p>\n<p><strong>Barre des tâches</strong> — En bas de l'écran. Elle affiche les applications ouvertes, le menu Démarrer et l'horloge système.</p>\n<p><strong>Explorateur de fichiers</strong> — Permet de naviguer dans les dossiers et de gérer ses fichiers (créer, copier, déplacer, supprimer).</p>\n<p><strong>Menu contextuel</strong> — Clic droit → affiche des options selon l'élément sélectionné.</p>\n<p><strong>Raccourcis clavier essentiels</strong> : <code>Ctrl+C</code> (copier) · <code>Ctrl+V</code> (coller) · <code>Ctrl+X</code> (couper) · <code>Ctrl+Z</code> (annuler) · <code>Ctrl+S</code> (enregistrer).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Les raccourcis CXVZ</div>\n<p><strong>C</strong>opier · <strong>X</strong> (couper, comme des ciseaux ✂️) · <strong>V</strong> (coller, la flèche vers le bas ↓) · <strong>Z</strong> (annuler)<br/>\n        Retiens : « <em>Ctrl + CXVZ sont tes meilleurs amis</em> »</p>\n</div>\n<h2>1.6 — Gestion des fichiers</h2>\n<p>Une bonne organisation des fichiers est fondamentale en bureautique :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Raccourci</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>Nouveau dossier</td><td>Ctrl+Maj+N</td><td>Crée un dossier dans l'emplacement actuel</td></tr>\n<tr><td>Renommer</td><td>F2</td><td>Permet de renommer le fichier/dossier sélectionné</td></tr>\n<tr><td>Supprimer</td><td>Suppr</td><td>Envoie dans la Corbeille (récupérable)</td></tr>\n<tr><td>Suppression définitive</td><td>Maj+Suppr</td><td>Supprime sans passer par la Corbeille</td></tr>\n<tr><td>Propriétés</td><td>Alt+Entrée</td><td>Affiche taille, dates, attributs du fichier</td></tr>\n<tr><td>Rechercher</td><td>Ctrl+F</td><td>Recherche dans l'explorateur ou dans un document</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Bonnes pratiques d'organisation</div>\n<p>• Crée des dossiers thématiques : <code>Cours/</code>, <code>Projets/</code>, <code>Personnel/</code><br/>\n        • Utilise des noms de fichiers explicites : <code>Rapport_B1_Janvier2026.docx</code> plutôt que <code>doc1.docx</code><br/>\n        • Inclus la date dans le nom pour les documents versionnés<br/>\n        • Sauvegarde régulièrement (Ctrl+S) et fais des copies de sécurité</p>\n</div>\n<h2>1.7 — Les formats de fichiers courants</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Extension</th><th>Type</th><th>Logiciel associé</th></tr></thead>\n<tbody>\n<tr><td><code>.docx</code></td><td>Document texte Word</td><td>Microsoft Word</td></tr>\n<tr><td><code>.xlsx</code></td><td>Classeur Excel</td><td>Microsoft Excel</td></tr>\n<tr><td><code>.pptx</code></td><td>Présentation PowerPoint</td><td>Microsoft PowerPoint</td></tr>\n<tr><td><code>.pdf</code></td><td>Document portable (lecture seule)</td><td>Adobe Reader, navigateur</td></tr>\n<tr><td><code>.txt</code></td><td>Texte brut sans mise en forme</td><td>Bloc-notes</td></tr>\n<tr><td><code>.csv</code></td><td>Données tabulaires séparées par virgules</td><td>Excel, LibreOffice</td></tr>\n<tr><td><code>.jpg/.png</code></td><td>Images compressées</td><td>Visionneuse Windows</td></tr>\n<tr><td><code>.zip</code></td><td>Archive compressée</td><td>Explorateur Windows</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Le PDF en bureautique</div>\n<p>Le format <strong>PDF</strong> (Portable Document Format) est idéal pour partager des documents dont la mise en forme ne doit pas changer. Dans Word ou Excel, tu peux exporter en PDF via <em>Fichier → Enregistrer sous → PDF</em>. Il est lisible sur tous les appareils sans Microsoft Office.</p>\n</div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Microsoft Word</a>\n</div>\n</div>",
-   "questions": [
+  "slug": "bureautique",
+  "name": "Bureautique",
+  "chapters": [
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Que signifie le terme « bureautique » ?",
-     "options": [
-      {
-       "text": "Un type de mobilier de bureau",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'application de l'informatique aux tâches de bureau",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un logiciel de comptabilité",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La gestion des ressources humaines",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 1,
+      "title": "Introduction à la Bureautique",
+      "subtitle": "Découvrez les fondements de la bureautique : matériel, logiciels et la suite Microsoft Office.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Définir la bureautique et son importance</li><li>Identifier les composants matériels d'un ordinateur</li><li>Distinguer logiciels systèmes et logiciels applicatifs</li><li>Se repérer dans l'environnement Microsoft Office</li><li>Comprendre les formats de fichiers courants</li></ul></div>\n<h2>Qu'est-ce que la bureautique ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La <strong>bureautique</strong> désigne l'ensemble des techniques informatiques appliquées aux activités de bureau : rédaction, calcul, présentation et communication. Elle combine <strong>matériel</strong> (ordinateur, imprimante…) et <strong>logiciels</strong> (traitement de texte, tableur…) pour automatiser les tâches administratives.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Étymologie</div>\n<p>Le mot <em>bureautique</em> vient de la contraction de <strong>bureau</strong> + <strong>informatique</strong>. Il a été créé en France dans les années 1970 pour désigner l'application de l'informatique aux tâches de bureau.</p></div>\n<h3>Pourquoi maîtriser la bureautique ?</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Domaine</th><th>Utilité</th><th>Outil principal</th></tr></thead>\n<tbody>\n<tr><td>Rédaction</td><td>Rapports, courriers, CV</td><td>Microsoft Word</td></tr>\n<tr><td>Calcul</td><td>Budgets, statistiques, tableaux de bord</td><td>Microsoft Excel</td></tr>\n<tr><td>Présentation</td><td>Exposés, réunions, pitch</td><td>Microsoft PowerPoint</td></tr>\n<tr><td>Communication</td><td>Emails, agenda, contacts</td><td>Microsoft Outlook</td></tr>\n<tr><td>Stockage</td><td>Organisation de fichiers</td><td>OneDrive / Explorateur</td></tr>\n</tbody>\n</table></div>\n<h2>Les composants matériels</h2>\n<p>Un ordinateur est constitué de plusieurs composants qui travaillent ensemble :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Les composants principaux</div>\n<p><strong>Unité centrale (UC/CPU)</strong> — Le cerveau de l'ordinateur. Il exécute les instructions des programmes. Sa vitesse se mesure en GHz (gigahertz).</p>\n<p><strong>Mémoire RAM</strong> — Mémoire vive temporaire. Elle stocke les données en cours d'utilisation. Plus il y en a, plus l'ordinateur est fluide. Se mesure en Go (gigaoctets).</p>\n<p><strong>Disque dur / SSD</strong> — Stockage permanent des fichiers et du système. Le SSD est beaucoup plus rapide que le HDD classique.</p>\n<p><strong>Carte mère</strong> — Le circuit principal qui relie tous les composants entre eux.</p>\n<p><strong>Périphériques d'entrée</strong> — Clavier, souris, scanner, webcam… permettent d'envoyer des données à l'ordinateur.</p>\n<p><strong>Périphériques de sortie</strong> — Écran, imprimante, haut-parleurs… permettent de recevoir des résultats de l'ordinateur.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — CREAM</div>\n<p><strong>C</strong>PU · <strong>R</strong>AM · <strong>E</strong>cran · <strong>A</strong>limentaton · <strong>M</strong>ère (carte mère)<br/>\n        Retiens : « <em>La CREAM de l'ordinateur</em> » pour les 5 composants essentiels.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Unité de mesure</th></tr></thead>\n<tbody>\n<tr><td><strong>CPU</strong></td><td>Traitement des instructions</td><td>GHz (vitesse), cœurs</td></tr>\n<tr><td><strong>RAM</strong></td><td>Mémoire de travail temporaire</td><td>Go (gigaoctets)</td></tr>\n<tr><td><strong>Stockage</strong></td><td>Conservation permanente des données</td><td>Go / To (téraoctets)</td></tr>\n<tr><td><strong>GPU</strong></td><td>Traitement graphique</td><td>VRAM en Go</td></tr>\n<tr><td><strong>Réseau</strong></td><td>Connexion Internet / LAN</td><td>Mbps / Gbps</td></tr>\n</tbody>\n</table></div>\n<h2>Les logiciels</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Un <strong>logiciel</strong> (ou software) est un ensemble de programmes qui permettent à l'ordinateur d'effectuer des tâches spécifiques. Sans logiciel, le matériel est inutilisable.</p></div>\n<h3>Deux grandes catégories</h3>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Logiciels systèmes</div>\n<p>Gèrent le matériel et fournissent une base pour les autres logiciels.</p>\n<ul>\n<li>Windows 11, macOS, Linux</li>\n<li>Pilotes (drivers)</li>\n<li>BIOS / UEFI</li>\n</ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Logiciels applicatifs</div>\n<p>Permettent à l'utilisateur d'effectuer des tâches précises.</p>\n<ul>\n<li>Microsoft Office (bureautique)</li>\n<li>Chrome, Firefox (navigation)</li>\n<li>VLC, Photoshop (multimédia)</li>\n</ul></div></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — SA</div>\n<p><strong>S</strong>ystème → gère la machine · <strong>A</strong>pplicatif → sert l'utilisateur.<br/>\n        Analogie : le système c'est l'infrastructure de la ville, l'applicatif c'est les bâtiments que tu utilises.</p></div>\n<h2>La suite Microsoft Office</h2>\n<p>Microsoft Office est la suite bureautique la plus utilisée au monde. Elle regroupe plusieurs applications complémentaires :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Application</th><th>Icône</th><th>Usage principal</th><th>Extension</th></tr></thead>\n<tbody>\n<tr><td><strong>Word</strong></td><td> W</td><td>Traitement de texte, rédaction</td><td>.docx</td></tr>\n<tr><td><strong>Excel</strong></td><td> X</td><td>Tableur, calculs, graphiques</td><td>.xlsx</td></tr>\n<tr><td><strong>PowerPoint</strong></td><td> P</td><td>Présentations, diaporamas</td><td>.pptx</td></tr>\n<tr><td><strong>Outlook</strong></td><td> O</td><td>Messagerie, agenda, contacts</td><td>.pst</td></tr>\n<tr><td><strong>OneNote</strong></td><td> N</td><td>Prise de notes, organisation</td><td>.one</td></tr>\n<tr><td><strong>Access</strong></td><td> A</td><td>Base de données simple</td><td>.accdb</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Le format « x » dans .docx, .xlsx, .pptx</div>\n<p>Depuis Office 2007, Microsoft utilise le format <strong>Office Open XML</strong> (norme ISO). Le « x » à la fin signifie que le fichier est basé sur XML, un format texte standardisé. Ces fichiers sont en réalité des archives ZIP contenant des fichiers XML.</p></div>\n<h2>L'interface Windows de base</h2>\n<p>Avant d'utiliser les logiciels Office, il faut maîtriser les éléments fondamentaux de l'environnement Windows :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Éléments de l'interface Windows</div>\n<p><strong>Bureau (Desktop)</strong> — L'espace de travail principal. On peut y placer des raccourcis et des fichiers.</p>\n<p><strong>Barre des tâches</strong> — En bas de l'écran. Elle affiche les applications ouvertes, le menu Démarrer et l'horloge système.</p>\n<p><strong>Explorateur de fichiers</strong> — Permet de naviguer dans les dossiers et de gérer ses fichiers (créer, copier, déplacer, supprimer).</p>\n<p><strong>Menu contextuel</strong> — Clic droit → affiche des options selon l'élément sélectionné.</p>\n<p><strong>Raccourcis clavier essentiels</strong> : <code>Ctrl+C</code> (copier) · <code>Ctrl+V</code> (coller) · <code>Ctrl+X</code> (couper) · <code>Ctrl+Z</code> (annuler) · <code>Ctrl+S</code> (enregistrer).</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Les raccourcis CXVZ</div>\n<p><strong>C</strong>opier · <strong>X</strong> (couper, comme des ciseaux ) · <strong>V</strong> (coller, la flèche vers le bas ↓) · <strong>Z</strong> (annuler)<br/>\n        Retiens : « <em>Ctrl + CXVZ sont tes meilleurs amis</em> »</p></div>\n<h2>Gestion des fichiers</h2>\n<p>Une bonne organisation des fichiers est fondamentale en bureautique :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Raccourci</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td>Nouveau dossier</td><td>Ctrl+Maj+N</td><td>Crée un dossier dans l'emplacement actuel</td></tr>\n<tr><td>Renommer</td><td>F2</td><td>Permet de renommer le fichier/dossier sélectionné</td></tr>\n<tr><td>Supprimer</td><td>Suppr</td><td>Envoie dans la Corbeille (récupérable)</td></tr>\n<tr><td>Suppression définitive</td><td>Maj+Suppr</td><td>Supprime sans passer par la Corbeille</td></tr>\n<tr><td>Propriétés</td><td>Alt+Entrée</td><td>Affiche taille, dates, attributs du fichier</td></tr>\n<tr><td>Rechercher</td><td>Ctrl+F</td><td>Recherche dans l'explorateur ou dans un document</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Bonnes pratiques d'organisation</div>\n<ul><li>Crée des dossiers thématiques : <code>Cours/</code>, <code>Projets/</code>, <code>Personnel/</code></li><li>Utilise des noms de fichiers explicites : <code>Rapport_B1_Janvier2026.docx</code> plutôt que <code>doc1.docx</code></li><li>Inclus la date dans le nom pour les documents versionnés</li><li>Sauvegarde régulièrement (Ctrl+S) et fais des copies de sécurité</li></ul></div>\n<h2>Les formats de fichiers courants</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Extension</th><th>Type</th><th>Logiciel associé</th></tr></thead>\n<tbody>\n<tr><td><code>.docx</code></td><td>Document texte Word</td><td>Microsoft Word</td></tr>\n<tr><td><code>.xlsx</code></td><td>Classeur Excel</td><td>Microsoft Excel</td></tr>\n<tr><td><code>.pptx</code></td><td>Présentation PowerPoint</td><td>Microsoft PowerPoint</td></tr>\n<tr><td><code>.pdf</code></td><td>Document portable (lecture seule)</td><td>Adobe Reader, navigateur</td></tr>\n<tr><td><code>.txt</code></td><td>Texte brut sans mise en forme</td><td>Bloc-notes</td></tr>\n<tr><td><code>.csv</code></td><td>Données tabulaires séparées par virgules</td><td>Excel, LibreOffice</td></tr>\n<tr><td><code>.jpg/.png</code></td><td>Images compressées</td><td>Visionneuse Windows</td></tr>\n<tr><td><code>.zip</code></td><td>Archive compressée</td><td>Explorateur Windows</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Le PDF en bureautique</div>\n<p>Le format <strong>PDF</strong> (Portable Document Format) est idéal pour partager des documents dont la mise en forme ne doit pas changer. Dans Word ou Excel, tu peux exporter en PDF via <em>Fichier → Enregistrer sous → PDF</em>. Il est lisible sur tous les appareils sans Microsoft Office.</p></div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Microsoft Word</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Que signifie le terme « bureautique » ?",
+          "options": [
+            {
+              "text": "Un type de mobilier de bureau",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'application de l'informatique aux tâches de bureau",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un logiciel de comptabilité",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La gestion des ressources humaines",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quelle est l'extension d'un fichier Microsoft Word ?",
+          "options": [
+            {
+              "text": ".xlsx",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".pptx",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".docx",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": ".txt",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quel raccourci clavier permet d'annuler la dernière action ?",
+          "options": [
+            {
+              "text": "Ctrl+S",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ctrl+C",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ctrl+V",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ctrl+Z",
+              "correct": true,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Qu'est-ce que la RAM ?",
+          "options": [
+            {
+              "text": "Un type de disque dur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La mémoire vive temporaire de l'ordinateur",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le processeur de l'ordinateur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un logiciel système",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quel format est le plus adapté pour partager un document dont la mise en forme ne doit pas changer ?",
+          "options": [
+            {
+              "text": ".docx",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".txt",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".pdf",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": ".xlsx",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "bureautique/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quelle est l'extension d'un fichier Microsoft Word ?",
-     "options": [
-      {
-       "text": ".xlsx",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".pptx",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".docx",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": ".txt",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 2,
+      "title": "Microsoft Word — Les bases",
+      "subtitle": "Interface, saisie, mise en forme de base, paragraphes, listes et tableaux.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Découvrir l'interface de Microsoft Word</li><li>Saisir et modifier du texte efficacement</li><li>Appliquer des mises en forme (police, taille, couleur, gras, italique)</li><li>Gérer les paragraphes (alignement, espacement, retraits)</li><li>Créer des listes à puces et numérotées</li><li>Insérer et formater des tableaux simples</li></ul></div>\n<h2>L'interface de Word</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Les zones de l'interface</div>\n<p>Word est organisé en plusieurs zones : la <strong>barre de titre</strong> (nom du fichier), le <strong>Ruban</strong> (commandes), la <strong>règle</strong> (marges et retraits), la <strong>zone de saisie</strong> (le document) et la <strong>barre d'état</strong> (informations bas de page).</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Ruban — Accueil</strong></td><td>Police, paragraphe, styles, presse-papiers</td></tr>\n<tr><td><strong>Ruban — Insertion</strong></td><td>Images, tableaux, formes, en-têtes/pieds de page</td></tr>\n<tr><td><strong>Ruban — Mise en page</strong></td><td>Marges, orientation, taille du papier, colonnes</td></tr>\n<tr><td><strong>Ruban — Révision</strong></td><td>Correcteur orthographique, suivi des modifications</td></tr>\n<tr><td><strong>Barre d'état</strong></td><td>Numéro de page, nombre de mots, zoom</td></tr>\n</tbody>\n</table></div>\n<h2>Mise en forme des caractères</h2>\n<p>La mise en forme des <strong>caractères</strong> concerne le texte sélectionné : police, taille, style et couleur.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Raccourci</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Gras</strong></td><td>Ctrl+G</td><td>Met le texte en gras</td></tr>\n<tr><td><strong>Italique</strong></td><td>Ctrl+I</td><td>Met le texte en italique</td></tr>\n<tr><td><strong>Souligné</strong></td><td>Ctrl+U</td><td>Souligne le texte</td></tr>\n<tr><td><strong>Taille +</strong></td><td>Ctrl+]</td><td>Augmente la taille de police de 1pt</td></tr>\n<tr><td><strong>Taille -</strong></td><td>Ctrl+[</td><td>Diminue la taille de police de 1pt</td></tr>\n<tr><td><strong>Effacer mise en forme</strong></td><td>Ctrl+Espace</td><td>Supprime toute la mise en forme</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — GIU</div>\n<p><strong>G</strong>ras · <strong>I</strong>talique · <strong>U</strong>nderline (souligné) = Ctrl + G · I · U<br/>\n        Retiens « <em>Gros Italique Underline</em> » — les 3 mises en forme de base !</p></div>\n<h2>Mise en forme des paragraphes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Alignement du texte</div>\n<p>L'alignement définit comment le texte se positionne horizontalement dans la page.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Alignement</th><th>Raccourci</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td> Gauche</td><td>Ctrl+L</td><td>Texte courant (par défaut)</td></tr>\n<tr><td> Centré</td><td>Ctrl+E</td><td>Titres, sous-titres</td></tr>\n<tr><td> Droite</td><td>Ctrl+R</td><td>Dates, numéros de page</td></tr>\n<tr><td> Justifié</td><td>Ctrl+J</td><td>Texte de rapport professionnel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Bonne pratique — Justification</div>\n<p>Dans les rapports et documents officiels, utilise toujours l'alignement <strong>justifié</strong> (Ctrl+J). Il donne un aspect professionnel en alignant le texte des deux côtés de la marge.</p></div>\n<h2>Les listes</h2>\n<p>Word propose deux types de listes : à <strong>puces</strong> (symboles) et <strong>numérotées</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Raccourci</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>• Liste à puces</td><td>Accueil → Puces</td><td>Éléments sans ordre particulier</td></tr>\n<tr><td>1. Liste numérotée</td><td>Accueil → Numérotation</td><td>Étapes, procédures, classements</td></tr>\n<tr><td>↳ Liste imbriquée</td><td>Tab pour descendre</td><td>Sous-éléments d'une liste</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Erreur fréquente</div>\n<p>N'utilise jamais le tiret (<code>-</code>) ou l'astérisque (<code>*</code>) manuellement pour créer des listes. Utilise toujours les boutons de liste officielle du Ruban pour que Word gère correctement l'espacement et les retraits.</p></div>\n<h2>Les tableaux dans Word</h2>\n<p>Pour insérer un tableau : <strong>Insertion → Tableau</strong> puis choisir le nombre de lignes et colonnes.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Comment faire</th></tr></thead>\n<tbody>\n<tr><td>Insérer un tableau</td><td>Insertion → Tableau → grille</td></tr>\n<tr><td>Ajouter une ligne</td><td>Clic dans la dernière cellule + Tab</td></tr>\n<tr><td>Fusionner des cellules</td><td>Sélectionner cellules → clic droit → Fusionner</td></tr>\n<tr><td>Trier un tableau</td><td>Mise en page (tableau) → Trier</td></tr>\n<tr><td>Appliquer un style</td><td>Création (tableau) → Styles de tableau</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Interface Word : Ruban (Accueil, Insertion, Mise en page, Révision) + barre d'état</li>\n<li>Mise en forme caractères : <strong>GIU</strong> = Ctrl+G (Gras), Ctrl+I (Italique), Ctrl+U (Souligné)</li>\n<li>Alignement : Ctrl+L (gauche) · Ctrl+E (centré) · Ctrl+R (droit) · Ctrl+J (justifié)</li>\n<li>Listes : puces (sans ordre) vs numérotées (étapes) — toujours via le Ruban, jamais manuellement</li>\n<li>Tableau : Insertion → Tableau · Tab dans dernière cellule = nouvelle ligne</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel raccourci met le texte sélectionné en gras dans Word ?",
+          "options": [
+            {
+              "text": "Ctrl+I",
+              "correct": false,
+              "explanation": "Ctrl+I est le raccourci pour l'italique."
+            },
+            {
+              "text": "Ctrl+G",
+              "correct": true,
+              "explanation": "Correct ! Ctrl+G (ou Ctrl+B en anglais) met le texte en gras."
+            },
+            {
+              "text": "Ctrl+U",
+              "correct": false,
+              "explanation": "Ctrl+U est le raccourci pour le soulignement."
+            },
+            {
+              "text": "Ctrl+E",
+              "correct": false,
+              "explanation": "Ctrl+E centre le paragraphe."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel alignement donne un aspect professionnel en alignant le texte des deux côtés ?",
+          "options": [
+            {
+              "text": "Alignement gauche",
+              "correct": false,
+              "explanation": "L'alignement gauche n'aligne que le côté gauche."
+            },
+            {
+              "text": "Centré",
+              "correct": false,
+              "explanation": "L'alignement centré place le texte au milieu, utilisé pour les titres."
+            },
+            {
+              "text": "Alignement droit",
+              "correct": false,
+              "explanation": "L'alignement droit aligne le texte sur la marge droite."
+            },
+            {
+              "text": "Justifié",
+              "correct": true,
+              "explanation": "Correct ! Le texte justifié (Ctrl+J) s'aligne des deux côtés, idéal pour les rapports."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour ajouter une nouvelle ligne à la fin d'un tableau Word, on appuie sur :",
+          "options": [
+            {
+              "text": "Entrée",
+              "correct": false,
+              "explanation": "Entrée crée un paragraphe dans la cellule, pas une nouvelle ligne du tableau."
+            },
+            {
+              "text": "Tab (dans la dernière cellule)",
+              "correct": true,
+              "explanation": "Correct ! Tab dans la dernière cellule du tableau ajoute automatiquement une nouvelle ligne."
+            },
+            {
+              "text": "Ctrl+Entrée",
+              "correct": false,
+              "explanation": "Ctrl+Entrée insère un saut de page."
+            },
+            {
+              "text": "Espace",
+              "correct": false,
+              "explanation": "Espace ne crée pas de nouvelle ligne dans un tableau."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "L'onglet du Ruban qui contient les outils de correction orthographique est :",
+          "options": [
+            {
+              "text": "Accueil",
+              "correct": false,
+              "explanation": "L'onglet Accueil contient la mise en forme du texte."
+            },
+            {
+              "text": "Insertion",
+              "correct": false,
+              "explanation": "L'onglet Insertion sert à insérer des objets (images, tableaux…)."
+            },
+            {
+              "text": "Révision",
+              "correct": true,
+              "explanation": "Correct ! L'onglet Révision contient le correcteur orthographique, le suivi des modifications et les commentaires."
+            },
+            {
+              "text": "Mise en page",
+              "correct": false,
+              "explanation": "L'onglet Mise en page gère les marges et l'orientation."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel raccourci efface toute la mise en forme d'un texte sélectionné ?",
+          "options": [
+            {
+              "text": "Ctrl+Z",
+              "correct": false,
+              "explanation": "Ctrl+Z annule la dernière action, pas toute la mise en forme."
+            },
+            {
+              "text": "Suppr",
+              "correct": false,
+              "explanation": "Suppr supprime les caractères sélectionnés."
+            },
+            {
+              "text": "Ctrl+Espace",
+              "correct": true,
+              "explanation": "Correct ! Ctrl+Espace supprime toute mise en forme du texte sélectionné et revient au style normal."
+            },
+            {
+              "text": "Ctrl+Effacer",
+              "correct": false,
+              "explanation": "Ctrl+Effacer n'est pas un raccourci Word standard."
+            }
+          ]
+        }
+      ],
+      "source": "_private/bureautique/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quel raccourci clavier permet d'annuler la dernière action ?",
-     "options": [
-      {
-       "text": "Ctrl+S",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ctrl+C",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ctrl+V",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ctrl+Z",
-       "correct": true,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 3,
+      "title": "Mise en forme avancée Word",
+      "subtitle": "Styles, table des matières, en-têtes/pieds de page, publipostage.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Utiliser les styles Word pour une mise en forme cohérente</li><li>Générer une table des matières automatique</li><li>Insérer et personnaliser les en-têtes et pieds de page</li><li>Numéroter les pages</li><li>Comprendre le publipostage (mailing)</li><li>Utiliser les modèles de documents</li></ul></div>\n<h2>Les styles Word</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Un <strong>style</strong> est un ensemble de mises en forme prédéfinies (police, taille, couleur, espacement) que l'on peut appliquer d'un clic à un titre, paragraphe ou caractère. Les styles permettent une mise en forme <strong>cohérente et rapide</strong>.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Style</th><th>Usage</th><th>Niveau hiérarchique</th></tr></thead>\n<tbody>\n<tr><td><strong>Titre 1</strong></td><td>Titre principal du document</td><td>Niveau 1</td></tr>\n<tr><td><strong>Titre 2</strong></td><td>Sous-titre, section principale</td><td>Niveau 2</td></tr>\n<tr><td><strong>Titre 3</strong></td><td>Sous-section</td><td>Niveau 3</td></tr>\n<tr><td><strong>Normal</strong></td><td>Texte courant standard</td><td>Corps de texte</td></tr>\n<tr><td><strong>Corps de texte</strong></td><td>Paragraphes de contenu</td><td>Corps de texte</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Pourquoi utiliser les styles ?</div>\n<p>Imagine un document de 50 pages où tous les titres sont en Arial 16pt bleu. Sans styles, tu dois changer chaque titre manuellement. Avec les styles, tu modifies le style \"Titre 1\" <strong>une seule fois</strong> et tous les titres se mettent à jour automatiquement !</p></div>\n<h2>Table des matières automatique</h2>\n<p>Word peut générer une <strong>table des matières (TDM)</strong> automatiquement à partir des styles Titre 1, Titre 2, Titre 3.</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Procédure — Créer une TDM</div>\n<p>1. Appliquer les styles Titre 1/2/3 à tous tes titres<br/>\n        2. Placer le curseur à l'endroit voulu (début du document)<br/>\n        3. Aller dans <strong>Références → Table des matières</strong><br/>\n        4. Choisir un style automatique<br/>\n        5. Pour mettre à jour après modifications : clic droit → Mettre à jour les champs</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Erreur classique</div>\n<p>Ne jamais taper manuellement une table des matières ! La TDM automatique se met à jour avec les bons numéros de page. Une TDM tapée à la main sera fausse dès que tu ajouteras du contenu.</p></div>\n<h2>En-têtes et pieds de page</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Les <strong>en-têtes</strong> et <strong>pieds de page</strong> sont des zones qui apparaissent en haut et en bas de chaque page. Ils contiennent généralement le titre du document, le logo, la date et le numéro de page.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Élément courant</th><th>Emplacement habituel</th></tr></thead>\n<tbody>\n<tr><td>Logo / Nom de l'entreprise</td><td>En-tête gauche</td></tr>\n<tr><td>Titre du document</td><td>En-tête centre</td></tr>\n<tr><td>Date / Version</td><td>En-tête droite</td></tr>\n<tr><td>Numéro de page</td><td>Pied de page centre ou droite</td></tr>\n<tr><td>Confidentiel / Copyright</td><td>Pied de page centre</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Numérotation des pages</div>\n<p>Pour numéroter les pages : <strong>Insertion → Numéro de page</strong>. Tu peux choisir la position (haut/bas) et le style (1, 2, 3 ou i, ii, iii). Pour commencer à numéroter à partir d'une page spécifique, utilise les <em>sauts de section</em>.</p></div>\n<h2>Publipostage (Mailing)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le <strong>publipostage</strong> permet de créer en masse des documents personnalisés (lettres, étiquettes, emails) en combinant un <strong>document modèle</strong> (Word) et une <strong>liste de données</strong> (Excel ou Access).</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — La chaîne de production</div>\n<p>Le publipostage c'est comme une usine de lettres. Le <em>modèle</em> est le moule, la <em>liste Excel</em> est la liste des noms, et Word produit automatiquement 500 lettres personnalisées en quelques clics !</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Procédure publipostage</div>\n<p>1. Créer le document modèle avec des champs (ex: &lt;&lt;Nom&gt;&gt;, &lt;&lt;Email&gt;&gt;)<br/>\n        2. Onglet <strong>Publipostage → Démarrer la fusion → Lettres</strong><br/>\n        3. Sélectionner la source de données (fichier Excel)<br/>\n        4. Insérer les champs de fusion dans le document<br/>\n        5. Aperçu des résultats → Terminer et fusionner</p></div>\n<h2>Modèles de documents</h2>\n<p>Un <strong>modèle</strong> (.dotx) est un document pré-formaté réutilisable. Word propose des modèles intégrés pour les CV, lettres de motivation, rapports, etc.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de modèle</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>CV professionnel</td><td>Candidature à un emploi</td></tr>\n<tr><td>Lettre commerciale</td><td>Correspondance formelle</td></tr>\n<tr><td>Rapport / Compte-rendu</td><td>Documents académiques ou professionnels</td></tr>\n<tr><td>Facture</td><td>Facturation client</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3</h3>\n<ul>\n<li><strong>Styles</strong> : Titre 1/2/3 + Normal — garantissent cohérence et TDM automatique</li>\n<li><strong>Table des matières</strong> : Références → TDM → se met à jour avec clic droit</li>\n<li><strong>En-têtes/pieds de page</strong> : zones répétées sur chaque page (logo, pagination)</li>\n<li><strong>Numérotation</strong> : Insertion → Numéro de page</li>\n<li><strong>Publipostage</strong> : modèle + liste Excel → documents personnalisés en masse</li>\n<li><strong>Modèles</strong> (.dotx) : documents réutilisables (CV, lettres, rapports)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel avantage principal offrent les styles Word ?",
+          "options": [
+            {
+              "text": "Corriger automatiquement les fautes d'orthographe",
+              "correct": false,
+              "explanation": "Les styles ne corrigent pas l'orthographe."
+            },
+            {
+              "text": "Uniformiser la mise en forme et la modifier en une seule opération",
+              "correct": true,
+              "explanation": "Correct ! Les styles permettent une mise en forme cohérente et modifiable en une fois pour tout le document."
+            },
+            {
+              "text": "Insérer des images automatiquement",
+              "correct": false,
+              "explanation": "Les images sont gérées via l'onglet Insertion, pas les styles."
+            },
+            {
+              "text": "Numéroter les pages automatiquement",
+              "correct": false,
+              "explanation": "La numérotation des pages est gérée via En-têtes/pieds de page."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour générer une table des matières automatique, les titres doivent être formatés avec :",
+          "options": [
+            {
+              "text": "Du texte en gras, taille 16",
+              "correct": false,
+              "explanation": "Mettre en gras ne suffit pas pour générer une TDM — Word ne reconnaît pas le gras comme un titre."
+            },
+            {
+              "text": "Les styles Word : Titre 1, Titre 2, Titre 3",
+              "correct": true,
+              "explanation": "Correct ! Word utilise les styles Titre 1, Titre 2, Titre 3 pour construire la table des matières."
+            },
+            {
+              "text": "Du texte souligné et centré",
+              "correct": false,
+              "explanation": "Souligné + centré n'est pas reconnu par Word comme titre."
+            },
+            {
+              "text": "Des polices de grande taille uniquement",
+              "correct": false,
+              "explanation": "La taille de police seule n'est pas utilisée pour la TDM."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Où se trouve la commande pour insérer une table des matières dans Word ?",
+          "options": [
+            {
+              "text": "Accueil",
+              "correct": false,
+              "explanation": "Accueil contient la mise en forme de base, pas la TDM."
+            },
+            {
+              "text": "Insertion",
+              "correct": false,
+              "explanation": "Insertion contient des images, tableaux, formes, mais pas la TDM."
+            },
+            {
+              "text": "Références",
+              "correct": true,
+              "explanation": "Correct ! L'onglet Références contient Table des matières, Notes de bas de page, Citations."
+            },
+            {
+              "text": "Mise en page",
+              "correct": false,
+              "explanation": "Mise en page gère les marges et l'orientation du document."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le publipostage permet de :",
+          "options": [
+            {
+              "text": "Traduire un document dans une autre langue",
+              "correct": false,
+              "explanation": "Le publipostage génère des documents, il ne les traduit pas."
+            },
+            {
+              "text": "Créer des documents personnalisés en masse depuis une liste de données",
+              "correct": true,
+              "explanation": "Correct ! Le publipostage crée automatiquement des documents personnalisés (lettres, étiquettes) depuis un modèle et une liste de données."
+            },
+            {
+              "text": "Compresser un document en ZIP",
+              "correct": false,
+              "explanation": "La compression de fichier n'est pas une fonction de publipostage."
+            },
+            {
+              "text": "Corriger automatiquement la grammaire",
+              "correct": false,
+              "explanation": "Le correcteur grammatical est une fonction différente."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "L'extension d'un modèle Word est :",
+          "options": [
+            {
+              "text": ".docx",
+              "correct": false,
+              "explanation": ".docx est un document Word standard, pas un modèle."
+            },
+            {
+              "text": ".dotx",
+              "correct": true,
+              "explanation": "Correct ! .dotx est l'extension des modèles Word (Document Template). Le .dotm supporte les macros."
+            },
+            {
+              "text": ".xlsx",
+              "correct": false,
+              "explanation": ".xlsx est un classeur Excel."
+            },
+            {
+              "text": ".doc",
+              "correct": false,
+              "explanation": ".doc est l'ancien format Word (avant 2007)."
+            }
+          ]
+        }
+      ],
+      "source": "_private/bureautique/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Qu'est-ce que la RAM ?",
-     "options": [
-      {
-       "text": "Un type de disque dur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La mémoire vive temporaire de l'ordinateur",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le processeur de l'ordinateur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un logiciel système",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 4,
+      "title": "Microsoft Excel — Les bases",
+      "subtitle": "Classeurs, feuilles, cellules, saisie, formatage, tri et filtres.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre la structure d'un classeur Excel</li><li>Naviguer et saisir des données dans les cellules</li><li>Référencer correctement les cellules (A1, B2, $A$1…)</li><li>Formater les cellules (nombre, date, monnaie, texte)</li><li>Trier et filtrer des données</li><li>Figer les volets pour faciliter la navigation</li></ul></div>\n<h2>Structure d'un classeur Excel</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Vocabulaire de base</div>\n<p>Un <strong>classeur</strong> (.xlsx) contient plusieurs <strong>feuilles de calcul</strong>. Chaque feuille est une grille de <strong>cellules</strong> organisées en <strong>colonnes</strong> (lettres : A, B, C…) et <strong>lignes</strong> (chiffres : 1, 2, 3…).</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Classeur</strong></td><td>Fichier Excel complet</td><td>Budget_2025.xlsx</td></tr>\n<tr><td><strong>Feuille</strong></td><td>Onglet dans un classeur</td><td>Feuil1, Janvier, Ventes…</td></tr>\n<tr><td><strong>Cellule</strong></td><td>Intersection colonne + ligne</td><td>A1, B3, Z100</td></tr>\n<tr><td><strong>Plage</strong></td><td>Groupe de cellules</td><td>A1:C10 (de A1 à C10)</td></tr>\n<tr><td><strong>Barre de formule</strong></td><td>Zone affichant le contenu de la cellule active</td><td>= affiche la formule</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — La ville</div>\n<p>Un classeur Excel, c'est une <em>ville</em>. Les feuilles sont les <em>quartiers</em>, les colonnes sont les <em>avenues</em> (A, B, C…), les lignes sont les <em>rues</em> (1, 2, 3…), et chaque cellule est un <em>numéro d'adresse</em> (comme A1 = avenue A, rue 1).</p></div>\n<h2>Références de cellules</h2>\n<p>Comprendre les références est fondamental pour utiliser les formules Excel correctement.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Notation</th><th>Comportement au copier-coller</th></tr></thead>\n<tbody>\n<tr><td><strong>Relative</strong></td><td><code>A1</code></td><td>S'adapte automatiquement (décalage relatif)</td></tr>\n<tr><td><strong>Absolue</strong></td><td><code>$A$1</code></td><td>Ne change jamais — fixée</td></tr>\n<tr><td><strong>Mixte colonne</strong></td><td><code>$A1</code></td><td>Colonne fixe, ligne variable</td></tr>\n<tr><td><strong>Mixte ligne</strong></td><td><code>A$1</code></td><td>Ligne fixe, colonne variable</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Astuce — Touche F4</div>\n<p>Lors de la saisie d'une formule, sélectionne une référence de cellule et appuie sur F4 pour basculer entre les 4 modes : A1 → $A$1 → A$1 → $A1 → A1…</p></div>\n<h2>Saisie et types de données</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Exemple</th><th>Alignement par défaut</th></tr></thead>\n<tbody>\n<tr><td><strong>Texte</strong></td><td>Bonjour, Nom</td><td>Gauche</td></tr>\n<tr><td><strong>Nombre</strong></td><td>42, 3.14, -10</td><td>Droite</td></tr>\n<tr><td><strong>Date</strong></td><td>17/04/2025</td><td>Droite</td></tr>\n<tr><td><strong>Formule</strong></td><td>=A1+B1, =SOMME(A1:A10)</td><td>Droite (si résultat numérique)</td></tr>\n<tr><td><strong>Booléen</strong></td><td>VRAI, FAUX</td><td>Centré</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Attention aux dates</div>\n<p>Excel stocke les dates comme des nombres (le 1er janvier 1900 = 1). Si tu saisis <code>17/04</code>, Excel peut l'interpréter comme une date ou du texte selon le format de la cellule. Vérifie toujours l'alignement : une date reconnue s'aligne à droite.</p></div>\n<h2>Formatage des cellules</h2>\n<p>Le formatage contrôle l'<strong>affichage</strong> des données sans changer leur valeur réelle.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Format</th><th>Exemple d'affichage</th><th>Valeur réelle</th></tr></thead>\n<tbody>\n<tr><td>Nombre (2 décimales)</td><td>1 234,56</td><td>1234.56</td></tr>\n<tr><td>Monnaie</td><td>1 234,56 FCFA</td><td>1234.56</td></tr>\n<tr><td>Pourcentage</td><td>85,00 %</td><td>0.85</td></tr>\n<tr><td>Date longue</td><td>vendredi 17 avril 2025</td><td>45763</td></tr>\n<tr><td>Texte</td><td>0042 (garde le zéro)</td><td>\"0042\"</td></tr>\n</tbody>\n</table></div>\n<h2>Tri et filtres</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Trier des données</div>\n<p>Le tri réorganise les lignes selon une ou plusieurs colonnes. Accès : <strong>Données → Trier</strong> ou le bouton de tri rapide A→Z / Z→A.</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Filtres automatiques</div>\n<p>Les filtres masquent les lignes qui ne correspondent pas au critère. Accès : <strong>Données → Filtrer</strong>. Des flèches apparaissent dans les en-têtes — cliquer dessus pour choisir les valeurs à afficher.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Figer les volets</div>\n<p>Pour garder les en-têtes de colonnes visibles lors du défilement : <strong>Affichage → Figer les volets → Figer la ligne supérieure</strong>.</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Structure : Classeur → Feuilles → Cellules (colonne lettre + ligne chiffre : A1)</li>\n<li>Références : relative (A1), absolue ($A$1), mixte (A$1 / $A1) · F4 pour basculer</li>\n<li>Données : texte (gauche) vs nombres/dates (droite) par défaut</li>\n<li>Formatage : change l'affichage (monnaie, %, date) sans modifier la valeur réelle</li>\n<li>Tri : Données → Trier · Filtre : Données → Filtrer (flèches de filtre)</li>\n<li>Figer les volets : Affichage → Figer les volets → Ligne supérieure</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle notation représente une référence absolue de cellule en Excel ?",
+          "options": [
+            {
+              "text": "A1",
+              "correct": false,
+              "explanation": "A1 est une référence relative qui s'adapte quand on copie la formule."
+            },
+            {
+              "text": "$A$1",
+              "correct": true,
+              "explanation": "Correct ! $A$1 est une référence absolue — ni la colonne ni la ligne ne changent quand on copie la formule."
+            },
+            {
+              "text": "A$1",
+              "correct": false,
+              "explanation": "A$1 est une référence mixte (ligne fixe, colonne variable)."
+            },
+            {
+              "text": "&A1",
+              "correct": false,
+              "explanation": "&A1 n'est pas une notation Excel valide."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans Excel, une valeur numérique saisie dans une cellule s'aligne par défaut :",
+          "options": [
+            {
+              "text": "À gauche",
+              "correct": false,
+              "explanation": "Le texte s'aligne à gauche par défaut, pas les nombres."
+            },
+            {
+              "text": "Au centre",
+              "correct": false,
+              "explanation": "Le centré n'est pas l'alignement par défaut des nombres."
+            },
+            {
+              "text": "À droite",
+              "correct": true,
+              "explanation": "Correct ! Les nombres et dates s'alignent à droite par défaut dans Excel. Les textes s'alignent à gauche."
+            },
+            {
+              "text": "Justifié",
+              "correct": false,
+              "explanation": "Excel n'aligne pas les nombres de façon justifiée par défaut."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La plage de cellules A1:C3 contient combien de cellules ?",
+          "options": [
+            {
+              "text": "6",
+              "correct": false,
+              "explanation": "6 cellules serait A1:A6 ou A1:F1, pas A1:C3."
+            },
+            {
+              "text": "9",
+              "correct": true,
+              "explanation": "Correct ! A1:C3 = 3 colonnes (A, B, C) × 3 lignes (1, 2, 3) = 9 cellules."
+            },
+            {
+              "text": "12",
+              "correct": false,
+              "explanation": "12 cellules serait une plage 3×4 ou 4×3."
+            },
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": "3 cellules serait une seule ligne ou une seule colonne."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour garder les en-têtes de colonnes visibles lors du défilement, on utilise :",
+          "options": [
+            {
+              "text": "Révision → Protéger la feuille",
+              "correct": false,
+              "explanation": "Protéger la feuille empêche les modifications mais ne fige pas l'affichage."
+            },
+            {
+              "text": "Mise en page → Imprimer les titres",
+              "correct": false,
+              "explanation": "Mise en page gère l'impression, pas l'affichage lors du défilement."
+            },
+            {
+              "text": "Affichage → Figer les volets",
+              "correct": true,
+              "explanation": "Correct ! Affichage → Figer les volets → Figer la ligne supérieure maintient les en-têtes visibles pendant le défilement."
+            },
+            {
+              "text": "Données → Trier",
+              "correct": false,
+              "explanation": "Données → Trier réorganise les lignes, n'a pas de lien avec le figement."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel raccourci bascule une référence de cellule entre relative et absolue lors de la saisie d'une formule ?",
+          "options": [
+            {
+              "text": "F2",
+              "correct": false,
+              "explanation": "F2 active le mode édition de la cellule active."
+            },
+            {
+              "text": "F5",
+              "correct": false,
+              "explanation": "F5 ouvre la boîte Atteindre pour naviguer vers une cellule."
+            },
+            {
+              "text": "F4",
+              "correct": true,
+              "explanation": "Correct ! F4 bascule entre A1, $A$1, A$1 et $A1 lors de la saisie d'une formule."
+            },
+            {
+              "text": "F9",
+              "correct": false,
+              "explanation": "F9 recalcule toutes les formules du classeur."
+            }
+          ]
+        }
+      ],
+      "source": "_private/bureautique/chapitres/chapitre4.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quel format est le plus adapté pour partager un document dont la mise en forme ne doit pas changer ?",
-     "options": [
-      {
-       "text": ".docx",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".txt",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".pdf",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": ".xlsx",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 5,
+      "title": "Formules & Graphiques Excel",
+      "subtitle": "SOMME, MOYENNE, SI, RECHERCHEV, graphiques, tableaux croisés dynamiques.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Maîtriser les formules essentielles (SOMME, MOYENNE, MIN, MAX, NB)</li><li>Utiliser la fonction conditionnelle SI</li><li>Comprendre RECHERCHEV pour chercher des données</li><li>Créer et personnaliser des graphiques</li><li>Découvrir les tableaux croisés dynamiques (TCD)</li></ul></div>\n<h2>Formules de base</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle d'or</div>\n<p>Toute formule Excel commence par le signe <code>=</code>. Sans ce signe, Excel traite la saisie comme du texte.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Syntaxe</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>SOMME</strong></td><td>=SOMME(plage)</td><td>Additionne les valeurs</td><td>=SOMME(B2:B10)</td></tr>\n<tr><td><strong>MOYENNE</strong></td><td>=MOYENNE(plage)</td><td>Calcule la moyenne</td><td>=MOYENNE(B2:B10)</td></tr>\n<tr><td><strong>MIN</strong></td><td>=MIN(plage)</td><td>Trouve la valeur minimale</td><td>=MIN(B2:B10)</td></tr>\n<tr><td><strong>MAX</strong></td><td>=MAX(plage)</td><td>Trouve la valeur maximale</td><td>=MAX(B2:B10)</td></tr>\n<tr><td><strong>NB</strong></td><td>=NB(plage)</td><td>Compte les cellules numériques</td><td>=NB(B2:B10)</td></tr>\n<tr><td><strong>NBVAL</strong></td><td>=NBVAL(plage)</td><td>Compte les cellules non vides</td><td>=NBVAL(A2:A10)</td></tr>\n<tr><td><strong>NB.SI</strong></td><td>=NB.SI(plage;critère)</td><td>Compte selon un critère</td><td>=NB.SI(C2:C10;\"Oui\")</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — SMMMN</div>\n<p><strong>S</strong>OMME · <strong>M</strong>OYENNE · <strong>M</strong>IN · <strong>M</strong>AX · <strong>N</strong>B<br/>\n        « <em>Samba Marche Mais Mais N'arrive</em> » — les 5 fonctions statistiques de base.</p></div>\n<h2>La fonction SI</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Syntaxe</div>\n<p><code>=SI(condition ; valeur_si_vrai ; valeur_si_faux)</code></p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples SI</div>\n<pre>=SI(B2&gt;=10 ; \"Admis\" ; \"Refusé\")\n→ Si la note en B2 est ≥ 10, affiche \"Admis\", sinon \"Refusé\"\n=SI(C2=\"Oui\" ; D2*0.1 ; 0)\n→ Si C2 vaut \"Oui\", calcule 10% de D2, sinon affiche 0\n=SI(A2=\"\" ; \"Vide\" ; \"Rempli\")\n→ Vérifie si A2 est vide</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">SI imbriqués</div>\n<p>On peut imbriquer plusieurs SI pour gérer plus de 2 cas :<br/>\n<code>=SI(B2&gt;=16;\"TB\" ; SI(B2&gt;=14;\"B\" ; SI(B2&gt;=10;\"P\" ; \"R\")))</code><br/>\n        Mais à partir de Excel 2019, utilise plutôt <strong>SI.CONDITIONS</strong> pour plus de lisibilité.</p></div>\n<h2>RECHERCHEV</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Syntaxe</div>\n<p><code>=RECHERCHEV(valeur_cherchée ; table ; numéro_colonne ; [correspondance_exacte])</code></p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple RECHERCHEV</div>\n<pre>Table dans A1:C100 :\n| Code | Nom     | Prix |\n| 001  | Stylo   | 500  |\n| 002  | Cahier  | 1000 |\n=RECHERCHEV(\"001\" ; A1:C100 ; 2 ; FAUX)\n→ Retourne \"Stylo\" (2ème colonne de la table)</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Points importants RECHERCHEV</div>\n<ul><li>La valeur cherchée doit être dans la <strong>première colonne</strong> de la table</li><li>Toujours mettre <strong>FAUX</strong> en 4e argument pour une correspondance exacte</li><li>La table doit être en <strong>référence absolue</strong> ($A$1:$C$100) si tu copies la formule</li></ul></div>\n<h2>Graphiques Excel</h2>\n<p>Les graphiques transforment des données chiffrées en représentations visuelles.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Usage idéal</th></tr></thead>\n<tbody>\n<tr><td> Barres / Colonnes</td><td>Comparer des valeurs entre catégories</td></tr>\n<tr><td> Courbes (Lignes)</td><td>Évolution dans le temps (tendances)</td></tr>\n<tr><td> Secteurs (Camembert)</td><td>Répartition en pourcentages</td></tr>\n<tr><td> Nuage de points</td><td>Corrélation entre deux variables</td></tr>\n<tr><td> Aires</td><td>Évolution cumulée</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Créer un graphique</div>\n<p>1. Sélectionner les données (avec en-têtes)<br/>\n        2. <strong>Insertion → Graphiques recommandés</strong><br/>\n        3. Choisir le type de graphique<br/>\n        4. Personnaliser via les onglets Création et Format (qui apparaissent)</p></div>\n<h2>Tableau croisé dynamique (TCD)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Un <strong>tableau croisé dynamique</strong> (TCD) analyse et résume rapidement de grandes quantités de données. Il permet de croiser, regrouper et calculer des totaux sans formules complexes.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Créer un TCD</div>\n<p>1. Cliquer dans la table de données<br/>\n        2. <strong>Insertion → Tableau croisé dynamique</strong><br/>\n        3. Glisser les champs dans les zones : Lignes, Colonnes, Valeurs, Filtres<br/>\n        4. Excel calcule automatiquement les totaux</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Toute formule commence par <code>=</code> · Fonctions de base : <strong>SMMMN</strong> (SOMME, MOYENNE, MIN, MAX, NB)</li>\n<li>SI : <code>=SI(condition ; si_vrai ; si_faux)</code> — gestion de conditions</li>\n<li>RECHERCHEV : cherche dans 1ère colonne d'une table → retourne valeur d'une autre colonne · toujours FAUX en 4e argument</li>\n<li>Graphiques : colonnes (comparaison), courbes (évolution), secteurs (répartition)</li>\n<li>TCD : analyse interactive de grandes données sans formules complexes</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle formule calcule la somme des cellules B2 à B10 dans Excel ?",
+          "options": [
+            {
+              "text": "= TOTAL(B2:B10)",
+              "correct": false,
+              "explanation": "TOTAL n'est pas une fonction Excel standard."
+            },
+            {
+              "text": "=SOMME(B2:B10)",
+              "correct": true,
+              "explanation": "Correct ! =SOMME(B2:B10) additionne toutes les valeurs de B2 à B10."
+            },
+            {
+              "text": "=ADDITION(B2,B10)",
+              "correct": false,
+              "explanation": "ADDITION n'existe pas en Excel."
+            },
+            {
+              "text": "SOMME(B2:B10)",
+              "correct": false,
+              "explanation": "Sans le signe =, Excel traite cela comme du texte."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La formule =SI(A1>=10;\"Admis\";\"Refusé\") affiche \"Admis\" si :",
+          "options": [
+            {
+              "text": "A1 est inférieur à 10",
+              "correct": false,
+              "explanation": "Si A1 est inférieur à 10, la formule affiche Refusé."
+            },
+            {
+              "text": "A1 est supérieur ou égal à 10",
+              "correct": true,
+              "explanation": "Correct ! >= signifie supérieur ou égal. Si A1 vaut 10 ou plus, la condition est vraie et Excel affiche Admis."
+            },
+            {
+              "text": "A1 est égal à 0",
+              "correct": false,
+              "explanation": "A1 égal à 0 est inférieur à 10, donc cela afficherait Refusé."
+            },
+            {
+              "text": "A1 est vide",
+              "correct": false,
+              "explanation": "A1 vide serait traité comme 0, donc inférieur à 10, et afficherait Refusé."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans RECHERCHEV, le dernier argument doit être FAUX pour :",
+          "options": [
+            {
+              "text": "Chercher la valeur maximale",
+              "correct": false,
+              "explanation": "Chercher la valeur maximale se fait avec MAX(), pas RECHERCHEV."
+            },
+            {
+              "text": "Trouver une correspondance exacte",
+              "correct": true,
+              "explanation": "Correct ! FAUX (ou 0) force RECHERCHEV à trouver une correspondance exacte. VRAI permet une correspondance approximative."
+            },
+            {
+              "text": "Trier la table automatiquement",
+              "correct": false,
+              "explanation": "RECHERCHEV ne trie pas les données."
+            },
+            {
+              "text": "Chercher dans les lignes (pas les colonnes)",
+              "correct": false,
+              "explanation": "RECHERCHEV cherche dans des colonnes, pas des lignes. RECHERCHEH cherche dans les lignes."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel type de graphique Excel est le plus adapté pour montrer l'évolution des ventes sur 12 mois ?",
+          "options": [
+            {
+              "text": "Camembert (secteurs)",
+              "correct": false,
+              "explanation": "Le camembert montre des proportions et parts du tout, pas une évolution temporelle."
+            },
+            {
+              "text": "Courbes (lignes)",
+              "correct": true,
+              "explanation": "Correct ! Le graphique en courbes (lignes) est idéal pour visualiser des tendances et évolutions dans le temps."
+            },
+            {
+              "text": "Nuage de points",
+              "correct": false,
+              "explanation": "Le nuage de points montre la corrélation entre deux variables continues."
+            },
+            {
+              "text": "Barres horizontales",
+              "correct": false,
+              "explanation": "Les barres comparent des catégories, pas l'évolution dans le temps de préférence."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Qu'est-ce qu'un tableau croisé dynamique (TCD) ?",
+          "options": [
+            {
+              "text": "Un type de graphique 3D",
+              "correct": false,
+              "explanation": "Un TCD n'est pas un type de graphique."
+            },
+            {
+              "text": "Une formule de recherche avancée",
+              "correct": false,
+              "explanation": "RECHERCHEV est la fonction pour chercher des données, pas un TCD."
+            },
+            {
+              "text": "Un outil d'analyse qui résume et regroupe des données de façon interactive",
+              "correct": true,
+              "explanation": "Correct ! Un TCD permet de résumer, analyser et croiser de grandes quantités de données de façon interactive, sans écrire de formules."
+            },
+            {
+              "text": "Un tableau importé depuis Word",
+              "correct": false,
+              "explanation": "Un tableau Word est dans Word, pas dans Excel. Le TCD est spécifique à Excel."
+            }
+          ]
+        }
+      ],
+      "source": "_private/bureautique/chapitres/chapitre5.html"
+    },
+    {
+      "number": 6,
+      "title": "Microsoft PowerPoint",
+      "subtitle": "Diapositives, thèmes, animations, transitions et présentation professionnelle.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Créer et structurer une présentation PowerPoint</li><li>Utiliser les mises en page (layouts) et thèmes</li><li>Insérer et formater des objets (texte, images, graphiques, vidéos)</li><li>Appliquer des animations et transitions</li><li>Préparer et diffuser une présentation professionnelle</li><li>Exporter en PDF ou en vidéo</li></ul></div>\n<h2>Interface PowerPoint</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Les zones de l'interface</div>\n<p>L'interface PowerPoint est organisée en <strong>volet des miniatures</strong> (gauche), <strong>zone de diapositive</strong> (centre), <strong>volet de notes</strong> (bas) et le <strong>Ruban</strong> en haut.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Volet miniatures</strong></td><td>Aperçu et navigation entre les diapositives</td></tr>\n<tr><td><strong>Zone de diapositive</strong></td><td>Modification de la diapositive active</td></tr>\n<tr><td><strong>Volet de notes</strong></td><td>Notes personnelles pour le présentateur</td></tr>\n<tr><td><strong>Ruban — Insertion</strong></td><td>Images, formes, graphiques, vidéos, icônes</td></tr>\n<tr><td><strong>Ruban — Transitions</strong></td><td>Effets entre les diapositives</td></tr>\n<tr><td><strong>Ruban — Animations</strong></td><td>Effets sur les objets d'une diapositive</td></tr>\n</tbody>\n</table></div>\n<h2>Mises en page et thèmes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Thèmes et modèles</div>\n<p>Un <strong>thème</strong> définit l'apparence globale : couleurs, polices et effets. Un <strong>layout</strong> (mise en page) définit la disposition des contenus sur une diapositive.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Layout courant</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>Diapositive de titre</td><td>Première diapositive (titre + sous-titre)</td></tr>\n<tr><td>Titre et contenu</td><td>Titre + zone de texte ou image</td></tr>\n<tr><td>Deux contenus</td><td>Titre + deux zones côte à côte</td></tr>\n<tr><td>Vide</td><td>Liberté totale de placement</td></tr>\n<tr><td>Image avec légende</td><td>Grande image + texte descriptif</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Règle des 3 couleurs</div>\n<p>Pour une présentation professionnelle, limite-toi à <strong>3 couleurs maximum</strong> : une couleur principale (dominante), une secondaire (complémentaire) et une neutre (fond ou texte). Utilise le thème intégré et évite les couleurs criardes.</p></div>\n<h2>Règles de conception (Design)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Ce qu'il ne faut PAS faire</div>\n<ul><li>Trop de texte sur une diapositive (règle : max 6 lignes, 6 mots par ligne)</li><li>Polices trop petites (minimum 24pt pour le corps, 36pt+ pour les titres)</li><li>Trop d'animations et de couleurs (distrait l'audience)</li><li>Lire le texte de ses diapositives mot pour mot</li></ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Bonnes pratiques</div>\n<ul><li>Une idée par diapositive</li><li>Utiliser des images plutôt que du texte quand c'est possible</li><li>Maintenir une cohérence visuelle tout au long de la présentation</li><li>Numéroter les diapositives (Insertion → En-tête et pied de page)</li></ul></div>\n<h2>Animations et transitions</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Où s'applique</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Transition</strong></td><td>Entre deux diapositives</td><td>Fondu, Glissement, Zoom</td></tr>\n<tr><td><strong>Animation</strong></td><td>Sur un objet (texte, image…)</td><td>Apparition, Fondu, Rotation</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Transitions vs Animations</div>\n<p><strong>Transitions</strong> = passage entre slides (comme un fondu au cinéma entre deux scènes).<br/>\n<strong>Animations</strong> = effets sur les éléments d'un slide (comme un acteur qui entre en scène).</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Conseil professionnel</div>\n<p>En contexte professionnel ou académique, préfère des animations simples et discrètes (Apparition, Fondu). Les animations spectaculaires (spirale, rebond) sont perçues comme peu sérieuses.</p></div>\n<h2>Mode présentateur et export</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Mode présentateur</div>\n<p>Le mode présentateur (F5 ou Diaporama → Mode présentateur) affiche sur l'écran du présentateur : la diapositive actuelle, la suivante, les notes et le chronomètre. L'audience ne voit que la diapositive.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Comment</th></tr></thead>\n<tbody>\n<tr><td>Lancer le diaporama</td><td>F5 (depuis le début)</td></tr>\n<tr><td>Diapositive suivante</td><td>Clic, flèche →, Espace ou Page Suiv</td></tr>\n<tr><td>Diapositive précédente</td><td>Flèche ← ou Page Préc</td></tr>\n<tr><td>Quitter le diaporama</td><td>Échap</td></tr>\n<tr><td>Exporter en PDF</td><td>Fichier → Exporter → Créer un PDF/XPS</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 6</h3>\n<ul>\n<li>Interface : miniatures (navigation) + zone diapo + notes présentateur</li>\n<li><strong>Thème</strong> = couleurs + polices + effets globaux · <strong>Layout</strong> = disposition d'une diapo</li>\n<li>Règle <strong>6×6</strong> : max 6 lignes, max 6 mots par ligne</li>\n<li><strong>Transition</strong> = entre diapositives · <strong>Animation</strong> = sur un objet dans une diapo</li>\n<li>Mode présentateur (F5) : tu vois les notes + diapo suivante, l'audience voit seulement la diapo</li>\n<li>Export PDF : Fichier → Exporter → PDF/XPS</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence entre une Animation et une Transition dans PowerPoint ?",
+          "options": [
+            {
+              "text": "Animation = entre diapositives, Transition = sur un objet",
+              "correct": false,
+              "explanation": "C'est l'inverse : les transitions se produisent entre les diapositives."
+            },
+            {
+              "text": "Transition = entre diapositives, Animation = sur un objet",
+              "correct": true,
+              "explanation": "Correct ! La transition s'applique au passage entre deux diapositives, l'animation s'applique à un objet sur une diapositive."
+            },
+            {
+              "text": "Ce sont les mêmes choses, juste des noms différents",
+              "correct": false,
+              "explanation": "Ce sont deux fonctions différentes dans PowerPoint."
+            },
+            {
+              "text": "Les animations n'existent que dans PowerPoint 365",
+              "correct": false,
+              "explanation": "PowerPoint supporte les deux, ils ne sont pas limités à certaines versions."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Selon les bonnes pratiques, le nombre maximum de lignes recommandé par diapositive est :",
+          "options": [
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": "3 lignes est trop restrictif, même si moins c'est souvent mieux."
+            },
+            {
+              "text": "6",
+              "correct": true,
+              "explanation": "Correct ! La règle des 6×6 recommande max 6 lignes et 6 mots par ligne pour garder les diapositives lisibles et percutantes."
+            },
+            {
+              "text": "10",
+              "correct": false,
+              "explanation": "10 lignes représente trop de texte — l'audience ne pourra pas lire et écouter en même temps."
+            },
+            {
+              "text": "20",
+              "correct": false,
+              "explanation": "20 lignes correspond à un document Word, pas une diapositive."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle touche lance le diaporama PowerPoint depuis le début ?",
+          "options": [
+            {
+              "text": "F1",
+              "correct": false,
+              "explanation": "F1 ouvre l'aide de PowerPoint."
+            },
+            {
+              "text": "F2",
+              "correct": false,
+              "explanation": "F2 n'a pas de fonction standard pour le diaporama."
+            },
+            {
+              "text": "F5",
+              "correct": true,
+              "explanation": "Correct ! F5 lance le diaporama depuis la première diapositive. Shift+F5 le lance depuis la diapositive courante."
+            },
+            {
+              "text": "F7",
+              "correct": false,
+              "explanation": "F7 lance le correcteur orthographique."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le volet de notes dans PowerPoint sert à :",
+          "options": [
+            {
+              "text": "Ajouter des commentaires visibles par l'audience",
+              "correct": false,
+              "explanation": "Les commentaires dans les documents Office (Word, Excel) sont différents des notes PowerPoint."
+            },
+            {
+              "text": "Écrire des notes visibles uniquement par le présentateur",
+              "correct": true,
+              "explanation": "Correct ! Les notes sont uniquement visibles par le présentateur en mode présentateur. L'audience ne les voit pas."
+            },
+            {
+              "text": "Formater les diapositives automatiquement",
+              "correct": false,
+              "explanation": "Les notes ne servent pas à mettre en forme les diapositives."
+            },
+            {
+              "text": "Exporter la présentation en PDF",
+              "correct": false,
+              "explanation": "L'export PDF se fait via Fichier → Exporter, pas via les notes."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour une présentation professionnelle, combien de couleurs différentes est-il recommandé d'utiliser au maximum ?",
+          "options": [
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": "Une seule couleur serait trop monotone et manquerait de structure visuelle."
+            },
+            {
+              "text": "2",
+              "correct": false,
+              "explanation": "2 couleurs est possible mais souvent trop limité pour une structure claire."
+            },
+            {
+              "text": "3",
+              "correct": true,
+              "explanation": "Correct ! La règle des 3 couleurs (principale, secondaire, neutre) donne un aspect professionnel et cohérent."
+            },
+            {
+              "text": "7",
+              "correct": false,
+              "explanation": "5 à 7 couleurs donnent un aspect peu professionnel et surchargé visuellement."
+            }
+          ]
+        }
+      ],
+      "source": "_private/bureautique/chapitres/chapitre6.html"
     }
-   ],
-   "source": "bureautique/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Microsoft Word — Les bases",
-   "subtitle": "Interface, saisie, mise en forme de base, paragraphes, listes et tableaux.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Découvrir l'interface de Microsoft Word<br/>\n        • Saisir et modifier du texte efficacement<br/>\n        • Appliquer des mises en forme (police, taille, couleur, gras, italique)<br/>\n        • Gérer les paragraphes (alignement, espacement, retraits)<br/>\n        • Créer des listes à puces et numérotées<br/>\n        • Insérer et formater des tableaux simples</p>\n</div>\n<h2>2.1 — L'interface de Word</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🗺️ Les zones de l'interface</div>\n<p>Word est organisé en plusieurs zones : la <strong>barre de titre</strong> (nom du fichier), le <strong>Ruban</strong> (commandes), la <strong>règle</strong> (marges et retraits), la <strong>zone de saisie</strong> (le document) et la <strong>barre d'état</strong> (informations bas de page).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Ruban — Accueil</strong></td><td>Police, paragraphe, styles, presse-papiers</td></tr>\n<tr><td><strong>Ruban — Insertion</strong></td><td>Images, tableaux, formes, en-têtes/pieds de page</td></tr>\n<tr><td><strong>Ruban — Mise en page</strong></td><td>Marges, orientation, taille du papier, colonnes</td></tr>\n<tr><td><strong>Ruban — Révision</strong></td><td>Correcteur orthographique, suivi des modifications</td></tr>\n<tr><td><strong>Barre d'état</strong></td><td>Numéro de page, nombre de mots, zoom</td></tr>\n</tbody>\n</table></div>\n<h2>2.2 — Mise en forme des caractères</h2>\n<p>La mise en forme des <strong>caractères</strong> concerne le texte sélectionné : police, taille, style et couleur.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Raccourci</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Gras</strong></td><td>Ctrl+G</td><td>Met le texte en gras</td></tr>\n<tr><td><strong>Italique</strong></td><td>Ctrl+I</td><td>Met le texte en italique</td></tr>\n<tr><td><strong>Souligné</strong></td><td>Ctrl+U</td><td>Souligne le texte</td></tr>\n<tr><td><strong>Taille +</strong></td><td>Ctrl+]</td><td>Augmente la taille de police de 1pt</td></tr>\n<tr><td><strong>Taille -</strong></td><td>Ctrl+[</td><td>Diminue la taille de police de 1pt</td></tr>\n<tr><td><strong>Effacer mise en forme</strong></td><td>Ctrl+Espace</td><td>Supprime toute la mise en forme</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — GIU</div>\n<p><strong>G</strong>ras · <strong>I</strong>talique · <strong>U</strong>nderline (souligné) = Ctrl + G · I · U<br/>\n        Retiens « <em>Gros Italique Underline</em> » — les 3 mises en forme de base !</p>\n</div>\n<h2>2.3 — Mise en forme des paragraphes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📄 Alignement du texte</div>\n<p>L'alignement définit comment le texte se positionne horizontalement dans la page.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Alignement</th><th>Raccourci</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>⬅ Gauche</td><td>Ctrl+L</td><td>Texte courant (par défaut)</td></tr>\n<tr><td>↔ Centré</td><td>Ctrl+E</td><td>Titres, sous-titres</td></tr>\n<tr><td>➡ Droite</td><td>Ctrl+R</td><td>Dates, numéros de page</td></tr>\n<tr><td>⬛ Justifié</td><td>Ctrl+J</td><td>Texte de rapport professionnel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Bonne pratique — Justification</div>\n<p>Dans les rapports et documents officiels, utilise toujours l'alignement <strong>justifié</strong> (Ctrl+J). Il donne un aspect professionnel en alignant le texte des deux côtés de la marge.</p>\n</div>\n<h2>2.4 — Les listes</h2>\n<p>Word propose deux types de listes : à <strong>puces</strong> (symboles) et <strong>numérotées</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Raccourci</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>• Liste à puces</td><td>Accueil → Puces</td><td>Éléments sans ordre particulier</td></tr>\n<tr><td>1. Liste numérotée</td><td>Accueil → Numérotation</td><td>Étapes, procédures, classements</td></tr>\n<tr><td>↳ Liste imbriquée</td><td>Tab pour descendre</td><td>Sous-éléments d'une liste</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Erreur fréquente</div>\n<p>N'utilise jamais le tiret (<code>-</code>) ou l'astérisque (<code>*</code>) manuellement pour créer des listes. Utilise toujours les boutons de liste officielle du Ruban pour que Word gère correctement l'espacement et les retraits.</p>\n</div>\n<h2>2.5 — Les tableaux dans Word</h2>\n<p>Pour insérer un tableau : <strong>Insertion → Tableau</strong> puis choisir le nombre de lignes et colonnes.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Comment faire</th></tr></thead>\n<tbody>\n<tr><td>Insérer un tableau</td><td>Insertion → Tableau → grille</td></tr>\n<tr><td>Ajouter une ligne</td><td>Clic dans la dernière cellule + Tab</td></tr>\n<tr><td>Fusionner des cellules</td><td>Sélectionner cellules → clic droit → Fusionner</td></tr>\n<tr><td>Trier un tableau</td><td>Mise en page (tableau) → Trier</td></tr>\n<tr><td>Appliquer un style</td><td>Création (tableau) → Styles de tableau</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Interface Word : Ruban (Accueil, Insertion, Mise en page, Révision) + barre d'état</li>\n<li>Mise en forme caractères : <strong>GIU</strong> = Ctrl+G (Gras), Ctrl+I (Italique), Ctrl+U (Souligné)</li>\n<li>Alignement : Ctrl+L (gauche) · Ctrl+E (centré) · Ctrl+R (droit) · Ctrl+J (justifié)</li>\n<li>Listes : puces (sans ordre) vs numérotées (étapes) — toujours via le Ruban, jamais manuellement</li>\n<li>Tableau : Insertion → Tableau · Tab dans dernière cellule = nouvelle ligne</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Quel raccourci met le texte sélectionné en gras dans Word ?",
-     "options": [
-      {
-       "text": "Ctrl+I",
-       "correct": false,
-       "explanation": "Ctrl+I est le raccourci pour l'italique."
-      },
-      {
-       "text": "Ctrl+G",
-       "correct": true,
-       "explanation": "Correct ! Ctrl+G (ou Ctrl+B en anglais) met le texte en gras."
-      },
-      {
-       "text": "Ctrl+U",
-       "correct": false,
-       "explanation": "Ctrl+U est le raccourci pour le soulignement."
-      },
-      {
-       "text": "Ctrl+E",
-       "correct": false,
-       "explanation": "Ctrl+E centre le paragraphe."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Introduction à la Bureautique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quel alignement donne un aspect professionnel en alignant le texte des deux côtés ?",
-     "options": [
-      {
-       "text": "Alignement gauche",
-       "correct": false,
-       "explanation": "L'alignement gauche n'aligne que le côté gauche."
-      },
-      {
-       "text": "Centré",
-       "correct": false,
-       "explanation": "L'alignement centré place le texte au milieu, utilisé pour les titres."
-      },
-      {
-       "text": "Alignement droit",
-       "correct": false,
-       "explanation": "L'alignement droit aligne le texte sur la marge droite."
-      },
-      {
-       "text": "Justifié",
-       "correct": true,
-       "explanation": "Correct ! Le texte justifié (Ctrl+J) s'aligne des deux côtés, idéal pour les rapports."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Introduction à la Bureautique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Pour ajouter une nouvelle ligne à la fin d'un tableau Word, on appuie sur :",
-     "options": [
-      {
-       "text": "Entrée",
-       "correct": false,
-       "explanation": "Entrée crée un paragraphe dans la cellule, pas une nouvelle ligne du tableau."
-      },
-      {
-       "text": "Tab (dans la dernière cellule)",
-       "correct": true,
-       "explanation": "Correct ! Tab dans la dernière cellule du tableau ajoute automatiquement une nouvelle ligne."
-      },
-      {
-       "text": "Ctrl+Entrée",
-       "correct": false,
-       "explanation": "Ctrl+Entrée insère un saut de page."
-      },
-      {
-       "text": "Espace",
-       "correct": false,
-       "explanation": "Espace ne crée pas de nouvelle ligne dans un tableau."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Introduction à la Bureautique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "L'onglet du Ruban qui contient les outils de correction orthographique est :",
-     "options": [
-      {
-       "text": "Accueil",
-       "correct": false,
-       "explanation": "L'onglet Accueil contient la mise en forme du texte."
-      },
-      {
-       "text": "Insertion",
-       "correct": false,
-       "explanation": "L'onglet Insertion sert à insérer des objets (images, tableaux…)."
-      },
-      {
-       "text": "Révision",
-       "correct": true,
-       "explanation": "Correct ! L'onglet Révision contient le correcteur orthographique, le suivi des modifications et les commentaires."
-      },
-      {
-       "text": "Mise en page",
-       "correct": false,
-       "explanation": "L'onglet Mise en page gère les marges et l'orientation."
-      }
-     ]
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Introduction à la Bureautique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quel raccourci efface toute la mise en forme d'un texte sélectionné ?",
-     "options": [
-      {
-       "text": "Ctrl+Z",
-       "correct": false,
-       "explanation": "Ctrl+Z annule la dernière action, pas toute la mise en forme."
-      },
-      {
-       "text": "Suppr",
-       "correct": false,
-       "explanation": "Suppr supprime les caractères sélectionnés."
-      },
-      {
-       "text": "Ctrl+Espace",
-       "correct": true,
-       "explanation": "Correct ! Ctrl+Espace supprime toute mise en forme du texte sélectionné et revient au style normal."
-      },
-      {
-       "text": "Ctrl+Effacer",
-       "correct": false,
-       "explanation": "Ctrl+Effacer n'est pas un raccourci Word standard."
-      }
-     ]
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Introduction à la Bureautique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Microsoft Word Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Microsoft Word Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Microsoft Word Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Microsoft Word Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Microsoft Word Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Mise en forme avancée Word.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Mise en forme avancée Word.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Mise en forme avancée Word.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Mise en forme avancée Word.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Mise en forme avancée Word.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Microsoft Excel Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Microsoft Excel Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Microsoft Excel Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Microsoft Excel Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Microsoft Excel Les bases.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Formules & Graphiques Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Formules & Graphiques Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Formules & Graphiques Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Formules & Graphiques Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Formules & Graphiques Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Microsoft PowerPoint.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Microsoft PowerPoint.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Microsoft PowerPoint.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Microsoft PowerPoint.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Microsoft PowerPoint.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/bureautique/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Mise en forme avancée Word",
-   "subtitle": "Styles, table des matières, en-têtes/pieds de page, publipostage.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Utiliser les styles Word pour une mise en forme cohérente<br/>\n        • Générer une table des matières automatique<br/>\n        • Insérer et personnaliser les en-têtes et pieds de page<br/>\n        • Numéroter les pages<br/>\n        • Comprendre le publipostage (mailing)<br/>\n        • Utiliser les modèles de documents</p>\n</div>\n<h2>3.1 — Les styles Word</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🎨 Définition</div>\n<p>Un <strong>style</strong> est un ensemble de mises en forme prédéfinies (police, taille, couleur, espacement) que l'on peut appliquer d'un clic à un titre, paragraphe ou caractère. Les styles permettent une mise en forme <strong>cohérente et rapide</strong>.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Style</th><th>Usage</th><th>Niveau hiérarchique</th></tr></thead>\n<tbody>\n<tr><td><strong>Titre 1</strong></td><td>Titre principal du document</td><td>Niveau 1</td></tr>\n<tr><td><strong>Titre 2</strong></td><td>Sous-titre, section principale</td><td>Niveau 2</td></tr>\n<tr><td><strong>Titre 3</strong></td><td>Sous-section</td><td>Niveau 3</td></tr>\n<tr><td><strong>Normal</strong></td><td>Texte courant standard</td><td>Corps de texte</td></tr>\n<tr><td><strong>Corps de texte</strong></td><td>Paragraphes de contenu</td><td>Corps de texte</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Pourquoi utiliser les styles ?</div>\n<p>Imagine un document de 50 pages où tous les titres sont en Arial 16pt bleu. Sans styles, tu dois changer chaque titre manuellement. Avec les styles, tu modifies le style \"Titre 1\" <strong>une seule fois</strong> et tous les titres se mettent à jour automatiquement !</p>\n</div>\n<h2>3.2 — Table des matières automatique</h2>\n<p>Word peut générer une <strong>table des matières (TDM)</strong> automatiquement à partir des styles Titre 1, Titre 2, Titre 3.</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Procédure — Créer une TDM</div>\n<p>1. Appliquer les styles Titre 1/2/3 à tous tes titres<br/>\n        2. Placer le curseur à l'endroit voulu (début du document)<br/>\n        3. Aller dans <strong>Références → Table des matières</strong><br/>\n        4. Choisir un style automatique<br/>\n        5. Pour mettre à jour après modifications : clic droit → Mettre à jour les champs</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Erreur classique</div>\n<p>Ne jamais taper manuellement une table des matières ! La TDM automatique se met à jour avec les bons numéros de page. Une TDM tapée à la main sera fausse dès que tu ajouteras du contenu.</p>\n</div>\n<h2>3.3 — En-têtes et pieds de page</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📑 Définition</div>\n<p>Les <strong>en-têtes</strong> et <strong>pieds de page</strong> sont des zones qui apparaissent en haut et en bas de chaque page. Ils contiennent généralement le titre du document, le logo, la date et le numéro de page.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Élément courant</th><th>Emplacement habituel</th></tr></thead>\n<tbody>\n<tr><td>Logo / Nom de l'entreprise</td><td>En-tête gauche</td></tr>\n<tr><td>Titre du document</td><td>En-tête centre</td></tr>\n<tr><td>Date / Version</td><td>En-tête droite</td></tr>\n<tr><td>Numéro de page</td><td>Pied de page centre ou droite</td></tr>\n<tr><td>Confidentiel / Copyright</td><td>Pied de page centre</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Numérotation des pages</div>\n<p>Pour numéroter les pages : <strong>Insertion → Numéro de page</strong>. Tu peux choisir la position (haut/bas) et le style (1, 2, 3 ou i, ii, iii). Pour commencer à numéroter à partir d'une page spécifique, utilise les <em>sauts de section</em>.</p>\n</div>\n<h2>3.4 — Publipostage (Mailing)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📬 Définition</div>\n<p>Le <strong>publipostage</strong> permet de créer en masse des documents personnalisés (lettres, étiquettes, emails) en combinant un <strong>document modèle</strong> (Word) et une <strong>liste de données</strong> (Excel ou Access).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏭 Analogie — La chaîne de production</div>\n<p>Le publipostage c'est comme une usine de lettres. Le <em>modèle</em> est le moule, la <em>liste Excel</em> est la liste des noms, et Word produit automatiquement 500 lettres personnalisées en quelques clics !</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Procédure publipostage</div>\n<p>1. Créer le document modèle avec des champs (ex: &lt;&lt;Nom&gt;&gt;, &lt;&lt;Email&gt;&gt;)<br/>\n        2. Onglet <strong>Publipostage → Démarrer la fusion → Lettres</strong><br/>\n        3. Sélectionner la source de données (fichier Excel)<br/>\n        4. Insérer les champs de fusion dans le document<br/>\n        5. Aperçu des résultats → Terminer et fusionner</p>\n</div>\n<h2>3.5 — Modèles de documents</h2>\n<p>Un <strong>modèle</strong> (.dotx) est un document pré-formaté réutilisable. Word propose des modèles intégrés pour les CV, lettres de motivation, rapports, etc.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de modèle</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>CV professionnel</td><td>Candidature à un emploi</td></tr>\n<tr><td>Lettre commerciale</td><td>Correspondance formelle</td></tr>\n<tr><td>Rapport / Compte-rendu</td><td>Documents académiques ou professionnels</td></tr>\n<tr><td>Facture</td><td>Facturation client</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li><strong>Styles</strong> : Titre 1/2/3 + Normal — garantissent cohérence et TDM automatique</li>\n<li><strong>Table des matières</strong> : Références → TDM → se met à jour avec clic droit</li>\n<li><strong>En-têtes/pieds de page</strong> : zones répétées sur chaque page (logo, pagination)</li>\n<li><strong>Numérotation</strong> : Insertion → Numéro de page</li>\n<li><strong>Publipostage</strong> : modèle + liste Excel → documents personnalisés en masse</li>\n<li><strong>Modèles</strong> (.dotx) : documents réutilisables (CV, lettres, rapports)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quel avantage principal offrent les styles Word ?",
-     "options": [
-      {
-       "text": "Corriger automatiquement les fautes d'orthographe",
-       "correct": false,
-       "explanation": "Les styles ne corrigent pas l'orthographe."
-      },
-      {
-       "text": "Uniformiser la mise en forme et la modifier en une seule opération",
-       "correct": true,
-       "explanation": "Correct ! Les styles permettent une mise en forme cohérente et modifiable en une fois pour tout le document."
-      },
-      {
-       "text": "Insérer des images automatiquement",
-       "correct": false,
-       "explanation": "Les images sont gérées via l'onglet Insertion, pas les styles."
-      },
-      {
-       "text": "Numéroter les pages automatiquement",
-       "correct": false,
-       "explanation": "La numérotation des pages est gérée via En-têtes/pieds de page."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Pour générer une table des matières automatique, les titres doivent être formatés avec :",
-     "options": [
-      {
-       "text": "Du texte en gras, taille 16",
-       "correct": false,
-       "explanation": "Mettre en gras ne suffit pas pour générer une TDM — Word ne reconnaît pas le gras comme un titre."
-      },
-      {
-       "text": "Les styles Word : Titre 1, Titre 2, Titre 3",
-       "correct": true,
-       "explanation": "Correct ! Word utilise les styles Titre 1, Titre 2, Titre 3 pour construire la table des matières."
-      },
-      {
-       "text": "Du texte souligné et centré",
-       "correct": false,
-       "explanation": "Souligné + centré n'est pas reconnu par Word comme titre."
-      },
-      {
-       "text": "Des polices de grande taille uniquement",
-       "correct": false,
-       "explanation": "La taille de police seule n'est pas utilisée pour la TDM."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Où se trouve la commande pour insérer une table des matières dans Word ?",
-     "options": [
-      {
-       "text": "Accueil",
-       "correct": false,
-       "explanation": "Accueil contient la mise en forme de base, pas la TDM."
-      },
-      {
-       "text": "Insertion",
-       "correct": false,
-       "explanation": "Insertion contient des images, tableaux, formes, mais pas la TDM."
-      },
-      {
-       "text": "Références",
-       "correct": true,
-       "explanation": "Correct ! L'onglet Références contient Table des matières, Notes de bas de page, Citations."
-      },
-      {
-       "text": "Mise en page",
-       "correct": false,
-       "explanation": "Mise en page gère les marges et l'orientation du document."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Le publipostage permet de :",
-     "options": [
-      {
-       "text": "Traduire un document dans une autre langue",
-       "correct": false,
-       "explanation": "Le publipostage génère des documents, il ne les traduit pas."
-      },
-      {
-       "text": "Créer des documents personnalisés en masse depuis une liste de données",
-       "correct": true,
-       "explanation": "Correct ! Le publipostage crée automatiquement des documents personnalisés (lettres, étiquettes) depuis un modèle et une liste de données."
-      },
-      {
-       "text": "Compresser un document en ZIP",
-       "correct": false,
-       "explanation": "La compression de fichier n'est pas une fonction de publipostage."
-      },
-      {
-       "text": "Corriger automatiquement la grammaire",
-       "correct": false,
-       "explanation": "Le correcteur grammatical est une fonction différente."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "L'extension d'un modèle Word est :",
-     "options": [
-      {
-       "text": ".docx",
-       "correct": false,
-       "explanation": ".docx est un document Word standard, pas un modèle."
-      },
-      {
-       "text": ".dotx",
-       "correct": true,
-       "explanation": "Correct ! .dotx est l'extension des modèles Word (Document Template). Le .dotm supporte les macros."
-      },
-      {
-       "text": ".xlsx",
-       "correct": false,
-       "explanation": ".xlsx est un classeur Excel."
-      },
-      {
-       "text": ".doc",
-       "correct": false,
-       "explanation": ".doc est l'ancien format Word (avant 2007)."
-      }
-     ]
-    }
-   ],
-   "source": "_private/bureautique/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Microsoft Excel — Les bases",
-   "subtitle": "Classeurs, feuilles, cellules, saisie, formatage, tri et filtres.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre la structure d'un classeur Excel<br/>\n        • Naviguer et saisir des données dans les cellules<br/>\n        • Référencer correctement les cellules (A1, B2, $A$1…)<br/>\n        • Formater les cellules (nombre, date, monnaie, texte)<br/>\n        • Trier et filtrer des données<br/>\n        • Figer les volets pour faciliter la navigation</p>\n</div>\n<h2>4.1 — Structure d'un classeur Excel</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📊 Vocabulaire de base</div>\n<p>Un <strong>classeur</strong> (.xlsx) contient plusieurs <strong>feuilles de calcul</strong>. Chaque feuille est une grille de <strong>cellules</strong> organisées en <strong>colonnes</strong> (lettres : A, B, C…) et <strong>lignes</strong> (chiffres : 1, 2, 3…).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Classeur</strong></td><td>Fichier Excel complet</td><td>Budget_2025.xlsx</td></tr>\n<tr><td><strong>Feuille</strong></td><td>Onglet dans un classeur</td><td>Feuil1, Janvier, Ventes…</td></tr>\n<tr><td><strong>Cellule</strong></td><td>Intersection colonne + ligne</td><td>A1, B3, Z100</td></tr>\n<tr><td><strong>Plage</strong></td><td>Groupe de cellules</td><td>A1:C10 (de A1 à C10)</td></tr>\n<tr><td><strong>Barre de formule</strong></td><td>Zone affichant le contenu de la cellule active</td><td>= affiche la formule</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🗺️ Analogie — La ville</div>\n<p>Un classeur Excel, c'est une <em>ville</em>. Les feuilles sont les <em>quartiers</em>, les colonnes sont les <em>avenues</em> (A, B, C…), les lignes sont les <em>rues</em> (1, 2, 3…), et chaque cellule est un <em>numéro d'adresse</em> (comme A1 = avenue A, rue 1).</p>\n</div>\n<h2>4.2 — Références de cellules</h2>\n<p>Comprendre les références est fondamental pour utiliser les formules Excel correctement.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Notation</th><th>Comportement au copier-coller</th></tr></thead>\n<tbody>\n<tr><td><strong>Relative</strong></td><td><code>A1</code></td><td>S'adapte automatiquement (décalage relatif)</td></tr>\n<tr><td><strong>Absolue</strong></td><td><code>$A$1</code></td><td>Ne change jamais — fixée</td></tr>\n<tr><td><strong>Mixte colonne</strong></td><td><code>$A1</code></td><td>Colonne fixe, ligne variable</td></tr>\n<tr><td><strong>Mixte ligne</strong></td><td><code>A$1</code></td><td>Ligne fixe, colonne variable</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Astuce — Touche F4</div>\n<p>Lors de la saisie d'une formule, sélectionne une référence de cellule et appuie sur F4 pour basculer entre les 4 modes : A1 → $A$1 → A$1 → $A1 → A1…</p>\n</div>\n<h2>4.3 — Saisie et types de données</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Exemple</th><th>Alignement par défaut</th></tr></thead>\n<tbody>\n<tr><td><strong>Texte</strong></td><td>Bonjour, Nom</td><td>Gauche</td></tr>\n<tr><td><strong>Nombre</strong></td><td>42, 3.14, -10</td><td>Droite</td></tr>\n<tr><td><strong>Date</strong></td><td>17/04/2025</td><td>Droite</td></tr>\n<tr><td><strong>Formule</strong></td><td>=A1+B1, =SOMME(A1:A10)</td><td>Droite (si résultat numérique)</td></tr>\n<tr><td><strong>Booléen</strong></td><td>VRAI, FAUX</td><td>Centré</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention aux dates</div>\n<p>Excel stocke les dates comme des nombres (le 1er janvier 1900 = 1). Si tu saisis <code>17/04</code>, Excel peut l'interpréter comme une date ou du texte selon le format de la cellule. Vérifie toujours l'alignement : une date reconnue s'aligne à droite.</p>\n</div>\n<h2>4.4 — Formatage des cellules</h2>\n<p>Le formatage contrôle l'<strong>affichage</strong> des données sans changer leur valeur réelle.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Format</th><th>Exemple d'affichage</th><th>Valeur réelle</th></tr></thead>\n<tbody>\n<tr><td>Nombre (2 décimales)</td><td>1 234,56</td><td>1234.56</td></tr>\n<tr><td>Monnaie</td><td>1 234,56 FCFA</td><td>1234.56</td></tr>\n<tr><td>Pourcentage</td><td>85,00 %</td><td>0.85</td></tr>\n<tr><td>Date longue</td><td>vendredi 17 avril 2025</td><td>45763</td></tr>\n<tr><td>Texte</td><td>0042 (garde le zéro)</td><td>\"0042\"</td></tr>\n</tbody>\n</table></div>\n<h2>4.5 — Tri et filtres</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔃 Trier des données</div>\n<p>Le tri réorganise les lignes selon une ou plusieurs colonnes. Accès : <strong>Données → Trier</strong> ou le bouton de tri rapide A→Z / Z→A.</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔍 Filtres automatiques</div>\n<p>Les filtres masquent les lignes qui ne correspondent pas au critère. Accès : <strong>Données → Filtrer</strong>. Des flèches apparaissent dans les en-têtes — cliquer dessus pour choisir les valeurs à afficher.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Figer les volets</div>\n<p>Pour garder les en-têtes de colonnes visibles lors du défilement : <strong>Affichage → Figer les volets → Figer la ligne supérieure</strong>.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Structure : Classeur → Feuilles → Cellules (colonne lettre + ligne chiffre : A1)</li>\n<li>Références : relative (A1), absolue ($A$1), mixte (A$1 / $A1) · F4 pour basculer</li>\n<li>Données : texte (gauche) vs nombres/dates (droite) par défaut</li>\n<li>Formatage : change l'affichage (monnaie, %, date) sans modifier la valeur réelle</li>\n<li>Tri : Données → Trier · Filtre : Données → Filtrer (flèches de filtre)</li>\n<li>Figer les volets : Affichage → Figer les volets → Ligne supérieure</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle notation représente une référence absolue de cellule en Excel ?",
-     "options": [
-      {
-       "text": "A1",
-       "correct": false,
-       "explanation": "A1 est une référence relative qui s'adapte quand on copie la formule."
-      },
-      {
-       "text": "$A$1",
-       "correct": true,
-       "explanation": "Correct ! $A$1 est une référence absolue — ni la colonne ni la ligne ne changent quand on copie la formule."
-      },
-      {
-       "text": "A$1",
-       "correct": false,
-       "explanation": "A$1 est une référence mixte (ligne fixe, colonne variable)."
-      },
-      {
-       "text": "&A1",
-       "correct": false,
-       "explanation": "&A1 n'est pas une notation Excel valide."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Dans Excel, une valeur numérique saisie dans une cellule s'aligne par défaut :",
-     "options": [
-      {
-       "text": "À gauche",
-       "correct": false,
-       "explanation": "Le texte s'aligne à gauche par défaut, pas les nombres."
-      },
-      {
-       "text": "Au centre",
-       "correct": false,
-       "explanation": "Le centré n'est pas l'alignement par défaut des nombres."
-      },
-      {
-       "text": "À droite",
-       "correct": true,
-       "explanation": "Correct ! Les nombres et dates s'alignent à droite par défaut dans Excel. Les textes s'alignent à gauche."
-      },
-      {
-       "text": "Justifié",
-       "correct": false,
-       "explanation": "Excel n'aligne pas les nombres de façon justifiée par défaut."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La plage de cellules A1:C3 contient combien de cellules ?",
-     "options": [
-      {
-       "text": "6",
-       "correct": false,
-       "explanation": "6 cellules serait A1:A6 ou A1:F1, pas A1:C3."
-      },
-      {
-       "text": "9",
-       "correct": true,
-       "explanation": "Correct ! A1:C3 = 3 colonnes (A, B, C) × 3 lignes (1, 2, 3) = 9 cellules."
-      },
-      {
-       "text": "12",
-       "correct": false,
-       "explanation": "12 cellules serait une plage 3×4 ou 4×3."
-      },
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": "3 cellules serait une seule ligne ou une seule colonne."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Pour garder les en-têtes de colonnes visibles lors du défilement, on utilise :",
-     "options": [
-      {
-       "text": "Révision → Protéger la feuille",
-       "correct": false,
-       "explanation": "Protéger la feuille empêche les modifications mais ne fige pas l'affichage."
-      },
-      {
-       "text": "Mise en page → Imprimer les titres",
-       "correct": false,
-       "explanation": "Mise en page gère l'impression, pas l'affichage lors du défilement."
-      },
-      {
-       "text": "Affichage → Figer les volets",
-       "correct": true,
-       "explanation": "Correct ! Affichage → Figer les volets → Figer la ligne supérieure maintient les en-têtes visibles pendant le défilement."
-      },
-      {
-       "text": "Données → Trier",
-       "correct": false,
-       "explanation": "Données → Trier réorganise les lignes, n'a pas de lien avec le figement."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel raccourci bascule une référence de cellule entre relative et absolue lors de la saisie d'une formule ?",
-     "options": [
-      {
-       "text": "F2",
-       "correct": false,
-       "explanation": "F2 active le mode édition de la cellule active."
-      },
-      {
-       "text": "F5",
-       "correct": false,
-       "explanation": "F5 ouvre la boîte Atteindre pour naviguer vers une cellule."
-      },
-      {
-       "text": "F4",
-       "correct": true,
-       "explanation": "Correct ! F4 bascule entre A1, $A$1, A$1 et $A1 lors de la saisie d'une formule."
-      },
-      {
-       "text": "F9",
-       "correct": false,
-       "explanation": "F9 recalcule toutes les formules du classeur."
-      }
-     ]
-    }
-   ],
-   "source": "_private/bureautique/chapitres/chapitre4.html"
-  },
-  {
-   "number": 5,
-   "title": "Formules & Graphiques Excel",
-   "subtitle": "SOMME, MOYENNE, SI, RECHERCHEV, graphiques, tableaux croisés dynamiques.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Maîtriser les formules essentielles (SOMME, MOYENNE, MIN, MAX, NB)<br/>\n        • Utiliser la fonction conditionnelle SI<br/>\n        • Comprendre RECHERCHEV pour chercher des données<br/>\n        • Créer et personnaliser des graphiques<br/>\n        • Découvrir les tableaux croisés dynamiques (TCD)</p>\n</div>\n<h2>5.1 — Formules de base</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🧮 Règle d'or</div>\n<p>Toute formule Excel commence par le signe <code>=</code>. Sans ce signe, Excel traite la saisie comme du texte.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Syntaxe</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>SOMME</strong></td><td>=SOMME(plage)</td><td>Additionne les valeurs</td><td>=SOMME(B2:B10)</td></tr>\n<tr><td><strong>MOYENNE</strong></td><td>=MOYENNE(plage)</td><td>Calcule la moyenne</td><td>=MOYENNE(B2:B10)</td></tr>\n<tr><td><strong>MIN</strong></td><td>=MIN(plage)</td><td>Trouve la valeur minimale</td><td>=MIN(B2:B10)</td></tr>\n<tr><td><strong>MAX</strong></td><td>=MAX(plage)</td><td>Trouve la valeur maximale</td><td>=MAX(B2:B10)</td></tr>\n<tr><td><strong>NB</strong></td><td>=NB(plage)</td><td>Compte les cellules numériques</td><td>=NB(B2:B10)</td></tr>\n<tr><td><strong>NBVAL</strong></td><td>=NBVAL(plage)</td><td>Compte les cellules non vides</td><td>=NBVAL(A2:A10)</td></tr>\n<tr><td><strong>NB.SI</strong></td><td>=NB.SI(plage;critère)</td><td>Compte selon un critère</td><td>=NB.SI(C2:C10;\"Oui\")</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — SMMMN</div>\n<p><strong>S</strong>OMME · <strong>M</strong>OYENNE · <strong>M</strong>IN · <strong>M</strong>AX · <strong>N</strong>B<br/>\n        « <em>Samba Marche Mais Mais N'arrive</em> » — les 5 fonctions statistiques de base.</p>\n</div>\n<h2>5.2 — La fonction SI</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔀 Syntaxe</div>\n<p><code>=SI(condition ; valeur_si_vrai ; valeur_si_faux)</code></p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples SI</div>\n<pre>=SI(B2&gt;=10 ; \"Admis\" ; \"Refusé\")\n→ Si la note en B2 est ≥ 10, affiche \"Admis\", sinon \"Refusé\"\n=SI(C2=\"Oui\" ; D2*0.1 ; 0)\n→ Si C2 vaut \"Oui\", calcule 10% de D2, sinon affiche 0\n=SI(A2=\"\" ; \"Vide\" ; \"Rempli\")\n→ Vérifie si A2 est vide</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 SI imbriqués</div>\n<p>On peut imbriquer plusieurs SI pour gérer plus de 2 cas :<br/>\n<code>=SI(B2&gt;=16;\"TB\" ; SI(B2&gt;=14;\"B\" ; SI(B2&gt;=10;\"P\" ; \"R\")))</code><br/>\n        Mais à partir de Excel 2019, utilise plutôt <strong>SI.CONDITIONS</strong> pour plus de lisibilité.</p>\n</div>\n<h2>5.3 — RECHERCHEV</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔍 Syntaxe</div>\n<p><code>=RECHERCHEV(valeur_cherchée ; table ; numéro_colonne ; [correspondance_exacte])</code></p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple RECHERCHEV</div>\n<pre>Table dans A1:C100 :\n| Code | Nom     | Prix |\n| 001  | Stylo   | 500  |\n| 002  | Cahier  | 1000 |\n=RECHERCHEV(\"001\" ; A1:C100 ; 2 ; FAUX)\n→ Retourne \"Stylo\" (2ème colonne de la table)</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Points importants RECHERCHEV</div>\n<p>• La valeur cherchée doit être dans la <strong>première colonne</strong> de la table<br/>\n        • Toujours mettre <strong>FAUX</strong> en 4e argument pour une correspondance exacte<br/>\n        • La table doit être en <strong>référence absolue</strong> ($A$1:$C$100) si tu copies la formule</p>\n</div>\n<h2>5.4 — Graphiques Excel</h2>\n<p>Les graphiques transforment des données chiffrées en représentations visuelles.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Usage idéal</th></tr></thead>\n<tbody>\n<tr><td>📊 Barres / Colonnes</td><td>Comparer des valeurs entre catégories</td></tr>\n<tr><td>📈 Courbes (Lignes)</td><td>Évolution dans le temps (tendances)</td></tr>\n<tr><td>🥧 Secteurs (Camembert)</td><td>Répartition en pourcentages</td></tr>\n<tr><td>⚫ Nuage de points</td><td>Corrélation entre deux variables</td></tr>\n<tr><td>📉 Aires</td><td>Évolution cumulée</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Créer un graphique</div>\n<p>1. Sélectionner les données (avec en-têtes)<br/>\n        2. <strong>Insertion → Graphiques recommandés</strong><br/>\n        3. Choisir le type de graphique<br/>\n        4. Personnaliser via les onglets Création et Format (qui apparaissent)</p>\n</div>\n<h2>5.5 — Tableau croisé dynamique (TCD)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔄 Définition</div>\n<p>Un <strong>tableau croisé dynamique</strong> (TCD) analyse et résume rapidement de grandes quantités de données. Il permet de croiser, regrouper et calculer des totaux sans formules complexes.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Créer un TCD</div>\n<p>1. Cliquer dans la table de données<br/>\n        2. <strong>Insertion → Tableau croisé dynamique</strong><br/>\n        3. Glisser les champs dans les zones : Lignes, Colonnes, Valeurs, Filtres<br/>\n        4. Excel calcule automatiquement les totaux</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Toute formule commence par <code>=</code> · Fonctions de base : <strong>SMMMN</strong> (SOMME, MOYENNE, MIN, MAX, NB)</li>\n<li>SI : <code>=SI(condition ; si_vrai ; si_faux)</code> — gestion de conditions</li>\n<li>RECHERCHEV : cherche dans 1ère colonne d'une table → retourne valeur d'une autre colonne · toujours FAUX en 4e argument</li>\n<li>Graphiques : colonnes (comparaison), courbes (évolution), secteurs (répartition)</li>\n<li>TCD : analyse interactive de grandes données sans formules complexes</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle formule calcule la somme des cellules B2 à B10 dans Excel ?",
-     "options": [
-      {
-       "text": "= TOTAL(B2:B10)",
-       "correct": false,
-       "explanation": "TOTAL n'est pas une fonction Excel standard."
-      },
-      {
-       "text": "=SOMME(B2:B10)",
-       "correct": true,
-       "explanation": "Correct ! =SOMME(B2:B10) additionne toutes les valeurs de B2 à B10."
-      },
-      {
-       "text": "=ADDITION(B2,B10)",
-       "correct": false,
-       "explanation": "ADDITION n'existe pas en Excel."
-      },
-      {
-       "text": "SOMME(B2:B10)",
-       "correct": false,
-       "explanation": "Sans le signe =, Excel traite cela comme du texte."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La formule =SI(A1>=10;\"Admis\";\"Refusé\") affiche \"Admis\" si :",
-     "options": [
-      {
-       "text": "A1 est inférieur à 10",
-       "correct": false,
-       "explanation": "Si A1 est inférieur à 10, la formule affiche Refusé."
-      },
-      {
-       "text": "A1 est supérieur ou égal à 10",
-       "correct": true,
-       "explanation": "Correct ! >= signifie supérieur ou égal. Si A1 vaut 10 ou plus, la condition est vraie et Excel affiche Admis."
-      },
-      {
-       "text": "A1 est égal à 0",
-       "correct": false,
-       "explanation": "A1 égal à 0 est inférieur à 10, donc cela afficherait Refusé."
-      },
-      {
-       "text": "A1 est vide",
-       "correct": false,
-       "explanation": "A1 vide serait traité comme 0, donc inférieur à 10, et afficherait Refusé."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Dans RECHERCHEV, le dernier argument doit être FAUX pour :",
-     "options": [
-      {
-       "text": "Chercher la valeur maximale",
-       "correct": false,
-       "explanation": "Chercher la valeur maximale se fait avec MAX(), pas RECHERCHEV."
-      },
-      {
-       "text": "Trouver une correspondance exacte",
-       "correct": true,
-       "explanation": "Correct ! FAUX (ou 0) force RECHERCHEV à trouver une correspondance exacte. VRAI permet une correspondance approximative."
-      },
-      {
-       "text": "Trier la table automatiquement",
-       "correct": false,
-       "explanation": "RECHERCHEV ne trie pas les données."
-      },
-      {
-       "text": "Chercher dans les lignes (pas les colonnes)",
-       "correct": false,
-       "explanation": "RECHERCHEV cherche dans des colonnes, pas des lignes. RECHERCHEH cherche dans les lignes."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel type de graphique Excel est le plus adapté pour montrer l'évolution des ventes sur 12 mois ?",
-     "options": [
-      {
-       "text": "Camembert (secteurs)",
-       "correct": false,
-       "explanation": "Le camembert montre des proportions et parts du tout, pas une évolution temporelle."
-      },
-      {
-       "text": "Courbes (lignes)",
-       "correct": true,
-       "explanation": "Correct ! Le graphique en courbes (lignes) est idéal pour visualiser des tendances et évolutions dans le temps."
-      },
-      {
-       "text": "Nuage de points",
-       "correct": false,
-       "explanation": "Le nuage de points montre la corrélation entre deux variables continues."
-      },
-      {
-       "text": "Barres horizontales",
-       "correct": false,
-       "explanation": "Les barres comparent des catégories, pas l'évolution dans le temps de préférence."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Qu'est-ce qu'un tableau croisé dynamique (TCD) ?",
-     "options": [
-      {
-       "text": "Un type de graphique 3D",
-       "correct": false,
-       "explanation": "Un TCD n'est pas un type de graphique."
-      },
-      {
-       "text": "Une formule de recherche avancée",
-       "correct": false,
-       "explanation": "RECHERCHEV est la fonction pour chercher des données, pas un TCD."
-      },
-      {
-       "text": "Un outil d'analyse qui résume et regroupe des données de façon interactive",
-       "correct": true,
-       "explanation": "Correct ! Un TCD permet de résumer, analyser et croiser de grandes quantités de données de façon interactive, sans écrire de formules."
-      },
-      {
-       "text": "Un tableau importé depuis Word",
-       "correct": false,
-       "explanation": "Un tableau Word est dans Word, pas dans Excel. Le TCD est spécifique à Excel."
-      }
-     ]
-    }
-   ],
-   "source": "_private/bureautique/chapitres/chapitre5.html"
-  },
-  {
-   "number": 6,
-   "title": "Microsoft PowerPoint",
-   "subtitle": "Diapositives, thèmes, animations, transitions et présentation professionnelle.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Créer et structurer une présentation PowerPoint<br/>\n        • Utiliser les mises en page (layouts) et thèmes<br/>\n        • Insérer et formater des objets (texte, images, graphiques, vidéos)<br/>\n        • Appliquer des animations et transitions<br/>\n        • Préparer et diffuser une présentation professionnelle<br/>\n        • Exporter en PDF ou en vidéo</p>\n</div>\n<h2>6.1 — Interface PowerPoint</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🗺️ Les zones de l'interface</div>\n<p>L'interface PowerPoint est organisée en <strong>volet des miniatures</strong> (gauche), <strong>zone de diapositive</strong> (centre), <strong>volet de notes</strong> (bas) et le <strong>Ruban</strong> en haut.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Volet miniatures</strong></td><td>Aperçu et navigation entre les diapositives</td></tr>\n<tr><td><strong>Zone de diapositive</strong></td><td>Modification de la diapositive active</td></tr>\n<tr><td><strong>Volet de notes</strong></td><td>Notes personnelles pour le présentateur</td></tr>\n<tr><td><strong>Ruban — Insertion</strong></td><td>Images, formes, graphiques, vidéos, icônes</td></tr>\n<tr><td><strong>Ruban — Transitions</strong></td><td>Effets entre les diapositives</td></tr>\n<tr><td><strong>Ruban — Animations</strong></td><td>Effets sur les objets d'une diapositive</td></tr>\n</tbody>\n</table></div>\n<h2>6.2 — Mises en page et thèmes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🎨 Thèmes et modèles</div>\n<p>Un <strong>thème</strong> définit l'apparence globale : couleurs, polices et effets. Un <strong>layout</strong> (mise en page) définit la disposition des contenus sur une diapositive.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Layout courant</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td>Diapositive de titre</td><td>Première diapositive (titre + sous-titre)</td></tr>\n<tr><td>Titre et contenu</td><td>Titre + zone de texte ou image</td></tr>\n<tr><td>Deux contenus</td><td>Titre + deux zones côte à côte</td></tr>\n<tr><td>Vide</td><td>Liberté totale de placement</td></tr>\n<tr><td>Image avec légende</td><td>Grande image + texte descriptif</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Règle des 3 couleurs</div>\n<p>Pour une présentation professionnelle, limite-toi à <strong>3 couleurs maximum</strong> : une couleur principale (dominante), une secondaire (complémentaire) et une neutre (fond ou texte). Utilise le thème intégré et évite les couleurs criardes.</p>\n</div>\n<h2>6.3 — Règles de conception (Design)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">❌ Ce qu'il ne faut PAS faire</div>\n<p>• Trop de texte sur une diapositive (règle : max 6 lignes, 6 mots par ligne)<br/>\n        • Polices trop petites (minimum 24pt pour le corps, 36pt+ pour les titres)<br/>\n        • Trop d'animations et de couleurs (distrait l'audience)<br/>\n        • Lire le texte de ses diapositives mot pour mot</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">✅ Bonnes pratiques</div>\n<p>• Une idée par diapositive<br/>\n        • Utiliser des images plutôt que du texte quand c'est possible<br/>\n        • Maintenir une cohérence visuelle tout au long de la présentation<br/>\n        • Numéroter les diapositives (Insertion → En-tête et pied de page)</p>\n</div>\n<h2>6.4 — Animations et transitions</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Où s'applique</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Transition</strong></td><td>Entre deux diapositives</td><td>Fondu, Glissement, Zoom</td></tr>\n<tr><td><strong>Animation</strong></td><td>Sur un objet (texte, image…)</td><td>Apparition, Fondu, Rotation</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎬 Transitions vs Animations</div>\n<p><strong>Transitions</strong> = passage entre slides (comme un fondu au cinéma entre deux scènes).<br/>\n<strong>Animations</strong> = effets sur les éléments d'un slide (comme un acteur qui entre en scène).</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Conseil professionnel</div>\n<p>En contexte professionnel ou académique, préfère des animations simples et discrètes (Apparition, Fondu). Les animations spectaculaires (spirale, rebond) sont perçues comme peu sérieuses.</p>\n</div>\n<h2>6.5 — Mode présentateur et export</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🖥️ Mode présentateur</div>\n<p>Le mode présentateur (F5 ou Diaporama → Mode présentateur) affiche sur l'écran du présentateur : la diapositive actuelle, la suivante, les notes et le chronomètre. L'audience ne voit que la diapositive.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Comment</th></tr></thead>\n<tbody>\n<tr><td>Lancer le diaporama</td><td>F5 (depuis le début)</td></tr>\n<tr><td>Diapositive suivante</td><td>Clic, flèche →, Espace ou Page Suiv</td></tr>\n<tr><td>Diapositive précédente</td><td>Flèche ← ou Page Préc</td></tr>\n<tr><td>Quitter le diaporama</td><td>Échap</td></tr>\n<tr><td>Exporter en PDF</td><td>Fichier → Exporter → Créer un PDF/XPS</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>Interface : miniatures (navigation) + zone diapo + notes présentateur</li>\n<li><strong>Thème</strong> = couleurs + polices + effets globaux · <strong>Layout</strong> = disposition d'une diapo</li>\n<li>Règle <strong>6×6</strong> : max 6 lignes, max 6 mots par ligne</li>\n<li><strong>Transition</strong> = entre diapositives · <strong>Animation</strong> = sur un objet dans une diapo</li>\n<li>Mode présentateur (F5) : tu vois les notes + diapo suivante, l'audience voit seulement la diapo</li>\n<li>Export PDF : Fichier → Exporter → PDF/XPS</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle est la différence entre une Animation et une Transition dans PowerPoint ?",
-     "options": [
-      {
-       "text": "Animation = entre diapositives, Transition = sur un objet",
-       "correct": false,
-       "explanation": "C'est l'inverse : les transitions se produisent entre les diapositives."
-      },
-      {
-       "text": "Transition = entre diapositives, Animation = sur un objet",
-       "correct": true,
-       "explanation": "Correct ! La transition s'applique au passage entre deux diapositives, l'animation s'applique à un objet sur une diapositive."
-      },
-      {
-       "text": "Ce sont les mêmes choses, juste des noms différents",
-       "correct": false,
-       "explanation": "Ce sont deux fonctions différentes dans PowerPoint."
-      },
-      {
-       "text": "Les animations n'existent que dans PowerPoint 365",
-       "correct": false,
-       "explanation": "PowerPoint supporte les deux, ils ne sont pas limités à certaines versions."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Selon les bonnes pratiques, le nombre maximum de lignes recommandé par diapositive est :",
-     "options": [
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": "3 lignes est trop restrictif, même si moins c'est souvent mieux."
-      },
-      {
-       "text": "6",
-       "correct": true,
-       "explanation": "Correct ! La règle des 6×6 recommande max 6 lignes et 6 mots par ligne pour garder les diapositives lisibles et percutantes."
-      },
-      {
-       "text": "10",
-       "correct": false,
-       "explanation": "10 lignes représente trop de texte — l'audience ne pourra pas lire et écouter en même temps."
-      },
-      {
-       "text": "20",
-       "correct": false,
-       "explanation": "20 lignes correspond à un document Word, pas une diapositive."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle touche lance le diaporama PowerPoint depuis le début ?",
-     "options": [
-      {
-       "text": "F1",
-       "correct": false,
-       "explanation": "F1 ouvre l'aide de PowerPoint."
-      },
-      {
-       "text": "F2",
-       "correct": false,
-       "explanation": "F2 n'a pas de fonction standard pour le diaporama."
-      },
-      {
-       "text": "F5",
-       "correct": true,
-       "explanation": "Correct ! F5 lance le diaporama depuis la première diapositive. Shift+F5 le lance depuis la diapositive courante."
-      },
-      {
-       "text": "F7",
-       "correct": false,
-       "explanation": "F7 lance le correcteur orthographique."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Le volet de notes dans PowerPoint sert à :",
-     "options": [
-      {
-       "text": "Ajouter des commentaires visibles par l'audience",
-       "correct": false,
-       "explanation": "Les commentaires dans les documents Office (Word, Excel) sont différents des notes PowerPoint."
-      },
-      {
-       "text": "Écrire des notes visibles uniquement par le présentateur",
-       "correct": true,
-       "explanation": "Correct ! Les notes sont uniquement visibles par le présentateur en mode présentateur. L'audience ne les voit pas."
-      },
-      {
-       "text": "Formater les diapositives automatiquement",
-       "correct": false,
-       "explanation": "Les notes ne servent pas à mettre en forme les diapositives."
-      },
-      {
-       "text": "Exporter la présentation en PDF",
-       "correct": false,
-       "explanation": "L'export PDF se fait via Fichier → Exporter, pas via les notes."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Pour une présentation professionnelle, combien de couleurs différentes est-il recommandé d'utiliser au maximum ?",
-     "options": [
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": "Une seule couleur serait trop monotone et manquerait de structure visuelle."
-      },
-      {
-       "text": "2",
-       "correct": false,
-       "explanation": "2 couleurs est possible mais souvent trop limité pour une structure claire."
-      },
-      {
-       "text": "3",
-       "correct": true,
-       "explanation": "Correct ! La règle des 3 couleurs (principale, secondaire, neutre) donne un aspect professionnel et cohérent."
-      },
-      {
-       "text": "7",
-       "correct": false,
-       "explanation": "5 à 7 couleurs donnent un aspect peu professionnel et surchargé visuellement."
-      }
-     ]
-    }
-   ],
-   "source": "_private/bureautique/chapitres/chapitre6.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Introduction à la Bureautique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Introduction à la Bureautique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Introduction à la Bureautique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Introduction à la Bureautique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Introduction à la Bureautique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Microsoft Word Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Microsoft Word Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Microsoft Word Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Microsoft Word Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Microsoft Word Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Mise en forme avancée Word.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Mise en forme avancée Word.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Mise en forme avancée Word.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Mise en forme avancée Word.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Mise en forme avancée Word.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Microsoft Excel Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Microsoft Excel Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Microsoft Excel Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Microsoft Excel Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Microsoft Excel Les bases.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Formules & Graphiques Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Formules & Graphiques Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Formules & Graphiques Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Formules & Graphiques Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Formules & Graphiques Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Microsoft PowerPoint.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Microsoft PowerPoint.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Microsoft PowerPoint.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Microsoft PowerPoint.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Microsoft PowerPoint.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/bureautique/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/bureautique/exercices/exercices.html"
 }

@@ -15,6 +15,14 @@ const protectedPaths = [
   "/quetes",
   "/reviser",
   "/profil",
+  "/erreurs",
+  "/badges",
+  "/jeux",
+  "/entraide",
+  "/aide",
+  "/abonnement",
+  "/paiement",
+  "/seance",
 ];
 const authPaths = ["/connexion", "/inscription", "/mot-de-passe-oublie"];
 

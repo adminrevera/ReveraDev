@@ -1,617 +1,617 @@
 {
- "slug": "merise",
- "name": "MERISE",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Systèmes d'Information & MERISE",
-   "subtitle": "Comprendre ce qu'est un SI, pourquoi on le modélise, et comment MERISE structure l'analyse.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir un système d'information et ses fonctions<br/>\n        • Comprendre les 3 sous-systèmes de l'entreprise<br/>\n        • Maîtriser les 3 niveaux de la méthode MERISE (C.L.P.)</p>\n</div>\n<h2>I. L'Information</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Le terme « informer » vient du latin <em>informare</em> = « donner une forme ». L'<strong>information</strong> est un renseignement apportant une connaissance. Elle est composée de <strong>données</strong> auxquelles les individus attribuent un <strong>sens</strong>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Chaîne Donnée → Information → Connaissance</div>\n<pre>DONNÉE       →    INFORMATION        →    CONNAISSANCE\n(fait brut)     (donnée + contexte)     (information + expérience)\nEx: \"37.5\"      \"Température 37.5°C\"    \"Le patient a de la fièvre\"</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏥 Analogie — Le SI = système nerveux de l'entreprise</div>\n<p>Tout comme le <strong>système nerveux</strong> capte les stimuli, les transmet et déclenche des réactions, le <strong>SI</strong> :<br/>\n        • <strong>Capte</strong> les données (factures, commandes, emails…)<br/>\n        • <strong>Traite</strong> et transforme ces données en informations utiles<br/>\n        • <strong>Stocke</strong> la mémoire de l'organisation<br/>\n        • <strong>Communique</strong> les bonnes infos aux bonnes personnes au bon moment</p>\n</div>\n<h2>II. Les 3 sous-systèmes de l'entreprise</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Architecture de l'entreprise</div>\n<pre>┌──────────────────────────────────┐\n│ SYSTÈME DE PILOTAGE              │ ← Décide, fixe les objectifs\n│ (Direction, Management)          │\n├──────────────────────────────────┤\n│ SYSTÈME D'INFORMATION (SI)       │ ← Collecte, traite, stocke,\n│                                  │   diffuse l'information\n├──────────────────────────────────┤\n│ SYSTÈME OPÉRANT                  │ ← Exécute les opérations\n│ (Production, Ventes, etc.)       │   quotidiennes\n└──────────────────────────────────┘</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Astuce examen</div>\n<p>Le SI est au <em>centre</em> entre le système de pilotage (qui décide) et le système opérant (qui exécute). Il fait le <strong>lien</strong> entre les deux.</p>\n</div>\n<h2>III. Le Système d'Information (SI)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition officielle (R. Reix, 1998)</div>\n<p>« Un SI est un ensemble organisé de ressources (matériel, logiciel, personnel, données, procédures) permettant d'<strong>acquérir</strong>, de <strong>traiter</strong>, de <strong>stocker</strong>, de <strong>communiquer</strong> des informations dans des organisations. »</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention</div>\n<p><strong>Système d'Information ≠ Système Informatique</strong>. Le système informatique est la partie <em>automatisée</em> du SI. Le SI existait bien avant l'informatique !</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Rôle du SI</th><th>Description</th><th>Exemple concret</th></tr></thead>\n<tbody>\n<tr><td><strong>Acquérir</strong></td><td>Collecter les données</td><td>Scanner un code-barres en caisse</td></tr>\n<tr><td><strong>Traiter</strong></td><td>Transformer les données</td><td>Calculer le total TTC d'une facture</td></tr>\n<tr><td><strong>Stocker</strong></td><td>Mémoriser les informations</td><td>Enregistrer une commande en base</td></tr>\n<tr><td><strong>Communiquer</strong></td><td>Diffuser l'information</td><td>Envoyer un email de confirmation</td></tr>\n</tbody>\n</table></div>\n<h2>IV. La méthode MERISE</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Présentation</div>\n<p><strong>MERISE</strong> est une méthode française d'analyse apparue en <strong>1979</strong>. Elle a été adoptée par les administrations et entreprises françaises comme méthodologie rigoureuse de conception des SI.</p>\n</div>\n<h3>Les 3 niveaux de MERISE — C.L.P.</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — C.L.P. (Conceptuel, Logique, Physique)</div>\n<p><strong>C</strong>onceptuel → QUOI ? (le métier, indépendant de la technique)<br/>\n<strong>L</strong>ogique → COMMENT organiser ? (les tables, les clés)<br/>\n<strong>P</strong>hysique → OÙ et avec quoi ? (le SGBD, le SQL concret)<br/><br/>\n        « On pense d'abord au <strong>métier</strong>, puis à la <strong>structure</strong>, puis à la <strong>machine</strong>. »</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Données</th><th>Traitements</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td><strong>Conceptuel</strong></td><td>MCD</td><td>MCT</td><td><em>QUOI ?</em> — Que fait le système ?</td></tr>\n<tr><td><strong>Logique</strong></td><td>MLD</td><td>MOT</td><td><em>QUI fait QUOI ? OÙ ? QUAND ?</em></td></tr>\n<tr><td><strong>Physique</strong></td><td>MPD</td><td>MPT</td><td><em>COMMENT ?</em> — Quels outils ?</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Schéma récapitulatif MERISE</div>\n<pre>       MERISE\n┌────────────────────┬─────────────────────┐\n│     DONNÉES        │     TRAITEMENTS     │\n├────────────────────┼─────────────────────┤\n│ MCD (Conceptuel)   │ MCT (Conceptuel)    │ ← QUOI ?\n│ MLD (Logique)      │ MOT (Organisat.)    │ ← QUI ? OÙ ? QUAND ?\n│ MPD (Physique)     │ MPT (Physique)      │ ← COMMENT ?\n└────────────────────┴─────────────────────┘</pre>\n</div>\n<h2>V. Étapes d'un projet MERISE</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Étape</th><th>Objectif</th><th>Livrables</th></tr></thead>\n<tbody>\n<tr><td><strong>Schéma directeur</strong></td><td>Vision globale, planification</td><td>Document de vision, découpage</td></tr>\n<tr><td><strong>Étude préalable</strong></td><td>Analyse de l'existant</td><td>Rapport, maquette/prototype</td></tr>\n<tr><td><strong>Étude détaillée</strong></td><td>Détailler la solution</td><td>Cahier des charges fonctionnel</td></tr>\n<tr><td><strong>Réalisation</strong></td><td>Développer l'application</td><td>Code, tests, doc technique</td></tr>\n<tr><td><strong>Mise en œuvre</strong></td><td>Installer et déployer</td><td>Formation, migration</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Corriger et faire évoluer</td><td>Patches, nouvelles versions</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — MERISE</h3>\n<ul>\n<li>Donnée → Information → Connaissance (chaîne progressive)</li>\n<li>3 sous-systèmes : Pilotage · <strong>SI</strong> · Opérant</li>\n<li>SI = Acquérir · Traiter · Stocker · Communiquer</li>\n<li>SI ≠ Système Informatique (le SI existait avant l'ordinateur)</li>\n<li>MERISE = méthode française (1979), niveaux <strong>C.L.P.</strong></li>\n<li>Conceptuel (QUOI) → Logique (QUI/OÙ/QUAND) → Physique (COMMENT)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "merise",
+  "name": "MERISE",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Lequel de ces exemples illustre la fonction « Traiter » d'un SI ?",
-     "options": [
-      {
-       "text": "Scanner un code-barres en caisse",
-       "correct": false,
-       "explanation": "Scanner un code-barres est une action d'Acquérir les données."
-      },
-      {
-       "text": "Enregistrer une commande en base",
-       "correct": false,
-       "explanation": "Enregistrer une commande est une action de Stocker."
-      },
-      {
-       "text": "Calculer le total TTC d'une facture",
-       "correct": true,
-       "explanation": "Correct ! Calculer le total TTC = transformer des données brutes en information utile. C'est bien la fonction Traiter."
-      },
-      {
-       "text": "Envoyer un email de confirmation",
-       "correct": false,
-       "explanation": "Envoyer un email de confirmation est une action de Communiquer."
-      }
-     ]
+      "number": 1,
+      "title": "Systèmes d'Information & MERISE",
+      "subtitle": "Comprendre ce qu'est un SI, pourquoi on le modélise, et comment MERISE structure l'analyse.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Définir un système d'information et ses fonctions</li><li>Comprendre les 3 sous-systèmes de l'entreprise</li><li>Maîtriser les 3 niveaux de la méthode MERISE (C.L.P.)</li></ul></div>\n<h2>I. L'Information</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le terme « informer » vient du latin <em>informare</em> = « donner une forme ». L'<strong>information</strong> est un renseignement apportant une connaissance. Elle est composée de <strong>données</strong> auxquelles les individus attribuent un <strong>sens</strong>.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Chaîne Donnée → Information → Connaissance</div>\n<pre>DONNÉE       →    INFORMATION        →    CONNAISSANCE\n(fait brut)     (donnée + contexte)     (information + expérience)\nEx: \"37.5\"      \"Température 37.5°C\"    \"Le patient a de la fièvre\"</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — Le SI = système nerveux de l'entreprise</div>\n<p>Tout comme le <strong>système nerveux</strong> capte les stimuli, les transmet et déclenche des réactions, le <strong>SI</strong> :<br/>\n        • <strong>Capte</strong> les données (factures, commandes, emails…)<br/>\n        • <strong>Traite</strong> et transforme ces données en informations utiles<br/>\n        • <strong>Stocke</strong> la mémoire de l'organisation<br/>\n        • <strong>Communique</strong> les bonnes infos aux bonnes personnes au bon moment</p></div>\n<h2>II. Les 3 sous-systèmes de l'entreprise</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Architecture de l'entreprise</div>\n<pre>┌──────────────────────────────────┐\n│ SYSTÈME DE PILOTAGE              │ ← Décide, fixe les objectifs\n│ (Direction, Management)          │\n├──────────────────────────────────┤\n│ SYSTÈME D'INFORMATION (SI)       │ ← Collecte, traite, stocke,\n│                                  │   diffuse l'information\n├──────────────────────────────────┤\n│ SYSTÈME OPÉRANT                  │ ← Exécute les opérations\n│ (Production, Ventes, etc.)       │   quotidiennes\n└──────────────────────────────────┘</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Astuce examen</div>\n<p>Le SI est au <em>centre</em> entre le système de pilotage (qui décide) et le système opérant (qui exécute). Il fait le <strong>lien</strong> entre les deux.</p></div>\n<h2>III. Le Système d'Information (SI)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition officielle (R. Reix, 1998)</div>\n<p>« Un SI est un ensemble organisé de ressources (matériel, logiciel, personnel, données, procédures) permettant d'<strong>acquérir</strong>, de <strong>traiter</strong>, de <strong>stocker</strong>, de <strong>communiquer</strong> des informations dans des organisations. »</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Attention</div>\n<p><strong>Système d'Information ≠ Système Informatique</strong>. Le système informatique est la partie <em>automatisée</em> du SI. Le SI existait bien avant l'informatique !</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Rôle du SI</th><th>Description</th><th>Exemple concret</th></tr></thead>\n<tbody>\n<tr><td><strong>Acquérir</strong></td><td>Collecter les données</td><td>Scanner un code-barres en caisse</td></tr>\n<tr><td><strong>Traiter</strong></td><td>Transformer les données</td><td>Calculer le total TTC d'une facture</td></tr>\n<tr><td><strong>Stocker</strong></td><td>Mémoriser les informations</td><td>Enregistrer une commande en base</td></tr>\n<tr><td><strong>Communiquer</strong></td><td>Diffuser l'information</td><td>Envoyer un email de confirmation</td></tr>\n</tbody>\n</table></div>\n<h2>IV. La méthode MERISE</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Présentation</div>\n<p><strong>MERISE</strong> est une méthode française d'analyse apparue en <strong>1979</strong>. Elle a été adoptée par les administrations et entreprises françaises comme méthodologie rigoureuse de conception des SI.</p></div>\n<h3>Les 3 niveaux de MERISE — C.L.P.</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — C.L.P. (Conceptuel, Logique, Physique)</div>\n<p><strong>C</strong>onceptuel → QUOI ? (le métier, indépendant de la technique)<br/>\n<strong>L</strong>ogique → COMMENT organiser ? (les tables, les clés)<br/>\n<strong>P</strong>hysique → OÙ et avec quoi ? (le SGBD, le SQL concret)<br/><br/>\n        « On pense d'abord au <strong>métier</strong>, puis à la <strong>structure</strong>, puis à la <strong>machine</strong>. »</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Données</th><th>Traitements</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td><strong>Conceptuel</strong></td><td>MCD</td><td>MCT</td><td><em>QUOI ?</em> — Que fait le système ?</td></tr>\n<tr><td><strong>Logique</strong></td><td>MLD</td><td>MOT</td><td><em>QUI fait QUOI ? OÙ ? QUAND ?</em></td></tr>\n<tr><td><strong>Physique</strong></td><td>MPD</td><td>MPT</td><td><em>COMMENT ?</em> — Quels outils ?</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Schéma récapitulatif MERISE</div>\n<pre>       MERISE\n┌────────────────────┬─────────────────────┐\n│     DONNÉES        │     TRAITEMENTS     │\n├────────────────────┼─────────────────────┤\n│ MCD (Conceptuel)   │ MCT (Conceptuel)    │ ← QUOI ?\n│ MLD (Logique)      │ MOT (Organisat.)    │ ← QUI ? OÙ ? QUAND ?\n│ MPD (Physique)     │ MPT (Physique)      │ ← COMMENT ?\n└────────────────────┴─────────────────────┘</pre></div>\n<h2>V. Étapes d'un projet MERISE</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Étape</th><th>Objectif</th><th>Livrables</th></tr></thead>\n<tbody>\n<tr><td><strong>Schéma directeur</strong></td><td>Vision globale, planification</td><td>Document de vision, découpage</td></tr>\n<tr><td><strong>Étude préalable</strong></td><td>Analyse de l'existant</td><td>Rapport, maquette/prototype</td></tr>\n<tr><td><strong>Étude détaillée</strong></td><td>Détailler la solution</td><td>Cahier des charges fonctionnel</td></tr>\n<tr><td><strong>Réalisation</strong></td><td>Développer l'application</td><td>Code, tests, doc technique</td></tr>\n<tr><td><strong>Mise en œuvre</strong></td><td>Installer et déployer</td><td>Formation, migration</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Corriger et faire évoluer</td><td>Patches, nouvelles versions</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — MERISE</h3>\n<ul>\n<li>Donnée → Information → Connaissance (chaîne progressive)</li>\n<li>3 sous-systèmes : Pilotage · <strong>SI</strong> · Opérant</li>\n<li>SI = Acquérir · Traiter · Stocker · Communiquer</li>\n<li>SI ≠ Système Informatique (le SI existait avant l'ordinateur)</li>\n<li>MERISE = méthode française (1979), niveaux <strong>C.L.P.</strong></li>\n<li>Conceptuel (QUOI) → Logique (QUI/OÙ/QUAND) → Physique (COMMENT)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Lequel de ces exemples illustre la fonction « Traiter » d'un SI ?",
+          "options": [
+            {
+              "text": "Scanner un code-barres en caisse",
+              "correct": false,
+              "explanation": "Scanner un code-barres est une action d'Acquérir les données."
+            },
+            {
+              "text": "Enregistrer une commande en base",
+              "correct": false,
+              "explanation": "Enregistrer une commande est une action de Stocker."
+            },
+            {
+              "text": "Calculer le total TTC d'une facture",
+              "correct": true,
+              "explanation": "Correct ! Calculer le total TTC = transformer des données brutes en information utile. C'est bien la fonction Traiter."
+            },
+            {
+              "text": "Envoyer un email de confirmation",
+              "correct": false,
+              "explanation": "Envoyer un email de confirmation est une action de Communiquer."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le niveau « Conceptuel » de MERISE répond à quelle question ?",
+          "options": [
+            {
+              "text": "COMMENT ?",
+              "correct": false,
+              "explanation": "COMMENT correspond au niveau Physique (choix du SGBD, SQL)."
+            },
+            {
+              "text": "QUI ? OÙ ? QUAND ?",
+              "correct": false,
+              "explanation": "QUI, OÙ, QUAND correspond au niveau Logique/Organisationnel."
+            },
+            {
+              "text": "QUOI ?",
+              "correct": true,
+              "explanation": "Correct ! Le niveau Conceptuel répond à QUOI ? — qu'est-ce que le système doit faire, indépendamment de toute contrainte technique."
+            },
+            {
+              "text": "AVEC QUOI ?",
+              "correct": false,
+              "explanation": "AVEC QUOI correspond au niveau Physique (choix des outils)."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "MERISE sépare l'étude des données et des traitements. Pourquoi ?",
+          "options": [
+            {
+              "text": "Pour rendre la conception plus complexe",
+              "correct": false,
+              "explanation": "La séparation n'est pas pour compliquer mais pour assouplir la conception."
+            },
+            {
+              "text": "Pour éviter que données et traitements communiquent",
+              "correct": false,
+              "explanation": "La séparation permet de les concevoir indépendamment, pas de les empêcher de communiquer."
+            },
+            {
+              "text": "Pour pouvoir modifier l'un sans forcément modifier l'autre",
+              "correct": true,
+              "explanation": "Correct ! Si le taux de TVA est dans le programme (traitement), quand il change, il faut modifier le code. En séparant, on modifie juste la donnée."
+            },
+            {
+              "text": "Pour réduire le nombre de tables SQL",
+              "correct": false,
+              "explanation": "La séparation n'est pas liée à la réduction du nombre de tables."
+            }
+          ]
+        }
+      ],
+      "source": "merise/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Le niveau « Conceptuel » de MERISE répond à quelle question ?",
-     "options": [
-      {
-       "text": "COMMENT ?",
-       "correct": false,
-       "explanation": "COMMENT correspond au niveau Physique (choix du SGBD, SQL)."
-      },
-      {
-       "text": "QUI ? OÙ ? QUAND ?",
-       "correct": false,
-       "explanation": "QUI, OÙ, QUAND correspond au niveau Logique/Organisationnel."
-      },
-      {
-       "text": "QUOI ?",
-       "correct": true,
-       "explanation": "Correct ! Le niveau Conceptuel répond à QUOI ? — qu'est-ce que le système doit faire, indépendamment de toute contrainte technique."
-      },
-      {
-       "text": "AVEC QUOI ?",
-       "correct": false,
-       "explanation": "AVEC QUOI correspond au niveau Physique (choix des outils)."
-      }
-     ]
+      "number": 2,
+      "title": "Le Modèle Conceptuel des Données (MCD)",
+      "subtitle": "Entités, propriétés, identifiants, associations et cardinalités.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Identifier les entités, associations et propriétés dans un énoncé</li><li>Définir les identifiants et les cardinalités</li><li>Construire un MCD complet à partir de règles de gestion</li></ul></div>\n<h2>Qu'est-ce que le MCD ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le <strong>Modèle Conceptuel des Données</strong> représente la réalité à modéliser de façon <em>indépendante de toute technologie</em>. Il répond à la question : <strong>QUOI ?</strong><br/>\n        Il décrit les données du domaine et leurs liens logiques.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Les 4 concepts clés du MCD</div>\n<p><strong>E</strong>ntité · <strong>P</strong>ropriété · <strong>I</strong>dentifiant · <strong>A</strong>ssociation<br/>\n        Phrase : « <em>Entités avec Propriétés Identifiées et Associées</em> »</p></div>\n<h2>Les Entités</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Une <strong>entité</strong> représente un objet du monde réel sur lequel on veut mémoriser des informations.<br/>\n        Représentée graphiquement par un <strong>rectangle</strong> avec le nom en majuscules.<br/>\n        Exemples : ETUDIANT, COURS, VILLE, PRODUIT, EMPLOYE</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Comment identifier une entité ?</div>\n<ul><li>C'est un <em>nom</em> (substantif)</li><li>On peut en avoir <em>plusieurs</em> (plusieurs étudiants, plusieurs cours)</li><li>On voudrait en <em>mémoriser des informations</em></li><li>Elle a une <em>existence propre</em> dans le domaine étudié</li></ul></div>\n<h2>Les Propriétés (Attributs)</h2>\n<p>Les propriétés sont les <strong>informations</strong> que l'on souhaite conserver sur une entité ou une association.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de propriété</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Simple</strong></td><td>Valeur atomique</td><td>Nom, Age, Prix</td></tr>\n<tr><td><strong>Composée</strong></td><td>Décomposable (à éviter)</td><td>Adresse → Rue + Ville + CP</td></tr>\n<tr><td><strong>Calculée</strong></td><td>Déduite d'autres (à éviter)</td><td>Age = Date_naissance → calculable</td></tr>\n<tr><td><strong>Multi-valuée</strong></td><td>Plusieurs valeurs (à traiter)</td><td>Téléphones → association</td></tr>\n</tbody>\n</table></div>\n<h2>L'Identifiant</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>L'identifiant est la propriété (ou combinaison de propriétés) qui <strong>identifie de manière unique</strong> chaque occurrence d'une entité.<br/>\n<strong>Représentation :</strong> soulignement dans le MCD<br/>\n        Si aucun attribut naturel ne convient → créer un identifiant technique (<u>NumEtu</u>, <u>Id</u>)</p></div>\n<h2>Les Associations</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Une <strong>association</strong> modélise le lien sémantique entre deux entités (ou plus).<br/>\n        Représentée par un <strong>losange</strong>.<br/>\n        Exemples : INSCRIT (entre ETUDIANT et COURS), EMPLOIE (entre ENTREPRISE et PERSONNE)</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Propriétés des associations</div>\n<p>Une association peut porter des propriétés qui <em>n'appartiennent ni à l'une ni à l'autre entité</em>, mais naissent du lien.<br/>\n        Exemple : l'association PASSE entre ETUDIANT et EXAMEN porte la propriété <em>Date</em> et <em>Note</em>.</p></div>\n<h2>Les Cardinalités</h2>\n<p>Les cardinalités expriment le nombre <strong>minimum et maximum</strong> de participations d'une entité dans une association.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cardinalité</th><th>Lecture</th><th>Exemple concret</th></tr></thead>\n<tbody>\n<tr><td><strong>0,1</strong></td><td>0 ou 1 fois</td><td>Un étudiant peut avoir 0 ou 1 tuteur</td></tr>\n<tr><td><strong>1,1</strong></td><td>Exactement 1 fois</td><td>Un étudiant appartient à exactement 1 filière</td></tr>\n<tr><td><strong>0,n</strong></td><td>0 à plusieurs</td><td>Un cours peut avoir 0 ou plusieurs inscriptions</td></tr>\n<tr><td><strong>1,n</strong></td><td>1 à plusieurs (au moins 1)</td><td>Un professeur enseigne au moins 1 cours</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Comment lire les cardinalités ?</div>\n<p>On lit depuis l'entité vers l'association :<br/>\n        « Un ETUDIANT <em>(0,n)</em> INSCRIT <em>(0,n)</em> COURS »<br/>\n        → Un étudiant peut s'inscrire à 0 ou plusieurs cours<br/>\n        → Un cours peut accueillir 0 ou plusieurs étudiants<br/>\n        → C'est une association <strong>N:M</strong></p></div>\n<h2>Exemple complet : Gestion d'une école</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Règles de gestion</div>\n<ul><li>Un étudiant s'inscrit à plusieurs cours · Un cours accueille plusieurs étudiants</li><li>Chaque inscription a une date et une note</li><li>Un cours est enseigné par un seul professeur · Un professeur enseigne plusieurs cours</li><li>Un professeur appartient à un seul département · Un département a plusieurs professeurs</li></ul></div>\n<div class=\"code-block\"><div class=\"code-lbl\">MCD résultant (textuel)</div>\n<pre>ENTITES :\n  ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)\n  COURS (<u>CodeCours</u>, IntituleCours, NbHeures, Coefficient)\n  PROFESSEUR (<u>NumProf</u>, NomProf, Grade)\n  DEPARTEMENT (<u>CodeDept</u>, NomDept, Localisation)\nASSOCIATIONS :\n  INSCRIT (entre ETUDIANT 0,n et COURS 0,n)\n    Propriétés : DateInscription, Note\n  ENSEIGNE (entre PROFESSEUR 1,n et COURS 1,1)\n    → Un cours est enseigné par exactement 1 prof\n    → Un prof enseigne au moins 1 cours\n  APPARTIENT (entre PROFESSEUR 0,n et DEPARTEMENT 1,1)\n    → Un prof appartient à exactement 1 département</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Module 2 — MCD</h3>\n<ul>\n<li>4 concepts : <strong>E.P.I.A.</strong> — Entité · Propriété · Identifiant · Association</li>\n<li>Entité = rectangle · Association = losange · Identifiant = souligné</li>\n<li>Cardinalité (min,max) : 0,1 · 1,1 · 0,n · 1,n</li>\n<li>Association N:M → table de jonction au passage MLD</li>\n<li>Propriétés multi-valuées → transformer en entité</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans un MCD, l'identifiant d'une entité est représenté par :",
+          "options": [
+            {
+              "text": "Un losange",
+              "correct": false,
+              "explanation": "Le losange représente une association, pas l'identifiant."
+            },
+            {
+              "text": "Un attribut souligné",
+              "correct": true,
+              "explanation": "Correct ! L'identifiant est souligné dans le MCD pour le distinguer des autres propriétés."
+            },
+            {
+              "text": "Un rectangle en gras",
+              "correct": false,
+              "explanation": "Un rectangle représente une entité, pas spécifiquement l'identifiant."
+            },
+            {
+              "text": "Une étoile (*)",
+              "correct": false,
+              "explanation": "Une étoile n'est pas une notation MERISE standard."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La cardinalité (1,n) côté PROFESSEUR dans l'association ENSEIGNE signifie :",
+          "options": [
+            {
+              "text": "Un professeur peut n'enseigner aucun cours",
+              "correct": false,
+              "explanation": "0,n signifie qu'un prof peut n'enseigner aucun cours. 1,n impose au moins 1."
+            },
+            {
+              "text": "Un professeur enseigne au moins un cours et peut en enseigner plusieurs",
+              "correct": true,
+              "explanation": "Correct ! (1,n) signifie minimum 1, maximum n : un professeur enseigne AU MOINS un cours, et peut en enseigner plusieurs."
+            },
+            {
+              "text": "Un professeur enseigne exactement un cours",
+              "correct": false,
+              "explanation": "(1,1) signifie exactement 1. (1,n) autorise plusieurs."
+            },
+            {
+              "text": "Un professeur gère au plus n étudiants",
+              "correct": false,
+              "explanation": "(1,n) côté PROFESSEUR ne concerne pas directement le nombre d'étudiants."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Une propriété comme « Téléphones » (un étudiant peut avoir plusieurs téléphones) est :",
+          "options": [
+            {
+              "text": "Une propriété simple",
+              "correct": false,
+              "explanation": "Une propriété simple a une seule valeur. Plusieurs téléphones = multi-valuée."
+            },
+            {
+              "text": "Une propriété calculée",
+              "correct": false,
+              "explanation": "Une propriété calculée est dérivée d'autres (ex: âge). Téléphones n'est pas calculé."
+            },
+            {
+              "text": "Une propriété multi-valuée (à transformer en entité)",
+              "correct": true,
+              "explanation": "Correct ! Plusieurs téléphones pour un même étudiant = propriété multi-valuée. Solution : créer une entité TELEPHONE liée à ETUDIANT."
+            },
+            {
+              "text": "Une propriété composée",
+              "correct": false,
+              "explanation": "Une propriété composée est décomposable (ex: adresse → rue + ville). Téléphones est multi-valuée."
+            }
+          ]
+        }
+      ],
+      "source": "_private/merise/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "MERISE sépare l'étude des données et des traitements. Pourquoi ?",
-     "options": [
-      {
-       "text": "Pour rendre la conception plus complexe",
-       "correct": false,
-       "explanation": "La séparation n'est pas pour compliquer mais pour assouplir la conception."
-      },
-      {
-       "text": "Pour éviter que données et traitements communiquent",
-       "correct": false,
-       "explanation": "La séparation permet de les concevoir indépendamment, pas de les empêcher de communiquer."
-      },
-      {
-       "text": "Pour pouvoir modifier l'un sans forcément modifier l'autre",
-       "correct": true,
-       "explanation": "Correct ! Si le taux de TVA est dans le programme (traitement), quand il change, il faut modifier le code. En séparant, on modifie juste la donnée."
-      },
-      {
-       "text": "Pour réduire le nombre de tables SQL",
-       "correct": false,
-       "explanation": "La séparation n'est pas liée à la réduction du nombre de tables."
-      }
-     ]
-    }
-   ],
-   "source": "merise/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Le Modèle Conceptuel des Données (MCD)",
-   "subtitle": "Entités, propriétés, identifiants, associations et cardinalités.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Identifier les entités, associations et propriétés dans un énoncé<br/>\n        • Définir les identifiants et les cardinalités<br/>\n        • Construire un MCD complet à partir de règles de gestion</p>\n</div>\n<h2>2.1 — Qu'est-ce que le MCD ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Le <strong>Modèle Conceptuel des Données</strong> représente la réalité à modéliser de façon <em>indépendante de toute technologie</em>. Il répond à la question : <strong>QUOI ?</strong><br/>\n        Il décrit les données du domaine et leurs liens logiques.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Les 4 concepts clés du MCD</div>\n<p><strong>E</strong>ntité · <strong>P</strong>ropriété · <strong>I</strong>dentifiant · <strong>A</strong>ssociation<br/>\n        Phrase : « <em>Entités avec Propriétés Identifiées et Associées</em> »</p>\n</div>\n<h2>2.2 — Les Entités</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Une <strong>entité</strong> représente un objet du monde réel sur lequel on veut mémoriser des informations.<br/>\n        Représentée graphiquement par un <strong>rectangle</strong> avec le nom en majuscules.<br/>\n        Exemples : ETUDIANT, COURS, VILLE, PRODUIT, EMPLOYE</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Comment identifier une entité ?</div>\n<p>• C'est un <em>nom</em> (substantif)<br/>\n        • On peut en avoir <em>plusieurs</em> (plusieurs étudiants, plusieurs cours)<br/>\n        • On voudrait en <em>mémoriser des informations</em><br/>\n        • Elle a une <em>existence propre</em> dans le domaine étudié</p>\n</div>\n<h2>2.3 — Les Propriétés (Attributs)</h2>\n<p>Les propriétés sont les <strong>informations</strong> que l'on souhaite conserver sur une entité ou une association.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de propriété</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Simple</strong></td><td>Valeur atomique</td><td>Nom, Age, Prix</td></tr>\n<tr><td><strong>Composée</strong></td><td>Décomposable (à éviter)</td><td>Adresse → Rue + Ville + CP</td></tr>\n<tr><td><strong>Calculée</strong></td><td>Déduite d'autres (à éviter)</td><td>Age = Date_naissance → calculable</td></tr>\n<tr><td><strong>Multi-valuée</strong></td><td>Plusieurs valeurs (à traiter)</td><td>Téléphones → association</td></tr>\n</tbody>\n</table></div>\n<h2>2.4 — L'Identifiant</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>L'identifiant est la propriété (ou combinaison de propriétés) qui <strong>identifie de manière unique</strong> chaque occurrence d'une entité.<br/>\n<strong>Représentation :</strong> soulignement dans le MCD<br/>\n        Si aucun attribut naturel ne convient → créer un identifiant technique (<u>NumEtu</u>, <u>Id</u>)</p>\n</div>\n<h2>2.5 — Les Associations</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Une <strong>association</strong> modélise le lien sémantique entre deux entités (ou plus).<br/>\n        Représentée par un <strong>losange</strong>.<br/>\n        Exemples : INSCRIT (entre ETUDIANT et COURS), EMPLOIE (entre ENTREPRISE et PERSONNE)</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Propriétés des associations</div>\n<p>Une association peut porter des propriétés qui <em>n'appartiennent ni à l'une ni à l'autre entité</em>, mais naissent du lien.<br/>\n        Exemple : l'association PASSE entre ETUDIANT et EXAMEN porte la propriété <em>Date</em> et <em>Note</em>.</p>\n</div>\n<h2>2.6 — Les Cardinalités</h2>\n<p>Les cardinalités expriment le nombre <strong>minimum et maximum</strong> de participations d'une entité dans une association.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cardinalité</th><th>Lecture</th><th>Exemple concret</th></tr></thead>\n<tbody>\n<tr><td><strong>0,1</strong></td><td>0 ou 1 fois</td><td>Un étudiant peut avoir 0 ou 1 tuteur</td></tr>\n<tr><td><strong>1,1</strong></td><td>Exactement 1 fois</td><td>Un étudiant appartient à exactement 1 filière</td></tr>\n<tr><td><strong>0,n</strong></td><td>0 à plusieurs</td><td>Un cours peut avoir 0 ou plusieurs inscriptions</td></tr>\n<tr><td><strong>1,n</strong></td><td>1 à plusieurs (au moins 1)</td><td>Un professeur enseigne au moins 1 cours</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Comment lire les cardinalités ?</div>\n<p>On lit depuis l'entité vers l'association :<br/>\n        « Un ETUDIANT <em>(0,n)</em> INSCRIT <em>(0,n)</em> COURS »<br/>\n        → Un étudiant peut s'inscrire à 0 ou plusieurs cours<br/>\n        → Un cours peut accueillir 0 ou plusieurs étudiants<br/>\n        → C'est une association <strong>N:M</strong></p>\n</div>\n<h2>2.7 — Exemple complet : Gestion d'une école</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📝 Règles de gestion</div>\n<p>• Un étudiant s'inscrit à plusieurs cours · Un cours accueille plusieurs étudiants<br/>\n        • Chaque inscription a une date et une note<br/>\n        • Un cours est enseigné par un seul professeur · Un professeur enseigne plusieurs cours<br/>\n        • Un professeur appartient à un seul département · Un département a plusieurs professeurs</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">MCD résultant (textuel)</div>\n<pre>ENTITES :\n  ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)\n  COURS (<u>CodeCours</u>, IntituleCours, NbHeures, Coefficient)\n  PROFESSEUR (<u>NumProf</u>, NomProf, Grade)\n  DEPARTEMENT (<u>CodeDept</u>, NomDept, Localisation)\nASSOCIATIONS :\n  INSCRIT (entre ETUDIANT 0,n et COURS 0,n)\n    Propriétés : DateInscription, Note\n  ENSEIGNE (entre PROFESSEUR 1,n et COURS 1,1)\n    → Un cours est enseigné par exactement 1 prof\n    → Un prof enseigne au moins 1 cours\n  APPARTIENT (entre PROFESSEUR 0,n et DEPARTEMENT 1,1)\n    → Un prof appartient à exactement 1 département</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Module 2 — MCD</h3>\n<ul>\n<li>4 concepts : <strong>E.P.I.A.</strong> — Entité · Propriété · Identifiant · Association</li>\n<li>Entité = rectangle · Association = losange · Identifiant = souligné</li>\n<li>Cardinalité (min,max) : 0,1 · 1,1 · 0,n · 1,n</li>\n<li>Association N:M → table de jonction au passage MLD</li>\n<li>Propriétés multi-valuées → transformer en entité</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Dans un MCD, l'identifiant d'une entité est représenté par :",
-     "options": [
-      {
-       "text": "Un losange",
-       "correct": false,
-       "explanation": "Le losange représente une association, pas l'identifiant."
-      },
-      {
-       "text": "Un attribut souligné",
-       "correct": true,
-       "explanation": "Correct ! L'identifiant est souligné dans le MCD pour le distinguer des autres propriétés."
-      },
-      {
-       "text": "Un rectangle en gras",
-       "correct": false,
-       "explanation": "Un rectangle représente une entité, pas spécifiquement l'identifiant."
-      },
-      {
-       "text": "Une étoile (*)",
-       "correct": false,
-       "explanation": "Une étoile n'est pas une notation MERISE standard."
-      }
-     ]
+      "number": 3,
+      "title": "Le Modèle Logique des Données (MLD)",
+      "subtitle": "Les 3 règles de passage MCD → MLD : tables, clés primaires et étrangères.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Appliquer les 3 règles de passage MCD → MLD</li><li>Identifier les clés primaires et étrangères dans le MLD</li><li>Valider un MLD à partir d'un MCD donné</li></ul></div>\n<h2>Rappel : MCD vs MLD</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>MCD (Conceptuel)</th><th>MLD (Logique)</th></tr></thead>\n<tbody>\n<tr><td><strong>Question</strong></td><td>QUOI ?</td><td>COMMENT organiser ?</td></tr>\n<tr><td><strong>Contenu</strong></td><td>Entités, associations, cardinalités</td><td>Tables, colonnes, clés</td></tr>\n<tr><td><strong>Technologie</strong></td><td>Indépendant</td><td>Relationnel (mais pas SQL)</td></tr>\n<tr><td><strong>Notation</strong></td><td>Graphique (rectangles, losanges)</td><td>Textuelle (TABLE(col1, col2…))</td></tr>\n</tbody>\n</table></div>\n<h2>Les 3 règles de passage MCD → MLD</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 1 — Entité → Table</div>\n<p>Chaque <strong>entité</strong> du MCD devient une <strong>table</strong> dans le MLD.<br/>\n        Les propriétés deviennent des colonnes.<br/>\n        L'identifiant devient la <strong>clé primaire</strong> (souligné).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 1</div>\n<pre>MCD : ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)\nMLD : ETUDIANT(<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)</pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 2 — Association 1:N → Clé étrangère</div>\n<p>Une association de cardinalité <strong>1:N</strong> (ou 1:1 non optionnel) :<br/>\n        La clé de l'entité côté <strong>\"1\"</strong> migre comme <strong>clé étrangère (FK)</strong> dans la table côté <strong>\"N\"</strong>.<br/>\n        Notation : # devant la colonne FK.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 2</div>\n<pre>MCD : PROFESSEUR (<u>NumProf</u>, Nom) ─(1,1)─ ENSEIGNE ─(1,n)─ COURS (<u>CodeCours</u>, Titre)\nMLD : PROFESSEUR(<u>NumProf</u>, Nom)\n      COURS(<u>CodeCours</u>, Titre, #NumProf)   ← FK du côté N (COURS)</pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle 3 — Association N:M → Table de jonction</div>\n<p>Une association de cardinalité <strong>N:M</strong> devient une <strong>table de jonction</strong>.<br/>\n        La clé primaire de cette table est composée des clés des deux entités liées.<br/>\n        Les propriétés de l'association deviennent des colonnes de la table de jonction.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 3</div>\n<pre>MCD : ETUDIANT (<u>NumEtu</u>) ─(0,n)─ INSCRIT ─(0,n)─ COURS (<u>CodeCours</u>)\n      Association INSCRIT porte : DateInscription, Note\nMLD : ETUDIANT(<u>NumEtu</u>, NomEtu)\n      COURS(<u>CodeCours</u>, Titre)\n      INSCRIT(<u>#NumEtu</u>, <u>#CodeCours</u>, DateInscription, Note)\n            ↑ clé primaire composée = (NumEtu + CodeCours)</pre></div>\n<h2>Cas particulier : association 1:1</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Règle pour la cardinalité 1:1</div>\n<p>La FK migre vers la table de l'entité côté optionnel (0,1) :<br/>\n        PERSONNE (0,1) ── POSSEDE ── (1,1) PASSEPORT<br/>\n        → FK dans PERSONNE (car optionnel côté PERSONNE)<br/>\n        PERSONNE(<u>NumPers</u>, Nom, #NumPasseport)</p></div>\n<h2>Exemple complet — MCD → MLD</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">MCD — Gestion Scolaire</div>\n<pre>ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu)\nCOURS (<u>CodeCours</u>, Titre, Volume)\nPROFESSEUR (<u>NumProf</u>, Nom, Grade)\nDEPARTEMENT (<u>CodeDept</u>, NomDept)\nAssociations :\n  ETUDIANT (0,n) ── INSCRIT ── (0,n) COURS  [Note, DateInscription]\n  PROFESSEUR (1,n) ── ENSEIGNE ── (1,1) COURS\n  PROFESSEUR (0,n) ── APPARTIENT ── (1,1) DEPARTEMENT</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">MLD résultant</div>\n<pre>ETUDIANT(<u>NumEtu</u>, NomEtu, PrenomEtu)\nDEPARTEMENT(<u>CodeDept</u>, NomDept)\nPROFESSEUR(<u>NumProf</u>, Nom, Grade, #CodeDept)\n  → Règle 2 : APPARTIENT est 1:1/0:n → FK dans PROFESSEUR\nCOURS(<u>CodeCours</u>, Titre, Volume, #NumProf)\n  → Règle 2 : ENSEIGNE est 1:1/1:n → FK dans COURS (côté 1,1)\nINSCRIT(<u>#NumEtu</u>, <u>#CodeCours</u>, Note, DateInscription)\n  → Règle 3 : N:M → table de jonction</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Module 3 — MLD</h3>\n<ul>\n<li><strong>Règle 1</strong> : Entité → Table (identifiant = PK)</li>\n<li><strong>Règle 2</strong> : Association 1:N → FK migre côté N</li>\n<li><strong>Règle 3</strong> : Association N:M → Table de jonction (PK composée)</li>\n<li>1:1 → FK migre vers l'entité côté optionnel (0,1)</li>\n<li>Propriétés de l'association → colonnes de la table de jonction</li>\n<li>Notation MLD : souligné = PK · # = FK</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans une association de cardinalité N:M, que crée-t-on dans le MLD ?",
+          "options": [
+            {
+              "text": "Une clé étrangère dans l'une des deux tables",
+              "correct": false,
+              "explanation": "Une FK suffit pour 1:N, pas N:M."
+            },
+            {
+              "text": "Une table de jonction avec une clé primaire composée",
+              "correct": true,
+              "explanation": "Correct ! Une association N:M devient une table de jonction dont la PK est composée des clés des deux entités."
+            },
+            {
+              "text": "La fusion des deux tables",
+              "correct": false,
+              "explanation": "Fusionner les tables créerait de la redondance."
+            },
+            {
+              "text": "Rien, le N:M est directement représentable",
+              "correct": false,
+              "explanation": "N:M nécessite toujours une table supplémentaire dans le modèle relationnel."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans l'association ENSEIGNE avec PROFESSEUR(1,n) et COURS(1,1), la clé étrangère migre :",
+          "options": [
+            {
+              "text": "Dans la table PROFESSEUR",
+              "correct": false,
+              "explanation": "La FK migre vers le côté qui dépend (1,1), pas vers le côté (1,n)."
+            },
+            {
+              "text": "Dans la table COURS",
+              "correct": true,
+              "explanation": "Correct ! Dans une association 1:N, la FK migre côté N ou côté (1,1) — ici COURS avec (1,1) reçoit #NumProf."
+            },
+            {
+              "text": "Dans une table de jonction ENSEIGNE",
+              "correct": false,
+              "explanation": "Une table de jonction s'utilise pour N:M, pas 1:N."
+            },
+            {
+              "text": "Dans les deux tables",
+              "correct": false,
+              "explanation": "Les deux tables ne reçoivent pas la FK — seulement l'une d'elles."
+            }
+          ]
+        }
+      ],
+      "source": "_private/merise/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "text": "La cardinalité (1,n) côté PROFESSEUR dans l'association ENSEIGNE signifie :",
-     "options": [
-      {
-       "text": "Un professeur peut n'enseigner aucun cours",
-       "correct": false,
-       "explanation": "0,n signifie qu'un prof peut n'enseigner aucun cours. 1,n impose au moins 1."
-      },
-      {
-       "text": "Un professeur enseigne au moins un cours et peut en enseigner plusieurs",
-       "correct": true,
-       "explanation": "Correct ! (1,n) signifie minimum 1, maximum n : un professeur enseigne AU MOINS un cours, et peut en enseigner plusieurs."
-      },
-      {
-       "text": "Un professeur enseigne exactement un cours",
-       "correct": false,
-       "explanation": "(1,1) signifie exactement 1. (1,n) autorise plusieurs."
-      },
-      {
-       "text": "Un professeur gère au plus n étudiants",
-       "correct": false,
-       "explanation": "(1,n) côté PROFESSEUR ne concerne pas directement le nombre d'étudiants."
-      }
-     ]
+      "number": 4,
+      "title": "Extensions MCD & Normalisation MERISE",
+      "subtitle": "Héritage, agrégation et normalisation des données dans MERISE.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Utiliser l'héritage et la généralisation dans le MCD · Comprendre l'agrégation · Appliquer la normalisation MERISE</li></ul></div>\n<h2>Entités spécialisées et généralisation</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Héritage MERISE</div>\n<p>Comme en POO, MERISE permet de modéliser des entités généralisation/spécialisation.<br/>\n        Une entité fille hérite des propriétés de l'entité mère et en ajoute des spécifiques.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Hiérarchie de personnes</div>\n<pre>PERSONNE (<u>NumPers</u>, NomPers, Prénom, DateNaiss)\n    ↑ généralisation\n    ├── ETUDIANT (NumEtu, Filière, Promo)\n    └── PROFESSEUR (NumProf, Grade, Spécialité)\nPropriétés communes → PERSONNE\nPropriétés spécifiques → entité fille\nMLD résultant :\n  PERSONNE(NumPers, Nom, Prénom, DateNaiss, Type)\n  ETUDIANT(#NumPers, Filière, Promo)  ← PK = FK vers PERSONNE\n  PROFESSEUR(#NumPers, Grade, Spécialité)</pre></div>\n<h2>Agrégation (Association d'associations)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Définition</div>\n<p>L'agrégation permet de traiter une <strong>association comme une entité</strong> pour la relier à d'autres associations.<br/>\n        Notation : rectangle autour du losange de l'association.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Projet d'équipe</div>\n<pre>EMPLOYE ──(0,n)── PARTICIPE ──(0,n)── PROJET\n                       |\n              L'agrégation PARTICIPATION\n              devient une entité pour :\nPARTICIPATION ──(0,n)── EVALUATION ──(0,n)── CRITERE\n// Sans agrégation impossible de lier EVALUATION\n// à une instance précise de PARTICIPE</pre></div>\n<h2>Normalisation dans MERISE</h2>\n<p>MERISE intègre les principes de normalisation dès la phase conceptuelle :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Forme normale</th><th>Règle MERISE</th></tr></thead>\n<tbody>\n<tr><td><strong>1NF</strong></td><td>Toute propriété est atomique (pas de valeur multiple)</td></tr>\n<tr><td><strong>2NF</strong></td><td>Toute propriété d'une entité dépend de l'identifiant entier</td></tr>\n<tr><td><strong>3NF</strong></td><td>Pas de dépendance transitive entre propriétés</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">Règles de base MERISE</div>\n<p>1. Toute entité a un identifiant<br/>\n        2. Les propriétés d'une entité ne dépendent que de son identifiant<br/>\n        3. Les propriétés d'une association ne dépendent que de la combinaison des identifiants</p></div>\n<h2>Dictionnaire de données</h2>\n<p>Le dictionnaire de données recense toutes les propriétés du SI :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Type</th><th>Taille</th><th>Règle de gestion</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>NumEtu</td><td>Entier</td><td>6</td><td>Auto-incrémenté, unique</td><td>20240001</td></tr>\n<tr><td>NomEtu</td><td>Texte</td><td>50</td><td>Obligatoire</td><td>Mensah</td></tr>\n<tr><td>Note</td><td>Décimal</td><td>4,2</td><td>0 ≤ note ≤ 20</td><td>15.50</td></tr>\n<tr><td>DateInscription</td><td>Date</td><td>—</td><td>≤ Date du jour</td><td>2024-09-01</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>L'essentiel du Module 4</h3>\n<ul>\n<li>Héritage : entité mère → entités filles (propriétés communes + spécifiques)</li>\n<li>MLD héritage : PK de la fille = FK vers la mère</li>\n<li>Agrégation : traiter une association comme entité (rectangle autour du losange)</li>\n<li>Dictionnaire de données : propriété · type · taille · règle · exemple</li>\n<li>Normalisation : toute propriété dépend de l'identifiant entier uniquement</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "L'agrégation MERISE permet de :",
+          "options": [
+            {
+              "text": "Modéliser l'héritage entre entités",
+              "correct": false,
+              "explanation": "La généralisation/spécialisation traite l'héritage, pas l'agrégation."
+            },
+            {
+              "text": "Traiter une association comme une entité pour la relier à d'autres",
+              "correct": true,
+              "explanation": "Correct ! L'agrégation traite une association comme une entité pour pouvoir la relier à d'autres associations — utile quand une association participe elle-même à une autre."
+            },
+            {
+              "text": "Éliminer la redondance des données",
+              "correct": false,
+              "explanation": "La normalisation élimine la redondance, pas l'agrégation."
+            },
+            {
+              "text": "Documenter les propriétés du système",
+              "correct": false,
+              "explanation": "Le dictionnaire de données documente les propriétés."
+            }
+          ]
+        }
+      ],
+      "source": "_private/merise/chapitres/chapitre4.html"
     },
     {
-     "type": "mcq",
-     "text": "Une propriété comme « Téléphones » (un étudiant peut avoir plusieurs téléphones) est :",
-     "options": [
-      {
-       "text": "Une propriété simple",
-       "correct": false,
-       "explanation": "Une propriété simple a une seule valeur. Plusieurs téléphones = multi-valuée."
-      },
-      {
-       "text": "Une propriété calculée",
-       "correct": false,
-       "explanation": "Une propriété calculée est dérivée d'autres (ex: âge). Téléphones n'est pas calculé."
-      },
-      {
-       "text": "Une propriété multi-valuée (à transformer en entité)",
-       "correct": true,
-       "explanation": "Correct ! Plusieurs téléphones pour un même étudiant = propriété multi-valuée. Solution : créer une entité TELEPHONE liée à ETUDIANT."
-      },
-      {
-       "text": "Une propriété composée",
-       "correct": false,
-       "explanation": "Une propriété composée est décomposable (ex: adresse → rue + ville). Téléphones est multi-valuée."
-      }
-     ]
-    }
-   ],
-   "source": "_private/merise/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Le Modèle Logique des Données (MLD)",
-   "subtitle": "Les 3 règles de passage MCD → MLD : tables, clés primaires et étrangères.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Appliquer les 3 règles de passage MCD → MLD<br/>\n        • Identifier les clés primaires et étrangères dans le MLD<br/>\n        • Valider un MLD à partir d'un MCD donné</p>\n</div>\n<h2>3.1 — Rappel : MCD vs MLD</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>MCD (Conceptuel)</th><th>MLD (Logique)</th></tr></thead>\n<tbody>\n<tr><td><strong>Question</strong></td><td>QUOI ?</td><td>COMMENT organiser ?</td></tr>\n<tr><td><strong>Contenu</strong></td><td>Entités, associations, cardinalités</td><td>Tables, colonnes, clés</td></tr>\n<tr><td><strong>Technologie</strong></td><td>Indépendant</td><td>Relationnel (mais pas SQL)</td></tr>\n<tr><td><strong>Notation</strong></td><td>Graphique (rectangles, losanges)</td><td>Textuelle (TABLE(col1, col2…))</td></tr>\n</tbody>\n</table></div>\n<h2>3.2 — Les 3 règles de passage MCD → MLD</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 1 — Entité → Table</div>\n<p>Chaque <strong>entité</strong> du MCD devient une <strong>table</strong> dans le MLD.<br/>\n        Les propriétés deviennent des colonnes.<br/>\n        L'identifiant devient la <strong>clé primaire</strong> (souligné).</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 1</div>\n<pre>MCD : ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)\nMLD : ETUDIANT(<u>NumEtu</u>, NomEtu, PrenomEtu, DateNaiss)</pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 2 — Association 1:N → Clé étrangère</div>\n<p>Une association de cardinalité <strong>1:N</strong> (ou 1:1 non optionnel) :<br/>\n        La clé de l'entité côté <strong>\"1\"</strong> migre comme <strong>clé étrangère (FK)</strong> dans la table côté <strong>\"N\"</strong>.<br/>\n        Notation : # devant la colonne FK.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 2</div>\n<pre>MCD : PROFESSEUR (<u>NumProf</u>, Nom) ─(1,1)─ ENSEIGNE ─(1,n)─ COURS (<u>CodeCours</u>, Titre)\nMLD : PROFESSEUR(<u>NumProf</u>, Nom)\n      COURS(<u>CodeCours</u>, Titre, #NumProf)   ← FK du côté N (COURS)</pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Règle 3 — Association N:M → Table de jonction</div>\n<p>Une association de cardinalité <strong>N:M</strong> devient une <strong>table de jonction</strong>.<br/>\n        La clé primaire de cette table est composée des clés des deux entités liées.<br/>\n        Les propriétés de l'association deviennent des colonnes de la table de jonction.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple Règle 3</div>\n<pre>MCD : ETUDIANT (<u>NumEtu</u>) ─(0,n)─ INSCRIT ─(0,n)─ COURS (<u>CodeCours</u>)\n      Association INSCRIT porte : DateInscription, Note\nMLD : ETUDIANT(<u>NumEtu</u>, NomEtu)\n      COURS(<u>CodeCours</u>, Titre)\n      INSCRIT(<u>#NumEtu</u>, <u>#CodeCours</u>, DateInscription, Note)\n            ↑ clé primaire composée = (NumEtu + CodeCours)</pre>\n</div>\n<h2>3.3 — Cas particulier : association 1:1</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Règle pour la cardinalité 1:1</div>\n<p>La FK migre vers la table de l'entité côté optionnel (0,1) :<br/>\n        PERSONNE (0,1) ── POSSEDE ── (1,1) PASSEPORT<br/>\n        → FK dans PERSONNE (car optionnel côté PERSONNE)<br/>\n        PERSONNE(<u>NumPers</u>, Nom, #NumPasseport)</p>\n</div>\n<h2>3.4 — Exemple complet — MCD → MLD</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">MCD — Gestion Scolaire</div>\n<pre>ETUDIANT (<u>NumEtu</u>, NomEtu, PrenomEtu)\nCOURS (<u>CodeCours</u>, Titre, Volume)\nPROFESSEUR (<u>NumProf</u>, Nom, Grade)\nDEPARTEMENT (<u>CodeDept</u>, NomDept)\nAssociations :\n  ETUDIANT (0,n) ── INSCRIT ── (0,n) COURS  [Note, DateInscription]\n  PROFESSEUR (1,n) ── ENSEIGNE ── (1,1) COURS\n  PROFESSEUR (0,n) ── APPARTIENT ── (1,1) DEPARTEMENT</pre>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">MLD résultant</div>\n<pre>ETUDIANT(<u>NumEtu</u>, NomEtu, PrenomEtu)\nDEPARTEMENT(<u>CodeDept</u>, NomDept)\nPROFESSEUR(<u>NumProf</u>, Nom, Grade, #CodeDept)\n  → Règle 2 : APPARTIENT est 1:1/0:n → FK dans PROFESSEUR\nCOURS(<u>CodeCours</u>, Titre, Volume, #NumProf)\n  → Règle 2 : ENSEIGNE est 1:1/1:n → FK dans COURS (côté 1,1)\nINSCRIT(<u>#NumEtu</u>, <u>#CodeCours</u>, Note, DateInscription)\n  → Règle 3 : N:M → table de jonction</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Module 3 — MLD</h3>\n<ul>\n<li><strong>Règle 1</strong> : Entité → Table (identifiant = PK)</li>\n<li><strong>Règle 2</strong> : Association 1:N → FK migre côté N</li>\n<li><strong>Règle 3</strong> : Association N:M → Table de jonction (PK composée)</li>\n<li>1:1 → FK migre vers l'entité côté optionnel (0,1)</li>\n<li>Propriétés de l'association → colonnes de la table de jonction</li>\n<li>Notation MLD : souligné = PK · # = FK</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Dans une association de cardinalité N:M, que crée-t-on dans le MLD ?",
-     "options": [
-      {
-       "text": "Une clé étrangère dans l'une des deux tables",
-       "correct": false,
-       "explanation": "Une FK suffit pour 1:N, pas N:M."
-      },
-      {
-       "text": "Une table de jonction avec une clé primaire composée",
-       "correct": true,
-       "explanation": "Correct ! Une association N:M devient une table de jonction dont la PK est composée des clés des deux entités."
-      },
-      {
-       "text": "La fusion des deux tables",
-       "correct": false,
-       "explanation": "Fusionner les tables créerait de la redondance."
-      },
-      {
-       "text": "Rien, le N:M est directement représentable",
-       "correct": false,
-       "explanation": "N:M nécessite toujours une table supplémentaire dans le modèle relationnel."
-      }
-     ]
+      "number": 5,
+      "title": "Flux d'information — MFD & DFD",
+      "subtitle": "Modèle de Flux de Données, acteurs, flux et processus.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Construire un Modèle de Flux de Données · Identifier acteurs, flux et processus · Comprendre les niveaux</li></ul></div>\n<h2>Modèle de Flux de Données (MFD)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Définition</div>\n<p>Le MFD (ou DFD - Data Flow Diagram) représente les <strong>échanges d'informations</strong> entre les acteurs, les processus et les entrepôts de données du système.</p></div>\n<h2>Les 4 composants du MFD</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Symbole</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Acteur externe</strong></td><td>Rectangle</td><td>Entité hors du système (fournisseur/destinataire de flux)</td><td>Client, Fournisseur, Banque</td></tr>\n<tr><td><strong>Processus</strong></td><td>Cercle/Bulle</td><td>Transformation de données</td><td>Traiter commande, Établir facture</td></tr>\n<tr><td><strong>Flux de données</strong></td><td>Flèche</td><td>Mouvement d'information entre composants</td><td>Bon de commande, Facture</td></tr>\n<tr><td><strong>Entrepôt</strong></td><td>Rectangle ouvert</td><td>Stockage de données (fichier, table)</td><td>D1-Clients, D2-Commandes</td></tr>\n</tbody></table></div>\n<h2>Niveaux de décomposition</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">Les 3 niveaux DFD</div>\n<p><strong>Niveau 0 (Diagramme contexte)</strong> : vue globale — système = une bulle, tous les acteurs externes<br/>\n<strong>Niveau 1</strong> : décomposition des grands processus (5 à 7 processus max)<br/>\n<strong>Niveau 2</strong> : décomposition de chaque processus niveau 1</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Gestion de commandes (niveau 0)</div>\n<pre>CLIENT ──[Commande]──→ (SYSTÈME GESTION COMMANDES) ──[Facture]──→ CLIENT\nFOURNISSEUR ←──[Bon de commande]──  SYSTÈME  ──[Rapport]──→ DIRECTION</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Niveau 1 — décomposition</div>\n<pre>CLIENT ──[Commande]──→ (1. Saisir commande)\n(1. Saisir commande) ──[Données]──→ D1-Commandes\nD1-Commandes ──→ (2. Traiter commande) ──→ D2-Stock\n(2. Traiter commande) ──[BL]──→ (3. Préparer livraison)\n(3. Préparer livraison) ──[Facture]──→ CLIENT</pre></div>\n<h2>Règles de construction</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">Règles fondamentales</div>\n<ul><li>Un flux va toujours d'une source à une destination (jamais de lui-même vers lui-même)</li><li>Un acteur externe ne communique jamais directement avec un entrepôt</li><li>Tout processus a au moins un flux entrant et un flux sortant</li><li>Les données de même nature ne se croisent pas sans processus</li></ul></div>\n<div class=\"summary\"><h3>L'essentiel du Module 5</h3>\n<ul>\n<li>MFD/DFD : 4 composants — Acteur · Processus · Flux · Entrepôt</li>\n<li>Niveau 0 (contexte) · Niveau 1 (processus) · Niveau 2 (sous-processus)</li>\n<li>Règle : acteurs ne communiquent pas directement avec entrepôts</li>\n<li>Tout processus a au moins 1 flux entrant ET 1 flux sortant</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans un DFD, qu'est-ce qu'un \"entrepôt de données\" ?",
+          "options": [
+            {
+              "text": "Un traitement de données",
+              "correct": false,
+              "explanation": "Le traitement de données correspond à un processus (cercle/bulle)."
+            },
+            {
+              "text": "Un acteur externe au système",
+              "correct": false,
+              "explanation": "Un acteur externe est une entité hors du système (rectangle fermé)."
+            },
+            {
+              "text": "Un lieu de stockage de données (fichier, table)",
+              "correct": true,
+              "explanation": "Correct ! Un entrepôt (rectangle ouvert des deux côtés) représente le stockage des données : fichier, base de données, table…"
+            },
+            {
+              "text": "Un flux de données entre deux processus",
+              "correct": false,
+              "explanation": "Un flux de données est représenté par une flèche, pas un entrepôt."
+            }
+          ]
+        }
+      ],
+      "source": "_private/merise/chapitres/chapitre5.html"
     },
     {
-     "type": "mcq",
-     "text": "Dans l'association ENSEIGNE avec PROFESSEUR(1,n) et COURS(1,1), la clé étrangère migre :",
-     "options": [
-      {
-       "text": "Dans la table PROFESSEUR",
-       "correct": false,
-       "explanation": "La FK migre vers le côté qui dépend (1,1), pas vers le côté (1,n)."
-      },
-      {
-       "text": "Dans la table COURS",
-       "correct": true,
-       "explanation": "Correct ! Dans une association 1:N, la FK migre côté N ou côté (1,1) — ici COURS avec (1,1) reçoit #NumProf."
-      },
-      {
-       "text": "Dans une table de jonction ENSEIGNE",
-       "correct": false,
-       "explanation": "Une table de jonction s'utilise pour N:M, pas 1:N."
-      },
-      {
-       "text": "Dans les deux tables",
-       "correct": false,
-       "explanation": "Les deux tables ne reçoivent pas la FK — seulement l'une d'elles."
-      }
-     ]
+      "number": 6,
+      "title": "MCT — Modèle Conceptuel des Traitements",
+      "subtitle": "Opérations, événements, synchronisation et résultats.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Construire un MCT · Identifier événements, opérations et résultats · Écrire les règles d'émission</li></ul></div>\n<h2>Le MCT — Définition</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Rôle du MCT</div>\n<p>Le MCT décrit <strong>QUOI faire</strong> dans le système — les traitements métier, indépendamment de qui les fait et comment.<br/>\n        Il répond à : <em>Quels événements déclenchent quels traitements ? Quels résultats produisent-ils ?</em></p></div>\n<h2>Les composants du MCT</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Symbole</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Événement</strong></td><td>Ovale</td><td>Fait déclencheur — externe ou interne au SI</td></tr>\n<tr><td><strong>Opération</strong></td><td>Rectangle haut</td><td>Ensemble d'actions déclenchées par un/des événement(s)</td></tr>\n<tr><td><strong>Synchronisation</strong></td><td>Losange</td><td>Condition d'activation de l'opération (ET, OU)</td></tr>\n<tr><td><strong>Règle d'émission</strong></td><td>Flèche + condition</td><td>Condition de production d'un résultat</td></tr>\n<tr><td><strong>Résultat</strong></td><td>Ovale sortie</td><td>Événement produit par l'opération</td></tr>\n</tbody></table></div>\n<h2>Exemple complet — Traitement d'une commande</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">MCT — Gestion commande</div>\n<pre>ÉVÉNEMENTS ENTRANTS :\n  ① Réception bon de commande (externe : client)\n  ② Vérification stock (interne)\nSYNCHRONISATION :  ① ET ②  (les deux doivent être reçus)\nOPÉRATION : \"Traiter commande\"\n  Actions :\n  - Vérifier solvabilité client\n  - Contrôler disponibilité stock\n  - Mettre à jour stock si disponible\nRÈGLES D'ÉMISSION + RÉSULTATS :\n  [Stock OK ET Client solvable] → ③ Bon de livraison émis\n  [Stock insuffisant]           → ④ Commande en attente\n  [Client insolvable]           → ⑤ Commande refusée</pre></div>\n<h2>MCT → MOT (Modèle Organisationnel des Traitements)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Du MCT au MOT</div>\n<p>Le MCT dit <strong>QUOI</strong> faire.<br/>\n        Le MOT précise <strong>QUI</strong> fait quoi, <strong>COMMENT</strong> et <strong>QUAND</strong> :<br/>\n        • Qui ? → Poste de travail, service responsable<br/>\n        • Comment ? → Automatique, manuel, interactif<br/>\n        • Quand ? → Immédiat, différé, batch</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Modèle</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td>Conceptuel</td><td>MCT</td><td>QUOI faire ?</td></tr>\n<tr><td>Organisationnel</td><td>MOT</td><td>QUI ? QUAND ? COMMENT ?</td></tr>\n<tr><td>Logique/Physique</td><td>MPT</td><td>Avec quel outil informatique ?</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>L'essentiel du Module 6 — MCT</h3>\n<ul>\n<li>MCT = QUOI faire (traitements métier, indépendant de l'organisation)</li>\n<li>4 composants : Événement · Opération · Synchronisation · Résultat</li>\n<li>Synchronisation ET : tous les événements requis · OU : au moins un</li>\n<li>Règles d'émission : conditions de production des résultats</li>\n<li>MCT → MOT (QUI/QUAND) → MPT (comment informatiquement)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans un MCT, la synchronisation \"ET\" signifie :",
+          "options": [
+            {
+              "text": "Un seul des événements suffit à déclencher l'opération",
+              "correct": false,
+              "explanation": "OU signifie qu'un seul des événements suffit à déclencher l'opération."
+            },
+            {
+              "text": "Tous les événements doivent être présents pour déclencher l'opération",
+              "correct": true,
+              "explanation": "Correct ! La synchronisation ET signifie que TOUS les événements entrants doivent être présents pour déclencher l'opération."
+            },
+            {
+              "text": "L'opération est annulée si les deux arrivent",
+              "correct": false,
+              "explanation": "La synchronisation n'annule pas — elle conditionne le déclenchement."
+            },
+            {
+              "text": "Les résultats sont multipliés",
+              "correct": false,
+              "explanation": "La synchronisation s'applique aux événements entrants, pas aux résultats."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence entre MCT et MOT ?",
+          "options": [
+            {
+              "text": "Le MCT est pour les données, le MOT pour les traitements",
+              "correct": false,
+              "explanation": "Les deux sont des modèles de traitements — mais à des niveaux différents."
+            },
+            {
+              "text": "MCT = QUOI faire · MOT = QUI, QUAND, COMMENT",
+              "correct": true,
+              "explanation": "Correct ! MCT = QUOI (traitements métier, indépendant de l'organisation). MOT = QUI/QUAND/COMMENT (responsabilités, timing, mode d'exécution)."
+            },
+            {
+              "text": "Le MCT est plus détaillé que le MOT",
+              "correct": false,
+              "explanation": "C'est l'inverse : MCT est conceptuel, MOT est organisationnel."
+            },
+            {
+              "text": "Ils sont identiques",
+              "correct": false,
+              "explanation": "Les deux sont différents — MCT est conceptuel, MOT est organisationnel."
+            }
+          ]
+        }
+      ],
+      "source": "_private/merise/chapitres/chapitre6.html"
     }
-   ],
-   "source": "_private/merise/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Extensions MCD & Normalisation MERISE",
-   "subtitle": "Héritage, agrégation et normalisation des données dans MERISE.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Utiliser l'héritage et la généralisation dans le MCD · Comprendre l'agrégation · Appliquer la normalisation MERISE</p></div>\n<h2>4.1 — Entités spécialisées et généralisation</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Héritage MERISE</div>\n<p>Comme en POO, MERISE permet de modéliser des entités généralisation/spécialisation.<br/>\n        Une entité fille hérite des propriétés de l'entité mère et en ajoute des spécifiques.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Hiérarchie de personnes</div>\n<pre>PERSONNE (<u>NumPers</u>, NomPers, Prénom, DateNaiss)\n    ↑ généralisation\n    ├── ETUDIANT (NumEtu, Filière, Promo)\n    └── PROFESSEUR (NumProf, Grade, Spécialité)\nPropriétés communes → PERSONNE\nPropriétés spécifiques → entité fille\nMLD résultant :\n  PERSONNE(NumPers, Nom, Prénom, DateNaiss, Type)\n  ETUDIANT(#NumPers, Filière, Promo)  ← PK = FK vers PERSONNE\n  PROFESSEUR(#NumPers, Grade, Spécialité)</pre></div>\n<h2>4.2 — Agrégation (Association d'associations)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Définition</div>\n<p>L'agrégation permet de traiter une <strong>association comme une entité</strong> pour la relier à d'autres associations.<br/>\n        Notation : rectangle autour du losange de l'association.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Projet d'équipe</div>\n<pre>EMPLOYE ──(0,n)── PARTICIPE ──(0,n)── PROJET\n                       |\n              L'agrégation PARTICIPATION\n              devient une entité pour :\nPARTICIPATION ──(0,n)── EVALUATION ──(0,n)── CRITERE\n// Sans agrégation impossible de lier EVALUATION\n// à une instance précise de PARTICIPE</pre></div>\n<h2>4.3 — Normalisation dans MERISE</h2>\n<p>MERISE intègre les principes de normalisation dès la phase conceptuelle :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Forme normale</th><th>Règle MERISE</th></tr></thead>\n<tbody>\n<tr><td><strong>1NF</strong></td><td>Toute propriété est atomique (pas de valeur multiple)</td></tr>\n<tr><td><strong>2NF</strong></td><td>Toute propriété d'une entité dépend de l'identifiant entier</td></tr>\n<tr><td><strong>3NF</strong></td><td>Pas de dépendance transitive entre propriétés</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Règles de base MERISE</div>\n<p>1. Toute entité a un identifiant<br/>\n        2. Les propriétés d'une entité ne dépendent que de son identifiant<br/>\n        3. Les propriétés d'une association ne dépendent que de la combinaison des identifiants</p></div>\n<h2>4.4 — Dictionnaire de données</h2>\n<p>Le dictionnaire de données recense toutes les propriétés du SI :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Type</th><th>Taille</th><th>Règle de gestion</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>NumEtu</td><td>Entier</td><td>6</td><td>Auto-incrémenté, unique</td><td>20240001</td></tr>\n<tr><td>NomEtu</td><td>Texte</td><td>50</td><td>Obligatoire</td><td>Mensah</td></tr>\n<tr><td>Note</td><td>Décimal</td><td>4,2</td><td>0 ≤ note ≤ 20</td><td>15.50</td></tr>\n<tr><td>DateInscription</td><td>Date</td><td>—</td><td>≤ Date du jour</td><td>2024-09-01</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Module 4</h3>\n<ul>\n<li>Héritage : entité mère → entités filles (propriétés communes + spécifiques)</li>\n<li>MLD héritage : PK de la fille = FK vers la mère</li>\n<li>Agrégation : traiter une association comme entité (rectangle autour du losange)</li>\n<li>Dictionnaire de données : propriété · type · taille · règle · exemple</li>\n<li>Normalisation : toute propriété dépend de l'identifiant entier uniquement</li>\n</ul></div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "L'agrégation MERISE permet de :",
-     "options": [
-      {
-       "text": "Modéliser l'héritage entre entités",
-       "correct": false,
-       "explanation": "La généralisation/spécialisation traite l'héritage, pas l'agrégation."
-      },
-      {
-       "text": "Traiter une association comme une entité pour la relier à d'autres",
-       "correct": true,
-       "explanation": "Correct ! L'agrégation traite une association comme une entité pour pouvoir la relier à d'autres associations — utile quand une association participe elle-même à une autre."
-      },
-      {
-       "text": "Éliminer la redondance des données",
-       "correct": false,
-       "explanation": "La normalisation élimine la redondance, pas l'agrégation."
-      },
-      {
-       "text": "Documenter les propriétés du système",
-       "correct": false,
-       "explanation": "Le dictionnaire de données documente les propriétés."
-      }
-     ]
-    }
-   ],
-   "source": "_private/merise/chapitres/chapitre4.html"
-  },
-  {
-   "number": 5,
-   "title": "Flux d'information — MFD & DFD",
-   "subtitle": "Modèle de Flux de Données, acteurs, flux et processus.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Construire un Modèle de Flux de Données · Identifier acteurs, flux et processus · Comprendre les niveaux</p></div>\n<h2>5.1 — Modèle de Flux de Données (MFD)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Définition</div>\n<p>Le MFD (ou DFD - Data Flow Diagram) représente les <strong>échanges d'informations</strong> entre les acteurs, les processus et les entrepôts de données du système.</p></div>\n<h2>5.2 — Les 4 composants du MFD</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Symbole</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Acteur externe</strong></td><td>Rectangle</td><td>Entité hors du système (fournisseur/destinataire de flux)</td><td>Client, Fournisseur, Banque</td></tr>\n<tr><td><strong>Processus</strong></td><td>Cercle/Bulle</td><td>Transformation de données</td><td>Traiter commande, Établir facture</td></tr>\n<tr><td><strong>Flux de données</strong></td><td>Flèche</td><td>Mouvement d'information entre composants</td><td>Bon de commande, Facture</td></tr>\n<tr><td><strong>Entrepôt</strong></td><td>Rectangle ouvert</td><td>Stockage de données (fichier, table)</td><td>D1-Clients, D2-Commandes</td></tr>\n</tbody></table></div>\n<h2>5.3 — Niveaux de décomposition</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Les 3 niveaux DFD</div>\n<p><strong>Niveau 0 (Diagramme contexte)</strong> : vue globale — système = une bulle, tous les acteurs externes<br/>\n<strong>Niveau 1</strong> : décomposition des grands processus (5 à 7 processus max)<br/>\n<strong>Niveau 2</strong> : décomposition de chaque processus niveau 1</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Gestion de commandes (niveau 0)</div>\n<pre>CLIENT ──[Commande]──→ (SYSTÈME GESTION COMMANDES) ──[Facture]──→ CLIENT\nFOURNISSEUR ←──[Bon de commande]──  SYSTÈME  ──[Rapport]──→ DIRECTION</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Niveau 1 — décomposition</div>\n<pre>CLIENT ──[Commande]──→ (1. Saisir commande)\n(1. Saisir commande) ──[Données]──→ D1-Commandes\nD1-Commandes ──→ (2. Traiter commande) ──→ D2-Stock\n(2. Traiter commande) ──[BL]──→ (3. Préparer livraison)\n(3. Préparer livraison) ──[Facture]──→ CLIENT</pre></div>\n<h2>5.4 — Règles de construction</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Règles fondamentales</div>\n<p>• Un flux va toujours d'une source à une destination (jamais de lui-même vers lui-même)<br/>\n        • Un acteur externe ne communique jamais directement avec un entrepôt<br/>\n        • Tout processus a au moins un flux entrant et un flux sortant<br/>\n        • Les données de même nature ne se croisent pas sans processus</p></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Module 5</h3>\n<ul>\n<li>MFD/DFD : 4 composants — Acteur · Processus · Flux · Entrepôt</li>\n<li>Niveau 0 (contexte) · Niveau 1 (processus) · Niveau 2 (sous-processus)</li>\n<li>Règle : acteurs ne communiquent pas directement avec entrepôts</li>\n<li>Tout processus a au moins 1 flux entrant ET 1 flux sortant</li>\n</ul></div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Dans un DFD, qu'est-ce qu'un \"entrepôt de données\" ?",
-     "options": [
-      {
-       "text": "Un traitement de données",
-       "correct": false,
-       "explanation": "Le traitement de données correspond à un processus (cercle/bulle)."
-      },
-      {
-       "text": "Un acteur externe au système",
-       "correct": false,
-       "explanation": "Un acteur externe est une entité hors du système (rectangle fermé)."
-      },
-      {
-       "text": "Un lieu de stockage de données (fichier, table)",
-       "correct": true,
-       "explanation": "Correct ! Un entrepôt (rectangle ouvert des deux côtés) représente le stockage des données : fichier, base de données, table…"
-      },
-      {
-       "text": "Un flux de données entre deux processus",
-       "correct": false,
-       "explanation": "Un flux de données est représenté par une flèche, pas un entrepôt."
-      }
-     ]
-    }
-   ],
-   "source": "_private/merise/chapitres/chapitre5.html"
-  },
-  {
-   "number": 6,
-   "title": "MCT — Modèle Conceptuel des Traitements",
-   "subtitle": "Opérations, événements, synchronisation et résultats.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Construire un MCT · Identifier événements, opérations et résultats · Écrire les règles d'émission</p></div>\n<h2>6.1 — Le MCT — Définition</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Rôle du MCT</div>\n<p>Le MCT décrit <strong>QUOI faire</strong> dans le système — les traitements métier, indépendamment de qui les fait et comment.<br/>\n        Il répond à : <em>Quels événements déclenchent quels traitements ? Quels résultats produisent-ils ?</em></p></div>\n<h2>6.2 — Les composants du MCT</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Symbole</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Événement</strong></td><td>Ovale</td><td>Fait déclencheur — externe ou interne au SI</td></tr>\n<tr><td><strong>Opération</strong></td><td>Rectangle haut</td><td>Ensemble d'actions déclenchées par un/des événement(s)</td></tr>\n<tr><td><strong>Synchronisation</strong></td><td>Losange</td><td>Condition d'activation de l'opération (ET, OU)</td></tr>\n<tr><td><strong>Règle d'émission</strong></td><td>Flèche + condition</td><td>Condition de production d'un résultat</td></tr>\n<tr><td><strong>Résultat</strong></td><td>Ovale sortie</td><td>Événement produit par l'opération</td></tr>\n</tbody></table></div>\n<h2>6.3 — Exemple complet — Traitement d'une commande</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">MCT — Gestion commande</div>\n<pre>ÉVÉNEMENTS ENTRANTS :\n  ① Réception bon de commande (externe : client)\n  ② Vérification stock (interne)\nSYNCHRONISATION :  ① ET ②  (les deux doivent être reçus)\nOPÉRATION : \"Traiter commande\"\n  Actions :\n  - Vérifier solvabilité client\n  - Contrôler disponibilité stock\n  - Mettre à jour stock si disponible\nRÈGLES D'ÉMISSION + RÉSULTATS :\n  [Stock OK ET Client solvable] → ③ Bon de livraison émis\n  [Stock insuffisant]           → ④ Commande en attente\n  [Client insolvable]           → ⑤ Commande refusée</pre></div>\n<h2>6.4 — MCT → MOT (Modèle Organisationnel des Traitements)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Du MCT au MOT</div>\n<p>Le MCT dit <strong>QUOI</strong> faire.<br/>\n        Le MOT précise <strong>QUI</strong> fait quoi, <strong>COMMENT</strong> et <strong>QUAND</strong> :<br/>\n        • Qui ? → Poste de travail, service responsable<br/>\n        • Comment ? → Automatique, manuel, interactif<br/>\n        • Quand ? → Immédiat, différé, batch</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Modèle</th><th>Question</th></tr></thead>\n<tbody>\n<tr><td>Conceptuel</td><td>MCT</td><td>QUOI faire ?</td></tr>\n<tr><td>Organisationnel</td><td>MOT</td><td>QUI ? QUAND ? COMMENT ?</td></tr>\n<tr><td>Logique/Physique</td><td>MPT</td><td>Avec quel outil informatique ?</td></tr>\n</tbody></table></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Module 6 — MCT</h3>\n<ul>\n<li>MCT = QUOI faire (traitements métier, indépendant de l'organisation)</li>\n<li>4 composants : Événement · Opération · Synchronisation · Résultat</li>\n<li>Synchronisation ET : tous les événements requis · OU : au moins un</li>\n<li>Règles d'émission : conditions de production des résultats</li>\n<li>MCT → MOT (QUI/QUAND) → MPT (comment informatiquement)</li>\n</ul></div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Dans un MCT, la synchronisation \"ET\" signifie :",
-     "options": [
-      {
-       "text": "Un seul des événements suffit à déclencher l'opération",
-       "correct": false,
-       "explanation": "OU signifie qu'un seul des événements suffit à déclencher l'opération."
-      },
-      {
-       "text": "Tous les événements doivent être présents pour déclencher l'opération",
-       "correct": true,
-       "explanation": "Correct ! La synchronisation ET signifie que TOUS les événements entrants doivent être présents pour déclencher l'opération."
-      },
-      {
-       "text": "L'opération est annulée si les deux arrivent",
-       "correct": false,
-       "explanation": "La synchronisation n'annule pas — elle conditionne le déclenchement."
-      },
-      {
-       "text": "Les résultats sont multipliés",
-       "correct": false,
-       "explanation": "La synchronisation s'applique aux événements entrants, pas aux résultats."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Systèmes dInformation & MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quelle est la différence entre MCT et MOT ?",
-     "options": [
-      {
-       "text": "Le MCT est pour les données, le MOT pour les traitements",
-       "correct": false,
-       "explanation": "Les deux sont des modèles de traitements — mais à des niveaux différents."
-      },
-      {
-       "text": "MCT = QUOI faire · MOT = QUI, QUAND, COMMENT",
-       "correct": true,
-       "explanation": "Correct ! MCT = QUOI (traitements métier, indépendant de l'organisation). MOT = QUI/QUAND/COMMENT (responsabilités, timing, mode d'exécution)."
-      },
-      {
-       "text": "Le MCT est plus détaillé que le MOT",
-       "correct": false,
-       "explanation": "C'est l'inverse : MCT est conceptuel, MOT est organisationnel."
-      },
-      {
-       "text": "Ils sont identiques",
-       "correct": false,
-       "explanation": "Les deux sont différents — MCT est conceptuel, MOT est organisationnel."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Systèmes dInformation & MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Systèmes dInformation & MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Systèmes dInformation & MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Systèmes dInformation & MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Le Modèle Conceptuel des Données MCD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Le Modèle Conceptuel des Données MCD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Le Modèle Conceptuel des Données MCD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Le Modèle Conceptuel des Données MCD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Le Modèle Conceptuel des Données MCD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Le Modèle Logique des Données MLD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Le Modèle Logique des Données MLD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Le Modèle Logique des Données MLD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Le Modèle Logique des Données MLD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Le Modèle Logique des Données MLD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Extensions MCD & Normalisation MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Extensions MCD & Normalisation MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Extensions MCD & Normalisation MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Extensions MCD & Normalisation MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Extensions MCD & Normalisation MERISE.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Flux dinformation MFD & DFD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Flux dinformation MFD & DFD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Flux dinformation MFD & DFD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Flux dinformation MFD & DFD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Flux dinformation MFD & DFD.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement MCT Modèle Conceptuel des Traitements.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de MCT Modèle Conceptuel des Traitements.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi MCT Modèle Conceptuel des Traitements.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de MCT Modèle Conceptuel des Traitements.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à MCT Modèle Conceptuel des Traitements.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/merise/chapitres/chapitre6.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Systèmes dInformation & MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Systèmes dInformation & MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Systèmes dInformation & MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Systèmes dInformation & MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Systèmes dInformation & MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Le Modèle Conceptuel des Données MCD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Le Modèle Conceptuel des Données MCD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Le Modèle Conceptuel des Données MCD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Le Modèle Conceptuel des Données MCD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Le Modèle Conceptuel des Données MCD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Le Modèle Logique des Données MLD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Le Modèle Logique des Données MLD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Le Modèle Logique des Données MLD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Le Modèle Logique des Données MLD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Le Modèle Logique des Données MLD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Extensions MCD & Normalisation MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Extensions MCD & Normalisation MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Extensions MCD & Normalisation MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Extensions MCD & Normalisation MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Extensions MCD & Normalisation MERISE.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Flux dinformation MFD & DFD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Flux dinformation MFD & DFD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Flux dinformation MFD & DFD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Flux dinformation MFD & DFD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Flux dinformation MFD & DFD.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement MCT Modèle Conceptuel des Traitements.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de MCT Modèle Conceptuel des Traitements.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi MCT Modèle Conceptuel des Traitements.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de MCT Modèle Conceptuel des Traitements.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à MCT Modèle Conceptuel des Traitements.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/merise/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/merise/exercices/exercices.html"
 }

@@ -10,6 +10,12 @@ const links = [
   { href: "/ligue", label: "Ligue", icon: "trophy" },
   { href: "/quetes", label: "Quêtes", icon: "spark" },
   { href: "/reviser", label: "Réviser", icon: "refresh" },
+  { href: "/erreurs", label: "Mes erreurs", icon: "alert" },
+  { href: "/badges", label: "Badges", icon: "medal" },
+  { href: "/jeux", label: "Jeux", icon: "grid" },
+  { href: "/entraide", label: "Entraide", icon: "chat" },
+  { href: "/aide", label: "Aide et support", icon: "help" },
+  { href: "/abonnement", label: "Abonnement", icon: "card" },
   { href: "/profil", label: "Profil", icon: "user" },
 ] as const;
 
@@ -40,6 +46,12 @@ function NavIcon({ name }: { name: (typeof links)[number]["icon"] }) {
     spark: <><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-2-5.8L4 11l6-2.2z" /><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z" /></>,
     refresh: <><path d="M20 7v5h-5M4 17v-5h5" /><path d="M6 9a7 7 0 0 1 12-2l2 2M4 15l2 2a7 7 0 0 0 12-2" /></>,
     user: <><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></>,
+    alert: <><circle cx="12" cy="12" r="9" /><path d="M12 7v6M12 16.5v.01" /></>,
+    medal: <><circle cx="12" cy="9" r="5" /><path d="m8.5 13-1.5 8 5-3 5 3-1.5-8" /></>,
+    grid: <><rect x="4" y="4" width="7" height="7" rx="1" /><rect x="13" y="4" width="7" height="7" rx="1" /><rect x="4" y="13" width="7" height="7" rx="1" /><rect x="13" y="13" width="7" height="7" rx="1" /></>,
+    chat: <><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.2A8 8 0 1 1 21 12z" /></>,
+    help: <><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17v.01" /></>,
+    card: <><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M3 10h18M7 15h3" /></>,
   };
 
   return <svg {...shared}>{shapes[name]}</svg>;
@@ -89,7 +101,7 @@ export default function StudentNavLinks({ layout }: { layout: "sidebar" | "mobil
               <span>Plus</span>
             </summary>
             <div className="absolute bottom-[calc(100%+12px)] right-0 w-[min(22rem,calc(100vw-1rem))] rounded-2xl border border-line bg-bg p-3 shadow-[0_16px_48px_rgba(0,0,0,.4)]">
-              <div className="grid gap-2">
+              <div className="grid max-h-[60vh] gap-2 overflow-y-auto">
                 {moreLinks.map(({ href, label, icon }) => {
                   const current = isCurrent(pathname, href);
                   return (
@@ -108,7 +120,7 @@ export default function StudentNavLinks({ layout }: { layout: "sidebar" | "mobil
                   );
                 })}
                 <Link
-                  href="/#offres"
+                  href="/abonnement"
                   className="rounded-xl border border-dashed border-line px-3.5 py-3 text-fg no-underline"
                 >
                   <span className="block text-sm font-semibold">Passe à Plus</span>
@@ -129,10 +141,10 @@ export default function StudentNavLinks({ layout }: { layout: "sidebar" | "mobil
     >
       {links.map(({ href, label, icon }, index) => {
         const current = isCurrent(pathname, href);
-        const groupTitle = index === 4;
+        const groupTitle = index === 4 || index === 7;
         return (
           <div key={href}>
-            {groupTitle && <p className="mb-2 mt-5 px-3 font-mono text-[10px] uppercase tracking-[.18em] text-muted/75">Ta progression</p>}
+            {groupTitle && <p className="mb-2 mt-5 px-3 font-mono text-[10px] uppercase tracking-[.18em] text-muted/75">{index === 4 ? "Ta progression" : "Communauté et compte"}</p>}
             <Link
               href={href}
               aria-current={current ? "page" : undefined}

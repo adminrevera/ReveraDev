@@ -4,6 +4,7 @@
 //
 // ⚠ Les PRIX ci-dessous sont des valeurs provisoires (celles de la maquette). À confirmer avant l'ouverture des paiements.
 
+import fs from 'node:fs'
 import { PrismaClient } from '@prisma/client'
 const db = new PrismaClient()
 
@@ -94,6 +95,9 @@ for (const [i, name] of TIERS.entries())
   await db.leagueTier.upsert({ where: { position: i + 1 }, update: { name }, create: { position: i + 1, slug: name.toLowerCase().replace('é', 'e'), name } })
 for (const l of LIMITS) await db.tierLimits.upsert({ where: { tier: l.tier }, update: l, create: l })
 for (const q of QUESTS) await db.questDefinition.upsert({ where: { slug: q.slug }, update: q, create: q })
+// Réserve de quêtes (data/_gamification.json) : le serveur en tire quelques-unes chaque jour.
+const POOL = JSON.parse(fs.readFileSync(new URL('../data/_gamification.json', import.meta.url), 'utf8')).quests
+for (const q of POOL) await db.questDefinition.upsert({ where: { slug: q.slug }, update: {}, create: q })
 for (const [i, [slug, name, description, category, rule]] of BADGES.entries())
   await db.badge.upsert({ where: { slug }, update: { name, description, category, rule, position: i }, create: { slug, name, description, category, rule, position: i } })
 for (const p of PLANS) await db.plan.upsert({ where: { slug: p.slug }, update: p, create: p })

@@ -45,7 +45,7 @@ export async function getStudentChapter(profile: StudentContentAccess, itemId: s
       progress: {
         where: { userId: profile.id },
         take: 1,
-        select: { readAt: true, completedAt: true, bestQuizScore: true },
+        select: { readAt: true, completedAt: true, bestQuizScore: true, partsRead: true },
       },
     },
   });

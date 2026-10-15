@@ -1,548 +1,548 @@
 {
- "slug": "ccna",
- "name": "CCNA",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Généralités sur les Réseaux Informatiques",
-   "subtitle": "Définition, historique, composantes d'un réseau et types de câblage.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est un réseau informatique<br/>\n        • Connaître l'historique des réseaux (de Morse à Internet)<br/>\n        • Identifier toutes les composantes d'un réseau<br/>\n        • Maîtriser les types de câblage réseau (paires torsadées et fibre optique)</p>\n</div>\n<h2>I.1 — Introduction</h2>\n<p>Le besoin de communiquer va emmener l'homme à inventer des systèmes de communications de plus en plus sophistiqués. Les débuts de tous les systèmes de communication étaient analogiques. Le besoin de perfectionnement de ces systèmes va donner naissance aux réseaux informatiques.</p>\n<h2>I.2 — Qu'est-ce qu'un réseau ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📖 Définitions clés</div>\n<p><strong>Réseau</strong> : ensemble d'entités (objets, personnes, ordinateurs…) interconnectées les unes avec les autres, permettant de faire circuler des éléments selon des règles bien définies.<br/><br/>\n<strong>Réseau informatique</strong> : ensemble de matériels informatiques reliés entre eux grâce à des supports de transport et échangeant des informations sous forme de données numériques (valeurs binaires : 0 et 1).<br/><br/>\n<strong>Mise en réseau</strong> : mise en œuvre des outils et des tâches permettant de relier des ordinateurs afin qu'ils puissent partager des ressources.</p>\n</div>\n<h2>I.3 — Historique des réseaux</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Époque</th><th>Innovation</th><th>Inventeur / Événement</th></tr></thead>\n<tbody>\n<tr><td>Antiquité</td><td>Chaînes de sentinelles (signaux de fumée)</td><td>Grecs, Romains, Chinois</td></tr>\n<tr><td>Fin XVIIIe</td><td>Sémaphore — 196 symboles, Paris-Lille en 9 min via 15 relais</td><td>Claude Chappe</td></tr>\n<tr><td>1837</td><td>Télégraphe + code binaire (Morse)</td><td>Joseph Henry &amp; Samuel Morse</td></tr>\n<tr><td>1876</td><td>Téléphone</td><td>Graham Bell</td></tr>\n<tr><td>1948</td><td>Théorie de l'information, concept de \"bit\"</td><td>Claude Shannon (Bell Labs)</td></tr>\n<tr><td>1961</td><td>Concept de routeur et de datagramme</td><td>Leonard Kleinrock</td></tr>\n<tr><td>1969</td><td>ARPANET — 1er réseau à commutation de paquets (4 labos)</td><td>Lawrence Roberts</td></tr>\n<tr><td>1983</td><td>Naissance d'Internet — ARPANET bascule vers TCP/IP</td><td>Vinton Cerf &amp; Robert Kahn</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 À retenir</div>\n<p>Internet est né en <strong>1983</strong> quand ARPANET a été basculé vers les protocoles <strong>TCP et IP</strong> (inventés par Vinton Cerf et Robert Kahn) pour être relié au réseau académique CSNET. Le terme vient de <em>internetting</em> = interconnecter des réseaux.</p>\n</div>\n<h2>I.4 — Réseau informatique</h2>\n<p>En informatique, un réseau désigne un <strong>ensemble d'ordinateurs reliés entre eux</strong> (deux ordinateurs et plus) qui vont pouvoir échanger des informations et partager des ressources (imprimantes, fichiers, etc.).</p>\n<h2>I.5 — Les différentes composantes d'un réseau informatique</h2>\n<p>Dans la constitution d'un réseau informatique, du plus petit au plus complexe, nous avons :</p>\n<h3>I.5.1 — Périphérique terminal (Hôte)</h3>\n<p>L'hôte situé à l'extrémité d'une communication. Exemples : postes clients (PC, mobiles, tablettes, objets IoT) et serveurs (situés dans des centres de données ou dans le \"nuage\").</p>\n<h3>I.5.2 — Routeur</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔀 Routeur — Couche 3 (OSI)</div>\n<p>Le routeur est le matériel de <strong>couche 3 du modèle OSI (L3)</strong> qui :<br/>\n        • Interconnecte des <strong>domaines réseaux IP différents</strong><br/>\n        • Transfère le trafic qui ne lui est pas spécifiquement destiné<br/>\n        • Transfère le trafic IP grâce à sa <strong>table de routage</strong> vers les bonnes destinations<br/>\n        Chez Cisco, il peut aussi embarquer des services de pare-feu, IDS/IPS et virtualisation.</p>\n</div>\n<h3>I.5.3 — Commutateur de couche 2 (Switch L2)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔗 Switch L2 — Couche 2 (OSI)</div>\n<p>Le switch L2 :<br/>\n        • Interconnecte les périphériques terminaux du <strong>LAN pour un transfert local rapide</strong><br/>\n        • Transfère le trafic en fonction de l'<strong>adresse MAC</strong> de destination (table CAM/TCAM)<br/>\n        • Décision au niveau matériel grâce à des puces <strong>ASIC</strong><br/>\n        • Trafic <strong>unicast</strong> → bon port de sortie uniquement<br/>\n        • Trafic <strong>broadcast et multicast</strong> → tous les ports sauf le port d'origine<br/>\n        Se place dans la couche <strong>\"Access\"</strong> du modèle réseau.</p>\n</div>\n<h3>I.5.4 — Commutateur de couche 3 (Switch L3)</h3>\n<p>Un switch L3 est un commutateur d'entreprise capable de remplir des <strong>tâches de routage et des services avancés</strong>. C'est un véritable routeur dédié au réseau LAN d'entreprise, avec des capacités améliorées en CPU/RAM et en nombre d'interfaces.</p>\n<h3>I.5.5 — Ponts, Concentrateurs et Répéteurs</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Équipement</th><th>Rôle</th><th>Statut</th></tr></thead>\n<tbody>\n<tr><td><strong>Pont (Bridge)</strong></td><td>Connecte deux LAN utilisant le même protocole. Examine chaque message et le transmet ou non selon la destination.</td><td>Obsolète (sauf Wi-Fi)</td></tr>\n<tr><td><strong>Concentrateur (Hub)</strong></td><td>Concentre les connexions, le trafic sort par <strong>tous ses ports</strong> sans décision. Répéteur multi-ports.</td><td>Obsolète — remplacé par switch</td></tr>\n<tr><td><strong>Répéteur (Repeater)</strong></td><td>Régénère un signal entre deux nœuds pour <strong>étendre la distance</strong> de câblage.</td><td>Obsolète</td></tr>\n</tbody>\n</table></div>\n<h3>I.5.6 — Matériels sans-fil</h3>\n<p><strong>Point d'Accès Wi-Fi (AP)</strong> : crée un réseau local sans fil (WLAN). Se connecte à un routeur/switch par câble Ethernet et retransmet le signal Wi-Fi.</p>\n<p><strong>Contrôleur Wi-Fi (WLC — Wireless LAN Controller)</strong> : centralise le contrôle de tous les points d'accès. Les AP deviennent des \"<strong>AP légers</strong>\" et ne fonctionnent plus de façon autonome.</p>\n<h3>I.5.7 — Pare-feu (Firewall)</h3>\n<p>Système de sécurité qui <strong>limite le trafic Internet</strong> entrant, sortant ou à l'intérieur d'un réseau privé. Bloque ou autorise sélectivement les paquets selon des règles définies. Agit comme une frontière entre réseau de confiance et Internet.</p>\n<h3>I.5.8 — IDS / IPS</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Système</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>IDS</strong> (Intrusion Detection System)</td><td>Détecte les intrusions et activités anormales. Déclenche une alerte. Ne bloque pas automatiquement.</td></tr>\n<tr><td><strong>IPS</strong> (Intrusion Prevention System)</td><td>Évolution de l'IDS. Détecte ET réagit automatiquement pour <strong>bloquer</strong> les menaces connues ou inconnues.</td></tr>\n</tbody>\n</table></div>\n<h3>I.5.9 — Supports de transmission</h3>\n<p>Il existe deux types de supports de communication : les <strong>câbles réseaux</strong> (cuivre ou fibre optique) et le <strong>sans-fil</strong> (Wi-Fi, Bluetooth, infrarouges, micro-ondes).</p>\n<h2>I.6 — Différents types de câblage réseau Ethernet</h2>\n<p>Il existe deux types de câblage réseau Ethernet : <strong>câblage par paires torsadées</strong> et <strong>câblage en fibre optique</strong>.</p>\n<h3>I.6.1 — Câblage par paires torsadées</h3>\n<p>La paire torsadée est constituée de deux conducteurs enroulés en hélice l'un autour de l'autre. La torsion minimise les <strong>interférences électromagnétiques (EMI)</strong>. C'est le support de transmission le plus répandu.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Les 5 types de paires torsadées</div>\n<p><strong>U/UTP</strong> — Non blindée (UTP) : usage domestique, téléphonie<br/>\n<strong>F/UTP</strong> — Écrantée (FTP) : blindage aluminium global entre gaine et paires<br/>\n<strong>U/FTP</strong> — Blindée (STP) : chaque paire blindée individuellement (Token Ring)<br/>\n<strong>SF/UTP</strong> — Écrantée et blindée (SFTP) : double écran commun<br/>\n<strong>S/FTP</strong> — Super blindée (SSTP) : STP + écran commun supplémentaire</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Catégorie</th><th>Classe</th><th>Bande passante</th><th>Débit</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Cat 3</strong></td><td>C</td><td>16 MHz</td><td>100 Mbps</td><td>Téléphonie, Fast Ethernet (en cours d'abandon)</td></tr>\n<tr><td><strong>Cat 5</strong></td><td>D</td><td>100 MHz</td><td>1 Gbps</td><td>100BASE-T, 1000BASE-T</td></tr>\n<tr><td><strong>Cat 5e</strong></td><td>D</td><td>125 MHz</td><td>1 Gbps</td><td>Standard courant (TIA/EIA-568B)</td></tr>\n<tr><td><strong>Cat 6</strong></td><td>E</td><td>250 MHz</td><td>1 Gbps / 10G sur 55m</td><td>Haute performance</td></tr>\n<tr><td><strong>Cat 6a</strong></td><td>EA</td><td>500 MHz</td><td>10 Gbps</td><td>10GBASE-T, PoE/PoE+</td></tr>\n<tr><td><strong>Cat 7</strong></td><td>—</td><td>600 MHz</td><td>10 Gbps / 100m</td><td>Blindage individuel et collectif</td></tr>\n</tbody>\n</table></div>\n<h3>I.6.2 — Câblage en Fibre Optique</h3>\n<p>La fibre optique est un fil en <strong>verre ou en plastique très fin</strong> qui conduit la lumière. Elle offre un débit d'informations nettement supérieur aux paires torsadées et est insensible aux interférences électromagnétiques.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Principe de fonctionnement</div>\n<p>La transmission repose sur le principe de <strong>réfraction de la lumière</strong>. Un laser transforme le signal électrique en signal lumineux. La lumière se propage dans le cœur de la fibre par <strong>réflexion totale interne</strong> grâce à la différence d'indice de réfraction entre cœur et gaine. Une cellule photoélectrique reconvertit ensuite l'onde lumineuse en signal électrique.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de fibre</th><th>Caractéristiques</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Fibre à saut d'indice</strong></td><td>Grande section du cœur → grande dispersion des signaux</td><td>Distances courtes</td></tr>\n<tr><td><strong>Fibre à gradient d'indice</strong></td><td>Cœur à couches successives d'indices proches → réduit la dispersion. BP : 200–1500 MHz</td><td>Réseaux campus</td></tr>\n<tr><td><strong>Fibre monomode</strong></td><td>Cœur très fin (10 µm) → dispersion quasi nulle → BP &gt; 10 GHz/km. Utilise des diodes laser.</td><td>Longues distances (&gt;10 km)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 :</strong> Le <strong>hub</strong> envoie le trafic sur <strong>tous ses ports</strong> sans décision — il n'est plus fabriqué. Le <strong>switch</strong> envoie le trafic seulement sur le bon port (unicast).<br/>\n<strong>Piège 2 :</strong> IDS = <em>détecte</em> uniquement. IPS = <em>détecte ET réagit</em> automatiquement.<br/>\n<strong>Piège 3 :</strong> Internet est né en <strong>1983</strong>, pas en 1969 (1969 = ARPANET seulement).<br/>\n<strong>Piège 4 :</strong> La fibre monomode est pour les <strong>longues distances</strong> (laser, cœur fin). La fibre multimode (gradient/saut d'indice) est pour les <strong>courtes distances</strong>.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre I</h3>\n<ul>\n<li>Réseau = ensemble d'entités interconnectées échangeant des données numériques (0 et 1)</li>\n<li>Internet né en <strong>1983</strong> (ARPANET → TCP/IP) — inventeurs : Vinton Cerf &amp; Robert Kahn</li>\n<li>Routeur (L3, inter-réseaux) · Switch L2 (MAC, LAN, ASIC) · Hub (L1, obsolète, trafic sur tous ports)</li>\n<li>IDS = détecte · IPS = détecte + bloque · Pare-feu = filtre le trafic entrant/sortant</li>\n<li>Câble UTP : Cat 5e (1G) · Cat 6a (10G/100m) · Blindages : UTP → FTP → STP → SFTP → SSTP</li>\n<li>Fibre : monomode (longues distances, laser, 10 µm) · multimode (courtes distances, LED)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "ccna",
+  "name": "CCNA",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Quelle est la différence principale entre un hub et un switch ?",
-     "options": [
-      {
-       "text": "Le hub est plus intelligent que le switch",
-       "correct": false,
-       "explanation": "Non, le hub est plus simple et moins intelligent que le switch."
-      },
-      {
-       "text": "Le hub envoie le trafic sur tous ses ports, le switch sur le bon port uniquement",
-       "correct": true,
-       "explanation": "Correct ! Le hub répète le trafic sur TOUS ses ports sans décision. Le switch analyse l'adresse MAC destination et envoie le trafic unicast uniquement sur le bon port. C'est pourquoi le switch a remplacé le hub."
-      },
-      {
-       "text": "Le switch opère à la couche 1, le hub à la couche 2",
-       "correct": false,
-       "explanation": "C'est l'inverse : le switch opère à la couche 2 (MAC), le hub à la couche 1 (physique)."
-      },
-      {
-       "text": "Le hub est réservé aux WAN",
-       "correct": false,
-       "explanation": "Les deux peuvent être utilisés en LAN, mais le hub est obsolète."
-      }
-     ]
+      "number": 1,
+      "title": "Généralités sur les Réseaux Informatiques",
+      "subtitle": "Définition, historique, composantes d'un réseau et types de câblage.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre ce qu'est un réseau informatique</li><li>Connaître l'historique des réseaux (de Morse à Internet)</li><li>Identifier toutes les composantes d'un réseau</li><li>Maîtriser les types de câblage réseau (paires torsadées et fibre optique)</li></ul></div>\n<h2>I.1 — Introduction</h2>\n<p>Le besoin de communiquer va emmener l'homme à inventer des systèmes de communications de plus en plus sophistiqués. Les débuts de tous les systèmes de communication étaient analogiques. Le besoin de perfectionnement de ces systèmes va donner naissance aux réseaux informatiques.</p>\n<h2>I.2 — Qu'est-ce qu'un réseau ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Définitions clés</div>\n<p><strong>Réseau</strong> : ensemble d'entités (objets, personnes, ordinateurs…) interconnectées les unes avec les autres, permettant de faire circuler des éléments selon des règles bien définies.<br/><br/>\n<strong>Réseau informatique</strong> : ensemble de matériels informatiques reliés entre eux grâce à des supports de transport et échangeant des informations sous forme de données numériques (valeurs binaires : 0 et 1).<br/><br/>\n<strong>Mise en réseau</strong> : mise en œuvre des outils et des tâches permettant de relier des ordinateurs afin qu'ils puissent partager des ressources.</p></div>\n<h2>I.3 — Historique des réseaux</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Époque</th><th>Innovation</th><th>Inventeur / Événement</th></tr></thead>\n<tbody>\n<tr><td>Antiquité</td><td>Chaînes de sentinelles (signaux de fumée)</td><td>Grecs, Romains, Chinois</td></tr>\n<tr><td>Fin XVIIIe</td><td>Sémaphore — 196 symboles, Paris-Lille en 9 min via 15 relais</td><td>Claude Chappe</td></tr>\n<tr><td>1837</td><td>Télégraphe + code binaire (Morse)</td><td>Joseph Henry &amp; Samuel Morse</td></tr>\n<tr><td>1876</td><td>Téléphone</td><td>Graham Bell</td></tr>\n<tr><td>1948</td><td>Théorie de l'information, concept de \"bit\"</td><td>Claude Shannon (Bell Labs)</td></tr>\n<tr><td>1961</td><td>Concept de routeur et de datagramme</td><td>Leonard Kleinrock</td></tr>\n<tr><td>1969</td><td>ARPANET — 1er réseau à commutation de paquets (4 labos)</td><td>Lawrence Roberts</td></tr>\n<tr><td>1983</td><td>Naissance d'Internet — ARPANET bascule vers TCP/IP</td><td>Vinton Cerf &amp; Robert Kahn</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">À retenir</div>\n<p>Internet est né en <strong>1983</strong> quand ARPANET a été basculé vers les protocoles <strong>TCP et IP</strong> (inventés par Vinton Cerf et Robert Kahn) pour être relié au réseau académique CSNET. Le terme vient de <em>internetting</em> = interconnecter des réseaux.</p></div>\n<h2>I.4 — Réseau informatique</h2>\n<p>En informatique, un réseau désigne un <strong>ensemble d'ordinateurs reliés entre eux</strong> (deux ordinateurs et plus) qui vont pouvoir échanger des informations et partager des ressources (imprimantes, fichiers, etc.).</p>\n<h2>I.5 — Les différentes composantes d'un réseau informatique</h2>\n<p>Dans la constitution d'un réseau informatique, du plus petit au plus complexe, nous avons :</p>\n<h3>I.5.1 — Périphérique terminal (Hôte)</h3>\n<p>L'hôte situé à l'extrémité d'une communication. Exemples : postes clients (PC, mobiles, tablettes, objets IoT) et serveurs (situés dans des centres de données ou dans le \"nuage\").</p>\n<h3>I.5.2 — Routeur</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Routeur — Couche 3 (OSI)</div>\n<p>Le routeur est le matériel de <strong>couche 3 du modèle OSI (L3)</strong> qui :<br/>\n        • Interconnecte des <strong>domaines réseaux IP différents</strong><br/>\n        • Transfère le trafic qui ne lui est pas spécifiquement destiné<br/>\n        • Transfère le trafic IP grâce à sa <strong>table de routage</strong> vers les bonnes destinations<br/>\n        Chez Cisco, il peut aussi embarquer des services de pare-feu, IDS/IPS et virtualisation.</p></div>\n<h3>I.5.3 — Commutateur de couche 2 (Switch L2)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Switch L2 — Couche 2 (OSI)</div>\n<p>Le switch L2 :<br/>\n        • Interconnecte les périphériques terminaux du <strong>LAN pour un transfert local rapide</strong><br/>\n        • Transfère le trafic en fonction de l'<strong>adresse MAC</strong> de destination (table CAM/TCAM)<br/>\n        • Décision au niveau matériel grâce à des puces <strong>ASIC</strong><br/>\n        • Trafic <strong>unicast</strong> → bon port de sortie uniquement<br/>\n        • Trafic <strong>broadcast et multicast</strong> → tous les ports sauf le port d'origine<br/>\n        Se place dans la couche <strong>\"Access\"</strong> du modèle réseau.</p></div>\n<h3>I.5.4 — Commutateur de couche 3 (Switch L3)</h3>\n<p>Un switch L3 est un commutateur d'entreprise capable de remplir des <strong>tâches de routage et des services avancés</strong>. C'est un véritable routeur dédié au réseau LAN d'entreprise, avec des capacités améliorées en CPU/RAM et en nombre d'interfaces.</p>\n<h3>I.5.5 — Ponts, Concentrateurs et Répéteurs</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Équipement</th><th>Rôle</th><th>Statut</th></tr></thead>\n<tbody>\n<tr><td><strong>Pont (Bridge)</strong></td><td>Connecte deux LAN utilisant le même protocole. Examine chaque message et le transmet ou non selon la destination.</td><td>Obsolète (sauf Wi-Fi)</td></tr>\n<tr><td><strong>Concentrateur (Hub)</strong></td><td>Concentre les connexions, le trafic sort par <strong>tous ses ports</strong> sans décision. Répéteur multi-ports.</td><td>Obsolète — remplacé par switch</td></tr>\n<tr><td><strong>Répéteur (Repeater)</strong></td><td>Régénère un signal entre deux nœuds pour <strong>étendre la distance</strong> de câblage.</td><td>Obsolète</td></tr>\n</tbody>\n</table></div>\n<h3>I.5.6 — Matériels sans-fil</h3>\n<p><strong>Point d'Accès Wi-Fi (AP)</strong> : crée un réseau local sans fil (WLAN). Se connecte à un routeur/switch par câble Ethernet et retransmet le signal Wi-Fi.</p>\n<p><strong>Contrôleur Wi-Fi (WLC — Wireless LAN Controller)</strong> : centralise le contrôle de tous les points d'accès. Les AP deviennent des \"<strong>AP légers</strong>\" et ne fonctionnent plus de façon autonome.</p>\n<h3>I.5.7 — Pare-feu (Firewall)</h3>\n<p>Système de sécurité qui <strong>limite le trafic Internet</strong> entrant, sortant ou à l'intérieur d'un réseau privé. Bloque ou autorise sélectivement les paquets selon des règles définies. Agit comme une frontière entre réseau de confiance et Internet.</p>\n<h3>I.5.8 — IDS / IPS</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Système</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>IDS</strong> (Intrusion Detection System)</td><td>Détecte les intrusions et activités anormales. Déclenche une alerte. Ne bloque pas automatiquement.</td></tr>\n<tr><td><strong>IPS</strong> (Intrusion Prevention System)</td><td>Évolution de l'IDS. Détecte ET réagit automatiquement pour <strong>bloquer</strong> les menaces connues ou inconnues.</td></tr>\n</tbody>\n</table></div>\n<h3>I.5.9 — Supports de transmission</h3>\n<p>Il existe deux types de supports de communication : les <strong>câbles réseaux</strong> (cuivre ou fibre optique) et le <strong>sans-fil</strong> (Wi-Fi, Bluetooth, infrarouges, micro-ondes).</p>\n<h2>I.6 — Différents types de câblage réseau Ethernet</h2>\n<p>Il existe deux types de câblage réseau Ethernet : <strong>câblage par paires torsadées</strong> et <strong>câblage en fibre optique</strong>.</p>\n<h3>I.6.1 — Câblage par paires torsadées</h3>\n<p>La paire torsadée est constituée de deux conducteurs enroulés en hélice l'un autour de l'autre. La torsion minimise les <strong>interférences électromagnétiques (EMI)</strong>. C'est le support de transmission le plus répandu.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Les 5 types de paires torsadées</div>\n<p><strong>U/UTP</strong> — Non blindée (UTP) : usage domestique, téléphonie<br/>\n<strong>F/UTP</strong> — Écrantée (FTP) : blindage aluminium global entre gaine et paires<br/>\n<strong>U/FTP</strong> — Blindée (STP) : chaque paire blindée individuellement (Token Ring)<br/>\n<strong>SF/UTP</strong> — Écrantée et blindée (SFTP) : double écran commun<br/>\n<strong>S/FTP</strong> — Super blindée (SSTP) : STP + écran commun supplémentaire</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Catégorie</th><th>Classe</th><th>Bande passante</th><th>Débit</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Cat 3</strong></td><td>C</td><td>16 MHz</td><td>100 Mbps</td><td>Téléphonie, Fast Ethernet (en cours d'abandon)</td></tr>\n<tr><td><strong>Cat 5</strong></td><td>D</td><td>100 MHz</td><td>1 Gbps</td><td>100BASE-T, 1000BASE-T</td></tr>\n<tr><td><strong>Cat 5e</strong></td><td>D</td><td>125 MHz</td><td>1 Gbps</td><td>Standard courant (TIA/EIA-568B)</td></tr>\n<tr><td><strong>Cat 6</strong></td><td>E</td><td>250 MHz</td><td>1 Gbps / 10G sur 55m</td><td>Haute performance</td></tr>\n<tr><td><strong>Cat 6a</strong></td><td>EA</td><td>500 MHz</td><td>10 Gbps</td><td>10GBASE-T, PoE/PoE+</td></tr>\n<tr><td><strong>Cat 7</strong></td><td>—</td><td>600 MHz</td><td>10 Gbps / 100m</td><td>Blindage individuel et collectif</td></tr>\n</tbody>\n</table></div>\n<h3>I.6.2 — Câblage en Fibre Optique</h3>\n<p>La fibre optique est un fil en <strong>verre ou en plastique très fin</strong> qui conduit la lumière. Elle offre un débit d'informations nettement supérieur aux paires torsadées et est insensible aux interférences électromagnétiques.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Principe de fonctionnement</div>\n<p>La transmission repose sur le principe de <strong>réfraction de la lumière</strong>. Un laser transforme le signal électrique en signal lumineux. La lumière se propage dans le cœur de la fibre par <strong>réflexion totale interne</strong> grâce à la différence d'indice de réfraction entre cœur et gaine. Une cellule photoélectrique reconvertit ensuite l'onde lumineuse en signal électrique.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de fibre</th><th>Caractéristiques</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Fibre à saut d'indice</strong></td><td>Grande section du cœur → grande dispersion des signaux</td><td>Distances courtes</td></tr>\n<tr><td><strong>Fibre à gradient d'indice</strong></td><td>Cœur à couches successives d'indices proches → réduit la dispersion. BP : 200–1500 MHz</td><td>Réseaux campus</td></tr>\n<tr><td><strong>Fibre monomode</strong></td><td>Cœur très fin (10 µm) → dispersion quasi nulle → BP &gt; 10 GHz/km. Utilise des diodes laser.</td><td>Longues distances (&gt;10 km)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 :</strong> Le <strong>hub</strong> envoie le trafic sur <strong>tous ses ports</strong> sans décision — il n'est plus fabriqué. Le <strong>switch</strong> envoie le trafic seulement sur le bon port (unicast).<br/>\n<strong>Piège 2 :</strong> IDS = <em>détecte</em> uniquement. IPS = <em>détecte ET réagit</em> automatiquement.<br/>\n<strong>Piège 3 :</strong> Internet est né en <strong>1983</strong>, pas en 1969 (1969 = ARPANET seulement).<br/>\n<strong>Piège 4 :</strong> La fibre monomode est pour les <strong>longues distances</strong> (laser, cœur fin). La fibre multimode (gradient/saut d'indice) est pour les <strong>courtes distances</strong>.</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre I</h3>\n<ul>\n<li>Réseau = ensemble d'entités interconnectées échangeant des données numériques (0 et 1)</li>\n<li>Internet né en <strong>1983</strong> (ARPANET → TCP/IP) — inventeurs : Vinton Cerf &amp; Robert Kahn</li>\n<li>Routeur (L3, inter-réseaux) · Switch L2 (MAC, LAN, ASIC) · Hub (L1, obsolète, trafic sur tous ports)</li>\n<li>IDS = détecte · IPS = détecte + bloque · Pare-feu = filtre le trafic entrant/sortant</li>\n<li>Câble UTP : Cat 5e (1G) · Cat 6a (10G/100m) · Blindages : UTP → FTP → STP → SFTP → SSTP</li>\n<li>Fibre : monomode (longues distances, laser, 10 µm) · multimode (courtes distances, LED)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence principale entre un hub et un switch ?",
+          "options": [
+            {
+              "text": "Le hub est plus intelligent que le switch",
+              "correct": false,
+              "explanation": "Non, le hub est plus simple et moins intelligent que le switch."
+            },
+            {
+              "text": "Le hub envoie le trafic sur tous ses ports, le switch sur le bon port uniquement",
+              "correct": true,
+              "explanation": "Correct ! Le hub répète le trafic sur TOUS ses ports sans décision. Le switch analyse l'adresse MAC destination et envoie le trafic unicast uniquement sur le bon port. C'est pourquoi le switch a remplacé le hub."
+            },
+            {
+              "text": "Le switch opère à la couche 1, le hub à la couche 2",
+              "correct": false,
+              "explanation": "C'est l'inverse : le switch opère à la couche 2 (MAC), le hub à la couche 1 (physique)."
+            },
+            {
+              "text": "Le hub est réservé aux WAN",
+              "correct": false,
+              "explanation": "Les deux peuvent être utilisés en LAN, mais le hub est obsolète."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "En quelle année Internet est-il né (basculement d'ARPANET vers TCP/IP) ?",
+          "options": [
+            {
+              "text": "1969",
+              "correct": false,
+              "explanation": "1969 est l'année de création d'ARPANET, le premier réseau à commutation de paquets — mais ce n'est pas encore Internet."
+            },
+            {
+              "text": "1977",
+              "correct": false,
+              "explanation": "1977 correspond aux premières expériences d'interconnexion de réseaux (ARPANET, Packet Radio Net, SATNET)."
+            },
+            {
+              "text": "1983",
+              "correct": true,
+              "explanation": "Correct ! Internet est né en 1983 quand ARPANET a été basculé vers les protocoles TCP et IP (inventés par Vinton Cerf et Robert Kahn) pour être relié au réseau CSNET."
+            },
+            {
+              "text": "1990",
+              "correct": false,
+              "explanation": "1990 correspond approximativement à l'invention du Web (WWW) par Tim Berners-Lee, pas à la naissance d'Internet."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle catégorie de câble UTP permet un débit de 10 Gbps sur 100m ?",
+          "options": [
+            {
+              "text": "Catégorie 5e",
+              "correct": false,
+              "explanation": "Cat 5e permet 1 Gbps sur 100m — pas 10 Gbps."
+            },
+            {
+              "text": "Catégorie 6",
+              "correct": false,
+              "explanation": "Cat 6 permet 10 Gbps mais seulement sur 55m, pas 100m."
+            },
+            {
+              "text": "Catégorie 6a",
+              "correct": true,
+              "explanation": "Correct ! La catégorie 6a (classe EA, 500 MHz) est conçue pour des vitesses de 10 Gbps sur 100m. Elle supporte aussi le PoE et PoE+."
+            },
+            {
+              "text": "Catégorie 3",
+              "correct": false,
+              "explanation": "Cat 3 permet seulement 100 Mbps — elle est en cours d'abandon pour les données."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel équipement réseau centralise le contrôle de plusieurs points d'accès Wi-Fi ?",
+          "options": [
+            {
+              "text": "Point d'Accès (AP)",
+              "correct": false,
+              "explanation": "Un point d'accès (AP) crée un réseau sans fil local — il n'en contrôle pas d'autres."
+            },
+            {
+              "text": "Routeur",
+              "correct": false,
+              "explanation": "Le routeur gère le routage entre réseaux, pas la gestion centralisée des AP."
+            },
+            {
+              "text": "Contrôleur Wi-Fi (WLC)",
+              "correct": true,
+              "explanation": "Correct ! Le Contrôleur Wi-Fi (WLC — Wireless LAN Controller) centralise le contrôle de tous les points d'accès. Les AP deviennent alors des AP légers qui ne fonctionnent plus de façon autonome."
+            },
+            {
+              "text": "Pare-feu",
+              "correct": false,
+              "explanation": "Le pare-feu filtre le trafic selon des règles de sécurité — il ne gère pas les AP."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel type de fibre optique est utilisé pour les longues distances (> 10 km) ?",
+          "options": [
+            {
+              "text": "Fibre à saut d'indice",
+              "correct": false,
+              "explanation": "La fibre à saut d'indice a une grande section de cœur qui provoque une grande dispersion — utilisée sur de courtes distances."
+            },
+            {
+              "text": "Fibre à gradient d'indice",
+              "correct": false,
+              "explanation": "La fibre à gradient d'indice (multimode) est utilisée pour des réseaux campus, pas pour des dizaines de km."
+            },
+            {
+              "text": "Fibre monomode",
+              "correct": true,
+              "explanation": "Correct ! La fibre monomode a un cœur très fin (~10 µm), une dispersion quasi nulle et une bande passante > 10 GHz/km. Elle utilise des diodes laser et est réservée aux longues distances (plusieurs dizaines de km)."
+            },
+            {
+              "text": "Fibre multimode",
+              "correct": false,
+              "explanation": "La fibre multimode englobe la fibre à saut d'indice et à gradient d'indice — utilisée pour des distances plus courtes."
+            }
+          ]
+        }
+      ],
+      "source": "ccna/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "En quelle année Internet est-il né (basculement d'ARPANET vers TCP/IP) ?",
-     "options": [
-      {
-       "text": "1969",
-       "correct": false,
-       "explanation": "1969 est l'année de création d'ARPANET, le premier réseau à commutation de paquets — mais ce n'est pas encore Internet."
-      },
-      {
-       "text": "1977",
-       "correct": false,
-       "explanation": "1977 correspond aux premières expériences d'interconnexion de réseaux (ARPANET, Packet Radio Net, SATNET)."
-      },
-      {
-       "text": "1983",
-       "correct": true,
-       "explanation": "Correct ! Internet est né en 1983 quand ARPANET a été basculé vers les protocoles TCP et IP (inventés par Vinton Cerf et Robert Kahn) pour être relié au réseau CSNET."
-      },
-      {
-       "text": "1990",
-       "correct": false,
-       "explanation": "1990 correspond approximativement à l'invention du Web (WWW) par Tim Berners-Lee, pas à la naissance d'Internet."
-      }
-     ]
+      "number": 2,
+      "title": "Introduction aux Modèles TCP/IP et OSI",
+      "subtitle": "Comprendre les protocoles qui régissent les réseaux : TCP/IP (4 et 5 couches) et OSI (7 couches).",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre la notion de protocole en informatique</li><li>Connaître l'historique et la différence entre TCP/IP et OSI</li><li>Maîtriser le modèle TCP/IP à 4 couches et à 5 couches</li><li>Connaître les 7 couches du modèle OSI et le rôle de chacune</li></ul></div>\n<h2>II.1 — Introduction</h2>\n<p>En informatique, tout est régi par les <strong>protocoles</strong> : un ensemble de règles définies qui régissent le bon fonctionnement des systèmes informatiques. Pour qu'un réseau informatique fonctionne correctement, des protocoles sont définis. Deux modèles dominent :</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Les deux modèles fondamentaux</div>\n<p><strong>TCP/IP</strong> : modèle opérationnel, utilisé dans la réalité d'Internet (4 ou 5 couches)<br/>\n<strong>OSI</strong> : modèle de référence théorique développé par l'ISO (7 couches)</p></div>\n<h2>II.2 — Historique</h2>\n<p>Les fournisseurs créaient au départ des <strong>modèles propriétaires</strong> incompatibles entre eux. L'<strong>ISO</strong> (Organisation internationale de normalisation) a commencé dès la fin des années 1970 à développer le modèle <strong>OSI</strong> (Open Systems Interconnection), pour normaliser les protocoles et permettre la communication entre tous les ordinateurs.</p>\n<p>En parallèle, un effort moins formel financé par le <strong>DoD américain</strong> (Department of Defense) a produit <strong>TCP/IP</strong>. Dans les années 1990, les deux coexistaient. À la fin des années 1990, <strong>TCP/IP est devenu le standard mondial</strong> et OSI a été abandonné en pratique — mais reste le modèle de référence pour comprendre les réseaux.</p>\n<h2>II.3 — Modèle TCP/IP</h2>\n<p>Un modèle de réseau est comme le plan architectural d'une maison : il garantit la bonne structure et assure les espaces cachés pour les différents services.</p>\n<p>Il existe <strong>deux versions du modèle TCP/IP</strong> : à 4 couches et à 5 couches.</p>\n<h3>II.3.1 — Modèle TCP/IP à 4 couches</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Modèle TCP/IP 4 couches</div>\n<pre>┌─────────────────────────────────────────────────────┐\n│             COUCHE APPLICATION                      │\n│  Interface avec l'utilisateur                       │\n│  Protocoles : HTTP, DNS, DHCP, FTP…                 │\n│  S'exécute sur les machines hôtes                   │\n├─────────────────────────────────────────────────────┤\n│             COUCHE TRANSPORT                        │\n│  Dialogue entre hôtes terminaux                     │\n│  TCP (transport fiable) ou UDP (sans fiabilité)     │\n│  Routeurs NAT et pare-feux filtrent ici             │\n├─────────────────────────────────────────────────────┤\n│             COUCHE INTERNET                         │\n│  Meilleurs chemins via adresses IPv4 ou IPv6        │\n│  Les routeurs transfèrent le trafic IP              │\n├─────────────────────────────────────────────────────┤\n│          COUCHE ACCÈS AU RÉSEAU                     │\n│  TCP/IP ne s'en occupe pas directement              │\n│  Organise le flux binaire, identifie les hôtes      │\n│  Place les bits sur les supports physiques          │\n└─────────────────────────────────────────────────────┘</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo TCP/IP 4 couches — A.T.I.A.</div>\n<p><strong>A</strong>pplication · <strong>T</strong>ransport · <strong>I</strong>nternet · <strong>A</strong>ccès au Réseau<br/>\n        Plus on monte dans les couches, plus on quitte les aspects matériels et on se rapproche des problématiques logicielles.</p></div>\n<h3>II.3.2 — Modèle TCP/IP à 5 couches</h3>\n<p>Identique au modèle 4 couches mais la <strong>couche Accès au Réseau est éclatée en deux</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Couche</th><th>Nom</th><th>Description</th><th>Équipements</th></tr></thead>\n<tbody>\n<tr><td>5</td><td><strong>Application</strong></td><td>Interface utilisateur, protocoles applicatifs</td><td>Applications</td></tr>\n<tr><td>4</td><td><strong>Transport</strong></td><td>Dialogue hôte-hôte, TCP/UDP</td><td>Firewall</td></tr>\n<tr><td>3</td><td><strong>Réseau</strong></td><td>Adressage IP, routage</td><td>Routeur</td></tr>\n<tr><td>2</td><td><strong>Liaison de données</strong></td><td>Transfert local, Ethernet, détection d'erreurs. Ajoute en-tête + queue → paquet devient <strong>trame</strong></td><td>Switch</td></tr>\n<tr><td>1</td><td><strong>Physique</strong></td><td>Transmission des bits (0/1) sur les supports physiques</td><td>Hub, câbles, fibre</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Modèle d'actualité</div>\n<p>Le modèle TCP/IP à <strong>5 couches est le modèle d'actualité</strong> selon le cours. La couche Accès Réseau du modèle 4 couches est divisée en Liaison de données (L2) et Physique (L1).</p></div>\n<h2>II.4 — Modèle OSI</h2>\n<p>L'<strong>ISO</strong> a développé le modèle <strong>OSI (Open Systems Interconnection)</strong> pour normaliser l'interconnexion de systèmes. Il est organisé en <strong>7 couches distinctes</strong> portant chacune un numéro, des données les plus abstraites (L7) aux données physiques (L1).</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo OSI — De L1 (bas) à L7 (haut)</div>\n<p><strong>P</strong>hysique · <strong>L</strong>iaison · <strong>R</strong>éseau · <strong>T</strong>ransport · <strong>S</strong>ession · <strong>P</strong>résentation · <strong>A</strong>pplication<br/>\n        Phrase mémo : <em>« Pour Le Réseau, Tout Se Passe Automatiquement »</em></p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>N°</th><th>Couche OSI</th><th>Rôle détaillé</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>7</strong></td><td><strong>Application</strong></td><td>Point d'accès aux services réseau (messagerie, transfert de fichiers, P2P…). Lien entre l'utilisateur et la machine. La plus proche de l'utilisateur final.</td><td>HTTP, FTP, SMTP, DNS</td></tr>\n<tr><td><strong>6</strong></td><td><strong>Présentation</strong></td><td>Gère le codage et décodage des données (ASCII, Unicode, HTML…). Convertit les données pour les rendre exploitables par l'application. Encode pour l'interopérabilité entre systèmes.</td><td>ASCII, SSL/TLS, JPEG, MPEG</td></tr>\n<tr><td><strong>5</strong></td><td><strong>Session</strong></td><td>Organise la méthode de dialogue. Ouvre, gère et ferme les sessions entre applications. Assure la synchronisation de la transmission.</td><td>RPC (Remote Procedure Call), NetBIOS</td></tr>\n<tr><td><strong>4</strong></td><td><strong>Transport</strong></td><td>Découpe les données en segments. Gère la fiabilité (renvoi si données manquantes), le contrôle de flux et le multiplexage des applications.</td><td>TCP, UDP</td></tr>\n<tr><td><strong>3</strong></td><td><strong>Réseau</strong></td><td>Gère les communications entre réseaux différents via <strong>adressage logique (IP)</strong>. Achemine les données du réseau A au réseau B par le meilleur chemin.</td><td>IP, ICMP — Routeur</td></tr>\n<tr><td><strong>2</strong></td><td><strong>Liaison de données</strong></td><td>Transmission entre périphériques d'un <strong>même réseau local</strong>. Gère la détection d'erreurs. Ajoute en-tête + queue à chaque paquet → <strong>trame</strong>.</td><td>Ethernet, Wi-Fi — Switch, NIC</td></tr>\n<tr><td><strong>1</strong></td><td><strong>Physique</strong></td><td>Transmission des bits (0/1) sur les supports physiques existants. Le hub y est associé (retransmet sans cibler).</td><td>RJ45, fibre, ondes — Hub, câbles</td></tr>\n</tbody>\n</table></div>\n<h2>Correspondance OSI  TCP/IP</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Comparaison des deux modèles</div>\n<pre>  Modèle OSI (7 couches)     Modèle TCP/IP (5 couches)\n  ┌──────────────────────┐   ┌──────────────────────────┐\n  │  7. Application      │   │                          │\n  │  6. Présentation     │ → │  5. Application          │\n  │  5. Session          │   │                          │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  4. Transport        │ → │  4. Transport            │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  3. Réseau           │ → │  3. Internet             │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  2. Liaison données  │ → │  2. Liaison de données   │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  1. Physique         │ → │  1. Physique             │\n  └──────────────────────┘   └──────────────────────────┘</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 :</strong> OSI a <strong>7 couches</strong>, TCP/IP a <strong>4 ou 5 couches</strong>. OSI est théorique (référence), TCP/IP est pratique (Internet).<br/>\n<strong>Piège 2 :</strong> Dans le modèle TCP/IP 5 couches, les couches OSI 5+6+7 sont regroupées en une seule couche <strong>Application</strong>.<br/>\n<strong>Piège 3 :</strong> Un <strong>paquet</strong> (L3) + en-tête L2 + queue L2 = une <strong>trame</strong> (L2). Chaque couche ajoute ses propres en-têtes = <strong>encapsulation</strong>.<br/>\n<strong>Piège 4 :</strong> TCP/IP domine aujourd'hui — OSI n'a jamais réussi sur le marché mais sert de référence pour comprendre les réseaux.</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre II</h3>\n<ul>\n<li>TCP/IP = modèle pratique (4 ou 5 couches) dominant depuis 1983 · OSI = modèle théorique de référence (7 couches)</li>\n<li>TCP/IP 4 couches : <strong>Application · Transport · Internet · Accès Réseau</strong></li>\n<li>TCP/IP 5 couches (actuel) : Application · Transport · Internet · <strong>Liaison de données · Physique</strong></li>\n<li>OSI 7 couches : <strong>P-L-R-T-S-P-A</strong> (1=Physique … 7=Application)</li>\n<li>Encapsulation : chaque couche ajoute ses en-têtes → segment → paquet → trame → bits</li>\n<li>Équipements : Routeur (L3) · Switch / NIC (L2) · Hub / câbles (L1)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Combien de couches comporte le modèle OSI ?",
+          "options": [
+            {
+              "text": "4 couches",
+              "correct": false,
+              "explanation": "4 couches = TCP/IP dans sa version originale. OSI en a plus."
+            },
+            {
+              "text": "5 couches",
+              "correct": false,
+              "explanation": "5 couches = TCP/IP dans sa version d'actualité. OSI en a plus."
+            },
+            {
+              "text": "7 couches",
+              "correct": true,
+              "explanation": "Correct ! Le modèle OSI (Open Systems Interconnection), développé par l'ISO, comporte 7 couches allant de la couche 1 (Physique) à la couche 7 (Application)."
+            },
+            {
+              "text": "8 couches",
+              "correct": false,
+              "explanation": "OSI a 7 couches, pas 8. Ne pas confondre avec d'autres nomenclatures."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle couche OSI gère les communications entre réseaux DIFFÉRENTS via l'adressage IP ?",
+          "options": [
+            {
+              "text": "Couche 4 — Transport",
+              "correct": false,
+              "explanation": "La couche Transport (L4) gère TCP/UDP et la fiabilité — pas le routage entre réseaux."
+            },
+            {
+              "text": "Couche 3 — Réseau",
+              "correct": true,
+              "explanation": "Correct ! La couche 3 (Réseau) gère les communications entre réseaux différents en utilisant l'adressage logique (adresses IP) et les protocoles de routage. Le routeur est l'équipement de référence de cette couche."
+            },
+            {
+              "text": "Couche 2 — Liaison de données",
+              "correct": false,
+              "explanation": "La couche Liaison de données (L2) gère les communications au sein d'un MÊME réseau local, pas entre réseaux."
+            },
+            {
+              "text": "Couche 1 — Physique",
+              "correct": false,
+              "explanation": "La couche Physique (L1) transmet les bits sur le support physique — elle ne fait pas de routage."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le modèle TCP/IP à 5 couches, quelle couche regroupe les couches OSI 5, 6 et 7 ?",
+          "options": [
+            {
+              "text": "Transport",
+              "correct": false,
+              "explanation": "La couche Transport TCP/IP correspond à la couche 4 OSI uniquement."
+            },
+            {
+              "text": "Application",
+              "correct": true,
+              "explanation": "Correct ! La couche Application du modèle TCP/IP regroupe les couches OSI 5 (Session), 6 (Présentation) et 7 (Application). C'est la simplification majeure du modèle TCP/IP par rapport à l'OSI."
+            },
+            {
+              "text": "Internet",
+              "correct": false,
+              "explanation": "La couche Internet TCP/IP correspond uniquement à la couche 3 OSI (Réseau)."
+            },
+            {
+              "text": "Liaison de données",
+              "correct": false,
+              "explanation": "La couche Liaison de données correspond à la couche 2 OSI."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Qu'est-ce que l'encapsulation dans les modèles en couches ?",
+          "options": [
+            {
+              "text": "La compression des données pour réduire leur taille",
+              "correct": false,
+              "explanation": "L'encapsulation n'est pas de la compression — ce sont deux concepts distincts."
+            },
+            {
+              "text": "L'ajout d'en-têtes par chaque couche lors de l'émission",
+              "correct": true,
+              "explanation": "Correct ! L'encapsulation est le processus par lequel chaque couche ajoute ses propres en-têtes (et parfois une queue) aux données reçues de la couche supérieure. Un segment (L4) + en-tête IP (L3) = paquet ; un paquet + en-tête MAC + queue (L2) = trame."
+            },
+            {
+              "text": "La suppression des en-têtes à chaque couche",
+              "correct": false,
+              "explanation": "La suppression des en-têtes se produit lors de la réception (désencapsulation), pas lors de l'émission (encapsulation)."
+            },
+            {
+              "text": "Le chiffrement des données par la couche Présentation",
+              "correct": false,
+              "explanation": "Le chiffrement des données est une fonctionnalité de la couche 6 (Présentation), pas la définition de l'encapsulation."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel protocole de la couche Session (OSI L5) assure la communication entre client et serveur ?",
+          "options": [
+            {
+              "text": "HTTP",
+              "correct": false,
+              "explanation": "HTTP est un protocole applicatif (couche 7 Application), pas de la couche Session."
+            },
+            {
+              "text": "Ethernet",
+              "correct": false,
+              "explanation": "Ethernet est un protocole de la couche 2 (Liaison de données), pas de la Session."
+            },
+            {
+              "text": "RPC (Remote Procedure Call)",
+              "correct": true,
+              "explanation": "Correct ! RPC (Remote Procedure Call) est un protocole de la couche Session (L5). Il assure la communication entre un client qui émet une requête et un serveur qui y répond. NetBIOS est un autre exemple de protocole de cette couche."
+            },
+            {
+              "text": "TCP",
+              "correct": false,
+              "explanation": "TCP est un protocole de la couche Transport (L4), pas de la couche Session."
+            }
+          ]
+        }
+      ],
+      "source": "_private/ccna/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle catégorie de câble UTP permet un débit de 10 Gbps sur 100m ?",
-     "options": [
-      {
-       "text": "Catégorie 5e",
-       "correct": false,
-       "explanation": "Cat 5e permet 1 Gbps sur 100m — pas 10 Gbps."
-      },
-      {
-       "text": "Catégorie 6",
-       "correct": false,
-       "explanation": "Cat 6 permet 10 Gbps mais seulement sur 55m, pas 100m."
-      },
-      {
-       "text": "Catégorie 6a",
-       "correct": true,
-       "explanation": "Correct ! La catégorie 6a (classe EA, 500 MHz) est conçue pour des vitesses de 10 Gbps sur 100m. Elle supporte aussi le PoE et PoE+."
-      },
-      {
-       "text": "Catégorie 3",
-       "correct": false,
-       "explanation": "Cat 3 permet seulement 100 Mbps — elle est en cours d'abandon pour les données."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel équipement réseau centralise le contrôle de plusieurs points d'accès Wi-Fi ?",
-     "options": [
-      {
-       "text": "Point d'Accès (AP)",
-       "correct": false,
-       "explanation": "Un point d'accès (AP) crée un réseau sans fil local — il n'en contrôle pas d'autres."
-      },
-      {
-       "text": "Routeur",
-       "correct": false,
-       "explanation": "Le routeur gère le routage entre réseaux, pas la gestion centralisée des AP."
-      },
-      {
-       "text": "Contrôleur Wi-Fi (WLC)",
-       "correct": true,
-       "explanation": "Correct ! Le Contrôleur Wi-Fi (WLC — Wireless LAN Controller) centralise le contrôle de tous les points d'accès. Les AP deviennent alors des AP légers qui ne fonctionnent plus de façon autonome."
-      },
-      {
-       "text": "Pare-feu",
-       "correct": false,
-       "explanation": "Le pare-feu filtre le trafic selon des règles de sécurité — il ne gère pas les AP."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel type de fibre optique est utilisé pour les longues distances (> 10 km) ?",
-     "options": [
-      {
-       "text": "Fibre à saut d'indice",
-       "correct": false,
-       "explanation": "La fibre à saut d'indice a une grande section de cœur qui provoque une grande dispersion — utilisée sur de courtes distances."
-      },
-      {
-       "text": "Fibre à gradient d'indice",
-       "correct": false,
-       "explanation": "La fibre à gradient d'indice (multimode) est utilisée pour des réseaux campus, pas pour des dizaines de km."
-      },
-      {
-       "text": "Fibre monomode",
-       "correct": true,
-       "explanation": "Correct ! La fibre monomode a un cœur très fin (~10 µm), une dispersion quasi nulle et une bande passante > 10 GHz/km. Elle utilise des diodes laser et est réservée aux longues distances (plusieurs dizaines de km)."
-      },
-      {
-       "text": "Fibre multimode",
-       "correct": false,
-       "explanation": "La fibre multimode englobe la fibre à saut d'indice et à gradient d'indice — utilisée pour des distances plus courtes."
-      }
-     ]
+      "number": 3,
+      "title": "Principes de Base des Réseaux Locaux Ethernet",
+      "subtitle": "Normes IEEE 802.3, câblage UTP, fibre optique, trame Ethernet et transmission en duplex intégral.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre ce qu'est Ethernet et les normes IEEE 802.3</li><li>Distinguer les réseaux SOHO et les réseaux d'entreprise</li><li>Maîtriser le câblage UTP (câble droit, croisé, Gigabit)</li><li>Comprendre la transmission par fibre optique (multimode/monomode)</li><li>Connaître le format d'une trame Ethernet et le duplex intégral</li></ul></div>\n<h2>III.1 — Introduction</h2>\n<p>Il existe deux types de réseaux locaux : les <strong>réseaux locaux Ethernet</strong> (câbles cuivrés ou fibre optique) et les <strong>réseaux locaux sans fil</strong> (ondes radio). Ce chapitre se concentre sur Ethernet.</p>\n<h2>III.2 — Aperçu sur les réseaux locaux Ethernet</h2>\n<p>Le terme <strong>Ethernet</strong> fait référence à une famille de normes LAN définies par l'<strong>IEEE (Institute of Electrical and Electronics Engineers)</strong> sous le numéro <strong>802.3</strong>. Ces normes définissent le câblage, les connecteurs, les règles de protocole et tout ce qui est nécessaire pour créer un réseau local Ethernet.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Ethernet = IEEE 802.3</div>\n<p>Ethernet est une <strong>connexion filaire</strong> utilisant des câbles (contrairement au Wi-Fi IEEE 802.11). Les normes Ethernet couvrent des vitesses de <strong>10 Mbps à 400 Gbps</strong> et différents types de câblage.</p></div>\n<h3>III.2.1 — Réseaux locaux SOHO (Small Office Home Office)</h3>\n<p>Un réseau SOHO est un petit réseau local pour usage domestique ou petit bureau. Il nécessite :</p>\n<ul>\n<li>Un <strong>commutateur LAN Ethernet</strong> (nombreux ports physiques)</li>\n<li>Des <strong>câbles Ethernet</strong> conformes aux normes IEEE 802.3</li>\n<li>Un <strong>routeur</strong> pour connecter le LAN au WAN (Internet)</li>\n<li>Éventuellement un <strong>point d'accès Wi-Fi</strong> pour le sans-fil</li>\n</ul>\n<p>Aujourd'hui, un seul appareil (le \"<strong>routeur sans fil</strong>\") remplit les fonctions de routeur, switch et point d'accès dans la plupart des réseaux SOHO.</p>\n<h3>III.2.2 — Réseaux locaux d'entreprise</h3>\n<p>Les LAN d'entreprise ont les mêmes besoins qu'un SOHO mais à une <strong>bien plus grande échelle</strong>. Ils utilisent des <strong>commutateurs LAN installés dans une salle technique à chaque étage</strong> des bâtiments. Chaque étage dispose d'un switch LAN Ethernet et d'un point d'accès Wi-Fi.</p>\n<h3>III.2.3 — Normes des réseaux locaux Ethernet</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Norme</th><th>Nom</th><th>Vitesse</th><th>Câble</th><th>Distance max</th></tr></thead>\n<tbody>\n<tr><td>10BASE-T</td><td>Ethernet</td><td>10 Mbps</td><td>UTP Cat3</td><td>100 m</td></tr>\n<tr><td>100BASE-T</td><td>Fast Ethernet (FE)</td><td>100 Mbps</td><td>UTP Cat5</td><td>100 m</td></tr>\n<tr><td>1000BASE-T</td><td>Gigabit Ethernet (GE)</td><td>1 Gbps</td><td>UTP Cat5e/6</td><td>100 m</td></tr>\n<tr><td>10GBASE-T</td><td>10 Gigabit Ethernet</td><td>10 Gbps</td><td>UTP Cat6a</td><td>100 m</td></tr>\n</tbody>\n</table></div>\n<h2>III.3 — Construction des réseaux Ethernet avec câbles UTP</h2>\n<h3>III.3.1 — Transmission de données sur UTP</h3>\n<p>Les données utilisent l'<strong>électricité</strong> qui circule sur les fils à l'intérieur du câble UTP. Ethernet utilise <strong>deux fils (une paire torsadée)</strong> pour créer un circuit électrique. Pour envoyer des données, les deux appareils utilisent un <strong>schéma de codage</strong> pour représenter les 0 et les 1 par des variations de tension.</p>\n<p>La torsion des paires annule les <strong>EMI (interférences électromagnétiques)</strong> entre paires voisines (phénomène appelé <strong>diaphonie</strong>).</p>\n<h3>III.3.2 — Composants d'une liaison Ethernet UTP</h3>\n<p>Une liaison Ethernet UTP se compose de :</p>\n<ul>\n<li>Le <strong>câble UTP</strong> : fils de cuivre groupés en paires torsadées (2 paires pour 10/100 Mbps, 4 paires pour 1000 Mbps)</li>\n<li>Le <strong>connecteur RJ-45</strong> : 8 positions de broches (pins) aux deux extrémités</li>\n<li>Les <strong>ports RJ-45</strong> sur les équipements (via la carte réseau NIC sur les PC, ports intégrés sur les switch)</li>\n</ul>\n<h3>III.3.3 — Câblage droit (Straight-through) — 10BASE-T et 100BASE-T</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règles de brochage NIC vs Switch</div>\n<p><strong>NIC (carte réseau PC)</strong> : transmet sur les broches <strong>1 et 2</strong>, reçoit sur les broches <strong>3 et 6</strong><br/>\n<strong>Switch</strong> : fait le contraire → reçoit sur 1 et 2, transmet sur 3 et 6<br/>\n        Un <strong>câble droit</strong> connecte la broche 1 de chaque côté à la broche 1 de l'autre côté, etc.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Câble DROIT — connecte des équipements DIFFÉRENTS</div>\n<pre>PC (NIC)          Câble DROIT        Switch\n TX  (broches 1,2) ────────────────► RX  (broches 1,2)\n RX  (broches 3,6) ◄──────────────── TX  (broches 3,6)\nUtilisations du câble DROIT :\n  ✓ PC → Switch\n  ✓ PC → Hub\n  ✓ Switch → Routeur\n  ✓ Hub → Routeur</pre></div>\n<h3>III.3.4 — Câblage croisé (Crossover) — 10BASE-T et 100BASE-T</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Câble CROISÉ — connecte des équipements SIMILAIRES</div>\n<pre>Switch A          Câble CROISÉ       Switch B\n TX  (broches 3,6) ────────────────► RX  (broches 1,2)\n RX  (broches 1,2) ◄──────────────── TX  (broches 3,6)\nLes paires 1,2 et 3,6 sont CROISÉES entre les deux extrémités.\nUtilisations du câble CROISÉ :\n  ✓ Switch → Switch\n  ✓ PC → PC (connexion directe)\n  ✓ Routeur → Routeur\n  ✓ Hub → Hub\n Auto-MDIX : les équipements modernes détectent automatiquement\n   le type de câble et s'adaptent → câble droit ou croisé = indifférent.</pre></div>\n<h3>III.3.5 — Câblage pour 1000BASE-T (Gigabit Ethernet)</h3>\n<p>Le Gigabit Ethernet diffère des normes 10/100 Mbps :</p>\n<ul>\n<li>Nécessite <strong>4 paires de fils</strong> (au lieu de 2)</li>\n<li>Chaque extrémité peut <strong>transmettre ET recevoir simultanément</strong> sur chaque paire</li>\n<li>Câble droit GE : utilise les mêmes broches pour 2 paires + ajoute paires sur broches 4,5 et 7,8</li>\n<li>Câble croisé GE : croise les mêmes paires que 10/100 + croise aussi les paires 4,5 et 7,8</li>\n</ul>\n<h2>III.4 — Construction des réseaux Ethernet avec Fibre Optique</h2>\n<h3>III.4.1 — Concepts de transmission par fibre</h3>\n<p>Le câblage à fibre optique utilise le <strong>verre comme support</strong> à travers lequel la lumière passe, faisant varier cette lumière dans le temps pour coder les 0 et les 1. La fibre de verre est flexible et peut être enroulée dans un câble protecteur.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Composants d'un câble à fibre optique</div>\n<pre>┌─────────────────────────────────────────────────────────────┐\n│  Outer Jacket (Gaine extérieure)                            │\n│  ┌───────────────────────────────────────────────────────┐  │\n│  │  Strengthener (Renforts)                              │  │\n│  │  ┌─────────────────────────────────────────────────┐  │  │\n│  │  │  Buffer (Protection intermédiaire)              │  │  │\n│  │  │  ┌───────────────────────────────────────────┐  │  │  │\n│  │  │  │  Cladding (Gaine optique — réfléchit)    │  │  │  │\n│  │  │  │  ┌─────────────────────────────────────┐  │  │  │  │\n│  │  │  │  │  Core / Cœur (lumière passe ici)    │  │  │  │  │\n│  │  │  │  └─────────────────────────────────────┘  │  │  │  │\n│  │  │  └───────────────────────────────────────────┘  │  │  │\n│  │  └─────────────────────────────────────────────────┘  │  │\n│  └───────────────────────────────────────────────────────┘  │\n└─────────────────────────────────────────────────────────────┘</pre></div>\n<h3>III.4.2 — Fibre multimode vs fibre monomode</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>Fibre Multimode</th><th>Fibre Monomode</th></tr></thead>\n<tbody>\n<tr><td><strong>Diamètre du cœur</strong></td><td>50 ou 62,5 µm (large)</td><td>~10 µm (très fin)</td></tr>\n<tr><td><strong>Source lumineuse</strong></td><td>LED (diode électroluminescente)</td><td>Laser (diode laser)</td></tr>\n<tr><td><strong>Modes de lumière</strong></td><td>Plusieurs angles (modes)</td><td>Un seul angle (mode direct)</td></tr>\n<tr><td><strong>Dispersion</strong></td><td>Plus importante</td><td>Quasi nulle</td></tr>\n<tr><td><strong>Distance max (10G)</strong></td><td>Jusqu'à ~400 m</td><td>Plusieurs dizaines de km</td></tr>\n<tr><td><strong>Coût</strong></td><td>Moins cher</td><td>Plus cher (laser)</td></tr>\n<tr><td><strong>Usage</strong></td><td>Intra-bâtiment, campus</td><td>Inter-sites, longues distances</td></tr>\n</tbody>\n</table></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Norme 10 Gbit/s</th><th>Type de câble</th><th>Distance max</th></tr></thead>\n<tbody>\n<tr><td>10GBASE-S</td><td>Multimode (MM)</td><td>400 m</td></tr>\n<tr><td>10GBASE-LX4</td><td>Multimode (MM)</td><td>300 m</td></tr>\n<tr><td>10GBASE-LR</td><td>Monomode (SM)</td><td>10 km</td></tr>\n<tr><td>10GBASE-E</td><td>Monomode (SM)</td><td>30 km</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">UTP vs Multimode vs Monomode — Comparaison</div>\n<p><strong>Coût câblage</strong> : UTP (bas) · MM (moyen) · SM (moyen)<br/>\n<strong>Coût port switch</strong> : UTP (bas) · MM (moyen) · SM (élevé)<br/>\n<strong>Distance max</strong> : UTP (100 m) · MM (500 m) · SM (40 km)<br/>\n<strong>Sensibilité EMI</strong> : UTP (quelques-unes) · MM (aucune) · SM (aucune)<br/>\n<strong>Risque d'espionnage</strong> : UTP (quelques-uns) · MM (aucun) · SM (aucun)</p></div>\n<p> La fibre nécessite <strong>deux câbles</strong> pour la transmission bidirectionnelle : un pour chaque direction (TX d'un côté → RX de l'autre).</p>\n<h2>III.5 — Envoi de données dans les réseaux Ethernet</h2>\n<h3>III.5.1 — Format d'une trame Ethernet (IEEE 802.3)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure d'une trame Ethernet</div>\n<pre>┌──────────┬─────┬───────────┬───────────┬────────┬──────────────┬─────┐\n│Préambule │ SFD │  MAC Dst  │  MAC Src  │  Type  │   Données    │ FCS │\n│  7 oct.  │ 1o  │  6 octets │  6 octets │ 2 oct. │  46–1500 oct │ 4o  │\n└──────────┴─────┴───────────┴───────────┴────────┴──────────────┴─────┘</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Taille</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Préambule</strong></td><td>7 octets</td><td>Synchronisation des équipements</td></tr>\n<tr><td><strong>SFD</strong> (Start Frame Delimiter)</td><td>1 octet</td><td>Indique que l'octet suivant est l'adresse MAC destination</td></tr>\n<tr><td><strong>Adresse MAC Destination</strong></td><td>6 octets</td><td>Identifie le destinataire prévu de la trame</td></tr>\n<tr><td><strong>Adresse MAC Source</strong></td><td>6 octets</td><td>Identifie l'expéditeur de la trame</td></tr>\n<tr><td><strong>Type</strong></td><td>2 octets</td><td>Identifie le protocole encapsulé (IPv4 ou IPv6)</td></tr>\n<tr><td><strong>Données + Pad</strong></td><td>46–1500 octets</td><td>Données de couche supérieure (PDU L3, généralement paquet IP). Pad pour atteindre le minimum de 46 octets.</td></tr>\n<tr><td><strong>FCS</strong> (Frame Check Sequence)</td><td>4 octets</td><td>Détection des erreurs de transmission (CRC)</td></tr>\n</tbody>\n</table></div>\n<h3>III.5.2 — Duplex intégral avec les commutateurs</h3>\n<p>Les LAN Ethernet modernes utilisent le <strong>duplex intégral</strong> (full-duplex) sur chaque liaison avec des commutateurs. Cela signifie que les nœuds peuvent <strong>transmettre et recevoir simultanément</strong>, sans risque de collision.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple d'envoi : PC1 → PC2 via deux switches</div>\n<pre>1. PC1 construit et envoie la trame Ethernet :\n   - MAC source = MAC de PC1\n   - MAC destination = MAC de PC2\n2. SW1 reçoit la trame sur son interface G0/1\n   et la retransmet vers SW2\n3. SW2 reçoit la trame sur son interface F0/2\n   et la retransmet vers PC2\n4. PC2 reçoit la trame, reconnaît son adresse MAC\n   et traite la trame\n→ Chaque lien est en duplex intégral : pas de collision possible\n→ Les vitesses peuvent être différentes sur chaque lien</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 — Câble droit vs croisé :</strong><br/>\n        Câble <strong>droit</strong> = équipements <strong>différents</strong> (PCswitch, switchrouteur)<br/>\n        Câble <strong>croisé</strong> = équipements <strong>similaires</strong> (switchswitch, PCPC)<br/>\n        Les équipements modernes ont l'<strong>Auto-MDIX</strong> → détection automatique.<br/><br/>\n<strong>Piège 2 :</strong> 10BASE-T et 100BASE-T utilisent <strong>2 paires</strong> · 1000BASE-T utilise <strong>4 paires</strong>.<br/><br/>\n<strong>Piège 3 :</strong> La fibre optique nécessite <strong>2 câbles</strong> (un par sens). Les connecteurs SFP/SFP+ sont utilisés pour la fibre sur les switch.<br/><br/>\n<strong>Piège 4 :</strong> Le champ FCS de la trame Ethernet sert à la <strong>détection d'erreurs</strong> (CRC), pas à la correction.</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre III</h3>\n<ul>\n<li>Ethernet = IEEE 802.3 · vitesses 10 Mbps → 400 Gbps · filaire (≠ Wi-Fi IEEE 802.11)</li>\n<li>SOHO : switch + routeur + AP · Entreprise : switch par étage + AP + salle technique</li>\n<li>Câble UTP : <strong>droit</strong> (équipements différents : PCswitch) · <strong>croisé</strong> (similaires : switchswitch) · Auto-MDIX = détection automatique</li>\n<li>10/100 Mbps = 2 paires · <strong>1000 Mbps = 4 paires</strong> (TX+RX simultanés sur chaque paire)</li>\n<li>Fibre <strong>multimode</strong> : LED, courtes distances (&lt;500m) · <strong>monomode</strong> : laser, longues distances (&gt;10km)</li>\n<li>Trame Ethernet : Préambule · SFD · MAC Dst · MAC Src · Type · Données (46-1500o) · <strong>FCS</strong> (détection erreurs)</li>\n<li>Duplex intégral = TX et RX simultanés · pas de collision · possible grâce aux switches</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel type de câble faut-il utiliser pour connecter un PC à un switch ?",
+          "options": [
+            {
+              "text": "Câble droit (straight-through)",
+              "correct": true,
+              "explanation": "Correct ! Un câble droit (straight-through) est utilisé pour connecter des équipements différents. Le PC (NIC) transmet sur les broches 1,2 et le switch reçoit sur ces mêmes broches. Le câblage direct permet cette communication sans croiser les paires."
+            },
+            {
+              "text": "Câble croisé (crossover)",
+              "correct": false,
+              "explanation": "Un câble croisé est utilisé pour connecter des équipements similaires (switch↔switch, PC↔PC). Entre un PC et un switch, c'est un câble droit."
+            },
+            {
+              "text": "Câble coaxial",
+              "correct": false,
+              "explanation": "Un câble coaxial n'est pas utilisé pour les connexions Ethernet modernes PC↔switch."
+            },
+            {
+              "text": "Fibre optique",
+              "correct": false,
+              "explanation": "La fibre optique peut être utilisée dans certains cas, mais pour un PC vers switch standard, c'est un câble UTP droit."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Combien de paires de fils utilise la norme 1000BASE-T (Gigabit Ethernet) ?",
+          "options": [
+            {
+              "text": "1 paire",
+              "correct": false,
+              "explanation": "1 paire ne suffit pas pour le Gigabit Ethernet — ce n'est pas une norme valide."
+            },
+            {
+              "text": "2 paires",
+              "correct": false,
+              "explanation": "2 paires sont utilisées par 10BASE-T et 100BASE-T, pas par 1000BASE-T."
+            },
+            {
+              "text": "3 paires",
+              "correct": false,
+              "explanation": "3 paires n'est pas une configuration standard pour Ethernet."
+            },
+            {
+              "text": "4 paires",
+              "correct": true,
+              "explanation": "Correct ! 1000BASE-T (Gigabit Ethernet) nécessite 4 paires de fils, contrairement à 10BASE-T et 100BASE-T qui n'en utilisent que 2. De plus, le Gigabit transmet et reçoit simultanément sur chaque paire."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel champ de la trame Ethernet permet la détection des erreurs de transmission ?",
+          "options": [
+            {
+              "text": "Préambule",
+              "correct": false,
+              "explanation": "Le préambule sert à la synchronisation des équipements, pas à la détection d'erreurs."
+            },
+            {
+              "text": "Type",
+              "correct": false,
+              "explanation": "Le champ Type identifie le protocole encapsulé (IPv4 ou IPv6), pas les erreurs."
+            },
+            {
+              "text": "FCS (Frame Check Sequence)",
+              "correct": true,
+              "explanation": "Correct ! Le FCS (Frame Check Sequence) est un champ de 4 octets en fin de trame qui utilise un CRC (Cyclic Redundancy Check) pour permettre à la carte réseau réceptrice de détecter les erreurs de transmission."
+            },
+            {
+              "text": "SFD (Start Frame Delimiter)",
+              "correct": false,
+              "explanation": "Le SFD (Start Frame Delimiter) indique le début de la trame, pas les erreurs."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la distance maximale d'un câble 10GBASE-LR en fibre monomode ?",
+          "options": [
+            {
+              "text": "400 m",
+              "correct": false,
+              "explanation": "400m est la distance maximale de 10GBASE-S en fibre multimode."
+            },
+            {
+              "text": "30 km",
+              "correct": false,
+              "explanation": "30 km est la distance maximale de 10GBASE-E en monomode — pas 10GBASE-LR."
+            },
+            {
+              "text": "10 km",
+              "correct": true,
+              "explanation": "Correct ! 10GBASE-LR (LR = Long Range) utilise de la fibre monomode et supporte une distance maximale de 10 km. C'est à comparer avec 10GBASE-E (30 km) et les normes multimode (300-400 m)."
+            },
+            {
+              "text": "100 m",
+              "correct": false,
+              "explanation": "100 m est la limite des câbles UTP, pas de la fibre monomode."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Que signifie \"duplex intégral\" dans les LAN Ethernet modernes avec switch ?",
+          "options": [
+            {
+              "text": "Tous les équipements partagent la même bande passante",
+              "correct": false,
+              "explanation": "Le duplex intégral ne signifie pas que tous les équipements partagent la même bande passante."
+            },
+            {
+              "text": "Un seul équipement peut émettre à la fois pour éviter les collisions",
+              "correct": false,
+              "explanation": "En duplex intégral, il n'y a pas de risque de collision — c'est précisément l'avantage sur le half-duplex."
+            },
+            {
+              "text": "Les nœuds peuvent transmettre et recevoir simultanément",
+              "correct": true,
+              "explanation": "Correct ! Le duplex intégral (full-duplex) permet à chaque nœud de transmettre et recevoir SIMULTANÉMENT. C'est possible grâce aux switches qui créent des domaines de collision séparés sur chaque port. Bien plus rapide que le half-duplex des hubs."
+            },
+            {
+              "text": "Les données sont compressées avant transmission",
+              "correct": false,
+              "explanation": "Le duplex intégral ne concerne pas la compression — c'est le mode de fonctionnement de la liaison (émission + réception simultanées)."
+            }
+          ]
+        }
+      ],
+      "source": "_private/ccna/chapitres/chapitre3.html"
     }
-   ],
-   "source": "ccna/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Introduction aux Modèles TCP/IP et OSI",
-   "subtitle": "Comprendre les protocoles qui régissent les réseaux : TCP/IP (4 et 5 couches) et OSI (7 couches).",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre la notion de protocole en informatique<br/>\n        • Connaître l'historique et la différence entre TCP/IP et OSI<br/>\n        • Maîtriser le modèle TCP/IP à 4 couches et à 5 couches<br/>\n        • Connaître les 7 couches du modèle OSI et le rôle de chacune</p>\n</div>\n<h2>II.1 — Introduction</h2>\n<p>En informatique, tout est régi par les <strong>protocoles</strong> : un ensemble de règles définies qui régissent le bon fonctionnement des systèmes informatiques. Pour qu'un réseau informatique fonctionne correctement, des protocoles sont définis. Deux modèles dominent :</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📌 Les deux modèles fondamentaux</div>\n<p><strong>TCP/IP</strong> : modèle opérationnel, utilisé dans la réalité d'Internet (4 ou 5 couches)<br/>\n<strong>OSI</strong> : modèle de référence théorique développé par l'ISO (7 couches)</p>\n</div>\n<h2>II.2 — Historique</h2>\n<p>Les fournisseurs créaient au départ des <strong>modèles propriétaires</strong> incompatibles entre eux. L'<strong>ISO</strong> (Organisation internationale de normalisation) a commencé dès la fin des années 1970 à développer le modèle <strong>OSI</strong> (Open Systems Interconnection), pour normaliser les protocoles et permettre la communication entre tous les ordinateurs.</p>\n<p>En parallèle, un effort moins formel financé par le <strong>DoD américain</strong> (Department of Defense) a produit <strong>TCP/IP</strong>. Dans les années 1990, les deux coexistaient. À la fin des années 1990, <strong>TCP/IP est devenu le standard mondial</strong> et OSI a été abandonné en pratique — mais reste le modèle de référence pour comprendre les réseaux.</p>\n<h2>II.3 — Modèle TCP/IP</h2>\n<p>Un modèle de réseau est comme le plan architectural d'une maison : il garantit la bonne structure et assure les espaces cachés pour les différents services.</p>\n<p>Il existe <strong>deux versions du modèle TCP/IP</strong> : à 4 couches et à 5 couches.</p>\n<h3>II.3.1 — Modèle TCP/IP à 4 couches</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Modèle TCP/IP 4 couches</div>\n<pre>┌─────────────────────────────────────────────────────┐\n│             COUCHE APPLICATION                      │\n│  Interface avec l'utilisateur                       │\n│  Protocoles : HTTP, DNS, DHCP, FTP…                 │\n│  S'exécute sur les machines hôtes                   │\n├─────────────────────────────────────────────────────┤\n│             COUCHE TRANSPORT                        │\n│  Dialogue entre hôtes terminaux                     │\n│  TCP (transport fiable) ou UDP (sans fiabilité)     │\n│  Routeurs NAT et pare-feux filtrent ici             │\n├─────────────────────────────────────────────────────┤\n│             COUCHE INTERNET                         │\n│  Meilleurs chemins via adresses IPv4 ou IPv6        │\n│  Les routeurs transfèrent le trafic IP              │\n├─────────────────────────────────────────────────────┤\n│          COUCHE ACCÈS AU RÉSEAU                     │\n│  TCP/IP ne s'en occupe pas directement              │\n│  Organise le flux binaire, identifie les hôtes      │\n│  Place les bits sur les supports physiques          │\n└─────────────────────────────────────────────────────┘</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo TCP/IP 4 couches — A.T.I.A.</div>\n<p><strong>A</strong>pplication · <strong>T</strong>ransport · <strong>I</strong>nternet · <strong>A</strong>ccès au Réseau<br/>\n        Plus on monte dans les couches, plus on quitte les aspects matériels et on se rapproche des problématiques logicielles.</p>\n</div>\n<h3>II.3.2 — Modèle TCP/IP à 5 couches</h3>\n<p>Identique au modèle 4 couches mais la <strong>couche Accès au Réseau est éclatée en deux</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Couche</th><th>Nom</th><th>Description</th><th>Équipements</th></tr></thead>\n<tbody>\n<tr><td>5</td><td><strong>Application</strong></td><td>Interface utilisateur, protocoles applicatifs</td><td>Applications</td></tr>\n<tr><td>4</td><td><strong>Transport</strong></td><td>Dialogue hôte-hôte, TCP/UDP</td><td>Firewall</td></tr>\n<tr><td>3</td><td><strong>Réseau</strong></td><td>Adressage IP, routage</td><td>Routeur</td></tr>\n<tr><td>2</td><td><strong>Liaison de données</strong></td><td>Transfert local, Ethernet, détection d'erreurs. Ajoute en-tête + queue → paquet devient <strong>trame</strong></td><td>Switch</td></tr>\n<tr><td>1</td><td><strong>Physique</strong></td><td>Transmission des bits (0/1) sur les supports physiques</td><td>Hub, câbles, fibre</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">💡 Modèle d'actualité</div>\n<p>Le modèle TCP/IP à <strong>5 couches est le modèle d'actualité</strong> selon le cours. La couche Accès Réseau du modèle 4 couches est divisée en Liaison de données (L2) et Physique (L1).</p>\n</div>\n<h2>II.4 — Modèle OSI</h2>\n<p>L'<strong>ISO</strong> a développé le modèle <strong>OSI (Open Systems Interconnection)</strong> pour normaliser l'interconnexion de systèmes. Il est organisé en <strong>7 couches distinctes</strong> portant chacune un numéro, des données les plus abstraites (L7) aux données physiques (L1).</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo OSI — De L1 (bas) à L7 (haut)</div>\n<p><strong>P</strong>hysique · <strong>L</strong>iaison · <strong>R</strong>éseau · <strong>T</strong>ransport · <strong>S</strong>ession · <strong>P</strong>résentation · <strong>A</strong>pplication<br/>\n        Phrase mémo : <em>« Pour Le Réseau, Tout Se Passe Automatiquement »</em></p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>N°</th><th>Couche OSI</th><th>Rôle détaillé</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>7</strong></td><td><strong>Application</strong></td><td>Point d'accès aux services réseau (messagerie, transfert de fichiers, P2P…). Lien entre l'utilisateur et la machine. La plus proche de l'utilisateur final.</td><td>HTTP, FTP, SMTP, DNS</td></tr>\n<tr><td><strong>6</strong></td><td><strong>Présentation</strong></td><td>Gère le codage et décodage des données (ASCII, Unicode, HTML…). Convertit les données pour les rendre exploitables par l'application. Encode pour l'interopérabilité entre systèmes.</td><td>ASCII, SSL/TLS, JPEG, MPEG</td></tr>\n<tr><td><strong>5</strong></td><td><strong>Session</strong></td><td>Organise la méthode de dialogue. Ouvre, gère et ferme les sessions entre applications. Assure la synchronisation de la transmission.</td><td>RPC (Remote Procedure Call), NetBIOS</td></tr>\n<tr><td><strong>4</strong></td><td><strong>Transport</strong></td><td>Découpe les données en segments. Gère la fiabilité (renvoi si données manquantes), le contrôle de flux et le multiplexage des applications.</td><td>TCP, UDP</td></tr>\n<tr><td><strong>3</strong></td><td><strong>Réseau</strong></td><td>Gère les communications entre réseaux différents via <strong>adressage logique (IP)</strong>. Achemine les données du réseau A au réseau B par le meilleur chemin.</td><td>IP, ICMP — Routeur</td></tr>\n<tr><td><strong>2</strong></td><td><strong>Liaison de données</strong></td><td>Transmission entre périphériques d'un <strong>même réseau local</strong>. Gère la détection d'erreurs. Ajoute en-tête + queue à chaque paquet → <strong>trame</strong>.</td><td>Ethernet, Wi-Fi — Switch, NIC</td></tr>\n<tr><td><strong>1</strong></td><td><strong>Physique</strong></td><td>Transmission des bits (0/1) sur les supports physiques existants. Le hub y est associé (retransmet sans cibler).</td><td>RJ45, fibre, ondes — Hub, câbles</td></tr>\n</tbody>\n</table></div>\n<h2>Correspondance OSI ↔ TCP/IP</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Comparaison des deux modèles</div>\n<pre>  Modèle OSI (7 couches)     Modèle TCP/IP (5 couches)\n  ┌──────────────────────┐   ┌──────────────────────────┐\n  │  7. Application      │   │                          │\n  │  6. Présentation     │ → │  5. Application          │\n  │  5. Session          │   │                          │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  4. Transport        │ → │  4. Transport            │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  3. Réseau           │ → │  3. Internet             │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  2. Liaison données  │ → │  2. Liaison de données   │\n  ├──────────────────────┤   ├──────────────────────────┤\n  │  1. Physique         │ → │  1. Physique             │\n  └──────────────────────┘   └──────────────────────────┘</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 :</strong> OSI a <strong>7 couches</strong>, TCP/IP a <strong>4 ou 5 couches</strong>. OSI est théorique (référence), TCP/IP est pratique (Internet).<br/>\n<strong>Piège 2 :</strong> Dans le modèle TCP/IP 5 couches, les couches OSI 5+6+7 sont regroupées en une seule couche <strong>Application</strong>.<br/>\n<strong>Piège 3 :</strong> Un <strong>paquet</strong> (L3) + en-tête L2 + queue L2 = une <strong>trame</strong> (L2). Chaque couche ajoute ses propres en-têtes = <strong>encapsulation</strong>.<br/>\n<strong>Piège 4 :</strong> TCP/IP domine aujourd'hui — OSI n'a jamais réussi sur le marché mais sert de référence pour comprendre les réseaux.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre II</h3>\n<ul>\n<li>TCP/IP = modèle pratique (4 ou 5 couches) dominant depuis 1983 · OSI = modèle théorique de référence (7 couches)</li>\n<li>TCP/IP 4 couches : <strong>Application · Transport · Internet · Accès Réseau</strong></li>\n<li>TCP/IP 5 couches (actuel) : Application · Transport · Internet · <strong>Liaison de données · Physique</strong></li>\n<li>OSI 7 couches : <strong>P-L-R-T-S-P-A</strong> (1=Physique … 7=Application)</li>\n<li>Encapsulation : chaque couche ajoute ses en-têtes → segment → paquet → trame → bits</li>\n<li>Équipements : Routeur (L3) · Switch / NIC (L2) · Hub / câbles (L1)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Combien de couches comporte le modèle OSI ?",
-     "options": [
-      {
-       "text": "4 couches",
-       "correct": false,
-       "explanation": "4 couches = TCP/IP dans sa version originale. OSI en a plus."
-      },
-      {
-       "text": "5 couches",
-       "correct": false,
-       "explanation": "5 couches = TCP/IP dans sa version d'actualité. OSI en a plus."
-      },
-      {
-       "text": "7 couches",
-       "correct": true,
-       "explanation": "Correct ! Le modèle OSI (Open Systems Interconnection), développé par l'ISO, comporte 7 couches allant de la couche 1 (Physique) à la couche 7 (Application)."
-      },
-      {
-       "text": "8 couches",
-       "correct": false,
-       "explanation": "OSI a 7 couches, pas 8. Ne pas confondre avec d'autres nomenclatures."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Généralités sur les Réseaux Informatiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quelle couche OSI gère les communications entre réseaux DIFFÉRENTS via l'adressage IP ?",
-     "options": [
-      {
-       "text": "Couche 4 — Transport",
-       "correct": false,
-       "explanation": "La couche Transport (L4) gère TCP/UDP et la fiabilité — pas le routage entre réseaux."
-      },
-      {
-       "text": "Couche 3 — Réseau",
-       "correct": true,
-       "explanation": "Correct ! La couche 3 (Réseau) gère les communications entre réseaux différents en utilisant l'adressage logique (adresses IP) et les protocoles de routage. Le routeur est l'équipement de référence de cette couche."
-      },
-      {
-       "text": "Couche 2 — Liaison de données",
-       "correct": false,
-       "explanation": "La couche Liaison de données (L2) gère les communications au sein d'un MÊME réseau local, pas entre réseaux."
-      },
-      {
-       "text": "Couche 1 — Physique",
-       "correct": false,
-       "explanation": "La couche Physique (L1) transmet les bits sur le support physique — elle ne fait pas de routage."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Généralités sur les Réseaux Informatiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Dans le modèle TCP/IP à 5 couches, quelle couche regroupe les couches OSI 5, 6 et 7 ?",
-     "options": [
-      {
-       "text": "Transport",
-       "correct": false,
-       "explanation": "La couche Transport TCP/IP correspond à la couche 4 OSI uniquement."
-      },
-      {
-       "text": "Application",
-       "correct": true,
-       "explanation": "Correct ! La couche Application du modèle TCP/IP regroupe les couches OSI 5 (Session), 6 (Présentation) et 7 (Application). C'est la simplification majeure du modèle TCP/IP par rapport à l'OSI."
-      },
-      {
-       "text": "Internet",
-       "correct": false,
-       "explanation": "La couche Internet TCP/IP correspond uniquement à la couche 3 OSI (Réseau)."
-      },
-      {
-       "text": "Liaison de données",
-       "correct": false,
-       "explanation": "La couche Liaison de données correspond à la couche 2 OSI."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Généralités sur les Réseaux Informatiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Qu'est-ce que l'encapsulation dans les modèles en couches ?",
-     "options": [
-      {
-       "text": "La compression des données pour réduire leur taille",
-       "correct": false,
-       "explanation": "L'encapsulation n'est pas de la compression — ce sont deux concepts distincts."
-      },
-      {
-       "text": "L'ajout d'en-têtes par chaque couche lors de l'émission",
-       "correct": true,
-       "explanation": "Correct ! L'encapsulation est le processus par lequel chaque couche ajoute ses propres en-têtes (et parfois une queue) aux données reçues de la couche supérieure. Un segment (L4) + en-tête IP (L3) = paquet ; un paquet + en-tête MAC + queue (L2) = trame."
-      },
-      {
-       "text": "La suppression des en-têtes à chaque couche",
-       "correct": false,
-       "explanation": "La suppression des en-têtes se produit lors de la réception (désencapsulation), pas lors de l'émission (encapsulation)."
-      },
-      {
-       "text": "Le chiffrement des données par la couche Présentation",
-       "correct": false,
-       "explanation": "Le chiffrement des données est une fonctionnalité de la couche 6 (Présentation), pas la définition de l'encapsulation."
-      }
-     ]
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Généralités sur les Réseaux Informatiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quel protocole de la couche Session (OSI L5) assure la communication entre client et serveur ?",
-     "options": [
-      {
-       "text": "HTTP",
-       "correct": false,
-       "explanation": "HTTP est un protocole applicatif (couche 7 Application), pas de la couche Session."
-      },
-      {
-       "text": "Ethernet",
-       "correct": false,
-       "explanation": "Ethernet est un protocole de la couche 2 (Liaison de données), pas de la Session."
-      },
-      {
-       "text": "RPC (Remote Procedure Call)",
-       "correct": true,
-       "explanation": "Correct ! RPC (Remote Procedure Call) est un protocole de la couche Session (L5). Il assure la communication entre un client qui émet une requête et un serveur qui y répond. NetBIOS est un autre exemple de protocole de cette couche."
-      },
-      {
-       "text": "TCP",
-       "correct": false,
-       "explanation": "TCP est un protocole de la couche Transport (L4), pas de la couche Session."
-      }
-     ]
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Généralités sur les Réseaux Informatiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Introduction aux Modèles TCPIP et OSI.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Introduction aux Modèles TCPIP et OSI.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Introduction aux Modèles TCPIP et OSI.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Introduction aux Modèles TCPIP et OSI.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Introduction aux Modèles TCPIP et OSI.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Principes de Base des Réseaux Locaux Ethernet.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Principes de Base des Réseaux Locaux Ethernet.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Principes de Base des Réseaux Locaux Ethernet.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Principes de Base des Réseaux Locaux Ethernet.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Principes de Base des Réseaux Locaux Ethernet.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/ccna/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Principes de Base des Réseaux Locaux Ethernet",
-   "subtitle": "Normes IEEE 802.3, câblage UTP, fibre optique, trame Ethernet et transmission en duplex intégral.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est Ethernet et les normes IEEE 802.3<br/>\n        • Distinguer les réseaux SOHO et les réseaux d'entreprise<br/>\n        • Maîtriser le câblage UTP (câble droit, croisé, Gigabit)<br/>\n        • Comprendre la transmission par fibre optique (multimode/monomode)<br/>\n        • Connaître le format d'une trame Ethernet et le duplex intégral</p>\n</div>\n<h2>III.1 — Introduction</h2>\n<p>Il existe deux types de réseaux locaux : les <strong>réseaux locaux Ethernet</strong> (câbles cuivrés ou fibre optique) et les <strong>réseaux locaux sans fil</strong> (ondes radio). Ce chapitre se concentre sur Ethernet.</p>\n<h2>III.2 — Aperçu sur les réseaux locaux Ethernet</h2>\n<p>Le terme <strong>Ethernet</strong> fait référence à une famille de normes LAN définies par l'<strong>IEEE (Institute of Electrical and Electronics Engineers)</strong> sous le numéro <strong>802.3</strong>. Ces normes définissent le câblage, les connecteurs, les règles de protocole et tout ce qui est nécessaire pour créer un réseau local Ethernet.</p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📌 Ethernet = IEEE 802.3</div>\n<p>Ethernet est une <strong>connexion filaire</strong> utilisant des câbles (contrairement au Wi-Fi IEEE 802.11). Les normes Ethernet couvrent des vitesses de <strong>10 Mbps à 400 Gbps</strong> et différents types de câblage.</p>\n</div>\n<h3>III.2.1 — Réseaux locaux SOHO (Small Office Home Office)</h3>\n<p>Un réseau SOHO est un petit réseau local pour usage domestique ou petit bureau. Il nécessite :</p>\n<ul>\n<li>Un <strong>commutateur LAN Ethernet</strong> (nombreux ports physiques)</li>\n<li>Des <strong>câbles Ethernet</strong> conformes aux normes IEEE 802.3</li>\n<li>Un <strong>routeur</strong> pour connecter le LAN au WAN (Internet)</li>\n<li>Éventuellement un <strong>point d'accès Wi-Fi</strong> pour le sans-fil</li>\n</ul>\n<p>Aujourd'hui, un seul appareil (le \"<strong>routeur sans fil</strong>\") remplit les fonctions de routeur, switch et point d'accès dans la plupart des réseaux SOHO.</p>\n<h3>III.2.2 — Réseaux locaux d'entreprise</h3>\n<p>Les LAN d'entreprise ont les mêmes besoins qu'un SOHO mais à une <strong>bien plus grande échelle</strong>. Ils utilisent des <strong>commutateurs LAN installés dans une salle technique à chaque étage</strong> des bâtiments. Chaque étage dispose d'un switch LAN Ethernet et d'un point d'accès Wi-Fi.</p>\n<h3>III.2.3 — Normes des réseaux locaux Ethernet</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Norme</th><th>Nom</th><th>Vitesse</th><th>Câble</th><th>Distance max</th></tr></thead>\n<tbody>\n<tr><td>10BASE-T</td><td>Ethernet</td><td>10 Mbps</td><td>UTP Cat3</td><td>100 m</td></tr>\n<tr><td>100BASE-T</td><td>Fast Ethernet (FE)</td><td>100 Mbps</td><td>UTP Cat5</td><td>100 m</td></tr>\n<tr><td>1000BASE-T</td><td>Gigabit Ethernet (GE)</td><td>1 Gbps</td><td>UTP Cat5e/6</td><td>100 m</td></tr>\n<tr><td>10GBASE-T</td><td>10 Gigabit Ethernet</td><td>10 Gbps</td><td>UTP Cat6a</td><td>100 m</td></tr>\n</tbody>\n</table></div>\n<h2>III.3 — Construction des réseaux Ethernet avec câbles UTP</h2>\n<h3>III.3.1 — Transmission de données sur UTP</h3>\n<p>Les données utilisent l'<strong>électricité</strong> qui circule sur les fils à l'intérieur du câble UTP. Ethernet utilise <strong>deux fils (une paire torsadée)</strong> pour créer un circuit électrique. Pour envoyer des données, les deux appareils utilisent un <strong>schéma de codage</strong> pour représenter les 0 et les 1 par des variations de tension.</p>\n<p>La torsion des paires annule les <strong>EMI (interférences électromagnétiques)</strong> entre paires voisines (phénomène appelé <strong>diaphonie</strong>).</p>\n<h3>III.3.2 — Composants d'une liaison Ethernet UTP</h3>\n<p>Une liaison Ethernet UTP se compose de :</p>\n<ul>\n<li>Le <strong>câble UTP</strong> : fils de cuivre groupés en paires torsadées (2 paires pour 10/100 Mbps, 4 paires pour 1000 Mbps)</li>\n<li>Le <strong>connecteur RJ-45</strong> : 8 positions de broches (pins) aux deux extrémités</li>\n<li>Les <strong>ports RJ-45</strong> sur les équipements (via la carte réseau NIC sur les PC, ports intégrés sur les switch)</li>\n</ul>\n<h3>III.3.3 — Câblage droit (Straight-through) — 10BASE-T et 100BASE-T</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔌 Règles de brochage NIC vs Switch</div>\n<p><strong>NIC (carte réseau PC)</strong> : transmet sur les broches <strong>1 et 2</strong>, reçoit sur les broches <strong>3 et 6</strong><br/>\n<strong>Switch</strong> : fait le contraire → reçoit sur 1 et 2, transmet sur 3 et 6<br/>\n        Un <strong>câble droit</strong> connecte la broche 1 de chaque côté à la broche 1 de l'autre côté, etc.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Câble DROIT — connecte des équipements DIFFÉRENTS</div>\n<pre>PC (NIC)          Câble DROIT        Switch\n TX  (broches 1,2) ────────────────► RX  (broches 1,2)\n RX  (broches 3,6) ◄──────────────── TX  (broches 3,6)\nUtilisations du câble DROIT :\n  ✓ PC → Switch\n  ✓ PC → Hub\n  ✓ Switch → Routeur\n  ✓ Hub → Routeur</pre>\n</div>\n<h3>III.3.4 — Câblage croisé (Crossover) — 10BASE-T et 100BASE-T</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Câble CROISÉ — connecte des équipements SIMILAIRES</div>\n<pre>Switch A          Câble CROISÉ       Switch B\n TX  (broches 3,6) ────────────────► RX  (broches 1,2)\n RX  (broches 1,2) ◄──────────────── TX  (broches 3,6)\nLes paires 1,2 et 3,6 sont CROISÉES entre les deux extrémités.\nUtilisations du câble CROISÉ :\n  ✓ Switch → Switch\n  ✓ PC → PC (connexion directe)\n  ✓ Routeur → Routeur\n  ✓ Hub → Hub\n💡 Auto-MDIX : les équipements modernes détectent automatiquement\n   le type de câble et s'adaptent → câble droit ou croisé = indifférent.</pre>\n</div>\n<h3>III.3.5 — Câblage pour 1000BASE-T (Gigabit Ethernet)</h3>\n<p>Le Gigabit Ethernet diffère des normes 10/100 Mbps :</p>\n<ul>\n<li>Nécessite <strong>4 paires de fils</strong> (au lieu de 2)</li>\n<li>Chaque extrémité peut <strong>transmettre ET recevoir simultanément</strong> sur chaque paire</li>\n<li>Câble droit GE : utilise les mêmes broches pour 2 paires + ajoute paires sur broches 4,5 et 7,8</li>\n<li>Câble croisé GE : croise les mêmes paires que 10/100 + croise aussi les paires 4,5 et 7,8</li>\n</ul>\n<h2>III.4 — Construction des réseaux Ethernet avec Fibre Optique</h2>\n<h3>III.4.1 — Concepts de transmission par fibre</h3>\n<p>Le câblage à fibre optique utilise le <strong>verre comme support</strong> à travers lequel la lumière passe, faisant varier cette lumière dans le temps pour coder les 0 et les 1. La fibre de verre est flexible et peut être enroulée dans un câble protecteur.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Composants d'un câble à fibre optique</div>\n<pre>┌─────────────────────────────────────────────────────────────┐\n│  Outer Jacket (Gaine extérieure)                            │\n│  ┌───────────────────────────────────────────────────────┐  │\n│  │  Strengthener (Renforts)                              │  │\n│  │  ┌─────────────────────────────────────────────────┐  │  │\n│  │  │  Buffer (Protection intermédiaire)              │  │  │\n│  │  │  ┌───────────────────────────────────────────┐  │  │  │\n│  │  │  │  Cladding (Gaine optique — réfléchit)    │  │  │  │\n│  │  │  │  ┌─────────────────────────────────────┐  │  │  │  │\n│  │  │  │  │  Core / Cœur (lumière passe ici)    │  │  │  │  │\n│  │  │  │  └─────────────────────────────────────┘  │  │  │  │\n│  │  │  └───────────────────────────────────────────┘  │  │  │\n│  │  └─────────────────────────────────────────────────┘  │  │\n│  └───────────────────────────────────────────────────────┘  │\n└─────────────────────────────────────────────────────────────┘</pre>\n</div>\n<h3>III.4.2 — Fibre multimode vs fibre monomode</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>Fibre Multimode</th><th>Fibre Monomode</th></tr></thead>\n<tbody>\n<tr><td><strong>Diamètre du cœur</strong></td><td>50 ou 62,5 µm (large)</td><td>~10 µm (très fin)</td></tr>\n<tr><td><strong>Source lumineuse</strong></td><td>LED (diode électroluminescente)</td><td>Laser (diode laser)</td></tr>\n<tr><td><strong>Modes de lumière</strong></td><td>Plusieurs angles (modes)</td><td>Un seul angle (mode direct)</td></tr>\n<tr><td><strong>Dispersion</strong></td><td>Plus importante</td><td>Quasi nulle</td></tr>\n<tr><td><strong>Distance max (10G)</strong></td><td>Jusqu'à ~400 m</td><td>Plusieurs dizaines de km</td></tr>\n<tr><td><strong>Coût</strong></td><td>Moins cher</td><td>Plus cher (laser)</td></tr>\n<tr><td><strong>Usage</strong></td><td>Intra-bâtiment, campus</td><td>Inter-sites, longues distances</td></tr>\n</tbody>\n</table></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Norme 10 Gbit/s</th><th>Type de câble</th><th>Distance max</th></tr></thead>\n<tbody>\n<tr><td>10GBASE-S</td><td>Multimode (MM)</td><td>400 m</td></tr>\n<tr><td>10GBASE-LX4</td><td>Multimode (MM)</td><td>300 m</td></tr>\n<tr><td>10GBASE-LR</td><td>Monomode (SM)</td><td>10 km</td></tr>\n<tr><td>10GBASE-E</td><td>Monomode (SM)</td><td>30 km</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 UTP vs Multimode vs Monomode — Comparaison</div>\n<p><strong>Coût câblage</strong> : UTP (bas) · MM (moyen) · SM (moyen)<br/>\n<strong>Coût port switch</strong> : UTP (bas) · MM (moyen) · SM (élevé)<br/>\n<strong>Distance max</strong> : UTP (100 m) · MM (500 m) · SM (40 km)<br/>\n<strong>Sensibilité EMI</strong> : UTP (quelques-unes) · MM (aucune) · SM (aucune)<br/>\n<strong>Risque d'espionnage</strong> : UTP (quelques-uns) · MM (aucun) · SM (aucun)</p>\n</div>\n<p>⚠️ La fibre nécessite <strong>deux câbles</strong> pour la transmission bidirectionnelle : un pour chaque direction (TX d'un côté → RX de l'autre).</p>\n<h2>III.5 — Envoi de données dans les réseaux Ethernet</h2>\n<h3>III.5.1 — Format d'une trame Ethernet (IEEE 802.3)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure d'une trame Ethernet</div>\n<pre>┌──────────┬─────┬───────────┬───────────┬────────┬──────────────┬─────┐\n│Préambule │ SFD │  MAC Dst  │  MAC Src  │  Type  │   Données    │ FCS │\n│  7 oct.  │ 1o  │  6 octets │  6 octets │ 2 oct. │  46–1500 oct │ 4o  │\n└──────────┴─────┴───────────┴───────────┴────────┴──────────────┴─────┘</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Taille</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Préambule</strong></td><td>7 octets</td><td>Synchronisation des équipements</td></tr>\n<tr><td><strong>SFD</strong> (Start Frame Delimiter)</td><td>1 octet</td><td>Indique que l'octet suivant est l'adresse MAC destination</td></tr>\n<tr><td><strong>Adresse MAC Destination</strong></td><td>6 octets</td><td>Identifie le destinataire prévu de la trame</td></tr>\n<tr><td><strong>Adresse MAC Source</strong></td><td>6 octets</td><td>Identifie l'expéditeur de la trame</td></tr>\n<tr><td><strong>Type</strong></td><td>2 octets</td><td>Identifie le protocole encapsulé (IPv4 ou IPv6)</td></tr>\n<tr><td><strong>Données + Pad</strong></td><td>46–1500 octets</td><td>Données de couche supérieure (PDU L3, généralement paquet IP). Pad pour atteindre le minimum de 46 octets.</td></tr>\n<tr><td><strong>FCS</strong> (Frame Check Sequence)</td><td>4 octets</td><td>Détection des erreurs de transmission (CRC)</td></tr>\n</tbody>\n</table></div>\n<h3>III.5.2 — Duplex intégral avec les commutateurs</h3>\n<p>Les LAN Ethernet modernes utilisent le <strong>duplex intégral</strong> (full-duplex) sur chaque liaison avec des commutateurs. Cela signifie que les nœuds peuvent <strong>transmettre et recevoir simultanément</strong>, sans risque de collision.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple d'envoi : PC1 → PC2 via deux switches</div>\n<pre>1. PC1 construit et envoie la trame Ethernet :\n   - MAC source = MAC de PC1\n   - MAC destination = MAC de PC2\n2. SW1 reçoit la trame sur son interface G0/1\n   et la retransmet vers SW2\n3. SW2 reçoit la trame sur son interface F0/2\n   et la retransmet vers PC2\n4. PC2 reçoit la trame, reconnaît son adresse MAC\n   et traite la trame\n→ Chaque lien est en duplex intégral : pas de collision possible\n→ Les vitesses peuvent être différentes sur chaque lien</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents à l'examen</div>\n<p><strong>Piège 1 — Câble droit vs croisé :</strong><br/>\n        Câble <strong>droit</strong> = équipements <strong>différents</strong> (PC↔switch, switch↔routeur)<br/>\n        Câble <strong>croisé</strong> = équipements <strong>similaires</strong> (switch↔switch, PC↔PC)<br/>\n        Les équipements modernes ont l'<strong>Auto-MDIX</strong> → détection automatique.<br/><br/>\n<strong>Piège 2 :</strong> 10BASE-T et 100BASE-T utilisent <strong>2 paires</strong> · 1000BASE-T utilise <strong>4 paires</strong>.<br/><br/>\n<strong>Piège 3 :</strong> La fibre optique nécessite <strong>2 câbles</strong> (un par sens). Les connecteurs SFP/SFP+ sont utilisés pour la fibre sur les switch.<br/><br/>\n<strong>Piège 4 :</strong> Le champ FCS de la trame Ethernet sert à la <strong>détection d'erreurs</strong> (CRC), pas à la correction.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre III</h3>\n<ul>\n<li>Ethernet = IEEE 802.3 · vitesses 10 Mbps → 400 Gbps · filaire (≠ Wi-Fi IEEE 802.11)</li>\n<li>SOHO : switch + routeur + AP · Entreprise : switch par étage + AP + salle technique</li>\n<li>Câble UTP : <strong>droit</strong> (équipements différents : PC↔switch) · <strong>croisé</strong> (similaires : switch↔switch) · Auto-MDIX = détection automatique</li>\n<li>10/100 Mbps = 2 paires · <strong>1000 Mbps = 4 paires</strong> (TX+RX simultanés sur chaque paire)</li>\n<li>Fibre <strong>multimode</strong> : LED, courtes distances (&lt;500m) · <strong>monomode</strong> : laser, longues distances (&gt;10km)</li>\n<li>Trame Ethernet : Préambule · SFD · MAC Dst · MAC Src · Type · Données (46-1500o) · <strong>FCS</strong> (détection erreurs)</li>\n<li>Duplex intégral = TX et RX simultanés · pas de collision · possible grâce aux switches</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quel type de câble faut-il utiliser pour connecter un PC à un switch ?",
-     "options": [
-      {
-       "text": "Câble droit (straight-through)",
-       "correct": true,
-       "explanation": "Correct ! Un câble droit (straight-through) est utilisé pour connecter des équipements différents. Le PC (NIC) transmet sur les broches 1,2 et le switch reçoit sur ces mêmes broches. Le câblage direct permet cette communication sans croiser les paires."
-      },
-      {
-       "text": "Câble croisé (crossover)",
-       "correct": false,
-       "explanation": "Un câble croisé est utilisé pour connecter des équipements similaires (switch↔switch, PC↔PC). Entre un PC et un switch, c'est un câble droit."
-      },
-      {
-       "text": "Câble coaxial",
-       "correct": false,
-       "explanation": "Un câble coaxial n'est pas utilisé pour les connexions Ethernet modernes PC↔switch."
-      },
-      {
-       "text": "Fibre optique",
-       "correct": false,
-       "explanation": "La fibre optique peut être utilisée dans certains cas, mais pour un PC vers switch standard, c'est un câble UTP droit."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Combien de paires de fils utilise la norme 1000BASE-T (Gigabit Ethernet) ?",
-     "options": [
-      {
-       "text": "1 paire",
-       "correct": false,
-       "explanation": "1 paire ne suffit pas pour le Gigabit Ethernet — ce n'est pas une norme valide."
-      },
-      {
-       "text": "2 paires",
-       "correct": false,
-       "explanation": "2 paires sont utilisées par 10BASE-T et 100BASE-T, pas par 1000BASE-T."
-      },
-      {
-       "text": "3 paires",
-       "correct": false,
-       "explanation": "3 paires n'est pas une configuration standard pour Ethernet."
-      },
-      {
-       "text": "4 paires",
-       "correct": true,
-       "explanation": "Correct ! 1000BASE-T (Gigabit Ethernet) nécessite 4 paires de fils, contrairement à 10BASE-T et 100BASE-T qui n'en utilisent que 2. De plus, le Gigabit transmet et reçoit simultanément sur chaque paire."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel champ de la trame Ethernet permet la détection des erreurs de transmission ?",
-     "options": [
-      {
-       "text": "Préambule",
-       "correct": false,
-       "explanation": "Le préambule sert à la synchronisation des équipements, pas à la détection d'erreurs."
-      },
-      {
-       "text": "Type",
-       "correct": false,
-       "explanation": "Le champ Type identifie le protocole encapsulé (IPv4 ou IPv6), pas les erreurs."
-      },
-      {
-       "text": "FCS (Frame Check Sequence)",
-       "correct": true,
-       "explanation": "Correct ! Le FCS (Frame Check Sequence) est un champ de 4 octets en fin de trame qui utilise un CRC (Cyclic Redundancy Check) pour permettre à la carte réseau réceptrice de détecter les erreurs de transmission."
-      },
-      {
-       "text": "SFD (Start Frame Delimiter)",
-       "correct": false,
-       "explanation": "Le SFD (Start Frame Delimiter) indique le début de la trame, pas les erreurs."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle est la distance maximale d'un câble 10GBASE-LR en fibre monomode ?",
-     "options": [
-      {
-       "text": "400 m",
-       "correct": false,
-       "explanation": "400m est la distance maximale de 10GBASE-S en fibre multimode."
-      },
-      {
-       "text": "30 km",
-       "correct": false,
-       "explanation": "30 km est la distance maximale de 10GBASE-E en monomode — pas 10GBASE-LR."
-      },
-      {
-       "text": "10 km",
-       "correct": true,
-       "explanation": "Correct ! 10GBASE-LR (LR = Long Range) utilise de la fibre monomode et supporte une distance maximale de 10 km. C'est à comparer avec 10GBASE-E (30 km) et les normes multimode (300-400 m)."
-      },
-      {
-       "text": "100 m",
-       "correct": false,
-       "explanation": "100 m est la limite des câbles UTP, pas de la fibre monomode."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Que signifie \"duplex intégral\" dans les LAN Ethernet modernes avec switch ?",
-     "options": [
-      {
-       "text": "Tous les équipements partagent la même bande passante",
-       "correct": false,
-       "explanation": "Le duplex intégral ne signifie pas que tous les équipements partagent la même bande passante."
-      },
-      {
-       "text": "Un seul équipement peut émettre à la fois pour éviter les collisions",
-       "correct": false,
-       "explanation": "En duplex intégral, il n'y a pas de risque de collision — c'est précisément l'avantage sur le half-duplex."
-      },
-      {
-       "text": "Les nœuds peuvent transmettre et recevoir simultanément",
-       "correct": true,
-       "explanation": "Correct ! Le duplex intégral (full-duplex) permet à chaque nœud de transmettre et recevoir SIMULTANÉMENT. C'est possible grâce aux switches qui créent des domaines de collision séparés sur chaque port. Bien plus rapide que le half-duplex des hubs."
-      },
-      {
-       "text": "Les données sont compressées avant transmission",
-       "correct": false,
-       "explanation": "Le duplex intégral ne concerne pas la compression — c'est le mode de fonctionnement de la liaison (émission + réception simultanées)."
-      }
-     ]
-    }
-   ],
-   "source": "_private/ccna/chapitres/chapitre3.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Généralités sur les Réseaux Informatiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Généralités sur les Réseaux Informatiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Généralités sur les Réseaux Informatiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Généralités sur les Réseaux Informatiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Généralités sur les Réseaux Informatiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Introduction aux Modèles TCPIP et OSI.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Introduction aux Modèles TCPIP et OSI.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Introduction aux Modèles TCPIP et OSI.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Introduction aux Modèles TCPIP et OSI.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Introduction aux Modèles TCPIP et OSI.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Principes de Base des Réseaux Locaux Ethernet.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Principes de Base des Réseaux Locaux Ethernet.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Principes de Base des Réseaux Locaux Ethernet.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Principes de Base des Réseaux Locaux Ethernet.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Principes de Base des Réseaux Locaux Ethernet.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/ccna/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/ccna/exercices/exercices.html"
 }

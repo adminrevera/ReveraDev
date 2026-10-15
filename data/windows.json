@@ -1,957 +1,957 @@
 {
- "slug": "windows",
- "name": "Administration Windows",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Introduction à l'Administration Windows",
-   "subtitle": "Administration système, rôle et qualités de l'administrateur, Windows Server 2012 et ses éditions, options d'installation, Gestionnaire de serveur et configuration initiale.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre les concepts de base de l'administration système<br/>\n  • Connaître les tâches et qualités d'un administrateur système<br/>\n  • Distinguer les éditions et options d'installation de Windows Server 2012<br/>\n  • Maîtriser le Gestionnaire de serveur et la configuration initiale (IP, pare-feu, RDP)<br/>\n  • Savoir modifier le mot de passe Administrateur en invite de commande</p>\n</div>\n<h2>1.1 — Administration système</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📖 Définition</div>\n<p>L'<strong>administration système</strong> est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique. Cette mission est confiée à l'<strong>administrateur système</strong>, qui veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il peut avoir une double casquette d'<strong>administrateur réseau</strong> : on parle alors d'<em>Administrateur Système et Réseau</em>.</p>\n</div>\n<h2>1.2 — Tâches de l'administrateur système</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Domaine</th><th>Tâches principales</th></tr></thead>\n<tbody>\n<tr><td><strong>Comptes utilisateurs</strong></td><td>Créer, modifier, supprimer des comptes (tâche automatisable)</td></tr>\n<tr><td><strong>Assistance utilisateurs</strong></td><td>Répondre aux questions, maintenir la documentation à jour</td></tr>\n<tr><td><strong>Logiciels</strong></td><td>Installer, configurer, mettre à jour (patcher)</td></tr>\n<tr><td><strong>Matériel</strong></td><td>Gérer les pannes, remplacements et ajouts</td></tr>\n<tr><td><strong>Sécurité</strong></td><td>Sauvegardes fiables, contrôle d'accès, surveillance des abus</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Diagnostiquer les pannes, appel de la maintenance constructeur</td></tr>\n<tr><td><strong>Performance</strong></td><td>Identifier les goulots d'étranglement, adéquation matériel/usage</td></tr>\n</tbody></table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ À retenir pour l'examen</div>\n<p>L'administrateur est en <strong>première ligne</strong> lorsqu'un problème surgit. C'est lui qu'on incrimine naturellement lorsque quelque chose ne fonctionne pas. Il gère quotidiennement de multiples tâches, petites ou grosses.</p>\n</div>\n<h2>1.3 — Qualités et types d'administration</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Qualités (3)</th><th>Types d'administration (3)</th></tr></thead>\n<tbody>\n<tr><td>✅ Technicité</td><td>🖥️ Administration d'un poste (station) de travail</td></tr>\n<tr><td>✅ Rigueur</td><td>🗄️ Administration des serveurs</td></tr>\n<tr><td>✅ Bon sens</td><td>🌐 Administration réseau</td></tr>\n</tbody></table></div>\n<h2>1.4 — Outils d'administration Windows</h2>\n<p>Windows offre un environnement d'administration complet comprenant notamment :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Outil</th><th>Fonctions</th></tr></thead>\n<tbody>\n<tr><td><strong>Gestionnaire de tâches</strong></td><td>Processus, performances, utilisateurs connectés</td></tr>\n<tr><td><strong>Gestionnaire de l'ordinateur</strong></td><td>Utilisateurs/groupes locaux, Observateur d'événements, Services, Stockage (disque)</td></tr>\n<tr><td><strong>Analyseur de performances</strong></td><td>Compteurs de performances, journaux</td></tr>\n<tr><td><strong>Gestionnaire de sécurité</strong></td><td>Stratégies, droits d'accès</td></tr>\n</tbody></table></div>\n<h2>1.5 — Windows Server 2012 : contexte</h2>\n<p>Microsoft Windows Server est le système d'exploitation serveur de Microsoft. Depuis Windows NT, Microsoft a investi massivement dans ce domaine. En <strong>2003</strong> arrive la première version de Windows Server, largement adoptée en entreprise. S'ensuivent les versions <strong>2008, 2012, 2016, 2019 et 2022</strong>.</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Version étudiée en TP</div>\n<p>Le cours explore <strong>Windows Server 2012 R2</strong>.</p>\n</div>\n<h2>1.6 — Les 4 éditions de Windows Server 2012</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Édition</th><th>Cible</th><th>Limites</th><th>Virtualisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Foundation</strong></td><td>TPE</td><td>15 utilisateurs, 1 processeur</td><td>Non — machine physique uniquement</td></tr>\n<tr><td><strong>Essentials</strong></td><td>PME</td><td>25 utilisateurs, 2 processeurs</td><td>Non — physique ou virtuelle</td></tr>\n<tr><td><strong>Standard</strong></td><td>Entreprise standard</td><td>2 processeurs/licence, 64 sockets max, 4 To RAM</td><td>2 VM par licence</td></tr>\n<tr><td><strong>Datacenter</strong></td><td>Usage intensif VM</td><td>2 processeurs/licence, 64 sockets max, 4 To RAM</td><td>VM illimitées</td></tr>\n</tbody></table></div>\n<h2>1.7 — Options d'installation</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Installation minimale (Server Core)</th><th>Installation complète (GUI)</th></tr></thead>\n<tbody>\n<tr><td><strong>Interface</strong></td><td>Ligne de commande uniquement</td><td>Interface graphique complète</td></tr>\n<tr><td><strong>Espace disque</strong></td><td>Moins (60 Go min.)</td><td>Plus</td></tr>\n<tr><td><strong>Surface d'attaque</strong></td><td>Réduite</td><td>Plus grande</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Considérablement réduite</td><td>Standard</td></tr>\n</tbody></table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⚙️ Configuration minimale Server Core 2012 R2</div>\n<p>• Processeur : 3,1 GHz 64 bits recommandé<br/>\n  • RAM : 2 Go minimum (8 Go recommandé)<br/>\n  • Disque : 60 Go<br/>\n  • Réseau : Gigabit Ethernet (10/100/1000base-T)</p>\n</div>\n<h2>1.8 — Connexion à Windows Server</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Connexion à la base SAM locale</div>\n<pre>nom_machine\\utilisateur</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Connexion au domaine (2 méthodes)</div>\n<pre>Nom_NETBIOS\\login\nlogin@nom_dns_domaine</pre></div>\n<p>La <strong>SAM (Security Account Manager)</strong> est la base de données des comptes locaux Windows, composant du registre contenant les mots de passe locaux.</p>\n<h2>1.9 — Gestionnaire de serveur</h2>\n<p>Le <strong>Gestionnaire de serveur</strong> est le point central d'administration de Windows Server. Il permet de :</p>\n<ul>\n<li>Ajouter des rôles et fonctionnalités (AD DS, DHCP, DNS, IIS…)</li>\n<li>Gérer plusieurs serveurs depuis une seule interface</li>\n<li>Créer des groupes de serveurs logiques</li>\n<li>Lancer des commandes PowerShell</li>\n<li>Consulter les notifications et journaux</li>\n</ul>\n<h2>1.10 — Configuration initiale du système</h2>\n<h3>Désactiver le pare-feu</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Désactiver le pare-feu (tous les profils)</div>\n<pre>netsh advfirewall set allprofiles state off</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Désactiver le pare-feu</div>\n<pre>Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</pre></div>\n<h3>Renommer la machine</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Renommer le serveur</div>\n<pre>netdom renamecomputer NOMACTUEL /NewName:NOUVEAUNOM\nshutdown /r</pre></div>\n<h3>Configurer une adresse IP statique (PowerShell)</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Lister les interfaces réseau</div>\n<pre>Get-NetIPInterface\nGet-NetAdapter</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter une adresse IP (index 12)</div>\n<pre>New-NetIPAddress -InterfaceIndex 12 -IPAddress 192.168.1.203 -PrefixLength 24 -DefaultGateway 192.168.1.1</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter un DNS</div>\n<pre>Set-DnsClientServerAddress -InterfaceIndex 12 -ServerAddresses 8.8.8.8</pre></div>\n<h3>Modifier le mot de passe Administrateur</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Changer le mot de passe administrateur</div>\n<pre>net user administrateur *</pre></div>\n<p>Vous serez invité à saisir le nouveau mot de passe et à le confirmer.</p>\n<h3>Activer le Bureau à distance (RDP)</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Activer RDP</div>\n<pre>Set-ItemProperty -Path 'HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server' -Name \"fDenyTSConnections\" -Value 0</pre></div>\n<h2>1.11 — Notion de Store (ActiveStore / PersistentStore)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Store</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><strong>ActiveStore</strong></td><td>Applique immédiatement la configuration (perdue au redémarrage)</td></tr>\n<tr><td><strong>PersistentStore</strong></td><td>Sauvegarde la configuration, appliquée après chaque redémarrage</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">Ch.2 →</a>\n</div>\n</div>",
-   "questions": [
+  "slug": "windows",
+  "name": "Administration Windows",
+  "chapters": [
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Windows Server 2012 dispose de combien d'éditions ?",
-     "options": [
-      {
-       "text": "2 (Standard et Datacenter)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "3 (Foundation, Standard, Datacenter)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "4 (Foundation, Essentials, Standard, Datacenter)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "5 éditions",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 1,
+      "title": "Introduction à l'Administration Windows",
+      "subtitle": "Administration système, rôle et qualités de l'administrateur, Windows Server 2012 et ses éditions, options d'installation, Gestionnaire de serveur et configuration initiale.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre les concepts de base de l'administration système</li><li>Connaître les tâches et qualités d'un administrateur système</li><li>Distinguer les éditions et options d'installation de Windows Server 2012</li><li>Maîtriser le Gestionnaire de serveur et la configuration initiale (IP, pare-feu, RDP)</li><li>Savoir modifier le mot de passe Administrateur en invite de commande</li></ul></div>\n<h2>Administration système</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>L'<strong>administration système</strong> est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique. Cette mission est confiée à l'<strong>administrateur système</strong>, qui veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il peut avoir une double casquette d'<strong>administrateur réseau</strong> : on parle alors d'<em>Administrateur Système et Réseau</em>.</p></div>\n<h2>Tâches de l'administrateur système</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Domaine</th><th>Tâches principales</th></tr></thead>\n<tbody>\n<tr><td><strong>Comptes utilisateurs</strong></td><td>Créer, modifier, supprimer des comptes (tâche automatisable)</td></tr>\n<tr><td><strong>Assistance utilisateurs</strong></td><td>Répondre aux questions, maintenir la documentation à jour</td></tr>\n<tr><td><strong>Logiciels</strong></td><td>Installer, configurer, mettre à jour (patcher)</td></tr>\n<tr><td><strong>Matériel</strong></td><td>Gérer les pannes, remplacements et ajouts</td></tr>\n<tr><td><strong>Sécurité</strong></td><td>Sauvegardes fiables, contrôle d'accès, surveillance des abus</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Diagnostiquer les pannes, appel de la maintenance constructeur</td></tr>\n<tr><td><strong>Performance</strong></td><td>Identifier les goulots d'étranglement, adéquation matériel/usage</td></tr>\n</tbody></table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">À retenir pour l'examen</div>\n<p>L'administrateur est en <strong>première ligne</strong> lorsqu'un problème surgit. C'est lui qu'on incrimine naturellement lorsque quelque chose ne fonctionne pas. Il gère quotidiennement de multiples tâches, petites ou grosses.</p></div>\n<h2>Qualités et types d'administration</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Qualités (3)</th><th>Types d'administration (3)</th></tr></thead>\n<tbody>\n<tr><td> Technicité</td><td> Administration d'un poste (station) de travail</td></tr>\n<tr><td> Rigueur</td><td> Administration des serveurs</td></tr>\n<tr><td> Bon sens</td><td> Administration réseau</td></tr>\n</tbody></table></div>\n<h2>Outils d'administration Windows</h2>\n<p>Windows offre un environnement d'administration complet comprenant notamment :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Outil</th><th>Fonctions</th></tr></thead>\n<tbody>\n<tr><td><strong>Gestionnaire de tâches</strong></td><td>Processus, performances, utilisateurs connectés</td></tr>\n<tr><td><strong>Gestionnaire de l'ordinateur</strong></td><td>Utilisateurs/groupes locaux, Observateur d'événements, Services, Stockage (disque)</td></tr>\n<tr><td><strong>Analyseur de performances</strong></td><td>Compteurs de performances, journaux</td></tr>\n<tr><td><strong>Gestionnaire de sécurité</strong></td><td>Stratégies, droits d'accès</td></tr>\n</tbody></table></div>\n<h2>Windows Server 2012 : contexte</h2>\n<p>Microsoft Windows Server est le système d'exploitation serveur de Microsoft. Depuis Windows NT, Microsoft a investi massivement dans ce domaine. En <strong>2003</strong> arrive la première version de Windows Server, largement adoptée en entreprise. S'ensuivent les versions <strong>2008, 2012, 2016, 2019 et 2022</strong>.</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Version étudiée en TP</div>\n<p>Le cours explore <strong>Windows Server 2012 R2</strong>.</p></div>\n<h2>Les 4 éditions de Windows Server 2012</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Édition</th><th>Cible</th><th>Limites</th><th>Virtualisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Foundation</strong></td><td>TPE</td><td>15 utilisateurs, 1 processeur</td><td>Non — machine physique uniquement</td></tr>\n<tr><td><strong>Essentials</strong></td><td>PME</td><td>25 utilisateurs, 2 processeurs</td><td>Non — physique ou virtuelle</td></tr>\n<tr><td><strong>Standard</strong></td><td>Entreprise standard</td><td>2 processeurs/licence, 64 sockets max, 4 To RAM</td><td>2 VM par licence</td></tr>\n<tr><td><strong>Datacenter</strong></td><td>Usage intensif VM</td><td>2 processeurs/licence, 64 sockets max, 4 To RAM</td><td>VM illimitées</td></tr>\n</tbody></table></div>\n<h2>Options d'installation</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Installation minimale (Server Core)</th><th>Installation complète (GUI)</th></tr></thead>\n<tbody>\n<tr><td><strong>Interface</strong></td><td>Ligne de commande uniquement</td><td>Interface graphique complète</td></tr>\n<tr><td><strong>Espace disque</strong></td><td>Moins (60 Go min.)</td><td>Plus</td></tr>\n<tr><td><strong>Surface d'attaque</strong></td><td>Réduite</td><td>Plus grande</td></tr>\n<tr><td><strong>Maintenance</strong></td><td>Considérablement réduite</td><td>Standard</td></tr>\n</tbody></table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Configuration minimale Server Core 2012 R2</div>\n<ul><li>Processeur : 3,1 GHz 64 bits recommandé</li><li>RAM : 2 Go minimum (8 Go recommandé)</li><li>Disque : 60 Go</li><li>Réseau : Gigabit Ethernet (10/100/1000base-T)</li></ul></div>\n<h2>Connexion à Windows Server</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Connexion à la base SAM locale</div>\n<pre>nom_machine\\utilisateur</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Connexion au domaine (2 méthodes)</div>\n<pre>Nom_NETBIOS\\login\nlogin@nom_dns_domaine</pre></div>\n<p>La <strong>SAM (Security Account Manager)</strong> est la base de données des comptes locaux Windows, composant du registre contenant les mots de passe locaux.</p>\n<h2>Gestionnaire de serveur</h2>\n<p>Le <strong>Gestionnaire de serveur</strong> est le point central d'administration de Windows Server. Il permet de :</p>\n<ul>\n<li>Ajouter des rôles et fonctionnalités (AD DS, DHCP, DNS, IIS…)</li>\n<li>Gérer plusieurs serveurs depuis une seule interface</li>\n<li>Créer des groupes de serveurs logiques</li>\n<li>Lancer des commandes PowerShell</li>\n<li>Consulter les notifications et journaux</li>\n</ul>\n<h2>Configuration initiale du système</h2>\n<h3>Désactiver le pare-feu</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Désactiver le pare-feu (tous les profils)</div>\n<pre>netsh advfirewall set allprofiles state off</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Désactiver le pare-feu</div>\n<pre>Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</pre></div>\n<h3>Renommer la machine</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Renommer le serveur</div>\n<pre>netdom renamecomputer NOMACTUEL /NewName:NOUVEAUNOM\nshutdown /r</pre></div>\n<h3>Configurer une adresse IP statique (PowerShell)</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Lister les interfaces réseau</div>\n<pre>Get-NetIPInterface\nGet-NetAdapter</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter une adresse IP (index 12)</div>\n<pre>New-NetIPAddress -InterfaceIndex 12 -IPAddress 192.168.1.203 -PrefixLength 24 -DefaultGateway 192.168.1.1</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter un DNS</div>\n<pre>Set-DnsClientServerAddress -InterfaceIndex 12 -ServerAddresses 8.8.8.8</pre></div>\n<h3>Modifier le mot de passe Administrateur</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">CMD — Changer le mot de passe administrateur</div>\n<pre>net user administrateur *</pre></div>\n<p>Vous serez invité à saisir le nouveau mot de passe et à le confirmer.</p>\n<h3>Activer le Bureau à distance (RDP)</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Activer RDP</div>\n<pre>Set-ItemProperty -Path 'HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server' -Name \"fDenyTSConnections\" -Value 0</pre></div>\n<h2>Notion de Store (ActiveStore / PersistentStore)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Store</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><strong>ActiveStore</strong></td><td>Applique immédiatement la configuration (perdue au redémarrage)</td></tr>\n<tr><td><strong>PersistentStore</strong></td><td>Sauvegarde la configuration, appliquée après chaque redémarrage</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">Ch.2 →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Windows Server 2012 dispose de combien d'éditions ?",
+          "options": [
+            {
+              "text": "2 (Standard et Datacenter)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "3 (Foundation, Standard, Datacenter)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "4 (Foundation, Essentials, Standard, Datacenter)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "5 éditions",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quelles sont les 3 qualités d'un administrateur système ?",
+          "options": [
+            {
+              "text": "Technicité, rapidité, créativité",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Technicité, rigueur, bon sens",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Rigueur, communication, leadership",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Bon sens, rapidité, technicité",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "La commande netsh advfirewall set allprofiles state off permet de :",
+          "options": [
+            {
+              "text": "Activer le pare-feu Windows",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Désactiver le pare-feu pour tous les profils",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Configurer l'adresse IP",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Renommer le serveur",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quelle commande permet de modifier le mot de passe du compte Administrateur en invite de commande ?",
+          "options": [
+            {
+              "text": "passwd administrateur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "set-password administrateur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "net user administrateur *",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "change-password /admin",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "L'édition Datacenter de Windows Server 2012 se distingue de Standard par :",
+          "options": [
+            {
+              "text": "Un nombre de processeurs supérieur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un nombre de machines virtuelles illimité",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Une interface graphique différente",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un support de plus de 4 To de RAM",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "windows/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quelles sont les 3 qualités d'un administrateur système ?",
-     "options": [
-      {
-       "text": "Technicité, rapidité, créativité",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Technicité, rigueur, bon sens",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Rigueur, communication, leadership",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Bon sens, rapidité, technicité",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 2,
+      "title": "Installation du serveur Active Directory (AD DS)",
+      "subtitle": "Notions de domaine, arbre et forêt. Installation du rôle AD DS, promotion en contrôleur de domaine, configuration DNS et déploiement sous PowerShell.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre la notion d'Active Directory (domaine, arbre, forêt)</li><li>Savoir installer le rôle AD DS via le Gestionnaire de serveur</li><li>Promouvoir un serveur en contrôleur de domaine (nouvelle forêt)</li><li>Installer et configurer AD DS sous PowerShell</li></ul></div>\n<h2>Notion de domaine, arbre et forêt</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Domaine</div>\n<p>Un <strong>domaine</strong> est une entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Il héberge des utilisateurs et des ordinateurs, dans lequel des paramètres de stratégies sont définis.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Domaine principal avec sous-domaines (cdp.org)</div>\n<pre>cdp.org                    ← Domaine racine\n├── paris.cdp.org          ← Sous-domaine (domaine enfant)\n└── lome.cdp.org           ← Sous-domaine (domaine enfant)</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Concept</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td><strong>Domaine</strong></td><td>Entité logique AD hébergeant utilisateurs, ordinateurs et stratégies</td></tr>\n<tr><td><strong>Sous-domaine (domaine enfant)</strong></td><td>Domaine rattaché à un domaine parent (ex : paris.cdp.org)</td></tr>\n<tr><td><strong>Arbre</strong></td><td>Regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu</td></tr>\n<tr><td><strong>Forêt</strong></td><td>Regroupement d'une ou plusieurs arborescences (arbres) indépendantes</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Moyen mnémotechnique</div>\n<p><strong>Domaine → Arbre → Forêt</strong> : comme en botanique ! Un arbre = plusieurs domaines branchés. Une forêt = plusieurs arbres.</p></div>\n<h2>Installation du rôle AD DS (interface graphique)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes d'installation</div>\n<p><strong>1.</strong> Ouvrir le <em>Gestionnaire de serveur</em><br/>\n<strong>2.</strong> Cliquer sur <em>Gérer</em> → <em>Ajouter des rôles et des fonctionnalités</em><br/>\n<strong>3.</strong> Choisir <em>Installation basée sur un rôle ou une fonctionnalité</em><br/>\n<strong>4.</strong> Sélectionner le serveur cible<br/>\n<strong>5.</strong> Cocher <em>Services AD DS</em> (les fonctionnalités complémentaires sont automatiquement sélectionnées)<br/>\n<strong>6.</strong> Cliquer sur <em>Suivant</em> puis <em>Installer</em></p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Important</div>\n<p>À la fin de l'installation des binaires, <strong>AD DS n'est pas encore configuré</strong>. Un bandeau jaune apparaît dans le Gestionnaire de serveur : cliquer sur <em>\"Promouvoir ce serveur en contrôleur de domaine\"</em> pour lancer l'assistant de configuration.</p></div>\n<h2>Configuration AD DS : créer une nouvelle forêt</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes de l'assistant de configuration</div>\n<p><strong>1.</strong> Sélectionner <em>Ajouter une nouvelle forêt</em><br/>\n<strong>2.</strong> Saisir le nom de domaine racine (ex : <code>dunia.local</code>) — <em>ce nom est difficile à changer !</em><br/>\n<strong>3.</strong> Choisir le niveau fonctionnel le plus élevé (Windows Server 2012 R2 recommandé)<br/>\n<strong>4.</strong> Définir le mot de passe de restauration DSRM<br/>\n<strong>5.</strong> Configurer le DNS (installé automatiquement avec AD DS)<br/>\n<strong>6.</strong> Vérifier le nom NetBIOS (généré automatiquement)<br/>\n<strong>7.</strong> Choisir les emplacements des dossiers AD<br/>\n<strong>8.</strong> Valider le récapitulatif et lancer l'installation (redémarrage obligatoire)</p></div>\n<h3>Dossiers importants de l'AD DS</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>\n<tbody>\n<tr><td><strong>Base de données</strong></td><td>Fichiers internes AD, fichiers temporaires, NTDS.DIT</td></tr>\n<tr><td><strong>Fichiers journaux</strong></td><td>Logs (.txt) lus par l'Observateur d'événements</td></tr>\n<tr><td><strong>SYSVOL</strong></td><td>Scripts de connexion, GPO, fichiers de réplication AD</td></tr>\n</tbody></table></div>\n<p>Par défaut, ces dossiers sont dans <code>C:\\Windows</code>.</p>\n<h2>Installation AD DS sous PowerShell</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Récupérer le nom du serveur</div>\n<pre>hostname</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter le rôle AD DS</div>\n<pre>Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Configurer une nouvelle forêt</div>\n<pre>Import-Module ADDSDeployment\nInstall-ADDSForest `\n  -DomainName \"dunia.local\" `\n  -DomainNetbiosName \"DUNIA\" `\n  -ForestMode \"Win2012R2\" `\n  -DomainMode \"Win2012R2\" `\n  -InstallDns:$true `\n  -Force:$true</pre></div>\n<h2>Informations nécessaires avant la configuration</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Information</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>Nom DNS du domaine AD DS</td><td>dunia.local</td></tr>\n<tr><td>Nom NetBIOS</td><td>DUNIA</td></tr>\n<tr><td>Support des versions antérieures</td><td>Windows Server 2012 R2</td></tr>\n<tr><td>Serveur DNS intégré</td><td>Oui (recommandé)</td></tr>\n<tr><td>Emplacement NTDS.DIT et SYSVOL</td><td>C:\\Windows\\NTDS, C:\\Windows\\SYSVOL</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1</a>\n<a class=\"ch-nav-btn\">Ch.3 →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Dans une architecture Windows Server, qu'est-ce qu'un domaine ?",
+          "options": [
+            {
+              "text": "Un groupe de machines physiques dans le même bâtiment",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une entité logique AD hébergeant utilisateurs, ordinateurs et stratégies partagées",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un serveur DNS particulier",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un type de partition disque",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Qu'est-ce qu'une forêt dans Active Directory ?",
+          "options": [
+            {
+              "text": "Un seul domaine avec beaucoup d'utilisateurs",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un regroupement de plusieurs domaines d'un seul arbre",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un regroupement d'une ou plusieurs arborescences de domaine indépendantes",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le nom de l'annuaire Active Directory",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Après installation des binaires AD DS, que faut-il faire pour finaliser ?",
+          "options": [
+            {
+              "text": "Redémarrer le serveur immédiatement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Promouvoir le serveur en contrôleur de domaine via l'assistant de configuration",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Installer le rôle DNS séparément",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Créer manuellement le dossier SYSVOL",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Le dossier SYSVOL contient :",
+          "options": [
+            {
+              "text": "Les fichiers de la base de données AD (NTDS.DIT)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les scripts de connexion, GPO et fichiers de réplication AD",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Les journaux d'événements",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les profils itinérants des utilisateurs",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quel cmdlet PowerShell installe le rôle AD DS ?",
+          "options": [
+            {
+              "text": "Add-ADDSRole",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Install-ADDSForest",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Install-WindowsFeature -Name AD-Domain-Services",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "New-ADDomain",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "_private/windows/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "La commande netsh advfirewall set allprofiles state off permet de :",
-     "options": [
-      {
-       "text": "Activer le pare-feu Windows",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Désactiver le pare-feu pour tous les profils",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Configurer l'adresse IP",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Renommer le serveur",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 3,
+      "title": "Gestion des objets AD DS",
+      "subtitle": "Unités d'Organisation, création d'utilisateurs (GUI + PowerShell), jonction au domaine, profils itinérants, types et étendues de groupes.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre la notion d'objet Active Directory</li><li>Créer des Unités d'Organisation (UO)</li><li>Créer des utilisateurs et les intégrer dans un domaine</li><li>Déployer des profils itinérants</li><li>Créer et gérer des groupes Active Directory (types et étendues)</li></ul></div>\n<h2>La console \"Utilisateurs et ordinateurs Active Directory\"</h2>\n<p>Pour gérer les objets AD DS, on utilise la console <strong>Utilisateurs et ordinateurs Active Directory</strong> (accessible via <em>Outils</em> du Gestionnaire de serveur). Elle permet de créer et gérer : utilisateurs, groupes, ordinateurs, contacts, UO.</p>\n<h2>Gestion des Unités d'Organisation (UO)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Qu'est-ce qu'une UO ?</div>\n<p>Une <strong>Unité d'Organisation (UO)</strong> est un conteneur dans Active Directory permettant d'organiser les objets (utilisateurs, ordinateurs, groupes) et d'y appliquer des <strong>GPO ciblées</strong>. Elle peut contenir : des utilisateurs, des groupes, des ordinateurs, des contacts, des imprimantes, et d'autres UO (imbrication).</p></div>\n<h3>Créer une UO — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes</div>\n<p><strong>1.</strong> Ouvrir <em>Utilisateurs et ordinateurs Active Directory</em><br/>\n<strong>2.</strong> Clic droit sur le domaine (ou une UO parente) dans le panneau de gauche<br/>\n<strong>3.</strong> Choisir <em>Nouveau</em> → <em>Unité d'organisation</em><br/>\n<strong>4.</strong> Saisir le nom de l'UO (ex : CDP)<br/>\n<strong>5.</strong> Valider</p></div>\n<h3>Créer une UO — PowerShell</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer une UO nommée CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"CDP\" -Path \"DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer l'UO IT_CDP dans CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer l'UO TP dans IT_CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple de hiérarchie UO pour dunia.local</div>\n<pre>dunia.local\n└── CDP\n    └── IT_CDP\n        └── TP</pre></div>\n<h2>Gestion des utilisateurs</h2>\n<h3>Créer un utilisateur — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes</div>\n<p><strong>1.</strong> Dans la console AD, faire un clic droit sur l'UO cible<br/>\n<strong>2.</strong> Choisir <em>Nouveau</em> → <em>Utilisateur</em><br/>\n<strong>3.</strong> Renseigner : Prénom, Nom, Nom d'ouverture de session<br/>\n<strong>4.</strong> Définir un mot de passe complexe (≥7 caractères, majuscule + minuscule + chiffre + symbole)<br/>\n<strong>5.</strong> Cocher si nécessaire <em>\"L'utilisateur doit changer le mot de passe à la prochaine ouverture de session\"</em><br/>\n<strong>6.</strong> Cliquer sur Terminer</p></div>\n<h3>Deux méthodes d'ouverture de session</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode</th><th>Format</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>UPN (User Principal Name)</strong></td><td>Forme adresse e-mail</td><td>iziti@ntic.ma</td></tr>\n<tr><td><strong>NT/2000 (NetBIOS)</strong></td><td>DOMAINE\\login</td><td>NTIC\\iziti</td></tr>\n</tbody></table></div>\n<h3>Propriétés clés d'un compte utilisateur</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Onglet</th><th>Paramètres disponibles</th></tr></thead>\n<tbody>\n<tr><td><strong>Compte</strong></td><td>Horaires d'accès, restriction d'ordinateurs, verrouillage, expiration, options mot de passe</td></tr>\n<tr><td><strong>Profil</strong></td><td>Chemin du profil itinérant, script de connexion</td></tr>\n<tr><td><strong>Général</strong></td><td>Bureau, téléphone, email</td></tr>\n<tr><td><strong>Membre de</strong></td><td>Groupes auxquels appartient l'utilisateur</td></tr>\n</tbody></table></div>\n<h3>Créer un utilisateur — PowerShell</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer un utilisateur dans une UO</div>\n<pre>New-ADUser `\n  -Name \"Ilham ZITI\" `\n  -GivenName \"Ilham\" `\n  -Surname \"ZITI\" `\n  -SamAccountName \"iziti\" `\n  -UserPrincipalName \"iziti@dunia.local\" `\n  -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\" `\n  -AccountPassword (ConvertTo-SecureString \"P@ssw0rd!\" -AsPlainText -Force) `\n  -Enabled $true</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Afficher les propriétés d'un utilisateur</div>\n<pre>Get-ADUser -Identity iziti -Properties *</pre></div>\n<h2>Joindre un poste au domaine Active Directory</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Prérequis</div>\n<p>Avant de joindre un poste au domaine, s'assurer que le serveur DNS du poste client est celui du <strong>contrôleur de domaine</strong>.</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes (interface graphique)</div>\n<p><strong>1.</strong> Panneau de configuration<br/>\n<strong>2.</strong> Système<br/>\n<strong>3.</strong> Paramètres système avancés<br/>\n<strong>4.</strong> Onglet <em>Nom de l'ordinateur</em> → Modifier<br/>\n<strong>5.</strong> Sélectionner <em>Domaine</em> et saisir le nom du domaine (ex : dunia.local)<br/>\n<strong>6.</strong> Saisir les credentials d'un compte avec les droits nécessaires<br/>\n<strong>7.</strong> Redémarrer le poste</p></div>\n<h2>Profils itinérants</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Qu'est-ce qu'un profil itinérant ?</div>\n<p>Le <strong>profil itinérant</strong> permet de synchroniser le profil d'un utilisateur sur un serveur pour rendre ses données accessibles depuis <strong>l'ensemble du réseau local</strong>. Où que l'utilisateur se connecte, il retrouve son environnement (bureau, documents, paramètres).</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Déploiement d'un profil itinérant</div>\n<p><strong>1.</strong> Créer un dossier partagé sur le serveur (ex : <code>\\\\SRV-DC\\Profils</code>)<br/>\n<strong>2.</strong> Dans les propriétés de l'utilisateur AD → onglet <em>Profil</em><br/>\n<strong>3.</strong> Renseigner le chemin du profil : <code>\\\\SRV-DC\\Profils\\%username%</code><br/>\n<strong>4.</strong> Valider — le profil sera créé automatiquement à la première connexion de l'utilisateur</p></div>\n<h2>Gestion des groupes</h2>\n<h3>Types de groupes</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Sécurité</strong></td><td>Attribuer des droits d'accès à des ressources (partages, imprimantes…)</td></tr>\n<tr><td><strong>Distribution</strong></td><td>Créer des listes de distribution e-mail</td></tr>\n</tbody></table></div>\n<h3>Étendues des groupes</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Étendue</th><th>Membres</th><th>Autorisations</th></tr></thead>\n<tbody>\n<tr><td><strong>Domaine Local</strong></td><td>N'importe quel domaine de la forêt</td><td>Dans le domaine local uniquement</td></tr>\n<tr><td><strong>Global</strong></td><td>Uniquement du domaine où le groupe est défini</td><td>Dans n'importe quel domaine de la forêt</td></tr>\n<tr><td><strong>Universel</strong></td><td>N'importe quel domaine de la forêt (répliqué dans le GC)</td><td>Dans n'importe quel domaine de la forêt</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Conseil pratique</div>\n<p>Pour un groupe d'utilisateurs avec accès fréquent à des partages : choisir <strong>étendue Globale</strong> + <strong>type Sécurité</strong>.</p></div>\n<h3>Créer un groupe — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes</div>\n<p><strong>1.</strong> Dans la console AD, clic droit sur l'UO cible<br/>\n<strong>2.</strong> <em>Nouveau</em> → <em>Groupe</em><br/>\n<strong>3.</strong> Saisir le nom du groupe<br/>\n<strong>4.</strong> Choisir l'étendue et le type<br/>\n<strong>5.</strong> Valider, puis double-cliquer sur le groupe → onglet <em>Membres</em> pour ajouter des utilisateurs</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer un groupe</div>\n<pre>New-ADGroup -Name \"GRP_IT\" -GroupScope Global -GroupCategory Security `\n  -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter un utilisateur à un groupe</div>\n<pre>Add-ADGroupMember -Identity \"GRP_IT\" -Members \"iziti\"</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2</a>\n<a class=\"ch-nav-btn\">Ch.4 →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Qu'est-ce qu'une Unité d'Organisation (UO) ?",
+          "options": [
+            {
+              "text": "Un groupe d'utilisateurs avec les mêmes droits",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un conteneur AD pour organiser les objets et appliquer des GPO ciblées",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un serveur secondaire dans le domaine",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un type de compte service",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Pour créer l'UO \"IT_CDP\" dans l'UO \"CDP\" du domaine dunia.local, la commande PowerShell correcte est :",
+          "options": [
+            {
+              "text": "New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"DC=dunia,DC=local\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "New-ADOU -Name \"IT_CDP\" -Parent \"CDP\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Add-ADOU -Name \"IT_CDP\" -Path \"CDP\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Le profil itinérant permet :",
+          "options": [
+            {
+              "text": "De créer automatiquement des comptes utilisateurs",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "De synchroniser le profil d'un utilisateur sur un serveur pour un accès depuis tout le réseau",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "D'interdire l'accès à certaines machines",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "D'activer le Bureau à distance",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Un groupe de type \"Sécurité\" avec étendue \"Global\" peut recevoir des autorisations dans :",
+          "options": [
+            {
+              "text": "Le domaine local uniquement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "N'importe quel domaine de la forêt",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Uniquement les sous-domaines",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les machines locales uniquement",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Avant de joindre un poste client au domaine, quel prérequis réseau est indispensable ?",
+          "options": [
+            {
+              "text": "Avoir une adresse IP en DHCP",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Que le serveur DNS du poste soit le contrôleur de domaine",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Que le pare-feu soit désactivé sur le poste",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Avoir installé le rôle AD DS sur le poste client",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "_private/windows/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quelle commande permet de modifier le mot de passe du compte Administrateur en invite de commande ?",
-     "options": [
-      {
-       "text": "passwd administrateur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "set-password administrateur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "net user administrateur *",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "change-password /admin",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "L'édition Datacenter de Windows Server 2012 se distingue de Standard par :",
-     "options": [
-      {
-       "text": "Un nombre de processeurs supérieur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un nombre de machines virtuelles illimité",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Une interface graphique différente",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un support de plus de 4 To de RAM",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "number": 4,
+      "title": "Gestion des ressources partagées",
+      "subtitle": "Protocoles SMB/CIFS et NFS, rôle serveur de fichiers, création de partages, droits d'accès, accès UNC depuis les clients.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre le concept de partage de ressources</li><li>Distinguer SMB/CIFS et NFS</li><li>Créer un partage via le Gestionnaire de serveur</li><li>Configurer les droits d'accès</li><li>Accéder aux ressources partagées via chemin UNC</li></ul></div>\n<h2>Introduction : le rôle serveur de fichiers</h2>\n<p>Un des rôles les plus courants pour un serveur Windows est le <strong>serveur de fichiers</strong>. Il permet de :</p>\n<ul>\n<li>Mettre à disposition des fichiers en toute sécurité sur le réseau</li>\n<li>Gérer des droits d'accès (lecture, écriture, modification…)</li>\n<li>Centraliser le stockage (facilite sauvegarde et restauration)</li>\n<li>Permettre à plusieurs personnes de travailler sur un même fichier</li>\n</ul>\n<h2>Protocoles de partage : SMB et NFS</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Protocole</th><th>Nom complet</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>SMB / CIFS</strong></td><td>Server Message Block / Common Internet File System</td><td>Natif Windows, client intégré à l'Explorer</td></tr>\n<tr><td><strong>NFS</strong></td><td>Network File System</td><td>Principalement Linux, également disponible sous Windows</td></tr>\n<tr><td><strong>SAMBA</strong></td><td>—</td><td>Implémentation open source de SMB sous Linux</td></tr>\n</tbody></table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Points clés SMB</div>\n<ul><li>Repose sur <strong>NTFS</strong> pour la gestion des droits d'accès</li><li>Partages accessibles via chemin <strong>UNC</strong> (Universal Naming Convention) : <code>\\\\serveur\\partage</code></li><li>Port : <strong>445/TCP</strong> (à ouvrir dans le pare-feu)</li><li>Client SMB intégré nativement dans l'Explorer Windows</li></ul></div>\n<h2>Création d'un partage (interface graphique)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Prérequis</div>\n<p>Le rôle <strong>Serveur de fichiers</strong> doit être installé pour voir la section <em>\"Partages\"</em> dans le Gestionnaire de serveur.</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Étapes de création</div>\n<p><strong>1.</strong> Ouvrir le Gestionnaire de serveur → <em>Services de fichiers et de stockage</em> → <em>Partages</em><br/>\n<strong>2.</strong> Cliquer sur le lien pour créer un nouveau partage<br/>\n<strong>3.</strong> Choisir le type de partage<br/>\n<strong>4.</strong> Sélectionner le volume et définir le nom du partage<br/>\n<strong>5.</strong> Configurer les paramètres et les droits<br/>\n<strong>6.</strong> Valider</p></div>\n<h3>Les 5 types de partage disponibles</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>SMB rapide</strong></td><td>Partage SMB simple, le plus courant — à utiliser en priorité</td></tr>\n<tr><td><strong>SMB avancé</strong></td><td>Gestion de quotas et droits avancés</td></tr>\n<tr><td><strong>SMB Applications</strong></td><td>Pour Hyper-V, bases de données et serveurs d'applications</td></tr>\n<tr><td><strong>NFS rapide</strong></td><td>Simple via NFS (meilleure compatibilité Linux)</td></tr>\n<tr><td><strong>NFS avancé</strong></td><td>NFS avec gestion avancée des droits</td></tr>\n</tbody></table></div>\n<h3>Options importantes lors de la création</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Option</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><strong>Mise en cache du partage</strong></td><td>Synchronise le partage en local pour un accès hors ligne (si serveur inaccessible)</td></tr>\n<tr><td><strong>Énumération basée sur l'accès</strong></td><td>N'affiche que les partages auxquels l'utilisateur a accès dans l'Explorer (masque les partages sensibles)</td></tr>\n<tr><td><strong>Chiffrement des données</strong></td><td>Chiffre le flux d'accès aux données (pas les données elles-mêmes)</td></tr>\n</tbody></table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Chemin UNC d'accès au partage</div>\n<pre>\\\\SRV-DC\\Sensible\n\\\\nom_serveur\\nom_partage</pre></div>\n<h2>Droits d'accès</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Bonne pratique</div>\n<p>Affecter les droits à des <strong>groupes</strong> (et non à des utilisateurs individuels), couplés à Active Directory pour une gestion simplifiée.<br/>\n  Exemple : le groupe \"Utilisateurs authentifiés\" → <em>Lecture seule</em>.</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Administrateur et droits d'accès</div>\n<p>Par défaut, l'administrateur n'a pas nécessairement accès au contenu des partages s'il n'y a pas de droits explicitement accordés. Il peut effectuer ses tâches d'administration sans voir le contenu des données.</p></div>\n<h2>Accès au partage depuis un client Windows</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Méthode</div>\n<p>Le client SMB est intégré nativement à l'Explorer Windows. Il suffit de saisir le chemin UNC dans la barre d'adresse :</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Saisir dans la barre d'adresse de l'Explorer</div>\n<pre>\\\\SRV-DC\\Sensible</pre></div>\n<p>Windows affiche automatiquement le contenu du partage auquel l'utilisateur a accès.</p>\n<h2>Pare-feu et partage SMB</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Port à ouvrir pour SMB</div>\n<pre>445/TCP (entrant vers le serveur de fichiers)</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Autoriser SMB dans le pare-feu</div>\n<pre>New-NetFirewallRule -DisplayName \"SMB entrant\" -Direction Inbound `\n  -Protocol TCP -LocalPort 445 -Action Allow</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Que signifie l'acronyme SMB ?",
+          "options": [
+            {
+              "text": "Shared Memory Block",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Server Message Block",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "System Management Base",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Secure Mail Bridge",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Le chemin UNC pour accéder au partage \"Données\" sur le serveur \"SRV-DC\" est :",
+          "options": [
+            {
+              "text": "http://SRV-DC/Données",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "SRV-DC:\\Données",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\\\\SRV-DC\\Données",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "/SRV-DC/Données",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Quel port TCP doit être ouvert dans le pare-feu pour permettre l'accès SMB ?",
+          "options": [
+            {
+              "text": "Port 80",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Port 443",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Port 445",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Port 3389",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "L'option \"Énumération basée sur l'accès\" dans un partage SMB permet de :",
+          "options": [
+            {
+              "text": "Chiffrer les données du partage",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "N'afficher à chaque utilisateur que les partages auxquels il a accès",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Limiter le nombre de connexions simultanées",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Autoriser l'accès hors ligne",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Sous Linux, quelle implémentation permet d'accéder aux partages SMB de Windows ?",
+          "options": [
+            {
+              "text": "NFS",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "SAMBA",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "FTP",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "AFP",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "_private/windows/chapitres/chapitre4.html"
     }
-   ],
-   "source": "windows/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Installation du serveur Active Directory (AD DS)",
-   "subtitle": "Notions de domaine, arbre et forêt. Installation du rôle AD DS, promotion en contrôleur de domaine, configuration DNS et déploiement sous PowerShell.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre la notion d'Active Directory (domaine, arbre, forêt)<br/>\n  • Savoir installer le rôle AD DS via le Gestionnaire de serveur<br/>\n  • Promouvoir un serveur en contrôleur de domaine (nouvelle forêt)<br/>\n  • Installer et configurer AD DS sous PowerShell</p>\n</div>\n<h2>2.1 — Notion de domaine, arbre et forêt</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🏢 Domaine</div>\n<p>Un <strong>domaine</strong> est une entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Il héberge des utilisateurs et des ordinateurs, dans lequel des paramètres de stratégies sont définis.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple — Domaine principal avec sous-domaines (cdp.org)</div>\n<pre>cdp.org                    ← Domaine racine\n├── paris.cdp.org          ← Sous-domaine (domaine enfant)\n└── lome.cdp.org           ← Sous-domaine (domaine enfant)</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Concept</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td><strong>Domaine</strong></td><td>Entité logique AD hébergeant utilisateurs, ordinateurs et stratégies</td></tr>\n<tr><td><strong>Sous-domaine (domaine enfant)</strong></td><td>Domaine rattaché à un domaine parent (ex : paris.cdp.org)</td></tr>\n<tr><td><strong>Arbre</strong></td><td>Regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu</td></tr>\n<tr><td><strong>Forêt</strong></td><td>Regroupement d'une ou plusieurs arborescences (arbres) indépendantes</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Moyen mnémotechnique</div>\n<p><strong>Domaine → Arbre → Forêt</strong> : comme en botanique ! Un arbre = plusieurs domaines branchés. Une forêt = plusieurs arbres.</p>\n</div>\n<h2>2.2 — Installation du rôle AD DS (interface graphique)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes d'installation</div>\n<p><strong>1.</strong> Ouvrir le <em>Gestionnaire de serveur</em><br/>\n<strong>2.</strong> Cliquer sur <em>Gérer</em> → <em>Ajouter des rôles et des fonctionnalités</em><br/>\n<strong>3.</strong> Choisir <em>Installation basée sur un rôle ou une fonctionnalité</em><br/>\n<strong>4.</strong> Sélectionner le serveur cible<br/>\n<strong>5.</strong> Cocher <em>Services AD DS</em> (les fonctionnalités complémentaires sont automatiquement sélectionnées)<br/>\n<strong>6.</strong> Cliquer sur <em>Suivant</em> puis <em>Installer</em></p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Important</div>\n<p>À la fin de l'installation des binaires, <strong>AD DS n'est pas encore configuré</strong>. Un bandeau jaune apparaît dans le Gestionnaire de serveur : cliquer sur <em>\"Promouvoir ce serveur en contrôleur de domaine\"</em> pour lancer l'assistant de configuration.</p>\n</div>\n<h2>2.3 — Configuration AD DS : créer une nouvelle forêt</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes de l'assistant de configuration</div>\n<p><strong>1.</strong> Sélectionner <em>Ajouter une nouvelle forêt</em><br/>\n<strong>2.</strong> Saisir le nom de domaine racine (ex : <code>dunia.local</code>) — <em>ce nom est difficile à changer !</em><br/>\n<strong>3.</strong> Choisir le niveau fonctionnel le plus élevé (Windows Server 2012 R2 recommandé)<br/>\n<strong>4.</strong> Définir le mot de passe de restauration DSRM<br/>\n<strong>5.</strong> Configurer le DNS (installé automatiquement avec AD DS)<br/>\n<strong>6.</strong> Vérifier le nom NetBIOS (généré automatiquement)<br/>\n<strong>7.</strong> Choisir les emplacements des dossiers AD<br/>\n<strong>8.</strong> Valider le récapitulatif et lancer l'installation (redémarrage obligatoire)</p>\n</div>\n<h3>Dossiers importants de l'AD DS</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>\n<tbody>\n<tr><td><strong>Base de données</strong></td><td>Fichiers internes AD, fichiers temporaires, NTDS.DIT</td></tr>\n<tr><td><strong>Fichiers journaux</strong></td><td>Logs (.txt) lus par l'Observateur d'événements</td></tr>\n<tr><td><strong>SYSVOL</strong></td><td>Scripts de connexion, GPO, fichiers de réplication AD</td></tr>\n</tbody></table></div>\n<p>Par défaut, ces dossiers sont dans <code>C:\\Windows</code>.</p>\n<h2>2.4 — Installation AD DS sous PowerShell</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Récupérer le nom du serveur</div>\n<pre>hostname</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter le rôle AD DS</div>\n<pre>Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Configurer une nouvelle forêt</div>\n<pre>Import-Module ADDSDeployment\nInstall-ADDSForest `\n  -DomainName \"dunia.local\" `\n  -DomainNetbiosName \"DUNIA\" `\n  -ForestMode \"Win2012R2\" `\n  -DomainMode \"Win2012R2\" `\n  -InstallDns:$true `\n  -Force:$true</pre></div>\n<h2>2.5 — Informations nécessaires avant la configuration</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Information</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>Nom DNS du domaine AD DS</td><td>dunia.local</td></tr>\n<tr><td>Nom NetBIOS</td><td>DUNIA</td></tr>\n<tr><td>Support des versions antérieures</td><td>Windows Server 2012 R2</td></tr>\n<tr><td>Serveur DNS intégré</td><td>Oui (recommandé)</td></tr>\n<tr><td>Emplacement NTDS.DIT et SYSVOL</td><td>C:\\Windows\\NTDS, C:\\Windows\\SYSVOL</td></tr>\n</tbody></table></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1</a>\n<a class=\"ch-nav-btn\">Ch.3 →</a>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Dans une architecture Windows Server, qu'est-ce qu'un domaine ?",
-     "options": [
-      {
-       "text": "Un groupe de machines physiques dans le même bâtiment",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une entité logique AD hébergeant utilisateurs, ordinateurs et stratégies partagées",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un serveur DNS particulier",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un type de partition disque",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "type": "open",
+      "text": "Q1. Qu'est-ce que Windows Server ? Windows Server 2012 dispose de combien d'éditions ? Citez-les. (1,5 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Windows Server est le système d'exploitation <strong>serveur</strong> de Microsoft, conçu pour fournir des services à d'autres équipements du réseau (contrairement à Windows Client, orienté bureautique).<br/><br/>\n              Windows Server 2012 dispose de <strong>4 éditions</strong> :<br/>\n              1. <strong>Foundation</strong> — TPE, max 15 utilisateurs, pas de virtualisation, 1 processeur<br/>\n              2. <strong>Essentials</strong> — max 25 utilisateurs, pas de virtualisation, 2 processeurs<br/>\n              3. <strong>Standard</strong> — toutes les fonctionnalités, 2 VM par licence<br/>\n              4. <strong>Datacenter</strong> — virtualisation illimitée, usage intensif</p>\n</div>\n</details>",
+      "model_answer": "Windows Server est le système d'exploitation serveur de Microsoft, conçu pour fournir des services à d'autres équipements du réseau (contrairement à Windows Client, orienté bureautique). Windows Server 2012 dispose de 4 éditions : 1. Foundation — TPE, max 15 utilisateurs, pas de virtualisation, 1 processeur 2. Essentials — max 25 utilisateurs, pas de virtualisation, 2 processeurs 3. Standard — toutes les fonctionnalités, 2 VM par licence 4. Datacenter — virtualisation illimitée, usage intensif",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Qu'est-ce qu'une forêt dans Active Directory ?",
-     "options": [
-      {
-       "text": "Un seul domaine avec beaucoup d'utilisateurs",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un regroupement de plusieurs domaines d'un seul arbre",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un regroupement d'une ou plusieurs arborescences de domaine indépendantes",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le nom de l'annuaire Active Directory",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "type": "open",
+      "text": "Q2. Qu'entendez-vous par administration système ? Quel est le rôle de l'administrateur système au sein d'une entreprise ? (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>L'<strong>administration système</strong> est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique.<br/><br/>\n              L'<strong>administrateur système</strong> veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il gère les comptes utilisateurs, les logiciels, le matériel, la sécurité, la maintenance, et est en première ligne quand un problème surgit. Il peut avoir une double casquette d'administrateur réseau.</p>\n</div>\n</details>",
+      "model_answer": "L'administration système est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique. L'administrateur système veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il gère les comptes utilisateurs, les logiciels, le matériel, la sécurité, la maintenance, et est en première ligne quand un problème surgit. Il peut avoir une double casquette d'administrateur réseau.",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Après installation des binaires AD DS, que faut-il faire pour finaliser ?",
-     "options": [
-      {
-       "text": "Redémarrer le serveur immédiatement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Promouvoir le serveur en contrôleur de domaine via l'assistant de configuration",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Installer le rôle DNS séparément",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Créer manuellement le dossier SYSVOL",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "type": "open",
+      "text": "Q3. Citez 4 tâches d'un administrateur système. (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Parmi les tâches de l'administrateur système :<br/>\n              1. <strong>Gérer les comptes utilisateurs</strong> (création, modification, suppression)<br/>\n              2. <strong>Gérer les logiciels</strong> (installer, configurer, mettre à jour)<br/>\n              3. <strong>Gérer le matériel</strong> (pannes, remplacements, ajouts)<br/>\n              4. <strong>Assurer la sécurité</strong> (sauvegardes, contrôle d'accès)<br/>\n              5. Assister et éduquer les utilisateurs<br/>\n              6. Gérer la maintenance de premier niveau</p>\n</div>\n</details>",
+      "model_answer": "Parmi les tâches de l'administrateur système : 1. Gérer les comptes utilisateurs (création, modification, suppression) 2. Gérer les logiciels (installer, configurer, mettre à jour) 3. Gérer le matériel (pannes, remplacements, ajouts) 4. Assurer la sécurité (sauvegardes, contrôle d'accès) 5. Assister et éduquer les utilisateurs 6. Gérer la maintenance de premier niveau",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Le dossier SYSVOL contient :",
-     "options": [
-      {
-       "text": "Les fichiers de la base de données AD (NTDS.DIT)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les scripts de connexion, GPO et fichiers de réplication AD",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Les journaux d'événements",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les profils itinérants des utilisateurs",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "type": "open",
+      "text": "Q4. Après avoir cité les types d'administration système étudiés en classe, donnez les qualités qu'un administrateur système doit posséder. (2 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>3 types d'administration système :</strong><br/>\n              • Administration d'un <strong>poste (station) de travail</strong><br/>\n              • Administration des <strong>serveurs</strong><br/>\n              • Administration <strong>réseau</strong><br/><br/>\n<strong>3 qualités nécessaires :</strong><br/>\n              • <strong>Technicité</strong> — maîtrise des outils et technologies<br/>\n              • <strong>Rigueur</strong> — méthode et discipline dans le travail<br/>\n              • <strong>Bon sens</strong> — discernement face aux situations imprévues</p>\n</div>\n</details>",
+      "model_answer": "3 types d'administration système : • Administration d'un poste (station) de travail • Administration des serveurs • Administration réseau 3 qualités nécessaires : • Technicité — maîtrise des outils et technologies • Rigueur — méthode et discipline dans le travail • Bon sens — discernement face aux situations imprévues",
+      "level": "medium"
     },
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quel cmdlet PowerShell installe le rôle AD DS ?",
-     "options": [
-      {
-       "text": "Add-ADDSRole",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Install-ADDSForest",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Install-WindowsFeature -Name AD-Domain-Services",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "New-ADDomain",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
+      "type": "open",
+      "text": "Q5. Windows Server dispose de combien d'options d'installation ? Expliquez en quoi consiste chaque option. (1,5 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Windows Server 2012 propose <strong>2 options d'installation</strong> :<br/><br/>\n              1. <strong>Installation minimale (Server Core)</strong> : interface en ligne de commande uniquement. Requiert moins d'espace disque, réduit la surface exposée aux attaques et diminue considérablement les tâches de maintenance. Configuration minimale : 60 Go disque, 2 Go RAM, 3,1 GHz 64 bits.<br/><br/>\n              2. <strong>Installation complète (avec interface graphique)</strong> : interface graphique utilisateur complète (équivalent de l'installation complète de Windows Server 2008 R2). Plus facile à administrer mais plus gourmande en ressources.</p>\n</div>\n</details>",
+      "model_answer": "Windows Server 2012 propose 2 options d'installation : 1. Installation minimale (Server Core) : interface en ligne de commande uniquement. Requiert moins d'espace disque, réduit la surface exposée aux attaques et diminue considérablement les tâches de maintenance. Configuration minimale : 60 Go disque, 2 Go RAM, 3,1 GHz 64 bits. 2. Installation complète (avec interface graphique) : interface graphique utilisateur complète (équivalent de l'installation complète de Windows Server 2008 R2). Plus facile à administrer mais plus gourmande en ressources.",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q6. Définir les sigles : SAM, AD DS, DNS, NFS. (2 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>SAM</strong> — Security Account Manager : base de données des comptes locaux Windows (composant du registre contenant les mots de passe locaux).<br/>\n              • <strong>AD DS</strong> — Active Directory Domain Services : service d'annuaire de Microsoft pour gérer les utilisateurs, ordinateurs et ressources d'un domaine.<br/>\n              • <strong>DNS</strong> — Domain Name System : service de résolution de noms de domaine en adresses IP (indispensable pour AD DS).<br/>\n              • <strong>NFS</strong> — Network File System : protocole de partage de fichiers principalement utilisé sous Linux.</p>\n</div>\n</details>",
+      "model_answer": "• SAM — Security Account Manager : base de données des comptes locaux Windows (composant du registre contenant les mots de passe locaux). • AD DS — Active Directory Domain Services : service d'annuaire de Microsoft pour gérer les utilisateurs, ordinateurs et ressources d'un domaine. • DNS — Domain Name System : service de résolution de noms de domaine en adresses IP (indispensable pour AD DS). • NFS — Network File System : protocole de partage de fichiers principalement utilisé sous Linux.",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q7. Dans une architecture Windows Server, qu'est-ce qu'un domaine, un arbre et une forêt ? (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>Domaine</strong> : entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Héberge utilisateurs et ordinateurs, avec des stratégies communes. Ex : <code>dunia.local</code>.<br/><br/>\n              • <strong>Arbre</strong> : regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu. Un domaine principal avec ses sous-domaines forme un arbre. Ex : <code>cdp.org</code>, <code>paris.cdp.org</code>, <code>lome.cdp.org</code>.<br/><br/>\n              • <strong>Forêt</strong> : regroupement d'une ou plusieurs arborescences de domaine indépendantes. C'est le niveau le plus élevé de l'AD DS. Les arbres dans une forêt partagent un catalogue global mais restent distincts.</p>\n</div>\n</details>",
+      "model_answer": "• Domaine : entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Héberge utilisateurs et ordinateurs, avec des stratégies communes. Ex : dunia.local. • Arbre : regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu. Un domaine principal avec ses sous-domaines forme un arbre. Ex : cdp.org, paris.cdp.org, lome.cdp.org. • Forêt : regroupement d'une ou plusieurs arborescences de domaine indépendantes. C'est le niveau le plus élevé de l'AD DS. Les arbres dans une forêt partagent un catalogue global mais restent distincts.",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q8. Qu'est-ce que la commande ci-dessous permet de faire ?netsh advfirewall set allprofiles state off (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette commande permet de <strong>désactiver le pare-feu Windows pour tous les profils</strong> (domaine, privé et public) depuis l'invite de commandes.<br/><br/>\n              Pour réactiver : remplacer <code>state off</code> par <code>state on</code>.<br/>\n              Équivalent PowerShell : <code>Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</code></p>\n</div>\n</details>",
+      "model_answer": "Cette commande permet de désactiver le pare-feu Windows pour tous les profils (domaine, privé et public) depuis l'invite de commandes. Pour réactiver : remplacer state off par state on. Équivalent PowerShell : Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q9. Donnez la procédure qui permet de modifier le mot de passe du compte Administrateur dans l'invite de commandes. (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Procédure :<br/>\n              1. Ouvrir un <strong>Invite de commandes</strong> (cmd.exe) en tant qu'administrateur<br/>\n              2. Saisir la commande : <code>net user administrateur *</code><br/>\n              3. Le système invite à saisir le <strong>nouveau mot de passe</strong><br/>\n              4. Le saisir (la saisie est masquée)<br/>\n              5. Le <strong>confirmer</strong> en le saisissant une seconde fois<br/>\n              6. Le mot de passe est modifié</p>\n</div>\n</details>",
+      "model_answer": "Procédure : 1. Ouvrir un Invite de commandes (cmd.exe) en tant qu'administrateur 2. Saisir la commande : net user administrateur * 3. Le système invite à saisir le nouveau mot de passe 4. Le saisir (la saisie est masquée) 5. Le confirmer en le saisissant une seconde fois 6. Le mot de passe est modifié",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q10. Après avoir défini Active Directory, donnez les grandes étapes de son déploiement au sein de l'entreprise DUNIA. (2 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>Active Directory (AD DS)</strong> est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine.<br/><br/>\n<strong>Grandes étapes de déploiement :</strong><br/>\n              1. Configurer une <strong>adresse IP statique</strong> sur le serveur + renommer la machine<br/>\n              2. <strong>Désactiver le pare-feu</strong> (ou configurer les exceptions)<br/>\n              3. Ouvrir le <strong>Gestionnaire de serveur</strong> → Ajouter des rôles → cocher <strong>Services AD DS</strong><br/>\n              4. Une fois les binaires installés, cliquer sur <em>\"Promouvoir ce serveur en contrôleur de domaine\"</em><br/>\n              5. Choisir <em>Ajouter une nouvelle forêt</em>, saisir le nom du domaine (<code>dunia.local</code>)<br/>\n              6. Définir le niveau fonctionnel, le mot de passe DSRM, les emplacements des dossiers AD<br/>\n              7. Valider et <strong>redémarrer</strong> le serveur</p>\n</div>\n</details>",
+      "model_answer": "Active Directory (AD DS) est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine. Grandes étapes de déploiement : 1. Configurer une adresse IP statique sur le serveur + renommer la machine 2. Désactiver le pare-feu (ou configurer les exceptions) 3. Ouvrir le Gestionnaire de serveur → Ajouter des rôles → cocher Services AD DS 4. Une fois les binaires installés, cliquer sur \"Promouvoir ce serveur en contrôleur de domaine\" 5. Choisir Ajouter une nouvelle forêt, saisir le nom du domaine (dunia.local) 6. Définir le niveau fonctionnel, le mot de passe DSRM, les emplacements des dossiers AD 7. Valider et redémarrer le serveur",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "Q11. Soit le domaine dunia.local — donnez la procédure en interface graphique pour créer une Unité d'Organisation nommée \"CDP\". (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Procédure graphique :<br/>\n              1. Ouvrir <strong>Utilisateurs et ordinateurs Active Directory</strong> (menu Outils du Gestionnaire de serveur)<br/>\n              2. Dans le panneau gauche, faire un <strong>clic droit sur le domaine</strong> <code>dunia.local</code><br/>\n              3. Choisir <em>Nouveau</em> → <em>Unité d'organisation</em><br/>\n              4. Saisir le nom : <strong>CDP</strong><br/>\n              5. Valider en cliquant sur <strong>OK</strong></p>\n</div>\n</details>",
+      "model_answer": "Procédure graphique : 1. Ouvrir Utilisateurs et ordinateurs Active Directory (menu Outils du Gestionnaire de serveur) 2. Dans le panneau gauche, faire un clic droit sur le domaine dunia.local 3. Choisir Nouveau → Unité d'organisation 4. Saisir le nom : CDP 5. Valider en cliquant sur OK",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q12. En PowerShell, créez une UO nommée \"IT_CDP\", puis ajoutez l'UO \"TP\" dans l'UO \"IT_CDP\". (Domaine : dunia.local)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Créer l'UO IT_CDP dans CDP :<br/>\n<code>New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"</code><br/><br/>\n              Ajouter l'UO TP dans IT_CDP :<br/>\n<code>New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</code></p>\n</div>\n</details>",
+      "model_answer": "Créer l'UO IT_CDP dans CDP : New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\" Ajouter l'UO TP dans IT_CDP : New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q13. Quel est le rôle d'un gestionnaire de serveur dans l'environnement Windows Server ? (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Le <strong>Gestionnaire de serveur</strong> est le point central d'administration de Windows Server. Il permet de :<br/>\n              • Afficher les informations détaillées de configuration et de sécurité<br/>\n              • <strong>Ajouter/supprimer des rôles et fonctionnalités</strong> (AD DS, DHCP, DNS, IIS…)<br/>\n              • Gérer plusieurs serveurs depuis une seule interface<br/>\n              • Créer des groupes de serveurs logiques<br/>\n              • Lancer des commandes PowerShell<br/>\n              • Consulter les notifications, alertes et journaux</p>\n</div>\n</details>",
+      "model_answer": "Le Gestionnaire de serveur est le point central d'administration de Windows Server. Il permet de : • Afficher les informations détaillées de configuration et de sécurité • Ajouter/supprimer des rôles et fonctionnalités (AD DS, DHCP, DNS, IIS…) • Gérer plusieurs serveurs depuis une seule interface • Créer des groupes de serveurs logiques • Lancer des commandes PowerShell • Consulter les notifications, alertes et journaux",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q14. Après avoir défini le profil itinérant, le directeur technique de l'entreprise DUNIA vous demande de déployer un contrôleur de domaine avec profil itinérant. Décrivez les différentes étapes. (3 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>Profil itinérant</strong> : mécanisme qui synchronise le profil d'un utilisateur sur un serveur, rendant ses données accessibles depuis n'importe quel poste du réseau local.<br/><br/>\n<strong>Étapes de déploiement :</strong><br/>\n<em>Préparation du serveur</em><br/>\n              1. Installer et configurer le rôle <strong>AD DS</strong> + DNS sur le serveur<br/>\n              2. Promouvoir le serveur en <strong>contrôleur de domaine</strong> (domaine dunia.local)<br/><br/>\n<em>Mise en place du partage de profils</em><br/>\n              3. Créer un dossier <code>Profils</code> sur le serveur (ex : <code>C:\\Profils</code>)<br/>\n              4. <strong>Partager ce dossier</strong> (ex : <code>\\\\SRV-DC\\Profils</code>) avec les droits appropriés<br/><br/>\n<em>Configuration des utilisateurs AD</em><br/>\n              5. Ouvrir <em>Utilisateurs et ordinateurs Active Directory</em><br/>\n              6. Double-cliquer sur l'utilisateur → onglet <strong>Profil</strong><br/>\n              7. Dans <em>Chemin du profil</em>, saisir : <code>\\\\SRV-DC\\Profils\\%username%</code><br/>\n              8. Valider<br/><br/>\n<em>Vérification</em><br/>\n              9. Joindre un poste client au domaine<br/>\n              10. Se connecter avec l'utilisateur → vérifier que le profil est créé et synchronisé sur le serveur</p>\n</div>\n</details>",
+      "model_answer": "Profil itinérant : mécanisme qui synchronise le profil d'un utilisateur sur un serveur, rendant ses données accessibles depuis n'importe quel poste du réseau local. Étapes de déploiement : Préparation du serveur 1. Installer et configurer le rôle AD DS + DNS sur le serveur 2. Promouvoir le serveur en contrôleur de domaine (domaine dunia.local) Mise en place du partage de profils 3. Créer un dossier Profils sur le serveur (ex : C:\\Profils) 4. Partager ce dossier (ex : \\\\SRV-DC\\Profils) avec les droits appropriés Configuration des utilisateurs AD 5. Ouvrir Utilisateurs et ordinateurs Active Directory 6. Double-cliquer sur l'utilisateur → onglet Profil 7. Dans Chemin du profil, saisir : \\\\SRV-DC\\Profils\\%username% 8. Valider Vérification 9. Joindre un poste client au domaine 10. Se connecter avec l'utilisateur → vérifier que le profil est créé et synchronisé sur le serveur",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "Q15. Expliquez la différence entre les 3 étendues de groupes Active Directory. (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>Domaine Local</strong> : les membres peuvent venir de n'importe quel domaine de la forêt, mais les autorisations sont accordées uniquement dans le <strong>domaine local</strong>.<br/><br/>\n              • <strong>Global</strong> : les membres viennent <strong>uniquement du domaine où le groupe est défini</strong>, mais les autorisations peuvent être accordées dans n'importe quel domaine de la forêt.<br/><br/>\n              • <strong>Universel</strong> : les membres peuvent venir de <strong>n'importe quel domaine de la forêt</strong>, et les autorisations peuvent être accordées dans toute la forêt. Nécessite le Catalogue Global (GC).</p>\n</div>\n</details>",
+      "model_answer": "• Domaine Local : les membres peuvent venir de n'importe quel domaine de la forêt, mais les autorisations sont accordées uniquement dans le domaine local. • Global : les membres viennent uniquement du domaine où le groupe est défini, mais les autorisations peuvent être accordées dans n'importe quel domaine de la forêt. • Universel : les membres peuvent venir de n'importe quel domaine de la forêt, et les autorisations peuvent être accordées dans toute la forêt. Nécessite le Catalogue Global (GC).",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q16. Qu'est-ce que le protocole SMB ? Quelle est la différence avec NFS ? (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>SMB (Server Message Block)</strong>, aussi appelé CIFS, est le protocole de partage de fichiers natif Windows. Il dispose d'un client intégré à l'Explorer Windows et repose sur NTFS pour la gestion des droits. Les partages sont accessibles via chemin UNC (<code>\\\\serveur\\partage</code>).<br/><br/>\n<strong>NFS (Network File System)</strong> est principalement utilisé sous Linux. Windows peut l'utiliser mais il n'est pas aussi bien intégré que SMB.<br/>\n              SAMBA est l'implémentation open source de SMB sous Linux.</p>\n</div>\n</details>",
+      "model_answer": "SMB (Server Message Block), aussi appelé CIFS, est le protocole de partage de fichiers natif Windows. Il dispose d'un client intégré à l'Explorer Windows et repose sur NTFS pour la gestion des droits. Les partages sont accessibles via chemin UNC (\\\\serveur\\partage). NFS (Network File System) est principalement utilisé sous Linux. Windows peut l'utiliser mais il n'est pas aussi bien intégré que SMB. SAMBA est l'implémentation open source de SMB sous Linux.",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q17. Expliquez les étapes de création d'un partage SMB dans Windows Server 2012. (1,5 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1. Dans le Gestionnaire de serveur → <em>Services de fichiers et de stockage</em> → <em>Partages</em><br/>\n              2. Cliquer sur le lien pour créer un nouveau partage<br/>\n              3. Choisir le type : <strong>SMB rapide</strong> (le plus courant)<br/>\n              4. Sélectionner le volume et saisir le nom du partage (ex : <code>Sensible</code>)<br/>\n              5. Configurer les paramètres : mise en cache, énumération basée sur l'accès, chiffrement<br/>\n              6. Définir les droits d'accès (lecture, lecture/écriture) pour les groupes/utilisateurs<br/>\n              7. Valider — le partage est accessible via <code>\\\\SRV-DC\\Sensible</code></p>\n</div>\n</details>",
+      "model_answer": "1. Dans le Gestionnaire de serveur → Services de fichiers et de stockage → Partages 2. Cliquer sur le lien pour créer un nouveau partage 3. Choisir le type : SMB rapide (le plus courant) 4. Sélectionner le volume et saisir le nom du partage (ex : Sensible) 5. Configurer les paramètres : mise en cache, énumération basée sur l'accès, chiffrement 6. Définir les droits d'accès (lecture, lecture/écriture) pour les groupes/utilisateurs 7. Valider — le partage est accessible via \\\\SRV-DC\\Sensible",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q18. Comment accéder à un partage réseau depuis un client Windows ? Quel port doit être ouvert dans le pare-feu ? (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Depuis un client Windows, saisir le <strong>chemin UNC</strong> dans la barre d'adresse de l'Explorer :<br/>\n<code>\\\\nom_serveur\\nom_partage</code><br/>\n              Le client SMB intégré affiche automatiquement le contenu du partage.<br/><br/>\n              Port à ouvrir dans le pare-feu : <strong>445/TCP</strong> (entrant sur le serveur de fichiers).</p>\n</div>\n</details>",
+      "model_answer": "Depuis un client Windows, saisir le chemin UNC dans la barre d'adresse de l'Explorer : \\\\nom_serveur\\nom_partage Le client SMB intégré affiche automatiquement le contenu du partage. Port à ouvrir dans le pare-feu : 445/TCP (entrant sur le serveur de fichiers).",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "Q19. Qu'est-ce que l'énumération basée sur l'accès ? Pourquoi est-ce utile ? (1 pt)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>L'<strong>énumération basée sur l'accès</strong> est une fonctionnalité qui n'affiche dans l'Explorer Windows que les partages (et dossiers) auxquels l'utilisateur a effectivement accès. Un utilisateur sans droits sur un partage <strong>ne le verra pas</strong>.<br/><br/>\n              Utilité : masquer les ressources sensibles aux utilisateurs non autorisés, améliorer la clarté et la sécurité de l'interface utilisateur.</p>\n</div>\n</details>",
+      "model_answer": "L'énumération basée sur l'accès est une fonctionnalité qui n'affiche dans l'Explorer Windows que les partages (et dossiers) auxquels l'utilisateur a effectivement accès. Un utilisateur sans droits sur un partage ne le verra pas. Utilité : masquer les ressources sensibles aux utilisateurs non autorisés, améliorer la clarté et la sécurité de l'interface utilisateur.",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "Q20. Cas pratique : L'entreprise DUNIA vous demande de mettre en place un serveur de fichiers partagés pour les utilisateurs du domaine dunia.local. Décrivez votre démarche complète. (3 pts)",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Démarche complète :<br/><br/>\n<strong>1. Prérequis :</strong> Avoir un contrôleur de domaine <code>dunia.local</code> opérationnel<br/><br/>\n<strong>2. Installer le rôle Serveur de fichiers :</strong> Gestionnaire de serveur → Ajouter des rôles → <em>Services de fichiers et de stockage</em> → <em>Serveur de fichiers</em><br/><br/>\n<strong>3. Créer des groupes AD :</strong> Dans <em>Utilisateurs et ordinateurs AD</em>, créer des groupes de sécurité (ex : GRP_RH, GRP_IT) et y ajouter les utilisateurs<br/><br/>\n<strong>4. Créer le partage :</strong> Gestionnaire de serveur → Partages → Nouveau partage → SMB rapide → Nommer le partage (ex : <code>Donnees-DUNIA</code>)<br/><br/>\n<strong>5. Configurer les droits :</strong> Affecter les droits par groupe (ex : GRP_IT → Lecture/Écriture, Utilisateurs authentifiés → Lecture)<br/><br/>\n<strong>6. Activer l'énumération basée sur l'accès</strong> pour masquer les ressources non autorisées<br/><br/>\n<strong>7. Configurer le pare-feu :</strong> Autoriser le port <strong>445/TCP</strong> entrant<br/><br/>\n<strong>8. Vérification :</strong> Depuis un poste client joint au domaine, accéder à <code>\\\\SRV-DC\\Donnees-DUNIA</code> et vérifier les droits</p>\n</div>\n</details>",
+      "model_answer": "Démarche complète : 1. Prérequis : Avoir un contrôleur de domaine dunia.local opérationnel 2. Installer le rôle Serveur de fichiers : Gestionnaire de serveur → Ajouter des rôles → Services de fichiers et de stockage → Serveur de fichiers 3. Créer des groupes AD : Dans Utilisateurs et ordinateurs AD, créer des groupes de sécurité (ex : GRP_RH, GRP_IT) et y ajouter les utilisateurs 4. Créer le partage : Gestionnaire de serveur → Partages → Nouveau partage → SMB rapide → Nommer le partage (ex : Donnees-DUNIA) 5. Configurer les droits : Affecter les droits par groupe (ex : GRP_IT → Lecture/Écriture, Utilisateurs authentifiés → Lecture) 6. Activer l'énumération basée sur l'accès pour masquer les ressources non autorisées 7. Configurer le pare-feu : Autoriser le port 445/TCP entrant 8. Vérification : Depuis un poste client joint au domaine, accéder à \\\\SRV-DC\\Donnees-DUNIA et vérifier les droits",
+      "level": "hard"
     }
-   ],
-   "source": "_private/windows/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Gestion des objets AD DS",
-   "subtitle": "Unités d'Organisation, création d'utilisateurs (GUI + PowerShell), jonction au domaine, profils itinérants, types et étendues de groupes.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre la notion d'objet Active Directory<br/>\n  • Créer des Unités d'Organisation (UO)<br/>\n  • Créer des utilisateurs et les intégrer dans un domaine<br/>\n  • Déployer des profils itinérants<br/>\n  • Créer et gérer des groupes Active Directory (types et étendues)</p>\n</div>\n<h2>3.1 — La console \"Utilisateurs et ordinateurs Active Directory\"</h2>\n<p>Pour gérer les objets AD DS, on utilise la console <strong>Utilisateurs et ordinateurs Active Directory</strong> (accessible via <em>Outils</em> du Gestionnaire de serveur). Elle permet de créer et gérer : utilisateurs, groupes, ordinateurs, contacts, UO.</p>\n<h2>3.2 — Gestion des Unités d'Organisation (UO)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📁 Qu'est-ce qu'une UO ?</div>\n<p>Une <strong>Unité d'Organisation (UO)</strong> est un conteneur dans Active Directory permettant d'organiser les objets (utilisateurs, ordinateurs, groupes) et d'y appliquer des <strong>GPO ciblées</strong>. Elle peut contenir : des utilisateurs, des groupes, des ordinateurs, des contacts, des imprimantes, et d'autres UO (imbrication).</p>\n</div>\n<h3>Créer une UO — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes</div>\n<p><strong>1.</strong> Ouvrir <em>Utilisateurs et ordinateurs Active Directory</em><br/>\n<strong>2.</strong> Clic droit sur le domaine (ou une UO parente) dans le panneau de gauche<br/>\n<strong>3.</strong> Choisir <em>Nouveau</em> → <em>Unité d'organisation</em><br/>\n<strong>4.</strong> Saisir le nom de l'UO (ex : CDP)<br/>\n<strong>5.</strong> Valider</p>\n</div>\n<h3>Créer une UO — PowerShell</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer une UO nommée CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"CDP\" -Path \"DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer l'UO IT_CDP dans CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer l'UO TP dans IT_CDP</div>\n<pre>New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple de hiérarchie UO pour dunia.local</div>\n<pre>dunia.local\n└── CDP\n    └── IT_CDP\n        └── TP</pre></div>\n<h2>3.3 — Gestion des utilisateurs</h2>\n<h3>Créer un utilisateur — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes</div>\n<p><strong>1.</strong> Dans la console AD, faire un clic droit sur l'UO cible<br/>\n<strong>2.</strong> Choisir <em>Nouveau</em> → <em>Utilisateur</em><br/>\n<strong>3.</strong> Renseigner : Prénom, Nom, Nom d'ouverture de session<br/>\n<strong>4.</strong> Définir un mot de passe complexe (≥7 caractères, majuscule + minuscule + chiffre + symbole)<br/>\n<strong>5.</strong> Cocher si nécessaire <em>\"L'utilisateur doit changer le mot de passe à la prochaine ouverture de session\"</em><br/>\n<strong>6.</strong> Cliquer sur Terminer</p>\n</div>\n<h3>Deux méthodes d'ouverture de session</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode</th><th>Format</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>UPN (User Principal Name)</strong></td><td>Forme adresse e-mail</td><td>iziti@ntic.ma</td></tr>\n<tr><td><strong>NT/2000 (NetBIOS)</strong></td><td>DOMAINE\\login</td><td>NTIC\\iziti</td></tr>\n</tbody></table></div>\n<h3>Propriétés clés d'un compte utilisateur</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Onglet</th><th>Paramètres disponibles</th></tr></thead>\n<tbody>\n<tr><td><strong>Compte</strong></td><td>Horaires d'accès, restriction d'ordinateurs, verrouillage, expiration, options mot de passe</td></tr>\n<tr><td><strong>Profil</strong></td><td>Chemin du profil itinérant, script de connexion</td></tr>\n<tr><td><strong>Général</strong></td><td>Bureau, téléphone, email</td></tr>\n<tr><td><strong>Membre de</strong></td><td>Groupes auxquels appartient l'utilisateur</td></tr>\n</tbody></table></div>\n<h3>Créer un utilisateur — PowerShell</h3>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer un utilisateur dans une UO</div>\n<pre>New-ADUser `\n  -Name \"Ilham ZITI\" `\n  -GivenName \"Ilham\" `\n  -Surname \"ZITI\" `\n  -SamAccountName \"iziti\" `\n  -UserPrincipalName \"iziti@dunia.local\" `\n  -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\" `\n  -AccountPassword (ConvertTo-SecureString \"P@ssw0rd!\" -AsPlainText -Force) `\n  -Enabled $true</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Afficher les propriétés d'un utilisateur</div>\n<pre>Get-ADUser -Identity iziti -Properties *</pre></div>\n<h2>3.4 — Joindre un poste au domaine Active Directory</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Prérequis</div>\n<p>Avant de joindre un poste au domaine, s'assurer que le serveur DNS du poste client est celui du <strong>contrôleur de domaine</strong>.</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes (interface graphique)</div>\n<p><strong>1.</strong> Panneau de configuration<br/>\n<strong>2.</strong> Système<br/>\n<strong>3.</strong> Paramètres système avancés<br/>\n<strong>4.</strong> Onglet <em>Nom de l'ordinateur</em> → Modifier<br/>\n<strong>5.</strong> Sélectionner <em>Domaine</em> et saisir le nom du domaine (ex : dunia.local)<br/>\n<strong>6.</strong> Saisir les credentials d'un compte avec les droits nécessaires<br/>\n<strong>7.</strong> Redémarrer le poste</p>\n</div>\n<h2>3.5 — Profils itinérants</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🌐 Qu'est-ce qu'un profil itinérant ?</div>\n<p>Le <strong>profil itinérant</strong> permet de synchroniser le profil d'un utilisateur sur un serveur pour rendre ses données accessibles depuis <strong>l'ensemble du réseau local</strong>. Où que l'utilisateur se connecte, il retrouve son environnement (bureau, documents, paramètres).</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Déploiement d'un profil itinérant</div>\n<p><strong>1.</strong> Créer un dossier partagé sur le serveur (ex : <code>\\\\SRV-DC\\Profils</code>)<br/>\n<strong>2.</strong> Dans les propriétés de l'utilisateur AD → onglet <em>Profil</em><br/>\n<strong>3.</strong> Renseigner le chemin du profil : <code>\\\\SRV-DC\\Profils\\%username%</code><br/>\n<strong>4.</strong> Valider — le profil sera créé automatiquement à la première connexion de l'utilisateur</p>\n</div>\n<h2>3.6 — Gestion des groupes</h2>\n<h3>Types de groupes</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>Sécurité</strong></td><td>Attribuer des droits d'accès à des ressources (partages, imprimantes…)</td></tr>\n<tr><td><strong>Distribution</strong></td><td>Créer des listes de distribution e-mail</td></tr>\n</tbody></table></div>\n<h3>Étendues des groupes</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Étendue</th><th>Membres</th><th>Autorisations</th></tr></thead>\n<tbody>\n<tr><td><strong>Domaine Local</strong></td><td>N'importe quel domaine de la forêt</td><td>Dans le domaine local uniquement</td></tr>\n<tr><td><strong>Global</strong></td><td>Uniquement du domaine où le groupe est défini</td><td>Dans n'importe quel domaine de la forêt</td></tr>\n<tr><td><strong>Universel</strong></td><td>N'importe quel domaine de la forêt (répliqué dans le GC)</td><td>Dans n'importe quel domaine de la forêt</td></tr>\n</tbody></table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Conseil pratique</div>\n<p>Pour un groupe d'utilisateurs avec accès fréquent à des partages : choisir <strong>étendue Globale</strong> + <strong>type Sécurité</strong>.</p>\n</div>\n<h3>Créer un groupe — Graphiquement</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes</div>\n<p><strong>1.</strong> Dans la console AD, clic droit sur l'UO cible<br/>\n<strong>2.</strong> <em>Nouveau</em> → <em>Groupe</em><br/>\n<strong>3.</strong> Saisir le nom du groupe<br/>\n<strong>4.</strong> Choisir l'étendue et le type<br/>\n<strong>5.</strong> Valider, puis double-cliquer sur le groupe → onglet <em>Membres</em> pour ajouter des utilisateurs</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Créer un groupe</div>\n<pre>New-ADGroup -Name \"GRP_IT\" -GroupScope Global -GroupCategory Security `\n  -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Ajouter un utilisateur à un groupe</div>\n<pre>Add-ADGroupMember -Identity \"GRP_IT\" -Members \"iziti\"</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2</a>\n<a class=\"ch-nav-btn\">Ch.4 →</a>\n</div>\n</div>",
-   "questions": [
+  ],
+  "simulators": [
     {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Qu'est-ce qu'une Unité d'Organisation (UO) ?",
-     "options": [
-      {
-       "text": "Un groupe d'utilisateurs avec les mêmes droits",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un conteneur AD pour organiser les objets et appliquer des GPO ciblées",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un serveur secondaire dans le domaine",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un type de compte service",
-       "correct": false,
-       "explanation": ""
+      "source": "_private/windows/exercices/simulateur.html",
+      "variables": {
+        "EXAM_VARIANTS": [
+          {
+            "label": "Sujet A",
+            "mcq": [
+              {
+                "q": "Windows Server 2012 dispose de combien d'éditions ?",
+                "opts": [
+                  "2 (Standard et Datacenter)",
+                  "3 (Foundation, Standard, Datacenter)",
+                  "4 (Foundation, Essentials, Standard, Datacenter)",
+                  "5 éditions"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "Quelles sont les 3 qualités d'un administrateur système ?",
+                "opts": [
+                  "Rapidité, créativité, technicité",
+                  "Technicité, rigueur, bon sens",
+                  "Rigueur, communication, leadership",
+                  "Bon sens, rapidité, technicité"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "La commande <code>netsh advfirewall set allprofiles state off</code> permet de :",
+                "opts": [
+                  "Activer le pare-feu Windows",
+                  "Renommer le serveur",
+                  "Désactiver le pare-feu pour tous les profils",
+                  "Configurer l'adresse IP"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "Qu'est-ce qu'une forêt dans Active Directory ?",
+                "opts": [
+                  "Un seul domaine avec beaucoup d'utilisateurs",
+                  "Un regroupement de plusieurs domaines d'un seul arbre",
+                  "Un regroupement d'une ou plusieurs arborescences de domaine indépendantes",
+                  "Le nom de l'annuaire Active Directory"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "Quelle commande PowerShell crée une Unité d'Organisation ?",
+                "opts": [
+                  "New-ADOU",
+                  "Add-ADOrganizationalUnit",
+                  "New-ADOrganizationalUnit",
+                  "Create-ADOU"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "Le protocole SMB utilise quel port TCP ?",
+                "opts": [
+                  "Port 80",
+                  "Port 443",
+                  "Port 3389",
+                  "Port 445"
+                ],
+                "correct": 3
+              }
+            ],
+            "vf": [
+              {
+                "stmt": "L'édition Datacenter de Windows Server 2012 permet un nombre de VM illimité.",
+                "correct": true
+              },
+              {
+                "stmt": "La SAM (Security Account Manager) est la base de données des comptes de domaine Active Directory.",
+                "correct": false
+              },
+              {
+                "stmt": "Un arbre Active Directory est un regroupement hiérarchique de domaines partageant un espace de nom contigu.",
+                "correct": true
+              },
+              {
+                "stmt": "Le dossier SYSVOL contient la base de données AD (NTDS.DIT).",
+                "correct": false
+              }
+            ],
+            "open": [
+              {
+                "pts": 3,
+                "q": "Après avoir défini Active Directory, donnez les grandes étapes de son déploiement au sein de l'entreprise DUNIA (domaine : dunia.local).",
+                "model": "Active Directory (AD DS) est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs et stratégies.\n\nÉtapes de déploiement :\n1. Configurer l'IP statique + renommer le serveur\n2. Désactiver le pare-feu (netsh advfirewall set allprofiles state off)\n3. Gestionnaire de serveur → Ajouter des rôles → Services AD DS\n4. Cliquer sur \"Promouvoir ce serveur en contrôleur de domaine\"\n5. Choisir Ajouter une nouvelle forêt → saisir dunia.local\n6. Définir niveau fonctionnel, mot de passe DSRM, emplacements dossiers\n7. Valider → Installer → Redémarrer"
+              },
+              {
+                "pts": 3,
+                "q": "Soit le domaine dunia.local :\na) Donnez la procédure graphique pour créer une UO nommée CDP.\nb) En PowerShell, créez l'UO IT_CDP dans CDP.\nc) En PowerShell, ajoutez l'UO TP dans IT_CDP.",
+                "model": "a) Graphiquement :\n1. Ouvrir Utilisateurs et ordinateurs Active Directory\n2. Clic droit sur dunia.local → Nouveau → Unité d'organisation\n3. Saisir le nom : CDP → OK\n\nb) PowerShell — IT_CDP dans CDP :\nNew-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"\n\nc) PowerShell — TP dans IT_CDP :\nNew-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\""
+              }
+            ],
+            "cas": {
+              "pts": 4,
+              "context": "Le directeur technique de l'entreprise DUNIA vous demande de déployer un contrôleur de domaine avec profil itinérant pour ses employés.",
+              "q": "Après avoir défini le profil itinérant, décrivez les différentes étapes du déploiement de votre solution.",
+              "model": "Profil itinérant : mécanisme qui synchronise le profil d'un utilisateur sur un serveur pour le rendre accessible depuis tout le réseau local (l'utilisateur retrouve son environnement quel que soit le poste utilisé).\n\nÉtapes de déploiement :\n\n1. CONTRÔLEUR DE DOMAINE\n   • Installer le rôle AD DS + DNS\n   • Promouvoir le serveur en DC (domaine dunia.local)\n\n2. PARTAGE DE PROFILS\n   • Créer le dossier C:\\Profils sur le serveur\n   • Le partager : \\\\SRV-DC\\Profils avec les droits appropriés (utilisateurs → Lecture/Écriture sur leur propre dossier)\n\n3. CONFIGURATION DES UTILISATEURS AD\n   • Utilisateurs et ordinateurs AD → double-cliquer sur l'utilisateur\n   • Onglet Profil → Chemin du profil : \\\\SRV-DC\\Profils\\%username%\n   • Valider\n\n4. VÉRIFICATION\n   • Joindre un poste client au domaine\n   • Se connecter avec l'utilisateur → profil créé et synchronisé sur le serveur\n   • Se connecter depuis un autre poste → le même profil est disponible"
+            }
+          },
+          {
+            "label": "Sujet B",
+            "mcq": [
+              {
+                "q": "Quelle commande permet de modifier le mot de passe du compte Administrateur en invite de commandes ?",
+                "opts": [
+                  "passwd administrateur",
+                  "change-password /admin",
+                  "net user administrateur *",
+                  "set-password administrateur"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "L'installation minimale (Server Core) de Windows Server 2012 se distingue par :",
+                "opts": [
+                  "Une interface graphique simplifiée",
+                  "L'absence d'interface graphique et une surface d'attaque réduite",
+                  "Un nombre d'utilisateurs limité",
+                  "L'impossibilité d'installer des rôles"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "Quel acronyme désigne la base de données des comptes locaux Windows ?",
+                "opts": [
+                  "AD DS",
+                  "DNS",
+                  "SAM",
+                  "NFS"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "Un domaine Active Directory est :",
+                "opts": [
+                  "Un groupe de machines dans le même bâtiment",
+                  "Une entité logique AD hébergeant utilisateurs, ordinateurs et stratégies partagées",
+                  "Un type de serveur DNS",
+                  "Un protocole de partage de fichiers"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "Quel cmdlet PowerShell installe le rôle AD DS ?",
+                "opts": [
+                  "Add-ADDSRole",
+                  "Install-ADDSForest",
+                  "New-ADDomain",
+                  "Install-WindowsFeature -Name AD-Domain-Services"
+                ],
+                "correct": 3
+              },
+              {
+                "q": "Le chemin UNC pour accéder au partage Données sur SRV-DC est :",
+                "opts": [
+                  "http://SRV-DC/Données",
+                  "SRV-DC:\\Données",
+                  "\\\\SRV-DC\\Données",
+                  "ftp://SRV-DC/Données"
+                ],
+                "correct": 2
+              }
+            ],
+            "vf": [
+              {
+                "stmt": "Windows Server 2012 Foundation est limitée à 25 utilisateurs.",
+                "correct": false
+              },
+              {
+                "stmt": "L'option ActiveStore applique immédiatement la configuration IP sans la sauvegarder au redémarrage.",
+                "correct": true
+              },
+              {
+                "stmt": "Un groupe de type Distribution sert à affecter des droits d'accès à des ressources partagées.",
+                "correct": false
+              },
+              {
+                "stmt": "SAMBA est l'implémentation open source du protocole SMB de Microsoft, utilisée sous Linux.",
+                "correct": true
+              }
+            ],
+            "open": [
+              {
+                "pts": 3,
+                "q": "Définir les sigles suivants et expliquer leur rôle dans l'environnement Windows Server :\nSAM, AD DS, DNS, NFS",
+                "model": "• SAM (Security Account Manager) : base de données des comptes locaux Windows, composant du registre contenant les mots de passe locaux. Utilisée pour l'authentification hors domaine.\n\n• AD DS (Active Directory Domain Services) : service d'annuaire Microsoft centralisant la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine.\n\n• DNS (Domain Name System) : service de résolution de noms de domaine en adresses IP. Indispensable pour AD DS — sans DNS, le domaine ne fonctionne pas.\n\n• NFS (Network File System) : protocole de partage de fichiers principalement utilisé sous Linux. Windows peut l'utiliser mais SMB/CIFS est natif."
+              },
+              {
+                "pts": 3,
+                "q": "Expliquez les étapes de création d'un partage SMB dans Windows Server 2012, et comment y accéder depuis un client Windows.",
+                "model": "Création du partage :\n1. Installer le rôle Serveur de fichiers (Gestionnaire de serveur → Services de fichiers et de stockage)\n2. Aller dans Partages → Créer un nouveau partage\n3. Choisir le type : SMB rapide\n4. Sélectionner le volume et nommer le partage (ex : Donnees)\n5. Activer l'énumération basée sur l'accès (masque les partages aux non-autorisés)\n6. Définir les droits d'accès par groupes AD\n7. Valider → le partage est accessible via \\\\SRV-DC\\Donnees\n\nAccès depuis un client Windows :\n• Saisir \\\\SRV-DC\\Donnees dans la barre d'adresse de l'Explorer\n• Le client SMB est intégré nativement à Windows\n• Ouvrir le port 445/TCP dans le pare-feu"
+              }
+            ],
+            "cas": {
+              "pts": 4,
+              "context": "L'entreprise DUNIA dispose d'un domaine dunia.local avec plusieurs employés. Le DG vous demande de créer une structure organisationnelle complète dans Active Directory.",
+              "q": "Décrivez la procédure complète pour :\n1. Créer des Unités d'Organisation adaptées (RH, IT, Direction)\n2. Créer un utilisateur dans l'UO IT\n3. Créer un groupe de sécurité global et y ajouter l'utilisateur\n4. Joindre un poste client au domaine",
+              "model": "1. CRÉER LES UO (PowerShell) :\nNew-ADOrganizationalUnit -Name \"RH\" -Path \"DC=dunia,DC=local\"\nNew-ADOrganizationalUnit -Name \"IT\" -Path \"DC=dunia,DC=local\"\nNew-ADOrganizationalUnit -Name \"Direction\" -Path \"DC=dunia,DC=local\"\n\n2. CRÉER UN UTILISATEUR dans IT :\nNew-ADUser -Name \"Jean KOFFI\" -SamAccountName \"jkoffi\" -UserPrincipalName \"jkoffi@dunia.local\" -Path \"OU=IT,DC=dunia,DC=local\" -AccountPassword (ConvertTo-SecureString \"P@ssw0rd!\" -AsPlainText -Force) -Enabled $true\n\n3. CRÉER UN GROUPE et ajouter l'utilisateur :\nNew-ADGroup -Name \"GRP_IT\" -GroupScope Global -GroupCategory Security -Path \"OU=IT,DC=dunia,DC=local\"\nAdd-ADGroupMember -Identity \"GRP_IT\" -Members \"jkoffi\"\n\n4. JOINDRE UN POSTE AU DOMAINE :\n• Configurer le DNS du poste = IP du DC\n• Panneau de configuration → Système → Paramètres avancés → Nom de l'ordinateur → Modifier\n• Sélectionner Domaine → saisir dunia.local\n• Entrer les credentials d'un compte admin du domaine → Redémarrer"
+            }
+          }
+        ]
       }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Pour créer l'UO \"IT_CDP\" dans l'UO \"CDP\" du domaine dunia.local, la commande PowerShell correcte est :",
-     "options": [
-      {
-       "text": "New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"DC=dunia,DC=local\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "New-ADOU -Name \"IT_CDP\" -Parent \"CDP\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Add-ADOU -Name \"IT_CDP\" -Path \"CDP\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Le profil itinérant permet :",
-     "options": [
-      {
-       "text": "De créer automatiquement des comptes utilisateurs",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "De synchroniser le profil d'un utilisateur sur un serveur pour un accès depuis tout le réseau",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "D'interdire l'accès à certaines machines",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "D'activer le Bureau à distance",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Un groupe de type \"Sécurité\" avec étendue \"Global\" peut recevoir des autorisations dans :",
-     "options": [
-      {
-       "text": "Le domaine local uniquement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "N'importe quel domaine de la forêt",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Uniquement les sous-domaines",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les machines locales uniquement",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Avant de joindre un poste client au domaine, quel prérequis réseau est indispensable ?",
-     "options": [
-      {
-       "text": "Avoir une adresse IP en DHCP",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Que le serveur DNS du poste soit le contrôleur de domaine",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Que le pare-feu soit désactivé sur le poste",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Avoir installé le rôle AD DS sur le poste client",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
     }
-   ],
-   "source": "_private/windows/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Gestion des ressources partagées",
-   "subtitle": "Protocoles SMB/CIFS et NFS, rôle serveur de fichiers, création de partages, droits d'accès, accès UNC depuis les clients.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le concept de partage de ressources<br/>\n  • Distinguer SMB/CIFS et NFS<br/>\n  • Créer un partage via le Gestionnaire de serveur<br/>\n  • Configurer les droits d'accès<br/>\n  • Accéder aux ressources partagées via chemin UNC</p>\n</div>\n<h2>4.1 — Introduction : le rôle serveur de fichiers</h2>\n<p>Un des rôles les plus courants pour un serveur Windows est le <strong>serveur de fichiers</strong>. Il permet de :</p>\n<ul>\n<li>Mettre à disposition des fichiers en toute sécurité sur le réseau</li>\n<li>Gérer des droits d'accès (lecture, écriture, modification…)</li>\n<li>Centraliser le stockage (facilite sauvegarde et restauration)</li>\n<li>Permettre à plusieurs personnes de travailler sur un même fichier</li>\n</ul>\n<h2>4.2 — Protocoles de partage : SMB et NFS</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Protocole</th><th>Nom complet</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><strong>SMB / CIFS</strong></td><td>Server Message Block / Common Internet File System</td><td>Natif Windows, client intégré à l'Explorer</td></tr>\n<tr><td><strong>NFS</strong></td><td>Network File System</td><td>Principalement Linux, également disponible sous Windows</td></tr>\n<tr><td><strong>SAMBA</strong></td><td>—</td><td>Implémentation open source de SMB sous Linux</td></tr>\n</tbody></table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔑 Points clés SMB</div>\n<p>• Repose sur <strong>NTFS</strong> pour la gestion des droits d'accès<br/>\n  • Partages accessibles via chemin <strong>UNC</strong> (Universal Naming Convention) : <code>\\\\serveur\\partage</code><br/>\n  • Port : <strong>445/TCP</strong> (à ouvrir dans le pare-feu)<br/>\n  • Client SMB intégré nativement dans l'Explorer Windows</p>\n</div>\n<h2>4.3 — Création d'un partage (interface graphique)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Prérequis</div>\n<p>Le rôle <strong>Serveur de fichiers</strong> doit être installé pour voir la section <em>\"Partages\"</em> dans le Gestionnaire de serveur.</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Étapes de création</div>\n<p><strong>1.</strong> Ouvrir le Gestionnaire de serveur → <em>Services de fichiers et de stockage</em> → <em>Partages</em><br/>\n<strong>2.</strong> Cliquer sur le lien pour créer un nouveau partage<br/>\n<strong>3.</strong> Choisir le type de partage<br/>\n<strong>4.</strong> Sélectionner le volume et définir le nom du partage<br/>\n<strong>5.</strong> Configurer les paramètres et les droits<br/>\n<strong>6.</strong> Valider</p>\n</div>\n<h3>Les 5 types de partage disponibles</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>SMB rapide</strong></td><td>Partage SMB simple, le plus courant — à utiliser en priorité</td></tr>\n<tr><td><strong>SMB avancé</strong></td><td>Gestion de quotas et droits avancés</td></tr>\n<tr><td><strong>SMB Applications</strong></td><td>Pour Hyper-V, bases de données et serveurs d'applications</td></tr>\n<tr><td><strong>NFS rapide</strong></td><td>Simple via NFS (meilleure compatibilité Linux)</td></tr>\n<tr><td><strong>NFS avancé</strong></td><td>NFS avec gestion avancée des droits</td></tr>\n</tbody></table></div>\n<h3>Options importantes lors de la création</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Option</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><strong>Mise en cache du partage</strong></td><td>Synchronise le partage en local pour un accès hors ligne (si serveur inaccessible)</td></tr>\n<tr><td><strong>Énumération basée sur l'accès</strong></td><td>N'affiche que les partages auxquels l'utilisateur a accès dans l'Explorer (masque les partages sensibles)</td></tr>\n<tr><td><strong>Chiffrement des données</strong></td><td>Chiffre le flux d'accès aux données (pas les données elles-mêmes)</td></tr>\n</tbody></table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Chemin UNC d'accès au partage</div>\n<pre>\\\\SRV-DC\\Sensible\n\\\\nom_serveur\\nom_partage</pre></div>\n<h2>4.4 — Droits d'accès</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">👤 Bonne pratique</div>\n<p>Affecter les droits à des <strong>groupes</strong> (et non à des utilisateurs individuels), couplés à Active Directory pour une gestion simplifiée.<br/>\n  Exemple : le groupe \"Utilisateurs authentifiés\" → <em>Lecture seule</em>.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Administrateur et droits d'accès</div>\n<p>Par défaut, l'administrateur n'a pas nécessairement accès au contenu des partages s'il n'y a pas de droits explicitement accordés. Il peut effectuer ses tâches d'administration sans voir le contenu des données.</p>\n</div>\n<h2>4.5 — Accès au partage depuis un client Windows</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Méthode</div>\n<p>Le client SMB est intégré nativement à l'Explorer Windows. Il suffit de saisir le chemin UNC dans la barre d'adresse :</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Saisir dans la barre d'adresse de l'Explorer</div>\n<pre>\\\\SRV-DC\\Sensible</pre></div>\n<p>Windows affiche automatiquement le contenu du partage auquel l'utilisateur a accès.</p>\n<h2>4.6 — Pare-feu et partage SMB</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Port à ouvrir pour SMB</div>\n<pre>445/TCP (entrant vers le serveur de fichiers)</pre></div>\n<div class=\"code-block\"><div class=\"code-lbl\">PowerShell — Autoriser SMB dans le pare-feu</div>\n<pre>New-NetFirewallRule -DisplayName \"SMB entrant\" -Direction Inbound `\n  -Protocol TCP -LocalPort 445 -Action Allow</pre></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Que signifie l'acronyme SMB ?",
-     "options": [
-      {
-       "text": "Shared Memory Block",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Server Message Block",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "System Management Base",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Secure Mail Bridge",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Le chemin UNC pour accéder au partage \"Données\" sur le serveur \"SRV-DC\" est :",
-     "options": [
-      {
-       "text": "http://SRV-DC/Données",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "SRV-DC:\\Données",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\\\\SRV-DC\\Données",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "/SRV-DC/Données",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Quel port TCP doit être ouvert dans le pare-feu pour permettre l'accès SMB ?",
-     "options": [
-      {
-       "text": "Port 80",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Port 443",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Port 445",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Port 3389",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "L'option \"Énumération basée sur l'accès\" dans un partage SMB permet de :",
-     "options": [
-      {
-       "text": "Chiffrer les données du partage",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "N'afficher à chaque utilisateur que les partages auxquels il a accès",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Limiter le nombre de connexions simultanées",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Autoriser l'accès hors ligne",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Sous Linux, quelle implémentation permet d'accéder aux partages SMB de Windows ?",
-     "options": [
-      {
-       "text": "NFS",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "SAMBA",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "FTP",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "AFP",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    }
-   ],
-   "source": "_private/windows/chapitres/chapitre4.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "Q1. Qu'est-ce que Windows Server ? Windows Server 2012 dispose de combien d'éditions ? Citez-les. (1,5 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Windows Server est le système d'exploitation <strong>serveur</strong> de Microsoft, conçu pour fournir des services à d'autres équipements du réseau (contrairement à Windows Client, orienté bureautique).<br/><br/>\n              Windows Server 2012 dispose de <strong>4 éditions</strong> :<br/>\n              1. <strong>Foundation</strong> — TPE, max 15 utilisateurs, pas de virtualisation, 1 processeur<br/>\n              2. <strong>Essentials</strong> — max 25 utilisateurs, pas de virtualisation, 2 processeurs<br/>\n              3. <strong>Standard</strong> — toutes les fonctionnalités, 2 VM par licence<br/>\n              4. <strong>Datacenter</strong> — virtualisation illimitée, usage intensif</p>\n</div>\n</details>",
-   "model_answer": "Windows Server est le système d'exploitation serveur de Microsoft, conçu pour fournir des services à d'autres équipements du réseau (contrairement à Windows Client, orienté bureautique). Windows Server 2012 dispose de 4 éditions : 1. Foundation — TPE, max 15 utilisateurs, pas de virtualisation, 1 processeur 2. Essentials — max 25 utilisateurs, pas de virtualisation, 2 processeurs 3. Standard — toutes les fonctionnalités, 2 VM par licence 4. Datacenter — virtualisation illimitée, usage intensif",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q2. Qu'entendez-vous par administration système ? Quel est le rôle de l'administrateur système au sein d'une entreprise ? (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>L'<strong>administration système</strong> est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique.<br/><br/>\n              L'<strong>administrateur système</strong> veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il gère les comptes utilisateurs, les logiciels, le matériel, la sécurité, la maintenance, et est en première ligne quand un problème surgit. Il peut avoir une double casquette d'administrateur réseau.</p>\n</div>\n</details>",
-   "model_answer": "L'administration système est la gestion de l'ensemble des programmes informatiques permettant d'accéder à une machine et d'utiliser ses périphériques dans un parc informatique. L'administrateur système veille à ce que tout le système informatique d'une entreprise fonctionne convenablement. Il gère les comptes utilisateurs, les logiciels, le matériel, la sécurité, la maintenance, et est en première ligne quand un problème surgit. Il peut avoir une double casquette d'administrateur réseau.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q3. Citez 4 tâches d'un administrateur système. (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Parmi les tâches de l'administrateur système :<br/>\n              1. <strong>Gérer les comptes utilisateurs</strong> (création, modification, suppression)<br/>\n              2. <strong>Gérer les logiciels</strong> (installer, configurer, mettre à jour)<br/>\n              3. <strong>Gérer le matériel</strong> (pannes, remplacements, ajouts)<br/>\n              4. <strong>Assurer la sécurité</strong> (sauvegardes, contrôle d'accès)<br/>\n              5. Assister et éduquer les utilisateurs<br/>\n              6. Gérer la maintenance de premier niveau</p>\n</div>\n</details>",
-   "model_answer": "Parmi les tâches de l'administrateur système : 1. Gérer les comptes utilisateurs (création, modification, suppression) 2. Gérer les logiciels (installer, configurer, mettre à jour) 3. Gérer le matériel (pannes, remplacements, ajouts) 4. Assurer la sécurité (sauvegardes, contrôle d'accès) 5. Assister et éduquer les utilisateurs 6. Gérer la maintenance de premier niveau",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q4. Après avoir cité les types d'administration système étudiés en classe, donnez les qualités qu'un administrateur système doit posséder. (2 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>3 types d'administration système :</strong><br/>\n              • Administration d'un <strong>poste (station) de travail</strong><br/>\n              • Administration des <strong>serveurs</strong><br/>\n              • Administration <strong>réseau</strong><br/><br/>\n<strong>3 qualités nécessaires :</strong><br/>\n              • <strong>Technicité</strong> — maîtrise des outils et technologies<br/>\n              • <strong>Rigueur</strong> — méthode et discipline dans le travail<br/>\n              • <strong>Bon sens</strong> — discernement face aux situations imprévues</p>\n</div>\n</details>",
-   "model_answer": "3 types d'administration système : • Administration d'un poste (station) de travail • Administration des serveurs • Administration réseau 3 qualités nécessaires : • Technicité — maîtrise des outils et technologies • Rigueur — méthode et discipline dans le travail • Bon sens — discernement face aux situations imprévues",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q5. Windows Server dispose de combien d'options d'installation ? Expliquez en quoi consiste chaque option. (1,5 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Windows Server 2012 propose <strong>2 options d'installation</strong> :<br/><br/>\n              1. <strong>Installation minimale (Server Core)</strong> : interface en ligne de commande uniquement. Requiert moins d'espace disque, réduit la surface exposée aux attaques et diminue considérablement les tâches de maintenance. Configuration minimale : 60 Go disque, 2 Go RAM, 3,1 GHz 64 bits.<br/><br/>\n              2. <strong>Installation complète (avec interface graphique)</strong> : interface graphique utilisateur complète (équivalent de l'installation complète de Windows Server 2008 R2). Plus facile à administrer mais plus gourmande en ressources.</p>\n</div>\n</details>",
-   "model_answer": "Windows Server 2012 propose 2 options d'installation : 1. Installation minimale (Server Core) : interface en ligne de commande uniquement. Requiert moins d'espace disque, réduit la surface exposée aux attaques et diminue considérablement les tâches de maintenance. Configuration minimale : 60 Go disque, 2 Go RAM, 3,1 GHz 64 bits. 2. Installation complète (avec interface graphique) : interface graphique utilisateur complète (équivalent de l'installation complète de Windows Server 2008 R2). Plus facile à administrer mais plus gourmande en ressources.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q6. Définir les sigles : SAM, AD DS, DNS, NFS. (2 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>SAM</strong> — Security Account Manager : base de données des comptes locaux Windows (composant du registre contenant les mots de passe locaux).<br/>\n              • <strong>AD DS</strong> — Active Directory Domain Services : service d'annuaire de Microsoft pour gérer les utilisateurs, ordinateurs et ressources d'un domaine.<br/>\n              • <strong>DNS</strong> — Domain Name System : service de résolution de noms de domaine en adresses IP (indispensable pour AD DS).<br/>\n              • <strong>NFS</strong> — Network File System : protocole de partage de fichiers principalement utilisé sous Linux.</p>\n</div>\n</details>",
-   "model_answer": "• SAM — Security Account Manager : base de données des comptes locaux Windows (composant du registre contenant les mots de passe locaux). • AD DS — Active Directory Domain Services : service d'annuaire de Microsoft pour gérer les utilisateurs, ordinateurs et ressources d'un domaine. • DNS — Domain Name System : service de résolution de noms de domaine en adresses IP (indispensable pour AD DS). • NFS — Network File System : protocole de partage de fichiers principalement utilisé sous Linux.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q7. Dans une architecture Windows Server, qu'est-ce qu'un domaine, un arbre et une forêt ? (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>Domaine</strong> : entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Héberge utilisateurs et ordinateurs, avec des stratégies communes. Ex : <code>dunia.local</code>.<br/><br/>\n              • <strong>Arbre</strong> : regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu. Un domaine principal avec ses sous-domaines forme un arbre. Ex : <code>cdp.org</code>, <code>paris.cdp.org</code>, <code>lome.cdp.org</code>.<br/><br/>\n              • <strong>Forêt</strong> : regroupement d'une ou plusieurs arborescences de domaine indépendantes. C'est le niveau le plus élevé de l'AD DS. Les arbres dans une forêt partagent un catalogue global mais restent distincts.</p>\n</div>\n</details>",
-   "model_answer": "• Domaine : entité logique (administrative) Active Directory au sein de laquelle des fonctionnalités et caractéristiques sont partagées. Héberge utilisateurs et ordinateurs, avec des stratégies communes. Ex : dunia.local. • Arbre : regroupement hiérarchique de plusieurs domaines partageant un espace de nom contigu. Un domaine principal avec ses sous-domaines forme un arbre. Ex : cdp.org, paris.cdp.org, lome.cdp.org. • Forêt : regroupement d'une ou plusieurs arborescences de domaine indépendantes. C'est le niveau le plus élevé de l'AD DS. Les arbres dans une forêt partagent un catalogue global mais restent distincts.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q8. Qu'est-ce que la commande ci-dessous permet de faire ?netsh advfirewall set allprofiles state off (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette commande permet de <strong>désactiver le pare-feu Windows pour tous les profils</strong> (domaine, privé et public) depuis l'invite de commandes.<br/><br/>\n              Pour réactiver : remplacer <code>state off</code> par <code>state on</code>.<br/>\n              Équivalent PowerShell : <code>Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False</code></p>\n</div>\n</details>",
-   "model_answer": "Cette commande permet de désactiver le pare-feu Windows pour tous les profils (domaine, privé et public) depuis l'invite de commandes. Pour réactiver : remplacer state off par state on. Équivalent PowerShell : Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q9. Donnez la procédure qui permet de modifier le mot de passe du compte Administrateur dans l'invite de commandes. (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Procédure :<br/>\n              1. Ouvrir un <strong>Invite de commandes</strong> (cmd.exe) en tant qu'administrateur<br/>\n              2. Saisir la commande : <code>net user administrateur *</code><br/>\n              3. Le système invite à saisir le <strong>nouveau mot de passe</strong><br/>\n              4. Le saisir (la saisie est masquée)<br/>\n              5. Le <strong>confirmer</strong> en le saisissant une seconde fois<br/>\n              6. Le mot de passe est modifié</p>\n</div>\n</details>",
-   "model_answer": "Procédure : 1. Ouvrir un Invite de commandes (cmd.exe) en tant qu'administrateur 2. Saisir la commande : net user administrateur * 3. Le système invite à saisir le nouveau mot de passe 4. Le saisir (la saisie est masquée) 5. Le confirmer en le saisissant une seconde fois 6. Le mot de passe est modifié",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q10. Après avoir défini Active Directory, donnez les grandes étapes de son déploiement au sein de l'entreprise DUNIA. (2 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>Active Directory (AD DS)</strong> est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine.<br/><br/>\n<strong>Grandes étapes de déploiement :</strong><br/>\n              1. Configurer une <strong>adresse IP statique</strong> sur le serveur + renommer la machine<br/>\n              2. <strong>Désactiver le pare-feu</strong> (ou configurer les exceptions)<br/>\n              3. Ouvrir le <strong>Gestionnaire de serveur</strong> → Ajouter des rôles → cocher <strong>Services AD DS</strong><br/>\n              4. Une fois les binaires installés, cliquer sur <em>\"Promouvoir ce serveur en contrôleur de domaine\"</em><br/>\n              5. Choisir <em>Ajouter une nouvelle forêt</em>, saisir le nom du domaine (<code>dunia.local</code>)<br/>\n              6. Définir le niveau fonctionnel, le mot de passe DSRM, les emplacements des dossiers AD<br/>\n              7. Valider et <strong>redémarrer</strong> le serveur</p>\n</div>\n</details>",
-   "model_answer": "Active Directory (AD DS) est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine. Grandes étapes de déploiement : 1. Configurer une adresse IP statique sur le serveur + renommer la machine 2. Désactiver le pare-feu (ou configurer les exceptions) 3. Ouvrir le Gestionnaire de serveur → Ajouter des rôles → cocher Services AD DS 4. Une fois les binaires installés, cliquer sur \"Promouvoir ce serveur en contrôleur de domaine\" 5. Choisir Ajouter une nouvelle forêt, saisir le nom du domaine (dunia.local) 6. Définir le niveau fonctionnel, le mot de passe DSRM, les emplacements des dossiers AD 7. Valider et redémarrer le serveur",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "Q11. Soit le domaine dunia.local — donnez la procédure en interface graphique pour créer une Unité d'Organisation nommée \"CDP\". (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Procédure graphique :<br/>\n              1. Ouvrir <strong>Utilisateurs et ordinateurs Active Directory</strong> (menu Outils du Gestionnaire de serveur)<br/>\n              2. Dans le panneau gauche, faire un <strong>clic droit sur le domaine</strong> <code>dunia.local</code><br/>\n              3. Choisir <em>Nouveau</em> → <em>Unité d'organisation</em><br/>\n              4. Saisir le nom : <strong>CDP</strong><br/>\n              5. Valider en cliquant sur <strong>OK</strong></p>\n</div>\n</details>",
-   "model_answer": "Procédure graphique : 1. Ouvrir Utilisateurs et ordinateurs Active Directory (menu Outils du Gestionnaire de serveur) 2. Dans le panneau gauche, faire un clic droit sur le domaine dunia.local 3. Choisir Nouveau → Unité d'organisation 4. Saisir le nom : CDP 5. Valider en cliquant sur OK",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q12. En PowerShell, créez une UO nommée \"IT_CDP\", puis ajoutez l'UO \"TP\" dans l'UO \"IT_CDP\". (Domaine : dunia.local)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Créer l'UO IT_CDP dans CDP :<br/>\n<code>New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"</code><br/><br/>\n              Ajouter l'UO TP dans IT_CDP :<br/>\n<code>New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"</code></p>\n</div>\n</details>",
-   "model_answer": "Créer l'UO IT_CDP dans CDP : New-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\" Ajouter l'UO TP dans IT_CDP : New-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\"",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q13. Quel est le rôle d'un gestionnaire de serveur dans l'environnement Windows Server ? (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Le <strong>Gestionnaire de serveur</strong> est le point central d'administration de Windows Server. Il permet de :<br/>\n              • Afficher les informations détaillées de configuration et de sécurité<br/>\n              • <strong>Ajouter/supprimer des rôles et fonctionnalités</strong> (AD DS, DHCP, DNS, IIS…)<br/>\n              • Gérer plusieurs serveurs depuis une seule interface<br/>\n              • Créer des groupes de serveurs logiques<br/>\n              • Lancer des commandes PowerShell<br/>\n              • Consulter les notifications, alertes et journaux</p>\n</div>\n</details>",
-   "model_answer": "Le Gestionnaire de serveur est le point central d'administration de Windows Server. Il permet de : • Afficher les informations détaillées de configuration et de sécurité • Ajouter/supprimer des rôles et fonctionnalités (AD DS, DHCP, DNS, IIS…) • Gérer plusieurs serveurs depuis une seule interface • Créer des groupes de serveurs logiques • Lancer des commandes PowerShell • Consulter les notifications, alertes et journaux",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q14. Après avoir défini le profil itinérant, le directeur technique de l'entreprise DUNIA vous demande de déployer un contrôleur de domaine avec profil itinérant. Décrivez les différentes étapes. (3 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>Profil itinérant</strong> : mécanisme qui synchronise le profil d'un utilisateur sur un serveur, rendant ses données accessibles depuis n'importe quel poste du réseau local.<br/><br/>\n<strong>Étapes de déploiement :</strong><br/>\n<em>Préparation du serveur</em><br/>\n              1. Installer et configurer le rôle <strong>AD DS</strong> + DNS sur le serveur<br/>\n              2. Promouvoir le serveur en <strong>contrôleur de domaine</strong> (domaine dunia.local)<br/><br/>\n<em>Mise en place du partage de profils</em><br/>\n              3. Créer un dossier <code>Profils</code> sur le serveur (ex : <code>C:\\Profils</code>)<br/>\n              4. <strong>Partager ce dossier</strong> (ex : <code>\\\\SRV-DC\\Profils</code>) avec les droits appropriés<br/><br/>\n<em>Configuration des utilisateurs AD</em><br/>\n              5. Ouvrir <em>Utilisateurs et ordinateurs Active Directory</em><br/>\n              6. Double-cliquer sur l'utilisateur → onglet <strong>Profil</strong><br/>\n              7. Dans <em>Chemin du profil</em>, saisir : <code>\\\\SRV-DC\\Profils\\%username%</code><br/>\n              8. Valider<br/><br/>\n<em>Vérification</em><br/>\n              9. Joindre un poste client au domaine<br/>\n              10. Se connecter avec l'utilisateur → vérifier que le profil est créé et synchronisé sur le serveur</p>\n</div>\n</details>",
-   "model_answer": "Profil itinérant : mécanisme qui synchronise le profil d'un utilisateur sur un serveur, rendant ses données accessibles depuis n'importe quel poste du réseau local. Étapes de déploiement : Préparation du serveur 1. Installer et configurer le rôle AD DS + DNS sur le serveur 2. Promouvoir le serveur en contrôleur de domaine (domaine dunia.local) Mise en place du partage de profils 3. Créer un dossier Profils sur le serveur (ex : C:\\Profils) 4. Partager ce dossier (ex : \\\\SRV-DC\\Profils) avec les droits appropriés Configuration des utilisateurs AD 5. Ouvrir Utilisateurs et ordinateurs Active Directory 6. Double-cliquer sur l'utilisateur → onglet Profil 7. Dans Chemin du profil, saisir : \\\\SRV-DC\\Profils\\%username% 8. Valider Vérification 9. Joindre un poste client au domaine 10. Se connecter avec l'utilisateur → vérifier que le profil est créé et synchronisé sur le serveur",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "Q15. Expliquez la différence entre les 3 étendues de groupes Active Directory. (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <strong>Domaine Local</strong> : les membres peuvent venir de n'importe quel domaine de la forêt, mais les autorisations sont accordées uniquement dans le <strong>domaine local</strong>.<br/><br/>\n              • <strong>Global</strong> : les membres viennent <strong>uniquement du domaine où le groupe est défini</strong>, mais les autorisations peuvent être accordées dans n'importe quel domaine de la forêt.<br/><br/>\n              • <strong>Universel</strong> : les membres peuvent venir de <strong>n'importe quel domaine de la forêt</strong>, et les autorisations peuvent être accordées dans toute la forêt. Nécessite le Catalogue Global (GC).</p>\n</div>\n</details>",
-   "model_answer": "• Domaine Local : les membres peuvent venir de n'importe quel domaine de la forêt, mais les autorisations sont accordées uniquement dans le domaine local. • Global : les membres viennent uniquement du domaine où le groupe est défini, mais les autorisations peuvent être accordées dans n'importe quel domaine de la forêt. • Universel : les membres peuvent venir de n'importe quel domaine de la forêt, et les autorisations peuvent être accordées dans toute la forêt. Nécessite le Catalogue Global (GC).",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q16. Qu'est-ce que le protocole SMB ? Quelle est la différence avec NFS ? (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p><strong>SMB (Server Message Block)</strong>, aussi appelé CIFS, est le protocole de partage de fichiers natif Windows. Il dispose d'un client intégré à l'Explorer Windows et repose sur NTFS pour la gestion des droits. Les partages sont accessibles via chemin UNC (<code>\\\\serveur\\partage</code>).<br/><br/>\n<strong>NFS (Network File System)</strong> est principalement utilisé sous Linux. Windows peut l'utiliser mais il n'est pas aussi bien intégré que SMB.<br/>\n              SAMBA est l'implémentation open source de SMB sous Linux.</p>\n</div>\n</details>",
-   "model_answer": "SMB (Server Message Block), aussi appelé CIFS, est le protocole de partage de fichiers natif Windows. Il dispose d'un client intégré à l'Explorer Windows et repose sur NTFS pour la gestion des droits. Les partages sont accessibles via chemin UNC (\\\\serveur\\partage). NFS (Network File System) est principalement utilisé sous Linux. Windows peut l'utiliser mais il n'est pas aussi bien intégré que SMB. SAMBA est l'implémentation open source de SMB sous Linux.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q17. Expliquez les étapes de création d'un partage SMB dans Windows Server 2012. (1,5 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1. Dans le Gestionnaire de serveur → <em>Services de fichiers et de stockage</em> → <em>Partages</em><br/>\n              2. Cliquer sur le lien pour créer un nouveau partage<br/>\n              3. Choisir le type : <strong>SMB rapide</strong> (le plus courant)<br/>\n              4. Sélectionner le volume et saisir le nom du partage (ex : <code>Sensible</code>)<br/>\n              5. Configurer les paramètres : mise en cache, énumération basée sur l'accès, chiffrement<br/>\n              6. Définir les droits d'accès (lecture, lecture/écriture) pour les groupes/utilisateurs<br/>\n              7. Valider — le partage est accessible via <code>\\\\SRV-DC\\Sensible</code></p>\n</div>\n</details>",
-   "model_answer": "1. Dans le Gestionnaire de serveur → Services de fichiers et de stockage → Partages 2. Cliquer sur le lien pour créer un nouveau partage 3. Choisir le type : SMB rapide (le plus courant) 4. Sélectionner le volume et saisir le nom du partage (ex : Sensible) 5. Configurer les paramètres : mise en cache, énumération basée sur l'accès, chiffrement 6. Définir les droits d'accès (lecture, lecture/écriture) pour les groupes/utilisateurs 7. Valider — le partage est accessible via \\\\SRV-DC\\Sensible",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q18. Comment accéder à un partage réseau depuis un client Windows ? Quel port doit être ouvert dans le pare-feu ? (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Depuis un client Windows, saisir le <strong>chemin UNC</strong> dans la barre d'adresse de l'Explorer :<br/>\n<code>\\\\nom_serveur\\nom_partage</code><br/>\n              Le client SMB intégré affiche automatiquement le contenu du partage.<br/><br/>\n              Port à ouvrir dans le pare-feu : <strong>445/TCP</strong> (entrant sur le serveur de fichiers).</p>\n</div>\n</details>",
-   "model_answer": "Depuis un client Windows, saisir le chemin UNC dans la barre d'adresse de l'Explorer : \\\\nom_serveur\\nom_partage Le client SMB intégré affiche automatiquement le contenu du partage. Port à ouvrir dans le pare-feu : 445/TCP (entrant sur le serveur de fichiers).",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "Q19. Qu'est-ce que l'énumération basée sur l'accès ? Pourquoi est-ce utile ? (1 pt)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>L'<strong>énumération basée sur l'accès</strong> est une fonctionnalité qui n'affiche dans l'Explorer Windows que les partages (et dossiers) auxquels l'utilisateur a effectivement accès. Un utilisateur sans droits sur un partage <strong>ne le verra pas</strong>.<br/><br/>\n              Utilité : masquer les ressources sensibles aux utilisateurs non autorisés, améliorer la clarté et la sécurité de l'interface utilisateur.</p>\n</div>\n</details>",
-   "model_answer": "L'énumération basée sur l'accès est une fonctionnalité qui n'affiche dans l'Explorer Windows que les partages (et dossiers) auxquels l'utilisateur a effectivement accès. Un utilisateur sans droits sur un partage ne le verra pas. Utilité : masquer les ressources sensibles aux utilisateurs non autorisés, améliorer la clarté et la sécurité de l'interface utilisateur.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "Q20. Cas pratique : L'entreprise DUNIA vous demande de mettre en place un serveur de fichiers partagés pour les utilisateurs du domaine dunia.local. Décrivez votre démarche complète. (3 pts)",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Démarche complète :<br/><br/>\n<strong>1. Prérequis :</strong> Avoir un contrôleur de domaine <code>dunia.local</code> opérationnel<br/><br/>\n<strong>2. Installer le rôle Serveur de fichiers :</strong> Gestionnaire de serveur → Ajouter des rôles → <em>Services de fichiers et de stockage</em> → <em>Serveur de fichiers</em><br/><br/>\n<strong>3. Créer des groupes AD :</strong> Dans <em>Utilisateurs et ordinateurs AD</em>, créer des groupes de sécurité (ex : GRP_RH, GRP_IT) et y ajouter les utilisateurs<br/><br/>\n<strong>4. Créer le partage :</strong> Gestionnaire de serveur → Partages → Nouveau partage → SMB rapide → Nommer le partage (ex : <code>Donnees-DUNIA</code>)<br/><br/>\n<strong>5. Configurer les droits :</strong> Affecter les droits par groupe (ex : GRP_IT → Lecture/Écriture, Utilisateurs authentifiés → Lecture)<br/><br/>\n<strong>6. Activer l'énumération basée sur l'accès</strong> pour masquer les ressources non autorisées<br/><br/>\n<strong>7. Configurer le pare-feu :</strong> Autoriser le port <strong>445/TCP</strong> entrant<br/><br/>\n<strong>8. Vérification :</strong> Depuis un poste client joint au domaine, accéder à <code>\\\\SRV-DC\\Donnees-DUNIA</code> et vérifier les droits</p>\n</div>\n</details>",
-   "model_answer": "Démarche complète : 1. Prérequis : Avoir un contrôleur de domaine dunia.local opérationnel 2. Installer le rôle Serveur de fichiers : Gestionnaire de serveur → Ajouter des rôles → Services de fichiers et de stockage → Serveur de fichiers 3. Créer des groupes AD : Dans Utilisateurs et ordinateurs AD, créer des groupes de sécurité (ex : GRP_RH, GRP_IT) et y ajouter les utilisateurs 4. Créer le partage : Gestionnaire de serveur → Partages → Nouveau partage → SMB rapide → Nommer le partage (ex : Donnees-DUNIA) 5. Configurer les droits : Affecter les droits par groupe (ex : GRP_IT → Lecture/Écriture, Utilisateurs authentifiés → Lecture) 6. Activer l'énumération basée sur l'accès pour masquer les ressources non autorisées 7. Configurer le pare-feu : Autoriser le port 445/TCP entrant 8. Vérification : Depuis un poste client joint au domaine, accéder à \\\\SRV-DC\\Donnees-DUNIA et vérifier les droits",
-   "level": "hard"
-  }
- ],
- "simulators": [
-  {
-   "source": "_private/windows/exercices/simulateur.html",
-   "variables": {
-    "EXAM_VARIANTS": [
-     {
-      "label": "Sujet A",
-      "mcq": [
-       {
-        "q": "Windows Server 2012 dispose de combien d'éditions ?",
-        "opts": [
-         "2 (Standard et Datacenter)",
-         "3 (Foundation, Standard, Datacenter)",
-         "4 (Foundation, Essentials, Standard, Datacenter)",
-         "5 éditions"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "Quelles sont les 3 qualités d'un administrateur système ?",
-        "opts": [
-         "Rapidité, créativité, technicité",
-         "Technicité, rigueur, bon sens",
-         "Rigueur, communication, leadership",
-         "Bon sens, rapidité, technicité"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "La commande <code>netsh advfirewall set allprofiles state off</code> permet de :",
-        "opts": [
-         "Activer le pare-feu Windows",
-         "Renommer le serveur",
-         "Désactiver le pare-feu pour tous les profils",
-         "Configurer l'adresse IP"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "Qu'est-ce qu'une forêt dans Active Directory ?",
-        "opts": [
-         "Un seul domaine avec beaucoup d'utilisateurs",
-         "Un regroupement de plusieurs domaines d'un seul arbre",
-         "Un regroupement d'une ou plusieurs arborescences de domaine indépendantes",
-         "Le nom de l'annuaire Active Directory"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "Quelle commande PowerShell crée une Unité d'Organisation ?",
-        "opts": [
-         "New-ADOU",
-         "Add-ADOrganizationalUnit",
-         "New-ADOrganizationalUnit",
-         "Create-ADOU"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "Le protocole SMB utilise quel port TCP ?",
-        "opts": [
-         "Port 80",
-         "Port 443",
-         "Port 3389",
-         "Port 445"
-        ],
-        "correct": 3
-       }
-      ],
-      "vf": [
-       {
-        "stmt": "L'édition Datacenter de Windows Server 2012 permet un nombre de VM illimité.",
-        "correct": true
-       },
-       {
-        "stmt": "La SAM (Security Account Manager) est la base de données des comptes de domaine Active Directory.",
-        "correct": false
-       },
-       {
-        "stmt": "Un arbre Active Directory est un regroupement hiérarchique de domaines partageant un espace de nom contigu.",
-        "correct": true
-       },
-       {
-        "stmt": "Le dossier SYSVOL contient la base de données AD (NTDS.DIT).",
-        "correct": false
-       }
-      ],
-      "open": [
-       {
-        "pts": 3,
-        "q": "Après avoir défini Active Directory, donnez les grandes étapes de son déploiement au sein de l'entreprise DUNIA (domaine : dunia.local).",
-        "model": "Active Directory (AD DS) est le service d'annuaire de Microsoft qui centralise la gestion des utilisateurs, ordinateurs et stratégies.\n\nÉtapes de déploiement :\n1. Configurer l'IP statique + renommer le serveur\n2. Désactiver le pare-feu (netsh advfirewall set allprofiles state off)\n3. Gestionnaire de serveur → Ajouter des rôles → Services AD DS\n4. Cliquer sur \"Promouvoir ce serveur en contrôleur de domaine\"\n5. Choisir Ajouter une nouvelle forêt → saisir dunia.local\n6. Définir niveau fonctionnel, mot de passe DSRM, emplacements dossiers\n7. Valider → Installer → Redémarrer"
-       },
-       {
-        "pts": 3,
-        "q": "Soit le domaine dunia.local :\na) Donnez la procédure graphique pour créer une UO nommée CDP.\nb) En PowerShell, créez l'UO IT_CDP dans CDP.\nc) En PowerShell, ajoutez l'UO TP dans IT_CDP.",
-        "model": "a) Graphiquement :\n1. Ouvrir Utilisateurs et ordinateurs Active Directory\n2. Clic droit sur dunia.local → Nouveau → Unité d'organisation\n3. Saisir le nom : CDP → OK\n\nb) PowerShell — IT_CDP dans CDP :\nNew-ADOrganizationalUnit -Name \"IT_CDP\" -Path \"OU=CDP,DC=dunia,DC=local\"\n\nc) PowerShell — TP dans IT_CDP :\nNew-ADOrganizationalUnit -Name \"TP\" -Path \"OU=IT_CDP,OU=CDP,DC=dunia,DC=local\""
-       }
-      ],
-      "cas": {
-       "pts": 4,
-       "context": "Le directeur technique de l'entreprise DUNIA vous demande de déployer un contrôleur de domaine avec profil itinérant pour ses employés.",
-       "q": "Après avoir défini le profil itinérant, décrivez les différentes étapes du déploiement de votre solution.",
-       "model": "Profil itinérant : mécanisme qui synchronise le profil d'un utilisateur sur un serveur pour le rendre accessible depuis tout le réseau local (l'utilisateur retrouve son environnement quel que soit le poste utilisé).\n\nÉtapes de déploiement :\n\n1. CONTRÔLEUR DE DOMAINE\n   • Installer le rôle AD DS + DNS\n   • Promouvoir le serveur en DC (domaine dunia.local)\n\n2. PARTAGE DE PROFILS\n   • Créer le dossier C:\\Profils sur le serveur\n   • Le partager : \\\\SRV-DC\\Profils avec les droits appropriés (utilisateurs → Lecture/Écriture sur leur propre dossier)\n\n3. CONFIGURATION DES UTILISATEURS AD\n   • Utilisateurs et ordinateurs AD → double-cliquer sur l'utilisateur\n   • Onglet Profil → Chemin du profil : \\\\SRV-DC\\Profils\\%username%\n   • Valider\n\n4. VÉRIFICATION\n   • Joindre un poste client au domaine\n   • Se connecter avec l'utilisateur → profil créé et synchronisé sur le serveur\n   • Se connecter depuis un autre poste → le même profil est disponible"
-      }
-     },
-     {
-      "label": "Sujet B",
-      "mcq": [
-       {
-        "q": "Quelle commande permet de modifier le mot de passe du compte Administrateur en invite de commandes ?",
-        "opts": [
-         "passwd administrateur",
-         "change-password /admin",
-         "net user administrateur *",
-         "set-password administrateur"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "L'installation minimale (Server Core) de Windows Server 2012 se distingue par :",
-        "opts": [
-         "Une interface graphique simplifiée",
-         "L'absence d'interface graphique et une surface d'attaque réduite",
-         "Un nombre d'utilisateurs limité",
-         "L'impossibilité d'installer des rôles"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "Quel acronyme désigne la base de données des comptes locaux Windows ?",
-        "opts": [
-         "AD DS",
-         "DNS",
-         "SAM",
-         "NFS"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "Un domaine Active Directory est :",
-        "opts": [
-         "Un groupe de machines dans le même bâtiment",
-         "Une entité logique AD hébergeant utilisateurs, ordinateurs et stratégies partagées",
-         "Un type de serveur DNS",
-         "Un protocole de partage de fichiers"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "Quel cmdlet PowerShell installe le rôle AD DS ?",
-        "opts": [
-         "Add-ADDSRole",
-         "Install-ADDSForest",
-         "New-ADDomain",
-         "Install-WindowsFeature -Name AD-Domain-Services"
-        ],
-        "correct": 3
-       },
-       {
-        "q": "Le chemin UNC pour accéder au partage Données sur SRV-DC est :",
-        "opts": [
-         "http://SRV-DC/Données",
-         "SRV-DC:\\Données",
-         "\\\\SRV-DC\\Données",
-         "ftp://SRV-DC/Données"
-        ],
-        "correct": 2
-       }
-      ],
-      "vf": [
-       {
-        "stmt": "Windows Server 2012 Foundation est limitée à 25 utilisateurs.",
-        "correct": false
-       },
-       {
-        "stmt": "L'option ActiveStore applique immédiatement la configuration IP sans la sauvegarder au redémarrage.",
-        "correct": true
-       },
-       {
-        "stmt": "Un groupe de type Distribution sert à affecter des droits d'accès à des ressources partagées.",
-        "correct": false
-       },
-       {
-        "stmt": "SAMBA est l'implémentation open source du protocole SMB de Microsoft, utilisée sous Linux.",
-        "correct": true
-       }
-      ],
-      "open": [
-       {
-        "pts": 3,
-        "q": "Définir les sigles suivants et expliquer leur rôle dans l'environnement Windows Server :\nSAM, AD DS, DNS, NFS",
-        "model": "• SAM (Security Account Manager) : base de données des comptes locaux Windows, composant du registre contenant les mots de passe locaux. Utilisée pour l'authentification hors domaine.\n\n• AD DS (Active Directory Domain Services) : service d'annuaire Microsoft centralisant la gestion des utilisateurs, ordinateurs, groupes et stratégies dans un domaine.\n\n• DNS (Domain Name System) : service de résolution de noms de domaine en adresses IP. Indispensable pour AD DS — sans DNS, le domaine ne fonctionne pas.\n\n• NFS (Network File System) : protocole de partage de fichiers principalement utilisé sous Linux. Windows peut l'utiliser mais SMB/CIFS est natif."
-       },
-       {
-        "pts": 3,
-        "q": "Expliquez les étapes de création d'un partage SMB dans Windows Server 2012, et comment y accéder depuis un client Windows.",
-        "model": "Création du partage :\n1. Installer le rôle Serveur de fichiers (Gestionnaire de serveur → Services de fichiers et de stockage)\n2. Aller dans Partages → Créer un nouveau partage\n3. Choisir le type : SMB rapide\n4. Sélectionner le volume et nommer le partage (ex : Donnees)\n5. Activer l'énumération basée sur l'accès (masque les partages aux non-autorisés)\n6. Définir les droits d'accès par groupes AD\n7. Valider → le partage est accessible via \\\\SRV-DC\\Donnees\n\nAccès depuis un client Windows :\n• Saisir \\\\SRV-DC\\Donnees dans la barre d'adresse de l'Explorer\n• Le client SMB est intégré nativement à Windows\n• Ouvrir le port 445/TCP dans le pare-feu"
-       }
-      ],
-      "cas": {
-       "pts": 4,
-       "context": "L'entreprise DUNIA dispose d'un domaine dunia.local avec plusieurs employés. Le DG vous demande de créer une structure organisationnelle complète dans Active Directory.",
-       "q": "Décrivez la procédure complète pour :\n1. Créer des Unités d'Organisation adaptées (RH, IT, Direction)\n2. Créer un utilisateur dans l'UO IT\n3. Créer un groupe de sécurité global et y ajouter l'utilisateur\n4. Joindre un poste client au domaine",
-       "model": "1. CRÉER LES UO (PowerShell) :\nNew-ADOrganizationalUnit -Name \"RH\" -Path \"DC=dunia,DC=local\"\nNew-ADOrganizationalUnit -Name \"IT\" -Path \"DC=dunia,DC=local\"\nNew-ADOrganizationalUnit -Name \"Direction\" -Path \"DC=dunia,DC=local\"\n\n2. CRÉER UN UTILISATEUR dans IT :\nNew-ADUser -Name \"Jean KOFFI\" -SamAccountName \"jkoffi\" -UserPrincipalName \"jkoffi@dunia.local\" -Path \"OU=IT,DC=dunia,DC=local\" -AccountPassword (ConvertTo-SecureString \"P@ssw0rd!\" -AsPlainText -Force) -Enabled $true\n\n3. CRÉER UN GROUPE et ajouter l'utilisateur :\nNew-ADGroup -Name \"GRP_IT\" -GroupScope Global -GroupCategory Security -Path \"OU=IT,DC=dunia,DC=local\"\nAdd-ADGroupMember -Identity \"GRP_IT\" -Members \"jkoffi\"\n\n4. JOINDRE UN POSTE AU DOMAINE :\n• Configurer le DNS du poste = IP du DC\n• Panneau de configuration → Système → Paramètres avancés → Nom de l'ordinateur → Modifier\n• Sélectionner Domaine → saisir dunia.local\n• Entrer les credentials d'un compte admin du domaine → Redémarrer"
-      }
-     }
-    ]
-   }
-  }
- ],
- "flashcards": [],
- "exercises_source": "_private/windows/exercices/exercices.html"
+  ],
+  "flashcards": [],
+  "exercises_source": "_private/windows/exercices/exercices.html"
 }

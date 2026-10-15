@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ReviewConfirmButton from "@/components/student/ReviewConfirmButton";
 import { EmptyState, Eyebrow, PageHeader, primaryButton } from "@/components/student/ui";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { prisma } from "@/lib/prisma";
@@ -47,12 +46,12 @@ export default async function ReviewPage() {
   return (
     <>
       <PageHeader eyebrow="Mémorisation" title="À revoir">
-        Revois les questions dues, puis confirme pour espacer progressivement la prochaine révision.
+        Une réponse juste espace la prochaine révision, une erreur la rapproche. Lance une série pour t’y mettre.
       </PageHeader>
 
       {!schedules.length ? (
         <EmptyState title="Rien à revoir pour le moment" href="/parcours" action="Continuer mon parcours">
-          Les fiches apparaîtront ici lorsque le planning de révision sera alimenté par tes séances.
+          Les questions apparaissent ici après tes quiz de chapitre, quand leur date de révision arrive.
         </EmptyState>
       ) : (
         <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
@@ -72,7 +71,6 @@ export default async function ReviewPage() {
                         <p className="font-mono text-[10px] uppercase tracking-widest text-amber">{question.version.item.title}</p>
                         <h3 className="mt-2 font-semibold leading-relaxed">{question.text}</h3>
                         <Link href={`/parcours/${question.version.item.id}`} className="mt-2 inline-flex text-xs text-muted no-underline hover:text-fg">Revoir le chapitre →</Link>
-                        <ReviewConfirmButton questionKey={key} />
                       </article>
                     );
                   })}
@@ -90,7 +88,8 @@ export default async function ReviewPage() {
             <Eyebrow>À revoir aujourd’hui</Eyebrow>
             <p className="mt-3 text-4xl font-semibold tracking-tight">{schedules.length}<span className="ml-2 text-base font-medium text-muted">question{schedules.length > 1 ? "s" : ""}</span></p>
             <p className="mt-2 text-sm leading-relaxed text-muted">Choisies d’après tes séances passées et le temps écoulé depuis la dernière révision.</p>
-            <Link href="/parcours" className={`${primaryButton} mt-5 w-full`}>Aller au parcours</Link>
+            <Link href="/seance/review" className={`${primaryButton} mt-5 w-full`}>Lancer la révision</Link>
+            <Link href="/parcours" className="mt-3 block text-center text-xs text-muted no-underline hover:text-fg">Aller au parcours</Link>
           </aside>
         </div>
       )}

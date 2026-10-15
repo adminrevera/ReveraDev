@@ -2,7 +2,8 @@
 // Lecture : "model" = une table. "@@unique" = interdit les doublons. "Json" = données souples.
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {
@@ -91,6 +92,10 @@ enum QuestMetric {
   ANSWERS   // répondre à N questions
   XP        // gagner N XP
   CHAPTERS  // valider N chapitres
+  CORRECT   // donner N bonnes réponses
+  QUIZZES   // terminer N quiz
+  REVIEWS   // réussir N révisions espacées
+  GAMES     // terminer N grilles de jeu
 }
 
 enum EventKind {
@@ -354,6 +359,7 @@ model Profile {
   tier          PlanTier  @default(FREE)           // offre en cours, recalculée depuis l'abonnement
   premiumUntil  DateTime?                          // copie pratique de l'abonnement en cours
   leagueTierId  String?   @db.Uuid                 // ligue actuelle (vide tant que la ligue n'est pas ouverte)
+  goals         String[]  @default([])             // objectifs choisis à l'inscription (ex. « exams », « regularity »)
   suspendedAt   DateTime?                          // compte suspendu par un admin
   createdAt     DateTime  @default(now())
 
@@ -417,7 +423,8 @@ model Attempt { // une réponse à une question
 model QuizAttempt {
   id         String    @id @default(uuid()) @db.Uuid
   userId     String    @db.Uuid
-  itemId     String    @db.Uuid
+  itemId     String?   @db.Uuid // vide pour une séance libre (révision, erreurs, entraînement)
+  kind       String    @default("chapter") // chapter | review | errors | bank
   layout     Json      // questions tirées, dans l'ordre présenté, avec l'ordre des choix de chacune
   correct    Int       @default(0)
   total      Int
@@ -425,7 +432,7 @@ model QuizAttempt {
   startedAt  DateTime  @default(now())
   finishedAt DateTime?
   user       Profile     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  item       ContentItem @relation(fields: [itemId], references: [id])
+  item       ContentItem? @relation(fields: [itemId], references: [id])
   answers    Attempt[]
 
   @@index([userId, itemId, startedAt])
@@ -455,6 +462,7 @@ model ChapterProgress {
   readAt        DateTime?   // cours lu jusqu'au bout
   bestQuizScore Int?        // meilleur score au quiz du chapitre, en pourcentage (100 = validé par défaut)
   completedAt   DateTime?   // chapitre validé
+  partsRead     Int         @default(0) // nombre de parties lues (lecture guidée, première lecture)
   lastVisitedAt DateTime    @default(now())
   user          Profile     @relation(fields: [userId], references: [id], onDelete: Cascade)
   item          ContentItem @relation(fields: [itemId], references: [id])
@@ -540,7 +548,12 @@ model Payment {
   userId        String        @db.Uuid
   planId        String        @db.Uuid
   provider      String        @default("paydunya")
-  method        String?       // tmoney | moov
+  method        String?       // mixx | moov (opérateur choisi)
+  phone         String?       // numéro mobile money saisi
+  codeHash      String?       // empreinte du code de confirmation envoyé par e-mail (jamais le code en clair)
+  codeSentAt    DateTime?
+  codeAttempts  Int           @default(0)
+  confirmedAt   DateTime?     // code saisi : l'abonnement est alors activé
   providerToken String?       @unique // jeton de la facture chez PayDunya
   amountXof     Int
   status        PaymentStatus @default(PENDING)
@@ -741,6 +754,7 @@ model GameSession {
   finishedAt DateTime?
   success    Boolean    @default(false)
   seconds    Int?
+  state      Json?      // essais déjà joués (Mot 404) : le serveur seul fait foi
   user       Profile    @relation(fields: [userId], references: [id], onDelete: Cascade)
   puzzle     GamePuzzle @relation(fields: [puzzleId], references: [id])
 

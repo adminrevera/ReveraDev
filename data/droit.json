@@ -1,1813 +1,1813 @@
 {
- "slug": "droit",
- "name": "Introduction au Droit",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Généralités sur le Droit",
-   "subtitle": "Comprendre ce qu'est le droit, ses deux grandes dimensions, ses caractères essentiels et ses branches principales.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Définir le droit et la règle de droit<br/>\n        • Identifier les caractéristiques de la règle de droit<br/>\n        • Distinguer droit objectif et droits subjectifs<br/>\n        • Distinguer droit public et droit privé<br/>\n        • Connaître les acteurs du droit</p>\n</div>\n<h2>1. Notions du Droit</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Le <strong>droit</strong> est un phénomène social indispensable à l'organisation de la vie en société. Sans règles communes, la coexistence entre individus serait impossible.</p>\n<p><strong>Droit</strong> = Ensemble des règles qui régissent les rapports des membres d'une même société <em>(Larousse)</em>.</p>\n</div>\n<p>Le droit se décline en <strong>deux sens fondamentaux</strong> :</p>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📚 Droit Objectif</div>\n<p>Ensemble des règles qui gouvernent l'activité humaine dans une société organisée et dont l'inobservation est sanctionnée par la contrainte exercée par une autorité publique.</p>\n<p>Ex : Code civil</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">👤 Droits Subjectifs</div>\n<p>Ensemble des prérogatives que le droit objectif reconnaît sous la protection des pouvoirs publics à un individu en sa qualité de sujet de droit.</p>\n<p>Ex : droit de propriété, droit à l'image, droit de vote</p>\n</div>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Formule de Carbonnier</div>\n<p><em>\"Si le droit (objectif) nous permet de faire quelque chose, nous avons le droit (subjectif) de le faire.\"</em></p>\n<p>Le droit objectif <strong>protège</strong> les droits subjectifs.</p>\n</div>\n<h2>2. Contenu et caractères du droit objectif</h2>\n<p>Le droit objectif est constitué de règles de droit qui présentent les caractères suivants :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Caractère</th><th>Explication</th></tr></thead>\n<tbody>\n<tr><td><strong>Générale et abstraite</strong></td><td>La règle s'applique à tout le monde sans nommer telle ou telle personne. Elle vise des situations juridiques et non des individus nommément désignés.</td></tr>\n<tr><td><strong>Obligatoire et coercitive</strong></td><td>Son application ne dépend pas du bon vouloir des individus. Elle s'applique indépendamment de la volonté humaine.</td></tr>\n<tr><td><strong>Sanctionnée</strong></td><td>En cas de non-respect, des sanctions sont prévues et appliquées par l'autorité publique.</td></tr>\n</tbody>\n</table></div>\n<h3>Types de sanctions</h3>\n<div>\n<div class=\"box info\"><div class=\"box-lbl\">⚖️ Sanctions pénales</div><p>Amendes et peines d'emprisonnement</p></div>\n<div class=\"box tip\"><div class=\"box-lbl\">💰 Sanctions civiles</div><p>Dommages-intérêts versés aux victimes de la violation</p></div>\n<div class=\"box warn\"><div class=\"box-lbl\">🏛️ Sanctions administratives</div><p>Suspension d'activité, retrait d'autorisation</p></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🏢 Sanctions disciplinaires</div><p>Avertissement, licenciement (cadre professionnel)</p></div>\n</div>\n<h2>3. Droit, Morale et Religion</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Points clés</div>\n<p>• La règle de droit, la règle morale et les préceptes religieux sont tous des <strong>règles de conduite humaine</strong>.<br/>\n        • Parfois ils se rejoignent : le droit interdit le vol et le meurtre, comme la morale et la religion.<br/>\n        • Mais ils peuvent s'opposer. <em>Ex : le divorce est autorisé par la loi mais interdit par la religion catholique.</em><br/>\n        • La règle de droit se distingue des autres par son <strong>caractère contraignant et coercitif</strong> garanti par l'État.</p>\n</div>\n<h2>4. Divisions ou branches du droit</h2>\n<p>La grande division du Droit distingue :</p>\n<h3>4.1 Le Droit public</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">🏛️ Définition</div>\n<p>Ensemble des règles juridiques qui organisent les relations entre les <strong>personnes publiques et les particuliers</strong>.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Branche</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Droit constitutionnel</strong></td><td>Règles relatives à l'établissement, l'exercice et la transmission du pouvoir politique</td><td>Rapports Président / Assemblée Nationale</td></tr>\n<tr><td><strong>Droit administratif</strong></td><td>Règles applicables aux relations entre administrations publiques et usagers</td><td>Litige fonctionnaire / supérieur hiérarchique</td></tr>\n<tr><td><strong>Droit fiscal</strong></td><td>Règles relatives à l'établissement et au recouvrement des impôts et taxes</td><td>Déclaration et paiement de la TVA</td></tr>\n<tr><td><strong>Finances publiques</strong></td><td>Règles applicables aux opérations relatives aux deniers publics</td><td>Loi de finances</td></tr>\n<tr><td><strong>Droit international public</strong></td><td>Règles régissant les rapports entre États et Organisations Internationales</td><td>Accord Togo–OMS</td></tr>\n</tbody>\n</table></div>\n<h3>4.2 Le Droit privé</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">👥 Définition</div>\n<p>Ensemble des règles régissant les rapports entre <strong>particuliers ou personnes privées</strong> (physiques ou morales).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Branche</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Droit civil</strong></td><td>Branche la plus ancienne, applicable à tous en l'absence de règle spéciale</td><td>État des personnes : nom, domicile, nationalité</td></tr>\n<tr><td><strong>Droit commercial</strong></td><td>Règles applicables aux commerçants et à leurs activités professionnelles</td><td>Acte de commerce</td></tr>\n<tr><td><strong>Droit du travail</strong></td><td>Règles organisant les rapports entre employeurs et employés du secteur privé</td><td>Contrat de travail</td></tr>\n<tr><td><strong>Droit International Privé</strong></td><td>Règles régissant les rapports entre particuliers de deux États différents</td><td>Mariage Gabonais / Togolaise au Ghana</td></tr>\n</tbody>\n</table></div>\n<h2>5. Acteurs du droit</h2>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🏛️ Le Législateur</div>\n<p>Le <strong>Parlement</strong> vote les lois, fixe les grandes règles de la vie sociale et contrôle le gouvernement.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">⚙️ Le Pouvoir Exécutif</div>\n<p>Le <strong>Gouvernement</strong> élabore les règlements, prend les décrets et assure l'exécution des lois.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚖️ Les Juges &amp; Tribunaux</div>\n<p>Ils <strong>interprètent et appliquent</strong> le droit aux situations concrètes, rendant des décisions opposables.</p>\n</div>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div>\n<span></span>\n<a class=\"btn-start\">Chapitre 2 — Les Sources du Droit →</a>\n</div>\n</div>",
-   "questions": [
+  "slug": "droit",
+  "name": "Introduction au Droit",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Que désigne le « droit objectif » ?",
-     "options": [
-      {
-       "text": "Les prérogatives reconnues à un individu",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'ensemble des règles qui gouvernent l'activité humaine en société",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le droit de propriété",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le droit de vote",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le droit objectif est l'ensemble des règles qui gouvernent l'activité humaine dans une société organisée, dont l'inobservation est sanctionnée par la contrainte de l'autorité publique. Les prérogatives individuelles (propriété, vote...) relèvent des droits subjectifs."
+      "number": 1,
+      "title": "Généralités sur le Droit",
+      "subtitle": "Comprendre ce qu'est le droit, ses deux grandes dimensions, ses caractères essentiels et ses branches principales.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Définir le droit et la règle de droit</li><li>Identifier les caractéristiques de la règle de droit</li><li>Distinguer droit objectif et droits subjectifs</li><li>Distinguer droit public et droit privé</li><li>Connaître les acteurs du droit</li></ul></div>\n<h2>Notions du Droit</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le <strong>droit</strong> est un phénomène social indispensable à l'organisation de la vie en société. Sans règles communes, la coexistence entre individus serait impossible.</p>\n<p><strong>Droit</strong> = Ensemble des règles qui régissent les rapports des membres d'une même société <em>(Larousse)</em>.</p></div>\n<p>Le droit se décline en <strong>deux sens fondamentaux</strong> :</p>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Droit Objectif</div>\n<p>Ensemble des règles qui gouvernent l'activité humaine dans une société organisée et dont l'inobservation est sanctionnée par la contrainte exercée par une autorité publique.</p>\n<p>Ex : Code civil</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Droits Subjectifs</div>\n<p>Ensemble des prérogatives que le droit objectif reconnaît sous la protection des pouvoirs publics à un individu en sa qualité de sujet de droit.</p>\n<p>Ex : droit de propriété, droit à l'image, droit de vote</p></div></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Formule de Carbonnier</div>\n<p><em>\"Si le droit (objectif) nous permet de faire quelque chose, nous avons le droit (subjectif) de le faire.\"</em></p>\n<p>Le droit objectif <strong>protège</strong> les droits subjectifs.</p></div>\n<h2>Contenu et caractères du droit objectif</h2>\n<p>Le droit objectif est constitué de règles de droit qui présentent les caractères suivants :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Caractère</th><th>Explication</th></tr></thead>\n<tbody>\n<tr><td><strong>Générale et abstraite</strong></td><td>La règle s'applique à tout le monde sans nommer telle ou telle personne. Elle vise des situations juridiques et non des individus nommément désignés.</td></tr>\n<tr><td><strong>Obligatoire et coercitive</strong></td><td>Son application ne dépend pas du bon vouloir des individus. Elle s'applique indépendamment de la volonté humaine.</td></tr>\n<tr><td><strong>Sanctionnée</strong></td><td>En cas de non-respect, des sanctions sont prévues et appliquées par l'autorité publique.</td></tr>\n</tbody>\n</table></div>\n<h3>Types de sanctions</h3>\n<div>\n<div class=\"box info\"><div class=\"box-lbl\">Sanctions pénales</div><p>Amendes et peines d'emprisonnement</p></div>\n<div class=\"box tip\"><div class=\"box-lbl\">Sanctions civiles</div><p>Dommages-intérêts versés aux victimes de la violation</p></div>\n<div class=\"box warn\"><div class=\"box-lbl\">Sanctions administratives</div><p>Suspension d'activité, retrait d'autorisation</p></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">Sanctions disciplinaires</div><p>Avertissement, licenciement (cadre professionnel)</p></div></div>\n<h2>Droit, Morale et Religion</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Points clés</div>\n<ul><li>La règle de droit, la règle morale et les préceptes religieux sont tous des <strong>règles de conduite humaine</strong>.</li><li>Parfois ils se rejoignent : le droit interdit le vol et le meurtre, comme la morale et la religion.</li><li>Mais ils peuvent s'opposer. <em>Ex : le divorce est autorisé par la loi mais interdit par la religion catholique.</em></li><li>La règle de droit se distingue des autres par son <strong>caractère contraignant et coercitif</strong> garanti par l'État.</li></ul></div>\n<h2>Divisions ou branches du droit</h2>\n<p>La grande division du Droit distingue :</p>\n<h3>1 Le Droit public</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Ensemble des règles juridiques qui organisent les relations entre les <strong>personnes publiques et les particuliers</strong>.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Branche</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Droit constitutionnel</strong></td><td>Règles relatives à l'établissement, l'exercice et la transmission du pouvoir politique</td><td>Rapports Président / Assemblée Nationale</td></tr>\n<tr><td><strong>Droit administratif</strong></td><td>Règles applicables aux relations entre administrations publiques et usagers</td><td>Litige fonctionnaire / supérieur hiérarchique</td></tr>\n<tr><td><strong>Droit fiscal</strong></td><td>Règles relatives à l'établissement et au recouvrement des impôts et taxes</td><td>Déclaration et paiement de la TVA</td></tr>\n<tr><td><strong>Finances publiques</strong></td><td>Règles applicables aux opérations relatives aux deniers publics</td><td>Loi de finances</td></tr>\n<tr><td><strong>Droit international public</strong></td><td>Règles régissant les rapports entre États et Organisations Internationales</td><td>Accord Togo–OMS</td></tr>\n</tbody>\n</table></div>\n<h3>2 Le Droit privé</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Ensemble des règles régissant les rapports entre <strong>particuliers ou personnes privées</strong> (physiques ou morales).</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Branche</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Droit civil</strong></td><td>Branche la plus ancienne, applicable à tous en l'absence de règle spéciale</td><td>État des personnes : nom, domicile, nationalité</td></tr>\n<tr><td><strong>Droit commercial</strong></td><td>Règles applicables aux commerçants et à leurs activités professionnelles</td><td>Acte de commerce</td></tr>\n<tr><td><strong>Droit du travail</strong></td><td>Règles organisant les rapports entre employeurs et employés du secteur privé</td><td>Contrat de travail</td></tr>\n<tr><td><strong>Droit International Privé</strong></td><td>Règles régissant les rapports entre particuliers de deux États différents</td><td>Mariage Gabonais / Togolaise au Ghana</td></tr>\n</tbody>\n</table></div>\n<h2>Acteurs du droit</h2>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Le Législateur</div>\n<p>Le <strong>Parlement</strong> vote les lois, fixe les grandes règles de la vie sociale et contrôle le gouvernement.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Le Pouvoir Exécutif</div>\n<p>Le <strong>Gouvernement</strong> élabore les règlements, prend les décrets et assure l'exécution des lois.</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Les Juges &amp; Tribunaux</div>\n<p>Ils <strong>interprètent et appliquent</strong> le droit aux situations concrètes, rendant des décisions opposables.</p></div></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div>\n<span></span>\n<a class=\"btn-start\">Chapitre 2 — Les Sources du Droit →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que désigne le « droit objectif » ?",
+          "options": [
+            {
+              "text": "Les prérogatives reconnues à un individu",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'ensemble des règles qui gouvernent l'activité humaine en société",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le droit de propriété",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le droit de vote",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le droit objectif est l'ensemble des règles qui gouvernent l'activité humaine dans une société organisée, dont l'inobservation est sanctionnée par la contrainte de l'autorité publique. Les prérogatives individuelles (propriété, vote...) relèvent des droits subjectifs."
+        },
+        {
+          "type": "mcq",
+          "text": "Lequel de ces caractères ne s'applique PAS à la règle de droit ?",
+          "options": [
+            {
+              "text": "Générale et abstraite",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Obligatoire et coercitive",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Sanctionnée par l'autorité publique",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Facultative et négociable",
+              "correct": true,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La règle de droit est générale et abstraite, obligatoire et coercitive, et sanctionnée par l'autorité publique. Son application ne dépend jamais du bon vouloir des individus : elle n'est ni facultative ni négociable."
+        },
+        {
+          "type": "mcq",
+          "text": "Qu'est-ce qui distingue fondamentalement la règle de droit de la règle morale ou religieuse ?",
+          "options": [
+            {
+              "text": "Elle est plus ancienne",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Son caractère contraignant et coercitif garanti par l'État",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Elle n'a aucun rapport avec la conduite humaine",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Elle est toujours identique à la morale",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le droit, la morale et la religion sont tous des règles de conduite humaine, mais seule la règle de droit possède un caractère contraignant et coercitif garanti par l'État (sanctions pénales, civiles, administratives, disciplinaires)."
+        },
+        {
+          "type": "mcq",
+          "text": "Le droit du travail appartient à quelle branche du droit ?",
+          "options": [
+            {
+              "text": "Droit public",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Droit privé",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Droit international public",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Droit constitutionnel",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le droit du travail régit les rapports entre employeurs et employés du secteur privé : il appartient au droit privé, au même titre que le droit civil, le droit commercial et le droit international privé."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel acteur du droit a pour rôle d'interpréter et appliquer le droit aux situations concrètes ?",
+          "options": [
+            {
+              "text": "Le Parlement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le Gouvernement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les juges et tribunaux",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "La doctrine",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Les juges et tribunaux interprètent et appliquent le droit aux situations concrètes en rendant des décisions opposables. Le Parlement vote les lois (législateur) et le Gouvernement élabore les règlements (exécutif)."
+        }
+      ],
+      "source": "droit/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Lequel de ces caractères ne s'applique PAS à la règle de droit ?",
-     "options": [
-      {
-       "text": "Générale et abstraite",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Obligatoire et coercitive",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Sanctionnée par l'autorité publique",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Facultative et négociable",
-       "correct": true,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La règle de droit est générale et abstraite, obligatoire et coercitive, et sanctionnée par l'autorité publique. Son application ne dépend jamais du bon vouloir des individus : elle n'est ni facultative ni négociable."
+      "number": 2,
+      "title": "Les Sources du Droit",
+      "subtitle": "Sources directes (loi et coutume), sources indirectes (jurisprudence et doctrine), et hiérarchie des normes.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Identifier les différentes sources du droit</li><li>Comprendre la hiérarchie des normes</li><li>Distinguer sources directes et indirectes</li><li>Maîtriser le processus d'établissement de la loi</li><li>Connaître la coutume, la jurisprudence et la doctrine</li></ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Vue d'ensemble</div>\n<p>On distingue les <strong>sources directes ou principales</strong> (loi et coutume) et les <strong>sources indirectes</strong> (doctrine et jurisprudence).</p></div>\n<h2>I — Sources directes : Loi et Coutume</h2>\n<h3>La Loi</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Au sens strict, <strong>la loi est un texte adopté par le Parlement</strong> selon une procédure plus ou moins complexe et promulgué par le Président de la République.</p>\n<p><strong>Le règlement</strong> est un texte à caractère général édicté par une autorité exécutive ou administrative, soit pour préciser les conditions d'application d'une loi (règlement d'application), soit pour combler l'insuffisance d'une loi (règlement autonome). Ex : Décrets, arrêtés.</p></div>\n<h4>Types de lois</h4>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Lois constitutionnelles</strong></td><td>Au sommet de la hiérarchie : la Constitution elle-même, les textes de son préambule et ceux qui organisent sa révision</td></tr>\n<tr><td><strong>Lois organiques</strong></td><td>Fixent les modalités de fonctionnement des pouvoirs publics (Cour Constitutionnelle, HAAC, Président de la République…)</td></tr>\n<tr><td><strong>Lois référendaires</strong></td><td>Soumises pour leur validité à l'approbation du peuple par voie de référendum</td></tr>\n<tr><td><strong>Lois ordinaires</strong></td><td>Élaborées selon une procédure simplifiée ; régissent les rapports entre particuliers (travail, mariage, filiation…)</td></tr>\n</tbody>\n</table></div>\n<h4>Établissement de la loi</h4>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Élaboration du texte</div>\n<ul><li>Texte initié par le gouvernement = <strong>projet de loi</strong></li><li>Texte initié par un ou plusieurs parlementaires = <strong>proposition de loi</strong></li><li>Le texte est ensuite déposé au bureau du Parlement pour son vote.</li></ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Vote et adoption</div>\n<p>La commission des lois étudie le projet/proposition et produit un rapport présenté en plénière. Vient ensuite la <strong>promulgation</strong> par le Président.</p></div></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Publication et entrée en vigueur</div>\n<p>La loi est portée à la connaissance des citoyens par insertion au <strong>Journal Officiel</strong>. Elle entre en vigueur après un délai de 24h (le <strong>Jour Franc</strong>).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>03/09/2025</td><td>Parution au Journal Officiel</td></tr>\n<tr><td>04/09/2025</td><td>Jour Franc</td></tr>\n<tr><td>05/09/2025</td><td>Entrée en vigueur de la nouvelle loi</td></tr>\n</tbody>\n</table></div>\n<p> <em>« Nul n'est censé ignorer la loi »</em> — après le jour franc, chacun est supposé en avoir pris connaissance.</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Abrogation de la loi</div>\n<p>L'abrogation = l'anéantissement pour l'avenir des effets d'une loi. On distingue :</p>\n<ul><li><strong>Abrogation expresse</strong> : énoncée par le texte nouveau</li><li><strong>Abrogation tacite</strong> : résulte de l'introduction d'une disposition incompatible avec la disposition antérieure</li></ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Application de la loi dans le temps</div>\n<p>Principe posé par l'article 2 du code civil : <strong><em>« la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif »</em></strong>.</p>\n<ul><li><strong>Non-rétroactivité</strong> : la loi nouvelle ne s'applique pas aux situations nées et terminées avant son entrée en vigueur.</li><li><strong>Effet immédiat</strong> : elle s'applique à toutes les situations créées après son entrée en vigueur.</li><li><em>Exception : les lois pénales douces (plus favorables au prévenu) sont rétroactives.</em></li></ul></div>\n<h3>La Coutume</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition (Gérard Cornu)</div>\n<p>La coutume est une norme de Droit objectif fondée sur une <strong>tradition populaire</strong> qui prête à une pratique constante un caractère juridiquement contraignant.</p>\n<p>En langage simple : une pratique communément admise dans un milieu dont les membres croient en son caractère obligatoire.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Éléments constitutifs de la coutume</div>\n<ul><li><strong>Élément matériel</strong> : répétition prolongée et répandue de la pratique au sein d'une communauté</li><li><strong>Élément psychologique</strong> : croyance au caractère obligatoire et coercitif de la règle coutumière</li></ul></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Coutume vs Loi</div>\n<p>En cas de conflit entre la coutume et la loi, <strong>le juge appliquera la loi</strong>.</p></div>\n<h2>II — Sources indirectes : Jurisprudence et Doctrine</h2>\n<h3>La Jurisprudence</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Ensemble des <strong>décisions rendues par les juridictions</strong> sur les litiges qui leur sont soumis — plus précisément, ensemble des décisions concordantes rendues sur des faits non expressément prévus par la loi.</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Obligation de juger (art. 4 du code civil)</div>\n<p><em>« Le juge qui refusera de juger, sous prétexte du silence, de l'obscurité ou de l'insuffisance de la loi, pourra être poursuivi comme coupable de déni de justice »</em></p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Éléments constitutifs</div>\n<ul><li><strong>Élément matériel</strong> : constance dans l'observation de l'interprétation faite par les juridictions supérieures</li><li><strong>Élément psychologique</strong> : crainte des juridictions inférieures de voir leur décision annulée par les juridictions supérieures</li></ul></div>\n<h3>La Doctrine</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Ensemble des <strong>opinions contenues dans les écrits et publications des juristes</strong> (professeurs, magistrats, auteurs de thèses, experts, etc.).</p>\n<p>Ces écrits peuvent influencer un parlementaire et l'amener à faire une proposition de loi ; en cela la doctrine joue indirectement un rôle dans la création du droit.</p></div>\n<h2>III — Hiérarchie des normes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Principe</div>\n<p>Chaque règle juridique doit être <strong>conforme à celle qui lui est supérieure</strong>. En cas de conflit, la norme supérieure l'emporte.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Bloc</th><th>Contenu</th></tr></thead>\n<tbody>\n<tr><td>1 (sommet)</td><td><strong>Bloc de Constitutionnalité</strong></td><td>Constitution</td></tr>\n<tr><td>2</td><td><strong>Bloc de Conventionnalité</strong></td><td>Traités et accords internationaux</td></tr>\n<tr><td>3</td><td><strong>Bloc de Légalité</strong></td><td>Lois organiques, ordinaires, ordonnances</td></tr>\n<tr><td>4 (base)</td><td><strong>Bloc Réglementaire</strong></td><td>Décrets, arrêtés ministériels, préfectoraux, municipaux</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Ordre de priorité</div>\n<p><strong>Constitution &gt; Traités &gt; Lois &gt; Règlements</strong></p></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 1</a>\n<a class=\"btn-start\">Chapitre 3 — Organisation Judiciaire →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Un texte initié par le Gouvernement et soumis au vote du Parlement s'appelle :",
+          "options": [
+            {
+              "text": "Une proposition de loi",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un projet de loi",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un décret",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un arrêté",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Lorsque le texte est initié par le Gouvernement, on parle de projet de loi. Lorsqu'il est initié par un ou plusieurs parlementaires, on parle de proposition de loi."
+        },
+        {
+          "type": "mcq",
+          "text": "Qu'est-ce que le « Jour Franc » ?",
+          "options": [
+            {
+              "text": "Le jour de promulgation de la loi",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le délai de 24h après publication au Journal Officiel, avant l'entrée en vigueur",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le jour du vote en commission",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un jour férié",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le Jour Franc est le délai de 24h après l'insertion de la loi au Journal Officiel, avant son entrée en vigueur effective. Après ce délai, 'nul n'est censé ignorer la loi'."
+        },
+        {
+          "type": "mcq",
+          "text": "En cas de conflit entre la coutume et la loi, le juge applique :",
+          "options": [
+            {
+              "text": "La coutume, car elle est plus ancienne",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La loi",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Les deux à parts égales",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Aucune des deux",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "En cas de conflit entre la coutume et la loi, le juge appliquera toujours la loi : la coutume, bien que source directe du droit, reste subordonnée à la loi écrite."
+        },
+        {
+          "type": "mcq",
+          "text": "La jurisprudence et la doctrine sont des sources du droit dites :",
+          "options": [
+            {
+              "text": "Directes",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Principales",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Indirectes",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Constitutionnelles",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "On distingue les sources directes (ou principales) — la loi et la coutume — des sources indirectes — la jurisprudence et la doctrine — qui influencent le droit sans le créer directement."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans la hiérarchie des normes, quel est l'ordre correct du sommet vers la base ?",
+          "options": [
+            {
+              "text": "Règlements > Lois > Traités > Constitution",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Constitution > Traités > Lois > Règlements",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Lois > Constitution > Règlements > Traités",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Traités > Constitution > Règlements > Lois",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La hiérarchie des normes, du sommet à la base, est : bloc de constitutionnalité (Constitution), bloc de conventionnalité (traités), bloc de légalité (lois), bloc réglementaire (décrets, arrêtés)."
+        }
+      ],
+      "source": "_private/droit/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Qu'est-ce qui distingue fondamentalement la règle de droit de la règle morale ou religieuse ?",
-     "options": [
-      {
-       "text": "Elle est plus ancienne",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Son caractère contraignant et coercitif garanti par l'État",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Elle n'a aucun rapport avec la conduite humaine",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Elle est toujours identique à la morale",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le droit, la morale et la religion sont tous des règles de conduite humaine, mais seule la règle de droit possède un caractère contraignant et coercitif garanti par l'État (sanctions pénales, civiles, administratives, disciplinaires)."
+      "number": 3,
+      "title": "Organisation Judiciaire au Togo",
+      "subtitle": "Les principes fondamentaux de l'organisation judiciaire et la structure des juridictions togolaises.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre le principe « nul ne peut se faire justice »</li><li>Maîtriser les 3 principes de l'organisation judiciaire</li><li>Identifier les juridictions togolaises de droit commun et spécialisées</li><li>Connaître les autres acteurs du système judiciaire</li></ul></div>\n<h2>« Nul n'a le droit de se faire justice »</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Principe universel</div>\n<p>Ce principe universel <strong>interdit au particulier de se rendre justice</strong> en cas de litige avec un autre particulier. La fonction de juger est confiée à l'État, qui l'assume à travers un service public appelé <strong>la Justice</strong>.</p></div>\n<h2>Principes de l'organisation judiciaire</h2>\n<p>L'organisation judiciaire repose sur <strong>3 principes fondamentaux</strong> :</p>\n<h3>1 Le principe de la séparation des pouvoirs</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Montesquieu</div>\n<p>Pour éviter que le titulaire d'un pouvoir n'en abuse, il faut faire en sorte que <em>le pouvoir arrête le pouvoir</em>.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🇹🇬 Au Togo</div>\n<p>La <strong>Constitution de la Ve République</strong> (promulguée en 2024) consacre l'indépendance du pouvoir judiciaire, qui ne doit subir aucune pression de l'exécutif (Président du Conseil) ou du législatif (Parlement).</p>\n<ul><li>Les juges sont soumis à la loi et <strong>inamovibles</strong></li><li>Le pouvoir judiciaire garantit les <strong>droits fondamentaux</strong></li><li>Le <strong>Conseil Supérieur de la Magistrature</strong> veille à cette indépendance</li></ul></div>\n<h3>2 Le principe de l'égalité de tous devant la loi</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Constitution togolaise — Art. 2</div>\n<p>La Constitution de la Ve République réaffirme l'<strong>égalité de tous les citoyens devant la loi</strong>. Elle garantit la non-discrimination fondée sur l'origine, la race, l'ethnie, le sexe, le handicap, le statut social ou la religion.</p>\n<p>L'État doit assurer l'<strong>égal accès de tous les citoyens à la Justice</strong>.</p></div>\n<h3>3 Le principe du double degré de juridiction</h3>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Définition</div>\n<p>Tout plaideur insatisfait d'une décision de justice peut <strong>porter son affaire devant une juridiction de niveau supérieur</strong> pour un nouvel examen du litige.</p>\n<p>Ce principe vise essentiellement le <strong>rattrapage des erreurs éventuelles</strong> des premiers juges. C'est un gage de bonne justice.</p></div>\n<h2>Structure et juridictions togolaises</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Cadre légal</div>\n<p>L'organisation judiciaire est régie au Togo par la <strong>loi N°2019-015 du 30 octobre 2019</strong> portant Code de l'organisation judiciaire.</p></div>\n<h3>1 Juridictions de droit commun</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Juridiction</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Tribunaux de Première Instance (TPI)</strong></td><td>Juridictions de droit commun de 1er degré</td></tr>\n<tr><td><strong>Cours d'Appel</strong></td><td>2e degré de juridiction — examinent les appels des décisions des TPI</td></tr>\n<tr><td><strong>Cour Suprême</strong></td><td>Juge suprême (civil, pénal, administratif)</td></tr>\n</tbody>\n</table></div>\n<h3>2 Juridictions spécialisées</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Juridiction</th><th>Compétence</th></tr></thead>\n<tbody>\n<tr><td><strong>Tribunaux du travail</strong></td><td>Litiges entre employeurs et employés + tribunaux pour mineurs</td></tr>\n<tr><td><strong>Tribunaux de Police</strong></td><td>Contraventions</td></tr>\n</tbody>\n</table></div>\n<h3>3 Autres acteurs</h3>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Ministère Public</div>\n<p>Procureurs de la République, chargés de l'<strong>action publique</strong></p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Conseil Supérieur de la Magistrature</div>\n<p>Garant de l'<strong>indépendance de la magistrature</strong></p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">OHADA</div>\n<p>Le Togo applique le <strong>droit des affaires OHADA</strong>, affectant certaines compétences juridictionnelles</p></div></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 2</a>\n<a class=\"btn-start\">Chapitre 4 — La Personnalité Juridique →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Le principe « nul n'a le droit de se faire justice » signifie que :",
+          "options": [
+            {
+              "text": "Chacun peut régler ses litiges par la force",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La fonction de juger est confiée à l'État via le service public de la Justice",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Seuls les riches ont accès à la justice",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les juges peuvent refuser de juger",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Ce principe universel interdit au particulier de se rendre justice lui-même en cas de litige. La fonction de juger est confiée exclusivement à l'État, qui l'assume via le service public de la Justice."
+        },
+        {
+          "type": "mcq",
+          "text": "Le principe de la séparation des pouvoirs (Montesquieu) vise à :",
+          "options": [
+            {
+              "text": "Concentrer tous les pouvoirs entre les mains d'une seule personne",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Supprimer le pouvoir judiciaire",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Éviter qu'un titulaire de pouvoir n'en abuse, en faisant que le pouvoir arrête le pouvoir",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Donner tout le pouvoir au Parlement",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Selon Montesquieu, pour éviter que le titulaire d'un pouvoir n'en abuse, il faut que 'le pouvoir arrête le pouvoir' : c'est la base de la séparation des pouvoirs législatif, exécutif et judiciaire."
+        },
+        {
+          "type": "mcq",
+          "text": "Le principe du double degré de juridiction permet :",
+          "options": [
+            {
+              "text": "De juger deux fois la même personne pour le même fait sans raison",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "À un plaideur insatisfait de porter son affaire devant une juridiction supérieure pour rattraper d'éventuelles erreurs",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "D'éviter tout recours en appel",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "De remplacer la Cour Suprême",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le double degré de juridiction permet à tout plaideur insatisfait d'une décision de porter son affaire devant une juridiction de niveau supérieur, pour un nouvel examen — c'est un gage de bonne justice visant le rattrapage des erreurs éventuelles."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle juridiction togolaise est compétente pour les litiges entre employeurs et employés ?",
+          "options": [
+            {
+              "text": "Le Tribunal de Police",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le Tribunal du travail",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "La Cour Suprême",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La Cour d'Appel uniquement",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Les tribunaux du travail sont des juridictions spécialisées compétentes pour les litiges entre employeurs et employés (ainsi que pour les tribunaux pour mineurs)."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel texte régit l'organisation judiciaire au Togo ?",
+          "options": [
+            {
+              "text": "Le Code civil",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La loi N°2019-015 du 30 octobre 2019",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le Code pénal",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le traité OHADA uniquement",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'organisation judiciaire au Togo est régie par la loi N°2019-015 du 30 octobre 2019 portant Code de l'organisation judiciaire."
+        }
+      ],
+      "source": "_private/droit/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "text": "Le droit du travail appartient à quelle branche du droit ?",
-     "options": [
-      {
-       "text": "Droit public",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Droit privé",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Droit international public",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Droit constitutionnel",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le droit du travail régit les rapports entre employeurs et employés du secteur privé : il appartient au droit privé, au même titre que le droit civil, le droit commercial et le droit international privé."
-    },
-    {
-     "type": "mcq",
-     "text": "Quel acteur du droit a pour rôle d'interpréter et appliquer le droit aux situations concrètes ?",
-     "options": [
-      {
-       "text": "Le Parlement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le Gouvernement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les juges et tribunaux",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "La doctrine",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Les juges et tribunaux interprètent et appliquent le droit aux situations concrètes en rendant des décisions opposables. Le Parlement vote les lois (législateur) et le Gouvernement élabore les règlements (exécutif)."
+      "number": 4,
+      "title": "La Personnalité Juridique",
+      "subtitle": "Personnes physiques et personnes morales : acquisition, exercice et fin de la personnalité juridique.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre la notion de personnalité juridique</li><li>Distinguer personnes physiques et personnes morales</li><li>Connaître le début et la fin de la personnalité juridique</li><li>Distinguer personnes morales de droit public et de droit privé</li></ul></div>\n<h2>Notion de la personnalité juridique</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La personnalité juridique = l'<strong>aptitude à être titulaire de droits et soumis à des obligations</strong>.</p>\n<p>Elle est reconnue à deux catégories de sujets de droit :</p></div>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Personnes Physiques</div>\n<p>Tout être humain dès le commencement de sa vie. La personnalité s'acquiert à la naissance et se perd au décès.</p>\n<p>Ex : Un individu</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Personnes Morales</div>\n<p>Entités reconnues par le droit : sociétés commerciales, associations, fondations, collectivités publiques.</p>\n<p>Ex : Une entreprise, une collectivité territoriale</p></div></div>\n<h2>Les catégories de personnalité juridique</h2>\n<h3>1 Les personnes physiques</h3>\n<h4>Début de la personnalité juridique</h4>\n<div class=\"box info\">\n<div class=\"box-lbl\">La naissance</div>\n<p>Le point de départ de la personnalité juridique est la <strong>naissance</strong>.</p>\n<p>Toutefois, dans l'intérêt de l'enfant, la personnalité peut être repoussée à la <strong>date présumée de conception</strong>. Si le père meurt avant la naissance, la loi admet que l'enfant avait la personnalité juridique dès sa conception pour lui permettre de recueillir la succession ou bénéficier d'une assurance.</p></div>\n<h4>Fin de la personnalité juridique</h4>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Le décès ou la mort</div>\n<p>Le décès marque la fin de la personnalité juridique. Mais il existe des cas où il est difficile ou impossible de constater le décès. Le code civil a prévu :</p></div>\n<div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">L'absence</div>\n<p>Situation d'une personne qui, ayant quitté son domicile, est restée <strong>sans nouvelle pendant un délai relativement long (5 ans)</strong>.</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">La disparition</div>\n<p>Il y a disparition quand le corps d'une personne <strong>n'a pu être retrouvé</strong> et que le décès est probable au regard des circonstances (accident d'avion, naufrage…)</p></div></div>\n<h3>2 Les personnes morales</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La personne morale est tout <strong>groupement d'individus pourvu d'une possibilité d'expression collective</strong> pour la défense d'intérêts licites, dignes d'être reconnus et protégés par la loi.</p></div>\n<h4>Personnes morales de droit public</h4>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Définition</div>\n<p>Personnes morales régies par les règles du droit public. On parle aussi de <strong>personnes publiques</strong>.</p>\n<p>Ex : collectivités publiques, établissements publics</p></div>\n<h4>Personnes morales de droit privé</h4>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Définition</div>\n<p>Personnes morales régies par les règles du droit privé.</p>\n<p>Ex : associations à caractère désintéressé, sociétés commerciales, entreprises privées</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Régime</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Personnes morales de droit public</strong></td><td>Droit public</td><td>État, communes, régions, établissements publics</td></tr>\n<tr><td><strong>Personnes morales de droit privé</strong></td><td>Droit privé</td><td>SA, SARL, associations loi 1901, syndicats</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Récapitulatif — Sujets de droit</div>\n<p><strong>Personnes physiques</strong> = êtres humains · débute à la naissance · finit au décès<br/>\n<strong>Personnes morales de droit public</strong> = entités publiques (État, collectivités…)<br/>\n<strong>Personnes morales de droit privé</strong> = sociétés, associations, fondations…</p></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 3</a>\n<a class=\"btn-start\">Faire les exercices →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "La personnalité juridique se définit comme :",
+          "options": [
+            {
+              "text": "Le droit de vote",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'aptitude à être titulaire de droits et soumis à des obligations",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "La capacité de signer un contrat de travail",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La nationalité d'une personne",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La personnalité juridique est l'aptitude à être titulaire de droits et soumis à des obligations. Elle est reconnue aux personnes physiques (êtres humains) et aux personnes morales (sociétés, associations, collectivités...)."
+        },
+        {
+          "type": "mcq",
+          "text": "Le point de départ de la personnalité juridique d'une personne physique est :",
+          "options": [
+            {
+              "text": "La majorité (18 ans)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La naissance",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "L'obtention d'une pièce d'identité",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Le mariage",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le point de départ de la personnalité juridique est la naissance. Dans l'intérêt de l'enfant, elle peut exceptionnellement être repoussée à la date présumée de conception (ex : succession, assurance)."
+        },
+        {
+          "type": "mcq",
+          "text": "Que désigne « l'absence » en droit civil ?",
+          "options": [
+            {
+              "text": "Le fait de ne pas se présenter à un examen",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La situation d'une personne disparue dont le corps est immédiatement retrouvé",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La situation d'une personne ayant quitté son domicile et restée sans nouvelle pendant un délai relativement long (5 ans)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un type de personne morale",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'absence désigne la situation d'une personne qui, ayant quitté son domicile, est restée sans nouvelle pendant un délai relativement long (5 ans). Elle se distingue de la disparition, où le corps n'a pu être retrouvé mais le décès est probable (accident, naufrage...)."
+        },
+        {
+          "type": "mcq",
+          "text": "Une société commerciale (SA, SARL) est une personne morale de :",
+          "options": [
+            {
+              "text": "Droit public",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Droit privé",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Droit international",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Droit pénal",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Les sociétés commerciales (SA, SARL) sont des personnes morales de droit privé, régies par les règles du droit privé, au même titre que les associations et les syndicats."
+        },
+        {
+          "type": "mcq",
+          "text": "Parmi les exemples suivants, lequel est une personne morale de droit public ?",
+          "options": [
+            {
+              "text": "Une SARL",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une association loi 1901",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une commune",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un syndicat",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Une commune est une collectivité territoriale, donc une personne morale de droit public. Les SARL, associations et syndicats sont des personnes morales de droit privé."
+        }
+      ],
+      "source": "_private/droit/chapitres/chapitre4.html"
     }
-   ],
-   "source": "droit/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Les Sources du Droit",
-   "subtitle": "Sources directes (loi et coutume), sources indirectes (jurisprudence et doctrine), et hiérarchie des normes.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Identifier les différentes sources du droit<br/>\n        • Comprendre la hiérarchie des normes<br/>\n        • Distinguer sources directes et indirectes<br/>\n        • Maîtriser le processus d'établissement de la loi<br/>\n        • Connaître la coutume, la jurisprudence et la doctrine</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📌 Vue d'ensemble</div>\n<p>On distingue les <strong>sources directes ou principales</strong> (loi et coutume) et les <strong>sources indirectes</strong> (doctrine et jurisprudence).</p>\n</div>\n<h2>I — Sources directes : Loi et Coutume</h2>\n<h3>1. La Loi</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Au sens strict, <strong>la loi est un texte adopté par le Parlement</strong> selon une procédure plus ou moins complexe et promulgué par le Président de la République.</p>\n<p><strong>Le règlement</strong> est un texte à caractère général édicté par une autorité exécutive ou administrative, soit pour préciser les conditions d'application d'une loi (règlement d'application), soit pour combler l'insuffisance d'une loi (règlement autonome). Ex : Décrets, arrêtés.</p>\n</div>\n<h4>Types de lois</h4>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th></tr></thead>\n<tbody>\n<tr><td><strong>Lois constitutionnelles</strong></td><td>Au sommet de la hiérarchie : la Constitution elle-même, les textes de son préambule et ceux qui organisent sa révision</td></tr>\n<tr><td><strong>Lois organiques</strong></td><td>Fixent les modalités de fonctionnement des pouvoirs publics (Cour Constitutionnelle, HAAC, Président de la République…)</td></tr>\n<tr><td><strong>Lois référendaires</strong></td><td>Soumises pour leur validité à l'approbation du peuple par voie de référendum</td></tr>\n<tr><td><strong>Lois ordinaires</strong></td><td>Élaborées selon une procédure simplifiée ; régissent les rapports entre particuliers (travail, mariage, filiation…)</td></tr>\n</tbody>\n</table></div>\n<h4>Établissement de la loi</h4>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">✍️ Élaboration du texte</div>\n<p>• Texte initié par le gouvernement = <strong>projet de loi</strong><br/>\n          • Texte initié par un ou plusieurs parlementaires = <strong>proposition de loi</strong><br/>\n          Le texte est ensuite déposé au bureau du Parlement pour son vote.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🗳️ Vote et adoption</div>\n<p>La commission des lois étudie le projet/proposition et produit un rapport présenté en plénière. Vient ensuite la <strong>promulgation</strong> par le Président.</p>\n</div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📰 Publication et entrée en vigueur</div>\n<p>La loi est portée à la connaissance des citoyens par insertion au <strong>Journal Officiel</strong>. Elle entre en vigueur après un délai de 24h (le <strong>Jour Franc</strong>).</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>03/09/2025</td><td>Parution au Journal Officiel</td></tr>\n<tr><td>04/09/2025</td><td>Jour Franc</td></tr>\n<tr><td>05/09/2025</td><td>Entrée en vigueur de la nouvelle loi</td></tr>\n</tbody>\n</table></div>\n<p>⚠️ <em>« Nul n'est censé ignorer la loi »</em> — après le jour franc, chacun est supposé en avoir pris connaissance.</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🗑️ Abrogation de la loi</div>\n<p>L'abrogation = l'anéantissement pour l'avenir des effets d'une loi. On distingue :</p>\n<p>• <strong>Abrogation expresse</strong> : énoncée par le texte nouveau<br/>\n        • <strong>Abrogation tacite</strong> : résulte de l'introduction d'une disposition incompatible avec la disposition antérieure</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">⏳ Application de la loi dans le temps</div>\n<p>Principe posé par l'article 2 du code civil : <strong><em>« la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif »</em></strong>.</p>\n<p>• <strong>Non-rétroactivité</strong> : la loi nouvelle ne s'applique pas aux situations nées et terminées avant son entrée en vigueur.<br/>\n        • <strong>Effet immédiat</strong> : elle s'applique à toutes les situations créées après son entrée en vigueur.<br/>\n        • <em>Exception : les lois pénales douces (plus favorables au prévenu) sont rétroactives.</em></p>\n</div>\n<h3>2. La Coutume</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition (Gérard Cornu)</div>\n<p>La coutume est une norme de Droit objectif fondée sur une <strong>tradition populaire</strong> qui prête à une pratique constante un caractère juridiquement contraignant.</p>\n<p>En langage simple : une pratique communément admise dans un milieu dont les membres croient en son caractère obligatoire.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🧩 Éléments constitutifs de la coutume</div>\n<p>• <strong>Élément matériel</strong> : répétition prolongée et répandue de la pratique au sein d'une communauté<br/>\n        • <strong>Élément psychologique</strong> : croyance au caractère obligatoire et coercitif de la règle coutumière</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Coutume vs Loi</div>\n<p>En cas de conflit entre la coutume et la loi, <strong>le juge appliquera la loi</strong>.</p>\n</div>\n<h2>II — Sources indirectes : Jurisprudence et Doctrine</h2>\n<h3>1. La Jurisprudence</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Ensemble des <strong>décisions rendues par les juridictions</strong> sur les litiges qui leur sont soumis — plus précisément, ensemble des décisions concordantes rendues sur des faits non expressément prévus par la loi.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚖️ Obligation de juger (art. 4 du code civil)</div>\n<p><em>« Le juge qui refusera de juger, sous prétexte du silence, de l'obscurité ou de l'insuffisance de la loi, pourra être poursuivi comme coupable de déni de justice »</em></p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🧩 Éléments constitutifs</div>\n<p>• <strong>Élément matériel</strong> : constance dans l'observation de l'interprétation faite par les juridictions supérieures<br/>\n        • <strong>Élément psychologique</strong> : crainte des juridictions inférieures de voir leur décision annulée par les juridictions supérieures</p>\n</div>\n<h3>2. La Doctrine</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📚 Définition</div>\n<p>Ensemble des <strong>opinions contenues dans les écrits et publications des juristes</strong> (professeurs, magistrats, auteurs de thèses, experts, etc.).</p>\n<p>Ces écrits peuvent influencer un parlementaire et l'amener à faire une proposition de loi ; en cela la doctrine joue indirectement un rôle dans la création du droit.</p>\n</div>\n<h2>III — Hiérarchie des normes</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🏔️ Principe</div>\n<p>Chaque règle juridique doit être <strong>conforme à celle qui lui est supérieure</strong>. En cas de conflit, la norme supérieure l'emporte.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Bloc</th><th>Contenu</th></tr></thead>\n<tbody>\n<tr><td>1 (sommet)</td><td><strong>Bloc de Constitutionnalité</strong></td><td>Constitution</td></tr>\n<tr><td>2</td><td><strong>Bloc de Conventionnalité</strong></td><td>Traités et accords internationaux</td></tr>\n<tr><td>3</td><td><strong>Bloc de Légalité</strong></td><td>Lois organiques, ordinaires, ordonnances</td></tr>\n<tr><td>4 (base)</td><td><strong>Bloc Réglementaire</strong></td><td>Décrets, arrêtés ministériels, préfectoraux, municipaux</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Ordre de priorité</div>\n<p><strong>Constitution &gt; Traités &gt; Lois &gt; Règlements</strong></p>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 1</a>\n<a class=\"btn-start\">Chapitre 3 — Organisation Judiciaire →</a>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Un texte initié par le Gouvernement et soumis au vote du Parlement s'appelle :",
-     "options": [
-      {
-       "text": "Une proposition de loi",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un projet de loi",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un décret",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un arrêté",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Lorsque le texte est initié par le Gouvernement, on parle de projet de loi. Lorsqu'il est initié par un ou plusieurs parlementaires, on parle de proposition de loi."
+      "type": "mcq_multi",
+      "text": "La personnalité juridique commence :",
+      "options": [
+        {
+          "text": "À la conception",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "À la naissance",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "À la naissance vivante et viable",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "À la majorité",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
     },
     {
-     "type": "mcq",
-     "text": "Qu'est-ce que le « Jour Franc » ?",
-     "options": [
-      {
-       "text": "Le jour de promulgation de la loi",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le délai de 24h après publication au Journal Officiel, avant l'entrée en vigueur",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le jour du vote en commission",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un jour férié",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le Jour Franc est le délai de 24h après l'insertion de la loi au Journal Officiel, avant son entrée en vigueur effective. Après ce délai, 'nul n'est censé ignorer la loi'."
+      "type": "mcq_multi",
+      "text": "La personnalité juridique prend fin :",
+      "options": [
+        {
+          "text": "À la mort",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "À la majorité",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "À la disparition",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "À la dissolution (pour les personnes morales)",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
     },
     {
-     "type": "mcq",
-     "text": "En cas de conflit entre la coutume et la loi, le juge applique :",
-     "options": [
-      {
-       "text": "La coutume, car elle est plus ancienne",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La loi",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Les deux à parts égales",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Aucune des deux",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "En cas de conflit entre la coutume et la loi, le juge appliquera toujours la loi : la coutume, bien que source directe du droit, reste subordonnée à la loi écrite."
+      "type": "mcq_multi",
+      "text": "Une personne morale :",
+      "options": [
+        {
+          "text": "Est un être humain",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "A une existence juridique propre",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Peut posséder un patrimoine",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Ne peut jamais agir en justice",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
     },
     {
-     "type": "mcq",
-     "text": "La jurisprudence et la doctrine sont des sources du droit dites :",
-     "options": [
-      {
-       "text": "Directes",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Principales",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Indirectes",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Constitutionnelles",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "On distingue les sources directes (ou principales) — la loi et la coutume — des sources indirectes — la jurisprudence et la doctrine — qui influencent le droit sans le créer directement."
+      "type": "mcq_multi",
+      "text": "Concernant les juridictions togolaises :",
+      "options": [
+        {
+          "text": "La Cour suprême juge les faits et le droit",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les cours d'appel rejugent les affaires",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La Cour constitutionnelle contrôle la constitutionnalité des lois",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les tribunaux de première instance jugent en premier ressort",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
     },
     {
-     "type": "mcq",
-     "text": "Dans la hiérarchie des normes, quel est l'ordre correct du sommet vers la base ?",
-     "options": [
-      {
-       "text": "Règlements > Lois > Traités > Constitution",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Constitution > Traités > Lois > Règlements",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Lois > Constitution > Règlements > Traités",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Traités > Constitution > Règlements > Lois",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La hiérarchie des normes, du sommet à la base, est : bloc de constitutionnalité (Constitution), bloc de conventionnalité (traités), bloc de légalité (lois), bloc réglementaire (décrets, arrêtés)."
+      "type": "mcq_multi",
+      "text": "Concernant les sources du droit :",
+      "options": [
+        {
+          "text": "La jurisprudence est une source indirecte",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La coutume est une source non écrite",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La loi est toujours supérieure aux traités",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les règlements sont pris par l'exécutif",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Les droits subjectifs :",
+      "options": [
+        {
+          "text": "Appartiennent aux individus",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sont des prérogatives reconnues par le droit",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sont identiques au droit objectif",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Peuvent être patrimoniaux ou extrapatrimoniaux",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "La personnalité juridique correspond à :",
+      "options": [
+        {
+          "text": "La capacité d'avoir des droits",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La capacité d'exercer ses droits",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "L'aptitude à être titulaire de droits et d'obligations",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit de vote",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Qui possède la personnalité juridique ?",
+      "options": [
+        {
+          "text": "Les personnes physiques",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les animaux",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les personnes morales",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les objets",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "La grande division du droit distingue le :",
+      "options": [
+        {
+          "text": "Droit interne",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Droit public",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Droit international",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Droit privé",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Dans un système parlementaire monocaméral :",
+      "options": [
+        {
+          "text": "Comprend deux chambres",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Accélère le processus législatif",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Peut réduire le contrôle des lois",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Est appliqué au Togo",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Concernant la règle de droit :",
+      "options": [
+        {
+          "text": "Elle est toujours écrite",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Elle est générale et impersonnelle",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Elle peut être supplétive",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Elle est nécessairement morale",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "La règle de droit est :",
+      "options": [
+        {
+          "text": "Générale",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Facultative",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Obligatoire",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sanctionnée",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Les sources du droit comprennent :",
+      "options": [
+        {
+          "text": "La loi",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La coutume",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La morale",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La jurisprudence",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Le droit public concerne :",
+      "options": [
+        {
+          "text": "Les relations entre particuliers",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les relations entre l'État et les citoyens",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit administratif",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit civil",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Le droit privé comprend :",
+      "options": [
+        {
+          "text": "Le droit civil",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit commercial",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit constitutionnel",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit du travail",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Les juridictions pénales jugent :",
+      "options": [
+        {
+          "text": "Les litiges administratifs",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les infractions",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les contrats",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les crimes",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Les sanctions juridiques peuvent être :",
+      "options": [
+        {
+          "text": "Civiles",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Pénales",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Administratives",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Religieuses",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Les lois supplétives :",
+      "options": [
+        {
+          "text": "S'imposent obligatoirement",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Peuvent être écartées par les parties",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "S'appliquent en l'absence de volonté contraire",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sont toujours pénales",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Dans la pyramide des normes :",
+      "options": [
+        {
+          "text": "La Constitution est au sommet",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les lois sont supérieures à la Constitution",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les règlements sont inférieurs aux lois",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les traités sont supérieurs aux lois",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Le système judiciaire togolais comprend :",
+      "options": [
+        {
+          "text": "La Cour suprême",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La Cour constitutionnelle",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les tribunaux de première instance",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le Sénat",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Parmi les situations suivantes, lesquelles relèvent du droit privé ?",
+      "options": [
+        {
+          "text": "Un litige entre deux commerçants",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Une décision de l'administration contestée",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Un divorce",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Une infraction pénale",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Parmi les personnes morales, on trouve :",
+      "options": [
+        {
+          "text": "Les sociétés",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les associations",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les États",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les mineurs",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "Dans le cadre de l'établissement de la loi :",
+      "options": [
+        {
+          "text": "Si le texte émane du gouvernement, on parle de proposition de loi",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Si le texte est initié par le parlement, on parle de projet de loi",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La publication est l'acte par lequel la nouvelle loi est portée à la connaissance des citoyens",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "L'abrogation est l'anéantissement pour l'avenir des effets d'une loi",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq_multi",
+      "text": "La règle de droit est-elle sanctionnée ?",
+      "options": [
+        {
+          "text": "Jamais",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Seulement si les citoyens sont d'accord",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Oui, par l'autorité publique (force publique)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Aucune bonne réponse",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "section": "quiz"
+    },
+    {
+      "type": "mcq",
+      "text": "Le droit objectif désigne :",
+      "options": [
+        {
+          "text": "Les prérogatives individuelles protégées par l'État",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "L'ensemble des règles qui régissent les rapports des membres d'une société",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit de propriété uniquement",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La Constitution uniquement",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le droit objectif est l'ensemble des règles qui régissent les rapports des membres d'une même société (définition Larousse), et dont l'inobservation est sanctionnée par la contrainte publique.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Selon la formule de Carbonnier, le droit subjectif est :",
+      "options": [
+        {
+          "text": "Indépendant du droit objectif",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Protégé par le droit objectif",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Supérieur au droit objectif",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Une source du droit objectif",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Selon Carbonnier : « Si le droit (objectif) nous permet de faire quelque chose, nous avons le droit (subjectif) de le faire. » Le droit objectif protège donc les droits subjectifs.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Parmi les caractères de la règle de droit, on ne trouve PAS :",
+      "options": [
+        {
+          "text": "Générale et abstraite",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Sanctionnée",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Facultative",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Obligatoire et coercitive",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "La règle de droit est générale, obligatoire, coercitive et sanctionnée. Elle n'est jamais facultative : son application ne dépend pas du bon vouloir des individus.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le droit du travail relève :",
+      "options": [
+        {
+          "text": "Du droit public",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit privé",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit international public",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit constitutionnel",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le droit du travail organise les rapports entre employeurs et employés du secteur privé : il appartient au droit privé.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le droit fiscal et le droit administratif sont des branches :",
+      "options": [
+        {
+          "text": "Du droit privé",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit public",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit international privé",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Du droit commercial",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le droit fiscal et le droit administratif organisent les relations entre l'État/administrations et les particuliers : ce sont des branches du droit public.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Un texte initié par un ou plusieurs parlementaires s'appelle :",
+      "options": [
+        {
+          "text": "Un projet de loi",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Une proposition de loi",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Un décret",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Une ordonnance",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Lorsque le texte est initié par un ou plusieurs parlementaires, on parle de proposition de loi (par opposition au projet de loi, initié par le gouvernement).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "L'article 2 du Code civil pose le principe selon lequel la loi :",
+      "options": [
+        {
+          "text": "A toujours un effet rétroactif",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Ne dispose que pour l'avenir et n'a point d'effet rétroactif",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "S'applique uniquement aux étrangers",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Ne s'applique jamais immédiatement",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "L'article 2 du Code civil pose le principe de non-rétroactivité : « la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif » (sauf exception des lois pénales plus douces).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "L'élément psychologique de la coutume correspond à :",
+      "options": [
+        {
+          "text": "La répétition prolongée d'une pratique",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La croyance au caractère obligatoire et coercitif de la règle",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La publication au Journal Officiel",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le vote du Parlement",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "L'élément psychologique de la coutume est la croyance des membres d'une communauté au caractère obligatoire et coercitif de la pratique répétée (élément matériel).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "D'après l'article 4 du Code civil, un juge qui refuse de juger sous prétexte du silence de la loi commet :",
+      "options": [
+        {
+          "text": "Un acte légal",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Un déni de justice",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Une abrogation",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Une jurisprudence",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "L'article 4 du Code civil prévoit que le juge qui refuse de juger sous prétexte du silence, de l'obscurité ou de l'insuffisance de la loi peut être poursuivi pour déni de justice.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Dans la hiérarchie des normes, le bloc de légalité contient :",
+      "options": [
+        {
+          "text": "La Constitution",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les traités internationaux",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les lois organiques, ordinaires et ordonnances",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Les décrets et arrêtés",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le bloc de légalité regroupe les lois organiques, les lois ordinaires et les ordonnances — juste après le bloc de conventionnalité (traités) et avant le bloc réglementaire (décrets, arrêtés).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "« Nul ne peut se faire justice » signifie que :",
+      "options": [
+        {
+          "text": "Chacun peut se venger en cas de litige",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La fonction de juger est un monopole de l'État",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La justice est réservée aux fonctionnaires",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les tribunaux n'existent pas au Togo",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Ce principe universel confie la fonction de juger exclusivement à l'État via le service public de la Justice, interdisant aux particuliers de se faire justice eux-mêmes.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le principe du double degré de juridiction permet essentiellement :",
+      "options": [
+        {
+          "text": "De juger deux fois pour le même montant",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le rattrapage des erreurs éventuelles des premiers juges",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "De supprimer la Cour Suprême",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "D'accélérer les procédures",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le double degré de juridiction permet à un plaideur insatisfait de porter son affaire devant une juridiction supérieure, principalement pour rattraper d'éventuelles erreurs des premiers juges.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Au Togo, les juridictions de droit commun de 1er degré sont :",
+      "options": [
+        {
+          "text": "Les Cours d'Appel",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les Tribunaux de Première Instance (TPI)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La Cour Suprême",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les Tribunaux du travail",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Les Tribunaux de Première Instance (TPI) sont les juridictions de droit commun de 1er degré au Togo ; les Cours d'Appel statuent en 2e degré et la Cour Suprême est la juridiction suprême.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le Conseil Supérieur de la Magistrature a pour rôle :",
+      "options": [
+        {
+          "text": "De voter les lois",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "De veiller à l'indépendance de la magistrature",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "De gérer les impôts",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "De juger les contraventions",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le Conseil Supérieur de la Magistrature est l'organe garant de l'indépendance de la magistrature, conformément au principe de séparation des pouvoirs.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "La personnalité juridique se définit comme :",
+      "options": [
+        {
+          "text": "La nationalité d'une personne",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "L'aptitude à être titulaire de droits et soumis à des obligations",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Le droit de vote",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La majorité civile",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "La personnalité juridique est l'aptitude à être titulaire de droits et soumis à des obligations — elle est distincte de la nationalité, de la majorité ou du droit de vote.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le point de départ de la personnalité juridique d'une personne physique est en principe :",
+      "options": [
+        {
+          "text": "La conception",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La naissance",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La majorité",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le mariage",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "En principe, la personnalité juridique débute à la naissance (elle peut exceptionnellement être repoussée à la date de conception dans l'intérêt de l'enfant, ex : succession).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "La disparition (en droit civil) suppose que :",
+      "options": [
+        {
+          "text": "La personne a quitté son domicile depuis 5 ans sans nouvelle",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le corps n'a pu être retrouvé mais le décès est probable au regard des circonstances",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La personne a changé de nationalité",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La personne morale est dissoute",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "La disparition concerne les cas où le corps d'une personne n'a pu être retrouvé, mais où le décès est probable au regard des circonstances (accident, naufrage...) — à distinguer de l'absence (5 ans sans nouvelle).",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Une commune ou un établissement public est une personne morale :",
+      "options": [
+        {
+          "text": "De droit privé",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "De droit public",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sans personnalité juridique",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "De droit international",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Une commune ou un établissement public est une personne morale de droit public, régie par les règles du droit public, par opposition aux personnes morales de droit privé.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Une société commerciale (SARL, SA) est une personne morale :",
+      "options": [
+        {
+          "text": "De droit public",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "De droit privé",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Sans existence juridique propre",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Identique à une personne physique",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Une société commerciale (SARL, SA) est une personne morale de droit privé, dotée d'une existence juridique propre et d'un patrimoine distinct de celui de ses membres.",
+      "section": "exam"
+    },
+    {
+      "type": "mcq",
+      "text": "Le texte qui régit l'organisation judiciaire au Togo est :",
+      "options": [
+        {
+          "text": "Le Code civil",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "La loi N°2019-015 du 30 octobre 2019",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "La Constitution uniquement",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Le traité OHADA",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "L'organisation judiciaire au Togo est régie par la loi N°2019-015 du 30 octobre 2019 portant Code de l'organisation judiciaire.",
+      "section": "exam"
+    },
+    {
+      "type": "open",
+      "text": "La nouvelle loi pénale peut-elle s'appliquer à des faits commis avant son entrée en vigueur ? Pourquoi ?",
+      "model_answer": "Réponse : En principe, selon l'article 2 du Code civil, « la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif ». Une loi ne peut donc pas s'appliquer à des faits commis avant son entrée en vigueur. Cependant, il existe une exception importante en droit pénal : la loi pénale plus douce (lex mitior) est rétroactive. Si une nouvelle loi pénale est plus favorable au prévenu (peine moins sévère, dépénalisation…), elle s'applique aux faits commis avant son entrée en vigueur. Le principe est alors la rétroactivité in mitius, car il serait injuste de maintenir une sanction plus lourde alors que la société a décidé de l'adoucir.",
+      "section": "open"
+    },
+    {
+      "type": "open",
+      "text": "Expliquez la pyramide des normes et son importance.",
+      "model_answer": "Réponse : La pyramide des normes (théorisée par Hans Kelsen) est une représentation hiérarchique de l'ensemble des règles juridiques en vigueur. Elle est structurée en quatre blocs : 1. Bloc de constitutionnalité (sommet) : la Constitution 2. Bloc de conventionnalité : les traités et accords internationaux 3. Bloc de légalité : les lois organiques, ordinaires et ordonnances 4. Bloc réglementaire (base) : les décrets, arrêtés ministériels, préfectoraux, municipaux Importance : chaque règle juridique doit être conforme à celle qui lui est supérieure. En cas de conflit, la norme supérieure l'emporte. Ce principe garantit la cohérence et la sécurité juridique de l'ordre juridique.",
+      "section": "open"
+    },
+    {
+      "type": "open",
+      "text": "Expliquez les caractères de la règle de droit objectif.",
+      "model_answer": "Réponse : La règle de droit objectif présente trois caractères fondamentaux : 1. Générale et abstraite : Elle s'applique à tout le monde sans désigner nommément telle ou telle personne. Elle vise des situations juridiques types et non des individus particuliers. 2. Obligatoire et coercitive : Son application n'est pas laissée au bon vouloir des individus. Elle s'impose indépendamment de la volonté de ceux qui y sont soumis. 3. Sanctionnée par l'autorité publique : En cas de non-respect, des sanctions sont prévues et appliquées par l'État : sanctions pénales (emprisonnement, amendes), civiles (dommages-intérêts), administratives (retrait d'autorisation) ou disciplinaires (licenciement, avertissement). C'est ce dernier caractère qui distingue fondamentalement la règle de droit des règles morales ou religieuses, qui n'ont pas de sanction étatique garantie.",
+      "section": "open"
     }
-   ],
-   "source": "_private/droit/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Organisation Judiciaire au Togo",
-   "subtitle": "Les principes fondamentaux de l'organisation judiciaire et la structure des juridictions togolaises.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le principe « nul ne peut se faire justice »<br/>\n        • Maîtriser les 3 principes de l'organisation judiciaire<br/>\n        • Identifier les juridictions togolaises de droit commun et spécialisées<br/>\n        • Connaître les autres acteurs du système judiciaire</p>\n</div>\n<h2>1. « Nul n'a le droit de se faire justice »</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Principe universel</div>\n<p>Ce principe universel <strong>interdit au particulier de se rendre justice</strong> en cas de litige avec un autre particulier. La fonction de juger est confiée à l'État, qui l'assume à travers un service public appelé <strong>la Justice</strong>.</p>\n</div>\n<h2>2. Principes de l'organisation judiciaire</h2>\n<p>L'organisation judiciaire repose sur <strong>3 principes fondamentaux</strong> :</p>\n<h3>2.1 Le principe de la séparation des pouvoirs</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Montesquieu</div>\n<p>Pour éviter que le titulaire d'un pouvoir n'en abuse, il faut faire en sorte que <em>le pouvoir arrête le pouvoir</em>.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🇹🇬 Au Togo</div>\n<p>La <strong>Constitution de la Ve République</strong> (promulguée en 2024) consacre l'indépendance du pouvoir judiciaire, qui ne doit subir aucune pression de l'exécutif (Président du Conseil) ou du législatif (Parlement).</p>\n<p>• Les juges sont soumis à la loi et <strong>inamovibles</strong><br/>\n        • Le pouvoir judiciaire garantit les <strong>droits fondamentaux</strong><br/>\n        • Le <strong>Conseil Supérieur de la Magistrature</strong> veille à cette indépendance</p>\n</div>\n<h3>2.2 Le principe de l'égalité de tous devant la loi</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Constitution togolaise — Art. 2</div>\n<p>La Constitution de la Ve République réaffirme l'<strong>égalité de tous les citoyens devant la loi</strong>. Elle garantit la non-discrimination fondée sur l'origine, la race, l'ethnie, le sexe, le handicap, le statut social ou la religion.</p>\n<p>L'État doit assurer l'<strong>égal accès de tous les citoyens à la Justice</strong>.</p>\n</div>\n<h3>2.3 Le principe du double degré de juridiction</h3>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🔁 Définition</div>\n<p>Tout plaideur insatisfait d'une décision de justice peut <strong>porter son affaire devant une juridiction de niveau supérieur</strong> pour un nouvel examen du litige.</p>\n<p>Ce principe vise essentiellement le <strong>rattrapage des erreurs éventuelles</strong> des premiers juges. C'est un gage de bonne justice.</p>\n</div>\n<h2>3. Structure et juridictions togolaises</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Cadre légal</div>\n<p>L'organisation judiciaire est régie au Togo par la <strong>loi N°2019-015 du 30 octobre 2019</strong> portant Code de l'organisation judiciaire.</p>\n</div>\n<h3>3.1 Juridictions de droit commun</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Juridiction</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Tribunaux de Première Instance (TPI)</strong></td><td>Juridictions de droit commun de 1er degré</td></tr>\n<tr><td><strong>Cours d'Appel</strong></td><td>2e degré de juridiction — examinent les appels des décisions des TPI</td></tr>\n<tr><td><strong>Cour Suprême</strong></td><td>Juge suprême (civil, pénal, administratif)</td></tr>\n</tbody>\n</table></div>\n<h3>3.2 Juridictions spécialisées</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Juridiction</th><th>Compétence</th></tr></thead>\n<tbody>\n<tr><td><strong>Tribunaux du travail</strong></td><td>Litiges entre employeurs et employés + tribunaux pour mineurs</td></tr>\n<tr><td><strong>Tribunaux de Police</strong></td><td>Contraventions</td></tr>\n</tbody>\n</table></div>\n<h3>3.3 Autres acteurs</h3>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⚖️ Ministère Public</div>\n<p>Procureurs de la République, chargés de l'<strong>action publique</strong></p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏛️ Conseil Supérieur de la Magistrature</div>\n<p>Garant de l'<strong>indépendance de la magistrature</strong></p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">🌍 OHADA</div>\n<p>Le Togo applique le <strong>droit des affaires OHADA</strong>, affectant certaines compétences juridictionnelles</p>\n</div>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 2</a>\n<a class=\"btn-start\">Chapitre 4 — La Personnalité Juridique →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Le principe « nul n'a le droit de se faire justice » signifie que :",
-     "options": [
-      {
-       "text": "Chacun peut régler ses litiges par la force",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La fonction de juger est confiée à l'État via le service public de la Justice",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Seuls les riches ont accès à la justice",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les juges peuvent refuser de juger",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Ce principe universel interdit au particulier de se rendre justice lui-même en cas de litige. La fonction de juger est confiée exclusivement à l'État, qui l'assume via le service public de la Justice."
-    },
-    {
-     "type": "mcq",
-     "text": "Le principe de la séparation des pouvoirs (Montesquieu) vise à :",
-     "options": [
-      {
-       "text": "Concentrer tous les pouvoirs entre les mains d'une seule personne",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Supprimer le pouvoir judiciaire",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Éviter qu'un titulaire de pouvoir n'en abuse, en faisant que le pouvoir arrête le pouvoir",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Donner tout le pouvoir au Parlement",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Selon Montesquieu, pour éviter que le titulaire d'un pouvoir n'en abuse, il faut que 'le pouvoir arrête le pouvoir' : c'est la base de la séparation des pouvoirs législatif, exécutif et judiciaire."
-    },
-    {
-     "type": "mcq",
-     "text": "Le principe du double degré de juridiction permet :",
-     "options": [
-      {
-       "text": "De juger deux fois la même personne pour le même fait sans raison",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "À un plaideur insatisfait de porter son affaire devant une juridiction supérieure pour rattraper d'éventuelles erreurs",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "D'éviter tout recours en appel",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "De remplacer la Cour Suprême",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le double degré de juridiction permet à tout plaideur insatisfait d'une décision de porter son affaire devant une juridiction de niveau supérieur, pour un nouvel examen — c'est un gage de bonne justice visant le rattrapage des erreurs éventuelles."
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle juridiction togolaise est compétente pour les litiges entre employeurs et employés ?",
-     "options": [
-      {
-       "text": "Le Tribunal de Police",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le Tribunal du travail",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "La Cour Suprême",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La Cour d'Appel uniquement",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Les tribunaux du travail sont des juridictions spécialisées compétentes pour les litiges entre employeurs et employés (ainsi que pour les tribunaux pour mineurs)."
-    },
-    {
-     "type": "mcq",
-     "text": "Quel texte régit l'organisation judiciaire au Togo ?",
-     "options": [
-      {
-       "text": "Le Code civil",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La loi N°2019-015 du 30 octobre 2019",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le Code pénal",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le traité OHADA uniquement",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'organisation judiciaire au Togo est régie par la loi N°2019-015 du 30 octobre 2019 portant Code de l'organisation judiciaire."
-    }
-   ],
-   "source": "_private/droit/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "La Personnalité Juridique",
-   "subtitle": "Personnes physiques et personnes morales : acquisition, exercice et fin de la personnalité juridique.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre la notion de personnalité juridique<br/>\n        • Distinguer personnes physiques et personnes morales<br/>\n        • Connaître le début et la fin de la personnalité juridique<br/>\n        • Distinguer personnes morales de droit public et de droit privé</p>\n</div>\n<h2>1. Notion de la personnalité juridique</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La personnalité juridique = l'<strong>aptitude à être titulaire de droits et soumis à des obligations</strong>.</p>\n<p>Elle est reconnue à deux catégories de sujets de droit :</p>\n</div>\n<div>\n<div class=\"box info\">\n<div class=\"box-lbl\">👤 Personnes Physiques</div>\n<p>Tout être humain dès le commencement de sa vie. La personnalité s'acquiert à la naissance et se perd au décès.</p>\n<p>Ex : Un individu</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏢 Personnes Morales</div>\n<p>Entités reconnues par le droit : sociétés commerciales, associations, fondations, collectivités publiques.</p>\n<p>Ex : Une entreprise, une collectivité territoriale</p>\n</div>\n</div>\n<h2>2. Les catégories de personnalité juridique</h2>\n<h3>2.1 Les personnes physiques</h3>\n<h4>Début de la personnalité juridique</h4>\n<div class=\"box info\">\n<div class=\"box-lbl\">🍼 La naissance</div>\n<p>Le point de départ de la personnalité juridique est la <strong>naissance</strong>.</p>\n<p>Toutefois, dans l'intérêt de l'enfant, la personnalité peut être repoussée à la <strong>date présumée de conception</strong>. Si le père meurt avant la naissance, la loi admet que l'enfant avait la personnalité juridique dès sa conception pour lui permettre de recueillir la succession ou bénéficier d'une assurance.</p>\n</div>\n<h4>Fin de la personnalité juridique</h4>\n<div class=\"box warn\">\n<div class=\"box-lbl\">💀 Le décès ou la mort</div>\n<p>Le décès marque la fin de la personnalité juridique. Mais il existe des cas où il est difficile ou impossible de constater le décès. Le code civil a prévu :</p>\n</div>\n<div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">❓ L'absence</div>\n<p>Situation d'une personne qui, ayant quitté son domicile, est restée <strong>sans nouvelle pendant un délai relativement long (5 ans)</strong>.</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">🌊 La disparition</div>\n<p>Il y a disparition quand le corps d'une personne <strong>n'a pu être retrouvé</strong> et que le décès est probable au regard des circonstances (accident d'avion, naufrage…)</p>\n</div>\n</div>\n<h3>2.2 Les personnes morales</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La personne morale est tout <strong>groupement d'individus pourvu d'une possibilité d'expression collective</strong> pour la défense d'intérêts licites, dignes d'être reconnus et protégés par la loi.</p>\n</div>\n<h4>Personnes morales de droit public</h4>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏛️ Définition</div>\n<p>Personnes morales régies par les règles du droit public. On parle aussi de <strong>personnes publiques</strong>.</p>\n<p>Ex : collectivités publiques, établissements publics</p>\n</div>\n<h4>Personnes morales de droit privé</h4>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏢 Définition</div>\n<p>Personnes morales régies par les règles du droit privé.</p>\n<p>Ex : associations à caractère désintéressé, sociétés commerciales, entreprises privées</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Régime</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Personnes morales de droit public</strong></td><td>Droit public</td><td>État, communes, régions, établissements publics</td></tr>\n<tr><td><strong>Personnes morales de droit privé</strong></td><td>Droit privé</td><td>SA, SARL, associations loi 1901, syndicats</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Récapitulatif — Sujets de droit</div>\n<p><strong>Personnes physiques</strong> = êtres humains · débute à la naissance · finit au décès<br/>\n<strong>Personnes morales de droit public</strong> = entités publiques (État, collectivités…)<br/>\n<strong>Personnes morales de droit privé</strong> = sociétés, associations, fondations…</p>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div>\n<a class=\"btn-start\">← Chapitre 3</a>\n<a class=\"btn-start\">Faire les exercices →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "La personnalité juridique se définit comme :",
-     "options": [
-      {
-       "text": "Le droit de vote",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'aptitude à être titulaire de droits et soumis à des obligations",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "La capacité de signer un contrat de travail",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La nationalité d'une personne",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La personnalité juridique est l'aptitude à être titulaire de droits et soumis à des obligations. Elle est reconnue aux personnes physiques (êtres humains) et aux personnes morales (sociétés, associations, collectivités...)."
-    },
-    {
-     "type": "mcq",
-     "text": "Le point de départ de la personnalité juridique d'une personne physique est :",
-     "options": [
-      {
-       "text": "La majorité (18 ans)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La naissance",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "L'obtention d'une pièce d'identité",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Le mariage",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le point de départ de la personnalité juridique est la naissance. Dans l'intérêt de l'enfant, elle peut exceptionnellement être repoussée à la date présumée de conception (ex : succession, assurance)."
-    },
-    {
-     "type": "mcq",
-     "text": "Que désigne « l'absence » en droit civil ?",
-     "options": [
-      {
-       "text": "Le fait de ne pas se présenter à un examen",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La situation d'une personne disparue dont le corps est immédiatement retrouvé",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La situation d'une personne ayant quitté son domicile et restée sans nouvelle pendant un délai relativement long (5 ans)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un type de personne morale",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'absence désigne la situation d'une personne qui, ayant quitté son domicile, est restée sans nouvelle pendant un délai relativement long (5 ans). Elle se distingue de la disparition, où le corps n'a pu être retrouvé mais le décès est probable (accident, naufrage...)."
-    },
-    {
-     "type": "mcq",
-     "text": "Une société commerciale (SA, SARL) est une personne morale de :",
-     "options": [
-      {
-       "text": "Droit public",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Droit privé",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Droit international",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Droit pénal",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Les sociétés commerciales (SA, SARL) sont des personnes morales de droit privé, régies par les règles du droit privé, au même titre que les associations et les syndicats."
-    },
-    {
-     "type": "mcq",
-     "text": "Parmi les exemples suivants, lequel est une personne morale de droit public ?",
-     "options": [
-      {
-       "text": "Une SARL",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une association loi 1901",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une commune",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un syndicat",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Une commune est une collectivité territoriale, donc une personne morale de droit public. Les SARL, associations et syndicats sont des personnes morales de droit privé."
-    }
-   ],
-   "source": "_private/droit/chapitres/chapitre4.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "mcq_multi",
-   "text": "La personnalité juridique commence :",
-   "options": [
-    {
-     "text": "À la conception",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "À la naissance",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "À la naissance vivante et viable",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "À la majorité",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "La personnalité juridique prend fin :",
-   "options": [
-    {
-     "text": "À la mort",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "À la majorité",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "À la disparition",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "À la dissolution (pour les personnes morales)",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Une personne morale :",
-   "options": [
-    {
-     "text": "Est un être humain",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "A une existence juridique propre",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Peut posséder un patrimoine",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Ne peut jamais agir en justice",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Concernant les juridictions togolaises :",
-   "options": [
-    {
-     "text": "La Cour suprême juge les faits et le droit",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les cours d'appel rejugent les affaires",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La Cour constitutionnelle contrôle la constitutionnalité des lois",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les tribunaux de première instance jugent en premier ressort",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Concernant les sources du droit :",
-   "options": [
-    {
-     "text": "La jurisprudence est une source indirecte",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La coutume est une source non écrite",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La loi est toujours supérieure aux traités",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les règlements sont pris par l'exécutif",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Les droits subjectifs :",
-   "options": [
-    {
-     "text": "Appartiennent aux individus",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sont des prérogatives reconnues par le droit",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sont identiques au droit objectif",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Peuvent être patrimoniaux ou extrapatrimoniaux",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "La personnalité juridique correspond à :",
-   "options": [
-    {
-     "text": "La capacité d'avoir des droits",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La capacité d'exercer ses droits",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "L'aptitude à être titulaire de droits et d'obligations",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit de vote",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Qui possède la personnalité juridique ?",
-   "options": [
-    {
-     "text": "Les personnes physiques",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les animaux",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les personnes morales",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les objets",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "La grande division du droit distingue le :",
-   "options": [
-    {
-     "text": "Droit interne",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Droit public",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Droit international",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Droit privé",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Dans un système parlementaire monocaméral :",
-   "options": [
-    {
-     "text": "Comprend deux chambres",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Accélère le processus législatif",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Peut réduire le contrôle des lois",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Est appliqué au Togo",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Concernant la règle de droit :",
-   "options": [
-    {
-     "text": "Elle est toujours écrite",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Elle est générale et impersonnelle",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Elle peut être supplétive",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Elle est nécessairement morale",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "La règle de droit est :",
-   "options": [
-    {
-     "text": "Générale",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Facultative",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Obligatoire",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sanctionnée",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Les sources du droit comprennent :",
-   "options": [
-    {
-     "text": "La loi",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La coutume",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La morale",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La jurisprudence",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Le droit public concerne :",
-   "options": [
-    {
-     "text": "Les relations entre particuliers",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les relations entre l'État et les citoyens",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit administratif",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit civil",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Le droit privé comprend :",
-   "options": [
-    {
-     "text": "Le droit civil",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit commercial",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit constitutionnel",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit du travail",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Les juridictions pénales jugent :",
-   "options": [
-    {
-     "text": "Les litiges administratifs",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les infractions",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les contrats",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les crimes",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Les sanctions juridiques peuvent être :",
-   "options": [
-    {
-     "text": "Civiles",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Pénales",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Administratives",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Religieuses",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Les lois supplétives :",
-   "options": [
-    {
-     "text": "S'imposent obligatoirement",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Peuvent être écartées par les parties",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "S'appliquent en l'absence de volonté contraire",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sont toujours pénales",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Dans la pyramide des normes :",
-   "options": [
-    {
-     "text": "La Constitution est au sommet",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les lois sont supérieures à la Constitution",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les règlements sont inférieurs aux lois",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les traités sont supérieurs aux lois",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Le système judiciaire togolais comprend :",
-   "options": [
-    {
-     "text": "La Cour suprême",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La Cour constitutionnelle",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les tribunaux de première instance",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le Sénat",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Parmi les situations suivantes, lesquelles relèvent du droit privé ?",
-   "options": [
-    {
-     "text": "Un litige entre deux commerçants",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Une décision de l'administration contestée",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Un divorce",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Une infraction pénale",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Parmi les personnes morales, on trouve :",
-   "options": [
-    {
-     "text": "Les sociétés",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les associations",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les États",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les mineurs",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "Dans le cadre de l'établissement de la loi :",
-   "options": [
-    {
-     "text": "Si le texte émane du gouvernement, on parle de proposition de loi",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Si le texte est initié par le parlement, on parle de projet de loi",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La publication est l'acte par lequel la nouvelle loi est portée à la connaissance des citoyens",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "L'abrogation est l'anéantissement pour l'avenir des effets d'une loi",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq_multi",
-   "text": "La règle de droit est-elle sanctionnée ?",
-   "options": [
-    {
-     "text": "Jamais",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Seulement si les citoyens sont d'accord",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Oui, par l'autorité publique (force publique)",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Aucune bonne réponse",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "section": "quiz"
-  },
-  {
-   "type": "mcq",
-   "text": "Le droit objectif désigne :",
-   "options": [
-    {
-     "text": "Les prérogatives individuelles protégées par l'État",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "L'ensemble des règles qui régissent les rapports des membres d'une société",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit de propriété uniquement",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La Constitution uniquement",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le droit objectif est l'ensemble des règles qui régissent les rapports des membres d'une même société (définition Larousse), et dont l'inobservation est sanctionnée par la contrainte publique.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Selon la formule de Carbonnier, le droit subjectif est :",
-   "options": [
-    {
-     "text": "Indépendant du droit objectif",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Protégé par le droit objectif",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Supérieur au droit objectif",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Une source du droit objectif",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Selon Carbonnier : « Si le droit (objectif) nous permet de faire quelque chose, nous avons le droit (subjectif) de le faire. » Le droit objectif protège donc les droits subjectifs.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Parmi les caractères de la règle de droit, on ne trouve PAS :",
-   "options": [
-    {
-     "text": "Générale et abstraite",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Sanctionnée",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Facultative",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Obligatoire et coercitive",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "La règle de droit est générale, obligatoire, coercitive et sanctionnée. Elle n'est jamais facultative : son application ne dépend pas du bon vouloir des individus.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le droit du travail relève :",
-   "options": [
-    {
-     "text": "Du droit public",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit privé",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit international public",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit constitutionnel",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le droit du travail organise les rapports entre employeurs et employés du secteur privé : il appartient au droit privé.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le droit fiscal et le droit administratif sont des branches :",
-   "options": [
-    {
-     "text": "Du droit privé",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit public",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit international privé",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Du droit commercial",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le droit fiscal et le droit administratif organisent les relations entre l'État/administrations et les particuliers : ce sont des branches du droit public.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Un texte initié par un ou plusieurs parlementaires s'appelle :",
-   "options": [
-    {
-     "text": "Un projet de loi",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Une proposition de loi",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Un décret",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Une ordonnance",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Lorsque le texte est initié par un ou plusieurs parlementaires, on parle de proposition de loi (par opposition au projet de loi, initié par le gouvernement).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "L'article 2 du Code civil pose le principe selon lequel la loi :",
-   "options": [
-    {
-     "text": "A toujours un effet rétroactif",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Ne dispose que pour l'avenir et n'a point d'effet rétroactif",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "S'applique uniquement aux étrangers",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Ne s'applique jamais immédiatement",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "L'article 2 du Code civil pose le principe de non-rétroactivité : « la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif » (sauf exception des lois pénales plus douces).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "L'élément psychologique de la coutume correspond à :",
-   "options": [
-    {
-     "text": "La répétition prolongée d'une pratique",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La croyance au caractère obligatoire et coercitif de la règle",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La publication au Journal Officiel",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le vote du Parlement",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "L'élément psychologique de la coutume est la croyance des membres d'une communauté au caractère obligatoire et coercitif de la pratique répétée (élément matériel).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "D'après l'article 4 du Code civil, un juge qui refuse de juger sous prétexte du silence de la loi commet :",
-   "options": [
-    {
-     "text": "Un acte légal",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Un déni de justice",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Une abrogation",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Une jurisprudence",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "L'article 4 du Code civil prévoit que le juge qui refuse de juger sous prétexte du silence, de l'obscurité ou de l'insuffisance de la loi peut être poursuivi pour déni de justice.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Dans la hiérarchie des normes, le bloc de légalité contient :",
-   "options": [
-    {
-     "text": "La Constitution",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les traités internationaux",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les lois organiques, ordinaires et ordonnances",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Les décrets et arrêtés",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le bloc de légalité regroupe les lois organiques, les lois ordinaires et les ordonnances — juste après le bloc de conventionnalité (traités) et avant le bloc réglementaire (décrets, arrêtés).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "« Nul ne peut se faire justice » signifie que :",
-   "options": [
-    {
-     "text": "Chacun peut se venger en cas de litige",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La fonction de juger est un monopole de l'État",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La justice est réservée aux fonctionnaires",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les tribunaux n'existent pas au Togo",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Ce principe universel confie la fonction de juger exclusivement à l'État via le service public de la Justice, interdisant aux particuliers de se faire justice eux-mêmes.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le principe du double degré de juridiction permet essentiellement :",
-   "options": [
-    {
-     "text": "De juger deux fois pour le même montant",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le rattrapage des erreurs éventuelles des premiers juges",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "De supprimer la Cour Suprême",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "D'accélérer les procédures",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le double degré de juridiction permet à un plaideur insatisfait de porter son affaire devant une juridiction supérieure, principalement pour rattraper d'éventuelles erreurs des premiers juges.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Au Togo, les juridictions de droit commun de 1er degré sont :",
-   "options": [
-    {
-     "text": "Les Cours d'Appel",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les Tribunaux de Première Instance (TPI)",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La Cour Suprême",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les Tribunaux du travail",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Les Tribunaux de Première Instance (TPI) sont les juridictions de droit commun de 1er degré au Togo ; les Cours d'Appel statuent en 2e degré et la Cour Suprême est la juridiction suprême.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le Conseil Supérieur de la Magistrature a pour rôle :",
-   "options": [
-    {
-     "text": "De voter les lois",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "De veiller à l'indépendance de la magistrature",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "De gérer les impôts",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "De juger les contraventions",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le Conseil Supérieur de la Magistrature est l'organe garant de l'indépendance de la magistrature, conformément au principe de séparation des pouvoirs.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "La personnalité juridique se définit comme :",
-   "options": [
-    {
-     "text": "La nationalité d'une personne",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "L'aptitude à être titulaire de droits et soumis à des obligations",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Le droit de vote",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La majorité civile",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "La personnalité juridique est l'aptitude à être titulaire de droits et soumis à des obligations — elle est distincte de la nationalité, de la majorité ou du droit de vote.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le point de départ de la personnalité juridique d'une personne physique est en principe :",
-   "options": [
-    {
-     "text": "La conception",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La naissance",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La majorité",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le mariage",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "En principe, la personnalité juridique débute à la naissance (elle peut exceptionnellement être repoussée à la date de conception dans l'intérêt de l'enfant, ex : succession).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "La disparition (en droit civil) suppose que :",
-   "options": [
-    {
-     "text": "La personne a quitté son domicile depuis 5 ans sans nouvelle",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le corps n'a pu être retrouvé mais le décès est probable au regard des circonstances",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La personne a changé de nationalité",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La personne morale est dissoute",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "La disparition concerne les cas où le corps d'une personne n'a pu être retrouvé, mais où le décès est probable au regard des circonstances (accident, naufrage...) — à distinguer de l'absence (5 ans sans nouvelle).",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Une commune ou un établissement public est une personne morale :",
-   "options": [
-    {
-     "text": "De droit privé",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "De droit public",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sans personnalité juridique",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "De droit international",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Une commune ou un établissement public est une personne morale de droit public, régie par les règles du droit public, par opposition aux personnes morales de droit privé.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Une société commerciale (SARL, SA) est une personne morale :",
-   "options": [
-    {
-     "text": "De droit public",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "De droit privé",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Sans existence juridique propre",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Identique à une personne physique",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Une société commerciale (SARL, SA) est une personne morale de droit privé, dotée d'une existence juridique propre et d'un patrimoine distinct de celui de ses membres.",
-   "section": "exam"
-  },
-  {
-   "type": "mcq",
-   "text": "Le texte qui régit l'organisation judiciaire au Togo est :",
-   "options": [
-    {
-     "text": "Le Code civil",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "La loi N°2019-015 du 30 octobre 2019",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "La Constitution uniquement",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Le traité OHADA",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "L'organisation judiciaire au Togo est régie par la loi N°2019-015 du 30 octobre 2019 portant Code de l'organisation judiciaire.",
-   "section": "exam"
-  },
-  {
-   "type": "open",
-   "text": "La nouvelle loi pénale peut-elle s'appliquer à des faits commis avant son entrée en vigueur ? Pourquoi ?",
-   "model_answer": "Réponse : En principe, selon l'article 2 du Code civil, « la loi ne dispose que pour l'avenir ; elle n'a point d'effet rétroactif ». Une loi ne peut donc pas s'appliquer à des faits commis avant son entrée en vigueur. Cependant, il existe une exception importante en droit pénal : la loi pénale plus douce (lex mitior) est rétroactive. Si une nouvelle loi pénale est plus favorable au prévenu (peine moins sévère, dépénalisation…), elle s'applique aux faits commis avant son entrée en vigueur. Le principe est alors la rétroactivité in mitius, car il serait injuste de maintenir une sanction plus lourde alors que la société a décidé de l'adoucir.",
-   "section": "open"
-  },
-  {
-   "type": "open",
-   "text": "Expliquez la pyramide des normes et son importance.",
-   "model_answer": "Réponse : La pyramide des normes (théorisée par Hans Kelsen) est une représentation hiérarchique de l'ensemble des règles juridiques en vigueur. Elle est structurée en quatre blocs : 1. Bloc de constitutionnalité (sommet) : la Constitution 2. Bloc de conventionnalité : les traités et accords internationaux 3. Bloc de légalité : les lois organiques, ordinaires et ordonnances 4. Bloc réglementaire (base) : les décrets, arrêtés ministériels, préfectoraux, municipaux Importance : chaque règle juridique doit être conforme à celle qui lui est supérieure. En cas de conflit, la norme supérieure l'emporte. Ce principe garantit la cohérence et la sécurité juridique de l'ordre juridique.",
-   "section": "open"
-  },
-  {
-   "type": "open",
-   "text": "Expliquez les caractères de la règle de droit objectif.",
-   "model_answer": "Réponse : La règle de droit objectif présente trois caractères fondamentaux : 1. Générale et abstraite : Elle s'applique à tout le monde sans désigner nommément telle ou telle personne. Elle vise des situations juridiques types et non des individus particuliers. 2. Obligatoire et coercitive : Son application n'est pas laissée au bon vouloir des individus. Elle s'impose indépendamment de la volonté de ceux qui y sont soumis. 3. Sanctionnée par l'autorité publique : En cas de non-respect, des sanctions sont prévues et appliquées par l'État : sanctions pénales (emprisonnement, amendes), civiles (dommages-intérêts), administratives (retrait d'autorisation) ou disciplinaires (licenciement, avertissement). C'est ce dernier caractère qui distingue fondamentalement la règle de droit des règles morales ou religieuses, qui n'ont pas de sanction étatique garantie.",
-   "section": "open"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/droit/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/droit/exercices/exercices.html"
 }

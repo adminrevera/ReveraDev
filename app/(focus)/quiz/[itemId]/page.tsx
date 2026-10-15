@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { startChapterQuiz, submitChapterQuiz } from "@/app/actions/quiz";
 import QuizPlayer from "@/components/student/QuizPlayer";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { getStudentChapter } from "@/lib/student/content";
@@ -18,5 +19,14 @@ export default async function ChapterQuizPage({ params }: { params: Promise<{ it
   const progress = item.progress[0];
   if (!progress?.readAt) notFound();
 
-  return <QuizPlayer itemId={item.id} subjectName={item.subject.name} validationPercent={validationPercent} />;
+  return (
+    <QuizPlayer
+      start={startChapterQuiz.bind(null, item.id)}
+      submitAnswers={submitChapterQuiz}
+      exitHref={`/parcours/${item.id}`}
+      doneHref="/parcours"
+      title={item.subject.name}
+      validationPercent={validationPercent}
+    />
+  );
 }

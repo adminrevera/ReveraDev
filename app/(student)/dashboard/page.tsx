@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import LumiCompanion from "@/components/brand/LumiCompanion";
 import { requireStudentProfile } from "@/lib/auth/access";
+import { ensureDailyQuests } from "@/lib/gamification/engine";
 import { localCalendarDay } from "@/lib/local-day";
 import { prisma } from "@/lib/prisma";
 import { APP_NAME } from "@/lib/config";
@@ -62,7 +63,7 @@ async function DashboardContent({ profile }: { profile: DashboardProfile }) {
   const today = localCalendarDay(now, profile.timezone);
   const questDay = localCalendarDay(now, "Africa/Lome");
   const yearDay = Math.floor((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(now.getFullYear(), 0, 0)) / dayMs);
-  const [catalog, progressRows, activeEvent, reviewCount, badgeCount, streakDays, dailyQuests, membership] = await measureServerOperation("dashboard.prismaQueries", () => Promise.all([
+  const [catalog, progressRows, activeEvent, reviewCount, badgeCount, streakDays, firstQuests, membership] = await measureServerOperation("dashboard.prismaQueries", () => Promise.all([
     profile.levelId ? getStudentCatalog(profile.levelId, profile.tier) : Promise.resolve(null),
     prisma.chapterProgress.findMany({
       where: { userId: profile.id },
@@ -97,7 +98,7 @@ async function DashboardContent({ profile }: { profile: DashboardProfile }) {
     prisma.dailyQuest.findMany({
       relationLoadStrategy: "join",
       where: { day: questDay, quest: { active: true } },
-      include: { quest: { include: { progress: { where: { userId: profile.id, day: today }, take: 1 } } } },
+      include: { quest: { include: { progress: { where: { userId: profile.id, day: questDay }, take: 1 } } } },
       orderBy: { quest: { title: "asc" } },
       take: 3,
     }),
@@ -107,6 +108,19 @@ async function DashboardContent({ profile }: { profile: DashboardProfile }) {
       select: { weekXp: true, group: { select: { tier: { select: { name: true } } } } },
     }),
   ]));
+
+  // Première visite du jour : on tire les quêtes du jour dans la réserve, puis on relit.
+  let dailyQuests = firstQuests;
+  if (!firstQuests.length) {
+    await ensureDailyQuests(questDay);
+    dailyQuests = await prisma.dailyQuest.findMany({
+      relationLoadStrategy: "join",
+      where: { day: questDay, quest: { active: true } },
+      include: { quest: { include: { progress: { where: { userId: profile.id, day: questDay }, take: 1 } } } },
+      orderBy: { quest: { title: "asc" } },
+      take: 3,
+    });
+  }
 
   const dailyQuestions = catalog?.questions ?? [];
   const dailyQuestion = dailyQuestions.length ? dailyQuestions[yearDay % dailyQuestions.length] : null;

@@ -1,663 +1,663 @@
 {
- "slug": "python",
- "name": "Python",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Variables & Types",
-   "subtitle": "Les bases absolues de Python : afficher, stocker des données, comprendre les types.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Installer Python et configurer l'environnement<br/>\n        • Comprendre print(), input() et les commentaires<br/>\n        • Maîtriser les 4 types de base : int, float, str, bool</p>\n</div>\n<h2>Pourquoi Python ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🐍 Le langage couteau-suisse</div>\n<p>Python est utilisé partout : web, IA, data science, automatisation, cybersécurité…<br/>\n        Contrairement au C, Python n'a pas besoin de compilateur. Vous écrivez, vous exécutez. C'est un langage <strong>interprété</strong>.<br/><br/>\n<strong>Analogie :</strong> Si le C est une voiture manuelle (précise mais complexe), Python est une voiture automatique : facile au départ, très efficace au quotidien.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Mon premier programme</div>\n<pre>print(\"Hello, World!\")   # C'est tout ! Pas de main(), pas de ;\n# En C il fallait : #include, int main(), printf, return 0...</pre>\n</div>\n<h2>Variables — des boîtes étiquetées</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📦 Typage dynamique</div>\n<p>En Python, pas besoin de déclarer le type de la variable — Python le devine tout seul ! C'est le <strong>typage dynamique</strong>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Déclaration de variables</div>\n<pre>nom = \"Alice\"        # str (texte)\nage = 20             # int (entier)\ntaille = 1.75        # float (décimal)\netudiant = True      # bool (vrai/faux)\n# Pas de int, float, char... Python devine !</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Règles de nommage</div>\n<p>• Commence par une lettre ou _ (pas un chiffre !)<br/>\n        • Convention : <code>snake_case</code> (mon_age, pas monAge)<br/>\n        • Python est <strong>sensible à la casse</strong> : <code>age ≠ Age ≠ AGE</code></p>\n</div>\n<h2>Les 4 types de base — I.F.S.B.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémonique I.F.S.B.</div>\n<p><strong>I</strong>nt · <strong>F</strong>loat · <strong>S</strong>tr · <strong>B</strong>ool — les 4 types fondamentaux de Python !</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th><th>Exemple</th><th>Vérifier</th></tr></thead>\n<tbody>\n<tr><td><code>int</code></td><td>Entier</td><td><code>42</code>, <code>-7</code></td><td><code>type(42)</code> → int</td></tr>\n<tr><td><code>float</code></td><td>Décimal</td><td><code>3.14</code>, <code>-0.5</code></td><td><code>type(3.14)</code> → float</td></tr>\n<tr><td><code>str</code></td><td>Texte (chaîne)</td><td><code>\"Hello\"</code>, <code>'Oui'</code></td><td><code>type(\"Hi\")</code> → str</td></tr>\n<tr><td><code>bool</code></td><td>Booléen</td><td><code>True</code>, <code>False</code></td><td><code>type(True)</code> → bool</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Astuce</div>\n<p>La fonction <code>type(x)</code> vous dit TOUJOURS le type d'une variable. Utilisez-la quand vous avez un doute !</p>\n</div>\n<h2>print() et input()</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">print() — afficher</div>\n<pre>nom = \"Alice\"\nage = 20\n# Méthode classique\nprint(\"Je suis\", nom, \"j'ai\", age, \"ans\")\n# f-string (⭐ LA méthode moderne)\nprint(f\"Je suis {nom}, j'ai {age} ans\")\n# Accolades = trous à remplir automatiquement</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎯 f-strings — la méthode moderne</div>\n<p>Un <code>f</code> devant les guillemets, puis chaque <code>{variable}</code> est automatiquement remplacée par sa valeur. C'est comme Mad Libs en programmation !</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">input() — lire une saisie</div>\n<pre># input() retourne TOUJOURS un str !\nnom = input(\"Votre nom : \")      # \"Alice\" → str\nage = input(\"Votre âge : \")      # \"20\" → str (pas int !)\n# ⚠️ PIÈGE CLASSIQUE :\n# age + 1 → ERREUR ! \"20\" + 1 = impossible\n# Solution : convertir !\nage = int(input(\"Votre âge : \"))   # \"20\" → 20 (int)\ntaille = float(input(\"Taille : \")) # \"1.75\" → 1.75 (float)</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège n°1 du débutant</div>\n<p><code>input()</code> retourne TOUJOURS un <code>str</code> ! Pour calculer, convertissez avec <code>int()</code> ou <code>float()</code>.</p>\n</div>\n<h2>Opérateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Description</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><code>+ - *</code></td><td>Addition, soustraction, multiplication</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>\n<tr><td><code>/</code></td><td>Division (toujours float !)</td><td><code>7 / 2</code></td><td><code>3.5</code></td></tr>\n<tr><td><code>//</code></td><td>Division entière</td><td><code>7 // 2</code></td><td><code>3</code></td></tr>\n<tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>7 % 2</code></td><td><code>1</code></td></tr>\n<tr><td><code>**</code></td><td>Puissance</td><td><code>2 ** 3</code></td><td><code>8</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🐍 Python vs C</div>\n<p>En Python, <code>7 / 2 = 3.5</code> (division réelle). En C, <code>7 / 2 = 3</code> (division entière).<br/>\n        Python a <code>//</code> pour la division entière et <code>**</code> pour la puissance.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Opérateurs sur les strings</div>\n<pre>prenom = \"Alice\"\nmessage = \"Bonjour \" + prenom    # \"Bonjour Alice\" (concaténation)\nligne = \"-\" * 30                  # \"------------------------------\" (répétition)\n# ⚠️ Interdit : \"Age: \" + 20     → TypeError !\n# Solution : \"Age: \" + str(20)   ou f\"Age: {20}\"</pre>\n</div>\n<h2>Conversions de types</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Casting en Python</div>\n<pre>age = int(\"20\")          # str → int : 20\nprix = float(\"19.99\")    # str → float : 19.99\ntexte = str(42)           # int → str : \"42\"\n# Vérification\ntype(age)                 # &lt;class 'int'&gt;\nisinstance(age, int)      # True\n# Pièges\nint(\"3.14\")  # ❌ ValueError ! Passer par float d'abord\nint(3.9)     # 3 (tronque, ne pas arrondir !)</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Conversion</th><th>Résultat</th><th>Piège ?</th></tr></thead>\n<tbody>\n<tr><td><code>int(\"42\")</code></td><td>42</td><td>✅ OK</td></tr>\n<tr><td><code>int(\"3.14\")</code></td><td>❌ ValueError</td><td>Passer par float d'abord !</td></tr>\n<tr><td><code>int(3.9)</code></td><td>3</td><td>Tronque (ne pas arrondir) !</td></tr>\n<tr><td><code>bool(0)</code></td><td>False</td><td>0, \"\", [], None → False</td></tr>\n<tr><td><code>bool(42)</code></td><td>True</td><td>Tout le reste → True</td></tr>\n</tbody>\n</table></div>\n<h2>Exercice guidé — Convertisseur °C → °F</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution complète</div>\n<pre>celsius = float(input(\"Température en °C : \"))\n# On utilise float() car la température peut être décimale\nfahrenheit = celsius * 9 / 5 + 32  # Formule F = C×9/5 + 32\nprint(f\"{celsius}°C = {round(fahrenheit, 1)}°F\")\n# Exécution : 100 → 100.0°C = 212.0°F ✓</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — Python</h3>\n<ul>\n<li><code>print()</code> affiche · <code>input()</code> lit (retourne TOUJOURS str !)</li>\n<li>4 types : <strong>I.F.S.B.</strong> — int, float, str, bool</li>\n<li><code>type(x)</code> pour vérifier le type · <code>isinstance(x, type)</code></li>\n<li>f-strings : <code>f\"Texte {variable}\"</code> — la méthode moderne</li>\n<li><code>int()</code>, <code>float()</code>, <code>str()</code> pour convertir</li>\n<li>Python : typage dynamique, pas de déclaration de type explicite</li>\n<li><code>/</code> = division réelle · <code>//</code> = division entière · <code>**</code> = puissance</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "python",
+  "name": "Python",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Que retourne input(\"Votre âge : \") si l'utilisateur tape 25 ?",
-     "options": [
-      {
-       "text": "L'entier 25",
-       "correct": false,
-       "explanation": "input() retourne TOUJOURS un str, jamais un int directement."
-      },
-      {
-       "text": "La chaîne \"25\"",
-       "correct": true,
-       "explanation": "Correct ! input() retourne TOUJOURS une chaîne de caractères (str). Pour avoir un entier, il faut écrire int(input(...))."
-      },
-      {
-       "text": "Le flottant 25.0",
-       "correct": false,
-       "explanation": "input() retourne un str, pas un float."
-      },
-      {
-       "text": "None",
-       "correct": false,
-       "explanation": "input() ne retourne jamais None sauf cas spécial."
-      }
-     ]
+      "number": 1,
+      "title": "Variables & Types",
+      "subtitle": "Les bases absolues de Python : afficher, stocker des données, comprendre les types.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Installer Python et configurer l'environnement</li><li>Comprendre print(), input() et les commentaires</li><li>Maîtriser les 4 types de base : int, float, str, bool</li></ul></div>\n<h2>Pourquoi Python ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Le langage couteau-suisse</div>\n<p>Python est utilisé partout : web, IA, data science, automatisation, cybersécurité…<br/>\n        Contrairement au C, Python n'a pas besoin de compilateur. Vous écrivez, vous exécutez. C'est un langage <strong>interprété</strong>.<br/><br/>\n<strong>Analogie :</strong> Si le C est une voiture manuelle (précise mais complexe), Python est une voiture automatique : facile au départ, très efficace au quotidien.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Mon premier programme</div>\n<pre>print(\"Hello, World!\")   # C'est tout ! Pas de main(), pas de ;\n# En C il fallait : #include, int main(), printf, return 0...</pre></div>\n<h2>Variables — des boîtes étiquetées</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Typage dynamique</div>\n<p>En Python, pas besoin de déclarer le type de la variable — Python le devine tout seul ! C'est le <strong>typage dynamique</strong>.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Déclaration de variables</div>\n<pre>nom = \"Alice\"        # str (texte)\nage = 20             # int (entier)\ntaille = 1.75        # float (décimal)\netudiant = True      # bool (vrai/faux)\n# Pas de int, float, char... Python devine !</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Règles de nommage</div>\n<ul><li>Commence par une lettre ou _ (pas un chiffre !)</li><li>Convention : <code>snake_case</code> (mon_age, pas monAge)</li><li>Python est <strong>sensible à la casse</strong> : <code>age ≠ Age ≠ AGE</code></li></ul></div>\n<h2>Les 4 types de base — I.F.S.B.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémonique I.F.S.B.</div>\n<p><strong>I</strong>nt · <strong>F</strong>loat · <strong>S</strong>tr · <strong>B</strong>ool — les 4 types fondamentaux de Python !</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Description</th><th>Exemple</th><th>Vérifier</th></tr></thead>\n<tbody>\n<tr><td><code>int</code></td><td>Entier</td><td><code>42</code>, <code>-7</code></td><td><code>type(42)</code> → int</td></tr>\n<tr><td><code>float</code></td><td>Décimal</td><td><code>3.14</code>, <code>-0.5</code></td><td><code>type(3.14)</code> → float</td></tr>\n<tr><td><code>str</code></td><td>Texte (chaîne)</td><td><code>\"Hello\"</code>, <code>'Oui'</code></td><td><code>type(\"Hi\")</code> → str</td></tr>\n<tr><td><code>bool</code></td><td>Booléen</td><td><code>True</code>, <code>False</code></td><td><code>type(True)</code> → bool</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Astuce</div>\n<p>La fonction <code>type(x)</code> vous dit TOUJOURS le type d'une variable. Utilisez-la quand vous avez un doute !</p></div>\n<h2>print() et input()</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">print() — afficher</div>\n<pre>nom = \"Alice\"\nage = 20\n# Méthode classique\nprint(\"Je suis\", nom, \"j'ai\", age, \"ans\")\n# f-string ( LA méthode moderne)\nprint(f\"Je suis {nom}, j'ai {age} ans\")\n# Accolades = trous à remplir automatiquement</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">f-strings — la méthode moderne</div>\n<p>Un <code>f</code> devant les guillemets, puis chaque <code>{variable}</code> est automatiquement remplacée par sa valeur. C'est comme Mad Libs en programmation !</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">input() — lire une saisie</div>\n<pre># input() retourne TOUJOURS un str !\nnom = input(\"Votre nom : \")      # \"Alice\" → str\nage = input(\"Votre âge : \")      # \"20\" → str (pas int !)\n#  PIÈGE CLASSIQUE :\n# age + 1 → ERREUR ! \"20\" + 1 = impossible\n# Solution : convertir !\nage = int(input(\"Votre âge : \"))   # \"20\" → 20 (int)\ntaille = float(input(\"Taille : \")) # \"1.75\" → 1.75 (float)</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège n°1 du débutant</div>\n<p><code>input()</code> retourne TOUJOURS un <code>str</code> ! Pour calculer, convertissez avec <code>int()</code> ou <code>float()</code>.</p></div>\n<h2>Opérateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Description</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td><code>+ - *</code></td><td>Addition, soustraction, multiplication</td><td><code>7 + 3</code></td><td><code>10</code></td></tr>\n<tr><td><code>/</code></td><td>Division (toujours float !)</td><td><code>7 / 2</code></td><td><code>3.5</code></td></tr>\n<tr><td><code>//</code></td><td>Division entière</td><td><code>7 // 2</code></td><td><code>3</code></td></tr>\n<tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>7 % 2</code></td><td><code>1</code></td></tr>\n<tr><td><code>**</code></td><td>Puissance</td><td><code>2 ** 3</code></td><td><code>8</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Python vs C</div>\n<p>En Python, <code>7 / 2 = 3.5</code> (division réelle). En C, <code>7 / 2 = 3</code> (division entière).<br/>\n        Python a <code>//</code> pour la division entière et <code>**</code> pour la puissance.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Opérateurs sur les strings</div>\n<pre>prenom = \"Alice\"\nmessage = \"Bonjour \" + prenom    # \"Bonjour Alice\" (concaténation)\nligne = \"-\" * 30                  # \"------------------------------\" (répétition)\n#  Interdit : \"Age: \" + 20     → TypeError !\n# Solution : \"Age: \" + str(20)   ou f\"Age: {20}\"</pre></div>\n<h2>Conversions de types</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Casting en Python</div>\n<pre>age = int(\"20\")          # str → int : 20\nprix = float(\"19.99\")    # str → float : 19.99\ntexte = str(42)           # int → str : \"42\"\n# Vérification\ntype(age)                 # &lt;class 'int'&gt;\nisinstance(age, int)      # True\n# Pièges\nint(\"3.14\")  #  ValueError ! Passer par float d'abord\nint(3.9)     # 3 (tronque, ne pas arrondir !)</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Conversion</th><th>Résultat</th><th>Piège ?</th></tr></thead>\n<tbody>\n<tr><td><code>int(\"42\")</code></td><td>42</td><td> OK</td></tr>\n<tr><td><code>int(\"3.14\")</code></td><td> ValueError</td><td>Passer par float d'abord !</td></tr>\n<tr><td><code>int(3.9)</code></td><td>3</td><td>Tronque (ne pas arrondir) !</td></tr>\n<tr><td><code>bool(0)</code></td><td>False</td><td>0, \"\", [], None → False</td></tr>\n<tr><td><code>bool(42)</code></td><td>True</td><td>Tout le reste → True</td></tr>\n</tbody>\n</table></div>\n<h2>Exercice guidé — Convertisseur °C → °F</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Solution complète</div>\n<pre>celsius = float(input(\"Température en °C : \"))\n# On utilise float() car la température peut être décimale\nfahrenheit = celsius * 9 / 5 + 32  # Formule F = C×9/5 + 32\nprint(f\"{celsius}°C = {round(fahrenheit, 1)}°F\")\n# Exécution : 100 → 100.0°C = 212.0°F ✓</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — Python</h3>\n<ul>\n<li><code>print()</code> affiche · <code>input()</code> lit (retourne TOUJOURS str !)</li>\n<li>4 types : <strong>I.F.S.B.</strong> — int, float, str, bool</li>\n<li><code>type(x)</code> pour vérifier le type · <code>isinstance(x, type)</code></li>\n<li>f-strings : <code>f\"Texte {variable}\"</code> — la méthode moderne</li>\n<li><code>int()</code>, <code>float()</code>, <code>str()</code> pour convertir</li>\n<li>Python : typage dynamique, pas de déclaration de type explicite</li>\n<li><code>/</code> = division réelle · <code>//</code> = division entière · <code>**</code> = puissance</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que retourne input(\"Votre âge : \") si l'utilisateur tape 25 ?",
+          "options": [
+            {
+              "text": "L'entier 25",
+              "correct": false,
+              "explanation": "input() retourne TOUJOURS un str, jamais un int directement."
+            },
+            {
+              "text": "La chaîne \"25\"",
+              "correct": true,
+              "explanation": "Correct ! input() retourne TOUJOURS une chaîne de caractères (str). Pour avoir un entier, il faut écrire int(input(...))."
+            },
+            {
+              "text": "Le flottant 25.0",
+              "correct": false,
+              "explanation": "input() retourne un str, pas un float."
+            },
+            {
+              "text": "None",
+              "correct": false,
+              "explanation": "input() ne retourne jamais None sauf cas spécial."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel est le résultat de 7 / 2 en Python ?",
+          "options": [
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": "3 serait le résultat en C (division entière). En Python, / donne toujours un float."
+            },
+            {
+              "text": "3.5",
+              "correct": true,
+              "explanation": "Correct ! En Python, / est TOUJOURS la division réelle : 7/2 = 3.5. Pour la division entière, utiliser //."
+            },
+            {
+              "text": "3.0",
+              "correct": false,
+              "explanation": "7/2 = 3.5, pas 3.0."
+            },
+            {
+              "text": "4",
+              "correct": false,
+              "explanation": "7/2 = 3.5, pas 4."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Comment écrire correctement une f-string qui affiche la variable nom ?",
+          "options": [
+            {
+              "text": "\"Bonjour %s\" % nom",
+              "correct": false,
+              "explanation": "Les guillemets simples fonctionnent pour une f-string, mais ici la syntaxe %s est celle de l'ancien style Python 2."
+            },
+            {
+              "text": "\"Bonjour {nom}\"",
+              "correct": false,
+              "explanation": "Il manque le f devant les guillemets pour une f-string."
+            },
+            {
+              "text": "f\"Bonjour {nom}\"",
+              "correct": true,
+              "explanation": "Correct ! Une f-string commence par f (ou F) suivi des guillemets, puis {variable} pour insérer la valeur."
+            },
+            {
+              "text": "\"Bonjour\" + nom",
+              "correct": false,
+              "explanation": "+ est la concaténation, pas une f-string."
+            }
+          ]
+        }
+      ],
+      "source": "python/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Quel est le résultat de 7 / 2 en Python ?",
-     "options": [
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": "3 serait le résultat en C (division entière). En Python, / donne toujours un float."
-      },
-      {
-       "text": "3.5",
-       "correct": true,
-       "explanation": "Correct ! En Python, / est TOUJOURS la division réelle : 7/2 = 3.5. Pour la division entière, utiliser //."
-      },
-      {
-       "text": "3.0",
-       "correct": false,
-       "explanation": "7/2 = 3.5, pas 3.0."
-      },
-      {
-       "text": "4",
-       "correct": false,
-       "explanation": "7/2 = 3.5, pas 4."
-      }
-     ]
+      "number": 2,
+      "title": "Conditions en Python",
+      "subtitle": "if, elif, else et opérateurs logiques — contrôle du flux en Python.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Écrire des conditions if/elif/else · Utiliser and, or, not · Comprendre l'indentation Python</li></ul></div>\n<h2>if / elif / else</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">Indentation obligatoire</div>\n<p>Python utilise l'<strong>indentation</strong> (4 espaces) pour délimiter les blocs — pas de {} ni de end. Une mauvaise indentation = erreur !</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe Python</div>\n<pre>note = 15\nif note &gt;= 16:\n    print(\"Très Bien\")\nelif note &gt;= 14:\n    print(\"Bien\")          # ← exécuté\nelif note &gt;= 10:\n    print(\"Passable\")\nelse:\n    print(\"Insuffisant\")</pre></div>\n<h2>Opérateurs logiques</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Python</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>and</code></td><td>ET logique</td><td><code>age &gt;= 18 and age &lt;= 65</code></td></tr>\n<tr><td><code>or</code></td><td>OU logique</td><td><code>jour == \"Sam\" or jour == \"Dim\"</code></td></tr>\n<tr><td><code>not</code></td><td>NON logique</td><td><code>not (note &lt; 10)</code></td></tr>\n<tr><td><code>in</code></td><td>Dans une séquence</td><td><code>x in [1, 2, 3]</code></td></tr>\n<tr><td><code>is</code></td><td>Identité d'objet</td><td><code>x is None</code></td></tr>\n</tbody></table></div>\n<h2>Expressions conditionnelles (ternaire)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe ternaire Python</div>\n<pre>mention = \"Admis\" if note &gt;= 10 else \"Refusé\"\nmax_val = a if a &gt; b else b  # équivalent de max(a,b)</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 2</h3>\n<ul>\n<li>if condition: · elif condition: · else: (avec : et indentation)</li>\n<li>and · or · not · in · is None</li>\n<li>Ternaire : val = A if condition else B</li>\n<li>Indentation = 4 espaces (pas de {})</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "En Python, les blocs de code sont délimités par :",
+          "options": [
+            {
+              "text": "Des accolades {}",
+              "correct": false,
+              "explanation": "Les accolades sont utilisées en C, Java, JS... pas en Python."
+            },
+            {
+              "text": "L'indentation (espaces)",
+              "correct": true,
+              "explanation": "Correct ! Python utilise l'indentation (espaces ou tabulations) pour délimiter les blocs. C'est obligatoire."
+            },
+            {
+              "text": "Des mots-clés begin/end",
+              "correct": false,
+              "explanation": "begin/end est Pascal/Ada, pas Python."
+            },
+            {
+              "text": "Des parenthèses",
+              "correct": false,
+              "explanation": "Les parenthèses ne délimitent pas les blocs en Python."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Comment écrire correctement une f-string qui affiche la variable nom ?",
-     "options": [
-      {
-       "text": "\"Bonjour %s\" % nom",
-       "correct": false,
-       "explanation": "Les guillemets simples fonctionnent pour une f-string, mais ici la syntaxe %s est celle de l'ancien style Python 2."
-      },
-      {
-       "text": "\"Bonjour {nom}\"",
-       "correct": false,
-       "explanation": "Il manque le f devant les guillemets pour une f-string."
-      },
-      {
-       "text": "f\"Bonjour {nom}\"",
-       "correct": true,
-       "explanation": "Correct ! Une f-string commence par f (ou F) suivi des guillemets, puis {variable} pour insérer la valeur."
-      },
-      {
-       "text": "\"Bonjour\" + nom",
-       "correct": false,
-       "explanation": "+ est la concaténation, pas une f-string."
-      }
-     ]
-    }
-   ],
-   "source": "python/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Conditions en Python",
-   "subtitle": "if, elif, else et opérateurs logiques — contrôle du flux en Python.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Écrire des conditions if/elif/else · Utiliser and, or, not · Comprendre l'indentation Python</p></div>\n<h2>2.1 — if / elif / else</h2>\n<div class=\"box warn\"><div class=\"box-lbl\">⚠️ Indentation obligatoire</div>\n<p>Python utilise l'<strong>indentation</strong> (4 espaces) pour délimiter les blocs — pas de {} ni de end. Une mauvaise indentation = erreur !</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe Python</div>\n<pre>note = 15\nif note &gt;= 16:\n    print(\"Très Bien\")\nelif note &gt;= 14:\n    print(\"Bien\")          # ← exécuté\nelif note &gt;= 10:\n    print(\"Passable\")\nelse:\n    print(\"Insuffisant\")</pre></div>\n<h2>2.2 — Opérateurs logiques</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Python</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>and</code></td><td>ET logique</td><td><code>age &gt;= 18 and age &lt;= 65</code></td></tr>\n<tr><td><code>or</code></td><td>OU logique</td><td><code>jour == \"Sam\" or jour == \"Dim\"</code></td></tr>\n<tr><td><code>not</code></td><td>NON logique</td><td><code>not (note &lt; 10)</code></td></tr>\n<tr><td><code>in</code></td><td>Dans une séquence</td><td><code>x in [1, 2, 3]</code></td></tr>\n<tr><td><code>is</code></td><td>Identité d'objet</td><td><code>x is None</code></td></tr>\n</tbody></table></div>\n<h2>2.3 — Expressions conditionnelles (ternaire)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe ternaire Python</div>\n<pre>mention = \"Admis\" if note &gt;= 10 else \"Refusé\"\nmax_val = a if a &gt; b else b  # équivalent de max(a,b)</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>if condition: · elif condition: · else: (avec : et indentation)</li>\n<li>and · or · not · in · is None</li>\n<li>Ternaire : val = A if condition else B</li>\n<li>Indentation = 4 espaces (pas de {})</li>\n</ul></div>\n</div>",
-   "questions": [
+      "number": 3,
+      "title": "Boucles en Python",
+      "subtitle": "for, while, break, continue et list comprehensions.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Utiliser for et while · Maîtriser range() · Écrire des list comprehensions</li></ul></div>\n<h2>Boucle for</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">for avec range()</div>\n<pre># range(n) → 0, 1, 2, ..., n-1\nfor i in range(5):\n    print(i)  # 0 1 2 3 4\n# range(start, stop, step)\nfor i in range(1, 11, 2):\n    print(i)  # 1 3 5 7 9\n# Parcourir une liste directement\nfruits = [\"pomme\", \"banane\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n# Avec index : enumerate\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")</pre></div>\n<h2>Boucle while</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">while</div>\n<pre>n = int(input(\"Entrez un entier positif: \"))\nwhile n &lt;= 0:\n    print(\"Invalide !\")\n    n = int(input(\"Réessayez: \"))\nprint(f\"Valide: {n}\")</pre></div>\n<h2>List Comprehensions</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">Syntaxe</div>\n<p><code>[expression for item in iterable if condition]</code><br/>\n        La façon Python de créer des listes en une ligne !</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>carres = [x**2 for x in range(1, 6)]\n# [1, 4, 9, 16, 25]\npairs = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\nnoms_maj = [n.upper() for n in [\"kofi\", \"ama\"]]\n# [\"KOFI\", \"AMA\"]</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 3</h3>\n<ul>\n<li>for i in range(n): · range(start, stop, step)</li>\n<li>for item in liste: · enumerate pour avoir l'index</li>\n<li>while condition: · break (quitter) · continue (suivant)</li>\n<li>List comprehension : [expr for x in it if cond]</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que produit list(range(2, 8, 2)) ?",
+          "options": [
+            {
+              "text": "[2, 3, 4, 5, 6, 7]",
+              "correct": false,
+              "explanation": "[2,3,4,5,6,7] serait range(2,8) sans le step."
+            },
+            {
+              "text": "[2, 4, 6]",
+              "correct": true,
+              "explanation": "Correct ! range(2, 8, 2) : de 2 à 7 (excl. 8), pas de 2 en 2. → 2, 4, 6."
+            },
+            {
+              "text": "[2, 4, 6, 8]",
+              "correct": false,
+              "explanation": "8 est la borne exclue — range n'inclut jamais le stop."
+            },
+            {
+              "text": "[0, 2, 4, 6]",
+              "correct": false,
+              "explanation": "range commence à 2, pas à 0."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre3.html"
+    },
     {
-     "type": "mcq",
-     "text": "En Python, les blocs de code sont délimités par :",
-     "options": [
-      {
-       "text": "Des accolades {}",
-       "correct": false,
-       "explanation": "Les accolades sont utilisées en C, Java, JS... pas en Python."
-      },
-      {
-       "text": "L'indentation (espaces)",
-       "correct": true,
-       "explanation": "Correct ! Python utilise l'indentation (espaces ou tabulations) pour délimiter les blocs. C'est obligatoire."
-      },
-      {
-       "text": "Des mots-clés begin/end",
-       "correct": false,
-       "explanation": "begin/end est Pascal/Ada, pas Python."
-      },
-      {
-       "text": "Des parenthèses",
-       "correct": false,
-       "explanation": "Les parenthèses ne délimitent pas les blocs en Python."
-      }
-     ]
-    }
-   ],
-   "source": "_private/python/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Boucles en Python",
-   "subtitle": "for, while, break, continue et list comprehensions.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Utiliser for et while · Maîtriser range() · Écrire des list comprehensions</p></div>\n<h2>3.1 — Boucle for</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">for avec range()</div>\n<pre># range(n) → 0, 1, 2, ..., n-1\nfor i in range(5):\n    print(i)  # 0 1 2 3 4\n# range(start, stop, step)\nfor i in range(1, 11, 2):\n    print(i)  # 1 3 5 7 9\n# Parcourir une liste directement\nfruits = [\"pomme\", \"banane\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n# Avec index : enumerate\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")</pre></div>\n<h2>3.2 — Boucle while</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">while</div>\n<pre>n = int(input(\"Entrez un entier positif: \"))\nwhile n &lt;= 0:\n    print(\"Invalide !\")\n    n = int(input(\"Réessayez: \"))\nprint(f\"Valide: {n}\")</pre></div>\n<h2>3.3 — List Comprehensions</h2>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Syntaxe</div>\n<p><code>[expression for item in iterable if condition]</code><br/>\n        La façon Python de créer des listes en une ligne !</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples</div>\n<pre>carres = [x**2 for x in range(1, 6)]\n# [1, 4, 9, 16, 25]\npairs = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\nnoms_maj = [n.upper() for n in [\"kofi\", \"ama\"]]\n# [\"KOFI\", \"AMA\"]</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li>for i in range(n): · range(start, stop, step)</li>\n<li>for item in liste: · enumerate pour avoir l'index</li>\n<li>while condition: · break (quitter) · continue (suivant)</li>\n<li>List comprehension : [expr for x in it if cond]</li>\n</ul></div>\n</div>",
-   "questions": [
+      "number": 4,
+      "title": "Listes & Tuples",
+      "subtitle": "Listes mutables, tuples immuables, slicing et méthodes essentielles.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Créer et manipuler des listes · Maîtriser le slicing · Utiliser les tuples</li></ul></div>\n<h2>Listes</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Opérations sur les listes</div>\n<pre>notes = [12, 15, 8, 17, 10]\n# Accès et modification\nnotes[0]       # 12 (premier)\nnotes[-1]      # 10 (dernier)\nnotes[1:3]     # [15, 8] (slicing : indices 1 et 2)\nnotes[::2]     # [12, 8, 10] (un sur deux)\n# Méthodes\nnotes.append(14)       # ajoute 14 à la fin\nnotes.insert(2, 11)    # insère 11 à l'index 2\nnotes.remove(8)        # supprime la valeur 8\nnotes.pop()            # retire et retourne le dernier\nnotes.sort()           # tri croissant (en place)\nsorted(notes)          # nouveau tri (sans modifier)\nlen(notes)             # longueur\nsum(notes)             # somme\nmax(notes), min(notes) # max et min</pre></div>\n<h2>Slicing</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Syntaxe</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><code>lst[2:5]</code></td><td>Indices 2, 3, 4</td></tr>\n<tr><td><code>lst[:3]</code></td><td>Du début à l'indice 2</td></tr>\n<tr><td><code>lst[3:]</code></td><td>De l'indice 3 à la fin</td></tr>\n<tr><td><code>lst[::-1]</code></td><td>Liste inversée</td></tr>\n<tr><td><code>lst[::2]</code></td><td>Un élément sur deux</td></tr>\n</tbody></table></div>\n<h2>Tuples</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Tuple = liste immuable</div>\n<p>Un tuple utilise des parenthèses () et ne peut pas être modifié après création. Parfait pour des données constantes (coordonnées GPS, dates, codes couleur RGB…)</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Tuples</div>\n<pre>point = (3, 7)          # tuple de 2 éléments\npoint[0]                # 3 — accès comme liste\n# point[0] = 5          # ERREUR ! immuable\n# Déstructuration (unpacking)\nx, y = point            # x=3, y=7\na, b, c = (1, 2, 3)\n# Échange de variables\na, b = b, a  # pythonic swap !</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Liste : mutable, [] · Tuple : immuable, ()</li>\n<li>Slicing : lst[start:stop:step] · lst[::-1] = inversé</li>\n<li>append · insert · remove · pop · sort · len · sum · max · min</li>\n<li>Unpacking : a, b = tuple · Swap : a, b = b, a</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle méthode ajoute un élément à la fin d'une liste ?",
+          "options": [
+            {
+              "text": "add()",
+              "correct": false,
+              "explanation": "add() est pour les sets, pas les listes."
+            },
+            {
+              "text": "append()",
+              "correct": true,
+              "explanation": "Correct ! append() ajoute un élément à la fin de la liste."
+            },
+            {
+              "text": "push()",
+              "correct": false,
+              "explanation": "push() n'existe pas en Python (c'est JavaScript)."
+            },
+            {
+              "text": "insert()",
+              "correct": false,
+              "explanation": "insert() ajoute à un indice précis, pas forcément à la fin."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre4.html"
+    },
     {
-     "type": "mcq",
-     "text": "Que produit list(range(2, 8, 2)) ?",
-     "options": [
-      {
-       "text": "[2, 3, 4, 5, 6, 7]",
-       "correct": false,
-       "explanation": "[2,3,4,5,6,7] serait range(2,8) sans le step."
-      },
-      {
-       "text": "[2, 4, 6]",
-       "correct": true,
-       "explanation": "Correct ! range(2, 8, 2) : de 2 à 7 (excl. 8), pas de 2 en 2. → 2, 4, 6."
-      },
-      {
-       "text": "[2, 4, 6, 8]",
-       "correct": false,
-       "explanation": "8 est la borne exclue — range n'inclut jamais le stop."
-      },
-      {
-       "text": "[0, 2, 4, 6]",
-       "correct": false,
-       "explanation": "range commence à 2, pas à 0."
-      }
-     ]
-    }
-   ],
-   "source": "_private/python/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Listes & Tuples",
-   "subtitle": "Listes mutables, tuples immuables, slicing et méthodes essentielles.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Créer et manipuler des listes · Maîtriser le slicing · Utiliser les tuples</p></div>\n<h2>4.1 — Listes</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Opérations sur les listes</div>\n<pre>notes = [12, 15, 8, 17, 10]\n# Accès et modification\nnotes[0]       # 12 (premier)\nnotes[-1]      # 10 (dernier)\nnotes[1:3]     # [15, 8] (slicing : indices 1 et 2)\nnotes[::2]     # [12, 8, 10] (un sur deux)\n# Méthodes\nnotes.append(14)       # ajoute 14 à la fin\nnotes.insert(2, 11)    # insère 11 à l'index 2\nnotes.remove(8)        # supprime la valeur 8\nnotes.pop()            # retire et retourne le dernier\nnotes.sort()           # tri croissant (en place)\nsorted(notes)          # nouveau tri (sans modifier)\nlen(notes)             # longueur\nsum(notes)             # somme\nmax(notes), min(notes) # max et min</pre></div>\n<h2>4.2 — Slicing</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Syntaxe</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><code>lst[2:5]</code></td><td>Indices 2, 3, 4</td></tr>\n<tr><td><code>lst[:3]</code></td><td>Du début à l'indice 2</td></tr>\n<tr><td><code>lst[3:]</code></td><td>De l'indice 3 à la fin</td></tr>\n<tr><td><code>lst[::-1]</code></td><td>Liste inversée</td></tr>\n<tr><td><code>lst[::2]</code></td><td>Un élément sur deux</td></tr>\n</tbody></table></div>\n<h2>4.3 — Tuples</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Tuple = liste immuable</div>\n<p>Un tuple utilise des parenthèses () et ne peut pas être modifié après création. Parfait pour des données constantes (coordonnées GPS, dates, codes couleur RGB…)</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Tuples</div>\n<pre>point = (3, 7)          # tuple de 2 éléments\npoint[0]                # 3 — accès comme liste\n# point[0] = 5          # ERREUR ! immuable\n# Déstructuration (unpacking)\nx, y = point            # x=3, y=7\na, b, c = (1, 2, 3)\n# Échange de variables\na, b = b, a  # pythonic swap !</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Liste : mutable, [] · Tuple : immuable, ()</li>\n<li>Slicing : lst[start:stop:step] · lst[::-1] = inversé</li>\n<li>append · insert · remove · pop · sort · len · sum · max · min</li>\n<li>Unpacking : a, b = tuple · Swap : a, b = b, a</li>\n</ul></div>\n</div>",
-   "questions": [
+      "number": 5,
+      "title": "Dictionnaires & Sets",
+      "subtitle": "Structures clé-valeur et ensembles — création, accès, méthodes.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Créer et manipuler des dictionnaires · Comprendre les sets · Choisir la bonne structure</li></ul></div>\n<h2>Dictionnaires (dict)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Principe</div>\n<p>Un dictionnaire stocke des paires <strong>clé:valeur</strong>. Les clés sont uniques et doivent être immuables (str, int, tuple).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Opérations sur les dicts</div>\n<pre>etudiant = {\n    \"nom\": \"Kofi\",\n    \"age\": 20,\n    \"notes\": [12, 15, 17]\n}\n# Accès\netudiant[\"nom\"]                    # \"Kofi\"\netudiant.get(\"email\", \"N/A\")       # \"N/A\" (sécurisé)\n# Modification\netudiant[\"age\"] = 21               # modifier\netudiant[\"ville\"] = \"Lomé\"        # ajouter\n# Suppression\ndel etudiant[\"age\"]\netudiant.pop(\"ville\")\n# Itération\nfor cle, valeur in etudiant.items():\n    print(f\"{cle}: {valeur}\")\n# Vérifier si clé existe\n\"nom\" in etudiant    # True\n\"email\" in etudiant  # False\n# Dict comprehension\ncarres = {x: x**2 for x in range(1, 6)}\n# {1:1, 2:4, 3:9, 4:16, 5:25}</pre></div>\n<h2>Sets (ensembles)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">Set = collection sans doublons, non ordonnée</div></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Sets</div>\n<pre>A = {1, 2, 3, 4}\nB = {3, 4, 5, 6}\nA | B   # Union : {1,2,3,4,5,6}\nA &amp; B   # Intersection : {3,4}\nA - B   # Différence : {1,2}\nA ^ B   # Différence symétrique : {1,2,5,6}\n# Éliminer les doublons d'une liste\nliste = [1,2,2,3,3,3,4]\nsans_doublons = list(set(liste))  # [1,2,3,4]</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 5</h3>\n<ul>\n<li>dict : {clé: valeur} · accès par d[clé] ou d.get(clé, défaut)</li>\n<li>items() · keys() · values() pour itérer</li>\n<li>Set : {val1, val2...} · sans doublons · | ∩ - ^</li>\n<li>Éliminer doublons : list(set(liste))</li>\n<li>Dict comprehension : {k:v for k,v in ...}</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Pour accéder à une clé sans risque d'erreur KeyError, on utilise :",
+          "options": [
+            {
+              "text": "d['cle']",
+              "correct": false,
+              "explanation": "d['cle'] lève KeyError si la clé n'existe pas."
+            },
+            {
+              "text": "d.get('cle', valeur_defaut)",
+              "correct": true,
+              "explanation": "Correct ! get() retourne None (ou une valeur par défaut) si la clé n'existe pas, sans lever d'exception."
+            },
+            {
+              "text": "d.find('cle')",
+              "correct": false,
+              "explanation": "d.find() n'existe pas pour les dictionnaires."
+            },
+            {
+              "text": "d.search('cle')",
+              "correct": false,
+              "explanation": "d.search() n'est pas une méthode dict Python."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre5.html"
+    },
     {
-     "type": "mcq",
-     "text": "Quelle méthode ajoute un élément à la fin d'une liste ?",
-     "options": [
-      {
-       "text": "add()",
-       "correct": false,
-       "explanation": "add() est pour les sets, pas les listes."
-      },
-      {
-       "text": "append()",
-       "correct": true,
-       "explanation": "Correct ! append() ajoute un élément à la fin de la liste."
-      },
-      {
-       "text": "push()",
-       "correct": false,
-       "explanation": "push() n'existe pas en Python (c'est JavaScript)."
-      },
-      {
-       "text": "insert()",
-       "correct": false,
-       "explanation": "insert() ajoute à un indice précis, pas forcément à la fin."
-      }
-     ]
-    }
-   ],
-   "source": "_private/python/chapitres/chapitre4.html"
-  },
-  {
-   "number": 5,
-   "title": "Dictionnaires & Sets",
-   "subtitle": "Structures clé-valeur et ensembles — création, accès, méthodes.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Créer et manipuler des dictionnaires · Comprendre les sets · Choisir la bonne structure</p></div>\n<h2>5.1 — Dictionnaires (dict)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Principe</div>\n<p>Un dictionnaire stocke des paires <strong>clé:valeur</strong>. Les clés sont uniques et doivent être immuables (str, int, tuple).</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Opérations sur les dicts</div>\n<pre>etudiant = {\n    \"nom\": \"Kofi\",\n    \"age\": 20,\n    \"notes\": [12, 15, 17]\n}\n# Accès\netudiant[\"nom\"]                    # \"Kofi\"\netudiant.get(\"email\", \"N/A\")       # \"N/A\" (sécurisé)\n# Modification\netudiant[\"age\"] = 21               # modifier\netudiant[\"ville\"] = \"Lomé\"        # ajouter\n# Suppression\ndel etudiant[\"age\"]\netudiant.pop(\"ville\")\n# Itération\nfor cle, valeur in etudiant.items():\n    print(f\"{cle}: {valeur}\")\n# Vérifier si clé existe\n\"nom\" in etudiant    # True\n\"email\" in etudiant  # False\n# Dict comprehension\ncarres = {x: x**2 for x in range(1, 6)}\n# {1:1, 2:4, 3:9, 4:16, 5:25}</pre></div>\n<h2>5.2 — Sets (ensembles)</h2>\n<div class=\"box info\"><div class=\"box-lbl\">📋 Set = collection sans doublons, non ordonnée</div></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Sets</div>\n<pre>A = {1, 2, 3, 4}\nB = {3, 4, 5, 6}\nA | B   # Union : {1,2,3,4,5,6}\nA &amp; B   # Intersection : {3,4}\nA - B   # Différence : {1,2}\nA ^ B   # Différence symétrique : {1,2,5,6}\n# Éliminer les doublons d'une liste\nliste = [1,2,2,3,3,3,4]\nsans_doublons = list(set(liste))  # [1,2,3,4]</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>dict : {clé: valeur} · accès par d[clé] ou d.get(clé, défaut)</li>\n<li>items() · keys() · values() pour itérer</li>\n<li>Set : {val1, val2...} · sans doublons · | ∩ - ^</li>\n<li>Éliminer doublons : list(set(liste))</li>\n<li>Dict comprehension : {k:v for k,v in ...}</li>\n</ul></div>\n</div>",
-   "questions": [
+      "number": 6,
+      "title": "Fonctions Python",
+      "subtitle": "def, paramètres par défaut, *args, **kwargs, lambda et portée.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Définir des fonctions avec def · Utiliser les valeurs par défaut · Maîtriser *args et **kwargs</li></ul></div>\n<h2>Définition de fonction</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe</div>\n<pre>def saluer(nom, message=\"Bonjour\"):  # valeur par défaut\n    return f\"{message}, {nom} !\"\n# Appels\nsaluer(\"Kofi\")              # \"Bonjour, Kofi !\"\nsaluer(\"Ama\", \"Bonsoir\")    # \"Bonsoir, Ama !\"\nsaluer(message=\"Salut\", nom=\"Kwame\")  # paramètre nommé</pre></div>\n<h2>Retours multiples</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Retourner plusieurs valeurs</div>\n<pre>def min_max(liste):\n    return min(liste), max(liste)  # retourne un tuple\nmini, maxi = min_max([3, 1, 7, 2, 9])\nprint(mini, maxi)  # 1 9</pre></div>\n<h2>*args et **kwargs</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Arguments variables</div>\n<pre># *args : nombre variable d'arguments positionnels\ndef somme(*args):\n    return sum(args)\nsomme(1, 2, 3, 4)  # 10\nsomme(5, 10)       # 15\n# **kwargs : arguments nommés variables\ndef profil(**kwargs):\n    for k, v in kwargs.items():\n        print(f\"{k}: {v}\")\nprofil(nom=\"Kofi\", age=20, ville=\"Lomé\")</pre></div>\n<h2>Lambda (fonction anonyme)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Lambda</div>\n<pre>double = lambda x: x * 2\ndouble(5)  # 10\n# Utilisation avec sorted()\netudiants = [(\"Kofi\",15), (\"Ama\",17), (\"Kwame\",12)]\netudiants.sort(key=lambda e: e[1], reverse=True)\n# triés par note décroissante</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 6</h3>\n<ul>\n<li>def nom(params): corps · return valeur</li>\n<li>Valeurs par défaut : def f(x, y=10) · Paramètres nommés à l'appel</li>\n<li>*args : tuple d'arguments · **kwargs : dict d'arguments nommés</li>\n<li>Retours multiples : return a, b → déstructuration : a, b = f()</li>\n<li>Lambda : lambda x: expression (fonction anonyme courte)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que fait *args dans une définition de fonction ?",
+          "options": [
+            {
+              "text": "Multiplie les arguments",
+              "correct": false,
+              "explanation": "* seul est une opération de déballage, pas args."
+            },
+            {
+              "text": "Capture un nombre variable d'arguments positionnels dans un tuple",
+              "correct": true,
+              "explanation": "Correct ! *args capture tous les arguments positionnels supplémentaires dans un tuple."
+            },
+            {
+              "text": "Capture les arguments nommés",
+              "correct": false,
+              "explanation": "**kwargs capture les arguments nommés, pas *args."
+            },
+            {
+              "text": "Passe les arguments par référence",
+              "correct": false,
+              "explanation": "*args ne force pas le passage par référence (Python passe par référence d'objet)."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre6.html"
+    },
     {
-     "type": "mcq",
-     "text": "Pour accéder à une clé sans risque d'erreur KeyError, on utilise :",
-     "options": [
-      {
-       "text": "d['cle']",
-       "correct": false,
-       "explanation": "d['cle'] lève KeyError si la clé n'existe pas."
-      },
-      {
-       "text": "d.get('cle', valeur_defaut)",
-       "correct": true,
-       "explanation": "Correct ! get() retourne None (ou une valeur par défaut) si la clé n'existe pas, sans lever d'exception."
-      },
-      {
-       "text": "d.find('cle')",
-       "correct": false,
-       "explanation": "d.find() n'existe pas pour les dictionnaires."
-      },
-      {
-       "text": "d.search('cle')",
-       "correct": false,
-       "explanation": "d.search() n'est pas une méthode dict Python."
-      }
-     ]
-    }
-   ],
-   "source": "_private/python/chapitres/chapitre5.html"
-  },
-  {
-   "number": 6,
-   "title": "Fonctions Python",
-   "subtitle": "def, paramètres par défaut, *args, **kwargs, lambda et portée.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir des fonctions avec def · Utiliser les valeurs par défaut · Maîtriser *args et **kwargs</p></div>\n<h2>6.1 — Définition de fonction</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Syntaxe</div>\n<pre>def saluer(nom, message=\"Bonjour\"):  # valeur par défaut\n    return f\"{message}, {nom} !\"\n# Appels\nsaluer(\"Kofi\")              # \"Bonjour, Kofi !\"\nsaluer(\"Ama\", \"Bonsoir\")    # \"Bonsoir, Ama !\"\nsaluer(message=\"Salut\", nom=\"Kwame\")  # paramètre nommé</pre></div>\n<h2>6.2 — Retours multiples</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Retourner plusieurs valeurs</div>\n<pre>def min_max(liste):\n    return min(liste), max(liste)  # retourne un tuple\nmini, maxi = min_max([3, 1, 7, 2, 9])\nprint(mini, maxi)  # 1 9</pre></div>\n<h2>6.3 — *args et **kwargs</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Arguments variables</div>\n<pre># *args : nombre variable d'arguments positionnels\ndef somme(*args):\n    return sum(args)\nsomme(1, 2, 3, 4)  # 10\nsomme(5, 10)       # 15\n# **kwargs : arguments nommés variables\ndef profil(**kwargs):\n    for k, v in kwargs.items():\n        print(f\"{k}: {v}\")\nprofil(nom=\"Kofi\", age=20, ville=\"Lomé\")</pre></div>\n<h2>6.4 — Lambda (fonction anonyme)</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Lambda</div>\n<pre>double = lambda x: x * 2\ndouble(5)  # 10\n# Utilisation avec sorted()\netudiants = [(\"Kofi\",15), (\"Ama\",17), (\"Kwame\",12)]\netudiants.sort(key=lambda e: e[1], reverse=True)\n# triés par note décroissante</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>def nom(params): corps · return valeur</li>\n<li>Valeurs par défaut : def f(x, y=10) · Paramètres nommés à l'appel</li>\n<li>*args : tuple d'arguments · **kwargs : dict d'arguments nommés</li>\n<li>Retours multiples : return a, b → déstructuration : a, b = f()</li>\n<li>Lambda : lambda x: expression (fonction anonyme courte)</li>\n</ul></div>\n</div>",
-   "questions": [
+      "number": 7,
+      "title": "Fichiers & Modules",
+      "subtitle": "Lecture/écriture de fichiers, import de modules et création de modules.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Lire et écrire des fichiers avec open() · Utiliser with · Importer des modules standard</li></ul></div>\n<h2>Gestion des fichiers</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">open() et with</div>\n<pre># ÉCRITURE\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"Kofi 15\\n\")\n    f.write(\"Ama 17\\n\")\n# Le fichier est automatiquement fermé à la fin du with\n# LECTURE complète\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as f:\n    contenu = f.read()    # tout le fichier en une string\n# LECTURE ligne par ligne\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as f:\n    for ligne in f:\n        print(ligne.strip())  # strip() enlève \\n\n# AJOUT (sans effacer)\nwith open(\"notes.txt\", \"a\") as f:\n    f.write(\"Kwame 12\\n\")</pre></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">with = gestionnaire de contexte</div>\n<p><code>with open(...) as f:</code> ferme automatiquement le fichier même en cas d'erreur. Toujours préférer <code>with</code> à <code>open/close</code> manuel.</p></div>\n<h2>Modules standard essentiels</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Module</th><th>Import</th><th>Fonctions utiles</th></tr></thead>\n<tbody>\n<tr><td><code>math</code></td><td><code>import math</code></td><td>sqrt, floor, ceil, pi, log</td></tr>\n<tr><td><code>random</code></td><td><code>import random</code></td><td>random(), randint, choice, shuffle</td></tr>\n<tr><td><code>os</code></td><td><code>import os</code></td><td>getcwd, listdir, path.exists</td></tr>\n<tr><td><code>datetime</code></td><td><code>from datetime import datetime</code></td><td>now(), strftime, date</td></tr>\n<tr><td><code>json</code></td><td><code>import json</code></td><td>dumps, loads, dump, load</td></tr>\n</tbody></table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples modules</div>\n<pre>import math\nimport random\nprint(math.sqrt(16))     # 4.0\nprint(math.pi)           # 3.14159...\nprint(random.randint(1, 100))  # entier aléatoire entre 1 et 100\n# JSON\nimport json\ndata = {\"nom\": \"Kofi\", \"note\": 15}\njson_str = json.dumps(data)   # → '{\"nom\": \"Kofi\", \"note\": 15}'\ndata2 = json.loads(json_str)  # → dict Python</pre></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 7</h3>\n<ul>\n<li>with open(\"f\", mode, encoding=\"utf-8\") as f: → fermeture auto</li>\n<li>Modes : \"r\" lire · \"w\" écrire (écrase) · \"a\" ajouter</li>\n<li>f.read() · f.readlines() · f.write() · ligne.strip()</li>\n<li>import math · random · os · json · datetime</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Pourquoi utiliser with open(...) as f: ?",
+          "options": [
+            {
+              "text": "Pour lire le fichier plus rapidement",
+              "correct": false,
+              "explanation": "with n'accélère pas la lecture — c'est pour la gestion automatique."
+            },
+            {
+              "text": "Pour fermer automatiquement le fichier même en cas d'erreur",
+              "correct": true,
+              "explanation": "Correct ! with garantit la fermeture automatique du fichier, même en cas d'exception — plus fiable que open/close manuel."
+            },
+            {
+              "text": "Pour n'ouvrir que des fichiers texte",
+              "correct": false,
+              "explanation": "with fonctionne avec tous les types de fichiers."
+            },
+            {
+              "text": "Pour lire seulement la première ligne",
+              "correct": false,
+              "explanation": "with n'est pas une limite — on peut lire autant qu'on veut."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre7.html"
+    },
     {
-     "type": "mcq",
-     "text": "Que fait *args dans une définition de fonction ?",
-     "options": [
-      {
-       "text": "Multiplie les arguments",
-       "correct": false,
-       "explanation": "* seul est une opération de déballage, pas args."
-      },
-      {
-       "text": "Capture un nombre variable d'arguments positionnels dans un tuple",
-       "correct": true,
-       "explanation": "Correct ! *args capture tous les arguments positionnels supplémentaires dans un tuple."
-      },
-      {
-       "text": "Capture les arguments nommés",
-       "correct": false,
-       "explanation": "**kwargs capture les arguments nommés, pas *args."
-      },
-      {
-       "text": "Passe les arguments par référence",
-       "correct": false,
-       "explanation": "*args ne force pas le passage par référence (Python passe par référence d'objet)."
-      }
-     ]
+      "number": 8,
+      "title": "POO — Classes & Objets",
+      "subtitle": "Programmation orientée objet : classes, attributs, méthodes, héritage.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">Objectifs</div>\n<ul><li>Créer des classes avec __init__ · Utiliser self · Comprendre l'héritage</li></ul></div>\n<h2>Classe et constructeur</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple complet</div>\n<pre>class Etudiant:\n    # Attribut de classe (partagé par toutes les instances)\n    etablissement = \"Collège de Paris\"\n    # Constructeur __init__\n    def __init__(self, nom, age, note):\n        # Attributs d'instance (propres à chaque objet)\n        self.nom   = nom\n        self.age   = age\n        self.note  = note\n    # Méthode\n    def est_admis(self):\n        return self.note &gt;= 10\n    # Représentation texte (__str__)\n    def __str__(self):\n        statut = \"Admis\" if self.est_admis() else \"Refusé\"\n        return f\"{self.nom} ({self.age} ans) - {self.note}/20 [{statut}]\"\n# Création d'instances\ne1 = Etudiant(\"Kofi\", 20, 15.5)\ne2 = Etudiant(\"Ama\", 19, 8.0)\nprint(e1)           # Kofi (20 ans) - 15.5/20 [Admis]\nprint(e2.est_admis())  # False\nprint(Etudiant.etablissement)  # Collège de Paris</pre></div>\n<h2>Héritage</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Classe fille hérite de classe mère</div>\n<pre>class EtudiantBourse(Etudiant):\n    def __init__(self, nom, age, note, montant):\n        super().__init__(nom, age, note)  # appel constructeur parent\n        self.montant = montant\n    def info_bourse(self):\n        return f\"Bourse de {self.montant} FCFA\"\n    # Surcharge de méthode\n    def __str__(self):\n        return super().__str__() + f\" | {self.info_bourse()}\"\neb = EtudiantBourse(\"Kwame\", 21, 16.0, 50000)\nprint(eb)\n# Kwame (21 ans) - 16.0/20 [Admis] | Bourse de 50000 FCFA</pre></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">Les 4 piliers de la POO</div>\n<p><strong>E</strong>ncapsulation : cacher les détails internes (private)<br/>\n<strong>H</strong>éritage : réutiliser le code d'une classe parente<br/>\n<strong>P</strong>olymorphisme : même interface, comportements différents<br/>\n<strong>A</strong>bstraction : montrer l'essentiel, cacher la complexité</p></div>\n<div class=\"summary\"><h3>L'essentiel du Chapitre 8</h3>\n<ul>\n<li>class Nom: · __init__(self, ...) = constructeur</li>\n<li>self = référence à l'instance · self.attr = attribut d'instance</li>\n<li>__str__(self) = représentation texte (print)</li>\n<li>Héritage : class Fille(Mere): · super().__init__(...)</li>\n<li>4 piliers POO : Encapsulation · Héritage · Polymorphisme · Abstraction</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que représente self dans une méthode Python ?",
+          "options": [
+            {
+              "text": "La classe elle-même",
+              "correct": false,
+              "explanation": "self n'est pas la classe elle-même, c'est l'instance courante."
+            },
+            {
+              "text": "L'instance courante de la classe (l'objet)",
+              "correct": true,
+              "explanation": "Correct ! self est une référence à l'instance courante de la classe. Il permet d'accéder aux attributs et méthodes de l'objet."
+            },
+            {
+              "text": "La classe parente",
+              "correct": false,
+              "explanation": "self n'est pas la classe parente (c'est super())."
+            },
+            {
+              "text": "Un mot-clé réservé Python",
+              "correct": false,
+              "explanation": "self n'est pas un mot-clé réservé — c'est une convention de nommage."
+            }
+          ]
+        }
+      ],
+      "source": "_private/python/chapitres/chapitre8.html"
     }
-   ],
-   "source": "_private/python/chapitres/chapitre6.html"
-  },
-  {
-   "number": 7,
-   "title": "Fichiers & Modules",
-   "subtitle": "Lecture/écriture de fichiers, import de modules et création de modules.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Lire et écrire des fichiers avec open() · Utiliser with · Importer des modules standard</p></div>\n<h2>7.1 — Gestion des fichiers</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">open() et with</div>\n<pre># ÉCRITURE\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"Kofi 15\\n\")\n    f.write(\"Ama 17\\n\")\n# Le fichier est automatiquement fermé à la fin du with\n# LECTURE complète\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as f:\n    contenu = f.read()    # tout le fichier en une string\n# LECTURE ligne par ligne\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as f:\n    for ligne in f:\n        print(ligne.strip())  # strip() enlève \\n\n# AJOUT (sans effacer)\nwith open(\"notes.txt\", \"a\") as f:\n    f.write(\"Kwame 12\\n\")</pre></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 with = gestionnaire de contexte</div>\n<p><code>with open(...) as f:</code> ferme automatiquement le fichier même en cas d'erreur. Toujours préférer <code>with</code> à <code>open/close</code> manuel.</p></div>\n<h2>7.2 — Modules standard essentiels</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Module</th><th>Import</th><th>Fonctions utiles</th></tr></thead>\n<tbody>\n<tr><td><code>math</code></td><td><code>import math</code></td><td>sqrt, floor, ceil, pi, log</td></tr>\n<tr><td><code>random</code></td><td><code>import random</code></td><td>random(), randint, choice, shuffle</td></tr>\n<tr><td><code>os</code></td><td><code>import os</code></td><td>getcwd, listdir, path.exists</td></tr>\n<tr><td><code>datetime</code></td><td><code>from datetime import datetime</code></td><td>now(), strftime, date</td></tr>\n<tr><td><code>json</code></td><td><code>import json</code></td><td>dumps, loads, dump, load</td></tr>\n</tbody></table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemples modules</div>\n<pre>import math\nimport random\nprint(math.sqrt(16))     # 4.0\nprint(math.pi)           # 3.14159...\nprint(random.randint(1, 100))  # entier aléatoire entre 1 et 100\n# JSON\nimport json\ndata = {\"nom\": \"Kofi\", \"note\": 15}\njson_str = json.dumps(data)   # → '{\"nom\": \"Kofi\", \"note\": 15}'\ndata2 = json.loads(json_str)  # → dict Python</pre></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 7</h3>\n<ul>\n<li>with open(\"f\", mode, encoding=\"utf-8\") as f: → fermeture auto</li>\n<li>Modes : \"r\" lire · \"w\" écrire (écrase) · \"a\" ajouter</li>\n<li>f.read() · f.readlines() · f.write() · ligne.strip()</li>\n<li>import math · random · os · json · datetime</li>\n</ul></div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Pourquoi utiliser with open(...) as f: ?",
-     "options": [
-      {
-       "text": "Pour lire le fichier plus rapidement",
-       "correct": false,
-       "explanation": "with n'accélère pas la lecture — c'est pour la gestion automatique."
-      },
-      {
-       "text": "Pour fermer automatiquement le fichier même en cas d'erreur",
-       "correct": true,
-       "explanation": "Correct ! with garantit la fermeture automatique du fichier, même en cas d'exception — plus fiable que open/close manuel."
-      },
-      {
-       "text": "Pour n'ouvrir que des fichiers texte",
-       "correct": false,
-       "explanation": "with fonctionne avec tous les types de fichiers."
-      },
-      {
-       "text": "Pour lire seulement la première ligne",
-       "correct": false,
-       "explanation": "with n'est pas une limite — on peut lire autant qu'on veut."
-      }
-     ]
-    }
-   ],
-   "source": "_private/python/chapitres/chapitre7.html"
-  },
-  {
-   "number": 8,
-   "title": "POO — Classes & Objets",
-   "subtitle": "Programmation orientée objet : classes, attributs, méthodes, héritage.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\"><div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Créer des classes avec __init__ · Utiliser self · Comprendre l'héritage</p></div>\n<h2>8.1 — Classe et constructeur</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple complet</div>\n<pre>class Etudiant:\n    # Attribut de classe (partagé par toutes les instances)\n    etablissement = \"Collège de Paris\"\n    # Constructeur __init__\n    def __init__(self, nom, age, note):\n        # Attributs d'instance (propres à chaque objet)\n        self.nom   = nom\n        self.age   = age\n        self.note  = note\n    # Méthode\n    def est_admis(self):\n        return self.note &gt;= 10\n    # Représentation texte (__str__)\n    def __str__(self):\n        statut = \"Admis\" if self.est_admis() else \"Refusé\"\n        return f\"{self.nom} ({self.age} ans) - {self.note}/20 [{statut}]\"\n# Création d'instances\ne1 = Etudiant(\"Kofi\", 20, 15.5)\ne2 = Etudiant(\"Ama\", 19, 8.0)\nprint(e1)           # Kofi (20 ans) - 15.5/20 [Admis]\nprint(e2.est_admis())  # False\nprint(Etudiant.etablissement)  # Collège de Paris</pre></div>\n<h2>8.2 — Héritage</h2>\n<div class=\"code-block\"><div class=\"code-lbl\">Classe fille hérite de classe mère</div>\n<pre>class EtudiantBourse(Etudiant):\n    def __init__(self, nom, age, note, montant):\n        super().__init__(nom, age, note)  # appel constructeur parent\n        self.montant = montant\n    def info_bourse(self):\n        return f\"Bourse de {self.montant} FCFA\"\n    # Surcharge de méthode\n    def __str__(self):\n        return super().__str__() + f\" | {self.info_bourse()}\"\neb = EtudiantBourse(\"Kwame\", 21, 16.0, 50000)\nprint(eb)\n# Kwame (21 ans) - 16.0/20 [Admis] | Bourse de 50000 FCFA</pre></div>\n<div class=\"box mnem\"><div class=\"box-lbl\">🧠 Les 4 piliers de la POO</div>\n<p><strong>E</strong>ncapsulation : cacher les détails internes (private)<br/>\n<strong>H</strong>éritage : réutiliser le code d'une classe parente<br/>\n<strong>P</strong>olymorphisme : même interface, comportements différents<br/>\n<strong>A</strong>bstraction : montrer l'essentiel, cacher la complexité</p></div>\n<div class=\"summary\"><h3>📝 L'essentiel du Chapitre 8</h3>\n<ul>\n<li>class Nom: · __init__(self, ...) = constructeur</li>\n<li>self = référence à l'instance · self.attr = attribut d'instance</li>\n<li>__str__(self) = représentation texte (print)</li>\n<li>Héritage : class Fille(Mere): · super().__init__(...)</li>\n<li>4 piliers POO : Encapsulation · Héritage · Polymorphisme · Abstraction</li>\n</ul></div>\n</div>",
-   "questions": [
+      "type": "open",
+      "text": "1. Définissez simplement Variables & Types.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
     {
-     "type": "mcq",
-     "text": "Que représente self dans une méthode Python ?",
-     "options": [
-      {
-       "text": "La classe elle-même",
-       "correct": false,
-       "explanation": "self n'est pas la classe elle-même, c'est l'instance courante."
-      },
-      {
-       "text": "L'instance courante de la classe (l'objet)",
-       "correct": true,
-       "explanation": "Correct ! self est une référence à l'instance courante de la classe. Il permet d'accéder aux attributs et méthodes de l'objet."
-      },
-      {
-       "text": "La classe parente",
-       "correct": false,
-       "explanation": "self n'est pas la classe parente (c'est super())."
-      },
-      {
-       "text": "Un mot-clé réservé Python",
-       "correct": false,
-       "explanation": "self n'est pas un mot-clé réservé — c'est une convention de nommage."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Variables & Types.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Variables & Types.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Variables & Types.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Variables & Types.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Conditions en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Conditions en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Conditions en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Conditions en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Conditions en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Boucles en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Boucles en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Boucles en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Boucles en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Boucles en Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Listes & Tuples.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Listes & Tuples.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Listes & Tuples.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Listes & Tuples.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Listes & Tuples.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Dictionnaires & Sets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Dictionnaires & Sets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Dictionnaires & Sets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Dictionnaires & Sets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Dictionnaires & Sets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Fonctions Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Fonctions Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Fonctions Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Fonctions Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Fonctions Python.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Fichiers & Modules.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Fichiers & Modules.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Fichiers & Modules.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Fichiers & Modules.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Fichiers & Modules.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement POO Classes & Objets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de POO Classes & Objets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi POO Classes & Objets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de POO Classes & Objets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à POO Classes & Objets.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/python/chapitres/chapitre8.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Variables & Types.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Variables & Types.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Variables & Types.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Variables & Types.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Variables & Types.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Conditions en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Conditions en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Conditions en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Conditions en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Conditions en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Boucles en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Boucles en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Boucles en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Boucles en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Boucles en Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Listes & Tuples.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Listes & Tuples.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Listes & Tuples.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Listes & Tuples.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Listes & Tuples.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Dictionnaires & Sets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Dictionnaires & Sets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Dictionnaires & Sets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Dictionnaires & Sets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Dictionnaires & Sets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Fonctions Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Fonctions Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Fonctions Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Fonctions Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Fonctions Python.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Fichiers & Modules.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Fichiers & Modules.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Fichiers & Modules.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Fichiers & Modules.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Fichiers & Modules.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement POO Classes & Objets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de POO Classes & Objets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi POO Classes & Objets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de POO Classes & Objets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à POO Classes & Objets.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/python/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/python/exercices/exercices.html"
 }

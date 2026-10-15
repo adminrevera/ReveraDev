@@ -22,7 +22,7 @@ export default function StudentShell({
         </Link>
         <StudentNavLinks layout="sidebar" />
         <div className="mt-auto space-y-4 pt-8">
-          <Link href="/#offres" className="block rounded-2xl border border-accent/20 bg-[linear-gradient(135deg,rgba(170,181,255,.1),rgba(255,210,122,.05))] p-4 text-fg no-underline transition hover:border-accent/40">
+          <Link href="/abonnement" className="block rounded-2xl border border-accent/20 bg-[linear-gradient(135deg,rgba(170,181,255,.1),rgba(255,210,122,.05))] p-4 text-fg no-underline transition hover:border-accent/40">
             <span className="font-mono text-[10px] uppercase tracking-[.16em] text-amber">Pour aller plus loin</span>
             <span className="mt-2 block text-sm font-semibold">Découvre les offres</span>
             <span className="mt-1 block text-xs leading-relaxed text-muted">Trouve la formule adaptée à ta façon de réviser.</span>

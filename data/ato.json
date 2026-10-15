@@ -1,597 +1,597 @@
 {
- "slug": "ato",
- "name": "Architecture Ordinateur",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Généralités sur l'informatique",
-   "subtitle": "Histoire, composants matériels et logiciels, unités de mesure et classification des ordinateurs.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir ce qu'est un ordinateur et comprendre pourquoi il utilise le binaire<br/>\n        • Connaître les 5 générations d'ordinateurs<br/>\n        • Identifier les composants matériels (CPU, RAM, stockage, carte mère)<br/>\n        • Maîtriser les unités de mesure (bit → octet → Ko → Mo → Go → To)</p>\n</div>\n<h2>Qu'est-ce qu'un ordinateur ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Un <strong>ordinateur</strong> est une machine électronique programmable qui :<br/>\n        1. <strong>Reçoit</strong> des données (clavier, souris, fichier…)<br/>\n        2. <strong>Traite</strong> ces données (calcule, trie, compare…) grâce à un programme<br/>\n        3. <strong>Produit</strong> des résultats (affiche, imprime, envoie…)</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🍳 Analogie — La cuisine</div>\n<p>Un ordinateur, c'est comme un cuisinier ultra-rapide.<br/>\n        Les <strong>ingrédients</strong> = données d'entrée · La <strong>recette</strong> = le programme · Le <strong>plat fini</strong> = le résultat.<br/>\n        Le cuisinier (processeur) suit la recette à la vitesse de milliards d'opérations par seconde !</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">💡 Pourquoi le binaire ?</div>\n<p>Un fil électrique n'a que 2 états : <strong>courant passe</strong> (= 1) ou <strong>ne passe pas</strong> (= 0). Toute l'informatique repose sur le binaire — deux chiffres seulement : 0 et 1.</p>\n</div>\n<h2>Brève histoire de l'informatique</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Époque</th><th>Événement</th><th>Technologie</th></tr></thead>\n<tbody>\n<tr><td>1642</td><td>Pascaline (Blaise Pascal)</td><td>Mécanique (engrenages)</td></tr>\n<tr><td>1936</td><td>Machine de Turing (concept)</td><td>Modèle mathématique</td></tr>\n<tr><td>1945</td><td>ENIAC (1er ordinateur électronique)</td><td>Tubes à vide (18 000)</td></tr>\n<tr><td>1947</td><td>Invention du transistor (Bell Labs)</td><td>Semi-conducteur</td></tr>\n<tr><td>1958</td><td>Circuit intégré (Jack Kilby)</td><td>Plusieurs transistors sur 1 puce</td></tr>\n<tr><td>1971</td><td>Microprocesseur Intel 4004</td><td>2 300 transistors</td></tr>\n<tr><td>1981</td><td>IBM PC</td><td>Ordinateur personnel</td></tr>\n<tr><td>2023+</td><td>Processeurs modernes</td><td>Milliards de transistors (5nm)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — P.T.E.T.C.M.</div>\n<p><strong>P</strong>ascaline → <strong>T</strong>uring → <strong>E</strong>NIAC → <strong>T</strong>ransistor → <strong>C</strong>ircuit intégré → <strong>M</strong>icroprocesseur<br/>\n        « <em>Papa Turing Envoie Tous les Circuits au Micro</em> »</p>\n</div>\n<h2>Les 5 générations d'ordinateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Gén.</th><th>Période</th><th>Technologie</th><th>Caractéristique</th></tr></thead>\n<tbody>\n<tr><td><strong>1ère</strong></td><td>1945–1955</td><td>Tubes à vide</td><td>Énormes, très chauds, peu fiables</td></tr>\n<tr><td><strong>2ème</strong></td><td>1955–1965</td><td>Transistors</td><td>Plus petits, plus fiables, langages assembleur</td></tr>\n<tr><td><strong>3ème</strong></td><td>1965–1975</td><td>Circuits intégrés</td><td>Miniaturisation, OS multiprogrammés</td></tr>\n<tr><td><strong>4ème</strong></td><td>1975–1990</td><td>Microprocesseurs (VLSI)</td><td>PC personnel, interfaces graphiques</td></tr>\n<tr><td><strong>5ème</strong></td><td>1990–auj.</td><td>IA, quantique, parallélisme</td><td>Internet, cloud, smartphones</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — T.T.C.M.I.</div>\n<p><strong>T</strong>ubes → <strong>T</strong>ransistors → <strong>C</strong>ircuits intégrés → <strong>M</strong>icroprocesseurs → <strong>I</strong>ntelligence artificielle<br/>\n        « <em>Tout Transistor Crée Mon Intelligence</em> »</p>\n</div>\n<h2>Composants matériels (Hardware)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧍 Analogie — Le corps humain</div>\n<p>CPU = cerveau · RAM = mémoire à court terme · SSD = mémoire à long terme<br/>\n        Carte mère = système nerveux · Alimentation = cœur (distribue l'énergie)</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>CPU (Processeur)</strong></td><td>Cerveau : exécute les instructions</td><td>Intel Core i9, AMD Ryzen 9</td></tr>\n<tr><td><strong>RAM (Mémoire vive)</strong></td><td>Mémoire de travail rapide, volatile</td><td>DDR5 16 Go</td></tr>\n<tr><td><strong>SSD/HDD (Stockage)</strong></td><td>Mémoire permanente, non volatile</td><td>SSD NVMe 1 To</td></tr>\n<tr><td><strong>Carte mère</strong></td><td>Interconnexion de tous les composants</td><td>ASUS, MSI, Gigabyte</td></tr>\n<tr><td><strong>Alimentation (PSU)</strong></td><td>Fournit l'énergie électrique</td><td>650W, 80+ Gold</td></tr>\n</tbody>\n</table></div>\n<h2>Unités de mesure</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Unité</th><th>Valeur</th><th>Abréviation</th></tr></thead>\n<tbody>\n<tr><td><strong>Bit</strong></td><td>0 ou 1 (unité de base)</td><td>b</td></tr>\n<tr><td><strong>Octet</strong></td><td>8 bits</td><td>o (B en anglais)</td></tr>\n<tr><td><strong>Kilo-octet</strong></td><td>1 024 octets = 2¹⁰</td><td>Ko</td></tr>\n<tr><td><strong>Méga-octet</strong></td><td>1 024 Ko = 2²⁰</td><td>Mo</td></tr>\n<tr><td><strong>Giga-octet</strong></td><td>1 024 Mo = 2³⁰</td><td>Go</td></tr>\n<tr><td><strong>Téra-octet</strong></td><td>1 024 Go = 2⁴⁰</td><td>To</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège classique</div>\n<p>En informatique, 1 Ko = <strong>1 024</strong> octets (puissance de 2). Mais les fabricants de disques utilisent souvent 1 Ko = 1 000 octets. C'est pourquoi un disque de « 1 To » affiche ~931 Go en réalité !</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — K.M.G.T.</div>\n<p><strong>K</strong>ilo (10³) → <strong>M</strong>éga (10⁶) → <strong>G</strong>iga (10⁹) → <strong>T</strong>éra (10¹²)<br/>\n        « <em>Karine Mange des Gâteaux Tous les jours</em> »</p>\n</div>\n<h2>Exercice — Conversions d'unités</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de conversion</div>\n<pre>3 Ko    = 3 × 1024         = 3 072 octets\n2 Mo    = 2 × 1024²        = 2 097 152 octets\n1,5 Go  = 1.5 × 1024³      = 1 610 612 736 octets\nSens inverse :\n5 242 880 octets → ÷1024 = 5 120 Ko → ÷1024 = 5 Mo ✓\nRÈGLE : 1 Ko = 1024 octets (pas 1000 !) en informatique</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — ATO</h3>\n<ul>\n<li>Ordinateur = machine programmable (Entrée → Traitement → Sortie)</li>\n<li>Binaire = 2 états électriques (0 et 1) → base de tout l'informatique</li>\n<li>5 générations : <strong>T.T.C.M.I.</strong> — Tubes → Transistors → CI → Micropro → IA</li>\n<li>5 composants clés : CPU · RAM · SSD/HDD · Carte mère · Alimentation</li>\n<li>Unités : <strong>K.M.G.T.</strong> — Ko (×1024) → Mo → Go → To</li>\n<li>1 Ko = 1024 octets (pas 1000 !) en informatique</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "ato",
+  "name": "Architecture Ordinateur",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Combien d'octets contient 1 Kilo-octet (Ko) en informatique ?",
-     "options": [
-      {
-       "text": "1000 octets",
-       "correct": false,
-       "explanation": "1000 est la valeur SI (utilisée par les fabricants de disques), mais en informatique 1 Ko = 1024 octets."
-      },
-      {
-       "text": "1024 octets",
-       "correct": true,
-       "explanation": "Correct ! En informatique, 1 Ko = 2¹⁰ = 1024 octets. C'est la puissance de 2 la plus proche de 1000."
-      },
-      {
-       "text": "512 octets",
-       "correct": false,
-       "explanation": "512 = 2⁹ octets, ce n'est pas la valeur du Ko."
-      },
-      {
-       "text": "2048 octets",
-       "correct": false,
-       "explanation": "2048 = 2¹¹ octets, c'est 2 fois plus qu'un Ko."
-      }
-     ]
+      "number": 1,
+      "title": "Généralités sur l'informatique",
+      "subtitle": "Histoire, composants matériels et logiciels, unités de mesure et classification des ordinateurs.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Définir ce qu'est un ordinateur et comprendre pourquoi il utilise le binaire</li><li>Connaître les 5 générations d'ordinateurs</li><li>Identifier les composants matériels (CPU, RAM, stockage, carte mère)</li><li>Maîtriser les unités de mesure (bit → octet → Ko → Mo → Go → To)</li></ul></div>\n<h2>Qu'est-ce qu'un ordinateur ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Un <strong>ordinateur</strong> est une machine électronique programmable qui :<br/>\n        1. <strong>Reçoit</strong> des données (clavier, souris, fichier…)<br/>\n        2. <strong>Traite</strong> ces données (calcule, trie, compare…) grâce à un programme<br/>\n        3. <strong>Produit</strong> des résultats (affiche, imprime, envoie…)</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — La cuisine</div>\n<p>Un ordinateur, c'est comme un cuisinier ultra-rapide.<br/>\n        Les <strong>ingrédients</strong> = données d'entrée · La <strong>recette</strong> = le programme · Le <strong>plat fini</strong> = le résultat.<br/>\n        Le cuisinier (processeur) suit la recette à la vitesse de milliards d'opérations par seconde !</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Pourquoi le binaire ?</div>\n<p>Un fil électrique n'a que 2 états : <strong>courant passe</strong> (= 1) ou <strong>ne passe pas</strong> (= 0). Toute l'informatique repose sur le binaire — deux chiffres seulement : 0 et 1.</p></div>\n<h2>Brève histoire de l'informatique</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Époque</th><th>Événement</th><th>Technologie</th></tr></thead>\n<tbody>\n<tr><td>1642</td><td>Pascaline (Blaise Pascal)</td><td>Mécanique (engrenages)</td></tr>\n<tr><td>1936</td><td>Machine de Turing (concept)</td><td>Modèle mathématique</td></tr>\n<tr><td>1945</td><td>ENIAC (1er ordinateur électronique)</td><td>Tubes à vide (18 000)</td></tr>\n<tr><td>1947</td><td>Invention du transistor (Bell Labs)</td><td>Semi-conducteur</td></tr>\n<tr><td>1958</td><td>Circuit intégré (Jack Kilby)</td><td>Plusieurs transistors sur 1 puce</td></tr>\n<tr><td>1971</td><td>Microprocesseur Intel 4004</td><td>2 300 transistors</td></tr>\n<tr><td>1981</td><td>IBM PC</td><td>Ordinateur personnel</td></tr>\n<tr><td>2023+</td><td>Processeurs modernes</td><td>Milliards de transistors (5nm)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — P.T.E.T.C.M.</div>\n<p><strong>P</strong>ascaline → <strong>T</strong>uring → <strong>E</strong>NIAC → <strong>T</strong>ransistor → <strong>C</strong>ircuit intégré → <strong>M</strong>icroprocesseur<br/>\n        « <em>Papa Turing Envoie Tous les Circuits au Micro</em> »</p></div>\n<h2>Les 5 générations d'ordinateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Gén.</th><th>Période</th><th>Technologie</th><th>Caractéristique</th></tr></thead>\n<tbody>\n<tr><td><strong>1ère</strong></td><td>1945–1955</td><td>Tubes à vide</td><td>Énormes, très chauds, peu fiables</td></tr>\n<tr><td><strong>2ème</strong></td><td>1955–1965</td><td>Transistors</td><td>Plus petits, plus fiables, langages assembleur</td></tr>\n<tr><td><strong>3ème</strong></td><td>1965–1975</td><td>Circuits intégrés</td><td>Miniaturisation, OS multiprogrammés</td></tr>\n<tr><td><strong>4ème</strong></td><td>1975–1990</td><td>Microprocesseurs (VLSI)</td><td>PC personnel, interfaces graphiques</td></tr>\n<tr><td><strong>5ème</strong></td><td>1990–auj.</td><td>IA, quantique, parallélisme</td><td>Internet, cloud, smartphones</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — T.T.C.M.I.</div>\n<p><strong>T</strong>ubes → <strong>T</strong>ransistors → <strong>C</strong>ircuits intégrés → <strong>M</strong>icroprocesseurs → <strong>I</strong>ntelligence artificielle<br/>\n        « <em>Tout Transistor Crée Mon Intelligence</em> »</p></div>\n<h2>Composants matériels (Hardware)</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — Le corps humain</div>\n<p>CPU = cerveau · RAM = mémoire à court terme · SSD = mémoire à long terme<br/>\n        Carte mère = système nerveux · Alimentation = cœur (distribue l'énergie)</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>CPU (Processeur)</strong></td><td>Cerveau : exécute les instructions</td><td>Intel Core i9, AMD Ryzen 9</td></tr>\n<tr><td><strong>RAM (Mémoire vive)</strong></td><td>Mémoire de travail rapide, volatile</td><td>DDR5 16 Go</td></tr>\n<tr><td><strong>SSD/HDD (Stockage)</strong></td><td>Mémoire permanente, non volatile</td><td>SSD NVMe 1 To</td></tr>\n<tr><td><strong>Carte mère</strong></td><td>Interconnexion de tous les composants</td><td>ASUS, MSI, Gigabyte</td></tr>\n<tr><td><strong>Alimentation (PSU)</strong></td><td>Fournit l'énergie électrique</td><td>650W, 80+ Gold</td></tr>\n</tbody>\n</table></div>\n<h2>Unités de mesure</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Unité</th><th>Valeur</th><th>Abréviation</th></tr></thead>\n<tbody>\n<tr><td><strong>Bit</strong></td><td>0 ou 1 (unité de base)</td><td>b</td></tr>\n<tr><td><strong>Octet</strong></td><td>8 bits</td><td>o (B en anglais)</td></tr>\n<tr><td><strong>Kilo-octet</strong></td><td>1 024 octets = 2¹⁰</td><td>Ko</td></tr>\n<tr><td><strong>Méga-octet</strong></td><td>1 024 Ko = 2²⁰</td><td>Mo</td></tr>\n<tr><td><strong>Giga-octet</strong></td><td>1 024 Mo = 2³⁰</td><td>Go</td></tr>\n<tr><td><strong>Téra-octet</strong></td><td>1 024 Go = 2⁴⁰</td><td>To</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège classique</div>\n<p>En informatique, 1 Ko = <strong>1 024</strong> octets (puissance de 2). Mais les fabricants de disques utilisent souvent 1 Ko = 1 000 octets. C'est pourquoi un disque de « 1 To » affiche ~931 Go en réalité !</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — K.M.G.T.</div>\n<p><strong>K</strong>ilo (10³) → <strong>M</strong>éga (10⁶) → <strong>G</strong>iga (10⁹) → <strong>T</strong>éra (10¹²)<br/>\n        « <em>Karine Mange des Gâteaux Tous les jours</em> »</p></div>\n<h2>Exercice — Conversions d'unités</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de conversion</div>\n<pre>3 Ko    = 3 × 1024         = 3 072 octets\n2 Mo    = 2 × 1024²        = 2 097 152 octets\n1,5 Go  = 1.5 × 1024³      = 1 610 612 736 octets\nSens inverse :\n5 242 880 octets → ÷1024 = 5 120 Ko → ÷1024 = 5 Mo ✓\nRÈGLE : 1 Ko = 1024 octets (pas 1000 !) en informatique</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — ATO</h3>\n<ul>\n<li>Ordinateur = machine programmable (Entrée → Traitement → Sortie)</li>\n<li>Binaire = 2 états électriques (0 et 1) → base de tout l'informatique</li>\n<li>5 générations : <strong>T.T.C.M.I.</strong> — Tubes → Transistors → CI → Micropro → IA</li>\n<li>5 composants clés : CPU · RAM · SSD/HDD · Carte mère · Alimentation</li>\n<li>Unités : <strong>K.M.G.T.</strong> — Ko (×1024) → Mo → Go → To</li>\n<li>1 Ko = 1024 octets (pas 1000 !) en informatique</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Combien d'octets contient 1 Kilo-octet (Ko) en informatique ?",
+          "options": [
+            {
+              "text": "1000 octets",
+              "correct": false,
+              "explanation": "1000 est la valeur SI (utilisée par les fabricants de disques), mais en informatique 1 Ko = 1024 octets."
+            },
+            {
+              "text": "1024 octets",
+              "correct": true,
+              "explanation": "Correct ! En informatique, 1 Ko = 2¹⁰ = 1024 octets. C'est la puissance de 2 la plus proche de 1000."
+            },
+            {
+              "text": "512 octets",
+              "correct": false,
+              "explanation": "512 = 2⁹ octets, ce n'est pas la valeur du Ko."
+            },
+            {
+              "text": "2048 octets",
+              "correct": false,
+              "explanation": "2048 = 2¹¹ octets, c'est 2 fois plus qu'un Ko."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle génération d'ordinateurs utilise les transistors ?",
+          "options": [
+            {
+              "text": "1ère génération",
+              "correct": false,
+              "explanation": "La 1ère génération utilise les tubes à vide, pas les transistors."
+            },
+            {
+              "text": "2ème génération",
+              "correct": true,
+              "explanation": "Correct ! La 2ème génération (1955-1965) remplace les tubes à vide par les transistors, plus petits et plus fiables."
+            },
+            {
+              "text": "3ème génération",
+              "correct": false,
+              "explanation": "La 3ème génération utilise les circuits intégrés."
+            },
+            {
+              "text": "4ème génération",
+              "correct": false,
+              "explanation": "La 4ème génération utilise les microprocesseurs (VLSI)."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel composant d'un ordinateur est responsable de l'exécution des instructions ?",
+          "options": [
+            {
+              "text": "RAM",
+              "correct": false,
+              "explanation": "La RAM stocke temporairement les données en cours d'utilisation mais ne les traite pas."
+            },
+            {
+              "text": "SSD",
+              "correct": false,
+              "explanation": "Le SSD stocke les données de façon permanente mais n'exécute pas d'instructions."
+            },
+            {
+              "text": "CPU (Processeur)",
+              "correct": true,
+              "explanation": "Correct ! Le CPU (Central Processing Unit = Processeur) est le cerveau de l'ordinateur : il lit et exécute les instructions du programme."
+            },
+            {
+              "text": "Carte mère",
+              "correct": false,
+              "explanation": "La carte mère interconnecte les composants mais n'exécute pas les instructions."
+            }
+          ]
+        }
+      ],
+      "source": "ato/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle génération d'ordinateurs utilise les transistors ?",
-     "options": [
-      {
-       "text": "1ère génération",
-       "correct": false,
-       "explanation": "La 1ère génération utilise les tubes à vide, pas les transistors."
-      },
-      {
-       "text": "2ème génération",
-       "correct": true,
-       "explanation": "Correct ! La 2ème génération (1955-1965) remplace les tubes à vide par les transistors, plus petits et plus fiables."
-      },
-      {
-       "text": "3ème génération",
-       "correct": false,
-       "explanation": "La 3ème génération utilise les circuits intégrés."
-      },
-      {
-       "text": "4ème génération",
-       "correct": false,
-       "explanation": "La 4ème génération utilise les microprocesseurs (VLSI)."
-      }
-     ]
+      "number": 2,
+      "title": "Systèmes de Numération",
+      "subtitle": "Binaire, octal, hexadécimal — conversions, arithmétique et codes numériques.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Maîtriser les bases 2, 8, 10, 16 et leurs conversions</li><li>Effectuer l'arithmétique binaire (addition, soustraction)</li><li>Comprendre le complément à 2 pour les nombres négatifs</li><li>Connaître les codes BCD et ASCII</li></ul></div>\n<h2>Les systèmes de numération</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — La position compte !</div>\n<p>En base 10, le chiffre \"3\" dans 300 vaut 300, dans 30 vaut 30, dans 3 vaut 3. C'est la <strong>position qui détermine la valeur</strong>. Ce principe s'applique à toutes les bases — seul le <strong>nombre de symboles</strong> change.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Base</th><th>Nom</th><th>Symboles utilisés</th><th>Usage en informatique</th></tr></thead>\n<tbody>\n<tr><td><strong>2</strong></td><td>Binaire</td><td>0, 1</td><td>Électronique, mémoire, CPU</td></tr>\n<tr><td><strong>8</strong></td><td>Octal</td><td>0–7</td><td>Anciens systèmes Unix, permissions Linux</td></tr>\n<tr><td><strong>10</strong></td><td>Décimal</td><td>0–9</td><td>Usage humain courant</td></tr>\n<tr><td><strong>16</strong></td><td>Hexadécimal</td><td>0–9, A–F</td><td>Adresses mémoire, couleurs, débogage</td></tr>\n</tbody>\n</table></div>\n<h2>Conversions — Méthodes</h2>\n<h3>Décimal → Binaire (divisions successives)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : convertir 45₁₀ en binaire</div>\n<pre>45 ÷ 2 = 22  reste 1  ↑\n22 ÷ 2 = 11  reste 0  ↑\n11 ÷ 2 = 5   reste 1  ↑   Lire les restes de bas en haut\n 5 ÷ 2 = 2   reste 1  ↑\n 2 ÷ 2 = 1   reste 0  ↑\n 1 ÷ 2 = 0   reste 1  ↑\n45₁₀ = 101101₂   ✓\nVérification : 1×32 + 0×16 + 1×8 + 1×4 + 0×2 + 1×1 = 32+8+4+1 = 45 ✓</pre></div>\n<h3>Binaire → Décimal (somme pondérée)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : convertir 1011₂ en décimal</div>\n<pre>Position :  3    2    1    0\nBit     :   1    0    1    1\nValeur  : 2³   2²   2¹   2⁰ = 8    4    2    1\n1×8 + 0×4 + 1×2 + 1×1 = 8 + 0 + 2 + 1 = 11₁₀  ✓</pre></div>\n<h3>Table de correspondance des bases</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Décimal</th><th>Binaire</th><th>Octal</th><th>Hexadécimal</th></tr></thead>\n<tbody>\n<tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>\n<tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr>\n<tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>\n<tr><td>8</td><td>1000</td><td>10</td><td>8</td></tr>\n<tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr>\n<tr><td>12</td><td>1100</td><td>14</td><td>C</td></tr>\n<tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr>\n<tr><td>16</td><td>10000</td><td>20</td><td>10</td></tr>\n<tr><td>255</td><td>11111111</td><td>377</td><td>FF</td></tr>\n</tbody>\n</table></div>\n<h3>Binaire  Hexadécimal (groupes de 4)</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Astuce — 4 bits = 1 chiffre hexa</div>\n<p>Pour convertir binaire → hexa : regrouper les bits par <strong>4 de droite à gauche</strong>, puis convertir chaque groupe.<br/>\n        Pour hexa → binaire : convertir chaque chiffre hexa en son équivalent 4 bits.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples binaire  hexadécimal</div>\n<pre>Binaire → Hexa :\n1010 1111 0011₂ = AF3₁₆\n1010=A  1111=F  0011=3\nHexa → Binaire :\n2F₁₆ = 0010 1111₂\n2=0010  F=1111</pre></div>\n<h2>Arithmétique binaire</h2>\n<h3>Addition binaire</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Règles d'addition binaire</div>\n<p>0+0=0 · 0+1=1 · 1+0=1 · 1+1=<strong>10</strong> (0 retenue 1) · 1+1+1=<strong>11</strong> (1 retenue 1)</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : 1011₂ + 0110₂</div>\n<pre>  1 0 1 1   (= 11₁₀)\n+ 0 1 1 0   (=  6₁₀)\n---------\n  1 0 0 0 1  (= 17₁₀) ✓\nRetenues :  1 1 1\n            1 0 1 1\n          + 0 1 1 0\n          ─────────\n          1 0 0 0 1</pre></div>\n<h3>Complément à 2 (nombres négatifs)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">Représentation des négatifs en binaire</div>\n<p>Pour représenter −N en binaire (sur n bits) :<br/>\n        1. Écrire N en binaire<br/>\n        2. Inverser tous les bits (complément à 1)<br/>\n        3. Ajouter 1 au résultat</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : représenter -5 sur 8 bits</div>\n<pre>+5  = 0000 0101\n     Inverser tous les bits : 1111 1010  (complément à 1)\n     Ajouter 1              : 1111 1011  (complément à 2 = -5)\nVérification : 0000 0101 + 1111 1011 = 0000 0000 (avec débordement ignoré) ✓\n→ Plage sur 8 bits avec CA2 : de -128 à +127</pre></div>\n<h2>Codes numériques</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Code</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>BCD</strong> (Binary Coded Decimal)</td><td>Chaque chiffre décimal encodé sur 4 bits séparément</td><td>35₁₀ = 0011 0101 (BCD)</td></tr>\n<tr><td><strong>ASCII</strong></td><td>7 bits pour 128 caractères (lettres, chiffres, symboles)</td><td>'A'=65=0100 0001₂</td></tr>\n<tr><td><strong>UTF-8</strong></td><td>Extension d'ASCII pour tous les caractères mondiaux</td><td>Rétro-compatible avec ASCII</td></tr>\n<tr><td><strong>Gray</strong></td><td>Un seul bit change entre 2 valeurs consécutives</td><td>3=11 → 4=110 (Gray:100)</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2 — Systèmes de Numération</h3>\n<ul>\n<li>Bases fondamentales : <strong>2</strong> (binaire) · <strong>8</strong> (octal) · <strong>10</strong> (décimal) · <strong>16</strong> (hexa)</li>\n<li>Décimal → Binaire : divisions successives par 2, lire les restes de bas en haut</li>\n<li>Binaire → Décimal : somme des puissances de 2 pondérées par les bits</li>\n<li>Binaire  Hexa : groupes de <strong>4 bits</strong>  1 chiffre hexa</li>\n<li>Addition : 1+1 = 10₂ (0, retenue 1) · 1+1+1 = 11₂</li>\n<li>Complément à 2 : inverser les bits + ajouter 1 → représente les négatifs</li>\n<li>ASCII : 65='A', 97='a', 48='0' — codes à connaître</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la valeur décimale de 11010₂ ?",
+          "options": [
+            {
+              "text": "24",
+              "correct": false,
+              "explanation": "24 serait 11000₂. Recalcule : 1×16+1×8+0×4+1×2+0×1 = 26."
+            },
+            {
+              "text": "25",
+              "correct": false,
+              "explanation": "25 serait 11001₂. Le dernier bit est 0 donc la valeur est paire."
+            },
+            {
+              "text": "26",
+              "correct": true,
+              "explanation": "Correct ! 1×2⁴ + 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 16+8+0+2+0 = 26₁₀."
+            },
+            {
+              "text": "28",
+              "correct": false,
+              "explanation": "28 serait 11100₂."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est l'équivalence hexadécimale de 1010 0111₂ ?",
+          "options": [
+            {
+              "text": "A0",
+              "correct": false,
+              "explanation": "A0 serait 1010 0000₂. Regroupe par 4 : 1010=A et 0111=7 → A7."
+            },
+            {
+              "text": "A7",
+              "correct": true,
+              "explanation": "Correct ! On regroupe par 4 bits : 1010 → A et 0111 → 7. Donc 1010 0111₂ = A7₁₆."
+            },
+            {
+              "text": "7A",
+              "correct": false,
+              "explanation": "7A serait 0111 1010₂ — les groupes sont inversés."
+            },
+            {
+              "text": "B7",
+              "correct": false,
+              "explanation": "B7 serait 1011 0111₂."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le complément à 2 de 0110 (sur 4 bits) est :",
+          "options": [
+            {
+              "text": "1001",
+              "correct": false,
+              "explanation": "1001 est le complément à 1 (inverser les bits). Il faut encore ajouter 1."
+            },
+            {
+              "text": "1010",
+              "correct": true,
+              "explanation": "Correct ! Complément à 1 de 0110 = 1001. Puis +1 = 1010. Vérif : 0110 + 1010 = 10000 (débordement ignoré sur 4 bits) = 0000 ✓"
+            },
+            {
+              "text": "1011",
+              "correct": false,
+              "explanation": "1011 serait le complément à 2 de 0101 (qui vaut 5)."
+            },
+            {
+              "text": "0110",
+              "correct": false,
+              "explanation": "0110 est la valeur originale, pas son complément."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "En ASCII, la lettre 'A' a le code décimal 65. Quel est le code de 'D' ?",
+          "options": [
+            {
+              "text": "66",
+              "correct": false,
+              "explanation": "66 est le code de 'B' (A+1)."
+            },
+            {
+              "text": "67",
+              "correct": false,
+              "explanation": "67 est le code de 'C' (A+2)."
+            },
+            {
+              "text": "68",
+              "correct": true,
+              "explanation": "Correct ! En ASCII les lettres majuscules sont consécutives : A=65, B=66, C=67, D=68. 'D' est la 4ème lettre donc A+3=68."
+            },
+            {
+              "text": "69",
+              "correct": false,
+              "explanation": "69 est le code de 'E' (A+4)."
+            }
+          ]
+        }
+      ],
+      "source": "_private/ato/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Quel composant d'un ordinateur est responsable de l'exécution des instructions ?",
-     "options": [
-      {
-       "text": "RAM",
-       "correct": false,
-       "explanation": "La RAM stocke temporairement les données en cours d'utilisation mais ne les traite pas."
-      },
-      {
-       "text": "SSD",
-       "correct": false,
-       "explanation": "Le SSD stocke les données de façon permanente mais n'exécute pas d'instructions."
-      },
-      {
-       "text": "CPU (Processeur)",
-       "correct": true,
-       "explanation": "Correct ! Le CPU (Central Processing Unit = Processeur) est le cerveau de l'ordinateur : il lit et exécute les instructions du programme."
-      },
-      {
-       "text": "Carte mère",
-       "correct": false,
-       "explanation": "La carte mère interconnecte les composants mais n'exécute pas les instructions."
-      }
-     ]
+      "number": 3,
+      "title": "Circuits Logiques",
+      "subtitle": "Portes logiques, algèbre de Boole, tableaux de Karnaugh et circuits combinatoires.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Connaître les portes logiques fondamentales (AND, OR, NOT, NAND, NOR, XOR)</li><li>Maîtriser l'algèbre de Boole et ses lois</li><li>Simplifier des expressions booléennes avec Karnaugh</li><li>Comprendre les circuits combinatoires (additionneur, multiplexeur)</li></ul></div>\n<h2>Les portes logiques fondamentales</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — Interrupteurs électriques</div>\n<p>Une porte logique, c'est comme un circuit électrique avec des interrupteurs : les entrées (0=ouvert, 1=fermé) déterminent si le courant passe (1) ou non (0) en sortie. Toute la logique numérique est construite à partir de ces briques élémentaires.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Porte</th><th>Symbole</th><th>Expression</th><th>Sortie = 1 quand</th></tr></thead>\n<tbody>\n<tr><td><strong>AND</strong> (ET)</td><td>A·B ou A∧B</td><td>S = A ET B</td><td>Toutes les entrées à 1</td></tr>\n<tr><td><strong>OR</strong> (OU)</td><td>A+B ou A∨B</td><td>S = A OU B</td><td>Au moins une entrée à 1</td></tr>\n<tr><td><strong>NOT</strong> (NON)</td><td>Ā ou ¬A</td><td>S = NON A</td><td>L'entrée est à 0</td></tr>\n<tr><td><strong>NAND</strong></td><td>A·B̄</td><td>S = NON(A ET B)</td><td>Au moins une entrée à 0</td></tr>\n<tr><td><strong>NOR</strong></td><td>A+B̄</td><td>S = NON(A OU B)</td><td>Toutes les entrées à 0</td></tr>\n<tr><td><strong>XOR</strong> (OU exclusif)</td><td>A⊕B</td><td>S = A différent de B</td><td>Les entrées sont différentes</td></tr>\n</tbody>\n</table></div>\n<h3>Tables de vérité des portes principales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th><th>NOT A</th></tr></thead>\n<tbody>\n<tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>\n<tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>\n<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>\n<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — NAND et NOR sont universels !</div>\n<p>Avec des portes <strong>NAND seules</strong> (ou NOR seules), on peut construire <strong>n'importe quelle</strong> fonction logique. Ce sont les portes universelles, très utilisées en fabrication de puces.</p></div>\n<h2>Algèbre de Boole</h2>\n<p>L'algèbre de Boole est le système mathématique qui gouverne la logique binaire. Les variables ne peuvent prendre que les valeurs 0 ou 1.</p>\n<h3>Lois fondamentales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Loi</th><th>Pour AND (·)</th><th>Pour OR (+)</th></tr></thead>\n<tbody>\n<tr><td><strong>Identité</strong></td><td>A·1 = A</td><td>A+0 = A</td></tr>\n<tr><td><strong>Annulation</strong></td><td>A·0 = 0</td><td>A+1 = 1</td></tr>\n<tr><td><strong>Idempotence</strong></td><td>A·A = A</td><td>A+A = A</td></tr>\n<tr><td><strong>Complément</strong></td><td>A·Ā = 0</td><td>A+Ā = 1</td></tr>\n<tr><td><strong>Commutativité</strong></td><td>A·B = B·A</td><td>A+B = B+A</td></tr>\n<tr><td><strong>Associativité</strong></td><td>(A·B)·C = A·(B·C)</td><td>(A+B)+C = A+(B+C)</td></tr>\n<tr><td><strong>Distributivité</strong></td><td>A·(B+C) = A·B+A·C</td><td>A+(B·C) = (A+B)·(A+C)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Lois de De Morgan — Indispensables !</div>\n<p>\\[\\overline{A \\cdot B} = \\bar{A} + \\bar{B}\\]    (NON(A ET B) = (NON A) OU (NON B))<br/><br/>\n        \\[\\overline{A + B} = \\bar{A} \\cdot \\bar{B}\\]    (NON(A OU B) = (NON A) ET (NON B))</p>\n<p><strong>Moyen mémo :</strong> On change le signe (·  +) et on distribue la négation sur chaque variable.</p></div>\n<h2>Simplification par la méthode de Karnaugh</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Le tableau de Karnaugh — regrouper les 1</div>\n<p>Le tableau de Karnaugh organise les combinaisons d'entrées de façon à ce que <strong>deux cases adjacentes ne diffèrent que d'un bit</strong> (code Gray). On regroupe les 1 par puissances de 2 (1, 2, 4, 8…) pour simplifier l'expression.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Karnaugh 2 variables (A, B)</div>\n<pre>         B=0   B=1\n  A=0  |  0  |  1  |\n  A=1  |  1  |  1  |\nLes trois 1 forment deux groupes :\n  Groupe 1 : colonne B=1 (les deux 1) → B\n  Groupe 2 : ligne A=1 (les deux 1)   → A\nRésultat : S = A + B (OU logique) ✓</pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Karnaugh 3 variables (A, B, C)</div>\n<pre>          BC\n     00  01  11  10\nA=0 |  1 | 0 | 0 | 1 |\nA=1 |  1 | 0 | 0 | 1 |\nRegroupement : colonne 00 (2 fois 1) + colonne 10 (2 fois 1) \n→ Le groupe vertical gauche : BC=00 et BC=10 → C̄ et B̄ communs → Ā·B̄\nAttends — les 4 coins forment un groupe ! → S = C̄\n(Vérif : S=1 quand C=0, quel que soit A ou B)</pre></div>\n<h2>Circuits combinatoires</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Circuit</th><th>Rôle</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Demi-additionneur</strong></td><td>Additionne 2 bits → Somme + Retenue</td><td>S = A⊕B · C = A·B</td></tr>\n<tr><td><strong>Additionneur complet</strong></td><td>Additionne 3 bits (+ retenue entrante)</td><td>Bloc de base des ALU</td></tr>\n<tr><td><strong>Multiplexeur (MUX)</strong></td><td>Sélectionne 1 entrée parmi N selon un code</td><td>Sélection de données</td></tr>\n<tr><td><strong>Démultiplexeur</strong></td><td>Envoie 1 entrée vers 1 sortie parmi N</td><td>Décodage d'adresses</td></tr>\n<tr><td><strong>Décodeur</strong></td><td>Active 1 sortie parmi 2ⁿ selon l'entrée n bits</td><td>Sélection mémoire</td></tr>\n<tr><td><strong>Comparateur</strong></td><td>Compare deux nombres binaires (=, &gt;, &lt;)</td><td>Instructions de branchement</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> Confondre NAND et NOR dans les tables de vérité. NAND = AND puis NOT. NOR = OR puis NOT.<br/>\n<strong>Piège 2 :</strong> De Morgan — ne pas oublier de changer TOUS les signes (·  +) ET complémenter chaque variable.<br/>\n<strong>Piège 3 :</strong> Dans Karnaugh, les cases des bords peuvent être adjacentes (le tableau est \"circulaire\").<br/>\n<strong>Piège 4 :</strong> Les groupes Karnaugh doivent être des puissances de 2 (1, 2, 4, 8…) et aussi grands que possible.</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3 — Circuits Logiques</h3>\n<ul>\n<li>Portes : <strong>AND</strong> (tous à 1) · <strong>OR</strong> (un à 1) · <strong>NOT</strong> (inverse) · <strong>NAND/NOR</strong> (universelles) · <strong>XOR</strong> (différents)</li>\n<li>Boole : A·1=A · A·0=0 · A+1=1 · A+0=A · A·Ā=0 · A+Ā=1</li>\n<li><strong>De Morgan :</strong> Overline{A·B} = Ā+B̄ · Overline{A+B} = Ā·B̄</li>\n<li>Karnaugh : regrouper les 1 en groupes de 2ⁿ, le plus grand possible</li>\n<li>Demi-add : S=A⊕B, C=A·B · Additionneur complet : prend la retenue en entrée</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la sortie d'une porte NAND avec A=1 et B=1 ?",
+          "options": [
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": "NAND = NOT(AND). AND(1,1)=1, donc NAND(1,1)=NOT(1)=0."
+            },
+            {
+              "text": "0",
+              "correct": true,
+              "explanation": "Correct ! NAND = NOT(AND). AND(1,1)=1, NOT(1)=0. La porte NAND ne donne 0 que lorsque toutes les entrées sont à 1."
+            },
+            {
+              "text": "X (indéterminé)",
+              "correct": false,
+              "explanation": "Les portes logiques ne peuvent donner que 0 ou 1."
+            },
+            {
+              "text": "2",
+              "correct": false,
+              "explanation": "Les portes logiques ne peuvent donner que 0 ou 1."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Selon De Morgan, l'expression Ā·B̄ est équivalente à :",
+          "options": [
+            {
+              "text": "A + B",
+              "correct": false,
+              "explanation": "A+B est l'opposé — sans complémentation."
+            },
+            {
+              "text": "A · B",
+              "correct": false,
+              "explanation": "A·B est la porte AND simple, sans complément."
+            },
+            {
+              "text": "Overline{A + B}",
+              "correct": true,
+              "explanation": "Correct ! Par De Morgan : Ā·B̄ = Overline{A+B} = NOT(A+B) = NOR(A,B). On regroupe la négation sur la somme."
+            },
+            {
+              "text": "Overline{A · B}",
+              "correct": false,
+              "explanation": "Overline{A·B} = Ā+B̄ (c'est l'autre loi de De Morgan, pour NAND)."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle porte logique est considérée comme \"universelle\" ?",
+          "options": [
+            {
+              "text": "AND",
+              "correct": false,
+              "explanation": "AND n'est pas universelle — on ne peut pas construire NOT avec seulement des AND."
+            },
+            {
+              "text": "OR",
+              "correct": false,
+              "explanation": "OR n'est pas universelle — on ne peut pas construire NOT avec seulement des OR."
+            },
+            {
+              "text": "NAND",
+              "correct": true,
+              "explanation": "Correct ! NAND est universelle : on peut construire NOT(A)=NAND(A,A), AND(A,B)=NAND(NAND(A,B),NAND(A,B)), OR(A,B)=NAND(NAND(A,A),NAND(B,B)). NOR est aussi universelle."
+            },
+            {
+              "text": "XOR",
+              "correct": false,
+              "explanation": "XOR n'est pas universelle — on ne peut pas construire AND ou OR avec seulement des XOR."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Simplifier : A·1 + A·0 =",
+          "options": [
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": "A·1=A et A·0=0, donc A·1+A·0 = A+0 = A, pas 1."
+            },
+            {
+              "text": "A",
+              "correct": true,
+              "explanation": "Correct ! A·1=A (identité AND), A·0=0 (annulation AND), A+0=A (identité OR). Donc A·1+A·0 = A+0 = A."
+            },
+            {
+              "text": "0",
+              "correct": false,
+              "explanation": "A·1+A·0 = A+0 = A, pas 0."
+            },
+            {
+              "text": "Ā",
+              "correct": false,
+              "explanation": "A·1+A·0 = A+0 = A, pas Ā."
+            }
+          ]
+        }
+      ],
+      "source": "_private/ato/chapitres/chapitre3.html"
+    },
+    {
+      "number": 4,
+      "title": "Architecture d'un PC",
+      "subtitle": "Modèle Von Neumann, CPU, cycle Fetch-Decode-Execute, mémoire et bus.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Comprendre le modèle Von Neumann</li><li>Connaître les composants du CPU (ALU, UC, registres)</li><li>Maîtriser le cycle Fetch-Decode-Execute</li><li>Distinguer les types de mémoire (hiérarchie mémoire)</li><li>Comprendre le rôle des bus</li></ul></div>\n<h2>Le modèle Von Neumann</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">L'architecture fondatrice de l'informatique</div>\n<p>Proposé par <strong>John Von Neumann</strong> en 1945, ce modèle est la base de <strong>tous les ordinateurs modernes</strong>. L'idée clé : les instructions du programme sont stockées dans la <strong>même mémoire</strong> que les données (programme enregistré).</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Architecture Von Neumann</div>\n<pre>           ┌─────────────────────────────────┐\n           │              CPU                │\n           │  ┌──────────┐  ┌────────────┐  │\n           │  │   ALU    │  │   UC       │  │\n           │  │(calculs) │  │(contrôle)  │  │\n           │  └──────────┘  └────────────┘  │\n           │  ┌─────────────────────────┐   │\n           │  │       Registres         │   │\n           │  │ PC · IR · AC · SP · ...│   │\n           │  └─────────────────────────┘   │\n           └────────────┬────────────────────┘\n                        │ Bus (données/adresses/contrôle)\n           ┌────────────┴────────────────────┐\n           │         MÉMOIRE CENTRALE        │\n           │   Instructions  +  Données      │\n           └─────────────────────────────────┘\n                        │\n           ┌────────────┴────────────────────┐\n           │    UNITÉS D'ENTRÉE/SORTIE       │\n           │  Clavier · Écran · Disque ...   │\n           └─────────────────────────────────┘</pre></div>\n<h2>Les composants du CPU</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Détails</th></tr></thead>\n<tbody>\n<tr><td><strong>ALU</strong> (Unité Arithmétique et Logique)</td><td>Effectue les calculs</td><td>Opérations +, −, ×, AND, OR, NOT, comparaisons</td></tr>\n<tr><td><strong>UC</strong> (Unité de Contrôle)</td><td>Orchestre l'exécution</td><td>Lit, décode et exécute les instructions</td></tr>\n<tr><td><strong>PC</strong> (Program Counter)</td><td>Adresse de la prochaine instruction</td><td>S'incrémente automatiquement</td></tr>\n<tr><td><strong>IR</strong> (Instruction Register)</td><td>Contient l'instruction en cours</td><td>Chargé pendant le fetch</td></tr>\n<tr><td><strong>ACC</strong> (Accumulateur)</td><td>Stocke le résultat des calculs ALU</td><td>Registre de travail principal</td></tr>\n<tr><td><strong>MAR</strong> (Memory Address Register)</td><td>Adresse mémoire à accéder</td><td>Envoyé sur le bus d'adresses</td></tr>\n<tr><td><strong>MDR</strong> (Memory Data Register)</td><td>Donnée lue/écrite en mémoire</td><td>Buffer entre CPU et mémoire</td></tr>\n</tbody>\n</table></div>\n<h2>Le cycle Fetch-Decode-Execute</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Le cœur du fonctionnement du CPU</div>\n<p>Ce cycle se répète des <strong>milliards de fois par seconde</strong> (GHz = milliards de cycles/s). C'est la base du fonctionnement de tout processeur.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Cycle Fetch → Decode → Execute (répété indéfiniment)</div>\n<pre>┌─────────────────────────────────────────────────────────┐\n│  1. FETCH (Chercher)                                    │\n│     • MAR ← PC (copier l'adresse de la prochaine instr)│\n│     • IR ← Mémoire[MAR] (charger l'instruction)        │\n│     • PC ← PC + 1 (passer à l'instruction suivante)    │\n├─────────────────────────────────────────────────────────┤\n│  2. DECODE (Décoder)                                    │\n│     • L'UC analyse l'instruction dans IR                │\n│     • Identifie l'opération et les opérandes            │\n│     • Génère les signaux de contrôle appropriés         │\n├─────────────────────────────────────────────────────────┤\n│  3. EXECUTE (Exécuter)                                  │\n│     • L'ALU effectue le calcul                          │\n│     • Les registres sont mis à jour                     │\n│     • Les résultats sont stockés (ACC ou mémoire)       │\n└─────────────────────────────────────────────────────────┘\n              ↓ Retour au FETCH ↑</pre></div>\n<h2>La hiérarchie mémoire</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Plus c'est rapide, plus c'est cher et petit</div>\n<p>La mémoire est organisée en <strong>pyramide</strong> : en haut, les mémoires rapides et coûteuses (registres, cache) ; en bas, les mémoires lentes et bon marché (disque dur, cloud). Le CPU accède d'abord au cache, puis à la RAM, puis au disque.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Type</th><th>Taille typique</th><th>Vitesse</th><th>Persistance</th></tr></thead>\n<tbody>\n<tr><td>1 (+ rapide)</td><td><strong>Registres CPU</strong></td><td>quelques octets</td><td>~0 ns (interne)</td><td>Volatile</td></tr>\n<tr><td>2</td><td><strong>Cache L1</strong></td><td>32–64 Ko</td><td>~1 ns</td><td>Volatile</td></tr>\n<tr><td>3</td><td><strong>Cache L2</strong></td><td>256 Ko–1 Mo</td><td>~5 ns</td><td>Volatile</td></tr>\n<tr><td>4</td><td><strong>Cache L3</strong></td><td>4–32 Mo</td><td>~20 ns</td><td>Volatile</td></tr>\n<tr><td>5</td><td><strong>RAM</strong> (mémoire vive)</td><td>4–64 Go</td><td>~100 ns</td><td>Volatile</td></tr>\n<tr><td>6</td><td><strong>SSD / HDD</strong></td><td>256 Go–plusieurs To</td><td>ms</td><td>Persistante</td></tr>\n<tr><td>7 (+ lent)</td><td><strong>Stockage réseau / Cloud</strong></td><td>illimité</td><td>secondes</td><td>Persistante</td></tr>\n</tbody>\n</table></div>\n<h3>RAM vs ROM</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>RAM (Random Access Memory)</th><th>ROM (Read-Only Memory)</th></tr></thead>\n<tbody>\n<tr><td><strong>Lecture/Écriture</strong></td><td>Lecture ET écriture</td><td>Lecture seulement</td></tr>\n<tr><td><strong>Volatilité</strong></td><td>Volatile (perdu à l'extinction)</td><td>Non volatile (conservé)</td></tr>\n<tr><td><strong>Usage</strong></td><td>Mémoire de travail du système</td><td>BIOS, firmware</td></tr>\n<tr><td><strong>Types</strong></td><td>SRAM (cache), DRAM (RAM principale)</td><td>PROM, EPROM, EEPROM, Flash</td></tr>\n</tbody>\n</table></div>\n<h2>Les bus</h2>\n<p>Un <strong>bus</strong> est un ensemble de fils conducteurs qui permettent la communication entre les composants. Il y a 3 types :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Bus</th><th>Rôle</th><th>Sens</th></tr></thead>\n<tbody>\n<tr><td><strong>Bus de données</strong></td><td>Transporte les données</td><td>Bidirectionnel</td></tr>\n<tr><td><strong>Bus d'adresses</strong></td><td>Indique l'adresse mémoire ciblée</td><td>CPU → Mémoire (unidirectionnel)</td></tr>\n<tr><td><strong>Bus de contrôle</strong></td><td>Signaux de lecture/écriture, interruptions</td><td>Bidirectionnel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Largeur du bus d'adresses = capacité d'adressage</div>\n<p>Un bus d'adresses de <strong>n bits</strong> peut adresser <strong>2ⁿ</strong> cases mémoire.<br/>\n        Exemple : bus 32 bits → 2³² = 4 Go d'espace d'adressage (limite des anciens CPU 32 bits !)<br/>\n        Bus 64 bits → 2⁶⁴ = 16 ExaOctets théoriques</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> RAM = volatile (perdu à l'extinction). ROM = non volatile (conservé). Ne pas confondre !<br/>\n<strong>Piège 2 :</strong> Le PC (Program Counter) ne contient pas l'instruction — il contient son <strong>adresse</strong>. L'instruction est dans l'IR.<br/>\n<strong>Piège 3 :</strong> Le cycle est Fetch → Decode → Execute, dans cet ordre exact.<br/>\n<strong>Piège 4 :</strong> La fréquence du CPU (GHz) = nb de cycles par seconde, pas nb d'instructions par seconde (une instruction peut prendre plusieurs cycles).</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 4 — Architecture d'un PC</h3>\n<ul>\n<li>Von Neumann : CPU + Mémoire (instructions+données) + E/S + Bus</li>\n<li>CPU : <strong>ALU</strong> (calculs) · <strong>UC</strong> (contrôle) · <strong>Registres</strong> (PC, IR, ACC, MAR, MDR)</li>\n<li>Cycle : <strong>Fetch</strong> (charger) → <strong>Decode</strong> (analyser) → <strong>Execute</strong> (exécuter) → retour</li>\n<li>PC = adresse prochaine instruction · IR = instruction en cours</li>\n<li>Hiérarchie : Registres &gt; Cache L1/L2/L3 &gt; RAM &gt; SSD/HDD</li>\n<li><strong>RAM</strong> = volatile (perdu à l'extinction) · <strong>ROM</strong> = non volatile (BIOS)</li>\n<li>Bus d'adresses n bits → 2ⁿ cases adressables · 32 bits = 4 Go max</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel composant du CPU contient l'adresse de la prochaine instruction à exécuter ?",
+          "options": [
+            {
+              "text": "ALU (Unité Arithmétique et Logique)",
+              "correct": false,
+              "explanation": "L'ALU effectue les calculs arithmétiques et logiques — elle ne stocke pas d'adresses d'instructions."
+            },
+            {
+              "text": "IR (Instruction Register)",
+              "correct": false,
+              "explanation": "L'IR (Instruction Register) contient l'instruction EN COURS, pas la suivante."
+            },
+            {
+              "text": "PC (Program Counter)",
+              "correct": true,
+              "explanation": "Correct ! Le PC (Program Counter ou Compteur Ordinal) contient toujours l'adresse de la prochaine instruction à exécuter. Il s'incrémente automatiquement après chaque fetch."
+            },
+            {
+              "text": "ACC (Accumulateur)",
+              "correct": false,
+              "explanation": "L'accumulateur (ACC) stocke les résultats des calculs de l'ALU, pas les adresses d'instructions."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le cycle Fetch-Decode-Execute, que se passe-t-il lors de la phase \"Decode\" ?",
+          "options": [
+            {
+              "text": "L'instruction est chargée depuis la mémoire",
+              "correct": false,
+              "explanation": "Charger l'instruction depuis la mémoire est la phase FETCH, pas Decode."
+            },
+            {
+              "text": "L'UC analyse l'instruction et génère les signaux de contrôle",
+              "correct": true,
+              "explanation": "Correct ! Pendant le Decode, l'Unité de Contrôle analyse l'instruction présente dans l'IR, identifie l'opération et les opérandes, et génère les signaux de contrôle pour l'exécution."
+            },
+            {
+              "text": "L'ALU effectue le calcul demandé",
+              "correct": false,
+              "explanation": "Effectuer le calcul est la phase EXECUTE, pas Decode."
+            },
+            {
+              "text": "Le résultat est stocké en mémoire",
+              "correct": false,
+              "explanation": "Stocker le résultat est la phase EXECUTE (fin de l'exécution), pas Decode."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle mémoire est volatile (son contenu est perdu à l'extinction) ?",
+          "options": [
+            {
+              "text": "Disque dur (HDD)",
+              "correct": false,
+              "explanation": "Le disque dur (HDD) est une mémoire de masse persistante — les données sont conservées après extinction."
+            },
+            {
+              "text": "SSD (Solid State Drive)",
+              "correct": false,
+              "explanation": "Le SSD est une mémoire flash persistante — les données sont conservées après extinction."
+            },
+            {
+              "text": "RAM (Random Access Memory)",
+              "correct": true,
+              "explanation": "Correct ! La RAM (Random Access Memory) est volatile : toutes les données disparaissent quand on coupe l'alimentation. C'est pourquoi on sauvegarde sur disque. La ROM, elle, est non volatile."
+            },
+            {
+              "text": "ROM (Read-Only Memory)",
+              "correct": false,
+              "explanation": "La ROM (Read-Only Memory) est non volatile — c'est l'inverse de la RAM. Elle contient notamment le BIOS."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Un bus d'adresses de 32 bits peut adresser au maximum :",
+          "options": [
+            {
+              "text": "32 cases mémoire",
+              "correct": false,
+              "explanation": "32 cases est beaucoup trop peu. 2³² = 4 Go."
+            },
+            {
+              "text": "2 Go",
+              "correct": false,
+              "explanation": "2 Go = 2³¹ cases. 2³² = 4 Go."
+            },
+            {
+              "text": "4 Go",
+              "correct": true,
+              "explanation": "Correct ! 2³² = 4 294 967 296 octets = 4 Go. C'est la limite d'adressage des systèmes 32 bits, c'est pourquoi les anciens Windows 32 bits ne pouvaient pas utiliser plus de 4 Go de RAM."
+            },
+            {
+              "text": "16 Go",
+              "correct": false,
+              "explanation": "16 Go = 2³⁴ cases. Avec 32 bits on a 2³² = 4 Go."
+            }
+          ]
+        }
+      ],
+      "source": "_private/ato/chapitres/chapitre4.html"
     }
-   ],
-   "source": "ato/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Systèmes de Numération",
-   "subtitle": "Binaire, octal, hexadécimal — conversions, arithmétique et codes numériques.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Maîtriser les bases 2, 8, 10, 16 et leurs conversions<br/>\n        • Effectuer l'arithmétique binaire (addition, soustraction)<br/>\n        • Comprendre le complément à 2 pour les nombres négatifs<br/>\n        • Connaître les codes BCD et ASCII</p>\n</div>\n<h2>Les systèmes de numération</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎲 Analogie — La position compte !</div>\n<p>En base 10, le chiffre \"3\" dans 300 vaut 300, dans 30 vaut 30, dans 3 vaut 3. C'est la <strong>position qui détermine la valeur</strong>. Ce principe s'applique à toutes les bases — seul le <strong>nombre de symboles</strong> change.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Base</th><th>Nom</th><th>Symboles utilisés</th><th>Usage en informatique</th></tr></thead>\n<tbody>\n<tr><td><strong>2</strong></td><td>Binaire</td><td>0, 1</td><td>Électronique, mémoire, CPU</td></tr>\n<tr><td><strong>8</strong></td><td>Octal</td><td>0–7</td><td>Anciens systèmes Unix, permissions Linux</td></tr>\n<tr><td><strong>10</strong></td><td>Décimal</td><td>0–9</td><td>Usage humain courant</td></tr>\n<tr><td><strong>16</strong></td><td>Hexadécimal</td><td>0–9, A–F</td><td>Adresses mémoire, couleurs, débogage</td></tr>\n</tbody>\n</table></div>\n<h2>Conversions — Méthodes</h2>\n<h3>Décimal → Binaire (divisions successives)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : convertir 45₁₀ en binaire</div>\n<pre>45 ÷ 2 = 22  reste 1  ↑\n22 ÷ 2 = 11  reste 0  ↑\n11 ÷ 2 = 5   reste 1  ↑   Lire les restes de bas en haut\n 5 ÷ 2 = 2   reste 1  ↑\n 2 ÷ 2 = 1   reste 0  ↑\n 1 ÷ 2 = 0   reste 1  ↑\n45₁₀ = 101101₂   ✓\nVérification : 1×32 + 0×16 + 1×8 + 1×4 + 0×2 + 1×1 = 32+8+4+1 = 45 ✓</pre>\n</div>\n<h3>Binaire → Décimal (somme pondérée)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : convertir 1011₂ en décimal</div>\n<pre>Position :  3    2    1    0\nBit     :   1    0    1    1\nValeur  : 2³   2²   2¹   2⁰ = 8    4    2    1\n1×8 + 0×4 + 1×2 + 1×1 = 8 + 0 + 2 + 1 = 11₁₀  ✓</pre>\n</div>\n<h3>Table de correspondance des bases</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Décimal</th><th>Binaire</th><th>Octal</th><th>Hexadécimal</th></tr></thead>\n<tbody>\n<tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>\n<tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr>\n<tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>\n<tr><td>8</td><td>1000</td><td>10</td><td>8</td></tr>\n<tr><td>10</td><td>1010</td><td>12</td><td>A</td></tr>\n<tr><td>12</td><td>1100</td><td>14</td><td>C</td></tr>\n<tr><td>15</td><td>1111</td><td>17</td><td>F</td></tr>\n<tr><td>16</td><td>10000</td><td>20</td><td>10</td></tr>\n<tr><td>255</td><td>11111111</td><td>377</td><td>FF</td></tr>\n</tbody>\n</table></div>\n<h3>Binaire ↔ Hexadécimal (groupes de 4)</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Astuce — 4 bits = 1 chiffre hexa</div>\n<p>Pour convertir binaire → hexa : regrouper les bits par <strong>4 de droite à gauche</strong>, puis convertir chaque groupe.<br/>\n        Pour hexa → binaire : convertir chaque chiffre hexa en son équivalent 4 bits.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples binaire ↔ hexadécimal</div>\n<pre>Binaire → Hexa :\n1010 1111 0011₂ = AF3₁₆\n1010=A  1111=F  0011=3\nHexa → Binaire :\n2F₁₆ = 0010 1111₂\n2=0010  F=1111</pre>\n</div>\n<h2>Arithmétique binaire</h2>\n<h3>Addition binaire</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧮 Règles d'addition binaire</div>\n<p>0+0=0 · 0+1=1 · 1+0=1 · 1+1=<strong>10</strong> (0 retenue 1) · 1+1+1=<strong>11</strong> (1 retenue 1)</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : 1011₂ + 0110₂</div>\n<pre>  1 0 1 1   (= 11₁₀)\n+ 0 1 1 0   (=  6₁₀)\n---------\n  1 0 0 0 1  (= 17₁₀) ✓\nRetenues :  1 1 1\n            1 0 1 1\n          + 0 1 1 0\n          ─────────\n          1 0 0 0 1</pre>\n</div>\n<h3>Complément à 2 (nombres négatifs)</h3>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Représentation des négatifs en binaire</div>\n<p>Pour représenter −N en binaire (sur n bits) :<br/>\n        1. Écrire N en binaire<br/>\n        2. Inverser tous les bits (complément à 1)<br/>\n        3. Ajouter 1 au résultat</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : représenter -5 sur 8 bits</div>\n<pre>+5  = 0000 0101\n     Inverser tous les bits : 1111 1010  (complément à 1)\n     Ajouter 1              : 1111 1011  (complément à 2 = -5)\nVérification : 0000 0101 + 1111 1011 = 0000 0000 (avec débordement ignoré) ✓\n→ Plage sur 8 bits avec CA2 : de -128 à +127</pre>\n</div>\n<h2>Codes numériques</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Code</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>BCD</strong> (Binary Coded Decimal)</td><td>Chaque chiffre décimal encodé sur 4 bits séparément</td><td>35₁₀ = 0011 0101 (BCD)</td></tr>\n<tr><td><strong>ASCII</strong></td><td>7 bits pour 128 caractères (lettres, chiffres, symboles)</td><td>'A'=65=0100 0001₂</td></tr>\n<tr><td><strong>UTF-8</strong></td><td>Extension d'ASCII pour tous les caractères mondiaux</td><td>Rétro-compatible avec ASCII</td></tr>\n<tr><td><strong>Gray</strong></td><td>Un seul bit change entre 2 valeurs consécutives</td><td>3=11 → 4=110 (Gray:100)</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2 — Systèmes de Numération</h3>\n<ul>\n<li>Bases fondamentales : <strong>2</strong> (binaire) · <strong>8</strong> (octal) · <strong>10</strong> (décimal) · <strong>16</strong> (hexa)</li>\n<li>Décimal → Binaire : divisions successives par 2, lire les restes de bas en haut</li>\n<li>Binaire → Décimal : somme des puissances de 2 pondérées par les bits</li>\n<li>Binaire ↔ Hexa : groupes de <strong>4 bits</strong> ↔ 1 chiffre hexa</li>\n<li>Addition : 1+1 = 10₂ (0, retenue 1) · 1+1+1 = 11₂</li>\n<li>Complément à 2 : inverser les bits + ajouter 1 → représente les négatifs</li>\n<li>ASCII : 65='A', 97='a', 48='0' — codes à connaître</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Quelle est la valeur décimale de 11010₂ ?",
-     "options": [
-      {
-       "text": "24",
-       "correct": false,
-       "explanation": "24 serait 11000₂. Recalcule : 1×16+1×8+0×4+1×2+0×1 = 26."
-      },
-      {
-       "text": "25",
-       "correct": false,
-       "explanation": "25 serait 11001₂. Le dernier bit est 0 donc la valeur est paire."
-      },
-      {
-       "text": "26",
-       "correct": true,
-       "explanation": "Correct ! 1×2⁴ + 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 16+8+0+2+0 = 26₁₀."
-      },
-      {
-       "text": "28",
-       "correct": false,
-       "explanation": "28 serait 11100₂."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Généralités sur linformatique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Quelle est l'équivalence hexadécimale de 1010 0111₂ ?",
-     "options": [
-      {
-       "text": "A0",
-       "correct": false,
-       "explanation": "A0 serait 1010 0000₂. Regroupe par 4 : 1010=A et 0111=7 → A7."
-      },
-      {
-       "text": "A7",
-       "correct": true,
-       "explanation": "Correct ! On regroupe par 4 bits : 1010 → A et 0111 → 7. Donc 1010 0111₂ = A7₁₆."
-      },
-      {
-       "text": "7A",
-       "correct": false,
-       "explanation": "7A serait 0111 1010₂ — les groupes sont inversés."
-      },
-      {
-       "text": "B7",
-       "correct": false,
-       "explanation": "B7 serait 1011 0111₂."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Généralités sur linformatique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Le complément à 2 de 0110 (sur 4 bits) est :",
-     "options": [
-      {
-       "text": "1001",
-       "correct": false,
-       "explanation": "1001 est le complément à 1 (inverser les bits). Il faut encore ajouter 1."
-      },
-      {
-       "text": "1010",
-       "correct": true,
-       "explanation": "Correct ! Complément à 1 de 0110 = 1001. Puis +1 = 1010. Vérif : 0110 + 1010 = 10000 (débordement ignoré sur 4 bits) = 0000 ✓"
-      },
-      {
-       "text": "1011",
-       "correct": false,
-       "explanation": "1011 serait le complément à 2 de 0101 (qui vaut 5)."
-      },
-      {
-       "text": "0110",
-       "correct": false,
-       "explanation": "0110 est la valeur originale, pas son complément."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Généralités sur linformatique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "En ASCII, la lettre 'A' a le code décimal 65. Quel est le code de 'D' ?",
-     "options": [
-      {
-       "text": "66",
-       "correct": false,
-       "explanation": "66 est le code de 'B' (A+1)."
-      },
-      {
-       "text": "67",
-       "correct": false,
-       "explanation": "67 est le code de 'C' (A+2)."
-      },
-      {
-       "text": "68",
-       "correct": true,
-       "explanation": "Correct ! En ASCII les lettres majuscules sont consécutives : A=65, B=66, C=67, D=68. 'D' est la 4ème lettre donc A+3=68."
-      },
-      {
-       "text": "69",
-       "correct": false,
-       "explanation": "69 est le code de 'E' (A+4)."
-      }
-     ]
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Généralités sur linformatique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Généralités sur linformatique.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Systèmes de Numération.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Systèmes de Numération.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Systèmes de Numération.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Systèmes de Numération.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Systèmes de Numération.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Circuits Logiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Circuits Logiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Circuits Logiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Circuits Logiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Circuits Logiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Architecture dun PC.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Architecture dun PC.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Architecture dun PC.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Architecture dun PC.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Architecture dun PC.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/ato/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Circuits Logiques",
-   "subtitle": "Portes logiques, algèbre de Boole, tableaux de Karnaugh et circuits combinatoires.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Connaître les portes logiques fondamentales (AND, OR, NOT, NAND, NOR, XOR)<br/>\n        • Maîtriser l'algèbre de Boole et ses lois<br/>\n        • Simplifier des expressions booléennes avec Karnaugh<br/>\n        • Comprendre les circuits combinatoires (additionneur, multiplexeur)</p>\n</div>\n<h2>Les portes logiques fondamentales</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Analogie — Interrupteurs électriques</div>\n<p>Une porte logique, c'est comme un circuit électrique avec des interrupteurs : les entrées (0=ouvert, 1=fermé) déterminent si le courant passe (1) ou non (0) en sortie. Toute la logique numérique est construite à partir de ces briques élémentaires.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Porte</th><th>Symbole</th><th>Expression</th><th>Sortie = 1 quand</th></tr></thead>\n<tbody>\n<tr><td><strong>AND</strong> (ET)</td><td>A·B ou A∧B</td><td>S = A ET B</td><td>Toutes les entrées à 1</td></tr>\n<tr><td><strong>OR</strong> (OU)</td><td>A+B ou A∨B</td><td>S = A OU B</td><td>Au moins une entrée à 1</td></tr>\n<tr><td><strong>NOT</strong> (NON)</td><td>Ā ou ¬A</td><td>S = NON A</td><td>L'entrée est à 0</td></tr>\n<tr><td><strong>NAND</strong></td><td>A·B̄</td><td>S = NON(A ET B)</td><td>Au moins une entrée à 0</td></tr>\n<tr><td><strong>NOR</strong></td><td>A+B̄</td><td>S = NON(A OU B)</td><td>Toutes les entrées à 0</td></tr>\n<tr><td><strong>XOR</strong> (OU exclusif)</td><td>A⊕B</td><td>S = A différent de B</td><td>Les entrées sont différentes</td></tr>\n</tbody>\n</table></div>\n<h3>Tables de vérité des portes principales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>A</th><th>B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th><th>NOT A</th></tr></thead>\n<tbody>\n<tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>\n<tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>\n<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>\n<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — NAND et NOR sont universels !</div>\n<p>Avec des portes <strong>NAND seules</strong> (ou NOR seules), on peut construire <strong>n'importe quelle</strong> fonction logique. Ce sont les portes universelles, très utilisées en fabrication de puces.</p>\n</div>\n<h2>Algèbre de Boole</h2>\n<p>L'algèbre de Boole est le système mathématique qui gouverne la logique binaire. Les variables ne peuvent prendre que les valeurs 0 ou 1.</p>\n<h3>Lois fondamentales</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Loi</th><th>Pour AND (·)</th><th>Pour OR (+)</th></tr></thead>\n<tbody>\n<tr><td><strong>Identité</strong></td><td>A·1 = A</td><td>A+0 = A</td></tr>\n<tr><td><strong>Annulation</strong></td><td>A·0 = 0</td><td>A+1 = 1</td></tr>\n<tr><td><strong>Idempotence</strong></td><td>A·A = A</td><td>A+A = A</td></tr>\n<tr><td><strong>Complément</strong></td><td>A·Ā = 0</td><td>A+Ā = 1</td></tr>\n<tr><td><strong>Commutativité</strong></td><td>A·B = B·A</td><td>A+B = B+A</td></tr>\n<tr><td><strong>Associativité</strong></td><td>(A·B)·C = A·(B·C)</td><td>(A+B)+C = A+(B+C)</td></tr>\n<tr><td><strong>Distributivité</strong></td><td>A·(B+C) = A·B+A·C</td><td>A+(B·C) = (A+B)·(A+C)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⭐ Lois de De Morgan — Indispensables !</div>\n<p>\\[\\overline{A \\cdot B} = \\bar{A} + \\bar{B}\\]    (NON(A ET B) = (NON A) OU (NON B))<br/><br/>\n        \\[\\overline{A + B} = \\bar{A} \\cdot \\bar{B}\\]    (NON(A OU B) = (NON A) ET (NON B))</p>\n<p><strong>Moyen mémo :</strong> On change le signe (· ↔ +) et on distribue la négation sur chaque variable.</p>\n</div>\n<h2>Simplification par la méthode de Karnaugh</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🗺️ Le tableau de Karnaugh — regrouper les 1</div>\n<p>Le tableau de Karnaugh organise les combinaisons d'entrées de façon à ce que <strong>deux cases adjacentes ne diffèrent que d'un bit</strong> (code Gray). On regroupe les 1 par puissances de 2 (1, 2, 4, 8…) pour simplifier l'expression.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Karnaugh 2 variables (A, B)</div>\n<pre>         B=0   B=1\n  A=0  |  0  |  1  |\n  A=1  |  1  |  1  |\nLes trois 1 forment deux groupes :\n  Groupe 1 : colonne B=1 (les deux 1) → B\n  Groupe 2 : ligne A=1 (les deux 1)   → A\nRésultat : S = A + B (OU logique) ✓</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Karnaugh 3 variables (A, B, C)</div>\n<pre>          BC\n     00  01  11  10\nA=0 |  1 | 0 | 0 | 1 |\nA=1 |  1 | 0 | 0 | 1 |\nRegroupement : colonne 00 (2 fois 1) + colonne 10 (2 fois 1) \n→ Le groupe vertical gauche : BC=00 et BC=10 → C̄ et B̄ communs → Ā·B̄\nAttends — les 4 coins forment un groupe ! → S = C̄\n(Vérif : S=1 quand C=0, quel que soit A ou B)</pre>\n</div>\n<h2>Circuits combinatoires</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Circuit</th><th>Rôle</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Demi-additionneur</strong></td><td>Additionne 2 bits → Somme + Retenue</td><td>S = A⊕B · C = A·B</td></tr>\n<tr><td><strong>Additionneur complet</strong></td><td>Additionne 3 bits (+ retenue entrante)</td><td>Bloc de base des ALU</td></tr>\n<tr><td><strong>Multiplexeur (MUX)</strong></td><td>Sélectionne 1 entrée parmi N selon un code</td><td>Sélection de données</td></tr>\n<tr><td><strong>Démultiplexeur</strong></td><td>Envoie 1 entrée vers 1 sortie parmi N</td><td>Décodage d'adresses</td></tr>\n<tr><td><strong>Décodeur</strong></td><td>Active 1 sortie parmi 2ⁿ selon l'entrée n bits</td><td>Sélection mémoire</td></tr>\n<tr><td><strong>Comparateur</strong></td><td>Compare deux nombres binaires (=, &gt;, &lt;)</td><td>Instructions de branchement</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> Confondre NAND et NOR dans les tables de vérité. NAND = AND puis NOT. NOR = OR puis NOT.<br/>\n<strong>Piège 2 :</strong> De Morgan — ne pas oublier de changer TOUS les signes (· ↔ +) ET complémenter chaque variable.<br/>\n<strong>Piège 3 :</strong> Dans Karnaugh, les cases des bords peuvent être adjacentes (le tableau est \"circulaire\").<br/>\n<strong>Piège 4 :</strong> Les groupes Karnaugh doivent être des puissances de 2 (1, 2, 4, 8…) et aussi grands que possible.</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3 — Circuits Logiques</h3>\n<ul>\n<li>Portes : <strong>AND</strong> (tous à 1) · <strong>OR</strong> (un à 1) · <strong>NOT</strong> (inverse) · <strong>NAND/NOR</strong> (universelles) · <strong>XOR</strong> (différents)</li>\n<li>Boole : A·1=A · A·0=0 · A+1=1 · A+0=A · A·Ā=0 · A+Ā=1</li>\n<li><strong>De Morgan :</strong> Overline{A·B} = Ā+B̄ · Overline{A+B} = Ā·B̄</li>\n<li>Karnaugh : regrouper les 1 en groupes de 2ⁿ, le plus grand possible</li>\n<li>Demi-add : S=A⊕B, C=A·B · Additionneur complet : prend la retenue en entrée</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quelle est la sortie d'une porte NAND avec A=1 et B=1 ?",
-     "options": [
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": "NAND = NOT(AND). AND(1,1)=1, donc NAND(1,1)=NOT(1)=0."
-      },
-      {
-       "text": "0",
-       "correct": true,
-       "explanation": "Correct ! NAND = NOT(AND). AND(1,1)=1, NOT(1)=0. La porte NAND ne donne 0 que lorsque toutes les entrées sont à 1."
-      },
-      {
-       "text": "X (indéterminé)",
-       "correct": false,
-       "explanation": "Les portes logiques ne peuvent donner que 0 ou 1."
-      },
-      {
-       "text": "2",
-       "correct": false,
-       "explanation": "Les portes logiques ne peuvent donner que 0 ou 1."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Selon De Morgan, l'expression Ā·B̄ est équivalente à :",
-     "options": [
-      {
-       "text": "A + B",
-       "correct": false,
-       "explanation": "A+B est l'opposé — sans complémentation."
-      },
-      {
-       "text": "A · B",
-       "correct": false,
-       "explanation": "A·B est la porte AND simple, sans complément."
-      },
-      {
-       "text": "Overline{A + B}",
-       "correct": true,
-       "explanation": "Correct ! Par De Morgan : Ā·B̄ = Overline{A+B} = NOT(A+B) = NOR(A,B). On regroupe la négation sur la somme."
-      },
-      {
-       "text": "Overline{A · B}",
-       "correct": false,
-       "explanation": "Overline{A·B} = Ā+B̄ (c'est l'autre loi de De Morgan, pour NAND)."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle porte logique est considérée comme \"universelle\" ?",
-     "options": [
-      {
-       "text": "AND",
-       "correct": false,
-       "explanation": "AND n'est pas universelle — on ne peut pas construire NOT avec seulement des AND."
-      },
-      {
-       "text": "OR",
-       "correct": false,
-       "explanation": "OR n'est pas universelle — on ne peut pas construire NOT avec seulement des OR."
-      },
-      {
-       "text": "NAND",
-       "correct": true,
-       "explanation": "Correct ! NAND est universelle : on peut construire NOT(A)=NAND(A,A), AND(A,B)=NAND(NAND(A,B),NAND(A,B)), OR(A,B)=NAND(NAND(A,A),NAND(B,B)). NOR est aussi universelle."
-      },
-      {
-       "text": "XOR",
-       "correct": false,
-       "explanation": "XOR n'est pas universelle — on ne peut pas construire AND ou OR avec seulement des XOR."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Simplifier : A·1 + A·0 =",
-     "options": [
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": "A·1=A et A·0=0, donc A·1+A·0 = A+0 = A, pas 1."
-      },
-      {
-       "text": "A",
-       "correct": true,
-       "explanation": "Correct ! A·1=A (identité AND), A·0=0 (annulation AND), A+0=A (identité OR). Donc A·1+A·0 = A+0 = A."
-      },
-      {
-       "text": "0",
-       "correct": false,
-       "explanation": "A·1+A·0 = A+0 = A, pas 0."
-      },
-      {
-       "text": "Ā",
-       "correct": false,
-       "explanation": "A·1+A·0 = A+0 = A, pas Ā."
-      }
-     ]
-    }
-   ],
-   "source": "_private/ato/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Architecture d'un PC",
-   "subtitle": "Modèle Von Neumann, CPU, cycle Fetch-Decode-Execute, mémoire et bus.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Comprendre le modèle Von Neumann<br/>\n        • Connaître les composants du CPU (ALU, UC, registres)<br/>\n        • Maîtriser le cycle Fetch-Decode-Execute<br/>\n        • Distinguer les types de mémoire (hiérarchie mémoire)<br/>\n        • Comprendre le rôle des bus</p>\n</div>\n<h2>Le modèle Von Neumann</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏛️ L'architecture fondatrice de l'informatique</div>\n<p>Proposé par <strong>John Von Neumann</strong> en 1945, ce modèle est la base de <strong>tous les ordinateurs modernes</strong>. L'idée clé : les instructions du programme sont stockées dans la <strong>même mémoire</strong> que les données (programme enregistré).</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Architecture Von Neumann</div>\n<pre>           ┌─────────────────────────────────┐\n           │              CPU                │\n           │  ┌──────────┐  ┌────────────┐  │\n           │  │   ALU    │  │   UC       │  │\n           │  │(calculs) │  │(contrôle)  │  │\n           │  └──────────┘  └────────────┘  │\n           │  ┌─────────────────────────┐   │\n           │  │       Registres         │   │\n           │  │ PC · IR · AC · SP · ...│   │\n           │  └─────────────────────────┘   │\n           └────────────┬────────────────────┘\n                        │ Bus (données/adresses/contrôle)\n           ┌────────────┴────────────────────┐\n           │         MÉMOIRE CENTRALE        │\n           │   Instructions  +  Données      │\n           └─────────────────────────────────┘\n                        │\n           ┌────────────┴────────────────────┐\n           │    UNITÉS D'ENTRÉE/SORTIE       │\n           │  Clavier · Écran · Disque ...   │\n           └─────────────────────────────────┘</pre>\n</div>\n<h2>Les composants du CPU</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Détails</th></tr></thead>\n<tbody>\n<tr><td><strong>ALU</strong> (Unité Arithmétique et Logique)</td><td>Effectue les calculs</td><td>Opérations +, −, ×, AND, OR, NOT, comparaisons</td></tr>\n<tr><td><strong>UC</strong> (Unité de Contrôle)</td><td>Orchestre l'exécution</td><td>Lit, décode et exécute les instructions</td></tr>\n<tr><td><strong>PC</strong> (Program Counter)</td><td>Adresse de la prochaine instruction</td><td>S'incrémente automatiquement</td></tr>\n<tr><td><strong>IR</strong> (Instruction Register)</td><td>Contient l'instruction en cours</td><td>Chargé pendant le fetch</td></tr>\n<tr><td><strong>ACC</strong> (Accumulateur)</td><td>Stocke le résultat des calculs ALU</td><td>Registre de travail principal</td></tr>\n<tr><td><strong>MAR</strong> (Memory Address Register)</td><td>Adresse mémoire à accéder</td><td>Envoyé sur le bus d'adresses</td></tr>\n<tr><td><strong>MDR</strong> (Memory Data Register)</td><td>Donnée lue/écrite en mémoire</td><td>Buffer entre CPU et mémoire</td></tr>\n</tbody>\n</table></div>\n<h2>Le cycle Fetch-Decode-Execute</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔄 Le cœur du fonctionnement du CPU</div>\n<p>Ce cycle se répète des <strong>milliards de fois par seconde</strong> (GHz = milliards de cycles/s). C'est la base du fonctionnement de tout processeur.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Cycle Fetch → Decode → Execute (répété indéfiniment)</div>\n<pre>┌─────────────────────────────────────────────────────────┐\n│  1. FETCH (Chercher)                                    │\n│     • MAR ← PC (copier l'adresse de la prochaine instr)│\n│     • IR ← Mémoire[MAR] (charger l'instruction)        │\n│     • PC ← PC + 1 (passer à l'instruction suivante)    │\n├─────────────────────────────────────────────────────────┤\n│  2. DECODE (Décoder)                                    │\n│     • L'UC analyse l'instruction dans IR                │\n│     • Identifie l'opération et les opérandes            │\n│     • Génère les signaux de contrôle appropriés         │\n├─────────────────────────────────────────────────────────┤\n│  3. EXECUTE (Exécuter)                                  │\n│     • L'ALU effectue le calcul                          │\n│     • Les registres sont mis à jour                     │\n│     • Les résultats sont stockés (ACC ou mémoire)       │\n└─────────────────────────────────────────────────────────┘\n              ↓ Retour au FETCH ↑</pre>\n</div>\n<h2>La hiérarchie mémoire</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">⚡ Plus c'est rapide, plus c'est cher et petit</div>\n<p>La mémoire est organisée en <strong>pyramide</strong> : en haut, les mémoires rapides et coûteuses (registres, cache) ; en bas, les mémoires lentes et bon marché (disque dur, cloud). Le CPU accède d'abord au cache, puis à la RAM, puis au disque.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Niveau</th><th>Type</th><th>Taille typique</th><th>Vitesse</th><th>Persistance</th></tr></thead>\n<tbody>\n<tr><td>1 (+ rapide)</td><td><strong>Registres CPU</strong></td><td>quelques octets</td><td>~0 ns (interne)</td><td>Volatile</td></tr>\n<tr><td>2</td><td><strong>Cache L1</strong></td><td>32–64 Ko</td><td>~1 ns</td><td>Volatile</td></tr>\n<tr><td>3</td><td><strong>Cache L2</strong></td><td>256 Ko–1 Mo</td><td>~5 ns</td><td>Volatile</td></tr>\n<tr><td>4</td><td><strong>Cache L3</strong></td><td>4–32 Mo</td><td>~20 ns</td><td>Volatile</td></tr>\n<tr><td>5</td><td><strong>RAM</strong> (mémoire vive)</td><td>4–64 Go</td><td>~100 ns</td><td>Volatile</td></tr>\n<tr><td>6</td><td><strong>SSD / HDD</strong></td><td>256 Go–plusieurs To</td><td>ms</td><td>Persistante</td></tr>\n<tr><td>7 (+ lent)</td><td><strong>Stockage réseau / Cloud</strong></td><td>illimité</td><td>secondes</td><td>Persistante</td></tr>\n</tbody>\n</table></div>\n<h3>RAM vs ROM</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>RAM (Random Access Memory)</th><th>ROM (Read-Only Memory)</th></tr></thead>\n<tbody>\n<tr><td><strong>Lecture/Écriture</strong></td><td>Lecture ET écriture</td><td>Lecture seulement</td></tr>\n<tr><td><strong>Volatilité</strong></td><td>Volatile (perdu à l'extinction)</td><td>Non volatile (conservé)</td></tr>\n<tr><td><strong>Usage</strong></td><td>Mémoire de travail du système</td><td>BIOS, firmware</td></tr>\n<tr><td><strong>Types</strong></td><td>SRAM (cache), DRAM (RAM principale)</td><td>PROM, EPROM, EEPROM, Flash</td></tr>\n</tbody>\n</table></div>\n<h2>Les bus</h2>\n<p>Un <strong>bus</strong> est un ensemble de fils conducteurs qui permettent la communication entre les composants. Il y a 3 types :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Bus</th><th>Rôle</th><th>Sens</th></tr></thead>\n<tbody>\n<tr><td><strong>Bus de données</strong></td><td>Transporte les données</td><td>Bidirectionnel</td></tr>\n<tr><td><strong>Bus d'adresses</strong></td><td>Indique l'adresse mémoire ciblée</td><td>CPU → Mémoire (unidirectionnel)</td></tr>\n<tr><td><strong>Bus de contrôle</strong></td><td>Signaux de lecture/écriture, interruptions</td><td>Bidirectionnel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Largeur du bus d'adresses = capacité d'adressage</div>\n<p>Un bus d'adresses de <strong>n bits</strong> peut adresser <strong>2ⁿ</strong> cases mémoire.<br/>\n        Exemple : bus 32 bits → 2³² = 4 Go d'espace d'adressage (limite des anciens CPU 32 bits !)<br/>\n        Bus 64 bits → 2⁶⁴ = 16 ExaOctets théoriques</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> RAM = volatile (perdu à l'extinction). ROM = non volatile (conservé). Ne pas confondre !<br/>\n<strong>Piège 2 :</strong> Le PC (Program Counter) ne contient pas l'instruction — il contient son <strong>adresse</strong>. L'instruction est dans l'IR.<br/>\n<strong>Piège 3 :</strong> Le cycle est Fetch → Decode → Execute, dans cet ordre exact.<br/>\n<strong>Piège 4 :</strong> La fréquence du CPU (GHz) = nb de cycles par seconde, pas nb d'instructions par seconde (une instruction peut prendre plusieurs cycles).</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4 — Architecture d'un PC</h3>\n<ul>\n<li>Von Neumann : CPU + Mémoire (instructions+données) + E/S + Bus</li>\n<li>CPU : <strong>ALU</strong> (calculs) · <strong>UC</strong> (contrôle) · <strong>Registres</strong> (PC, IR, ACC, MAR, MDR)</li>\n<li>Cycle : <strong>Fetch</strong> (charger) → <strong>Decode</strong> (analyser) → <strong>Execute</strong> (exécuter) → retour</li>\n<li>PC = adresse prochaine instruction · IR = instruction en cours</li>\n<li>Hiérarchie : Registres &gt; Cache L1/L2/L3 &gt; RAM &gt; SSD/HDD</li>\n<li><strong>RAM</strong> = volatile (perdu à l'extinction) · <strong>ROM</strong> = non volatile (BIOS)</li>\n<li>Bus d'adresses n bits → 2ⁿ cases adressables · 32 bits = 4 Go max</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quel composant du CPU contient l'adresse de la prochaine instruction à exécuter ?",
-     "options": [
-      {
-       "text": "ALU (Unité Arithmétique et Logique)",
-       "correct": false,
-       "explanation": "L'ALU effectue les calculs arithmétiques et logiques — elle ne stocke pas d'adresses d'instructions."
-      },
-      {
-       "text": "IR (Instruction Register)",
-       "correct": false,
-       "explanation": "L'IR (Instruction Register) contient l'instruction EN COURS, pas la suivante."
-      },
-      {
-       "text": "PC (Program Counter)",
-       "correct": true,
-       "explanation": "Correct ! Le PC (Program Counter ou Compteur Ordinal) contient toujours l'adresse de la prochaine instruction à exécuter. Il s'incrémente automatiquement après chaque fetch."
-      },
-      {
-       "text": "ACC (Accumulateur)",
-       "correct": false,
-       "explanation": "L'accumulateur (ACC) stocke les résultats des calculs de l'ALU, pas les adresses d'instructions."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Dans le cycle Fetch-Decode-Execute, que se passe-t-il lors de la phase \"Decode\" ?",
-     "options": [
-      {
-       "text": "L'instruction est chargée depuis la mémoire",
-       "correct": false,
-       "explanation": "Charger l'instruction depuis la mémoire est la phase FETCH, pas Decode."
-      },
-      {
-       "text": "L'UC analyse l'instruction et génère les signaux de contrôle",
-       "correct": true,
-       "explanation": "Correct ! Pendant le Decode, l'Unité de Contrôle analyse l'instruction présente dans l'IR, identifie l'opération et les opérandes, et génère les signaux de contrôle pour l'exécution."
-      },
-      {
-       "text": "L'ALU effectue le calcul demandé",
-       "correct": false,
-       "explanation": "Effectuer le calcul est la phase EXECUTE, pas Decode."
-      },
-      {
-       "text": "Le résultat est stocké en mémoire",
-       "correct": false,
-       "explanation": "Stocker le résultat est la phase EXECUTE (fin de l'exécution), pas Decode."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle mémoire est volatile (son contenu est perdu à l'extinction) ?",
-     "options": [
-      {
-       "text": "Disque dur (HDD)",
-       "correct": false,
-       "explanation": "Le disque dur (HDD) est une mémoire de masse persistante — les données sont conservées après extinction."
-      },
-      {
-       "text": "SSD (Solid State Drive)",
-       "correct": false,
-       "explanation": "Le SSD est une mémoire flash persistante — les données sont conservées après extinction."
-      },
-      {
-       "text": "RAM (Random Access Memory)",
-       "correct": true,
-       "explanation": "Correct ! La RAM (Random Access Memory) est volatile : toutes les données disparaissent quand on coupe l'alimentation. C'est pourquoi on sauvegarde sur disque. La ROM, elle, est non volatile."
-      },
-      {
-       "text": "ROM (Read-Only Memory)",
-       "correct": false,
-       "explanation": "La ROM (Read-Only Memory) est non volatile — c'est l'inverse de la RAM. Elle contient notamment le BIOS."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Un bus d'adresses de 32 bits peut adresser au maximum :",
-     "options": [
-      {
-       "text": "32 cases mémoire",
-       "correct": false,
-       "explanation": "32 cases est beaucoup trop peu. 2³² = 4 Go."
-      },
-      {
-       "text": "2 Go",
-       "correct": false,
-       "explanation": "2 Go = 2³¹ cases. 2³² = 4 Go."
-      },
-      {
-       "text": "4 Go",
-       "correct": true,
-       "explanation": "Correct ! 2³² = 4 294 967 296 octets = 4 Go. C'est la limite d'adressage des systèmes 32 bits, c'est pourquoi les anciens Windows 32 bits ne pouvaient pas utiliser plus de 4 Go de RAM."
-      },
-      {
-       "text": "16 Go",
-       "correct": false,
-       "explanation": "16 Go = 2³⁴ cases. Avec 32 bits on a 2³² = 4 Go."
-      }
-     ]
-    }
-   ],
-   "source": "_private/ato/chapitres/chapitre4.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Généralités sur linformatique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Généralités sur linformatique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Généralités sur linformatique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Généralités sur linformatique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Généralités sur linformatique.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Systèmes de Numération.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Systèmes de Numération.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Systèmes de Numération.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Systèmes de Numération.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Systèmes de Numération.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Circuits Logiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Circuits Logiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Circuits Logiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Circuits Logiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Circuits Logiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Architecture dun PC.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Architecture dun PC.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Architecture dun PC.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Architecture dun PC.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Architecture dun PC.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/ato/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/ato/exercices/exercices.html"
 }

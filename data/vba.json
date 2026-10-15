@@ -1,812 +1,812 @@
 {
- "slug": "vba",
- "name": "Programmation VBA",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Environnement & Macros",
-   "subtitle": "L'enregistreur de macros et le Visual Basic Editor : les deux portes d'entrée vers la programmation VBA sous Excel.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est le VBA et à quoi il sert<br/>\n        • Enregistrer, exécuter et supprimer une macro<br/>\n        • Découvrir l'environnement Visual Basic Editor (VBE)<br/>\n        • Créer, organiser et sauvegarder des modules de code<br/>\n        • Exécuter une procédure directement dans VBE</p>\n</div>\n<h2>1.1 — Qu'est-ce que le VBA ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p><strong>VBA</strong> (<em>Visual Basic pour Application</em>) est un langage de programmation dont la syntaxe est proche du Visual Basic, permettant d'exécuter les fonctionnalités des applications Microsoft Office (Excel, Word, Access...).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 À quoi ça sert ?</div>\n<p>• <strong>Automatiser</strong> des tâches répétitives sous Excel (manipuler classeurs, feuilles, cellules)<br/>\n        • <strong>Stocker</strong> de l'information et exécuter des instructions sous conditions, en boucle<br/>\n        • <strong>Personnaliser</strong> l'interface (menus, barres d'outils, boîtes de dialogue, formulaires)<br/>\n        • <strong>Créer des ponts</strong> entre applications (ex : générer un document Word depuis Excel)</p>\n</div>\n<h2>1.2 — L'enregistreur de macros</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Une <strong>macro</strong> est, par abus de langage, un programme écrit en VBA. L'<strong>enregistreur de macros</strong> est un outil qui traduit en code VBA toute séquence d'actions effectuées manuellement dans Excel, sans connaissance préalable du langage.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">📷 Analogie de la caméra</div>\n<p>L'enregistreur de macros fonctionne comme une caméra : toute la séquence d'actions effectuées entre le début et la fin de l'enregistrement est traduite en instructions VBA et stockée dans une <strong>procédure sans arguments</strong>, qui pourra être exécutée à nouveau à l'identique.</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Notion de procédure</div>\n<p>Une <strong>procédure</strong> est un ensemble d'instructions VBA identifiées par un nom et <strong>ne renvoyant pas de valeur</strong>.</p>\n</div>\n<h3>Enregistrer une macro</h3>\n<p>La commande <strong>Outils → Macro → Nouvelle macro</strong> ouvre une fenêtre de paramétrage permettant de préciser :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Nom de la macro</strong></td><td>Nom de la procédure générée</td></tr>\n<tr><td><strong>Enregistrer la macro dans</strong></td><td>Ce classeur · Nouveau classeur · Classeur de macros personnelles</td></tr>\n<tr><td><strong>Touche de raccourci</strong></td><td>Raccourci clavier (Ctrl+...) pour lancer la macro</td></tr>\n<tr><td><strong>Description</strong></td><td>Note explicative sur la macro</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Classeur de macros personnelles</div>\n<p>En choisissant <strong>Classeur de macros personnelles</strong>, la macro est enregistrée dans un classeur spécial <code>PERSO.XLS</code>, ouvert automatiquement au lancement d'Excel : ses macros sont alors disponibles dans tous les classeurs ouverts (commandes <strong>Fenêtre → Afficher / Masquer</strong>).</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Référencement absolu vs relatif</div>\n<p>Au lancement de l'enregistrement, il faut choisir le mode de référencement des cellules :<br/>\n        • <strong>Absolu</strong> : ex. la cellule <code>A1</code> a une position fixe dans la feuille<br/>\n        • <strong>Relatif</strong> : ex. une action toujours appliquée 2 cellules en dessous de la cellule sélectionnée<br/>\n        Ce choix influence fortement le comportement de la macro rejouée — à vérifier <strong>avant toute action</strong> !</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🎨 Coloration syntaxique dans VBE</div>\n<p>• <strong>Mots-clés</strong> du langage (<code>Sub</code>, <code>True</code>...) → affichés en <strong>bleu</strong><br/>\n        • <strong>Commentaires</strong> (texte non interprété, précédés d'une apostrophe <code>'</code>) → affichés en <strong>vert</strong></p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple de macro enregistrée (Macro1)</div>\n<pre>Sub Macro1()\n'\n' Macro1 Macro\n' Macro enregistrée le 16/01/2009 par Juliette Dibie\n'\n    Range(\"A1\").Select\n    ActiveCell.FormulaR1C1 = \"AgroParisTech\"\n    Selection.Font.Bold = True\n    Range(\"G1\").Select\n    ActiveCell.FormulaR1C1 = \"=TODAY()\"\n    Selection.Font.Italic = True\nEnd Sub</pre>\n</div>\n<p>Cette macro : sélectionne la cellule <code>A1</code> (<code>Range(\"A1\").Select</code>), affecte une valeur à la cellule active (<code>ActiveCell.FormulaR1C1</code>), puis applique des formats de police (<code>Selection.Font.Bold</code>, <code>Selection.Font.Italic</code>) à la sélection.</p>\n<h3>Exécuter / Supprimer une macro</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Commande</th></tr></thead>\n<tbody>\n<tr><td><strong>Exécuter</strong></td><td>Outils → Macro → Macros, sélectionner la macro, cliquer sur <strong>Exécuter</strong></td></tr>\n<tr><td><strong>Supprimer</strong></td><td>Outils → Macro → Macros, sélectionner la macro, cliquer sur <strong>Supprimer</strong></td></tr>\n<tr><td><strong>Trier la liste</strong></td><td>Menu déroulant <strong>Macros dans</strong> (ex : n'afficher que celles du classeur personnel)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Limites de l'enregistreur</div>\n<p>Une macro créée par l'enregistreur ne s'exécute que sur un ensemble de cellules donné et possède des fonctionnalités limitées. Pour des macros propres à ses besoins, efficaces et interactives, la <strong>connaissance du langage VBA</strong> est nécessaire.</p>\n</div>\n<h2>1.3 — Le Visual Basic Editor (VBE)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Le <strong>Visual Basic Editor</strong> est un environnement spécifique, s'exécutant dans une fenêtre différente d'Excel, permettant de modifier des codes existants, créer de nouveaux programmes <em>« from scratch »</em>, organiser ses programmes dans des <strong>modules</strong>, et créer des <strong>procédures</strong> et <strong>fonctions</strong>.</p>\n</div>\n<h3>Accès à VBE</h3>\n<p>Deux moyens d'ouvrir VBE :</p>\n<ul>\n<li>Commande <strong>Outils → Macro → Visual Basic Editor</strong></li>\n<li>Commande <strong>Affichage → Barre d'outils Visual Basic</strong>, puis cliquer sur l'icône Visual Basic Editor</li>\n</ul>\n<h3>Les trois zones de VBE</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Fenêtre de code</strong></td><td>Affichage, écriture et modification des modules de code (éditeur de texte avec coloration syntaxique)</td></tr>\n<tr><td><strong>Fenêtre Propriétés</strong></td><td>Affichage et modification des propriétés du module sélectionné (ex : propriété <code>(Name)</code>)</td></tr>\n<tr><td><strong>Explorateur de projets</strong></td><td>Liste hiérarchisée des projets VBA associés aux classeurs Excel ouverts</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Structure d'un projet VBA</div>\n<p>À chaque classeur Excel ouvert est associé un <strong>projet VBA</strong>, composé de deux dossiers :<br/>\n        • <strong>Microsoft Excel Objets</strong> : le classeur (ThisWorkbook) et ses feuilles (Feuil1, Feuil2...)<br/>\n        • <strong>Modules</strong> : les modules de code contenant procédures et fonctions</p>\n</div>\n<h3>Syntaxe d'une procédure</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>Sub NomProcédure([argument_1,..., argument_n])\n    Instructions\n    ...\nEnd Sub</pre>\n</div>\n<p>Les crochets <code>[ ]</code> signifient que les arguments sont facultatifs. L'enregistreur de macro ne génère que des <strong>procédures sans arguments</strong>.</p>\n<h3>Utiliser une procédure dans une autre : Call</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Mot-clé Call</div>\n<pre>Sub PrintValue(Value As Double)\n    Range(\"B1\").Value = Value\nEnd Sub\nSub TestPrintValue()\n    Call PrintValue(1.22)\nEnd Sub</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Procédures avec arguments</div>\n<p>Seules les <strong>procédures sans arguments</strong> sont exécutables directement par les menus ou icônes. Une procédure avec arguments (ex : <code>PrintValue</code>) doit donc être appelée depuis une autre procédure (ex : <code>TestPrintValue</code>) pour pouvoir être exécutée.</p>\n</div>\n<h3>Créer / supprimer une procédure directement dans VBE</h3>\n<p>Il suffit de taper le mot-clé <code>Sub</code> suivi du nom de la procédure et de parenthèses, dans un module de code, en dehors de toute autre procédure. Le mot-clé <code>End Sub</code> est ajouté automatiquement au passage à la ligne. Pour supprimer une procédure : sélectionner le texte depuis <code>Sub</code> jusqu'à <code>End Sub</code> et le supprimer.</p>\n<h2>1.4 — Gérer modules et projets</h2>\n<h3>Modules de code</h3>\n<p>Toutes les instructions VBA sont stockées dans des <strong>modules de code</strong>. Un module peut contenir plusieurs macros ou fonctions. On cherche à regrouper dans un même module les éléments de programme qui se rapportent à un ensemble de fonctionnalités donné (ex : un module <code>Maths</code> pour des fonctions de calcul).</p>\n<h3>Explorateur de projets</h3>\n<p>L'explorateur de projets permet, via le <strong>clic droit</strong> :</p>\n<ul>\n<li><strong>Code</strong> : ouvrir un module de code (double-clic possible aussi)</li>\n<li><strong>Insertion</strong> : insérer un nouveau module de code</li>\n<li><strong>Supprimer &lt;NomModule&gt;</strong> : supprimer un module</li>\n</ul>\n<h3>Propriété (Name)</h3>\n<p>La fenêtre Propriétés (en bas à gauche de VBE) permet de modifier le nom d'un module via la propriété <code>(Name)</code> par simple saisie.</p>\n<h3>Sauvegarde</h3>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💾 Enregistrer</div>\n<p>Pour que les programmes produits soient conservés : <strong>Fichier → Enregistrer</strong> ou raccourci <code>Ctrl+S</code>.</p>\n</div>\n<h3>Exécuter une procédure sans argument dans VBE</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Commande / Icône</th></tr></thead>\n<tbody>\n<tr><td><strong>Exécuter</strong></td><td>Positionner le curseur dans la procédure, puis <strong>Exécution → Exécuter Sub/UserForm</strong> (icône ▶) ou touche <code>F5</code></td></tr>\n<tr><td><strong>Réinitialiser (arrêt en cas d'erreur)</strong></td><td><strong>Exécution → Réinitialiser</strong> (icône ■)</td></tr>\n<tr><td><strong>Fermer VBE</strong></td><td><strong>Fichier → Fermer et retourner à Microsoft Excel</strong></td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention</div>\n<p>Seules les procédures <strong>sans argument</strong> peuvent être exécutées directement. Les procédures avec arguments et les fonctions n'apparaissent pas dans la liste des macros (Outils → Macro → Macros) et doivent être appelées par d'autres procédures.</p>\n</div>\n<h3>Pour aller plus loin : comment trouver de l'aide ?</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 3 astuces incontournables</div>\n<p>1. <strong>Enregistreur de macro</strong> : enregistrer une séquence d'actions, puis l'exécuter pas à pas (<code>F8</code>) pour comprendre chaque instruction générée.<br/>\n        2. <strong>Explorateur d'objets</strong> (Affichage → Explorateur d'objets) : recense objets, propriétés, méthodes et événements disponibles.<br/>\n        3. <strong>Touche F1</strong> sur un élément sélectionné : ouvre l'aide contextuelle correspondante.</p>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1</h3>\n<ul>\n<li><strong>VBA</strong> = langage de programmation pour automatiser Office (Excel, Word, Access...)</li>\n<li>Une <strong>macro</strong> = une procédure VBA sans arguments (<code>Sub ... End Sub</code>)</li>\n<li><strong>Enregistreur de macro</strong> : Outils → Macro → Nouvelle macro (mode absolu / relatif)</li>\n<li><strong>VBE</strong> = environnement de développement : fenêtre de code, propriétés, explorateur de projets</li>\n<li><code>Call</code> pour exécuter une procédure avec arguments depuis une autre</li>\n<li><code>Ctrl+S</code> pour sauvegarder · <code>F5</code> ou ▶ pour exécuter · <code>F8</code> pour le pas-à-pas · <code>F1</code> pour l'aide</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "vba",
+  "name": "Programmation VBA",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Que produit l'enregistreur de macro ?",
-     "options": [
-      {
-       "text": "Une fonction avec valeur de retour",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une procédure sans arguments",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un module de classe",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un objet UserForm",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'enregistreur de macro traduit une séquence d'actions en une procédure VBA sans arguments (Sub ... End Sub), réexécutable à l'identique."
+      "number": 1,
+      "title": "Environnement & Macros",
+      "subtitle": "L'enregistreur de macros et le Visual Basic Editor : les deux portes d'entrée vers la programmation VBA sous Excel.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre ce qu'est le VBA et à quoi il sert</li><li>Enregistrer, exécuter et supprimer une macro</li><li>Découvrir l'environnement Visual Basic Editor (VBE)</li><li>Créer, organiser et sauvegarder des modules de code</li><li>Exécuter une procédure directement dans VBE</li></ul></div>\n<h2>Qu'est-ce que le VBA ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p><strong>VBA</strong> (<em>Visual Basic pour Application</em>) est un langage de programmation dont la syntaxe est proche du Visual Basic, permettant d'exécuter les fonctionnalités des applications Microsoft Office (Excel, Word, Access...).</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">À quoi ça sert ?</div>\n<ul><li><strong>Automatiser</strong> des tâches répétitives sous Excel (manipuler classeurs, feuilles, cellules)</li><li><strong>Stocker</strong> de l'information et exécuter des instructions sous conditions, en boucle</li><li><strong>Personnaliser</strong> l'interface (menus, barres d'outils, boîtes de dialogue, formulaires)</li><li><strong>Créer des ponts</strong> entre applications (ex : générer un document Word depuis Excel)</li></ul></div>\n<h2>L'enregistreur de macros</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Une <strong>macro</strong> est, par abus de langage, un programme écrit en VBA. L'<strong>enregistreur de macros</strong> est un outil qui traduit en code VBA toute séquence d'actions effectuées manuellement dans Excel, sans connaissance préalable du langage.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie de la caméra</div>\n<p>L'enregistreur de macros fonctionne comme une caméra : toute la séquence d'actions effectuées entre le début et la fin de l'enregistrement est traduite en instructions VBA et stockée dans une <strong>procédure sans arguments</strong>, qui pourra être exécutée à nouveau à l'identique.</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Notion de procédure</div>\n<p>Une <strong>procédure</strong> est un ensemble d'instructions VBA identifiées par un nom et <strong>ne renvoyant pas de valeur</strong>.</p></div>\n<h3>Enregistrer une macro</h3>\n<p>La commande <strong>Outils → Macro → Nouvelle macro</strong> ouvre une fenêtre de paramétrage permettant de préciser :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Champ</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Nom de la macro</strong></td><td>Nom de la procédure générée</td></tr>\n<tr><td><strong>Enregistrer la macro dans</strong></td><td>Ce classeur · Nouveau classeur · Classeur de macros personnelles</td></tr>\n<tr><td><strong>Touche de raccourci</strong></td><td>Raccourci clavier (Ctrl+...) pour lancer la macro</td></tr>\n<tr><td><strong>Description</strong></td><td>Note explicative sur la macro</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Classeur de macros personnelles</div>\n<p>En choisissant <strong>Classeur de macros personnelles</strong>, la macro est enregistrée dans un classeur spécial <code>PERSO.XLS</code>, ouvert automatiquement au lancement d'Excel : ses macros sont alors disponibles dans tous les classeurs ouverts (commandes <strong>Fenêtre → Afficher / Masquer</strong>).</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Référencement absolu vs relatif</div>\n<p>Au lancement de l'enregistrement, il faut choisir le mode de référencement des cellules :<br/>\n        • <strong>Absolu</strong> : ex. la cellule <code>A1</code> a une position fixe dans la feuille<br/>\n        • <strong>Relatif</strong> : ex. une action toujours appliquée 2 cellules en dessous de la cellule sélectionnée<br/>\n        Ce choix influence fortement le comportement de la macro rejouée — à vérifier <strong>avant toute action</strong> !</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Coloration syntaxique dans VBE</div>\n<ul><li><strong>Mots-clés</strong> du langage (<code>Sub</code>, <code>True</code>...) → affichés en <strong>bleu</strong></li><li><strong>Commentaires</strong> (texte non interprété, précédés d'une apostrophe <code>'</code>) → affichés en <strong>vert</strong></li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple de macro enregistrée (Macro1)</div>\n<pre>Sub Macro1()\n'\n' Macro1 Macro\n' Macro enregistrée le 16/01/2009 par Juliette Dibie\n'\n    Range(\"A1\").Select\n    ActiveCell.FormulaR1C1 = \"AgroParisTech\"\n    Selection.Font.Bold = True\n    Range(\"G1\").Select\n    ActiveCell.FormulaR1C1 = \"=TODAY()\"\n    Selection.Font.Italic = True\nEnd Sub</pre></div>\n<p>Cette macro : sélectionne la cellule <code>A1</code> (<code>Range(\"A1\").Select</code>), affecte une valeur à la cellule active (<code>ActiveCell.FormulaR1C1</code>), puis applique des formats de police (<code>Selection.Font.Bold</code>, <code>Selection.Font.Italic</code>) à la sélection.</p>\n<h3>Exécuter / Supprimer une macro</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Commande</th></tr></thead>\n<tbody>\n<tr><td><strong>Exécuter</strong></td><td>Outils → Macro → Macros, sélectionner la macro, cliquer sur <strong>Exécuter</strong></td></tr>\n<tr><td><strong>Supprimer</strong></td><td>Outils → Macro → Macros, sélectionner la macro, cliquer sur <strong>Supprimer</strong></td></tr>\n<tr><td><strong>Trier la liste</strong></td><td>Menu déroulant <strong>Macros dans</strong> (ex : n'afficher que celles du classeur personnel)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Limites de l'enregistreur</div>\n<p>Une macro créée par l'enregistreur ne s'exécute que sur un ensemble de cellules donné et possède des fonctionnalités limitées. Pour des macros propres à ses besoins, efficaces et interactives, la <strong>connaissance du langage VBA</strong> est nécessaire.</p></div>\n<h2>Le Visual Basic Editor (VBE)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le <strong>Visual Basic Editor</strong> est un environnement spécifique, s'exécutant dans une fenêtre différente d'Excel, permettant de modifier des codes existants, créer de nouveaux programmes <em>« from scratch »</em>, organiser ses programmes dans des <strong>modules</strong>, et créer des <strong>procédures</strong> et <strong>fonctions</strong>.</p></div>\n<h3>Accès à VBE</h3>\n<p>Deux moyens d'ouvrir VBE :</p>\n<ul>\n<li>Commande <strong>Outils → Macro → Visual Basic Editor</strong></li>\n<li>Commande <strong>Affichage → Barre d'outils Visual Basic</strong>, puis cliquer sur l'icône Visual Basic Editor</li>\n</ul>\n<h3>Les trois zones de VBE</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Zone</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><strong>Fenêtre de code</strong></td><td>Affichage, écriture et modification des modules de code (éditeur de texte avec coloration syntaxique)</td></tr>\n<tr><td><strong>Fenêtre Propriétés</strong></td><td>Affichage et modification des propriétés du module sélectionné (ex : propriété <code>(Name)</code>)</td></tr>\n<tr><td><strong>Explorateur de projets</strong></td><td>Liste hiérarchisée des projets VBA associés aux classeurs Excel ouverts</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Structure d'un projet VBA</div>\n<p>À chaque classeur Excel ouvert est associé un <strong>projet VBA</strong>, composé de deux dossiers :<br/>\n        • <strong>Microsoft Excel Objets</strong> : le classeur (ThisWorkbook) et ses feuilles (Feuil1, Feuil2...)<br/>\n        • <strong>Modules</strong> : les modules de code contenant procédures et fonctions</p></div>\n<h3>Syntaxe d'une procédure</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>Sub NomProcédure([argument_1,..., argument_n])\n    Instructions\n    ...\nEnd Sub</pre></div>\n<p>Les crochets <code>[ ]</code> signifient que les arguments sont facultatifs. L'enregistreur de macro ne génère que des <strong>procédures sans arguments</strong>.</p>\n<h3>Utiliser une procédure dans une autre : Call</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Mot-clé Call</div>\n<pre>Sub PrintValue(Value As Double)\n    Range(\"B1\").Value = Value\nEnd Sub\nSub TestPrintValue()\n    Call PrintValue(1.22)\nEnd Sub</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Procédures avec arguments</div>\n<p>Seules les <strong>procédures sans arguments</strong> sont exécutables directement par les menus ou icônes. Une procédure avec arguments (ex : <code>PrintValue</code>) doit donc être appelée depuis une autre procédure (ex : <code>TestPrintValue</code>) pour pouvoir être exécutée.</p></div>\n<h3>Créer / supprimer une procédure directement dans VBE</h3>\n<p>Il suffit de taper le mot-clé <code>Sub</code> suivi du nom de la procédure et de parenthèses, dans un module de code, en dehors de toute autre procédure. Le mot-clé <code>End Sub</code> est ajouté automatiquement au passage à la ligne. Pour supprimer une procédure : sélectionner le texte depuis <code>Sub</code> jusqu'à <code>End Sub</code> et le supprimer.</p>\n<h2>Gérer modules et projets</h2>\n<h3>Modules de code</h3>\n<p>Toutes les instructions VBA sont stockées dans des <strong>modules de code</strong>. Un module peut contenir plusieurs macros ou fonctions. On cherche à regrouper dans un même module les éléments de programme qui se rapportent à un ensemble de fonctionnalités donné (ex : un module <code>Maths</code> pour des fonctions de calcul).</p>\n<h3>Explorateur de projets</h3>\n<p>L'explorateur de projets permet, via le <strong>clic droit</strong> :</p>\n<ul>\n<li><strong>Code</strong> : ouvrir un module de code (double-clic possible aussi)</li>\n<li><strong>Insertion</strong> : insérer un nouveau module de code</li>\n<li><strong>Supprimer &lt;NomModule&gt;</strong> : supprimer un module</li>\n</ul>\n<h3>Propriété (Name)</h3>\n<p>La fenêtre Propriétés (en bas à gauche de VBE) permet de modifier le nom d'un module via la propriété <code>(Name)</code> par simple saisie.</p>\n<h3>Sauvegarde</h3>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Enregistrer</div>\n<p>Pour que les programmes produits soient conservés : <strong>Fichier → Enregistrer</strong> ou raccourci <code>Ctrl+S</code>.</p></div>\n<h3>Exécuter une procédure sans argument dans VBE</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Action</th><th>Commande / Icône</th></tr></thead>\n<tbody>\n<tr><td><strong>Exécuter</strong></td><td>Positionner le curseur dans la procédure, puis <strong>Exécution → Exécuter Sub/UserForm</strong> (icône ) ou touche <code>F5</code></td></tr>\n<tr><td><strong>Réinitialiser (arrêt en cas d'erreur)</strong></td><td><strong>Exécution → Réinitialiser</strong> (icône ■)</td></tr>\n<tr><td><strong>Fermer VBE</strong></td><td><strong>Fichier → Fermer et retourner à Microsoft Excel</strong></td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Attention</div>\n<p>Seules les procédures <strong>sans argument</strong> peuvent être exécutées directement. Les procédures avec arguments et les fonctions n'apparaissent pas dans la liste des macros (Outils → Macro → Macros) et doivent être appelées par d'autres procédures.</p></div>\n<h3>Pour aller plus loin : comment trouver de l'aide ?</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">3 astuces incontournables</div>\n<p>1. <strong>Enregistreur de macro</strong> : enregistrer une séquence d'actions, puis l'exécuter pas à pas (<code>F8</code>) pour comprendre chaque instruction générée.<br/>\n        2. <strong>Explorateur d'objets</strong> (Affichage → Explorateur d'objets) : recense objets, propriétés, méthodes et événements disponibles.<br/>\n        3. <strong>Touche F1</strong> sur un élément sélectionné : ouvre l'aide contextuelle correspondante.</p></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1</h3>\n<ul>\n<li><strong>VBA</strong> = langage de programmation pour automatiser Office (Excel, Word, Access...)</li>\n<li>Une <strong>macro</strong> = une procédure VBA sans arguments (<code>Sub ... End Sub</code>)</li>\n<li><strong>Enregistreur de macro</strong> : Outils → Macro → Nouvelle macro (mode absolu / relatif)</li>\n<li><strong>VBE</strong> = environnement de développement : fenêtre de code, propriétés, explorateur de projets</li>\n<li><code>Call</code> pour exécuter une procédure avec arguments depuis une autre</li>\n<li><code>Ctrl+S</code> pour sauvegarder · <code>F5</code> ou  pour exécuter · <code>F8</code> pour le pas-à-pas · <code>F1</code> pour l'aide</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que produit l'enregistreur de macro ?",
+          "options": [
+            {
+              "text": "Une fonction avec valeur de retour",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une procédure sans arguments",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un module de classe",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un objet UserForm",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'enregistreur de macro traduit une séquence d'actions en une procédure VBA sans arguments (Sub ... End Sub), réexécutable à l'identique."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle option d'enregistrement permet de rendre une macro disponible dans tous les classeurs ouverts ?",
+          "options": [
+            {
+              "text": "Ce classeur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Nouveau classeur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Classeur de macros personnelles",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Classeur masqué",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Le 'Classeur de macros personnelles' enregistre la macro dans PERSO.XLS, ouvert automatiquement au démarrage d'Excel et accessible depuis tous les classeurs."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel mot-clé permet d'appeler une procédure ayant des arguments depuis une autre procédure ?",
+          "options": [
+            {
+              "text": "Run",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Exec",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Call",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Goto",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Call NomProcédure(arguments) permet d'exécuter une procédure ayant des arguments depuis une autre procédure ou fonction."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans VBE, comment sont affichés les commentaires VBA ?",
+          "options": [
+            {
+              "text": "En bleu",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "En rouge",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "En vert",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "En gris",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Les commentaires (précédés d'une apostrophe ') sont affichés en vert dans l'éditeur VBE ; les mots-clés du langage sont en bleu."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelles procédures peuvent être exécutées directement par les menus ou icônes de VBE ?",
+          "options": [
+            {
+              "text": "Uniquement les fonctions",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les procédures avec arguments",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les procédures sans argument",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Aucune, il faut toujours Call",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Seules les procédures sans argument apparaissent dans la liste des macros et peuvent être lancées directement via Exécution → Exécuter Sub/UserForm."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le menu de paramétrage d'une macro, quelle option l'enregistre dans le classeur actif uniquement ?",
+          "options": [
+            {
+              "text": "Nouveau classeur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ce classeur",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Classeur de macros personnelles",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Classeur masqué",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'option 'Ce classeur' enregistre la macro dans le classeur actif uniquement ; 'Classeur de macros personnelles' la rend disponible partout, et 'Nouveau classeur' crée un fichier dédié."
+        },
+        {
+          "type": "mcq",
+          "text": "Que recense l'explorateur de projets dans VBE ?",
+          "options": [
+            {
+              "text": "Les propriétés, méthodes et événements de chaque objet",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La liste hiérarchisée des projets VBA associés aux classeurs Excel ouverts",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Les fonctions intégrées d'Excel uniquement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La liste des macros à supprimer",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'explorateur de projets (en haut à gauche de VBE) affiche la liste hiérarchisée des projets VBA associés à chaque classeur Excel ouvert, avec leurs dossiers Microsoft Excel Objets et Modules."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel raccourci clavier permet d'exécuter une macro pas à pas dans VBE pour comprendre chaque instruction ?",
+          "options": [
+            {
+              "text": "F1",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "F5",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "F8",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Ctrl+S",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La touche F8 exécute la macro pas à pas (ligne par ligne), ce qui permet de comprendre l'effet de chaque instruction générée par l'enregistreur de macro."
+        }
+      ],
+      "source": "vba/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle option d'enregistrement permet de rendre une macro disponible dans tous les classeurs ouverts ?",
-     "options": [
-      {
-       "text": "Ce classeur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Nouveau classeur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Classeur de macros personnelles",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Classeur masqué",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Le 'Classeur de macros personnelles' enregistre la macro dans PERSO.XLS, ouvert automatiquement au démarrage d'Excel et accessible depuis tous les classeurs."
+      "number": 2,
+      "title": "Objets & Langage VBA",
+      "subtitle": "Le modèle objet d'Excel : Application, Workbook, Worksheet, Range — propriétés, méthodes et événements.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre le modèle objet d'Excel (objets et collections)</li><li>Accéder aux objets : classeurs, feuilles, plages de cellules</li><li>Distinguer propriétés, méthodes et événements</li><li>Utiliser les fonctions intégrées d'Excel depuis VBA</li><li>Utiliser l'explorateur d'objets pour découvrir l'API d'Excel</li></ul></div>\n<h2>Les objets</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Tout est objet</div>\n<p>VBA est un <strong>langage orienté objet</strong> attaché à une application. Un objet est une entité nommée possédant des caractéristiques propres (<strong>propriétés</strong>) et des actions propres (<strong>méthodes</strong>).</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Objet</th><th>Représente</th></tr></thead>\n<tbody>\n<tr><td><code>Application</code></td><td>Excel lui-même</td></tr>\n<tr><td><code>Workbook</code></td><td>Un classeur</td></tr>\n<tr><td><code>Worksheet</code></td><td>Une feuille de calcul</td></tr>\n<tr><td><code>Range</code></td><td>Une plage de cellules (peut être limitée à une seule cellule)</td></tr>\n</tbody>\n</table></div>\n<h2>Les collections</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>De nombreux objets appartiennent à une <strong>collection d'objets</strong>, la collection étant elle-même un objet.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Collection</th><th>Contient</th></tr></thead>\n<tbody>\n<tr><td><code>Workbooks</code></td><td>Tous les objets <code>Workbook</code> ouverts (dans <code>Application</code>)</td></tr>\n<tr><td><code>Worksheets</code></td><td>Tous les objets <code>Worksheet</code> d'un classeur</td></tr>\n<tr><td><code>Range</code></td><td>Des objets <code>Range</code> dans une feuille</td></tr>\n</tbody>\n</table></div>\n<h2>L'accès aux objets</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Référencer une plage de cellules</div>\n<pre>Range(\"A1:B4\")   ' renvoie un objet Range correspondant à la plage A1:B4</pre></div>\n<p>Pour référencer un objet dans une collection, on peut utiliser <strong>son numéro de position</strong> ou <strong>son nom</strong> :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de référencement</div>\n<pre>Worksheets(1)\n' → première feuille de calcul du classeur actif\nWorkbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")\n' → feuille \"Feuil1\" du classeur \"Classeur1.xls\"\nWorkbooks(\"Année2006\").Sheets(\"Mars\").Range(\"B2\")\n' → cellule B2 de la feuille \"Mars\" du classeur \"Année2006\"\nSheets(\"Mars\").Range(\"B2\")\n' → Range(\"B2\") de la feuille \"Mars\" du classeur actif</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Application implicite</div>\n<p><code>Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")</code> est une notation raccourcie pour <code>Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")</code>. L'objet <code>Application</code> peut, en général, être omis.</p></div>\n<h3>Références absolues vs relatives</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Exemple</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>Absolue</strong></td><td><code>Range(\"B2\")</code></td><td>Désigne la cellule B2 de la feuille active</td></tr>\n<tr><td><strong>Relative</strong></td><td><code>ActiveCell.Offset(2,-1)</code></td><td>Cellule située 2 lignes plus bas et 1 colonne à gauche de la cellule active (- pour haut/gauche, + pour bas/droite)</td></tr>\n</tbody>\n</table></div>\n<h2>Les propriétés des objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Les <strong>propriétés</strong> représentent les caractéristiques d'un objet. Syntaxe : <code>Objet.Propriété</code>.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de propriétés</div>\n<pre>Range(\"A1\").Value = \"AgroParisTech\"\n' Value : affecte la valeur \"AgroParisTech\" à la cellule A1\nActiveCell.Font.Bold = True\n' ActiveCell : cellule active de la feuille (une seule cellule)\n' Font : objet contenant les attributs de police (taille, couleur, style...)\n' Bold : propriété booléenne du style gras</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">ActiveCell vs Selection</div>\n<ul><li><code>ActiveCell</code> : une <strong>seule</strong> cellule active</li><li><code>Selection</code> : peut référencer une <strong>plage</strong> de cellules (le type renvoyé dépend de la sélection en cours)</li></ul></div>\n<h2>Les méthodes des objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Les <strong>méthodes</strong> représentent les <strong>actions</strong> qu'un objet peut effectuer. Syntaxe : <code>Objet.Méthode</code> (analogue aux propriétés).</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : méthode Select</div>\n<pre>Range(\"A1\").Select   ' sélectionne la cellule A1</pre></div>\n<h3>Utiliser les fonctions intégrées d'Excel depuis VBA</h3>\n<p>Les fonctions intégrées d'Excel utilisables depuis VBA sont en fait des <strong>méthodes d'objets particuliers</strong>. Pour utiliser une fonction Excel dans VBA, il faut faire précéder son nom de l'objet sur lequel elle s'applique.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Objet WorksheetFunction</div>\n<pre>WorksheetFunction.Min(Range(\"A1:A10\"))\n' équivalent VBA de la fonction Excel MIN()</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Attention</div>\n<p>Toutes les fonctions intégrées d'Excel <strong>ne sont pas disponibles</strong> dans VBA. Néanmoins, il est fortement conseillé d'utiliser une fonction Excel existante pour un calcul donné plutôt que de redéfinir sa propre fonction, moins efficace en temps de calcul.</p></div>\n<h2>Les événements</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Un <strong>événement</strong> est une action reconnue par un objet (clic souris, frappe d'une touche...). Sa reconnaissance déclenche l'exécution d'une <strong>procédure événementielle</strong> stockée dans le module de code associé à l'objet concerné.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Exemples d'événements courants</div>\n<ul><li><code>SelectionChange</code> : nouvelle sélection de cellule(s) dans une feuille</li><li><code>Change</code> : modification de la valeur d'un contrôle</li><li><code>Click</code> : clic sur un contrôle</li><li><code>Initialize</code> : chargement d'un objet UserForm</li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : colorier la cellule sélectionnée</div>\n<pre>Private Sub Worksheet_SelectionChange(ByVal Target As Range)\n    Target.Interior.ColorIndex = 41\nEnd Sub</pre></div>\n<p>La variable <code>Target</code> (objet <code>Range</code>) représente la plage ou cellule sélectionnée par l'utilisateur. La propriété <code>Interior</code> d'un objet <code>Range</code> renvoie un objet <code>Interior</code> correspondant à la couleur de fond, et <code>ColorIndex</code> permet de la définir.</p>\n<h2>L'explorateur d'objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Compte tenu du grand nombre d'objets, propriétés, méthodes et événements disponibles pour Excel en VBA, on ne connaît dans la pratique qu'un petit sous-ensemble. L'<strong>explorateur d'objets</strong> (Affichage → Explorateur d'objets) recense l'ensemble des objets, leurs <strong>membres</strong> (propriétés, méthodes, événements associés).</p></div>\n<h3>Utilisation</h3>\n<ul>\n<li><strong>Champ Projet/Bibliothèque</strong> : restreindre la recherche (ex : bibliothèque Excel uniquement)</li>\n<li><strong>Rechercher texte</strong> : taper l'élément recherché puis <code>Entrée</code></li>\n<li><strong>Zone Classes</strong> : tous les objets de la bibliothèque sélectionnée</li>\n<li><strong>Zone Membres</strong> : propriétés / méthodes / événements de l'objet sélectionné (classables par catégorie via clic droit → Membres du groupe)</li>\n<li><strong>Zone Détails</strong> : brève description de l'élément sélectionné</li>\n<li><strong>F1</strong> : aide détaillée sur l'objet ou le membre sélectionné</li>\n</ul>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Icône</th><th>Signifie</th></tr></thead>\n<tbody>\n<tr><td></td><td>Objet</td></tr>\n<tr><td></td><td>Propriété</td></tr>\n<tr><td></td><td>Méthode</td></tr>\n<tr><td></td><td>Événement</td></tr>\n</tbody>\n</table></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Modèle objet d'Excel : <code>Application</code> → <code>Workbook</code> → <code>Worksheet</code> → <code>Range</code></li>\n<li>Collections : <code>Workbooks</code>, <code>Worksheets</code>... — accès par <strong>position</strong> ou par <strong>nom</strong></li>\n<li><strong>Propriétés</strong> = caractéristiques (<code>Objet.Propriété</code>) · <strong>Méthodes</strong> = actions (<code>Objet.Méthode</code>)</li>\n<li><code>WorksheetFunction</code> donne accès aux fonctions Excel depuis VBA</li>\n<li><strong>Événements</strong> (<code>SelectionChange</code>, <code>Change</code>, <code>Click</code>...) déclenchent des procédures événementielles</li>\n<li><strong>Explorateur d'objets</strong> (Affichage → Explorateur d'objets) + <code>F1</code> = meilleurs amis du développeur VBA</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel objet représente une feuille de calcul Excel ?",
+          "options": [
+            {
+              "text": "Workbook",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Worksheet",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Application",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Range",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Worksheet représente une feuille de calcul. Workbook représente le classeur entier, Application représente Excel et Range une plage de cellules."
+        },
+        {
+          "type": "mcq",
+          "text": "Que désigne ActiveCell.Offset(2,-1) ?",
+          "options": [
+            {
+              "text": "La cellule A1 toujours",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La cellule 2 lignes plus bas et 1 colonne à gauche de la cellule active",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "La cellule 2 colonnes à droite de A1",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Toute la feuille active",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Offset(lignes, colonnes) déplace la référence relativement à la cellule active : valeurs positives = bas/droite, négatives = haut/gauche."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la syntaxe pour accéder à une propriété d'un objet ?",
+          "options": [
+            {
+              "text": "Propriété(Objet)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Objet->Propriété",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Objet.Propriété",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Objet::Propriété",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La syntaxe Objet.Propriété (ex : Range(\"A1\").Value) permet d'accéder ou de modifier une propriété, de la même façon que Objet.Méthode pour les méthodes."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel objet permet d'utiliser les fonctions intégrées d'Excel (comme MIN) depuis VBA ?",
+          "options": [
+            {
+              "text": "ExcelFunction",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "WorksheetFunction",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Application.Formula",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Range.Function",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'objet WorksheetFunction donne accès à de nombreuses fonctions Excel (Min, Max, Pi...) depuis VBA, ex : WorksheetFunction.Min(...)."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel événement d'une feuille de calcul est déclenché à chaque nouvelle sélection de cellule(s) ?",
+          "options": [
+            {
+              "text": "Change",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Activate",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "SelectionChange",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Click",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'événement SelectionChange d'un objet Worksheet est détecté à chaque nouvelle sélection de plage ou cellule par l'utilisateur."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle collection contient tous les objets Worksheet d'un classeur donné ?",
+          "options": [
+            {
+              "text": "Workbooks",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Worksheets",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Sheets.Application",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ranges",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La collection Worksheets contient tous les objets Worksheet (feuilles de calcul) d'un classeur donné ; Workbooks contient quant à elle tous les classeurs ouverts."
+        },
+        {
+          "type": "mcq",
+          "text": "Que représente Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\") de façon complète, en incluant l'objet implicite ?",
+          "options": [
+            {
+              "text": "Range.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Worksheet.Workbooks(\"Classeur1.xls\")",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Aucun objet implicite n'est omis",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'objet Application est implicite et peut être omis : Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\") est une notation raccourcie pour Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")."
+        },
+        {
+          "type": "mcq",
+          "text": "Pourquoi est-il conseillé d'utiliser une fonction Excel intégrée (via WorksheetFunction) plutôt que de recoder soi-même un calcul existant ?",
+          "options": [
+            {
+              "text": "Parce que c'est obligatoire en VBA",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Parce que toutes les fonctions Excel sont disponibles dans VBA",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Parce que c'est plus efficace en temps de calcul qu'une fonction personnalisée équivalente",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Parce que WorksheetFunction n'a pas besoin d'arguments",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Les fonctions intégrées d'Excel (accessibles via WorksheetFunction) sont optimisées et donc plus efficaces en temps de calcul qu'une fonction VBA personnalisée refaisant le même travail. Attention : elles ne sont pas toutes disponibles depuis VBA."
+        }
+      ],
+      "source": "_private/vba/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Quel mot-clé permet d'appeler une procédure ayant des arguments depuis une autre procédure ?",
-     "options": [
-      {
-       "text": "Run",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Exec",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Call",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Goto",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Call NomProcédure(arguments) permet d'exécuter une procédure ayant des arguments depuis une autre procédure ou fonction."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans VBE, comment sont affichés les commentaires VBA ?",
-     "options": [
-      {
-       "text": "En bleu",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "En rouge",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "En vert",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "En gris",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Les commentaires (précédés d'une apostrophe ') sont affichés en vert dans l'éditeur VBE ; les mots-clés du langage sont en bleu."
-    },
-    {
-     "type": "mcq",
-     "text": "Quelles procédures peuvent être exécutées directement par les menus ou icônes de VBE ?",
-     "options": [
-      {
-       "text": "Uniquement les fonctions",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les procédures avec arguments",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les procédures sans argument",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Aucune, il faut toujours Call",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Seules les procédures sans argument apparaissent dans la liste des macros et peuvent être lancées directement via Exécution → Exécuter Sub/UserForm."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans le menu de paramétrage d'une macro, quelle option l'enregistre dans le classeur actif uniquement ?",
-     "options": [
-      {
-       "text": "Nouveau classeur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ce classeur",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Classeur de macros personnelles",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Classeur masqué",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'option 'Ce classeur' enregistre la macro dans le classeur actif uniquement ; 'Classeur de macros personnelles' la rend disponible partout, et 'Nouveau classeur' crée un fichier dédié."
-    },
-    {
-     "type": "mcq",
-     "text": "Que recense l'explorateur de projets dans VBE ?",
-     "options": [
-      {
-       "text": "Les propriétés, méthodes et événements de chaque objet",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La liste hiérarchisée des projets VBA associés aux classeurs Excel ouverts",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Les fonctions intégrées d'Excel uniquement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La liste des macros à supprimer",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'explorateur de projets (en haut à gauche de VBE) affiche la liste hiérarchisée des projets VBA associés à chaque classeur Excel ouvert, avec leurs dossiers Microsoft Excel Objets et Modules."
-    },
-    {
-     "type": "mcq",
-     "text": "Quel raccourci clavier permet d'exécuter une macro pas à pas dans VBE pour comprendre chaque instruction ?",
-     "options": [
-      {
-       "text": "F1",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "F5",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "F8",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Ctrl+S",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La touche F8 exécute la macro pas à pas (ligne par ligne), ce qui permet de comprendre l'effet de chaque instruction générée par l'enregistreur de macro."
+      "number": 3,
+      "title": "Programmation avancée & UserForm",
+      "subtitle": "Variables, conditions, boucles, fonctions personnalisées, boîtes de dialogue et formulaires UserForm.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Déclarer et typer des variables et des constantes</li><li>Définir ses propres fonctions personnalisées</li><li>Utiliser les structures conditionnelles et les boucles</li><li>Afficher des boîtes de dialogue (MsgBox, InputBox)</li><li>Créer un formulaire UserForm et y associer du code</li></ul></div>\n<h2>Variables et constantes</h2>\n<h3>Déclaration : Dim</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Dim NomVariable [As Type]</pre></div>\n<p>Le premier caractère du nom doit être une lettre. Les minuscules et majuscules sont distinguées.</p>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège classique : Option Explicit</div>\n<p>En VBA, la déclaration n'est <strong>pas obligatoire</strong> par défaut. Sans <code>Option Explicit</code>, une faute de frappe comme <code>valleur</code> au lieu de <code>valeur</code> crée silencieusement une nouvelle variable — la macro ne fait alors rien sans signaler d'erreur !</p>\n<p>Placer <code>Option Explicit</code> en première ligne du module force la déclaration explicite et déclenche une <strong>erreur de compilation</strong> (« Variable non définie ») en cas d'oubli.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Avec Option Explicit</div>\n<pre>Option Explicit\nSub MacroTestVariable()\n    Dim valeur As Double\n    valeur = Range(\"A1\").Value\n    Range(\"B1\").Value = valeur\nEnd Sub</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Activer Option Explicit automatiquement</div>\n<p>Outils → Options → onglet Éditeur → cocher <strong>Déclaration des variables obligatoire</strong>.</p></div>\n<h3>Les types de données</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Catégorie</th><th>Types</th><th>Valeur initiale</th></tr></thead>\n<tbody>\n<tr><td>Entiers</td><td><code>Byte</code>, <code>Integer</code>, <code>Long</code></td><td>0</td></tr>\n<tr><td>Réels</td><td><code>Single</code>, <code>Double</code>, <code>Currency</code></td><td>0</td></tr>\n<tr><td>Booléens</td><td><code>Boolean</code></td><td><code>False</code></td></tr>\n<tr><td>Texte</td><td><code>String</code></td><td><code>\"\"</code> (chaîne vide)</td></tr>\n<tr><td>Dates</td><td><code>Date</code></td><td>00:00:00</td></tr>\n<tr><td>Objets</td><td><code>Object</code></td><td>—</td></tr>\n<tr><td>Universel</td><td><code>Variant</code></td><td><code>\"\"</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Pourquoi typer ses variables ?</div>\n<p>Sans type précisé, une variable est de type <code>Variant</code> (peut stocker n'importe quoi), mais elle <strong>consomme plus de mémoire</strong> et de ressources (identification du type + conversions). Typer ses variables rend le code plus efficace.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de déclaration</div>\n<pre>Dim Nom As String\nNom = \"Jean \" &amp; \"Dupond\"   ' &amp; concatène les chaînes\nDim Age As Byte\nAge = 23\nDim MaPlage As Object        ' variable de type Object\nSet MaPlage = Range(\"A1:B5\") ' Set : pour affecter un objet</pre></div>\n<h3>Portée des variables</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Portée</th><th>Déclaration</th></tr></thead>\n<tbody>\n<tr><td>Locale (procédure/fonction)</td><td><code>Dim</code> à l'intérieur de la procédure ou fonction</td></tr>\n<tr><td>Module entier</td><td><code>Dim</code> au début du module, hors de toute procédure/fonction</td></tr>\n<tr><td>Tout le projet</td><td><code>Public</code> au début d'un module, hors de toute procédure/fonction</td></tr>\n</tbody>\n</table></div>\n<h3>Constantes : Const</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Const NomConstante [As Type] = valeur\n' Exemple\nPublic Const Pi As Single = 3.14159265358979</pre></div>\n<p>Une constante a la même portée qu'une variable.</p>\n<h3>L'instruction With...End With</h3>\n<p>Utile lorsque les références à un objet sont répétées plusieurs fois dans une petite section de code.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Avant / Après</div>\n<pre>' Sans With\nSub ModifiePolice(MaPlage As Range)\n    MaPlage.Select\n    Selection.Font.Size = 12\n    Selection.Font.ColorIndex = 3\n    Selection.Font.Italic = True\nEnd Sub\n' Avec With...End With\nSub ModifiePolice(MaPlage As Range)\n    MaPlage.Select\n    With Selection.Font\n        .Size = 12\n        .ColorIndex = 3\n        .Italic = True\n    End With\nEnd Sub</pre></div>\n<p>Tout ce qui commence par un point dans un bloc <code>With...End With</code> est une propriété ou méthode de l'objet qui suit <code>With</code>.</p>\n<h2>Définir ses propres fonctions</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Une <strong>fonction</strong> est une suite d'instructions qui <strong>retourne une valeur</strong>. Elle commence par <code>Function</code> et se termine par <code>End Function</code>.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Function NomFonction([argument_1,..., argument_n]) [As Type]\n    Instructions\n    ...\n    NomFonction = Expression   ' valeur de retour\nEnd Function</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges fréquents</div>\n<ul><li>En VBA, les arguments d'une fonction sont séparés par des <strong>virgules</strong> (Excel utilise des points-virgules)</li><li>En VBA, les réels s'écrivent avec un <strong>point</strong> (Excel utilise une virgule)</li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : surface d'un cercle</div>\n<pre>Function SurfaceCercle(Rayon As Double) As Double\n    SurfaceCercle = WorksheetFunction.Pi() * Rayon * Rayon\nEnd Function</pre></div>\n<h3>Utilisation</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Contexte</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Dans Excel</strong></td><td><code>=SurfaceCercle(A6)</code> — comme une fonction intégrée (Insertion → Fonction → Personnalisées). N'apparaît <strong>pas</strong> dans la liste des macros.</td></tr>\n<tr><td><strong>Dans un programme VBA</strong></td><td>La valeur de retour doit être <strong>sauvegardée dans une variable</strong> :<br/><code>valeur = SurfaceCercle(1.5)</code></td></tr>\n</tbody>\n</table></div>\n<h2>Conditions : If / ElseIf / Else</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxes</div>\n<pre>If condition Then\n    Instructions_si_vrai\n[Else\n    Instructions_si_faux]\nEnd If\nIf condition_1 Then\n    Instructions_1\nElseIf condition_2 Then\n    Instructions_2\nElse\n    Instructions_n\nEnd If</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Opérateurs logiques</div>\n<p><code>Or</code>, <code>Xor</code> (ou exclusif), <code>And</code>, <code>Not</code></p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : message selon l'heure</div>\n<pre>Sub BonjourHeureIf()\n    Dim heure As Integer\n    Dim mes As String\n    heure = Left(Time, 2)   ' récupère l'heure (2 caractères à gauche de Time)\n    If heure &gt; 7 And heure &lt; 12 Then\n        mes = \"Bonjour\"\n    ElseIf heure &gt;= 12 And heure &lt; 18 Then\n        mes = \"Bon après-midi\"\n    ElseIf heure &gt;= 18 And heure &lt; 22 Then\n        mes = \"Bonne soirée\"\n    Else\n        mes = \"Bonne nuit\"\n    End If\n    Range(\"A1\").Value = mes\nEnd Sub</pre></div>\n<h2>Boucles : Do...Loop, For...Next, For Each...Next</h2>\n<h3>Do...Loop</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Syntaxe</th><th>Comportement</th></tr></thead>\n<tbody>\n<tr><td><code>Do While condition ... Loop</code></td><td>Exécute tant que la condition est vraie (test avant)</td></tr>\n<tr><td><code>Do Until condition ... Loop</code></td><td>Exécute jusqu'à ce que la condition devienne vraie (test avant)</td></tr>\n<tr><td><code>Do ... Loop While condition</code></td><td>Exécute au moins une fois, tant que vrai (test après)</td></tr>\n<tr><td><code>Do ... Loop Until condition</code></td><td>Exécute au moins une fois, jusqu'à devenir vrai (test après)</td></tr>\n</tbody>\n</table></div>\n<h3>For...Next</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemple</div>\n<pre>For compteur = nbdébut To nbfin [Step nbpas]\n    Instructions\nNext compteur\n' Exemple : somme des n premiers entiers\nSub SommeEntiers()\n    Dim somme As Integer, compteur As Integer, n As Integer\n    n = Range(\"A1\").Value\n    For compteur = 1 To n\n        somme = somme + compteur\n    Next compteur\n    Range(\"A2\").Value = \"Somme des \" &amp; n &amp; \" premiers entiers : \"\n    Range(\"B2\").Value = somme\nEnd Sub\n' Step négatif\nFor compteur = 21 To 1 Step -2\n    Range(\"A\" &amp; compteur).Value = compteur - 1\nNext compteur</pre></div>\n<h3>For Each...Next</h3>\n<p>Permet d'accéder à chaque objet d'une <strong>collection</strong>.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : colorier chaque cellule d'une plage</div>\n<pre>Sub ColorieCellule()\n    Dim MaPlage As Range, Cellule As Range, i As Integer\n    Set MaPlage = Range(\"A1:B5\")\n    For Each Cellule In MaPlage\n        Cellule.Interior.ColorIndex = i\n        i = i + 1\n    Next Cellule\nEnd Sub</pre></div>\n<h3>Interrompre une boucle : Exit</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exit Do / Exit For / Exit Sub / Exit Function</div>\n<pre>Do\n    Rep = InputBox(\"Voulez-vous continuer ? (O/N)\")\n    If LCase(rep) = \"n\" Then Exit Do\nLoop</pre></div>\n<h2>MsgBox et InputBox</h2>\n<h3>MsgBox — afficher un message</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>MsgBox(prompt[, buttons][, title][, helpfile, context])</pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Arguments par position vs par nom</div>\n<pre>' Par position : ordre imposé, virgules pour arguments manquants\nCall MsgBox(\"Bonjour ! \", , \"Accueil\")\n' Par nom : ordre libre, signe := entre nom et valeur\nCall MsgBox(prompt:=\"Bonjour ! \", Title:=\"Accueil\")</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Constantes vbYesNo, vbYes</div>\n<p>L'argument <code>Buttons:=vbYesNo</code> (équivalent à <code>4</code>) affiche les boutons <strong>Oui</strong> et <strong>Non</strong>. Les constantes intégrées rendent le code plus lisible que les codes numériques.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Récupérer la réponse de l'utilisateur</div>\n<pre>Sub MacroTestMessage3()\n    Dim reponse As String\n    reponse = MsgBox(prompt:=\"Avez-vous passé une bonne journée ? \", _\n                      Buttons:=vbYesNo, Title:=\"Accueil !\")\n    If reponse = vbYes Then\n        Call MsgBox(\"Bonjour ! \", , \"Accueil\")\n    Else\n        Call MsgBox(\"Bonsoir ! \", , \"Accueil\")\n    End If\nEnd Sub</pre></div>\n<h3>InputBox — lire une saisie</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemple</div>\n<pre>InputBox(prompt[, title][, default][, xpos][, ypos][, helpfile, context])\nSub MacroTestDialogue()\n    Dim reponse As String\n    reponse = InputBox(\"Quel âge avez-vous ?\", \"Saisie âge\")\n    If reponse = \"\" Then\n        Call MsgBox(\"Vous n'avez pas répondu à la question !\", , \"Erreur\")\n    Else\n        Call MsgBox(\"Vous avez \" &amp; reponse &amp; \" ans\", , \"Age\")\n    End If\nEnd Sub</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Règles d'appel importantes</div>\n<ul><li>Pour <strong>récupérer la valeur de retour</strong> d'une fonction : <strong>pas de <code>Call</code></strong> → <code>reponse = InputBox(...)</code></li><li>Pour <strong>appeler une procédure</strong> ou ignorer la valeur de retour : utiliser <code>Call</code> → <code>Call MsgBox(...)</code></li><li><strong>Jamais d'espace</strong> entre le nom d'une fonction/procédure et la parenthèse ouvrante</li><li>Si une chaîne vide est saisie dans <code>InputBox</code>, elle renvoie <code>\"\"</code></li></ul></div>\n<h2>Les objets UserForm</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Les objets <strong>UserForm</strong> sont des boîtes de dialogue définies par l'utilisateur, composées de <strong>contrôles</strong> (intitulés, zones de texte, zones de liste modifiable, boutons de commande...).</p></div>\n<h3>Créer un UserForm</h3>\n<ul>\n<li><strong>Insertion → UserForm</strong> dans VBE pour créer un objet UserForm1 + boîte à outils de contrôles</li>\n<li>Renommer l'objet via la propriété <code>(Name)</code> (ex : <code>FenetreSaisieClients</code>)</li>\n<li>La propriété <code>Caption</code> correspond au libellé de la barre de titre</li>\n<li>Glisser-déposer un contrôle de la boîte à outils vers le formulaire, puis renommer via <code>(Name)</code></li>\n</ul>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Noms évocateurs</div>\n<p>Utiliser des noms qui identifient le type et l'utilité du contrôle, par exemple : <code>ComboBoxTitre</code>, <code>TextBoxNom</code>, <code>ButtonOK</code>, <code>ButtonAnnuler</code>.</p></div>\n<h3>Afficher / fermer un UserForm</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Instruction / Méthode</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>Load</code></td><td>Charge l'objet en mémoire sans l'afficher</td></tr>\n<tr><td><code>.Show</code></td><td>Affiche l'objet (le charge en mémoire si besoin)</td></tr>\n<tr><td><code>Unload</code></td><td>Ferme l'objet et libère la mémoire (valeurs des contrôles perdues)</td></tr>\n<tr><td><code>.Hide</code></td><td>Masque l'objet sans le décharger (valeurs conservées)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Afficher le formulaire depuis un module</div>\n<pre>Sub ProgPrincSaisieClients()\n    Sheets(\"Clients\").Activate\n    FenetreSaisieClients.Show\nEnd Sub</pre></div>\n<h3>Procédures événementielles d'un UserForm</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>Private Sub NomContrôle_NomEvénement()\n    ...\nEnd Sub\n' Pour l'objet UserForm lui-même, on utilise le mot-clé UserForm :\nPrivate Sub UserForm_NomÉvénement()\n    ...\nEnd Sub</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Événements courants des contrôles</div>\n<ul><li><code>Change</code> : modification de la valeur (<code>Value</code>) d'un contrôle</li><li><code>Click</code> : clic sur un contrôle</li><li><code>dblClick</code> : double-clic sur un contrôle</li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Fermer le formulaire via le bouton OK</div>\n<pre>Private Sub ButtonOK_Click()\n    Call Unload(Me)\nEnd Sub</pre></div>\n<p>La propriété <code>Me</code> de l'objet UserForm renvoie l'objet UserForm actif.</p>\n<h3>Initialiser un UserForm</h3>\n<p>L'événement <code>Initialize</code> est détecté lorsque l'objet est chargé via <code>.Show</code> ou <code>Load</code> (mais <strong>pas</strong> si on réaffiche un objet masqué par <code>.Hide</code> : il n'est pas rechargé).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Remplir une zone de liste modifiable depuis une feuille</div>\n<pre>Private Sub UserForm_Initialize()\n    Dim i As Integer\n    i = 1\n    Do Until IsEmpty(Worksheets(\"Divers\").Range(\"A\" &amp; i))\n        Call Me.ComboBoxTitre.AddItem(Worksheets(\"Divers\"). _\n            Range(\"A\" &amp; i).Value)\n        i = i + 1\n    Loop\nEnd Sub</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Continuer une instruction sur plusieurs lignes</div>\n<p>Pour écrire une instruction sur plusieurs lignes : taper un <strong>espace</strong> suivi du <strong>trait de soulignement</strong> <code>_</code> à la fin de chaque ligne.</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Alternative : RowSource / ControlSource</div>\n<ul><li><code>RowSource</code> : lie un contrôle (ex : zone de liste) à une <strong>plage de cellules</strong> (ex : <code>Divers!A1:A3</code>)</li><li><code>ControlSource</code> : lie un contrôle à <strong>une seule cellule</strong></li><li>Cette méthode ne prend pas en compte les modifications ultérieures de la plage source.</li></ul></div>\n<h3>Mettre à jour la feuille depuis le formulaire</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Insérer une ligne et recopier les valeurs des contrôles</div>\n<pre>Private Sub ButtonOK_Click()\n    Sheets(\"Clients\").Rows(2).Insert\n    Range(\"A2:D2\").Font.Bold = False\n    Sheets(\"Clients\").Range(\"A2\").Value = Me.ComboBoxTitre.Text\n    Sheets(\"Clients\").Range(\"B2\").Value = Me.TextBoxNom.Text\n    Sheets(\"Clients\").Range(\"C2\").Value = Me.TextBoxPrénom.Text\n    Sheets(\"Clients\").Range(\"D2\").Value = Me.TextBoxTél.Text\n    ' tri par ordre croissant des noms (colonne B)\n    Call Sheets(\"Clients\").Range(\"A1\"). _\n        Sort(Key1:=Sheets(\"Clients\").Columns(\"B\"), Header:=xlYes)\n    Call Unload(Me)\nEnd Sub</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Hide vs Unload et réaffichage</div>\n<p>Si on utilise <code>.Hide</code> au lieu de <code>Unload</code> dans <code>ButtonOK_Click</code> / <code>ButtonAnnuler_Click</code>, les ressources mémoire <strong>ne sont pas libérées</strong>. Lors d'un nouvel affichage avec <code>.Show</code>, les contrôles conservent les valeurs qu'ils avaient au moment du masquage.</p></div>\n<h3>Lancer un UserForm depuis un bouton de feuille</h3>\n<ol>\n<li>Affichage → Barre d'outils <strong>Formulaires</strong></li>\n<li>Cliquer sur l'objet <strong>Bouton</strong>, puis sur la feuille de calcul</li>\n<li>Dans la fenêtre <strong>Affecter une macro</strong>, choisir la procédure principale (ex : <code>ProgPrincSaisieClients</code>)</li>\n<li>Renommer le bouton (ex : « Saisie Clients »)</li>\n</ol>\n<h2>Ponts entre applications &amp; actions par URL</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Communiquer avec Word depuis Excel</div>\n<ul><li><code>CreateObject(\"Word.Application\")</code> : accéder à l'application Word</li><li><code>.Visible = True</code> : rendre la fenêtre visible</li><li><code>.Documents.Add</code> / <code>.Documents.Open</code> / <code>.Documents.Save</code></li><li><code>.Selection.TypeText Text:=\"...\"</code> : écrire du texte</li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : copier le contenu de A1 dans un document Word</div>\n<pre>Sub CopieWord()\n    Dim AppWord As Object\n    Set AppWord = CreateObject(\"Word.Application\")\n    With AppWord\n        .Documents.Add\n        .Selection.TypeText Text:=\"Liste des Clients\"\n        .Selection.TypeParagraph\n        .Selection.TypeText Text:=\"\" &amp; Range(\"A1\").Value\n        .Documents.Save\n        .Visible = True\n    End With\nEnd Sub</pre></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">ActiveWorkbook.FollowHyperlink</div>\n<p>Permet d'accéder à des ressources externes via une URL (recherche web, envoi de mail via <code>mailto:adresse?subject=...&amp;body=...</code>) — la requête est envoyée via le navigateur par défaut.</p></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3</h3>\n<ul>\n<li><code>Option Explicit</code> + <code>Dim</code> typé → code plus sûr et plus efficace</li>\n<li><code>Function...End Function</code> retourne une valeur (<code>NomFonction = ...</code>) ; <code>Sub...End Sub</code> non</li>\n<li><code>If/ElseIf/Else</code>, <code>Do...Loop</code>, <code>For...Next</code>, <code>For Each...Next</code>, <code>Exit</code></li>\n<li><code>MsgBox</code> affiche un message · <code>InputBox</code> récupère une saisie (sans <code>Call</code> si on garde la valeur)</li>\n<li><strong>UserForm</strong> : <code>.Show</code> / <code>.Hide</code> / <code>Load</code> / <code>Unload</code> · <code>Me</code> · événements <code>Initialize</code>, <code>Click</code>, <code>Change</code></li>\n<li><code>CreateObject(\"Word.Application\")</code> pour créer des ponts entre applications Office</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Pourquoi placer Option Explicit en début de module ?",
+          "options": [
+            {
+              "text": "Pour accélérer le calcul des feuilles",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour forcer la déclaration des variables et détecter les fautes de frappe",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Pour masquer le code aux autres utilisateurs",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour activer les macros automatiquement",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Option Explicit force la déclaration de toute variable avec Dim, et provoque une erreur de compilation 'Variable non définie' en cas de faute de frappe — évitant les bugs silencieux."
+        },
+        {
+          "type": "mcq",
+          "text": "Qu'est-ce qui distingue une fonction d'une procédure en VBA ?",
+          "options": [
+            {
+              "text": "Une fonction ne peut pas avoir d'arguments",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une fonction retourne une valeur, une procédure non",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Une procédure s'écrit avec Function",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Il n'y a aucune différence",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Une fonction (Function...End Function) retourne une valeur via NomFonction = Expression. Une procédure (Sub...End Sub) ne renvoie pas de valeur."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle boucle permet de parcourir tous les objets d'une collection ?",
+          "options": [
+            {
+              "text": "Do While...Loop",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "For Each...Next",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "If...End If",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "With...End With",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "For Each élément In collection ... Next élément permet de parcourir chaque objet d'une collection (ex : chaque cellule d'une plage Range)."
+        },
+        {
+          "type": "mcq",
+          "text": "Pour récupérer la réponse saisie par l'utilisateur dans une InputBox, on écrit :",
+          "options": [
+            {
+              "text": "Call InputBox(\"...\")",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "reponse = InputBox(\"...\")",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "InputBox.Value = \"...\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Get InputBox(\"...\")",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Pour récupérer la valeur de retour d'une fonction comme InputBox, il ne faut pas utiliser Call : on écrit variable = InputBox(...)."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle instruction ferme un UserForm et libère sa mémoire (valeurs des contrôles perdues) ?",
+          "options": [
+            {
+              "text": ".Hide",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".Show",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Unload Me",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "End Sub",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Unload (Me) ferme l'objet UserForm et l'efface de la mémoire ; les valeurs de ses contrôles sont alors perdues. .Hide masque sans décharger."
+        },
+        {
+          "type": "mcq",
+          "text": "À quoi sert l'instruction With...End With ?",
+          "options": [
+            {
+              "text": "À déclarer une variable de type objet",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "À éviter de répéter la référence à un même objet plusieurs fois dans un bloc de code",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "À créer une boucle infinie",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "À fermer un UserForm",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "With Objet ... End With permet d'accéder à plusieurs propriétés ou méthodes du même objet sans répéter sa référence complète à chaque ligne ; chaque ligne commençant par un point dans le bloc s'applique à cet objet."
+        },
+        {
+          "type": "mcq",
+          "text": "Quel argument de MsgBox permet d'afficher les boutons « Oui » et « Non » ?",
+          "options": [
+            {
+              "text": "Title:=vbYesNo",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Buttons:=vbYesNo",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Prompt:=vbYesNo",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Default:=vbYesNo",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'argument Buttons:=vbYesNo (équivalent à la valeur numérique 4) affiche les boutons Oui et Non dans la boîte MsgBox ; on récupère ensuite la réponse avec vbYes ou vbNo."
+        },
+        {
+          "type": "mcq",
+          "text": "Quand l'événement Initialize d'un UserForm est-il déclenché ?",
+          "options": [
+            {
+              "text": "Chaque fois qu'on clique sur un bouton du formulaire",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Lorsque l'objet est chargé via .Show ou Load (mais pas lors d'un réaffichage après .Hide)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Uniquement à la fermeture du classeur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Jamais automatiquement, il faut l'appeler avec Call",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'événement Initialize est détecté lorsque l'UserForm est chargé en mémoire via .Show ou Load. Si on réaffiche un formulaire masqué par .Hide, il n'est pas rechargé : Initialize ne se déclenche donc pas à nouveau."
+        }
+      ],
+      "source": "_private/vba/chapitres/chapitre3.html"
     }
-   ],
-   "source": "vba/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Objets & Langage VBA",
-   "subtitle": "Le modèle objet d'Excel : Application, Workbook, Worksheet, Range — propriétés, méthodes et événements.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre le modèle objet d'Excel (objets et collections)<br/>\n        • Accéder aux objets : classeurs, feuilles, plages de cellules<br/>\n        • Distinguer propriétés, méthodes et événements<br/>\n        • Utiliser les fonctions intégrées d'Excel depuis VBA<br/>\n        • Utiliser l'explorateur d'objets pour découvrir l'API d'Excel</p>\n</div>\n<h2>2.1 — Les objets</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Tout est objet</div>\n<p>VBA est un <strong>langage orienté objet</strong> attaché à une application. Un objet est une entité nommée possédant des caractéristiques propres (<strong>propriétés</strong>) et des actions propres (<strong>méthodes</strong>).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Objet</th><th>Représente</th></tr></thead>\n<tbody>\n<tr><td><code>Application</code></td><td>Excel lui-même</td></tr>\n<tr><td><code>Workbook</code></td><td>Un classeur</td></tr>\n<tr><td><code>Worksheet</code></td><td>Une feuille de calcul</td></tr>\n<tr><td><code>Range</code></td><td>Une plage de cellules (peut être limitée à une seule cellule)</td></tr>\n</tbody>\n</table></div>\n<h2>2.2 — Les collections</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>De nombreux objets appartiennent à une <strong>collection d'objets</strong>, la collection étant elle-même un objet.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Collection</th><th>Contient</th></tr></thead>\n<tbody>\n<tr><td><code>Workbooks</code></td><td>Tous les objets <code>Workbook</code> ouverts (dans <code>Application</code>)</td></tr>\n<tr><td><code>Worksheets</code></td><td>Tous les objets <code>Worksheet</code> d'un classeur</td></tr>\n<tr><td><code>Range</code></td><td>Des objets <code>Range</code> dans une feuille</td></tr>\n</tbody>\n</table></div>\n<h2>2.3 — L'accès aux objets</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Référencer une plage de cellules</div>\n<pre>Range(\"A1:B4\")   ' renvoie un objet Range correspondant à la plage A1:B4</pre>\n</div>\n<p>Pour référencer un objet dans une collection, on peut utiliser <strong>son numéro de position</strong> ou <strong>son nom</strong> :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de référencement</div>\n<pre>Worksheets(1)\n' → première feuille de calcul du classeur actif\nWorkbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")\n' → feuille \"Feuil1\" du classeur \"Classeur1.xls\"\nWorkbooks(\"Année2006\").Sheets(\"Mars\").Range(\"B2\")\n' → cellule B2 de la feuille \"Mars\" du classeur \"Année2006\"\nSheets(\"Mars\").Range(\"B2\")\n' → Range(\"B2\") de la feuille \"Mars\" du classeur actif</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Application implicite</div>\n<p><code>Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")</code> est une notation raccourcie pour <code>Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")</code>. L'objet <code>Application</code> peut, en général, être omis.</p>\n</div>\n<h3>Références absolues vs relatives</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Exemple</th><th>Signification</th></tr></thead>\n<tbody>\n<tr><td><strong>Absolue</strong></td><td><code>Range(\"B2\")</code></td><td>Désigne la cellule B2 de la feuille active</td></tr>\n<tr><td><strong>Relative</strong></td><td><code>ActiveCell.Offset(2,-1)</code></td><td>Cellule située 2 lignes plus bas et 1 colonne à gauche de la cellule active (- pour haut/gauche, + pour bas/droite)</td></tr>\n</tbody>\n</table></div>\n<h2>2.4 — Les propriétés des objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Les <strong>propriétés</strong> représentent les caractéristiques d'un objet. Syntaxe : <code>Objet.Propriété</code>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de propriétés</div>\n<pre>Range(\"A1\").Value = \"AgroParisTech\"\n' Value : affecte la valeur \"AgroParisTech\" à la cellule A1\nActiveCell.Font.Bold = True\n' ActiveCell : cellule active de la feuille (une seule cellule)\n' Font : objet contenant les attributs de police (taille, couleur, style...)\n' Bold : propriété booléenne du style gras</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 ActiveCell vs Selection</div>\n<p>• <code>ActiveCell</code> : une <strong>seule</strong> cellule active<br/>\n        • <code>Selection</code> : peut référencer une <strong>plage</strong> de cellules (le type renvoyé dépend de la sélection en cours)</p>\n</div>\n<h2>2.5 — Les méthodes des objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Les <strong>méthodes</strong> représentent les <strong>actions</strong> qu'un objet peut effectuer. Syntaxe : <code>Objet.Méthode</code> (analogue aux propriétés).</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : méthode Select</div>\n<pre>Range(\"A1\").Select   ' sélectionne la cellule A1</pre>\n</div>\n<h3>Utiliser les fonctions intégrées d'Excel depuis VBA</h3>\n<p>Les fonctions intégrées d'Excel utilisables depuis VBA sont en fait des <strong>méthodes d'objets particuliers</strong>. Pour utiliser une fonction Excel dans VBA, il faut faire précéder son nom de l'objet sur lequel elle s'applique.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Objet WorksheetFunction</div>\n<pre>WorksheetFunction.Min(Range(\"A1:A10\"))\n' équivalent VBA de la fonction Excel MIN()</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Attention</div>\n<p>Toutes les fonctions intégrées d'Excel <strong>ne sont pas disponibles</strong> dans VBA. Néanmoins, il est fortement conseillé d'utiliser une fonction Excel existante pour un calcul donné plutôt que de redéfinir sa propre fonction, moins efficace en temps de calcul.</p>\n</div>\n<h2>2.6 — Les événements</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Un <strong>événement</strong> est une action reconnue par un objet (clic souris, frappe d'une touche...). Sa reconnaissance déclenche l'exécution d'une <strong>procédure événementielle</strong> stockée dans le module de code associé à l'objet concerné.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Exemples d'événements courants</div>\n<p>• <code>SelectionChange</code> : nouvelle sélection de cellule(s) dans une feuille<br/>\n        • <code>Change</code> : modification de la valeur d'un contrôle<br/>\n        • <code>Click</code> : clic sur un contrôle<br/>\n        • <code>Initialize</code> : chargement d'un objet UserForm</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : colorier la cellule sélectionnée</div>\n<pre>Private Sub Worksheet_SelectionChange(ByVal Target As Range)\n    Target.Interior.ColorIndex = 41\nEnd Sub</pre>\n</div>\n<p>La variable <code>Target</code> (objet <code>Range</code>) représente la plage ou cellule sélectionnée par l'utilisateur. La propriété <code>Interior</code> d'un objet <code>Range</code> renvoie un objet <code>Interior</code> correspondant à la couleur de fond, et <code>ColorIndex</code> permet de la définir.</p>\n<h2>2.7 — L'explorateur d'objets</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Compte tenu du grand nombre d'objets, propriétés, méthodes et événements disponibles pour Excel en VBA, on ne connaît dans la pratique qu'un petit sous-ensemble. L'<strong>explorateur d'objets</strong> (Affichage → Explorateur d'objets) recense l'ensemble des objets, leurs <strong>membres</strong> (propriétés, méthodes, événements associés).</p>\n</div>\n<h3>Utilisation</h3>\n<ul>\n<li><strong>Champ Projet/Bibliothèque</strong> : restreindre la recherche (ex : bibliothèque Excel uniquement)</li>\n<li><strong>Rechercher texte</strong> : taper l'élément recherché puis <code>Entrée</code></li>\n<li><strong>Zone Classes</strong> : tous les objets de la bibliothèque sélectionnée</li>\n<li><strong>Zone Membres</strong> : propriétés / méthodes / événements de l'objet sélectionné (classables par catégorie via clic droit → Membres du groupe)</li>\n<li><strong>Zone Détails</strong> : brève description de l'élément sélectionné</li>\n<li><strong>F1</strong> : aide détaillée sur l'objet ou le membre sélectionné</li>\n</ul>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Icône</th><th>Signifie</th></tr></thead>\n<tbody>\n<tr><td>🔷</td><td>Objet</td></tr>\n<tr><td>📋</td><td>Propriété</td></tr>\n<tr><td>⚙️</td><td>Méthode</td></tr>\n<tr><td>⚡</td><td>Événement</td></tr>\n</tbody>\n</table></div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Modèle objet d'Excel : <code>Application</code> → <code>Workbook</code> → <code>Worksheet</code> → <code>Range</code></li>\n<li>Collections : <code>Workbooks</code>, <code>Worksheets</code>... — accès par <strong>position</strong> ou par <strong>nom</strong></li>\n<li><strong>Propriétés</strong> = caractéristiques (<code>Objet.Propriété</code>) · <strong>Méthodes</strong> = actions (<code>Objet.Méthode</code>)</li>\n<li><code>WorksheetFunction</code> donne accès aux fonctions Excel depuis VBA</li>\n<li><strong>Événements</strong> (<code>SelectionChange</code>, <code>Change</code>, <code>Click</code>...) déclenchent des procédures événementielles</li>\n<li><strong>Explorateur d'objets</strong> (Affichage → Explorateur d'objets) + <code>F1</code> = meilleurs amis du développeur VBA</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Quel objet représente une feuille de calcul Excel ?",
-     "options": [
-      {
-       "text": "Workbook",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Worksheet",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Application",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Range",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Worksheet représente une feuille de calcul. Workbook représente le classeur entier, Application représente Excel et Range une plage de cellules."
+      "type": "open",
+      "text": "1. Quelle est la différence entre une procédure et une fonction en VBA ?",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Une <strong>procédure</strong> (<code>Sub ... End Sub</code>) est un ensemble d'instructions identifié par un nom et ne renvoyant <strong>pas de valeur</strong>. Une <strong>fonction</strong> (<code>Function ... End Function</code>) est une suite d'instructions qui <strong>retourne une valeur</strong> via <code>NomFonction = Expression</code>.</p>\n</div>\n</details>",
+      "model_answer": "Une procédure (Sub ... End Sub) est un ensemble d'instructions identifié par un nom et ne renvoyant pas de valeur. Une fonction (Function ... End Function) est une suite d'instructions qui retourne une valeur via NomFonction = Expression.",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "text": "Que désigne ActiveCell.Offset(2,-1) ?",
-     "options": [
-      {
-       "text": "La cellule A1 toujours",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La cellule 2 lignes plus bas et 1 colonne à gauche de la cellule active",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "La cellule 2 colonnes à droite de A1",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Toute la feuille active",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Offset(lignes, colonnes) déplace la référence relativement à la cellule active : valeurs positives = bas/droite, négatives = haut/gauche."
+      "type": "open",
+      "text": "2. Citez deux méthodes pour ouvrir le Visual Basic Editor (VBE) depuis Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1) Commande <strong>Outils → Macro → Visual Basic Editor</strong>.<br/>\n              2) Activer la commande <strong>Affichage → Barre d'outils Visual Basic</strong>, puis cliquer sur l'icône <em>Visual Basic Editor</em> de cette barre.</p>\n</div>\n</details>",
+      "model_answer": "1) Commande Outils → Macro → Visual Basic Editor. 2) Activer la commande Affichage → Barre d'outils Visual Basic, puis cliquer sur l'icône Visual Basic Editor de cette barre.",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "text": "Quelle est la syntaxe pour accéder à une propriété d'un objet ?",
-     "options": [
-      {
-       "text": "Propriété(Objet)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Objet->Propriété",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Objet.Propriété",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Objet::Propriété",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La syntaxe Objet.Propriété (ex : Range(\"A1\").Value) permet d'accéder ou de modifier une propriété, de la même façon que Objet.Méthode pour les méthodes."
+      "type": "open",
+      "text": "3. Réécrivez ce code pour qu'il puisse être exécuté directement par les menus d'Excel (Outils → Macro → Macros), tout en réutilisant la procédure existante :",
+      "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Une procédure avec arguments n'apparaît pas dans la liste des macros et ne peut pas être exécutée directement. Il faut créer une procédure <strong>sans argument</strong> qui l'appelle avec <code>Call</code> :</p>\n<div class=\"code-block\">\n<pre>Sub AfficherSalutation(nom As String)\n    MsgBox \"Bonjour \" &amp; nom\nEnd Sub\nSub LancerSalutation()\n    Call AfficherSalutation(\"Cours\")\nEnd Sub</pre>\n</div>\n<p><code>LancerSalutation</code> (sans argument) apparaîtra dans la liste des macros et pourra appeler <code>AfficherSalutation</code>.</p>\n</div>\n</details>",
+      "model_answer": "Une procédure avec arguments n'apparaît pas dans la liste des macros et ne peut pas être exécutée directement. Il faut créer une procédure sans argument qui l'appelle avec Call : Sub AfficherSalutation(nom As String) MsgBox \"Bonjour \" & nom End Sub Sub LancerSalutation() Call AfficherSalutation(\"Cours\") End Sub LancerSalutation (sans argument) apparaîtra dans la liste des macros et pourra appeler AfficherSalutation.",
+      "level": "medium"
     },
     {
-     "type": "mcq",
-     "text": "Quel objet permet d'utiliser les fonctions intégrées d'Excel (comme MIN) depuis VBA ?",
-     "options": [
-      {
-       "text": "ExcelFunction",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "WorksheetFunction",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Application.Formula",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Range.Function",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'objet WorksheetFunction donne accès à de nombreuses fonctions Excel (Min, Max, Pi...) depuis VBA, ex : WorksheetFunction.Min(...)."
+      "type": "open",
+      "text": "4. Vous enregistrez une macro qui doit toujours écrire dans une cellule située 3 lignes plus bas que la cellule de départ, quelle que soit la cellule sélectionnée au départ. Quel mode de référencement choisir au lancement de l'enregistrement, et pourquoi ?",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Il faut choisir le mode <strong>relatif</strong> (bouton de droite de la fenêtre d'arrêt de l'enregistrement). En mode relatif, une action est toujours effectuée par rapport à la cellule sélectionnée au moment de l'enregistrement (ex : <code>ActiveCell.Offset(3,0)</code>), et non par rapport à une cellule fixe comme A1 (mode absolu).</p>\n</div>\n</details>",
+      "model_answer": "Il faut choisir le mode relatif (bouton de droite de la fenêtre d'arrêt de l'enregistrement). En mode relatif, une action est toujours effectuée par rapport à la cellule sélectionnée au moment de l'enregistrement (ex : ActiveCell.Offset(3,0)), et non par rapport à une cellule fixe comme A1 (mode absolu).",
+      "level": "medium"
     },
     {
-     "type": "mcq",
-     "text": "Quel événement d'une feuille de calcul est déclenché à chaque nouvelle sélection de cellule(s) ?",
-     "options": [
-      {
-       "text": "Change",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Activate",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "SelectionChange",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Click",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'événement SelectionChange d'un objet Worksheet est détecté à chaque nouvelle sélection de plage ou cellule par l'utilisateur."
+      "type": "open",
+      "text": "5. Décrivez la démarche complète pour découvrir, via l'enregistreur de macro, comment changer la couleur de fond d'une cellule en VBA, puis intégrer ce code dans une procédure que vous écrivez vous-même.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1. Aller dans Excel et lancer <strong>Outils → Macro → Nouvelle macro</strong>, lui donner un nom (ex : <code>MacroCouleurFond</code>).<br/>\n              2. Effectuer manuellement l'action : sélectionner une cellule, changer sa couleur de fond via le bouton de remplissage.<br/>\n              3. Arrêter l'enregistrement.<br/>\n              4. Ouvrir VBE et lire le code généré : repérer l'instruction <code>Selection.Interior.ColorIndex = ...</code>.<br/>\n              5. Sélectionner <code>ColorIndex</code> dans le code et appuyer sur <code>F1</code> pour obtenir l'aide sur cette propriété.<br/>\n              6. Écrire sa propre procédure en réutilisant l'instruction, par exemple :</p>\n<div class=\"code-block\">\n<pre>Sub ColorerA1()\n    Range(\"A1\").Interior.ColorIndex = 41\nEnd Sub</pre>\n</div>\n</div>\n</details>",
+      "model_answer": "1. Aller dans Excel et lancer Outils → Macro → Nouvelle macro, lui donner un nom (ex : MacroCouleurFond). 2. Effectuer manuellement l'action : sélectionner une cellule, changer sa couleur de fond via le bouton de remplissage. 3. Arrêter l'enregistrement. 4. Ouvrir VBE et lire le code généré : repérer l'instruction Selection.Interior.ColorIndex = .... 5. Sélectionner ColorIndex dans le code et appuyer sur F1 pour obtenir l'aide sur cette propriété. 6. Écrire sa propre procédure en réutilisant l'instruction, par exemple : Sub ColorerA1() Range(\"A1\").Interior.ColorIndex = 41 End Sub",
+      "level": "hard"
     },
     {
-     "type": "mcq",
-     "text": "Quelle collection contient tous les objets Worksheet d'un classeur donné ?",
-     "options": [
-      {
-       "text": "Workbooks",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Worksheets",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Sheets.Application",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ranges",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La collection Worksheets contient tous les objets Worksheet (feuilles de calcul) d'un classeur donné ; Workbooks contient quant à elle tous les classeurs ouverts."
+      "type": "open",
+      "text": "6. Vous enregistrez une macro avec l'option \"Classeur de macros personnelles\" puis vous fermez Excel sans la sauvegarder explicitement. La macro est-elle conservée au prochain démarrage d'Excel ? Justifiez votre réponse.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Oui, à condition d'avoir accepté la sauvegarde du classeur <code>PERSO.XLS</code> lors de la fermeture (Excel demande généralement confirmation). Ce classeur spécial s'ouvre automatiquement et de façon masquée à chaque lancement d'Excel ; toutes les macros qu'il contient restent donc disponibles dans n'importe quel classeur ouvert, tant que <code>PERSO.XLS</code> a bien été enregistré au moins une fois.</p>\n<p>Pour vérifier ou modifier son contenu manuellement : <strong>Fenêtre → Afficher</strong> pour le rendre visible, puis <strong>Fenêtre → Masquer</strong> pour le re-masquer après modification.</p>\n</div>\n</details>",
+      "model_answer": "Oui, à condition d'avoir accepté la sauvegarde du classeur PERSO.XLS lors de la fermeture (Excel demande généralement confirmation). Ce classeur spécial s'ouvre automatiquement et de façon masquée à chaque lancement d'Excel ; toutes les macros qu'il contient restent donc disponibles dans n'importe quel classeur ouvert, tant que PERSO.XLS a bien été enregistré au moins une fois. Pour vérifier ou modifier son contenu manuellement : Fenêtre → Afficher pour le rendre visible, puis Fenêtre → Masquer pour le re-masquer après modification.",
+      "level": "medium"
     },
     {
-     "type": "mcq",
-     "text": "Que représente Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\") de façon complète, en incluant l'objet implicite ?",
-     "options": [
-      {
-       "text": "Range.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Worksheet.Workbooks(\"Classeur1.xls\")",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Aucun objet implicite n'est omis",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'objet Application est implicite et peut être omis : Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\") est une notation raccourcie pour Application.Workbooks(\"Classeur1.xls\").Worksheets(\"Feuil1\")."
+      "type": "open",
+      "text": "1. Que renvoie l'instruction Worksheets(2).Range(\"C3\").Value ?",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Elle renvoie la <strong>valeur</strong> (propriété <code>Value</code>) de la cellule <code>C3</code> de la <strong>deuxième feuille de calcul</strong> (<code>Worksheets(2)</code>, accès par position) du classeur actif.</p>\n</div>\n</details>",
+      "model_answer": "Elle renvoie la valeur (propriété Value) de la cellule C3 de la deuxième feuille de calcul (Worksheets(2), accès par position) du classeur actif.",
+      "level": "easy"
     },
     {
-     "type": "mcq",
-     "text": "Pourquoi est-il conseillé d'utiliser une fonction Excel intégrée (via WorksheetFunction) plutôt que de recoder soi-même un calcul existant ?",
-     "options": [
-      {
-       "text": "Parce que c'est obligatoire en VBA",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Parce que toutes les fonctions Excel sont disponibles dans VBA",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Parce que c'est plus efficace en temps de calcul qu'une fonction personnalisée équivalente",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Parce que WorksheetFunction n'a pas besoin d'arguments",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Les fonctions intégrées d'Excel (accessibles via WorksheetFunction) sont optimisées et donc plus efficaces en temps de calcul qu'une fonction VBA personnalisée refaisant le même travail. Attention : elles ne sont pas toutes disponibles depuis VBA."
+      "type": "open",
+      "text": "2. Citez la collection qui contient tous les classeurs ouverts, et celle qui contient toutes les feuilles d'un classeur.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <code>Workbooks</code> : collection de tous les objets <code>Workbook</code> ouverts (dans l'objet <code>Application</code>).<br/>\n              • <code>Worksheets</code> : collection de tous les objets <code>Worksheet</code> d'un classeur donné.</p>\n</div>\n</details>",
+      "model_answer": "• Workbooks : collection de tous les objets Workbook ouverts (dans l'objet Application). • Worksheets : collection de tous les objets Worksheet d'un classeur donné.",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "3. Écrivez une procédure MettreEnGras() qui met en gras et en italique le contenu de la cellule A1 de la feuille active, en utilisant la structure With...End With.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub MettreEnGras()\n    With Range(\"A1\").Font\n        .Bold = True\n        .Italic = True\n    End With\nEnd Sub</pre>\n</div>\n<p><code>With Range(\"A1\").Font</code> évite de répéter <code>Range(\"A1\").Font</code> pour chaque propriété (<code>.Bold</code>, <code>.Italic</code>).</p>\n</div>\n</details>",
+      "model_answer": "Sub MettreEnGras() With Range(\"A1\").Font .Bold = True .Italic = True End With End Sub With Range(\"A1\").Font évite de répéter Range(\"A1\").Font pour chaque propriété (.Bold, .Italic).",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "4. Quelle est la différence entre ActiveCell et Selection ? Donnez un exemple où ils renvoient des résultats différents.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p><code>ActiveCell</code> ne fait référence qu'à <strong>une seule cellule</strong> (la cellule active), alors que <code>Selection</code> peut faire référence à <strong>une plage de cellules</strong> entière.</p>\n<p>Exemple : si l'utilisateur sélectionne la plage A1:C3, <code>Selection</code> représente toute la plage A1:C3 (un objet <code>Range</code> de 9 cellules), alors que <code>ActiveCell</code> représente seulement la cellule active à l'intérieur de cette sélection (en général A1).</p>\n</div>\n</details>",
+      "model_answer": "ActiveCell ne fait référence qu'à une seule cellule (la cellule active), alors que Selection peut faire référence à une plage de cellules entière. Exemple : si l'utilisateur sélectionne la plage A1:C3, Selection représente toute la plage A1:C3 (un objet Range de 9 cellules), alors que ActiveCell représente seulement la cellule active à l'intérieur de cette sélection (en général A1).",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "5. Écrivez une procédure événementielle qui affiche un message « Attention, valeur négative ! » dès que la valeur d'une cellule de la feuille active devient inférieure à 0 (utilisez l'événement Change de l'objet Worksheet).",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Dans le module de code de la feuille concernée (double-clic sur la feuille dans l'explorateur de projets), sélectionner <code>Worksheet</code> puis l'événement <code>Change</code> :</p>\n<div class=\"code-block\">\n<pre>Private Sub Worksheet_Change(ByVal Target As Range)\n    If IsNumeric(Target.Value) Then\n        If Target.Value &lt; 0 Then\n            MsgBox \"Attention, valeur négative !\"\n        End If\n    End If\nEnd Sub</pre>\n</div>\n<p><code>Target</code> représente la cellule modifiée. <code>IsNumeric</code> évite une erreur si la nouvelle valeur n'est pas un nombre.</p>\n</div>\n</details>",
+      "model_answer": "Dans le module de code de la feuille concernée (double-clic sur la feuille dans l'explorateur de projets), sélectionner Worksheet puis l'événement Change : Private Sub Worksheet_Change(ByVal Target As Range) If IsNumeric(Target.Value) Then If Target.Value < 0 Then MsgBox \"Attention, valeur négative !\" End If End If End Sub Target représente la cellule modifiée. IsNumeric évite une erreur si la nouvelle valeur n'est pas un nombre.",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "6. On vous donne le code suivant. Expliquez ce qu'il affiche dans la cellule A1 et pourquoi, puis réécrivez-le en utilisant WorksheetFunction pour éviter de recoder la fonction vous-même.",
+      "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Le code affiche <strong>27</strong> dans A1, car <code>MaxPerso</code> compare 12 et 27 avec un <code>If...Else</code> et retourne le plus grand des deux via l'affectation <code>MaxPerso = a</code> ou <code>MaxPerso = b</code>.</p>\n<p>Cette fonction personnalisée duplique une fonctionnalité déjà disponible dans Excel. Il est préférable d'utiliser l'objet <code>WorksheetFunction</code>, plus efficace en temps de calcul :</p>\n<div class=\"code-block\">\n<pre>Sub TestMax()\n    Range(\"A1\").Value = WorksheetFunction.Max(12, 27)\nEnd Sub</pre>\n</div>\n</div>\n</details>",
+      "model_answer": "Le code affiche 27 dans A1, car MaxPerso compare 12 et 27 avec un If...Else et retourne le plus grand des deux via l'affectation MaxPerso = a ou MaxPerso = b. Cette fonction personnalisée duplique une fonctionnalité déjà disponible dans Excel. Il est préférable d'utiliser l'objet WorksheetFunction, plus efficace en temps de calcul : Sub TestMax() Range(\"A1\").Value = WorksheetFunction.Max(12, 27) End Sub",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "1. Pourquoi le code suivant ne fonctionne-t-il pas comme prévu, alors qu'il ne génère aucune erreur ?",
+      "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Sans <code>Option Explicit</code>, VBA crée silencieusement <strong>deux variables différentes</strong> : <code>total</code> (affectée à 10) et <code>totale</code> (jamais affectée, donc vide). La cellule A1 recevra donc une valeur vide, sans message d'erreur. Pour détecter ce genre de faute de frappe, il faut placer <code>Option Explicit</code> en première ligne du module : VBA signalera alors « Variable non définie » à la compilation.</p>\n</div>\n</details>",
+      "model_answer": "Sans Option Explicit, VBA crée silencieusement deux variables différentes : total (affectée à 10) et totale (jamais affectée, donc vide). La cellule A1 recevra donc une valeur vide, sans message d'erreur. Pour détecter ce genre de faute de frappe, il faut placer Option Explicit en première ligne du module : VBA signalera alors « Variable non définie » à la compilation.",
+      "level": "easy"
+    },
+    {
+      "type": "open",
+      "text": "2. Écrivez une fonction EstPair(n As Long) As Boolean qui renvoie True si n est pair, False sinon (utilisez l'opérateur Mod). Donnez ensuite un exemple d'appel depuis une procédure VBA et depuis une cellule Excel.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Function EstPair(n As Long) As Boolean\n    EstPair = (n Mod 2 = 0)\nEnd Function\n' Appel depuis une procédure VBA (valeur de retour à récupérer)\nSub TestEstPair()\n    Dim resultat As Boolean\n    resultat = EstPair(8)\n    MsgBox resultat   ' affiche True\nEnd Sub</pre>\n</div>\n<p>Dans une cellule Excel : <code>=EstPair(A1)</code> (séparateur virgule en VBA, point-virgule dans Excel pour plusieurs arguments).</p>\n</div>\n</details>",
+      "model_answer": "Function EstPair(n As Long) As Boolean EstPair = (n Mod 2 = 0) End Function ' Appel depuis une procédure VBA (valeur de retour à récupérer) Sub TestEstPair() Dim resultat As Boolean resultat = EstPair(8) MsgBox resultat ' affiche True End Sub Dans une cellule Excel : =EstPair(A1) (séparateur virgule en VBA, point-virgule dans Excel pour plusieurs arguments).",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "3. Écrivez une procédure qui parcourt les cellules A1 à A10 et écrit « Positif », « Négatif » ou « Nul » dans la colonne B selon le signe de chaque valeur (utilisez For...Next et If...ElseIf...Else).",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub ClasserSignes()\n    Dim i As Integer\n    For i = 1 To 10\n        If Range(\"A\" &amp; i).Value &gt; 0 Then\n            Range(\"B\" &amp; i).Value = \"Positif\"\n        ElseIf Range(\"A\" &amp; i).Value &lt; 0 Then\n            Range(\"B\" &amp; i).Value = \"Négatif\"\n        Else\n            Range(\"B\" &amp; i).Value = \"Nul\"\n        End If\n    Next i\nEnd Sub</pre>\n</div>\n</div>\n</details>",
+      "model_answer": "Sub ClasserSignes() Dim i As Integer For i = 1 To 10 If Range(\"A\" & i).Value > 0 Then Range(\"B\" & i).Value = \"Positif\" ElseIf Range(\"A\" & i).Value < 0 Then Range(\"B\" & i).Value = \"Négatif\" Else Range(\"B\" & i).Value = \"Nul\" End If Next i End Sub",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "4. À l'aide de InputBox et MsgBox, écrivez une procédure qui demande à l'utilisateur un nombre, et affiche « Ce nombre est pair » ou « Ce nombre est impair ». Gérez le cas où l'utilisateur ne saisit rien.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub TestParite()\n    Dim reponse As String\n    reponse = InputBox(\"Entrez un nombre entier :\", \"Saisie\")\n    If reponse = \"\" Then\n        MsgBox \"Aucune valeur saisie.\", , \"Erreur\"\n    ElseIf CLng(reponse) Mod 2 = 0 Then\n        MsgBox \"Ce nombre est pair\"\n    Else\n        MsgBox \"Ce nombre est impair\"\n    End If\nEnd Sub</pre>\n</div>\n<p><code>reponse = InputBox(...)</code> (sans <code>Call</code>, car on récupère la valeur de retour). <code>CLng()</code> convertit la chaîne en nombre entier long pour utiliser <code>Mod</code>.</p>\n</div>\n</details>",
+      "model_answer": "Sub TestParite() Dim reponse As String reponse = InputBox(\"Entrez un nombre entier :\", \"Saisie\") If reponse = \"\" Then MsgBox \"Aucune valeur saisie.\", , \"Erreur\" ElseIf CLng(reponse) Mod 2 = 0 Then MsgBox \"Ce nombre est pair\" Else MsgBox \"Ce nombre est impair\" End If End Sub reponse = InputBox(...) (sans Call, car on récupère la valeur de retour). CLng() convertit la chaîne en nombre entier long pour utiliser Mod.",
+      "level": "medium"
+    },
+    {
+      "type": "open",
+      "text": "5. Vous créez un UserForm FrmAjoutProduit avec une TextBox nommée TxtNomProduit, une TextBox nommée TxtPrix, et deux boutons BtnOK et BtnAnnuler. Écrivez les procédures événementielles permettant : (a) au clic sur OK, d'insérer une nouvelle ligne en haut de la feuille « Produits » avec le nom et le prix saisis, puis de fermer le formulaire ; (b) au clic sur Annuler, de fermer le formulaire sans rien faire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Private Sub BtnOK_Click()\n    Sheets(\"Produits\").Rows(2).Insert\n    Sheets(\"Produits\").Range(\"A2\").Value = Me.TxtNomProduit.Text\n    Sheets(\"Produits\").Range(\"B2\").Value = Me.TxtPrix.Text\n    Call Unload(Me)\nEnd Sub\nPrivate Sub BtnAnnuler_Click()\n    Call Unload(Me)\nEnd Sub</pre>\n</div>\n<p><code>Me</code> désigne le formulaire actif. <code>Rows(2).Insert</code> insère une ligne vide en position 2 (en supposant que la ligne 1 contient les en-têtes), et <code>Unload(Me)</code> ferme le formulaire en libérant la mémoire.</p>\n</div>\n</details>",
+      "model_answer": "Private Sub BtnOK_Click() Sheets(\"Produits\").Rows(2).Insert Sheets(\"Produits\").Range(\"A2\").Value = Me.TxtNomProduit.Text Sheets(\"Produits\").Range(\"B2\").Value = Me.TxtPrix.Text Call Unload(Me) End Sub Private Sub BtnAnnuler_Click() Call Unload(Me) End Sub Me désigne le formulaire actif. Rows(2).Insert insère une ligne vide en position 2 (en supposant que la ligne 1 contient les en-têtes), et Unload(Me) ferme le formulaire en libérant la mémoire.",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "6. Écrivez une fonction FactorielleVBA(n As Integer) As Long qui calcule la factorielle de n à l'aide d'une boucle For...Next (sans récursivité). Donnez ensuite la valeur retournée pour n = 5.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Function FactorielleVBA(n As Integer) As Long\n    Dim resultat As Long\n    Dim i As Integer\n    resultat = 1\n    For i = 1 To n\n        resultat = resultat * i\n    Next i\n    FactorielleVBA = resultat\nEnd Function\nSub TestFactorielle()\n    MsgBox FactorielleVBA(5)   ' affiche 120\nEnd Sub</pre>\n</div>\n<p>La variable <code>resultat</code> est initialisée à 1 (élément neutre de la multiplication), puis multipliée successivement par chaque entier de 1 à <code>n</code>. Pour <code>n = 5</code> : 1×1×2×3×4×5 = <strong>120</strong>.</p>\n</div>\n</details>",
+      "model_answer": "Function FactorielleVBA(n As Integer) As Long Dim resultat As Long Dim i As Integer resultat = 1 For i = 1 To n resultat = resultat * i Next i FactorielleVBA = resultat End Function Sub TestFactorielle() MsgBox FactorielleVBA(5) ' affiche 120 End Sub La variable resultat est initialisée à 1 (élément neutre de la multiplication), puis multipliée successivement par chaque entier de 1 à n. Pour n = 5 : 1×1×2×3×4×5 = 120.",
+      "level": "medium"
     }
-   ],
-   "source": "_private/vba/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Programmation avancée & UserForm",
-   "subtitle": "Variables, conditions, boucles, fonctions personnalisées, boîtes de dialogue et formulaires UserForm.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Déclarer et typer des variables et des constantes<br/>\n        • Définir ses propres fonctions personnalisées<br/>\n        • Utiliser les structures conditionnelles et les boucles<br/>\n        • Afficher des boîtes de dialogue (MsgBox, InputBox)<br/>\n        • Créer un formulaire UserForm et y associer du code</p>\n</div>\n<h2>3.1 — Variables et constantes</h2>\n<h3>Déclaration : Dim</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Dim NomVariable [As Type]</pre>\n</div>\n<p>Le premier caractère du nom doit être une lettre. Les minuscules et majuscules sont distinguées.</p>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège classique : Option Explicit</div>\n<p>En VBA, la déclaration n'est <strong>pas obligatoire</strong> par défaut. Sans <code>Option Explicit</code>, une faute de frappe comme <code>valleur</code> au lieu de <code>valeur</code> crée silencieusement une nouvelle variable — la macro ne fait alors rien sans signaler d'erreur !</p>\n<p>Placer <code>Option Explicit</code> en première ligne du module force la déclaration explicite et déclenche une <strong>erreur de compilation</strong> (« Variable non définie ») en cas d'oubli.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Avec Option Explicit</div>\n<pre>Option Explicit\nSub MacroTestVariable()\n    Dim valeur As Double\n    valeur = Range(\"A1\").Value\n    Range(\"B1\").Value = valeur\nEnd Sub</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Activer Option Explicit automatiquement</div>\n<p>Outils → Options → onglet Éditeur → cocher <strong>Déclaration des variables obligatoire</strong>.</p>\n</div>\n<h3>Les types de données</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Catégorie</th><th>Types</th><th>Valeur initiale</th></tr></thead>\n<tbody>\n<tr><td>Entiers</td><td><code>Byte</code>, <code>Integer</code>, <code>Long</code></td><td>0</td></tr>\n<tr><td>Réels</td><td><code>Single</code>, <code>Double</code>, <code>Currency</code></td><td>0</td></tr>\n<tr><td>Booléens</td><td><code>Boolean</code></td><td><code>False</code></td></tr>\n<tr><td>Texte</td><td><code>String</code></td><td><code>\"\"</code> (chaîne vide)</td></tr>\n<tr><td>Dates</td><td><code>Date</code></td><td>00:00:00</td></tr>\n<tr><td>Objets</td><td><code>Object</code></td><td>—</td></tr>\n<tr><td>Universel</td><td><code>Variant</code></td><td><code>\"\"</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Pourquoi typer ses variables ?</div>\n<p>Sans type précisé, une variable est de type <code>Variant</code> (peut stocker n'importe quoi), mais elle <strong>consomme plus de mémoire</strong> et de ressources (identification du type + conversions). Typer ses variables rend le code plus efficace.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de déclaration</div>\n<pre>Dim Nom As String\nNom = \"Jean \" &amp; \"Dupond\"   ' &amp; concatène les chaînes\nDim Age As Byte\nAge = 23\nDim MaPlage As Object        ' variable de type Object\nSet MaPlage = Range(\"A1:B5\") ' Set : pour affecter un objet</pre>\n</div>\n<h3>Portée des variables</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Portée</th><th>Déclaration</th></tr></thead>\n<tbody>\n<tr><td>Locale (procédure/fonction)</td><td><code>Dim</code> à l'intérieur de la procédure ou fonction</td></tr>\n<tr><td>Module entier</td><td><code>Dim</code> au début du module, hors de toute procédure/fonction</td></tr>\n<tr><td>Tout le projet</td><td><code>Public</code> au début d'un module, hors de toute procédure/fonction</td></tr>\n</tbody>\n</table></div>\n<h3>Constantes : Const</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Const NomConstante [As Type] = valeur\n' Exemple\nPublic Const Pi As Single = 3.14159265358979</pre>\n</div>\n<p>Une constante a la même portée qu'une variable.</p>\n<h3>L'instruction With...End With</h3>\n<p>Utile lorsque les références à un objet sont répétées plusieurs fois dans une petite section de code.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Avant / Après</div>\n<pre>' Sans With\nSub ModifiePolice(MaPlage As Range)\n    MaPlage.Select\n    Selection.Font.Size = 12\n    Selection.Font.ColorIndex = 3\n    Selection.Font.Italic = True\nEnd Sub\n' Avec With...End With\nSub ModifiePolice(MaPlage As Range)\n    MaPlage.Select\n    With Selection.Font\n        .Size = 12\n        .ColorIndex = 3\n        .Italic = True\n    End With\nEnd Sub</pre>\n</div>\n<p>Tout ce qui commence par un point dans un bloc <code>With...End With</code> est une propriété ou méthode de l'objet qui suit <code>With</code>.</p>\n<h2>3.2 — Définir ses propres fonctions</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Une <strong>fonction</strong> est une suite d'instructions qui <strong>retourne une valeur</strong>. Elle commence par <code>Function</code> et se termine par <code>End Function</code>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>Function NomFonction([argument_1,..., argument_n]) [As Type]\n    Instructions\n    ...\n    NomFonction = Expression   ' valeur de retour\nEnd Function</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges fréquents</div>\n<p>• En VBA, les arguments d'une fonction sont séparés par des <strong>virgules</strong> (Excel utilise des points-virgules)<br/>\n        • En VBA, les réels s'écrivent avec un <strong>point</strong> (Excel utilise une virgule)</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : surface d'un cercle</div>\n<pre>Function SurfaceCercle(Rayon As Double) As Double\n    SurfaceCercle = WorksheetFunction.Pi() * Rayon * Rayon\nEnd Function</pre>\n</div>\n<h3>Utilisation</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Contexte</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><strong>Dans Excel</strong></td><td><code>=SurfaceCercle(A6)</code> — comme une fonction intégrée (Insertion → Fonction → Personnalisées). N'apparaît <strong>pas</strong> dans la liste des macros.</td></tr>\n<tr><td><strong>Dans un programme VBA</strong></td><td>La valeur de retour doit être <strong>sauvegardée dans une variable</strong> :<br/><code>valeur = SurfaceCercle(1.5)</code></td></tr>\n</tbody>\n</table></div>\n<h2>3.3 — Conditions : If / ElseIf / Else</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxes</div>\n<pre>If condition Then\n    Instructions_si_vrai\n[Else\n    Instructions_si_faux]\nEnd If\nIf condition_1 Then\n    Instructions_1\nElseIf condition_2 Then\n    Instructions_2\nElse\n    Instructions_n\nEnd If</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Opérateurs logiques</div>\n<p><code>Or</code>, <code>Xor</code> (ou exclusif), <code>And</code>, <code>Not</code></p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : message selon l'heure</div>\n<pre>Sub BonjourHeureIf()\n    Dim heure As Integer\n    Dim mes As String\n    heure = Left(Time, 2)   ' récupère l'heure (2 caractères à gauche de Time)\n    If heure &gt; 7 And heure &lt; 12 Then\n        mes = \"Bonjour\"\n    ElseIf heure &gt;= 12 And heure &lt; 18 Then\n        mes = \"Bon après-midi\"\n    ElseIf heure &gt;= 18 And heure &lt; 22 Then\n        mes = \"Bonne soirée\"\n    Else\n        mes = \"Bonne nuit\"\n    End If\n    Range(\"A1\").Value = mes\nEnd Sub</pre>\n</div>\n<h2>3.4 — Boucles : Do...Loop, For...Next, For Each...Next</h2>\n<h3>Do...Loop</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Syntaxe</th><th>Comportement</th></tr></thead>\n<tbody>\n<tr><td><code>Do While condition ... Loop</code></td><td>Exécute tant que la condition est vraie (test avant)</td></tr>\n<tr><td><code>Do Until condition ... Loop</code></td><td>Exécute jusqu'à ce que la condition devienne vraie (test avant)</td></tr>\n<tr><td><code>Do ... Loop While condition</code></td><td>Exécute au moins une fois, tant que vrai (test après)</td></tr>\n<tr><td><code>Do ... Loop Until condition</code></td><td>Exécute au moins une fois, jusqu'à devenir vrai (test après)</td></tr>\n</tbody>\n</table></div>\n<h3>For...Next</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemple</div>\n<pre>For compteur = nbdébut To nbfin [Step nbpas]\n    Instructions\nNext compteur\n' Exemple : somme des n premiers entiers\nSub SommeEntiers()\n    Dim somme As Integer, compteur As Integer, n As Integer\n    n = Range(\"A1\").Value\n    For compteur = 1 To n\n        somme = somme + compteur\n    Next compteur\n    Range(\"A2\").Value = \"Somme des \" &amp; n &amp; \" premiers entiers : \"\n    Range(\"B2\").Value = somme\nEnd Sub\n' Step négatif\nFor compteur = 21 To 1 Step -2\n    Range(\"A\" &amp; compteur).Value = compteur - 1\nNext compteur</pre>\n</div>\n<h3>For Each...Next</h3>\n<p>Permet d'accéder à chaque objet d'une <strong>collection</strong>.</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : colorier chaque cellule d'une plage</div>\n<pre>Sub ColorieCellule()\n    Dim MaPlage As Range, Cellule As Range, i As Integer\n    Set MaPlage = Range(\"A1:B5\")\n    For Each Cellule In MaPlage\n        Cellule.Interior.ColorIndex = i\n        i = i + 1\n    Next Cellule\nEnd Sub</pre>\n</div>\n<h3>Interrompre une boucle : Exit</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exit Do / Exit For / Exit Sub / Exit Function</div>\n<pre>Do\n    Rep = InputBox(\"Voulez-vous continuer ? (O/N)\")\n    If LCase(rep) = \"n\" Then Exit Do\nLoop</pre>\n</div>\n<h2>3.5 — MsgBox et InputBox</h2>\n<h3>MsgBox — afficher un message</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe</div>\n<pre>MsgBox(prompt[, buttons][, title][, helpfile, context])</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Arguments par position vs par nom</div>\n<pre>' Par position : ordre imposé, virgules pour arguments manquants\nCall MsgBox(\"Bonjour ! \", , \"Accueil\")\n' Par nom : ordre libre, signe := entre nom et valeur\nCall MsgBox(prompt:=\"Bonjour ! \", Title:=\"Accueil\")</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Constantes vbYesNo, vbYes</div>\n<p>L'argument <code>Buttons:=vbYesNo</code> (équivalent à <code>4</code>) affiche les boutons <strong>Oui</strong> et <strong>Non</strong>. Les constantes intégrées rendent le code plus lisible que les codes numériques.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Récupérer la réponse de l'utilisateur</div>\n<pre>Sub MacroTestMessage3()\n    Dim reponse As String\n    reponse = MsgBox(prompt:=\"Avez-vous passé une bonne journée ? \", _\n                      Buttons:=vbYesNo, Title:=\"Accueil !\")\n    If reponse = vbYes Then\n        Call MsgBox(\"Bonjour ! \", , \"Accueil\")\n    Else\n        Call MsgBox(\"Bonsoir ! \", , \"Accueil\")\n    End If\nEnd Sub</pre>\n</div>\n<h3>InputBox — lire une saisie</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe et exemple</div>\n<pre>InputBox(prompt[, title][, default][, xpos][, ypos][, helpfile, context])\nSub MacroTestDialogue()\n    Dim reponse As String\n    reponse = InputBox(\"Quel âge avez-vous ?\", \"Saisie âge\")\n    If reponse = \"\" Then\n        Call MsgBox(\"Vous n'avez pas répondu à la question !\", , \"Erreur\")\n    Else\n        Call MsgBox(\"Vous avez \" &amp; reponse &amp; \" ans\", , \"Age\")\n    End If\nEnd Sub</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Règles d'appel importantes</div>\n<p>• Pour <strong>récupérer la valeur de retour</strong> d'une fonction : <strong>pas de <code>Call</code></strong> → <code>reponse = InputBox(...)</code><br/>\n        • Pour <strong>appeler une procédure</strong> ou ignorer la valeur de retour : utiliser <code>Call</code> → <code>Call MsgBox(...)</code><br/>\n        • <strong>Jamais d'espace</strong> entre le nom d'une fonction/procédure et la parenthèse ouvrante<br/>\n        • Si une chaîne vide est saisie dans <code>InputBox</code>, elle renvoie <code>\"\"</code></p>\n</div>\n<h2>3.6 — Les objets UserForm</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Les objets <strong>UserForm</strong> sont des boîtes de dialogue définies par l'utilisateur, composées de <strong>contrôles</strong> (intitulés, zones de texte, zones de liste modifiable, boutons de commande...).</p>\n</div>\n<h3>Créer un UserForm</h3>\n<ul>\n<li><strong>Insertion → UserForm</strong> dans VBE pour créer un objet UserForm1 + boîte à outils de contrôles</li>\n<li>Renommer l'objet via la propriété <code>(Name)</code> (ex : <code>FenetreSaisieClients</code>)</li>\n<li>La propriété <code>Caption</code> correspond au libellé de la barre de titre</li>\n<li>Glisser-déposer un contrôle de la boîte à outils vers le formulaire, puis renommer via <code>(Name)</code></li>\n</ul>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Noms évocateurs</div>\n<p>Utiliser des noms qui identifient le type et l'utilité du contrôle, par exemple : <code>ComboBoxTitre</code>, <code>TextBoxNom</code>, <code>ButtonOK</code>, <code>ButtonAnnuler</code>.</p>\n</div>\n<h3>Afficher / fermer un UserForm</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Instruction / Méthode</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>Load</code></td><td>Charge l'objet en mémoire sans l'afficher</td></tr>\n<tr><td><code>.Show</code></td><td>Affiche l'objet (le charge en mémoire si besoin)</td></tr>\n<tr><td><code>Unload</code></td><td>Ferme l'objet et libère la mémoire (valeurs des contrôles perdues)</td></tr>\n<tr><td><code>.Hide</code></td><td>Masque l'objet sans le décharger (valeurs conservées)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Afficher le formulaire depuis un module</div>\n<pre>Sub ProgPrincSaisieClients()\n    Sheets(\"Clients\").Activate\n    FenetreSaisieClients.Show\nEnd Sub</pre>\n</div>\n<h3>Procédures événementielles d'un UserForm</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>Private Sub NomContrôle_NomEvénement()\n    ...\nEnd Sub\n' Pour l'objet UserForm lui-même, on utilise le mot-clé UserForm :\nPrivate Sub UserForm_NomÉvénement()\n    ...\nEnd Sub</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Événements courants des contrôles</div>\n<p>• <code>Change</code> : modification de la valeur (<code>Value</code>) d'un contrôle<br/>\n        • <code>Click</code> : clic sur un contrôle<br/>\n        • <code>dblClick</code> : double-clic sur un contrôle</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Fermer le formulaire via le bouton OK</div>\n<pre>Private Sub ButtonOK_Click()\n    Call Unload(Me)\nEnd Sub</pre>\n</div>\n<p>La propriété <code>Me</code> de l'objet UserForm renvoie l'objet UserForm actif.</p>\n<h3>Initialiser un UserForm</h3>\n<p>L'événement <code>Initialize</code> est détecté lorsque l'objet est chargé via <code>.Show</code> ou <code>Load</code> (mais <strong>pas</strong> si on réaffiche un objet masqué par <code>.Hide</code> : il n'est pas rechargé).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Remplir une zone de liste modifiable depuis une feuille</div>\n<pre>Private Sub UserForm_Initialize()\n    Dim i As Integer\n    i = 1\n    Do Until IsEmpty(Worksheets(\"Divers\").Range(\"A\" &amp; i))\n        Call Me.ComboBoxTitre.AddItem(Worksheets(\"Divers\"). _\n            Range(\"A\" &amp; i).Value)\n        i = i + 1\n    Loop\nEnd Sub</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Continuer une instruction sur plusieurs lignes</div>\n<p>Pour écrire une instruction sur plusieurs lignes : taper un <strong>espace</strong> suivi du <strong>trait de soulignement</strong> <code>_</code> à la fin de chaque ligne.</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Alternative : RowSource / ControlSource</div>\n<p>• <code>RowSource</code> : lie un contrôle (ex : zone de liste) à une <strong>plage de cellules</strong> (ex : <code>Divers!A1:A3</code>)<br/>\n        • <code>ControlSource</code> : lie un contrôle à <strong>une seule cellule</strong><br/>\n        ⚠️ Cette méthode ne prend pas en compte les modifications ultérieures de la plage source.</p>\n</div>\n<h3>Mettre à jour la feuille depuis le formulaire</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Insérer une ligne et recopier les valeurs des contrôles</div>\n<pre>Private Sub ButtonOK_Click()\n    Sheets(\"Clients\").Rows(2).Insert\n    Range(\"A2:D2\").Font.Bold = False\n    Sheets(\"Clients\").Range(\"A2\").Value = Me.ComboBoxTitre.Text\n    Sheets(\"Clients\").Range(\"B2\").Value = Me.TextBoxNom.Text\n    Sheets(\"Clients\").Range(\"C2\").Value = Me.TextBoxPrénom.Text\n    Sheets(\"Clients\").Range(\"D2\").Value = Me.TextBoxTél.Text\n    ' tri par ordre croissant des noms (colonne B)\n    Call Sheets(\"Clients\").Range(\"A1\"). _\n        Sort(Key1:=Sheets(\"Clients\").Columns(\"B\"), Header:=xlYes)\n    Call Unload(Me)\nEnd Sub</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Hide vs Unload et réaffichage</div>\n<p>Si on utilise <code>.Hide</code> au lieu de <code>Unload</code> dans <code>ButtonOK_Click</code> / <code>ButtonAnnuler_Click</code>, les ressources mémoire <strong>ne sont pas libérées</strong>. Lors d'un nouvel affichage avec <code>.Show</code>, les contrôles conservent les valeurs qu'ils avaient au moment du masquage.</p>\n</div>\n<h3>Lancer un UserForm depuis un bouton de feuille</h3>\n<ol>\n<li>Affichage → Barre d'outils <strong>Formulaires</strong></li>\n<li>Cliquer sur l'objet <strong>Bouton</strong>, puis sur la feuille de calcul</li>\n<li>Dans la fenêtre <strong>Affecter une macro</strong>, choisir la procédure principale (ex : <code>ProgPrincSaisieClients</code>)</li>\n<li>Renommer le bouton (ex : « Saisie Clients »)</li>\n</ol>\n<h2>3.7 — Ponts entre applications &amp; actions par URL</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Communiquer avec Word depuis Excel</div>\n<p>• <code>CreateObject(\"Word.Application\")</code> : accéder à l'application Word<br/>\n        • <code>.Visible = True</code> : rendre la fenêtre visible<br/>\n        • <code>.Documents.Add</code> / <code>.Documents.Open</code> / <code>.Documents.Save</code><br/>\n        • <code>.Selection.TypeText Text:=\"...\"</code> : écrire du texte</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple : copier le contenu de A1 dans un document Word</div>\n<pre>Sub CopieWord()\n    Dim AppWord As Object\n    Set AppWord = CreateObject(\"Word.Application\")\n    With AppWord\n        .Documents.Add\n        .Selection.TypeText Text:=\"Liste des Clients\"\n        .Selection.TypeParagraph\n        .Selection.TypeText Text:=\"\" &amp; Range(\"A1\").Value\n        .Documents.Save\n        .Visible = True\n    End With\nEnd Sub</pre>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 ActiveWorkbook.FollowHyperlink</div>\n<p>Permet d'accéder à des ressources externes via une URL (recherche web, envoi de mail via <code>mailto:adresse?subject=...&amp;body=...</code>) — la requête est envoyée via le navigateur par défaut.</p>\n</div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li><code>Option Explicit</code> + <code>Dim</code> typé → code plus sûr et plus efficace</li>\n<li><code>Function...End Function</code> retourne une valeur (<code>NomFonction = ...</code>) ; <code>Sub...End Sub</code> non</li>\n<li><code>If/ElseIf/Else</code>, <code>Do...Loop</code>, <code>For...Next</code>, <code>For Each...Next</code>, <code>Exit</code></li>\n<li><code>MsgBox</code> affiche un message · <code>InputBox</code> récupère une saisie (sans <code>Call</code> si on garde la valeur)</li>\n<li><strong>UserForm</strong> : <code>.Show</code> / <code>.Hide</code> / <code>Load</code> / <code>Unload</code> · <code>Me</code> · événements <code>Initialize</code>, <code>Click</code>, <code>Change</code></li>\n<li><code>CreateObject(\"Word.Application\")</code> pour créer des ponts entre applications Office</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Pourquoi placer Option Explicit en début de module ?",
-     "options": [
-      {
-       "text": "Pour accélérer le calcul des feuilles",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour forcer la déclaration des variables et détecter les fautes de frappe",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Pour masquer le code aux autres utilisateurs",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour activer les macros automatiquement",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Option Explicit force la déclaration de toute variable avec Dim, et provoque une erreur de compilation 'Variable non définie' en cas de faute de frappe — évitant les bugs silencieux."
-    },
-    {
-     "type": "mcq",
-     "text": "Qu'est-ce qui distingue une fonction d'une procédure en VBA ?",
-     "options": [
-      {
-       "text": "Une fonction ne peut pas avoir d'arguments",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une fonction retourne une valeur, une procédure non",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Une procédure s'écrit avec Function",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Il n'y a aucune différence",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Une fonction (Function...End Function) retourne une valeur via NomFonction = Expression. Une procédure (Sub...End Sub) ne renvoie pas de valeur."
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle boucle permet de parcourir tous les objets d'une collection ?",
-     "options": [
-      {
-       "text": "Do While...Loop",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "For Each...Next",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "If...End If",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "With...End With",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "For Each élément In collection ... Next élément permet de parcourir chaque objet d'une collection (ex : chaque cellule d'une plage Range)."
-    },
-    {
-     "type": "mcq",
-     "text": "Pour récupérer la réponse saisie par l'utilisateur dans une InputBox, on écrit :",
-     "options": [
-      {
-       "text": "Call InputBox(\"...\")",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "reponse = InputBox(\"...\")",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "InputBox.Value = \"...\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Get InputBox(\"...\")",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Pour récupérer la valeur de retour d'une fonction comme InputBox, il ne faut pas utiliser Call : on écrit variable = InputBox(...)."
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle instruction ferme un UserForm et libère sa mémoire (valeurs des contrôles perdues) ?",
-     "options": [
-      {
-       "text": ".Hide",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".Show",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Unload Me",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "End Sub",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Unload (Me) ferme l'objet UserForm et l'efface de la mémoire ; les valeurs de ses contrôles sont alors perdues. .Hide masque sans décharger."
-    },
-    {
-     "type": "mcq",
-     "text": "À quoi sert l'instruction With...End With ?",
-     "options": [
-      {
-       "text": "À déclarer une variable de type objet",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "À éviter de répéter la référence à un même objet plusieurs fois dans un bloc de code",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "À créer une boucle infinie",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "À fermer un UserForm",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "With Objet ... End With permet d'accéder à plusieurs propriétés ou méthodes du même objet sans répéter sa référence complète à chaque ligne ; chaque ligne commençant par un point dans le bloc s'applique à cet objet."
-    },
-    {
-     "type": "mcq",
-     "text": "Quel argument de MsgBox permet d'afficher les boutons « Oui » et « Non » ?",
-     "options": [
-      {
-       "text": "Title:=vbYesNo",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Buttons:=vbYesNo",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Prompt:=vbYesNo",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Default:=vbYesNo",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'argument Buttons:=vbYesNo (équivalent à la valeur numérique 4) affiche les boutons Oui et Non dans la boîte MsgBox ; on récupère ensuite la réponse avec vbYes ou vbNo."
-    },
-    {
-     "type": "mcq",
-     "text": "Quand l'événement Initialize d'un UserForm est-il déclenché ?",
-     "options": [
-      {
-       "text": "Chaque fois qu'on clique sur un bouton du formulaire",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Lorsque l'objet est chargé via .Show ou Load (mais pas lors d'un réaffichage après .Hide)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Uniquement à la fermeture du classeur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Jamais automatiquement, il faut l'appeler avec Call",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'événement Initialize est détecté lorsque l'UserForm est chargé en mémoire via .Show ou Load. Si on réaffiche un formulaire masqué par .Hide, il n'est pas rechargé : Initialize ne se déclenche donc pas à nouveau."
-    }
-   ],
-   "source": "_private/vba/chapitres/chapitre3.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Quelle est la différence entre une procédure et une fonction en VBA ?",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Une <strong>procédure</strong> (<code>Sub ... End Sub</code>) est un ensemble d'instructions identifié par un nom et ne renvoyant <strong>pas de valeur</strong>. Une <strong>fonction</strong> (<code>Function ... End Function</code>) est une suite d'instructions qui <strong>retourne une valeur</strong> via <code>NomFonction = Expression</code>.</p>\n</div>\n</details>",
-   "model_answer": "Une procédure (Sub ... End Sub) est un ensemble d'instructions identifié par un nom et ne renvoyant pas de valeur. Une fonction (Function ... End Function) est une suite d'instructions qui retourne une valeur via NomFonction = Expression.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez deux méthodes pour ouvrir le Visual Basic Editor (VBE) depuis Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1) Commande <strong>Outils → Macro → Visual Basic Editor</strong>.<br/>\n              2) Activer la commande <strong>Affichage → Barre d'outils Visual Basic</strong>, puis cliquer sur l'icône <em>Visual Basic Editor</em> de cette barre.</p>\n</div>\n</details>",
-   "model_answer": "1) Commande Outils → Macro → Visual Basic Editor. 2) Activer la commande Affichage → Barre d'outils Visual Basic, puis cliquer sur l'icône Visual Basic Editor de cette barre.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "3. Réécrivez ce code pour qu'il puisse être exécuté directement par les menus d'Excel (Outils → Macro → Macros), tout en réutilisant la procédure existante :",
-   "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Une procédure avec arguments n'apparaît pas dans la liste des macros et ne peut pas être exécutée directement. Il faut créer une procédure <strong>sans argument</strong> qui l'appelle avec <code>Call</code> :</p>\n<div class=\"code-block\">\n<pre>Sub AfficherSalutation(nom As String)\n    MsgBox \"Bonjour \" &amp; nom\nEnd Sub\nSub LancerSalutation()\n    Call AfficherSalutation(\"Cours\")\nEnd Sub</pre>\n</div>\n<p><code>LancerSalutation</code> (sans argument) apparaîtra dans la liste des macros et pourra appeler <code>AfficherSalutation</code>.</p>\n</div>\n</details>",
-   "model_answer": "Une procédure avec arguments n'apparaît pas dans la liste des macros et ne peut pas être exécutée directement. Il faut créer une procédure sans argument qui l'appelle avec Call : Sub AfficherSalutation(nom As String) MsgBox \"Bonjour \" & nom End Sub Sub LancerSalutation() Call AfficherSalutation(\"Cours\") End Sub LancerSalutation (sans argument) apparaîtra dans la liste des macros et pourra appeler AfficherSalutation.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "4. Vous enregistrez une macro qui doit toujours écrire dans une cellule située 3 lignes plus bas que la cellule de départ, quelle que soit la cellule sélectionnée au départ. Quel mode de référencement choisir au lancement de l'enregistrement, et pourquoi ?",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Il faut choisir le mode <strong>relatif</strong> (bouton de droite de la fenêtre d'arrêt de l'enregistrement). En mode relatif, une action est toujours effectuée par rapport à la cellule sélectionnée au moment de l'enregistrement (ex : <code>ActiveCell.Offset(3,0)</code>), et non par rapport à une cellule fixe comme A1 (mode absolu).</p>\n</div>\n</details>",
-   "model_answer": "Il faut choisir le mode relatif (bouton de droite de la fenêtre d'arrêt de l'enregistrement). En mode relatif, une action est toujours effectuée par rapport à la cellule sélectionnée au moment de l'enregistrement (ex : ActiveCell.Offset(3,0)), et non par rapport à une cellule fixe comme A1 (mode absolu).",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "5. Décrivez la démarche complète pour découvrir, via l'enregistreur de macro, comment changer la couleur de fond d'une cellule en VBA, puis intégrer ce code dans une procédure que vous écrivez vous-même.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>1. Aller dans Excel et lancer <strong>Outils → Macro → Nouvelle macro</strong>, lui donner un nom (ex : <code>MacroCouleurFond</code>).<br/>\n              2. Effectuer manuellement l'action : sélectionner une cellule, changer sa couleur de fond via le bouton de remplissage.<br/>\n              3. Arrêter l'enregistrement.<br/>\n              4. Ouvrir VBE et lire le code généré : repérer l'instruction <code>Selection.Interior.ColorIndex = ...</code>.<br/>\n              5. Sélectionner <code>ColorIndex</code> dans le code et appuyer sur <code>F1</code> pour obtenir l'aide sur cette propriété.<br/>\n              6. Écrire sa propre procédure en réutilisant l'instruction, par exemple :</p>\n<div class=\"code-block\">\n<pre>Sub ColorerA1()\n    Range(\"A1\").Interior.ColorIndex = 41\nEnd Sub</pre>\n</div>\n</div>\n</details>",
-   "model_answer": "1. Aller dans Excel et lancer Outils → Macro → Nouvelle macro, lui donner un nom (ex : MacroCouleurFond). 2. Effectuer manuellement l'action : sélectionner une cellule, changer sa couleur de fond via le bouton de remplissage. 3. Arrêter l'enregistrement. 4. Ouvrir VBE et lire le code généré : repérer l'instruction Selection.Interior.ColorIndex = .... 5. Sélectionner ColorIndex dans le code et appuyer sur F1 pour obtenir l'aide sur cette propriété. 6. Écrire sa propre procédure en réutilisant l'instruction, par exemple : Sub ColorerA1() Range(\"A1\").Interior.ColorIndex = 41 End Sub",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "6. Vous enregistrez une macro avec l'option \"Classeur de macros personnelles\" puis vous fermez Excel sans la sauvegarder explicitement. La macro est-elle conservée au prochain démarrage d'Excel ? Justifiez votre réponse.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Oui, à condition d'avoir accepté la sauvegarde du classeur <code>PERSO.XLS</code> lors de la fermeture (Excel demande généralement confirmation). Ce classeur spécial s'ouvre automatiquement et de façon masquée à chaque lancement d'Excel ; toutes les macros qu'il contient restent donc disponibles dans n'importe quel classeur ouvert, tant que <code>PERSO.XLS</code> a bien été enregistré au moins une fois.</p>\n<p>Pour vérifier ou modifier son contenu manuellement : <strong>Fenêtre → Afficher</strong> pour le rendre visible, puis <strong>Fenêtre → Masquer</strong> pour le re-masquer après modification.</p>\n</div>\n</details>",
-   "model_answer": "Oui, à condition d'avoir accepté la sauvegarde du classeur PERSO.XLS lors de la fermeture (Excel demande généralement confirmation). Ce classeur spécial s'ouvre automatiquement et de façon masquée à chaque lancement d'Excel ; toutes les macros qu'il contient restent donc disponibles dans n'importe quel classeur ouvert, tant que PERSO.XLS a bien été enregistré au moins une fois. Pour vérifier ou modifier son contenu manuellement : Fenêtre → Afficher pour le rendre visible, puis Fenêtre → Masquer pour le re-masquer après modification.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "1. Que renvoie l'instruction Worksheets(2).Range(\"C3\").Value ?",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Elle renvoie la <strong>valeur</strong> (propriété <code>Value</code>) de la cellule <code>C3</code> de la <strong>deuxième feuille de calcul</strong> (<code>Worksheets(2)</code>, accès par position) du classeur actif.</p>\n</div>\n</details>",
-   "model_answer": "Elle renvoie la valeur (propriété Value) de la cellule C3 de la deuxième feuille de calcul (Worksheets(2), accès par position) du classeur actif.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez la collection qui contient tous les classeurs ouverts, et celle qui contient toutes les feuilles d'un classeur.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>• <code>Workbooks</code> : collection de tous les objets <code>Workbook</code> ouverts (dans l'objet <code>Application</code>).<br/>\n              • <code>Worksheets</code> : collection de tous les objets <code>Worksheet</code> d'un classeur donné.</p>\n</div>\n</details>",
-   "model_answer": "• Workbooks : collection de tous les objets Workbook ouverts (dans l'objet Application). • Worksheets : collection de tous les objets Worksheet d'un classeur donné.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "3. Écrivez une procédure MettreEnGras() qui met en gras et en italique le contenu de la cellule A1 de la feuille active, en utilisant la structure With...End With.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub MettreEnGras()\n    With Range(\"A1\").Font\n        .Bold = True\n        .Italic = True\n    End With\nEnd Sub</pre>\n</div>\n<p><code>With Range(\"A1\").Font</code> évite de répéter <code>Range(\"A1\").Font</code> pour chaque propriété (<code>.Bold</code>, <code>.Italic</code>).</p>\n</div>\n</details>",
-   "model_answer": "Sub MettreEnGras() With Range(\"A1\").Font .Bold = True .Italic = True End With End Sub With Range(\"A1\").Font évite de répéter Range(\"A1\").Font pour chaque propriété (.Bold, .Italic).",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "4. Quelle est la différence entre ActiveCell et Selection ? Donnez un exemple où ils renvoient des résultats différents.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p><code>ActiveCell</code> ne fait référence qu'à <strong>une seule cellule</strong> (la cellule active), alors que <code>Selection</code> peut faire référence à <strong>une plage de cellules</strong> entière.</p>\n<p>Exemple : si l'utilisateur sélectionne la plage A1:C3, <code>Selection</code> représente toute la plage A1:C3 (un objet <code>Range</code> de 9 cellules), alors que <code>ActiveCell</code> représente seulement la cellule active à l'intérieur de cette sélection (en général A1).</p>\n</div>\n</details>",
-   "model_answer": "ActiveCell ne fait référence qu'à une seule cellule (la cellule active), alors que Selection peut faire référence à une plage de cellules entière. Exemple : si l'utilisateur sélectionne la plage A1:C3, Selection représente toute la plage A1:C3 (un objet Range de 9 cellules), alors que ActiveCell représente seulement la cellule active à l'intérieur de cette sélection (en général A1).",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "5. Écrivez une procédure événementielle qui affiche un message « Attention, valeur négative ! » dès que la valeur d'une cellule de la feuille active devient inférieure à 0 (utilisez l'événement Change de l'objet Worksheet).",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Dans le module de code de la feuille concernée (double-clic sur la feuille dans l'explorateur de projets), sélectionner <code>Worksheet</code> puis l'événement <code>Change</code> :</p>\n<div class=\"code-block\">\n<pre>Private Sub Worksheet_Change(ByVal Target As Range)\n    If IsNumeric(Target.Value) Then\n        If Target.Value &lt; 0 Then\n            MsgBox \"Attention, valeur négative !\"\n        End If\n    End If\nEnd Sub</pre>\n</div>\n<p><code>Target</code> représente la cellule modifiée. <code>IsNumeric</code> évite une erreur si la nouvelle valeur n'est pas un nombre.</p>\n</div>\n</details>",
-   "model_answer": "Dans le module de code de la feuille concernée (double-clic sur la feuille dans l'explorateur de projets), sélectionner Worksheet puis l'événement Change : Private Sub Worksheet_Change(ByVal Target As Range) If IsNumeric(Target.Value) Then If Target.Value < 0 Then MsgBox \"Attention, valeur négative !\" End If End If End Sub Target représente la cellule modifiée. IsNumeric évite une erreur si la nouvelle valeur n'est pas un nombre.",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "6. On vous donne le code suivant. Expliquez ce qu'il affiche dans la cellule A1 et pourquoi, puis réécrivez-le en utilisant WorksheetFunction pour éviter de recoder la fonction vous-même.",
-   "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Le code affiche <strong>27</strong> dans A1, car <code>MaxPerso</code> compare 12 et 27 avec un <code>If...Else</code> et retourne le plus grand des deux via l'affectation <code>MaxPerso = a</code> ou <code>MaxPerso = b</code>.</p>\n<p>Cette fonction personnalisée duplique une fonctionnalité déjà disponible dans Excel. Il est préférable d'utiliser l'objet <code>WorksheetFunction</code>, plus efficace en temps de calcul :</p>\n<div class=\"code-block\">\n<pre>Sub TestMax()\n    Range(\"A1\").Value = WorksheetFunction.Max(12, 27)\nEnd Sub</pre>\n</div>\n</div>\n</details>",
-   "model_answer": "Le code affiche 27 dans A1, car MaxPerso compare 12 et 27 avec un If...Else et retourne le plus grand des deux via l'affectation MaxPerso = a ou MaxPerso = b. Cette fonction personnalisée duplique une fonctionnalité déjà disponible dans Excel. Il est préférable d'utiliser l'objet WorksheetFunction, plus efficace en temps de calcul : Sub TestMax() Range(\"A1\").Value = WorksheetFunction.Max(12, 27) End Sub",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "1. Pourquoi le code suivant ne fonctionne-t-il pas comme prévu, alors qu'il ne génère aucune erreur ?",
-   "model_answer_html": "<details style=\"margin-top:.6rem;\">\n<div class=\"box info\">\n<p>Sans <code>Option Explicit</code>, VBA crée silencieusement <strong>deux variables différentes</strong> : <code>total</code> (affectée à 10) et <code>totale</code> (jamais affectée, donc vide). La cellule A1 recevra donc une valeur vide, sans message d'erreur. Pour détecter ce genre de faute de frappe, il faut placer <code>Option Explicit</code> en première ligne du module : VBA signalera alors « Variable non définie » à la compilation.</p>\n</div>\n</details>",
-   "model_answer": "Sans Option Explicit, VBA crée silencieusement deux variables différentes : total (affectée à 10) et totale (jamais affectée, donc vide). La cellule A1 recevra donc une valeur vide, sans message d'erreur. Pour détecter ce genre de faute de frappe, il faut placer Option Explicit en première ligne du module : VBA signalera alors « Variable non définie » à la compilation.",
-   "level": "easy"
-  },
-  {
-   "type": "open",
-   "text": "2. Écrivez une fonction EstPair(n As Long) As Boolean qui renvoie True si n est pair, False sinon (utilisez l'opérateur Mod). Donnez ensuite un exemple d'appel depuis une procédure VBA et depuis une cellule Excel.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Function EstPair(n As Long) As Boolean\n    EstPair = (n Mod 2 = 0)\nEnd Function\n' Appel depuis une procédure VBA (valeur de retour à récupérer)\nSub TestEstPair()\n    Dim resultat As Boolean\n    resultat = EstPair(8)\n    MsgBox resultat   ' affiche True\nEnd Sub</pre>\n</div>\n<p>Dans une cellule Excel : <code>=EstPair(A1)</code> (séparateur virgule en VBA, point-virgule dans Excel pour plusieurs arguments).</p>\n</div>\n</details>",
-   "model_answer": "Function EstPair(n As Long) As Boolean EstPair = (n Mod 2 = 0) End Function ' Appel depuis une procédure VBA (valeur de retour à récupérer) Sub TestEstPair() Dim resultat As Boolean resultat = EstPair(8) MsgBox resultat ' affiche True End Sub Dans une cellule Excel : =EstPair(A1) (séparateur virgule en VBA, point-virgule dans Excel pour plusieurs arguments).",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "3. Écrivez une procédure qui parcourt les cellules A1 à A10 et écrit « Positif », « Négatif » ou « Nul » dans la colonne B selon le signe de chaque valeur (utilisez For...Next et If...ElseIf...Else).",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub ClasserSignes()\n    Dim i As Integer\n    For i = 1 To 10\n        If Range(\"A\" &amp; i).Value &gt; 0 Then\n            Range(\"B\" &amp; i).Value = \"Positif\"\n        ElseIf Range(\"A\" &amp; i).Value &lt; 0 Then\n            Range(\"B\" &amp; i).Value = \"Négatif\"\n        Else\n            Range(\"B\" &amp; i).Value = \"Nul\"\n        End If\n    Next i\nEnd Sub</pre>\n</div>\n</div>\n</details>",
-   "model_answer": "Sub ClasserSignes() Dim i As Integer For i = 1 To 10 If Range(\"A\" & i).Value > 0 Then Range(\"B\" & i).Value = \"Positif\" ElseIf Range(\"A\" & i).Value < 0 Then Range(\"B\" & i).Value = \"Négatif\" Else Range(\"B\" & i).Value = \"Nul\" End If Next i End Sub",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "4. À l'aide de InputBox et MsgBox, écrivez une procédure qui demande à l'utilisateur un nombre, et affiche « Ce nombre est pair » ou « Ce nombre est impair ». Gérez le cas où l'utilisateur ne saisit rien.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Sub TestParite()\n    Dim reponse As String\n    reponse = InputBox(\"Entrez un nombre entier :\", \"Saisie\")\n    If reponse = \"\" Then\n        MsgBox \"Aucune valeur saisie.\", , \"Erreur\"\n    ElseIf CLng(reponse) Mod 2 = 0 Then\n        MsgBox \"Ce nombre est pair\"\n    Else\n        MsgBox \"Ce nombre est impair\"\n    End If\nEnd Sub</pre>\n</div>\n<p><code>reponse = InputBox(...)</code> (sans <code>Call</code>, car on récupère la valeur de retour). <code>CLng()</code> convertit la chaîne en nombre entier long pour utiliser <code>Mod</code>.</p>\n</div>\n</details>",
-   "model_answer": "Sub TestParite() Dim reponse As String reponse = InputBox(\"Entrez un nombre entier :\", \"Saisie\") If reponse = \"\" Then MsgBox \"Aucune valeur saisie.\", , \"Erreur\" ElseIf CLng(reponse) Mod 2 = 0 Then MsgBox \"Ce nombre est pair\" Else MsgBox \"Ce nombre est impair\" End If End Sub reponse = InputBox(...) (sans Call, car on récupère la valeur de retour). CLng() convertit la chaîne en nombre entier long pour utiliser Mod.",
-   "level": "medium"
-  },
-  {
-   "type": "open",
-   "text": "5. Vous créez un UserForm FrmAjoutProduit avec une TextBox nommée TxtNomProduit, une TextBox nommée TxtPrix, et deux boutons BtnOK et BtnAnnuler. Écrivez les procédures événementielles permettant : (a) au clic sur OK, d'insérer une nouvelle ligne en haut de la feuille « Produits » avec le nom et le prix saisis, puis de fermer le formulaire ; (b) au clic sur Annuler, de fermer le formulaire sans rien faire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Private Sub BtnOK_Click()\n    Sheets(\"Produits\").Rows(2).Insert\n    Sheets(\"Produits\").Range(\"A2\").Value = Me.TxtNomProduit.Text\n    Sheets(\"Produits\").Range(\"B2\").Value = Me.TxtPrix.Text\n    Call Unload(Me)\nEnd Sub\nPrivate Sub BtnAnnuler_Click()\n    Call Unload(Me)\nEnd Sub</pre>\n</div>\n<p><code>Me</code> désigne le formulaire actif. <code>Rows(2).Insert</code> insère une ligne vide en position 2 (en supposant que la ligne 1 contient les en-têtes), et <code>Unload(Me)</code> ferme le formulaire en libérant la mémoire.</p>\n</div>\n</details>",
-   "model_answer": "Private Sub BtnOK_Click() Sheets(\"Produits\").Rows(2).Insert Sheets(\"Produits\").Range(\"A2\").Value = Me.TxtNomProduit.Text Sheets(\"Produits\").Range(\"B2\").Value = Me.TxtPrix.Text Call Unload(Me) End Sub Private Sub BtnAnnuler_Click() Call Unload(Me) End Sub Me désigne le formulaire actif. Rows(2).Insert insère une ligne vide en position 2 (en supposant que la ligne 1 contient les en-têtes), et Unload(Me) ferme le formulaire en libérant la mémoire.",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "6. Écrivez une fonction FactorielleVBA(n As Integer) As Long qui calcule la factorielle de n à l'aide d'une boucle For...Next (sans récursivité). Donnez ensuite la valeur retournée pour n = 5.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<div class=\"code-block\">\n<pre>Function FactorielleVBA(n As Integer) As Long\n    Dim resultat As Long\n    Dim i As Integer\n    resultat = 1\n    For i = 1 To n\n        resultat = resultat * i\n    Next i\n    FactorielleVBA = resultat\nEnd Function\nSub TestFactorielle()\n    MsgBox FactorielleVBA(5)   ' affiche 120\nEnd Sub</pre>\n</div>\n<p>La variable <code>resultat</code> est initialisée à 1 (élément neutre de la multiplication), puis multipliée successivement par chaque entier de 1 à <code>n</code>. Pour <code>n = 5</code> : 1×1×2×3×4×5 = <strong>120</strong>.</p>\n</div>\n</details>",
-   "model_answer": "Function FactorielleVBA(n As Integer) As Long Dim resultat As Long Dim i As Integer resultat = 1 For i = 1 To n resultat = resultat * i Next i FactorielleVBA = resultat End Function Sub TestFactorielle() MsgBox FactorielleVBA(5) ' affiche 120 End Sub La variable resultat est initialisée à 1 (élément neutre de la multiplication), puis multipliée successivement par chaque entier de 1 à n. Pour n = 5 : 1×1×2×3×4×5 = 120.",
-   "level": "medium"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/vba/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/vba/exercices/exercices.html"
 }

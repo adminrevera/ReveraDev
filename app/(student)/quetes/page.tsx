@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { EmptyState, Eyebrow, PageHeader, ProgressBar } from "@/components/student/ui";
 import { requireStudentProfile } from "@/lib/auth/access";
+import { ensureDailyQuests } from "@/lib/gamification/engine";
 import { localCalendarDay } from "@/lib/local-day";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = { title: "Quêtes & événements · Revera" };
 
-const metricLabels = { ANSWERS: "réponses", CHAPTERS: "chapitres", XP: "XP" } as const;
+const metricLabels = { ANSWERS: "réponses", CHAPTERS: "chapitres", XP: "XP", CORRECT: "bonnes réponses", QUIZZES: "quiz", REVIEWS: "révisions", GAMES: "jeux" } as const;
 const categoryLabels = {
   DISCOVERY: "Découverte",
   REGULARITY: "Régularité",
@@ -19,13 +20,13 @@ const categoryLabels = {
 export default async function QuestsPage() {
   const { profile } = await requireStudentProfile();
   const now = new Date();
-  const day = localCalendarDay(now, profile.timezone);
   const questDay = localCalendarDay(now, "Africa/Lome");
+  await ensureDailyQuests(questDay);
   const [quests, events, badgeTotals, earnedBadges] = await Promise.all([
     prisma.dailyQuest.findMany({
       relationLoadStrategy: "join",
       where: { day: questDay, quest: { active: true } },
-      include: { quest: { include: { progress: { where: { userId: profile.id, day }, take: 1 } } } },
+      include: { quest: { include: { progress: { where: { userId: profile.id, day: questDay }, take: 1 } } } },
       orderBy: { quest: { title: "asc" } },
     }),
     prisma.event.findMany({
@@ -57,7 +58,7 @@ export default async function QuestsPage() {
   return (
     <>
       <PageHeader eyebrow="Rythme & défis" title="Quêtes">
-        Les quêtes du jour changent chaque jour, à minuit. Les événements sont ouverts à tous les étudiants de ton niveau.
+        Trois quêtes différentes chaque jour, renouvelées à minuit. Les événements sont ouverts à tous les étudiants de ton niveau.
       </PageHeader>
 
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -78,7 +79,7 @@ export default async function QuestsPage() {
                       </div>
                       <p className="mt-2 text-sm text-muted">{value} / {quest.target} {metricLabels[quest.metric]}</p>
                       <ProgressBar percent={percent} className="mt-3" />
-                      {progress?.completedAt && <p className="mt-2 text-xs font-medium text-accent">✓ Quête terminée</p>}
+                      {progress?.completedAt && <p className="mt-2 text-xs font-medium text-accent">Quête terminée</p>}
                     </article>
                   );
                 })}
@@ -140,7 +141,7 @@ export default async function QuestsPage() {
                 </li>
               ))}
           </ul>
-          <Link href="/profil" className="mt-4 inline-flex text-sm font-semibold text-accent no-underline hover:underline">Voir mes badges →</Link>
+          <Link href="/badges" className="mt-4 inline-flex text-sm font-semibold text-accent no-underline hover:underline">Voir tous mes badges →</Link>
         </aside>
       </div>
     </>

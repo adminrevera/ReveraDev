@@ -1,470 +1,470 @@
 {
- "slug": "algebre",
- "name": "Algèbre Linéaire",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Les Matrices",
-   "subtitle": "Types, opérations, déterminant et inversion — les briques fondamentales de l'algèbre linéaire.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Connaître les 5 types de matrices (C.D.I.T.S.)<br/>\n        • Maîtriser les opérations : addition, produit scalaire, produit matriciel, transposée<br/>\n        • Calculer un déterminant 2×2, 3×3 (Sarrus) et par cofacteurs<br/>\n        • Inverser une matrice par Gauss-Jordan et par la méthode des cofacteurs</p>\n</div>\n<h2>Qu'est-ce qu'une matrice ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏫 Analogie du tableur</div>\n<p>Imaginez une feuille de calcul Excel : des lignes, des colonnes et des nombres dans chaque case. <strong>C'est exactement ça, une matrice !</strong><br/><br/>\n        Formellement, une matrice \\(A\\) de taille \\(n \\times p\\) est un tableau rectangulaire de \\(n\\) lignes et \\(p\\) colonnes. On note \\(a_{ij}\\) le coefficient situé à la ligne \\(i\\) et colonne \\(j\\).</p>\n</div>\n<h2>Types de matrices — Mnémonique C.D.I.T.S.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 C.D.I.T.S. — « Cinq Danseurs Italiens Très Souples »</div>\n<p><strong>C</strong>arrée · <strong>D</strong>iagonale · <strong>I</strong>dentité · <strong>T</strong>riangulaire · <strong>S</strong>ymétrique</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Carrée</strong></td><td>\\(n = p\\) (autant de lignes que de colonnes)</td><td>\\(\\begin{pmatrix}1&amp;2\\\\3&amp;4\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Diagonale</strong></td><td>Carrée, \\(a_{ij}=0\\) si \\(i \\neq j\\)</td><td>\\(\\begin{pmatrix}5&amp;0\\\\0&amp;3\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Identité</strong> \\(I_n\\)</td><td>Diagonale avec des 1 sur la diagonale</td><td>\\(I_2 = \\begin{pmatrix}1&amp;0\\\\0&amp;1\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Triangulaire</strong></td><td>Sup : \\(a_{ij}=0\\) si \\(i&gt;j\\) / Inf : si \\(i<td>\\(\\begin{pmatrix}1&amp;2\\\\0&amp;3\\end{pmatrix}\\)</td></td></tr>\n<tr><td><strong>Symétrique</strong></td><td>\\({}^t\\!A = A\\) (transposée = elle-même)</td><td>\\(\\begin{pmatrix}1&amp;2\\\\2&amp;4\\end{pmatrix}\\)</td></tr>\n</tbody>\n</table></div>\n<h2>Opérations sur les matrices</h2>\n<h3>Addition et produit scalaire</h3>\n<p>Addition : même taille, on additionne coefficient par coefficient.<br/>\n      Produit scalaire : on multiplie chaque coefficient par \\(\\lambda\\).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples</div>\n<pre>Addition :        [[1,2],[3,4]] + [[5,6],[7,8]] = [[6,8],[10,12]]\nProduit scalaire: 3 × [[1,2],[0,4]]            = [[3,6],[0,12]]</pre>\n</div>\n<h3>Produit matriciel</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo L.C. — « Lignes × Colonnes »</div>\n<p>Chaque coefficient du résultat = ligne de \\(A\\) × colonne de \\(B\\).<br/>\n<strong>Condition :</strong> colonnes de \\(A\\) = lignes de \\(B\\).<br/>\n        Si \\(A\\) est \\(n\\times m\\) et \\(B\\) est \\(m\\times p\\) → \\(AB\\) est \\(n\\times p\\).<br/><br/>\n        ⚠️ <strong>\\(AB \\neq BA\\)</strong> en général — NON COMMUTATIF !</p>\n</div>\n<p>\\[\\begin{pmatrix}1&amp;2\\\\3&amp;4\\end{pmatrix} \\times \\begin{pmatrix}5&amp;6\\\\7&amp;8\\end{pmatrix} = \\begin{pmatrix}19&amp;22\\\\43&amp;50\\end{pmatrix}\\]</p>\n<h3>La transposée</h3>\n<p>La transposée \\({}^t\\!A\\) s'obtient en échangeant lignes et colonnes : \\(({}^t\\!A)_{ij} = a_{ji}\\).</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Propriété clé à retenir</div>\n<p>\\({}^t(AB) = {}^t\\!B \\cdot {}^t\\!A\\) — <strong>l'ordre s'inverse lors de la transposition d'un produit !</strong></p>\n</div>\n<h2>Le déterminant</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">💡 Pourquoi le déterminant ?</div>\n<p>\\(\\det(A) = 0 \\Rightarrow\\) non inversible. \\(\\det(A) \\neq 0 \\Rightarrow\\) inversible.</p>\n</div>\n<h3>Déterminant 2×2</h3>\n<p>\\[\\det\\begin{pmatrix}a&amp;b\\\\c&amp;d\\end{pmatrix} = ad - bc\\]</p>\n<p>Exemple : \\(\\det\\begin{pmatrix}3&amp;1\\\\2&amp;5\\end{pmatrix} = 3\\times 5 - 1\\times 2 = 13\\)</p>\n<h3>Déterminant 3×3 — Règle de Sarrus</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Sarrus — « Diagonales ↘ moins Diagonales ↗ »</div>\n<p>On recopie les 2 premières colonnes à droite :<br/>\n        • <strong>↘ Diagonales descendantes</strong> → on <strong>additionne</strong><br/>\n        • <strong>↗ Diagonales montantes</strong> → on <strong>soustrait</strong></p>\n</div>\n<p>Exemple guidé avec \\(A = \\begin{pmatrix}2&amp;1&amp;3\\\\0&amp;-1&amp;2\\\\1&amp;4&amp;-1\\end{pmatrix}\\) :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Calcul par Sarrus</div>\n<pre>↘ diagonales : (2×(-1)×(-1)) + (1×2×1) + (3×0×4) = 2+2+0 = 4\n↗ diagonales : (3×(-1)×1)   + (1×0×(-1)) + (2×2×4) = -3+0+16 = 13\ndet(A) = 4 - 13 = -9 ✓</pre>\n</div>\n<h2>Inversion — Méthode de Gauss-Jordan</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — [A|I] → [I|A⁻¹]</div>\n<p>On place \\(A\\) à gauche et \\(I\\) à droite dans une matrice augmentée, puis on effectue des opérations élémentaires sur les lignes jusqu'à obtenir \\(I\\) à gauche → la partie droite donne \\(A^{-1}\\).</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Inverser A = [[2,1],[5,3]]</div>\n<pre>[2 1 | 1 0]  L1÷2    [1 0.5 | 0.5  0]\n[5 3 | 0 1]  L2-5L1  [0 0.5 | -2.5 1]\n             L2×2    [1 0.5 | 0.5   0]\n                     [0 1   | -5    2]\n             L1-0.5L2 [1 0 | 3  -1]\n                      [0 1 | -5  2]\nA⁻¹ = [[3,-1],[-5,2]]</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — Algèbre</h3>\n<ul>\n<li>Types : <strong>C.D.I.T.S.</strong> — Carrée · Diagonale · Identité · Triangulaire · Symétrique</li>\n<li>Produit AB : colonnes de A = lignes de B · résultat n×p · <strong>AB ≠ BA !</strong></li>\n<li>Transposée : ᵗ(AB) = ᵗB · ᵗA (ordre inversé)</li>\n<li>det([[a,b],[c,d]]) = ad − bc</li>\n<li>Sarrus 3×3 : Σdiagonales↘ − Σdiagonales↗</li>\n<li>A inversible ⟺ det(A) ≠ 0</li>\n<li>Gauss-Jordan : [A|I] → opérations lignes → [I|A⁻¹]</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "algebre",
+  "name": "Algèbre Linéaire",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Quelle est la taille du produit AB si A est 3×4 et B est 4×2 ?",
-     "options": [
-      {
-       "text": "4×2",
-       "correct": false,
-       "explanation": "4×2 est la taille de B, pas du produit."
-      },
-      {
-       "text": "3×4",
-       "correct": false,
-       "explanation": "3×4 est la taille de A, pas du produit."
-      },
-      {
-       "text": "3×2",
-       "correct": true,
-       "explanation": "Correct ! A est n×m (3×4) et B est m×p (4×2). Le résultat est n×p = 3×2. Les dimensions internes (4=4) correspondent."
-      },
-      {
-       "text": "Le produit est impossible",
-       "correct": false,
-       "explanation": "Le produit n'est possible que si les dimensions internes correspondent : col(A)=lig(B)=4."
-      }
-     ]
+      "number": 1,
+      "title": "Les Matrices",
+      "subtitle": "Types, opérations, déterminant et inversion — les briques fondamentales de l'algèbre linéaire.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Connaître les 5 types de matrices (C.D.I.T.S.)</li><li>Maîtriser les opérations : addition, produit scalaire, produit matriciel, transposée</li><li>Calculer un déterminant 2×2, 3×3 (Sarrus) et par cofacteurs</li><li>Inverser une matrice par Gauss-Jordan et par la méthode des cofacteurs</li></ul></div>\n<h2>Qu'est-ce qu'une matrice ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie du tableur</div>\n<p>Imaginez une feuille de calcul Excel : des lignes, des colonnes et des nombres dans chaque case. <strong>C'est exactement ça, une matrice !</strong><br/><br/>\n        Formellement, une matrice \\(A\\) de taille \\(n \\times p\\) est un tableau rectangulaire de \\(n\\) lignes et \\(p\\) colonnes. On note \\(a_{ij}\\) le coefficient situé à la ligne \\(i\\) et colonne \\(j\\).</p></div>\n<h2>Types de matrices — Mnémonique C.D.I.T.S.</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">C.D.I.T.S. — « Cinq Danseurs Italiens Très Souples »</div>\n<p><strong>C</strong>arrée · <strong>D</strong>iagonale · <strong>I</strong>dentité · <strong>T</strong>riangulaire · <strong>S</strong>ymétrique</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Carrée</strong></td><td>\\(n = p\\) (autant de lignes que de colonnes)</td><td>\\(\\begin{pmatrix}1&amp;2\\\\3&amp;4\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Diagonale</strong></td><td>Carrée, \\(a_{ij}=0\\) si \\(i \\neq j\\)</td><td>\\(\\begin{pmatrix}5&amp;0\\\\0&amp;3\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Identité</strong> \\(I_n\\)</td><td>Diagonale avec des 1 sur la diagonale</td><td>\\(I_2 = \\begin{pmatrix}1&amp;0\\\\0&amp;1\\end{pmatrix}\\)</td></tr>\n<tr><td><strong>Triangulaire</strong></td><td>Sup : \\(a_{ij}=0\\) si \\(i&gt;j\\) / Inf : si \\(i<td>\\(\\begin{pmatrix}1&amp;2\\\\0&amp;3\\end{pmatrix}\\)</td></td></tr>\n<tr><td><strong>Symétrique</strong></td><td>\\({}^t\\!A = A\\) (transposée = elle-même)</td><td>\\(\\begin{pmatrix}1&amp;2\\\\2&amp;4\\end{pmatrix}\\)</td></tr>\n</tbody>\n</table></div>\n<h2>Opérations sur les matrices</h2>\n<h3>Addition et produit scalaire</h3>\n<p>Addition : même taille, on additionne coefficient par coefficient.<br/>\n      Produit scalaire : on multiplie chaque coefficient par \\(\\lambda\\).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples</div>\n<pre>Addition :        [[1,2],[3,4]] + [[5,6],[7,8]] = [[6,8],[10,12]]\nProduit scalaire: 3 × [[1,2],[0,4]]            = [[3,6],[0,12]]</pre></div>\n<h3>Produit matriciel</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo L.C. — « Lignes × Colonnes »</div>\n<p>Chaque coefficient du résultat = ligne de \\(A\\) × colonne de \\(B\\).<br/>\n<strong>Condition :</strong> colonnes de \\(A\\) = lignes de \\(B\\).<br/>\n        Si \\(A\\) est \\(n\\times m\\) et \\(B\\) est \\(m\\times p\\) → \\(AB\\) est \\(n\\times p\\).<br/><br/>\n         <strong>\\(AB \\neq BA\\)</strong> en général — NON COMMUTATIF !</p></div>\n<p>\\[\\begin{pmatrix}1&amp;2\\\\3&amp;4\\end{pmatrix} \\times \\begin{pmatrix}5&amp;6\\\\7&amp;8\\end{pmatrix} = \\begin{pmatrix}19&amp;22\\\\43&amp;50\\end{pmatrix}\\]</p>\n<h3>La transposée</h3>\n<p>La transposée \\({}^t\\!A\\) s'obtient en échangeant lignes et colonnes : \\(({}^t\\!A)_{ij} = a_{ji}\\).</p>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Propriété clé à retenir</div>\n<p>\\({}^t(AB) = {}^t\\!B \\cdot {}^t\\!A\\) — <strong>l'ordre s'inverse lors de la transposition d'un produit !</strong></p></div>\n<h2>Le déterminant</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Pourquoi le déterminant ?</div>\n<p>\\(\\det(A) = 0 \\Rightarrow\\) non inversible. \\(\\det(A) \\neq 0 \\Rightarrow\\) inversible.</p></div>\n<h3>Déterminant 2×2</h3>\n<p>\\[\\det\\begin{pmatrix}a&amp;b\\\\c&amp;d\\end{pmatrix} = ad - bc\\]</p>\n<p>Exemple : \\(\\det\\begin{pmatrix}3&amp;1\\\\2&amp;5\\end{pmatrix} = 3\\times 5 - 1\\times 2 = 13\\)</p>\n<h3>Déterminant 3×3 — Règle de Sarrus</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Sarrus — « Diagonales  moins Diagonales  »</div>\n<p>On recopie les 2 premières colonnes à droite :<br/>\n        • <strong> Diagonales descendantes</strong> → on <strong>additionne</strong><br/>\n        • <strong> Diagonales montantes</strong> → on <strong>soustrait</strong></p></div>\n<p>Exemple guidé avec \\(A = \\begin{pmatrix}2&amp;1&amp;3\\\\0&amp;-1&amp;2\\\\1&amp;4&amp;-1\\end{pmatrix}\\) :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Calcul par Sarrus</div>\n<pre> diagonales : (2×(-1)×(-1)) + (1×2×1) + (3×0×4) = 2+2+0 = 4\n diagonales : (3×(-1)×1)   + (1×0×(-1)) + (2×2×4) = -3+0+16 = 13\ndet(A) = 4 - 13 = -9 ✓</pre></div>\n<h2>Inversion — Méthode de Gauss-Jordan</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — [A|I] → [I|A⁻¹]</div>\n<p>On place \\(A\\) à gauche et \\(I\\) à droite dans une matrice augmentée, puis on effectue des opérations élémentaires sur les lignes jusqu'à obtenir \\(I\\) à gauche → la partie droite donne \\(A^{-1}\\).</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Inverser A = [[2,1],[5,3]]</div>\n<pre>[2 1 | 1 0]  L1÷2    [1 0.5 | 0.5  0]\n[5 3 | 0 1]  L2-5L1  [0 0.5 | -2.5 1]\n             L2×2    [1 0.5 | 0.5   0]\n                     [0 1   | -5    2]\n             L1-0.5L2 [1 0 | 3  -1]\n                      [0 1 | -5  2]\nA⁻¹ = [[3,-1],[-5,2]]</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — Algèbre</h3>\n<ul>\n<li>Types : <strong>C.D.I.T.S.</strong> — Carrée · Diagonale · Identité · Triangulaire · Symétrique</li>\n<li>Produit AB : colonnes de A = lignes de B · résultat n×p · <strong>AB ≠ BA !</strong></li>\n<li>Transposée : ᵗ(AB) = ᵗB · ᵗA (ordre inversé)</li>\n<li>det([[a,b],[c,d]]) = ad − bc</li>\n<li>Sarrus 3×3 : Σdiagonales − Σdiagonales</li>\n<li>A inversible ⟺ det(A) ≠ 0</li>\n<li>Gauss-Jordan : [A|I] → opérations lignes → [I|A⁻¹]</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quelle est la taille du produit AB si A est 3×4 et B est 4×2 ?",
+          "options": [
+            {
+              "text": "4×2",
+              "correct": false,
+              "explanation": "4×2 est la taille de B, pas du produit."
+            },
+            {
+              "text": "3×4",
+              "correct": false,
+              "explanation": "3×4 est la taille de A, pas du produit."
+            },
+            {
+              "text": "3×2",
+              "correct": true,
+              "explanation": "Correct ! A est n×m (3×4) et B est m×p (4×2). Le résultat est n×p = 3×2. Les dimensions internes (4=4) correspondent."
+            },
+            {
+              "text": "Le produit est impossible",
+              "correct": false,
+              "explanation": "Le produit n'est possible que si les dimensions internes correspondent : col(A)=lig(B)=4."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "\\(\\det\\begin{pmatrix}4&2\\\\1&3\\end{pmatrix}\\) vaut :",
+          "options": [
+            {
+              "text": "14",
+              "correct": false,
+              "explanation": "14 = 4×3 + 2×1 (mauvaise formule : il faut SOUSTRAIRE)."
+            },
+            {
+              "text": "10",
+              "correct": true,
+              "explanation": "Correct ! det = ad - bc = 4×3 - 2×1 = 12 - 2 = 10."
+            },
+            {
+              "text": "2",
+              "correct": false,
+              "explanation": "det = 4×3 - 2×1 = 10, pas 2."
+            },
+            {
+              "text": "12",
+              "correct": false,
+              "explanation": "det = 4×3 - 2×1 = 10, pas 12."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Une matrice A est inversible si et seulement si :",
+          "options": [
+            {
+              "text": "A est carrée",
+              "correct": false,
+              "explanation": "Une matrice carrée peut ne pas être inversible si det=0."
+            },
+            {
+              "text": "det(A) = 0",
+              "correct": false,
+              "explanation": "det(A)=0 signifie que A est singulière, donc NON inversible."
+            },
+            {
+              "text": "det(A) ≠ 0",
+              "correct": true,
+              "explanation": "Correct ! A est inversible si et seulement si det(A) ≠ 0."
+            },
+            {
+              "text": "A est symétrique",
+              "correct": false,
+              "explanation": "La symétrie n'implique pas l'inversibilité."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La propriété fondamentale de la transposée d'un produit est :",
+          "options": [
+            {
+              "text": "ᵗ(AB) = ᵗA · ᵗB",
+              "correct": false,
+              "explanation": "ᵗA · ᵗB n'est pas la bonne formule."
+            },
+            {
+              "text": "ᵗ(AB) = ᵗB · ᵗA",
+              "correct": true,
+              "explanation": "Correct ! ᵗ(AB) = ᵗB · ᵗA — l'ordre s'INVERSE lors de la transposition d'un produit."
+            },
+            {
+              "text": "ᵗ(AB) = AB",
+              "correct": false,
+              "explanation": "AB (sans transposition) est la matrice originale."
+            },
+            {
+              "text": "ᵗ(AB) = ᵗA · B",
+              "correct": false,
+              "explanation": "ᵗA · B n'est pas la formule correcte."
+            }
+          ]
+        }
+      ],
+      "source": "algebre/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "\\(\\det\\begin{pmatrix}4&2\\\\1&3\\end{pmatrix}\\) vaut :",
-     "options": [
-      {
-       "text": "14",
-       "correct": false,
-       "explanation": "14 = 4×3 + 2×1 (mauvaise formule : il faut SOUSTRAIRE)."
-      },
-      {
-       "text": "10",
-       "correct": true,
-       "explanation": "Correct ! det = ad - bc = 4×3 - 2×1 = 12 - 2 = 10."
-      },
-      {
-       "text": "2",
-       "correct": false,
-       "explanation": "det = 4×3 - 2×1 = 10, pas 2."
-      },
-      {
-       "text": "12",
-       "correct": false,
-       "explanation": "det = 4×3 - 2×1 = 10, pas 12."
-      }
-     ]
+      "number": 2,
+      "title": "Espaces Vectoriels",
+      "subtitle": "Définition, sous-espaces, familles libres/génératrices, bases et dimension.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Définir un espace vectoriel et vérifier les axiomes</li><li>Identifier les sous-espaces vectoriels (critères)</li><li>Distinguer familles libres, liées, génératrices</li><li>Trouver une base et calculer la dimension d'un espace</li></ul></div>\n<h2>Qu'est-ce qu'un espace vectoriel ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie intuitive</div>\n<p>Un espace vectoriel, c'est un ensemble où l'on peut <strong>additionner</strong> des éléments et les <strong>multiplier par un scalaire</strong> (un réel), avec des règles cohérentes. Les vecteurs géométriques de ℝ², les matrices, les polynômes — tous sont des espaces vectoriels !</p></div>\n<p>Un <strong>espace vectoriel</strong> sur ℝ est un ensemble \\(E\\) muni de deux lois :</p>\n<ul>\n<li>Une <strong>loi interne</strong> \\(+\\) : \\((u,v) \\mapsto u+v\\)</li>\n<li>Une <strong>loi externe</strong> \\(\\cdot\\) : \\((\\lambda, u) \\mapsto \\lambda \\cdot u\\) avec \\(\\lambda \\in \\mathbb{R}\\)</li>\n</ul>\n<h3>Les 8 axiomes à connaître</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Propriété</th><th>Expression</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Associativité (+)</td><td>\\((u+v)+w = u+(v+w)\\)</td></tr>\n<tr><td>2</td><td>Commutativité (+)</td><td>\\(u+v = v+u\\)</td></tr>\n<tr><td>3</td><td>Élément neutre</td><td>\\(\\exists \\vec{0} \\in E : u+\\vec{0}=u\\)</td></tr>\n<tr><td>4</td><td>Opposé</td><td>\\(\\forall u, \\exists (-u) : u+(-u)=\\vec{0}\\)</td></tr>\n<tr><td>5</td><td>Distributivité (scalaire/somme)</td><td>\\(\\lambda(u+v)=\\lambda u+\\lambda v\\)</td></tr>\n<tr><td>6</td><td>Distributivité (scalaires)</td><td>\\((\\lambda+\\mu)u=\\lambda u+\\mu u\\)</td></tr>\n<tr><td>7</td><td>Associativité (scalaires)</td><td>\\((\\lambda\\mu)u=\\lambda(\\mu u)\\)</td></tr>\n<tr><td>8</td><td>Élément neutre scalaire</td><td>\\(1 \\cdot u = u\\)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Exemples fondamentaux d'EV</div>\n<p>\\(\\mathbb{R}^n\\) · \\(\\mathbb{R}^2\\) (plan) · \\(\\mathbb{R}^3\\) (espace) · \\(\\mathcal{M}_{n,p}(\\mathbb{R})\\) (matrices) · \\(\\mathbb{R}[X]\\) (polynômes) · Fonctions continues sur [a,b]</p></div>\n<h2>Sous-espace vectoriel (SEV)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition — Critère pratique (3 conditions)</div>\n<p>Soit \\(E\\) un EV et \\(F \\subset E\\). \\(F\\) est un <strong>sous-espace vectoriel</strong> de \\(E\\) si et seulement si :<br/><br/>\n<strong>(i)</strong> \\(F \\neq \\emptyset\\) (souvent : vérifier que \\(\\vec{0} \\in F\\))<br/>\n<strong>(ii)</strong> Stabilité par + : \\(\\forall u,v \\in F,\\ u+v \\in F\\)<br/>\n<strong>(iii)</strong> Stabilité par \\(\\cdot\\) : \\(\\forall u \\in F, \\forall \\lambda \\in \\mathbb{R},\\ \\lambda u \\in F\\)</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Critère combiné (une seule condition)</div>\n<p>F est un SEV de E ssi : \\(F \\neq \\emptyset\\) et \\(\\forall u,v \\in F, \\forall \\lambda,\\mu \\in \\mathbb{R} : \\lambda u + \\mu v \\in F\\)</p></div>\n<h3>Exemples de SEV</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples dans ℝ³</div>\n<pre>F = {(x,y,z) ∈ ℝ³ | 2x + y - z = 0}   SEV (plan passant par 0)\nG = {(x,y,z) ∈ ℝ³ | x² + y² = 0}       SEV (droite Oz)\nH = {(x,y,z) ∈ ℝ³ | x + y = 1}         PAS un SEV (plan ne passant pas par 0)\nI = {(x,y,z) ∈ ℝ³ | x ≥ 0}             PAS un SEV (pas stable par (-1))</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège classique</div>\n<p>Un plan ou une droite est un SEV <strong>seulement s'il passe par l'origine</strong>. Si l'équation a un terme constant non nul (ex: \\(x+y=1\\)), ce n'est pas un SEV car \\(\\vec{0}\\) n'est pas dedans.</p></div>\n<h2>Familles de vecteurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Notion</th><th>Définition</th><th>Test pratique</th></tr></thead>\n<tbody>\n<tr><td><strong>Famille libre</strong></td><td>\\(\\alpha_1 v_1 + \\cdots + \\alpha_n v_n = 0 \\Rightarrow \\alpha_i = 0\\)</td><td>Le seul système nul est \\(\\alpha_i=0\\)</td></tr>\n<tr><td><strong>Famille liée</strong></td><td>Il existe des \\(\\alpha_i\\) non tous nuls tels que \\(\\sum \\alpha_i v_i = 0\\)</td><td>Un vecteur s'exprime avec les autres</td></tr>\n<tr><td><strong>Famille génératrice</strong></td><td>Tout vecteur de E s'écrit comme combinaison linéaire</td><td>Vect\\((v_1,...,v_n) = E\\)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Tester si une famille est libre dans ℝ³</div>\n<pre>Soit v₁=(1,0,1), v₂=(0,1,0), v₃=(1,1,1)\nα·v₁ + β·v₂ + γ·v₃ = (0,0,0)\n→ α + γ = 0\n→ β + γ = 0\n→ α + γ = 0\nDe la ligne 1 : α = -γ\nDe la ligne 2 : β = -γ\n→ pour γ=1 : α=-1, β=-1 est solution non triviale\n→ v₃ = v₁ + v₂ → FAMILLE LIÉE </pre></div>\n<h2>Base et Dimension</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition — Base</div>\n<p>Une <strong>base</strong> de E est une famille de vecteurs qui est à la fois :<br/>\n        • <strong>Libre</strong> (pas de relation de dépendance)<br/>\n        • <strong>Génératrice</strong> (engendre tout E)<br/><br/>\n        La <strong>dimension</strong> de E = nombre de vecteurs dans une base (toutes les bases ont le même cardinal).</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Espace</th><th>Base canonique</th><th>Dimension</th></tr></thead>\n<tbody>\n<tr><td>\\(\\mathbb{R}^2\\)</td><td>\\(\\{(1,0),(0,1)\\}\\)</td><td>2</td></tr>\n<tr><td>\\(\\mathbb{R}^3\\)</td><td>\\(\\{(1,0,0),(0,1,0),(0,0,1)\\}\\)</td><td>3</td></tr>\n<tr><td>\\(\\mathbb{R}^n\\)</td><td>\\(\\{e_1,\\ldots,e_n\\}\\) (vecteurs canoniques)</td><td>n</td></tr>\n<tr><td>\\(\\mathcal{M}_{2,2}(\\mathbb{R})\\)</td><td>4 matrices élémentaires \\(E_{ij}\\)</td><td>4</td></tr>\n<tr><td>Polynômes de degré ≤ n</td><td>\\(\\{1, X, X^2, \\ldots, X^n\\}\\)</td><td>n+1</td></tr>\n</tbody>\n</table></div>\n<h3>Théorème de la base — Propriétés clés</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Propriétés à retenir absolument</div>\n<p>Si dim(E) = n :<br/>\n        • Toute famille de <strong>n vecteurs libres</strong> est une base<br/>\n        • Toute famille de <strong>n vecteurs générateurs</strong> est une base<br/>\n        • Une famille de <strong>plus de n vecteurs</strong> est toujours liée<br/>\n        • Une famille de <strong>moins de n vecteurs</strong> ne peut pas être génératrice<br/><br/>\n        Si \\(F\\) est un SEV de \\(E\\) : \\(\\dim(F) \\leq \\dim(E)\\) et si \\(\\dim(F) = \\dim(E)\\) alors \\(F = E\\)</p></div>\n<h2>Pièges à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Erreurs fréquentes</div>\n<p><strong>Piège 1 :</strong> Oublier de vérifier que \\(\\vec{0} \\in F\\) — c'est souvent la condition la plus rapide à vérifier.<br/>\n<strong>Piège 2 :</strong> Confondre \"libre\" et \"génératrice\" — une famille peut être libre sans être génératrice (si trop peu de vecteurs) et génératrice sans être libre (si trop de vecteurs).<br/>\n<strong>Piège 3 :</strong> \\(\\{v_1, \\ldots, v_n\\}\\) est une base ⟺ les deux conditions (libre ET génératrice).<br/>\n<strong>Piège 4 :</strong> \\(\\ker(f)\\) et \\(\\text{Im}(f)\\) sont toujours des SEV (important pour le ch.3).</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2 — Espaces Vectoriels</h3>\n<ul>\n<li>EV = ensemble avec loi + et loi externe · vérifiant 8 axiomes</li>\n<li>SEV : 3 conditions — <strong>\\(\\vec{0} \\in F\\)</strong> · stable par + · stable par scalaire</li>\n<li><strong>Piège :</strong> plan/droite SEV ⟺ passe par l'origine (équation homogène)</li>\n<li>Famille <strong>libre</strong> : seule CL nulle = scalaires tous nuls</li>\n<li>Famille <strong>génératrice</strong> : tout vecteur de E s'exprime</li>\n<li>Base = libre + génératrice · dim(E) = nb vecteurs dans une base</li>\n<li>dim(E)=n → toute famille libre de n vecteurs est une base</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "L'ensemble F = {(x,y) ∈ ℝ² | x + 2y = 0} est-il un sous-espace vectoriel de ℝ² ?",
+          "options": [
+            {
+              "text": "Oui, c'est un SEV",
+              "correct": true,
+              "explanation": "Correct ! (0,0) vérifie 0+0=0 ✓. Si (x₁,y₁) et (x₂,y₂) ∈ F : (x₁+x₂)+2(y₁+y₂)=(x₁+2y₁)+(x₂+2y₂)=0 ✓. Et λx+2λy=λ(x+2y)=0 ✓. C'est la droite passant par l'origine."
+            },
+            {
+              "text": "Non, ce n'est pas un SEV",
+              "correct": false,
+              "explanation": "Si, c'est bien un SEV. L'équation x+2y=0 définit une droite passant par l'origine dans ℝ², qui est toujours un sous-espace vectoriel."
+            },
+            {
+              "text": "C'est un espace vectoriel mais pas un sous-espace",
+              "correct": false,
+              "explanation": "Ce n'est pas un espace vectoriel en lui-même, c'est un SOUS-espace vectoriel de ℝ²."
+            },
+            {
+              "text": "On ne peut pas le déterminer sans plus d'informations",
+              "correct": false,
+              "explanation": "On peut tout à fait vérifier les 3 conditions : 0∈F, stabilité par +, stabilité par scalaire."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Les vecteurs v₁=(1,2,0) et v₂=(0,1,1) dans ℝ³ forment une famille :",
+          "options": [
+            {
+              "text": "Liée",
+              "correct": false,
+              "explanation": "Pour qu'ils soient liés, il faudrait que l'un soit multiple de l'autre, ce qui n'est pas le cas ici."
+            },
+            {
+              "text": "Libre",
+              "correct": true,
+              "explanation": "Correct ! α(1,2,0)+β(0,1,1)=(0,0,0) donne α=0, 2α+β=0 donc β=0, β=0. Seule solution triviale → famille libre."
+            },
+            {
+              "text": "Génératrice de ℝ³",
+              "correct": false,
+              "explanation": "Deux vecteurs ne peuvent pas engendrer ℝ³ (dim 3). Ce n'est donc pas une famille génératrice de ℝ³."
+            },
+            {
+              "text": "Une base de ℝ³",
+              "correct": false,
+              "explanation": "Une famille de 2 vecteurs dans ℝ³ ne peut pas être une base de ℝ³ (qui en requiert 3)."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Si dim(E) = 4 et F est un SEV de E avec dim(F) = 4, alors :",
+          "options": [
+            {
+              "text": "F est strictement inclus dans E",
+              "correct": false,
+              "explanation": "F n'est pas seulement inclus dans E, on peut dire bien plus : F = E."
+            },
+            {
+              "text": "F est vide",
+              "correct": false,
+              "explanation": "F n'est pas vide, puisque tout SEV contient au moins le vecteur nul."
+            },
+            {
+              "text": "F = E",
+              "correct": true,
+              "explanation": "Correct ! Si F est un SEV de E avec la même dimension que E, alors F = E. En effet, une base de F (4 vecteurs libres dans E de dim 4) est aussi une base de E."
+            },
+            {
+              "text": "E est inclus dans F",
+              "correct": false,
+              "explanation": "C'est le contraire : F est inclus dans E (F ⊂ E), et dans ce cas F = E."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La dimension de l'espace des polynômes de degré ≤ 3 est :",
+          "options": [
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": "3 serait la dimension si on ne comptait que les degrés 1, 2, 3 — mais on inclut aussi les constantes (degré 0)."
+            },
+            {
+              "text": "4",
+              "correct": true,
+              "explanation": "Correct ! Une base est {1, X, X², X³} — 4 éléments. La dimension est donc 4. En général, les polynômes de degré ≤ n ont dimension n+1."
+            },
+            {
+              "text": "5",
+              "correct": false,
+              "explanation": "5 serait la dimension des polynômes de degré ≤ 4."
+            },
+            {
+              "text": "Infinie",
+              "correct": false,
+              "explanation": "L'espace des polynômes de degré ≤ 3 est de dimension finie (4), pas infinie."
+            }
+          ]
+        }
+      ],
+      "source": "_private/algebre/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Une matrice A est inversible si et seulement si :",
-     "options": [
-      {
-       "text": "A est carrée",
-       "correct": false,
-       "explanation": "Une matrice carrée peut ne pas être inversible si det=0."
-      },
-      {
-       "text": "det(A) = 0",
-       "correct": false,
-       "explanation": "det(A)=0 signifie que A est singulière, donc NON inversible."
-      },
-      {
-       "text": "det(A) ≠ 0",
-       "correct": true,
-       "explanation": "Correct ! A est inversible si et seulement si det(A) ≠ 0."
-      },
-      {
-       "text": "A est symétrique",
-       "correct": false,
-       "explanation": "La symétrie n'implique pas l'inversibilité."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La propriété fondamentale de la transposée d'un produit est :",
-     "options": [
-      {
-       "text": "ᵗ(AB) = ᵗA · ᵗB",
-       "correct": false,
-       "explanation": "ᵗA · ᵗB n'est pas la bonne formule."
-      },
-      {
-       "text": "ᵗ(AB) = ᵗB · ᵗA",
-       "correct": true,
-       "explanation": "Correct ! ᵗ(AB) = ᵗB · ᵗA — l'ordre s'INVERSE lors de la transposition d'un produit."
-      },
-      {
-       "text": "ᵗ(AB) = AB",
-       "correct": false,
-       "explanation": "AB (sans transposition) est la matrice originale."
-      },
-      {
-       "text": "ᵗ(AB) = ᵗA · B",
-       "correct": false,
-       "explanation": "ᵗA · B n'est pas la formule correcte."
-      }
-     ]
+      "number": 3,
+      "title": "Applications Linéaires",
+      "subtitle": "Définition, noyau, image, théorème du rang et matrice représentative.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Définir et reconnaître une application linéaire</li><li>Calculer le noyau et l'image d'une application linéaire</li><li>Appliquer le théorème du rang</li><li>Trouver la matrice représentative d'une application linéaire</li></ul></div>\n<h2>Définition d'une application linéaire</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie — Machine respectant les structures</div>\n<p>Une application linéaire est comme une machine qui <strong>respecte l'addition et la multiplication scalaire</strong>. Si on additionne deux vecteurs avant ou après la machine, on obtient le même résultat. La machine préserve la structure de l'espace vectoriel.</p></div>\n<p>Soient \\(E\\) et \\(F\\) deux espaces vectoriels. Une application \\(f: E \\to F\\) est <strong>linéaire</strong> si :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Les 2 conditions de linéarité</div>\n<p><strong>(L1)</strong> \\(\\forall u,v \\in E : f(u+v) = f(u) + f(v)\\)  (additivité)<br/>\n<strong>(L2)</strong> \\(\\forall u \\in E, \\forall \\lambda \\in \\mathbb{R} : f(\\lambda u) = \\lambda f(u)\\)  (homogénéité)</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Condition équivalente (une seule)</div>\n<p>\\(f\\) est linéaire \\(\\Leftrightarrow \\forall u,v \\in E, \\forall \\lambda,\\mu \\in \\mathbb{R} : f(\\lambda u + \\mu v) = \\lambda f(u) + \\mu f(v)\\)</p></div>\n<h3>Conséquences immédiates</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Propriétés déduites de la linéarité</div>\n<pre>f(0⃗_E) = 0⃗_F           (l'image du vecteur nul est le vecteur nul)\nf(-u) = -f(u)           (l'image de l'opposé est l'opposé de l'image)\nf(λ₁u₁+...+λₙuₙ) = λ₁f(u₁)+...+λₙf(uₙ)  (image d'une CL)</pre></div>\n<h3>Exemples fondamentaux</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Application</th><th>Définition</th><th>Linéaire ?</th></tr></thead>\n<tbody>\n<tr><td>Identité \\(id\\)</td><td>\\(id(u) = u\\)</td><td> Oui</td></tr>\n<tr><td>Application nulle</td><td>\\(f(u) = \\vec{0}\\)</td><td> Oui</td></tr>\n<tr><td>Homothétie</td><td>\\(f(u) = \\lambda u\\) fixé</td><td> Oui</td></tr>\n<tr><td>Rotation (plan)</td><td>\\(f(x,y) = (x\\cos\\theta - y\\sin\\theta, x\\sin\\theta + y\\cos\\theta)\\)</td><td> Oui</td></tr>\n<tr><td>Translation</td><td>\\(f(u) = u + a\\) avec \\(a \\neq 0\\)</td><td> Non (f(0)≠0)</td></tr>\n<tr><td>Valeur absolue</td><td>\\(f(x) = |x|\\)</td><td> Non (f(-1)≠-f(1))</td></tr>\n</tbody>\n</table></div>\n<h2>Noyau et Image</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Noyau (Ker)</th><th>Image (Im)</th></tr></thead>\n<tbody>\n<tr><td><strong>Définition</strong></td><td>\\(\\ker(f) = \\{u \\in E \\mid f(u) = \\vec{0}\\}\\)</td><td>\\(\\text{Im}(f) = \\{f(u) \\mid u \\in E\\} = f(E)\\)</td></tr>\n<tr><td><strong>C'est un SEV de</strong></td><td>E (l'espace de départ)</td><td>F (l'espace d'arrivée)</td></tr>\n<tr><td><strong>Lié à</strong></td><td>Injectivité : f injective ⟺ ker(f)={0}</td><td>Surjectivité : f surjective ⟺ Im(f)=F</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Calculer ker(f) et Im(f)</div>\n<pre>Soit f : ℝ³ → ℝ² définie par f(x,y,z) = (x+y, y+z)\nCalcul de ker(f) :\nf(x,y,z) = (0,0) ⟺ x+y=0 et y+z=0\n               ⟺ x=-y et z=-y\n               ⟺ (x,y,z) = y(-1,1,-1)\nker(f) = Vect{(-1,1,-1)} → dim(ker(f)) = 1\nCalcul de Im(f) :\nOn cherche Im(f) dans ℝ²\nf(x,y,z) = x(1,0) + y(1,1) + z(0,1)\nIm(f) = Vect{(1,0),(1,1),(0,1)}\n(1,0) et (0,1) sont libres et engendrent ℝ² → Im(f) = ℝ²\ndim(Im(f)) = 2 ✓ (et f est surjective)</pre></div>\n<h2>Théorème du rang</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Théorème fondamental — À connaître par cœur</div>\n<p>Si \\(f: E \\to F\\) est linéaire et \\(\\dim(E)\\) est finie :</p>\n<p>\\[\\dim(E) = \\dim(\\ker(f)) + \\dim(\\text{Im}(f))\\]</p>\n<p>On appelle <strong>rang de f</strong> la valeur \\(\\text{rg}(f) = \\dim(\\text{Im}(f))\\).<br/>\n        Donc : \\[\\dim(E) = \\dim(\\ker(f)) + \\text{rg}(f)\\]</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Applications du théorème du rang</div>\n<p>Si \\(f : E \\to F\\) avec \\(\\dim(E) = n\\) :<br/>\n        • \\(f\\) <strong>injective</strong> \\(\\Leftrightarrow \\ker(f) = \\{0\\} \\Leftrightarrow \\text{rg}(f) = n\\)<br/>\n        • \\(f\\) <strong>surjective</strong> \\(\\Leftrightarrow \\text{Im}(f) = F \\Leftrightarrow \\text{rg}(f) = \\dim(F)\\)<br/>\n        • \\(f\\) <strong>bijective</strong> \\(\\Leftrightarrow\\) injective ET surjective \\(\\Leftrightarrow \\dim(E) = \\dim(F)\\) et f injective</p></div>\n<h2>Matrice représentative</h2>\n<p>Toute application linéaire \\(f: \\mathbb{R}^n \\to \\mathbb{R}^m\\) peut être représentée par une matrice \\(A \\in \\mathcal{M}_{m,n}(\\mathbb{R})\\) telle que \\(f(x) = Ax\\).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Construction de la matrice représentative</div>\n<pre>La matrice A de f dans les bases canoniques se construit en colonnes :\nColonne j de A = f(eⱼ) où eⱼ est le j-ème vecteur de la base canonique\nExemple : f(x,y) = (2x+y, x-3y, 4y)\nf(e₁) = f(1,0) = (2, 1, 0)   → 1ère colonne\nf(e₂) = f(0,1) = (1,-3, 4)   → 2ème colonne\n      ⎡ 2   1 ⎤\nA =   ⎢ 1  -3 ⎥   (matrice 3×2)\n      ⎣ 0   4 ⎦\nVérification : f(x,y) = A·⎡x⎤ = ⎡2x+y ⎤ ✓\n                             ⎣y⎦   ⎣x-3y ⎦\n                                   ⎣ 4y  ⎦</pre></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> \\(f(0) = 0\\) est une condition nécessaire mais pas suffisante pour la linéarité. Il faut aussi vérifier les deux propriétés.<br/>\n<strong>Piège 2 :</strong> Le noyau est dans E, l'image est dans F — ne pas les inverser !<br/>\n<strong>Piège 3 :</strong> Le théorème du rang concerne \\(\\dim(E)\\), pas \\(\\dim(F)\\).<br/>\n<strong>Piège 4 :</strong> La matrice représentative dépend du choix des bases (canoniques par défaut).</p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3 — Applications Linéaires</h3>\n<ul>\n<li>AL : \\(f(\\lambda u + \\mu v) = \\lambda f(u) + \\mu f(v)\\) · toujours \\(f(\\vec{0}) = \\vec{0}\\)</li>\n<li><strong>Ker(f)</strong> = vecteurs envoyés sur 0 ⊂ E · <strong>Im(f)</strong> = image de E ⊂ F</li>\n<li>Ker et Im sont toujours des sous-espaces vectoriels</li>\n<li><strong>Théorème du rang :</strong> \\(\\dim(E) = \\dim(\\ker f) + \\text{rg}(f)\\)</li>\n<li>Injective ⟺ ker(f)={0} · Surjective ⟺ Im(f)=F · Bijective ⟺ les deux</li>\n<li>Matrice : colonne j = \\(f(e_j)\\) · calcul : \\(f(x) = Ax\\)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "L'application f(x,y) = (x+y, 2x-y) est-elle linéaire ?",
+          "options": [
+            {
+              "text": "Oui, elle est linéaire",
+              "correct": true,
+              "explanation": "Correct ! f(λu+μv) = f(λx₁+μx₂, λy₁+μy₂) = (λx₁+μx₂+λy₁+μy₂, 2(λx₁+μx₂)-(λy₁+μy₂)) = λf(x₁,y₁)+μf(x₂,y₂). C'est bien linéaire — c'est une transformation matricielle."
+            },
+            {
+              "text": "Non, elle n'est pas linéaire",
+              "correct": false,
+              "explanation": "Si, f est bien linéaire car elle est définie par des combinaisons linéaires des coordonnées."
+            },
+            {
+              "text": "On ne peut pas le déterminer",
+              "correct": false,
+              "explanation": "L'application est clairement définie, la question porte sur sa linéarité."
+            },
+            {
+              "text": "Elle est linéaire seulement si x=y=0",
+              "correct": false,
+              "explanation": "Toute application matricielle (Ax) est linéaire."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour f : ℝ⁴ → ℝ³ linéaire avec dim(ker(f)) = 2, quel est rg(f) ?",
+          "options": [
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": "rg(f) = dim(ℝ⁴) - dim(ker(f)) = 4 - 2 = 2, pas 1."
+            },
+            {
+              "text": "2",
+              "correct": true,
+              "explanation": "Correct ! Théorème du rang : dim(E) = dim(ker(f)) + rg(f) → 4 = 2 + rg(f) → rg(f) = 2."
+            },
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": "rg(f) = 4 - 2 = 2, pas 3."
+            },
+            {
+              "text": "4",
+              "correct": false,
+              "explanation": "rg(f) = 4 - 2 = 2, pas 4."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "f est injective si et seulement si :",
+          "options": [
+            {
+              "text": "Im(f) = F",
+              "correct": false,
+              "explanation": "Im(f) = F est la condition de surjectivité, pas d'injectivité."
+            },
+            {
+              "text": "dim(ker(f)) = dim(E)",
+              "correct": false,
+              "explanation": "dim(ker(f)) = dim(E) signifie que f est l'application nulle — très différent de l'injectivité."
+            },
+            {
+              "text": "ker(f) = {0⃗}",
+              "correct": true,
+              "explanation": "Correct ! f injective ⟺ ker(f) = {0⃗} ⟺ dim(ker(f)) = 0. Si seul le vecteur nul est envoyé sur 0, alors f ne confond pas deux vecteurs distincts."
+            },
+            {
+              "text": "rg(f) = dim(F)",
+              "correct": false,
+              "explanation": "rg(f) = dim(F) est la condition de surjectivité."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La matrice représentative de f(x,y) = (3x, x+2y) dans les bases canoniques est :",
+          "options": [
+            {
+              "text": "[[3,1],[0,2]]",
+              "correct": false,
+              "explanation": "Les colonnes s'obtiennent par f(e₁)=f(1,0)=(3,1) et f(e₂)=f(0,1)=(0,2). La matrice est [[3,0],[1,2]], pas [[3,1],[0,2]]."
+            },
+            {
+              "text": "[[3,0],[1,2]]",
+              "correct": true,
+              "explanation": "Correct ! Col.1 = f(1,0) = (3,1) et Col.2 = f(0,1) = (0,2). Matrice = [[3,0],[1,2]]. Vérif : [[3,0],[1,2]]·[x,y]ᵀ = [3x, x+2y] ✓"
+            },
+            {
+              "text": "[[3,1],[2,0]]",
+              "correct": false,
+              "explanation": "Ce n'est pas la bonne matrice — les colonnes sont f(e₁) et f(e₂), pas les coefficients lus en lignes."
+            },
+            {
+              "text": "[[1,0],[3,2]]",
+              "correct": false,
+              "explanation": "Ce n'est pas la bonne matrice."
+            }
+          ]
+        }
+      ],
+      "source": "_private/algebre/chapitres/chapitre3.html"
     }
-   ],
-   "source": "algebre/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Espaces Vectoriels",
-   "subtitle": "Définition, sous-espaces, familles libres/génératrices, bases et dimension.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir un espace vectoriel et vérifier les axiomes<br/>\n        • Identifier les sous-espaces vectoriels (critères)<br/>\n        • Distinguer familles libres, liées, génératrices<br/>\n        • Trouver une base et calculer la dimension d'un espace</p>\n</div>\n<h2>Qu'est-ce qu'un espace vectoriel ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏗️ Analogie intuitive</div>\n<p>Un espace vectoriel, c'est un ensemble où l'on peut <strong>additionner</strong> des éléments et les <strong>multiplier par un scalaire</strong> (un réel), avec des règles cohérentes. Les vecteurs géométriques de ℝ², les matrices, les polynômes — tous sont des espaces vectoriels !</p>\n</div>\n<p>Un <strong>espace vectoriel</strong> sur ℝ est un ensemble \\(E\\) muni de deux lois :</p>\n<ul>\n<li>Une <strong>loi interne</strong> \\(+\\) : \\((u,v) \\mapsto u+v\\)</li>\n<li>Une <strong>loi externe</strong> \\(\\cdot\\) : \\((\\lambda, u) \\mapsto \\lambda \\cdot u\\) avec \\(\\lambda \\in \\mathbb{R}\\)</li>\n</ul>\n<h3>Les 8 axiomes à connaître</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Propriété</th><th>Expression</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Associativité (+)</td><td>\\((u+v)+w = u+(v+w)\\)</td></tr>\n<tr><td>2</td><td>Commutativité (+)</td><td>\\(u+v = v+u\\)</td></tr>\n<tr><td>3</td><td>Élément neutre</td><td>\\(\\exists \\vec{0} \\in E : u+\\vec{0}=u\\)</td></tr>\n<tr><td>4</td><td>Opposé</td><td>\\(\\forall u, \\exists (-u) : u+(-u)=\\vec{0}\\)</td></tr>\n<tr><td>5</td><td>Distributivité (scalaire/somme)</td><td>\\(\\lambda(u+v)=\\lambda u+\\lambda v\\)</td></tr>\n<tr><td>6</td><td>Distributivité (scalaires)</td><td>\\((\\lambda+\\mu)u=\\lambda u+\\mu u\\)</td></tr>\n<tr><td>7</td><td>Associativité (scalaires)</td><td>\\((\\lambda\\mu)u=\\lambda(\\mu u)\\)</td></tr>\n<tr><td>8</td><td>Élément neutre scalaire</td><td>\\(1 \\cdot u = u\\)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Exemples fondamentaux d'EV</div>\n<p>\\(\\mathbb{R}^n\\) · \\(\\mathbb{R}^2\\) (plan) · \\(\\mathbb{R}^3\\) (espace) · \\(\\mathcal{M}_{n,p}(\\mathbb{R})\\) (matrices) · \\(\\mathbb{R}[X]\\) (polynômes) · Fonctions continues sur [a,b]</p>\n</div>\n<h2>Sous-espace vectoriel (SEV)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Définition — Critère pratique (3 conditions)</div>\n<p>Soit \\(E\\) un EV et \\(F \\subset E\\). \\(F\\) est un <strong>sous-espace vectoriel</strong> de \\(E\\) si et seulement si :<br/><br/>\n<strong>(i)</strong> \\(F \\neq \\emptyset\\) (souvent : vérifier que \\(\\vec{0} \\in F\\))<br/>\n<strong>(ii)</strong> Stabilité par + : \\(\\forall u,v \\in F,\\ u+v \\in F\\)<br/>\n<strong>(iii)</strong> Stabilité par \\(\\cdot\\) : \\(\\forall u \\in F, \\forall \\lambda \\in \\mathbb{R},\\ \\lambda u \\in F\\)</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">⚡ Critère combiné (une seule condition)</div>\n<p>F est un SEV de E ssi : \\(F \\neq \\emptyset\\) et \\(\\forall u,v \\in F, \\forall \\lambda,\\mu \\in \\mathbb{R} : \\lambda u + \\mu v \\in F\\)</p>\n</div>\n<h3>Exemples de SEV</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples dans ℝ³</div>\n<pre>F = {(x,y,z) ∈ ℝ³ | 2x + y - z = 0}  ✅ SEV (plan passant par 0)\nG = {(x,y,z) ∈ ℝ³ | x² + y² = 0}      ✅ SEV (droite Oz)\nH = {(x,y,z) ∈ ℝ³ | x + y = 1}        ❌ PAS un SEV (plan ne passant pas par 0)\nI = {(x,y,z) ∈ ℝ³ | x ≥ 0}            ❌ PAS un SEV (pas stable par (-1))</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège classique</div>\n<p>Un plan ou une droite est un SEV <strong>seulement s'il passe par l'origine</strong>. Si l'équation a un terme constant non nul (ex: \\(x+y=1\\)), ce n'est pas un SEV car \\(\\vec{0}\\) n'est pas dedans.</p>\n</div>\n<h2>Familles de vecteurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Notion</th><th>Définition</th><th>Test pratique</th></tr></thead>\n<tbody>\n<tr><td><strong>Famille libre</strong></td><td>\\(\\alpha_1 v_1 + \\cdots + \\alpha_n v_n = 0 \\Rightarrow \\alpha_i = 0\\)</td><td>Le seul système nul est \\(\\alpha_i=0\\)</td></tr>\n<tr><td><strong>Famille liée</strong></td><td>Il existe des \\(\\alpha_i\\) non tous nuls tels que \\(\\sum \\alpha_i v_i = 0\\)</td><td>Un vecteur s'exprime avec les autres</td></tr>\n<tr><td><strong>Famille génératrice</strong></td><td>Tout vecteur de E s'écrit comme combinaison linéaire</td><td>Vect\\((v_1,...,v_n) = E\\)</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Tester si une famille est libre dans ℝ³</div>\n<pre>Soit v₁=(1,0,1), v₂=(0,1,0), v₃=(1,1,1)\nα·v₁ + β·v₂ + γ·v₃ = (0,0,0)\n→ α + γ = 0\n→ β + γ = 0\n→ α + γ = 0\nDe la ligne 1 : α = -γ\nDe la ligne 2 : β = -γ\n→ pour γ=1 : α=-1, β=-1 est solution non triviale\n→ v₃ = v₁ + v₂ → FAMILLE LIÉE ❌</pre>\n</div>\n<h2>Base et Dimension</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📐 Définition — Base</div>\n<p>Une <strong>base</strong> de E est une famille de vecteurs qui est à la fois :<br/>\n        • <strong>Libre</strong> (pas de relation de dépendance)<br/>\n        • <strong>Génératrice</strong> (engendre tout E)<br/><br/>\n        La <strong>dimension</strong> de E = nombre de vecteurs dans une base (toutes les bases ont le même cardinal).</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Espace</th><th>Base canonique</th><th>Dimension</th></tr></thead>\n<tbody>\n<tr><td>\\(\\mathbb{R}^2\\)</td><td>\\(\\{(1,0),(0,1)\\}\\)</td><td>2</td></tr>\n<tr><td>\\(\\mathbb{R}^3\\)</td><td>\\(\\{(1,0,0),(0,1,0),(0,0,1)\\}\\)</td><td>3</td></tr>\n<tr><td>\\(\\mathbb{R}^n\\)</td><td>\\(\\{e_1,\\ldots,e_n\\}\\) (vecteurs canoniques)</td><td>n</td></tr>\n<tr><td>\\(\\mathcal{M}_{2,2}(\\mathbb{R})\\)</td><td>4 matrices élémentaires \\(E_{ij}\\)</td><td>4</td></tr>\n<tr><td>Polynômes de degré ≤ n</td><td>\\(\\{1, X, X^2, \\ldots, X^n\\}\\)</td><td>n+1</td></tr>\n</tbody>\n</table></div>\n<h3>Théorème de la base — Propriétés clés</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Propriétés à retenir absolument</div>\n<p>Si dim(E) = n :<br/>\n        • Toute famille de <strong>n vecteurs libres</strong> est une base<br/>\n        • Toute famille de <strong>n vecteurs générateurs</strong> est une base<br/>\n        • Une famille de <strong>plus de n vecteurs</strong> est toujours liée<br/>\n        • Une famille de <strong>moins de n vecteurs</strong> ne peut pas être génératrice<br/><br/>\n        Si \\(F\\) est un SEV de \\(E\\) : \\(\\dim(F) \\leq \\dim(E)\\) et si \\(\\dim(F) = \\dim(E)\\) alors \\(F = E\\)</p>\n</div>\n<h2>Pièges à l'examen</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Erreurs fréquentes</div>\n<p><strong>Piège 1 :</strong> Oublier de vérifier que \\(\\vec{0} \\in F\\) — c'est souvent la condition la plus rapide à vérifier.<br/>\n<strong>Piège 2 :</strong> Confondre \"libre\" et \"génératrice\" — une famille peut être libre sans être génératrice (si trop peu de vecteurs) et génératrice sans être libre (si trop de vecteurs).<br/>\n<strong>Piège 3 :</strong> \\(\\{v_1, \\ldots, v_n\\}\\) est une base ⟺ les deux conditions (libre ET génératrice).<br/>\n<strong>Piège 4 :</strong> \\(\\ker(f)\\) et \\(\\text{Im}(f)\\) sont toujours des SEV (important pour le ch.3).</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2 — Espaces Vectoriels</h3>\n<ul>\n<li>EV = ensemble avec loi + et loi externe · vérifiant 8 axiomes</li>\n<li>SEV : 3 conditions — <strong>\\(\\vec{0} \\in F\\)</strong> · stable par + · stable par scalaire</li>\n<li><strong>Piège :</strong> plan/droite SEV ⟺ passe par l'origine (équation homogène)</li>\n<li>Famille <strong>libre</strong> : seule CL nulle = scalaires tous nuls</li>\n<li>Famille <strong>génératrice</strong> : tout vecteur de E s'exprime</li>\n<li>Base = libre + génératrice · dim(E) = nb vecteurs dans une base</li>\n<li>dim(E)=n → toute famille libre de n vecteurs est une base</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "L'ensemble F = {(x,y) ∈ ℝ² | x + 2y = 0} est-il un sous-espace vectoriel de ℝ² ?",
-     "options": [
-      {
-       "text": "Oui, c'est un SEV",
-       "correct": true,
-       "explanation": "Correct ! (0,0) vérifie 0+0=0 ✓. Si (x₁,y₁) et (x₂,y₂) ∈ F : (x₁+x₂)+2(y₁+y₂)=(x₁+2y₁)+(x₂+2y₂)=0 ✓. Et λx+2λy=λ(x+2y)=0 ✓. C'est la droite passant par l'origine."
-      },
-      {
-       "text": "Non, ce n'est pas un SEV",
-       "correct": false,
-       "explanation": "Si, c'est bien un SEV. L'équation x+2y=0 définit une droite passant par l'origine dans ℝ², qui est toujours un sous-espace vectoriel."
-      },
-      {
-       "text": "C'est un espace vectoriel mais pas un sous-espace",
-       "correct": false,
-       "explanation": "Ce n'est pas un espace vectoriel en lui-même, c'est un SOUS-espace vectoriel de ℝ²."
-      },
-      {
-       "text": "On ne peut pas le déterminer sans plus d'informations",
-       "correct": false,
-       "explanation": "On peut tout à fait vérifier les 3 conditions : 0∈F, stabilité par +, stabilité par scalaire."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Les Matrices.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Les vecteurs v₁=(1,2,0) et v₂=(0,1,1) dans ℝ³ forment une famille :",
-     "options": [
-      {
-       "text": "Liée",
-       "correct": false,
-       "explanation": "Pour qu'ils soient liés, il faudrait que l'un soit multiple de l'autre, ce qui n'est pas le cas ici."
-      },
-      {
-       "text": "Libre",
-       "correct": true,
-       "explanation": "Correct ! α(1,2,0)+β(0,1,1)=(0,0,0) donne α=0, 2α+β=0 donc β=0, β=0. Seule solution triviale → famille libre."
-      },
-      {
-       "text": "Génératrice de ℝ³",
-       "correct": false,
-       "explanation": "Deux vecteurs ne peuvent pas engendrer ℝ³ (dim 3). Ce n'est donc pas une famille génératrice de ℝ³."
-      },
-      {
-       "text": "Une base de ℝ³",
-       "correct": false,
-       "explanation": "Une famille de 2 vecteurs dans ℝ³ ne peut pas être une base de ℝ³ (qui en requiert 3)."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Les Matrices.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Si dim(E) = 4 et F est un SEV de E avec dim(F) = 4, alors :",
-     "options": [
-      {
-       "text": "F est strictement inclus dans E",
-       "correct": false,
-       "explanation": "F n'est pas seulement inclus dans E, on peut dire bien plus : F = E."
-      },
-      {
-       "text": "F est vide",
-       "correct": false,
-       "explanation": "F n'est pas vide, puisque tout SEV contient au moins le vecteur nul."
-      },
-      {
-       "text": "F = E",
-       "correct": true,
-       "explanation": "Correct ! Si F est un SEV de E avec la même dimension que E, alors F = E. En effet, une base de F (4 vecteurs libres dans E de dim 4) est aussi une base de E."
-      },
-      {
-       "text": "E est inclus dans F",
-       "correct": false,
-       "explanation": "C'est le contraire : F est inclus dans E (F ⊂ E), et dans ce cas F = E."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Les Matrices.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "La dimension de l'espace des polynômes de degré ≤ 3 est :",
-     "options": [
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": "3 serait la dimension si on ne comptait que les degrés 1, 2, 3 — mais on inclut aussi les constantes (degré 0)."
-      },
-      {
-       "text": "4",
-       "correct": true,
-       "explanation": "Correct ! Une base est {1, X, X², X³} — 4 éléments. La dimension est donc 4. En général, les polynômes de degré ≤ n ont dimension n+1."
-      },
-      {
-       "text": "5",
-       "correct": false,
-       "explanation": "5 serait la dimension des polynômes de degré ≤ 4."
-      },
-      {
-       "text": "Infinie",
-       "correct": false,
-       "explanation": "L'espace des polynômes de degré ≤ 3 est de dimension finie (4), pas infinie."
-      }
-     ]
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Les Matrices.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Les Matrices.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Espaces Vectoriels.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Espaces Vectoriels.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Espaces Vectoriels.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Espaces Vectoriels.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Espaces Vectoriels.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Applications Linéaires.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Applications Linéaires.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Applications Linéaires.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Applications Linéaires.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Applications Linéaires.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/algebre/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Applications Linéaires",
-   "subtitle": "Définition, noyau, image, théorème du rang et matrice représentative.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Définir et reconnaître une application linéaire<br/>\n        • Calculer le noyau et l'image d'une application linéaire<br/>\n        • Appliquer le théorème du rang<br/>\n        • Trouver la matrice représentative d'une application linéaire</p>\n</div>\n<h2>Définition d'une application linéaire</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🔗 Analogie — Machine respectant les structures</div>\n<p>Une application linéaire est comme une machine qui <strong>respecte l'addition et la multiplication scalaire</strong>. Si on additionne deux vecteurs avant ou après la machine, on obtient le même résultat. La machine préserve la structure de l'espace vectoriel.</p>\n</div>\n<p>Soient \\(E\\) et \\(F\\) deux espaces vectoriels. Une application \\(f: E \\to F\\) est <strong>linéaire</strong> si :</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">📌 Les 2 conditions de linéarité</div>\n<p><strong>(L1)</strong> \\(\\forall u,v \\in E : f(u+v) = f(u) + f(v)\\)  (additivité)<br/>\n<strong>(L2)</strong> \\(\\forall u \\in E, \\forall \\lambda \\in \\mathbb{R} : f(\\lambda u) = \\lambda f(u)\\)  (homogénéité)</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">⚡ Condition équivalente (une seule)</div>\n<p>\\(f\\) est linéaire \\(\\Leftrightarrow \\forall u,v \\in E, \\forall \\lambda,\\mu \\in \\mathbb{R} : f(\\lambda u + \\mu v) = \\lambda f(u) + \\mu f(v)\\)</p>\n</div>\n<h3>Conséquences immédiates</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Propriétés déduites de la linéarité</div>\n<pre>f(0⃗_E) = 0⃗_F           (l'image du vecteur nul est le vecteur nul)\nf(-u) = -f(u)           (l'image de l'opposé est l'opposé de l'image)\nf(λ₁u₁+...+λₙuₙ) = λ₁f(u₁)+...+λₙf(uₙ)  (image d'une CL)</pre>\n</div>\n<h3>Exemples fondamentaux</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Application</th><th>Définition</th><th>Linéaire ?</th></tr></thead>\n<tbody>\n<tr><td>Identité \\(id\\)</td><td>\\(id(u) = u\\)</td><td>✅ Oui</td></tr>\n<tr><td>Application nulle</td><td>\\(f(u) = \\vec{0}\\)</td><td>✅ Oui</td></tr>\n<tr><td>Homothétie</td><td>\\(f(u) = \\lambda u\\) fixé</td><td>✅ Oui</td></tr>\n<tr><td>Rotation (plan)</td><td>\\(f(x,y) = (x\\cos\\theta - y\\sin\\theta, x\\sin\\theta + y\\cos\\theta)\\)</td><td>✅ Oui</td></tr>\n<tr><td>Translation</td><td>\\(f(u) = u + a\\) avec \\(a \\neq 0\\)</td><td>❌ Non (f(0)≠0)</td></tr>\n<tr><td>Valeur absolue</td><td>\\(f(x) = |x|\\)</td><td>❌ Non (f(-1)≠-f(1))</td></tr>\n</tbody>\n</table></div>\n<h2>Noyau et Image</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th></th><th>Noyau (Ker)</th><th>Image (Im)</th></tr></thead>\n<tbody>\n<tr><td><strong>Définition</strong></td><td>\\(\\ker(f) = \\{u \\in E \\mid f(u) = \\vec{0}\\}\\)</td><td>\\(\\text{Im}(f) = \\{f(u) \\mid u \\in E\\} = f(E)\\)</td></tr>\n<tr><td><strong>C'est un SEV de</strong></td><td>E (l'espace de départ)</td><td>F (l'espace d'arrivée)</td></tr>\n<tr><td><strong>Lié à</strong></td><td>Injectivité : f injective ⟺ ker(f)={0}</td><td>Surjectivité : f surjective ⟺ Im(f)=F</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple — Calculer ker(f) et Im(f)</div>\n<pre>Soit f : ℝ³ → ℝ² définie par f(x,y,z) = (x+y, y+z)\nCalcul de ker(f) :\nf(x,y,z) = (0,0) ⟺ x+y=0 et y+z=0\n               ⟺ x=-y et z=-y\n               ⟺ (x,y,z) = y(-1,1,-1)\nker(f) = Vect{(-1,1,-1)} → dim(ker(f)) = 1\nCalcul de Im(f) :\nOn cherche Im(f) dans ℝ²\nf(x,y,z) = x(1,0) + y(1,1) + z(0,1)\nIm(f) = Vect{(1,0),(1,1),(0,1)}\n(1,0) et (0,1) sont libres et engendrent ℝ² → Im(f) = ℝ²\ndim(Im(f)) = 2 ✓ (et f est surjective)</pre>\n</div>\n<h2>Théorème du rang</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">⭐ Théorème fondamental — À connaître par cœur</div>\n<p>Si \\(f: E \\to F\\) est linéaire et \\(\\dim(E)\\) est finie :</p>\n<p>\\[\\dim(E) = \\dim(\\ker(f)) + \\dim(\\text{Im}(f))\\]</p>\n<p>On appelle <strong>rang de f</strong> la valeur \\(\\text{rg}(f) = \\dim(\\text{Im}(f))\\).<br/>\n        Donc : \\[\\dim(E) = \\dim(\\ker(f)) + \\text{rg}(f)\\]</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Applications du théorème du rang</div>\n<p>Si \\(f : E \\to F\\) avec \\(\\dim(E) = n\\) :<br/>\n        • \\(f\\) <strong>injective</strong> \\(\\Leftrightarrow \\ker(f) = \\{0\\} \\Leftrightarrow \\text{rg}(f) = n\\)<br/>\n        • \\(f\\) <strong>surjective</strong> \\(\\Leftrightarrow \\text{Im}(f) = F \\Leftrightarrow \\text{rg}(f) = \\dim(F)\\)<br/>\n        • \\(f\\) <strong>bijective</strong> \\(\\Leftrightarrow\\) injective ET surjective \\(\\Leftrightarrow \\dim(E) = \\dim(F)\\) et f injective</p>\n</div>\n<h2>Matrice représentative</h2>\n<p>Toute application linéaire \\(f: \\mathbb{R}^n \\to \\mathbb{R}^m\\) peut être représentée par une matrice \\(A \\in \\mathcal{M}_{m,n}(\\mathbb{R})\\) telle que \\(f(x) = Ax\\).</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Construction de la matrice représentative</div>\n<pre>La matrice A de f dans les bases canoniques se construit en colonnes :\nColonne j de A = f(eⱼ) où eⱼ est le j-ème vecteur de la base canonique\nExemple : f(x,y) = (2x+y, x-3y, 4y)\nf(e₁) = f(1,0) = (2, 1, 0)   → 1ère colonne\nf(e₂) = f(0,1) = (1,-3, 4)   → 2ème colonne\n      ⎡ 2   1 ⎤\nA =   ⎢ 1  -3 ⎥   (matrice 3×2)\n      ⎣ 0   4 ⎦\nVérification : f(x,y) = A·⎡x⎤ = ⎡2x+y ⎤ ✓\n                             ⎣y⎦   ⎣x-3y ⎦\n                                   ⎣ 4y  ⎦</pre>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges à l'examen</div>\n<p><strong>Piège 1 :</strong> \\(f(0) = 0\\) est une condition nécessaire mais pas suffisante pour la linéarité. Il faut aussi vérifier les deux propriétés.<br/>\n<strong>Piège 2 :</strong> Le noyau est dans E, l'image est dans F — ne pas les inverser !<br/>\n<strong>Piège 3 :</strong> Le théorème du rang concerne \\(\\dim(E)\\), pas \\(\\dim(F)\\).<br/>\n<strong>Piège 4 :</strong> La matrice représentative dépend du choix des bases (canoniques par défaut).</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3 — Applications Linéaires</h3>\n<ul>\n<li>AL : \\(f(\\lambda u + \\mu v) = \\lambda f(u) + \\mu f(v)\\) · toujours \\(f(\\vec{0}) = \\vec{0}\\)</li>\n<li><strong>Ker(f)</strong> = vecteurs envoyés sur 0 ⊂ E · <strong>Im(f)</strong> = image de E ⊂ F</li>\n<li>Ker et Im sont toujours des sous-espaces vectoriels</li>\n<li><strong>Théorème du rang :</strong> \\(\\dim(E) = \\dim(\\ker f) + \\text{rg}(f)\\)</li>\n<li>Injective ⟺ ker(f)={0} · Surjective ⟺ Im(f)=F · Bijective ⟺ les deux</li>\n<li>Matrice : colonne j = \\(f(e_j)\\) · calcul : \\(f(x) = Ax\\)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "L'application f(x,y) = (x+y, 2x-y) est-elle linéaire ?",
-     "options": [
-      {
-       "text": "Oui, elle est linéaire",
-       "correct": true,
-       "explanation": "Correct ! f(λu+μv) = f(λx₁+μx₂, λy₁+μy₂) = (λx₁+μx₂+λy₁+μy₂, 2(λx₁+μx₂)-(λy₁+μy₂)) = λf(x₁,y₁)+μf(x₂,y₂). C'est bien linéaire — c'est une transformation matricielle."
-      },
-      {
-       "text": "Non, elle n'est pas linéaire",
-       "correct": false,
-       "explanation": "Si, f est bien linéaire car elle est définie par des combinaisons linéaires des coordonnées."
-      },
-      {
-       "text": "On ne peut pas le déterminer",
-       "correct": false,
-       "explanation": "L'application est clairement définie, la question porte sur sa linéarité."
-      },
-      {
-       "text": "Elle est linéaire seulement si x=y=0",
-       "correct": false,
-       "explanation": "Toute application matricielle (Ax) est linéaire."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Pour f : ℝ⁴ → ℝ³ linéaire avec dim(ker(f)) = 2, quel est rg(f) ?",
-     "options": [
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": "rg(f) = dim(ℝ⁴) - dim(ker(f)) = 4 - 2 = 2, pas 1."
-      },
-      {
-       "text": "2",
-       "correct": true,
-       "explanation": "Correct ! Théorème du rang : dim(E) = dim(ker(f)) + rg(f) → 4 = 2 + rg(f) → rg(f) = 2."
-      },
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": "rg(f) = 4 - 2 = 2, pas 3."
-      },
-      {
-       "text": "4",
-       "correct": false,
-       "explanation": "rg(f) = 4 - 2 = 2, pas 4."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "f est injective si et seulement si :",
-     "options": [
-      {
-       "text": "Im(f) = F",
-       "correct": false,
-       "explanation": "Im(f) = F est la condition de surjectivité, pas d'injectivité."
-      },
-      {
-       "text": "dim(ker(f)) = dim(E)",
-       "correct": false,
-       "explanation": "dim(ker(f)) = dim(E) signifie que f est l'application nulle — très différent de l'injectivité."
-      },
-      {
-       "text": "ker(f) = {0⃗}",
-       "correct": true,
-       "explanation": "Correct ! f injective ⟺ ker(f) = {0⃗} ⟺ dim(ker(f)) = 0. Si seul le vecteur nul est envoyé sur 0, alors f ne confond pas deux vecteurs distincts."
-      },
-      {
-       "text": "rg(f) = dim(F)",
-       "correct": false,
-       "explanation": "rg(f) = dim(F) est la condition de surjectivité."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La matrice représentative de f(x,y) = (3x, x+2y) dans les bases canoniques est :",
-     "options": [
-      {
-       "text": "[[3,1],[0,2]]",
-       "correct": false,
-       "explanation": "Les colonnes s'obtiennent par f(e₁)=f(1,0)=(3,1) et f(e₂)=f(0,1)=(0,2). La matrice est [[3,0],[1,2]], pas [[3,1],[0,2]]."
-      },
-      {
-       "text": "[[3,0],[1,2]]",
-       "correct": true,
-       "explanation": "Correct ! Col.1 = f(1,0) = (3,1) et Col.2 = f(0,1) = (0,2). Matrice = [[3,0],[1,2]]. Vérif : [[3,0],[1,2]]·[x,y]ᵀ = [3x, x+2y] ✓"
-      },
-      {
-       "text": "[[3,1],[2,0]]",
-       "correct": false,
-       "explanation": "Ce n'est pas la bonne matrice — les colonnes sont f(e₁) et f(e₂), pas les coefficients lus en lignes."
-      },
-      {
-       "text": "[[1,0],[3,2]]",
-       "correct": false,
-       "explanation": "Ce n'est pas la bonne matrice."
-      }
-     ]
-    }
-   ],
-   "source": "_private/algebre/chapitres/chapitre3.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Les Matrices.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Les Matrices.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Les Matrices.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Les Matrices.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Les Matrices.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Espaces Vectoriels.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Espaces Vectoriels.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Espaces Vectoriels.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Espaces Vectoriels.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Espaces Vectoriels.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Applications Linéaires.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Applications Linéaires.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Applications Linéaires.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Applications Linéaires.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Applications Linéaires.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/algebre/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/algebre/exercices/exercices.html"
 }

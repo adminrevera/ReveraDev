@@ -13,6 +13,15 @@ const comingSoon = [
   { title: "Simulateur d’examen", text: "Chronométré, noté sur 20." },
 ];
 
+const formats = [
+  { id: "MCQ", label: "QCM", text: "Une bonne réponse parmi plusieurs." },
+  { id: "TRUE_FALSE", label: "Vrai ou faux", text: "Tranche en un clic." },
+  { id: "GAP", label: "Texte à trous", text: "Complète avec le bon mot." },
+  { id: "DRAG", label: "Glisser", text: "Dépose chaque élément à sa place." },
+  { id: "MATCHING", label: "Association", text: "Relie chaque notion à son exemple." },
+  { id: "SWIPE", label: "Swipe", text: "Glisse à gauche ou à droite." },
+];
+
 export default async function TrainingPage() {
   const { profile } = await requireStudentProfile();
   const visibility = profile.tier === "FREE" ? "PUBLIC" : { in: ["PUBLIC", "PREMIUM"] as ("PUBLIC" | "PREMIUM")[] };
@@ -55,20 +64,43 @@ export default async function TrainingPage() {
         <Link href="/parcours" className="group rounded-2xl border border-accent/30 bg-accent/[.07] p-5 text-fg no-underline transition hover:border-accent/60">
           <Eyebrow>Disponible</Eyebrow>
           <h2 className="mt-2 text-lg font-semibold">Quiz de chapitre</h2>
-          <p className="mt-1 text-sm leading-relaxed text-muted">Six questions par chapitre, corrigées à la fin.</p>
+          <p className="mt-1 text-sm leading-relaxed text-muted">Dix questions maximum, corrigées à la fin.</p>
           <span className="mt-3 inline-flex text-xs font-semibold text-accent">Choisir un chapitre <span aria-hidden="true" className="ml-1 transition group-hover:translate-x-0.5">→</span></span>
+        </Link>
+        <Link href="/seance/bank" className="group rounded-2xl border border-accent/30 bg-accent/[.07] p-5 text-fg no-underline transition hover:border-accent/60">
+          <Eyebrow>Disponible</Eyebrow>
+          <h2 className="mt-2 text-lg font-semibold">Banque de questions</h2>
+          <p className="mt-1 text-sm leading-relaxed text-muted">Une série mélangée, tirée des cours que tu as lus.</p>
+          <span className="mt-3 inline-flex text-xs font-semibold text-accent">Lancer une série <span aria-hidden="true" className="ml-1 transition group-hover:translate-x-0.5">→</span></span>
+        </Link>
+        <Link href="/erreurs" className="group rounded-2xl border border-line bg-panel p-5 text-fg no-underline transition hover:border-accent/40">
+          <Eyebrow>Disponible</Eyebrow>
+          <h2 className="mt-2 text-lg font-semibold">Mes erreurs</h2>
+          <p className="mt-1 text-sm leading-relaxed text-muted">Retravaille les questions que tu as ratées.</p>
+        </Link>
+        <Link href="/jeux" className="group rounded-2xl border border-line bg-panel p-5 text-fg no-underline transition hover:border-accent/40">
+          <Eyebrow>Disponible</Eyebrow>
+          <h2 className="mt-2 text-lg font-semibold">Jeux du jour</h2>
+          <p className="mt-1 text-sm leading-relaxed text-muted">Une grille de Sudoku binaire et un mot à trouver chaque jour.</p>
         </Link>
         {comingSoon.map((activity) => (
           <div key={activity.title} aria-disabled="true" className="rounded-2xl border border-dashed border-line bg-panel/50 p-5 opacity-80">
-            <div className="flex items-center justify-between gap-2">
-              <Eyebrow>Bientôt</Eyebrow>
-              <span aria-hidden="true">🔒</span>
-            </div>
+            <Eyebrow>Bientôt</Eyebrow>
             <h2 className="mt-2 text-lg font-semibold">{activity.title}</h2>
             <p className="mt-1 text-sm leading-relaxed text-muted">{activity.text}</p>
           </div>
         ))}
       </section>
+
+      <h2 className="mb-3 mt-9 text-xl font-semibold tracking-tight">S’entraîner par format</h2>
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+        {formats.map((format) => (
+          <Link key={format.id} href={`/seance/bank?scope=:${format.id}`} className="rounded-2xl border border-line bg-panel p-4 text-fg no-underline transition hover:border-accent/40">
+            <h3 className="text-[15px] font-semibold">{format.label}</h3>
+            <p className="mt-1 text-xs leading-relaxed text-muted">{format.text}</p>
+          </Link>
+        ))}
+      </div>
 
       <h2 className="mb-4 mt-9 text-xl font-semibold tracking-tight">Lancer directement sur une matière</h2>
       {!profile.levelId ? (
@@ -85,6 +117,7 @@ export default async function TrainingPage() {
                   <h3 className="text-lg font-semibold">{subject.name}</h3>
                   <span className="shrink-0 rounded-full border border-line px-2.5 py-1 text-xs text-muted">{validated} / {subject.items.length} validés</span>
                 </div>
+                <Link href={`/seance/bank?scope=${subject.id}`} className="mt-2 inline-flex text-xs font-semibold text-accent no-underline">S’entraîner sur cette matière →</Link>
                 <ul className="mt-3 grid gap-2">
                   {subject.items.map((item, index) => {
                     const progress = item.progress[0];
@@ -101,7 +134,7 @@ export default async function TrainingPage() {
                         ) : (
                           <div aria-disabled="true" className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-line/60 px-3.5 text-sm text-muted opacity-75">
                             <span className="min-w-0 truncate">{item.title}</span>
-                            <span className="shrink-0 text-xs">🔒 Verrouillé</span>
+                            <span className="shrink-0 text-xs">Verrouillé</span>
                           </div>
                         )}
                       </li>

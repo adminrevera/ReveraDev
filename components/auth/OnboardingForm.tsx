@@ -6,10 +6,14 @@ import { completeOnboarding } from "@/app/actions/auth";
 import FlowShell from "@/components/auth/FlowShell";
 import Lumi from "@/components/brand/Lumi";
 
+// Objectifs proposés (plusieurs choix possibles). Liste à valider avec l'équipe.
 const goals = [
   { value: "exams", label: "Réussir mes examens", description: "Me préparer efficacement au jour J." },
   { value: "regularity", label: "Réviser régulièrement", description: "Installer une routine et garder le rythme." },
   { value: "confidence", label: "Gagner en confiance", description: "Mieux comprendre et voir mes progrès." },
+  { value: "gaps", label: "Combler mes lacunes", description: "Reprendre ce que je n’ai pas compris." },
+  { value: "ahead", label: "Prendre de l’avance", description: "Avancer avant que le cours ne démarre." },
+  { value: "compete", label: "Me mesurer aux autres", description: "Grimper dans la ligue chaque semaine." },
 ];
 
 type Level = { id: string; name: string; track: { name: string; institution: { name: string } } };
@@ -36,7 +40,11 @@ export default function OnboardingForm({
   const [institution, setInstitution] = useState("");
   const [track, setTrack] = useState("");
   const [levelId, setLevelId] = useState("");
-  const [goal, setGoal] = useState("exams");
+  const [chosenGoals, setChosenGoals] = useState<string[]>(["exams"]);
+  const [pushOn, setPushOn] = useState(true);
+  const [emailOn, setEmailOn] = useState(false);
+  const [reminderTime, setReminderTime] = useState("18:00");
+  const [first, setFirst] = useState<{ id: string | null; title: string | null }>({ id: null, title: null });
   const [errorMessage, setErrorMessage] = useState("");
   const [done, setDone] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -68,15 +76,23 @@ export default function OnboardingForm({
     setStep((current) => Math.max(1, current - 1));
   }
 
-  function finish() {
+  function finish(skipReminders = false) {
     setErrorMessage("");
     startTransition(async () => {
       try {
-        const result = await completeOnboarding(displayName, goal, requestedPlan, levelId || null);
-        if (result.error) {
+        let push = skipReminders ? false : pushOn;
+        if (push && typeof Notification !== "undefined" && Notification.permission === "default") {
+          // La permission du navigateur est demandée au moment où l'on active les notifications.
+          push = (await Notification.requestPermission().catch(() => "denied")) === "granted";
+        } else if (push && typeof Notification !== "undefined" && Notification.permission === "denied") {
+          push = false;
+        }
+        const result = await completeOnboarding(displayName, chosenGoals, requestedPlan, levelId || null, { push, email: skipReminders ? false : emailOn, time: reminderTime });
+        if (result.error !== null) {
           setErrorMessage(result.error);
           return;
         }
+        setFirst({ id: result.firstItemId, title: result.firstTitle });
         setDone(true);
       } catch (error) {
         console.error("Onboarding failed:", error);
@@ -95,17 +111,19 @@ export default function OnboardingForm({
           <h1 className="text-[clamp(30px,8vw,40px)] font-semibold leading-[1.1] tracking-[-0.04em]">
             Bienvenue, <span className="font-serif font-normal italic text-accent">{firstName}.</span>
           </h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted">Ton parcours est prêt. On commence par ton premier chapitre.</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted">Ton parcours est prêt. Lis un cours, puis valide-le avec le quiz pour débloquer la suite.</p>
+          {first.title && <p className="mt-4 rounded-2xl border border-line bg-panel px-4 py-3 text-sm"><span className="block font-mono text-[10px] uppercase tracking-[.16em] text-amber">Ton premier cours</span><span className="mt-1 block font-medium">{first.title}</span></p>}
           <button
             type="button"
             className={`${primary} mt-8`}
             onClick={() => {
-              router.replace("/dashboard");
+              router.replace(first.id ? `/parcours/${first.id}` : "/dashboard");
               router.refresh();
             }}
           >
-            C’est parti
+            {first.id ? "Commencer le premier cours" : "C’est parti"}
           </button>
+          {first.id && <button type="button" className="mt-3 text-sm text-muted underline underline-offset-4" onClick={() => { router.replace("/dashboard"); router.refresh(); }}>Aller à l’accueil</button>}
         </div>
       </main>
     );
@@ -120,14 +138,18 @@ export default function OnboardingForm({
     <p className="rounded-xl border border-bad/30 bg-bad/10 px-4 py-3 text-sm text-[#FFD2CB]" role="alert">{errorMessage}</p>
   );
 
+  const toggleGoal = (value: string) =>
+    setChosenGoals((current) => (current.includes(value) ? current.filter((entry) => entry !== value) : [...current, value]));
+  const goNext = () => setStep(hasLevels ? 2 : 3);
+
   if (step === 1) {
     return (
       <FlowShell
         step={3}
         total={total}
         title="Comment doit-on t’appeler ?"
-        subtitle="Ton prénom apparaît sur ton profil et dans la ligue."
-        footer={<button type="button" className={primary} disabled={!nameValid} onClick={() => setStep(hasLevels ? 2 : 3)}>Continuer</button>}
+        subtitle="Ton prénom apparaît sur ton profil et dans la ligue (sous la forme « Prénom N. »)."
+        footer={<button type="button" className={primary} disabled={!nameValid || chosenGoals.length === 0} onClick={goNext}>Continuer</button>}
       >
         {planNote}
         <div className="grid gap-2">
@@ -141,11 +163,26 @@ export default function OnboardingForm({
             maxLength={60}
             value={displayName}
             onChange={(event) => setDisplayName(event.target.value)}
-            onKeyDown={(event) => { if (event.key === "Enter" && nameValid) setStep(hasLevels ? 2 : 3); }}
             placeholder="Ton prénom"
             className={inputClass}
           />
         </div>
+        <fieldset className="mt-2">
+          <legend className="text-sm font-medium">Quels sont tes objectifs ? <span className="font-normal text-muted">Plusieurs choix possibles</span></legend>
+          <div className="mt-3 grid grid-cols-2 gap-2.5">
+            {goals.map((option) => {
+              const on = chosenGoals.includes(option.value);
+              return (
+                <label key={option.value} className={`relative flex min-h-[104px] cursor-pointer flex-col justify-between rounded-2xl border p-3.5 transition ${on ? "border-accent bg-accent/[.10] shadow-[inset_0_0_0_1px_var(--accent)]" : "border-line bg-black/15 hover:border-accent/40"}`}>
+                  <input type="checkbox" checked={on} onChange={() => toggleGoal(option.value)} className="sr-only" />
+                  <span aria-hidden="true" className={`absolute right-3 top-3 grid size-5 place-items-center rounded-full border text-[11px] ${on ? "border-accent bg-accent text-accent-ink" : "border-line text-transparent"}`}>✓</span>
+                  <span className="pr-6 text-[14px] font-semibold leading-snug">{option.label}</span>
+                  <span className="mt-1 block text-[11.5px] leading-snug text-muted">{option.description}</span>
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
       </FlowShell>
     );
   }
@@ -189,28 +226,33 @@ export default function OnboardingForm({
     <FlowShell
       step={5}
       total={total}
-      title="Quel est ton objectif principal ?"
-      subtitle="Tu pourras en changer plus tard."
+      title="Veux-tu des rappels ?"
+      subtitle="Pour garder ta série sans y penser."
       onBack={() => { setErrorMessage(""); setStep(hasLevels ? 2 : 1); }}
       footer={
         <>
           {error}
-          <button type="button" className={primary} disabled={isPending} onClick={finish}>{isPending ? "Enregistrement…" : "Terminer"}</button>
+          <button type="button" className={primary} disabled={isPending} onClick={() => finish()}>{isPending ? "Enregistrement…" : "Terminer"}</button>
+          <button type="button" className="text-center text-sm text-muted underline underline-offset-4" disabled={isPending} onClick={() => finish(true)}>Plus tard</button>
         </>
       }
     >
-      <fieldset className="grid gap-3">
-        <legend className="sr-only">Objectif principal</legend>
-        {goals.map((option) => (
-          <label key={option.value} className={`flex cursor-pointer gap-3 rounded-2xl border p-4 transition ${goal === option.value ? "border-accent bg-accent/[.10] shadow-[inset_0_0_0_1px_var(--accent)]" : "border-line bg-black/15 hover:border-accent/40"}`}>
-            <input type="radio" name="goal" value={option.value} checked={goal === option.value} onChange={() => setGoal(option.value)} className="mt-1 accent-accent" />
-            <span>
-              <span className="block text-[15px] font-semibold">{option.label}</span>
-              <span className="mt-0.5 block text-xs leading-relaxed text-muted">{option.description}</span>
-            </span>
-          </label>
-        ))}
-      </fieldset>
+      {[
+        { label: "Notifications sur cet appareil", on: pushOn, set: setPushOn },
+        { label: "Rappels par e-mail", on: emailOn, set: setEmailOn },
+      ].map((row) => (
+        <button key={row.label} type="button" role="switch" aria-checked={row.on} onClick={() => row.set(!row.on)} className={`flex min-h-14 items-center justify-between rounded-2xl border px-4 text-left text-[15px] font-medium transition ${row.on ? "border-accent bg-accent/[.08]" : "border-line bg-black/15"}`}>
+          {row.label}
+          <span aria-hidden="true" className={`relative h-6 w-11 rounded-full border transition ${row.on ? "border-accent bg-accent" : "border-line bg-bg2"}`}>
+            <span className={`absolute top-0.5 size-4 rounded-full bg-fg transition-all ${row.on ? "left-[22px] !bg-accent-ink" : "left-0.5"}`} />
+          </span>
+        </button>
+      ))}
+      <label className="flex min-h-14 items-center justify-between rounded-2xl border border-line bg-black/15 px-4 text-[15px] font-medium">
+        Heure du rappel
+        <input type="time" value={reminderTime} onChange={(event) => setReminderTime(event.target.value)} className="rounded-lg border border-line bg-bg2 px-2 py-1 text-[15px]" />
+      </label>
+      <p className="text-xs leading-relaxed text-muted">Fuseau Africa/Lome par défaut. Tout se change plus tard dans ton profil. Le navigateur te demandera ton accord pour les notifications.</p>
     </FlowShell>
   );
 }

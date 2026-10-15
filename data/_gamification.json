@@ -1,0 +1,665 @@
+{
+ "badges": [
+  {
+   "slug": "first-read",
+   "name": "Première lecture",
+   "description": "Lire un cours jusqu'au bout",
+   "category": "DISCOVERY",
+   "position": 0,
+   "rule": {
+    "metric": "chapters_read",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "first-quiz",
+   "name": "Premier quiz",
+   "description": "Terminer un quiz de chapitre",
+   "category": "DISCOVERY",
+   "position": 1,
+   "rule": {
+    "metric": "quizzes_finished",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "first-step",
+   "name": "Premier pas",
+   "description": "Valider un premier chapitre",
+   "category": "DISCOVERY",
+   "position": 2,
+   "rule": {
+    "metric": "chapters_validated",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "explorer",
+   "name": "Explorateur",
+   "description": "Valider un chapitre dans 3 matières différentes",
+   "category": "DISCOVERY",
+   "position": 3,
+   "rule": {
+    "metric": "subjects_started",
+    "threshold": 3
+   }
+  },
+  {
+   "slug": "first-exam",
+   "name": "Premier examen",
+   "description": "Terminer un simulateur d'examen",
+   "category": "DISCOVERY",
+   "position": 4,
+   "rule": {
+    "metric": "exams_finished",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "first-game",
+   "name": "Premier jeu",
+   "description": "Terminer une grille de jeu",
+   "category": "DISCOVERY",
+   "position": 5,
+   "rule": {
+    "metric": "games_finished",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "in-league",
+   "name": "En ligue",
+   "description": "Entrer en ligue",
+   "category": "DISCOVERY",
+   "position": 6,
+   "rule": {
+    "metric": "league_joined",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "streak-3",
+   "name": "Série de 3 jours",
+   "description": "3 jours de suite",
+   "category": "REGULARITY",
+   "position": 7,
+   "rule": {
+    "metric": "streak_days",
+    "threshold": 3
+   }
+  },
+  {
+   "slug": "streak-7",
+   "name": "Série de 7 jours",
+   "description": "7 jours de suite",
+   "category": "REGULARITY",
+   "position": 8,
+   "rule": {
+    "metric": "streak_days",
+    "threshold": 7
+   }
+  },
+  {
+   "slug": "streak-30",
+   "name": "Série de 30 jours",
+   "description": "30 jours de suite",
+   "category": "REGULARITY",
+   "position": 9,
+   "rule": {
+    "metric": "streak_days",
+    "threshold": 30
+   }
+  },
+  {
+   "slug": "streak-100",
+   "name": "Série de 100 jours",
+   "description": "100 jours de suite",
+   "category": "REGULARITY",
+   "position": 10,
+   "rule": {
+    "metric": "streak_days",
+    "threshold": 100
+   }
+  },
+  {
+   "slug": "quest-1",
+   "name": "Quête accomplie",
+   "description": "Terminer une quête du jour",
+   "category": "REGULARITY",
+   "position": 11,
+   "rule": {
+    "metric": "quests_completed",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "quests-day",
+   "name": "Journée pleine",
+   "description": "Terminer toutes les quêtes d'un même jour",
+   "category": "REGULARITY",
+   "position": 12,
+   "rule": {
+    "metric": "full_quest_days",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "quests-week",
+   "name": "Semaine pleine",
+   "description": "Terminer toutes les quêtes pendant 7 jours",
+   "category": "REGULARITY",
+   "position": 13,
+   "rule": {
+    "metric": "full_quest_days",
+    "threshold": 7
+   }
+  },
+  {
+   "slug": "first-try",
+   "name": "Du premier coup",
+   "description": "Valider un chapitre dès la première tentative",
+   "category": "MASTERY",
+   "position": 14,
+   "rule": {
+    "metric": "first_try_validations",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "chapters-10",
+   "name": "10 chapitres",
+   "description": "Valider 10 chapitres",
+   "category": "MASTERY",
+   "position": 15,
+   "rule": {
+    "metric": "chapters_validated",
+    "threshold": 10
+   }
+  },
+  {
+   "slug": "chapters-50",
+   "name": "50 chapitres",
+   "description": "Valider 50 chapitres",
+   "category": "MASTERY",
+   "position": 16,
+   "rule": {
+    "metric": "chapters_validated",
+    "threshold": 50
+   }
+  },
+  {
+   "slug": "chapters-100",
+   "name": "100 chapitres",
+   "description": "Valider 100 chapitres",
+   "category": "MASTERY",
+   "position": 17,
+   "rule": {
+    "metric": "chapters_validated",
+    "threshold": 100
+   }
+  },
+  {
+   "slug": "answers-100",
+   "name": "100 bonnes réponses",
+   "description": "Donner 100 bonnes réponses",
+   "category": "MASTERY",
+   "position": 18,
+   "rule": {
+    "metric": "correct_answers",
+    "threshold": 100
+   }
+  },
+  {
+   "slug": "answers-500",
+   "name": "500 bonnes réponses",
+   "description": "Donner 500 bonnes réponses",
+   "category": "MASTERY",
+   "position": 19,
+   "rule": {
+    "metric": "correct_answers",
+    "threshold": 500
+   }
+  },
+  {
+   "slug": "answers-1000",
+   "name": "1 000 bonnes réponses",
+   "description": "Donner 1 000 bonnes réponses",
+   "category": "MASTERY",
+   "position": 20,
+   "rule": {
+    "metric": "correct_answers",
+    "threshold": 1000
+   }
+  },
+  {
+   "slug": "subject-done",
+   "name": "Matière terminée",
+   "description": "Valider tous les chapitres d'une matière",
+   "category": "MASTERY",
+   "position": 21,
+   "rule": {
+    "metric": "subjects_completed",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "subjects-10",
+   "name": "10 matières",
+   "description": "Terminer 10 matières",
+   "category": "MASTERY",
+   "position": 22,
+   "rule": {
+    "metric": "subjects_completed",
+    "threshold": 10
+   }
+  },
+  {
+   "slug": "subjects-all",
+   "name": "Parcours complet",
+   "description": "Terminer toutes les matières du niveau",
+   "category": "MASTERY",
+   "position": 23,
+   "rule": {
+    "metric": "subjects_completed_all",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "errors-20",
+   "name": "Erreurs vaincues",
+   "description": "Réussir 20 questions auparavant ratées",
+   "category": "MASTERY",
+   "position": 24,
+   "rule": {
+    "metric": "errors_cleared",
+    "threshold": 20
+   }
+  },
+  {
+   "slug": "review-50",
+   "name": "Révision solide",
+   "description": "Réussir 50 révisions espacées",
+   "category": "MASTERY",
+   "position": 25,
+   "rule": {
+    "metric": "reviews_passed",
+    "threshold": 50
+   }
+  },
+  {
+   "slug": "exam-pass",
+   "name": "Examen réussi",
+   "description": "Obtenir au moins la moitié des points à un simulateur",
+   "category": "MASTERY",
+   "position": 26,
+   "rule": {
+    "metric": "exam_pass",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "exam-perfect",
+   "name": "Examen parfait",
+   "description": "Obtenir 100 % à un simulateur",
+   "category": "MASTERY",
+   "position": 27,
+   "rule": {
+    "metric": "exam_perfect",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "six-formats",
+   "name": "Polyvalent",
+   "description": "Réussir au moins une question de chacun des 6 formats",
+   "category": "MASTERY",
+   "position": 28,
+   "rule": {
+    "metric": "formats_succeeded",
+    "threshold": 6
+   }
+  },
+  {
+   "slug": "promoted-1",
+   "name": "Première montée",
+   "description": "Monter d'un palier de ligue",
+   "category": "COMPETITION",
+   "position": 29,
+   "rule": {
+    "metric": "league_promotions",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "podium",
+   "name": "Sur le podium",
+   "description": "Finir dans les 3 premiers d'un groupe",
+   "category": "COMPETITION",
+   "position": 30,
+   "rule": {
+    "metric": "league_podiums",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "champion",
+   "name": "Champion de la semaine",
+   "description": "Finir premier d'un groupe",
+   "category": "COMPETITION",
+   "position": 31,
+   "rule": {
+    "metric": "league_firsts",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "tier-5",
+   "name": "Palier Giga",
+   "description": "Atteindre le palier 5 (Giga)",
+   "category": "COMPETITION",
+   "position": 32,
+   "rule": {
+    "metric": "league_tier_reached",
+    "threshold": 5
+   }
+  },
+  {
+   "slug": "tier-8",
+   "name": "Palier Exa",
+   "description": "Atteindre le palier 8 (Exa)",
+   "category": "COMPETITION",
+   "position": 33,
+   "rule": {
+    "metric": "league_tier_reached",
+    "threshold": 8
+   }
+  },
+  {
+   "slug": "event-1",
+   "name": "Participant",
+   "description": "Participer à un événement",
+   "category": "EVENT",
+   "position": 34,
+   "rule": {
+    "metric": "events_joined",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "event-team",
+   "name": "Esprit d'équipe",
+   "description": "Contribuer à un défi d'équipe réussi",
+   "category": "EVENT",
+   "position": 35,
+   "rule": {
+    "metric": "team_events_won",
+    "threshold": 1
+   }
+  },
+  {
+   "slug": "event-solo",
+   "name": "Défi relevé",
+   "description": "Atteindre l'objectif d'un défi solo",
+   "category": "EVENT",
+   "position": 36,
+   "rule": {
+    "metric": "solo_events_won",
+    "threshold": 1
+   }
+  }
+ ],
+ "quests": [
+  {
+   "slug": "answers-5-0",
+   "title": "Réponds à 5 questions",
+   "metric": "ANSWERS",
+   "target": 5,
+   "rewardXp": 10
+  },
+  {
+   "slug": "answers-8-0",
+   "title": "Échauffement : 8 questions",
+   "metric": "ANSWERS",
+   "target": 8,
+   "rewardXp": 15
+  },
+  {
+   "slug": "answers-10-0",
+   "title": "Réponds à 10 questions",
+   "metric": "ANSWERS",
+   "target": 10,
+   "rewardXp": 20
+  },
+  {
+   "slug": "answers-15-0",
+   "title": "15 questions avant ce soir",
+   "metric": "ANSWERS",
+   "target": 15,
+   "rewardXp": 25
+  },
+  {
+   "slug": "answers-20-0",
+   "title": "Réponds à 20 questions",
+   "metric": "ANSWERS",
+   "target": 20,
+   "rewardXp": 35
+  },
+  {
+   "slug": "answers-25-0",
+   "title": "Série de 25 questions",
+   "metric": "ANSWERS",
+   "target": 25,
+   "rewardXp": 40
+  },
+  {
+   "slug": "answers-30-0",
+   "title": "Le grand mix : 30 questions",
+   "metric": "ANSWERS",
+   "target": 30,
+   "rewardXp": 50
+  },
+  {
+   "slug": "answers-40-0",
+   "title": "40 questions pour t’imposer",
+   "metric": "ANSWERS",
+   "target": 40,
+   "rewardXp": 60
+  },
+  {
+   "slug": "answers-50-0",
+   "title": "Marathon : 50 questions",
+   "metric": "ANSWERS",
+   "target": 50,
+   "rewardXp": 75
+  },
+  {
+   "slug": "correct-5-0",
+   "title": "Donne 5 bonnes réponses",
+   "metric": "CORRECT",
+   "target": 5,
+   "rewardXp": 15
+  },
+  {
+   "slug": "correct-8-0",
+   "title": "8 bonnes réponses aujourd’hui",
+   "metric": "CORRECT",
+   "target": 8,
+   "rewardXp": 20
+  },
+  {
+   "slug": "correct-10-0",
+   "title": "10 bonnes réponses",
+   "metric": "CORRECT",
+   "target": 10,
+   "rewardXp": 30
+  },
+  {
+   "slug": "correct-15-0",
+   "title": "15 bonnes réponses",
+   "metric": "CORRECT",
+   "target": 15,
+   "rewardXp": 40
+  },
+  {
+   "slug": "correct-20-0",
+   "title": "Vise 20 bonnes réponses",
+   "metric": "CORRECT",
+   "target": 20,
+   "rewardXp": 50
+  },
+  {
+   "slug": "correct-30-0",
+   "title": "30 bonnes réponses, sans trembler",
+   "metric": "CORRECT",
+   "target": 30,
+   "rewardXp": 70
+  },
+  {
+   "slug": "xp-20-0",
+   "title": "Gagne 20 XP",
+   "metric": "XP",
+   "target": 20,
+   "rewardXp": 10
+  },
+  {
+   "slug": "xp-30-0",
+   "title": "Gagne 30 XP",
+   "metric": "XP",
+   "target": 30,
+   "rewardXp": 15
+  },
+  {
+   "slug": "xp-50-0",
+   "title": "Gagne 50 XP",
+   "metric": "XP",
+   "target": 50,
+   "rewardXp": 25
+  },
+  {
+   "slug": "xp-75-0",
+   "title": "Atteins 75 XP aujourd’hui",
+   "metric": "XP",
+   "target": 75,
+   "rewardXp": 35
+  },
+  {
+   "slug": "xp-100-0",
+   "title": "Cap sur 100 XP",
+   "metric": "XP",
+   "target": 100,
+   "rewardXp": 50
+  },
+  {
+   "slug": "xp-150-0",
+   "title": "150 XP : journée intense",
+   "metric": "XP",
+   "target": 150,
+   "rewardXp": 70
+  },
+  {
+   "slug": "chapters-1-0",
+   "title": "Valide un chapitre",
+   "metric": "CHAPTERS",
+   "target": 1,
+   "rewardXp": 30
+  },
+  {
+   "slug": "chapters-1-1",
+   "title": "Un chapitre de plus, un pas de plus",
+   "metric": "CHAPTERS",
+   "target": 1,
+   "rewardXp": 30
+  },
+  {
+   "slug": "chapters-2-0",
+   "title": "Valide deux chapitres",
+   "metric": "CHAPTERS",
+   "target": 2,
+   "rewardXp": 60
+  },
+  {
+   "slug": "chapters-3-0",
+   "title": "Trois chapitres validés dans la journée",
+   "metric": "CHAPTERS",
+   "target": 3,
+   "rewardXp": 90
+  },
+  {
+   "slug": "quizzes-1-0",
+   "title": "Termine un quiz",
+   "metric": "QUIZZES",
+   "target": 1,
+   "rewardXp": 15
+  },
+  {
+   "slug": "quizzes-2-0",
+   "title": "Enchaîne deux quiz",
+   "metric": "QUIZZES",
+   "target": 2,
+   "rewardXp": 30
+  },
+  {
+   "slug": "quizzes-3-0",
+   "title": "Trois quiz dans la journée",
+   "metric": "QUIZZES",
+   "target": 3,
+   "rewardXp": 50
+  },
+  {
+   "slug": "quizzes-5-0",
+   "title": "Cinq quiz, sans pause",
+   "metric": "QUIZZES",
+   "target": 5,
+   "rewardXp": 80
+  },
+  {
+   "slug": "reviews-3-0",
+   "title": "Révise 3 questions espacées",
+   "metric": "REVIEWS",
+   "target": 3,
+   "rewardXp": 15
+  },
+  {
+   "slug": "reviews-5-0",
+   "title": "Révise 5 questions",
+   "metric": "REVIEWS",
+   "target": 5,
+   "rewardXp": 25
+  },
+  {
+   "slug": "reviews-10-0",
+   "title": "Dix révisions pour fixer",
+   "metric": "REVIEWS",
+   "target": 10,
+   "rewardXp": 40
+  },
+  {
+   "slug": "reviews-15-0",
+   "title": "Séance de révision : 15 questions",
+   "metric": "REVIEWS",
+   "target": 15,
+   "rewardXp": 55
+  },
+  {
+   "slug": "reviews-20-0",
+   "title": "20 révisions espacées",
+   "metric": "REVIEWS",
+   "target": 20,
+   "rewardXp": 70
+  },
+  {
+   "slug": "games-1-0",
+   "title": "Termine une grille de jeu",
+   "metric": "GAMES",
+   "target": 1,
+   "rewardXp": 20
+  },
+  {
+   "slug": "games-2-0",
+   "title": "Deux grilles de jeu aujourd’hui",
+   "metric": "GAMES",
+   "target": 2,
+   "rewardXp": 40
+  }
+ ]
+}

@@ -39,6 +39,7 @@ export const getSignedInProfile = cache(async () => {
       xpTotal: true,
       bestStreak: true,
       tier: true,
+      premiumUntil: true,
       suspendedAt: true,
       level: {
         select: {
@@ -54,7 +55,10 @@ export const getSignedInProfile = cache(async () => {
     },
   }));
 
-  return profile ? { user: { id: profile.id }, profile } : null;
+  if (!profile) return null;
+  // Un abonnement échu ne donne plus accès aux fonctions payantes, même si le profil n'a pas encore été remis à « Gratuit ».
+  const expired = profile.tier !== "FREE" && (!profile.premiumUntil || profile.premiumUntil.getTime() < Date.now());
+  return { user: { id: profile.id }, profile: expired ? { ...profile, tier: "FREE" as const } : profile };
 });
 
 export async function requireStudentProfile() {

@@ -6,7 +6,6 @@ import {
   createQuest,
   publishAnnouncement,
   replyToSupportTicket,
-  reviewContent,
   setStudentSuspended,
   updateAiBudget,
   updatePlanPrice,
@@ -16,22 +15,27 @@ import {
 } from "@/app/admin/actions";
 import AdminShell, { AdminHeading, AdminPanel, adminButton, adminInput } from "@/components/admin/AdminShell";
 import AccessKeyGenerator from "@/components/admin/AccessKeyGenerator";
-import AdminSubmitButton from "@/components/admin/AdminSubmitButton";
-import ContentRevisionDisclosure from "@/components/admin/ContentRevisionDisclosure";
-import LumiCompanion from "@/components/brand/LumiCompanion";
+import AdminAssistant from "@/components/admin/AdminAssistant";
+import Gamification from "@/app/admin/sections/Gamification";
+import Overview from "@/app/admin/sections/Overview";
+import Relecture from "@/app/admin/sections/Relecture";
+import Studio from "@/app/admin/sections/Studio";
 import { requireAdminPage } from "@/lib/auth/access";
 import { APP_NAME } from "@/lib/config";
 import { prisma } from "@/lib/prisma";
 import { getReadingMinimumSeconds, MAX_READING_MIN_SECONDS } from "@/lib/reading-settings";
 import { getQuizValidationPercent } from "@/lib/quiz-settings";
-import { measureServerOperation } from "@/lib/server-performance";
 
 export const metadata: Metadata = { title: `Administration · ${APP_NAME}` };
 
-const sections = new Set(["overview", "content", "students", "payments", "operations", "settings", "audit"]);
+const sections = new Set(["overview", "review", "studio", "gamification", "assistant", "content", "students", "payments", "operations", "settings", "audit"]);
 const money = (amount: number) => new Intl.NumberFormat("fr-FR").format(amount);
 const date = (value: Date | null) => value ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "medium", timeStyle: "short" }).format(value) : "—";
 const tierNames: Record<PlanTier, string> = { FREE: "Gratuit", PLUS: "Plus", SUCCESS: "Réussite" };
+
+function SectionLoading() {
+  return <div className="grid gap-4" aria-busy="true">{Array.from({ length: 3 }, (_, index) => <div key={index} className="h-24 animate-pulse rounded-xl border border-line bg-bg2/60" />)}</div>;
+}
 
 function AdminTable({ children }: { children: React.ReactNode }) {
   return <div className="overflow-x-auto rounded-xl border border-line"><table className="w-full min-w-[680px] text-left text-sm">{children}</table></div>;
@@ -41,7 +45,7 @@ function AdminTh({ children }: { children: React.ReactNode }) {
   return <th className="border-b border-line bg-bg2 px-3 py-2.5 text-xs font-medium text-muted">{children}</th>;
 }
 
-export default async function AdminPage({ searchParams }: { searchParams: Promise<{ section?: string; q?: string }> }) {
+export default async function AdminPage({ searchParams }: { searchParams: Promise<{ section?: string; q?: string; status?: string; item?: string }> }) {
   await requireAdminPage();
   const params = await searchParams;
   const section = params.section && sections.has(params.section) ? params.section : "overview";
@@ -49,156 +53,22 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
 
   return (
     <AdminShell section={section}>
-      {section === "overview" && <Overview />}
-      {section === "content" && <Suspense fallback={<ContentStudioLoading />}><ContentStudio /></Suspense>}
+      {section === "overview" && <Suspense fallback={<SectionLoading />}><Overview /></Suspense>}
+      {(section === "review" || section === "content") && <Suspense fallback={<SectionLoading />}><Relecture filter={params.status ?? ""} /></Suspense>}
+      {section === "studio" && <Suspense fallback={<SectionLoading />}><Studio itemId={params.item ?? null} /></Suspense>}
+      {section === "gamification" && <Suspense fallback={<SectionLoading />}><Gamification /></Suspense>}
+      {section === "assistant" && (
+        <>
+          <AdminHeading eyebrow="Assistant" title="Assistant d’administration" description="Pose une question ou demande une action. Mode manuel : tu valides chaque action. Mode auto : l’assistant exécute (journalisé). Il ne publie jamais de contenu." />
+          <AdminAssistant />
+        </>
+      )}
       {section === "students" && <Students query={query} />}
       {section === "payments" && <Payments />}
       {section === "operations" && <Operations />}
       {section === "settings" && <Settings />}
       {section === "audit" && <Audit />}
     </AdminShell>
-  );
-}
-
-async function Overview() {
-  const monthStart = new Date();
-  monthStart.setDate(1);
-  monthStart.setHours(0, 0, 0, 0);
-  const [students, pendingReview, pendingPayments, openTickets, generation, logs] = await Promise.all([
-    prisma.profile.count({ where: { role: Role.STUDENT } }),
-    prisma.contentVersion.count({ where: { status: { in: ["AI_DRAFT", "IN_REVIEW", "APPROVED"] } } }),
-    prisma.payment.count({ where: { status: "PENDING" } }),
-    prisma.supportTicket.count({ where: { status: "open" } }),
-    prisma.generationJob.aggregate({ where: { createdAt: { gte: monthStart } }, _sum: { costUsd: true }, _count: true }),
-    prisma.auditLog.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 8,
-      select: {
-        id: true,
-        createdAt: true,
-        action: true,
-        entity: true,
-        actor: { select: { displayName: true, email: true } },
-      },
-    }),
-  ]);
-
-  const cards = [
-    ["Étudiants", students, "Comptes enregistrés"],
-    ["Contenus à traiter", pendingReview, "Brouillons, relecture ou validation"],
-    ["Paiements en attente", pendingPayments, "Suivi administratif"],
-    ["Tickets ouverts", openTickets, "Demandes de support"],
-  ];
-  return (
-    <>
-      <AdminHeading eyebrow="Espace réservé" title="Vue d’ensemble" description="Un aperçu des comptes, de la production de contenu et des opérations à traiter." />
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        {cards.map(([label, value, detail]) => (
-          <article key={label} className="rounded-2xl border border-line bg-panel p-5">
-            <p className="text-sm text-muted">{label}</p><p className="mt-3 text-3xl font-semibold">{value}</p><p className="mt-1 text-xs text-muted">{detail}</p>
-          </article>
-        ))}
-      </div>
-      <div className="mt-5 grid items-start gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(280px,.8fr)]">
-        <AdminPanel title="Activité administrative récente">
-          {logs.length === 0 ? <p className="text-sm text-muted">Les actions sensibles apparaîtront ici.</p> : (
-            <ul className="divide-y divide-line">
-              {logs.map((log) => <li key={log.id} className="flex flex-wrap justify-between gap-2 py-3 text-sm">
-                <span><b className="font-medium">{log.action}</b><span className="ml-2 text-muted">{log.entity}</span><span className="ml-2 text-xs text-muted">{log.actor?.displayName ?? log.actor?.email ?? "Système"}</span></span>
-                <time className="text-xs text-muted">{date(log.createdAt)}</time>
-              </li>)}
-            </ul>
-          )}
-        </AdminPanel>
-        <div className="grid gap-4">
-          <LumiCompanion
-            context="État de l’administration"
-            message={pendingReview
-              ? `${pendingReview} version${pendingReview === 1 ? "" : "s"} attend${pendingReview === 1 ? "" : "ent"} une relecture humaine.`
-              : openTickets
-                ? `${openTickets} ticket${openTickets === 1 ? "" : "s"} ouvert${openTickets === 1 ? "" : "s"} à suivre.`
-                : pendingPayments
-                  ? `${pendingPayments} paiement${pendingPayments === 1 ? "" : "s"} en attente de suivi.`
-                  : "Tout est calme pour le moment. Tu peux consulter les dernières actions ci-contre."}
-            initialMood={pendingReview ? "studieuse" : openTickets ? "fatiguee" : pendingPayments ? "base" : "contente"}
-          />
-          <AdminPanel title="Budget IA · mois en cours">
-            <p className="text-3xl font-semibold">${generation._sum.costUsd?.toFixed(2) ?? "0.00"}</p>
-            <p className="mt-1 text-sm text-muted">{generation._count} génération(s) enregistrée(s) depuis le début du mois.</p>
-            <p className="mt-4 rounded-xl border border-amber/20 bg-amber/[.06] p-3 text-xs leading-relaxed text-muted">La génération Claude et l’envoi des sources ne sont pas encore connectés. Aucun brouillon n’est généré ni publié par cette console.</p>
-          </AdminPanel>
-        </div>
-      </div>
-    </>
-  );
-}
-
-async function ContentStudio() {
-  const versions = await measureServerOperation("admin.contentVersions.findMany", () => prisma.contentVersion.findMany({
-    where: { status: { in: ["AI_DRAFT", "IN_REVIEW", "APPROVED"] } },
-    orderBy: { createdAt: "desc" },
-    take: 40,
-    select: {
-      id: true,
-      itemId: true,
-      version: true,
-      status: true,
-      title: true,
-      note: true,
-      createdAt: true,
-      item: {
-        select: {
-          kind: true,
-          subject: { select: { name: true, level: { select: { name: true } } } },
-        },
-      },
-    },
-  }));
-  return (
-    <>
-      <AdminHeading eyebrow="Studio de contenu" title="Relire et publier" description="Toute modification crée une nouvelle version. Une version doit être approuvée explicitement avant de pouvoir être publiée." />
-      <AdminPanel title={`Versions en attente · ${versions.length}`}>
-        <div className="grid gap-4">
-          {versions.length === 0 && <p className="text-sm text-muted">Aucune version en attente de validation.</p>}
-          {versions.map((version) => (
-            <article key={version.id} className="rounded-xl border border-line bg-bg2/50 p-4">
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-amber">{version.status} · v{version.version}</p>
-                  <h3 className="mt-1 font-semibold">{version.title}</h3>
-                  <p className="mt-1 text-xs text-muted">{version.item.subject.name} · {version.item.subject.level.name} · créée {date(version.createdAt)}</p>
-                  {version.note && <p className="mt-2 text-sm text-muted">{version.note}</p>}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><AdminSubmitButton className={adminButton} name="action" value="approve" disabled={version.status === "APPROVED"}>Approuver</AdminSubmitButton></form>
-                  <form action={reviewContent}><input type="hidden" name="versionId" value={version.id} /><AdminSubmitButton className={adminButton} name="action" value="publish" disabled={version.status !== "APPROVED"}>Publier</AdminSubmitButton></form>
-                </div>
-              </div>
-              {version.item.kind === "CHAPTER" && (
-                <ContentRevisionDisclosure
-                  versionId={version.id}
-                  itemId={version.itemId}
-                  title={version.title}
-                />
-              )}
-            </article>
-          ))}
-        </div>
-      </AdminPanel>
-    </>
-  );
-}
-
-function ContentStudioLoading() {
-  return (
-    <>
-      <AdminHeading eyebrow="Studio de contenu" title="Relire et publier" description="Chargement des versions à relire…" />
-      <AdminPanel title="Versions en attente">
-        <div className="grid gap-4" aria-busy="true">
-          {Array.from({ length: 3 }, (_, index) => <div key={index} className="h-24 animate-pulse rounded-xl border border-line bg-bg2/60" />)}
-        </div>
-      </AdminPanel>
-    </>
   );
 }
 
@@ -259,6 +129,7 @@ async function Payments() {
         status: true,
         method: true,
         provider: true,
+        confirmedAt: true,
         user: { select: { displayName: true, email: true } },
         plan: { select: { name: true } },
       },
@@ -267,15 +138,15 @@ async function Payments() {
   ]);
   return (
     <>
-      <AdminHeading eyebrow="Facturation" title="Paiements" description="Consultation des enregistrements existants. Aucun paiement PayDunya ne peut être confirmé ou déclenché depuis cette console tant que le flux signé de paiement n’est pas implémenté." />
+      <AdminHeading eyebrow="Facturation" title="Paiements" description="Suivi des paiements Mixx by Yas et Moov Money (Flooz). Le paiement est confirmé par le fournisseur (notification signée), puis l’étudiant saisit le code reçu par e-mail : l’abonnement s’active alors seul. Rien à valider ici." />
       <div className="mb-5 flex flex-wrap gap-2">{counts.map((entry) => <p key={entry.status} className="rounded-xl border border-line bg-panel px-4 py-3 text-sm"><b>{entry.status}</b> · {entry._count._all} · {money(entry._sum.amountXof ?? 0)} FCFA</p>)}</div>
       <AdminPanel title="Transactions récentes">
-        <AdminTable><thead><tr><AdminTh>Date</AdminTh><AdminTh>Étudiant</AdminTh><AdminTh>Offre</AdminTh><AdminTh>Montant</AdminTh><AdminTh>Statut</AdminTh><AdminTh>Canal</AdminTh></tr></thead>
+        <AdminTable><thead><tr><AdminTh>Date</AdminTh><AdminTh>Étudiant</AdminTh><AdminTh>Offre</AdminTh><AdminTh>Montant</AdminTh><AdminTh>Statut</AdminTh><AdminTh>Code e-mail</AdminTh><AdminTh>Canal</AdminTh></tr></thead>
           <tbody>{payments.map((payment) => <tr key={payment.id} className="border-b border-line last:border-0">
             <td className="px-3 py-3 text-muted">{date(payment.createdAt)}</td>
             <td className="px-3 py-3"><p>{payment.user.displayName ?? "Sans nom"}</p><p className="text-xs text-muted">{payment.user.email}</p></td>
             <td className="px-3 py-3">{payment.plan.name}</td><td className="px-3 py-3">{money(payment.amountXof)} FCFA</td>
-            <td className="px-3 py-3">{payment.status}</td><td className="px-3 py-3 text-muted">{payment.method ?? payment.provider}</td>
+            <td className="px-3 py-3">{payment.status}</td><td className="px-3 py-3 text-muted">{payment.confirmedAt ? "Saisi · abonnement actif" : "Non saisi"}</td><td className="px-3 py-3 text-muted">{payment.method ?? payment.provider}</td>
           </tr>)}</tbody>
         </AdminTable>
       </AdminPanel>

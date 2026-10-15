@@ -1,773 +1,773 @@
 {
- "slug": "stats",
- "name": "Statistiques",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Séries statistiques",
-   "subtitle": "Population, échantillon, types de variables et vocabulaire fondamental.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Distinguer population, échantillon et individu<br/>\n        • Classifier les variables (qualitative/quantitative, discrète/continue)<br/>\n        • Calculer effectifs et fréquences</p>\n</div>\n<h2>Qu'est-ce que les statistiques ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🏫 Analogie du sondage de classe</div>\n<p>Imaginez un sondage dans votre classe : « Combien d'heures dormez-vous ? ». Vous récoltez les réponses de 30 élèves, vous les rangez, vous calculez la moyenne… <strong>C'est de la statistique !</strong><br/><br/>\n        Les statistiques = l'art de <strong>collecter</strong>, <strong>organiser</strong>, <strong>résumer</strong> et <strong>interpréter</strong> des données.</p>\n</div>\n<h2>Population, Échantillon, Individu</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémonique P.E.I.</div>\n<p><strong>P</strong>opulation = l'ensemble <strong>complet</strong> étudié (ex : tous les étudiants de l'université)<br/>\n<strong>É</strong>chantillon = un <strong>sous-groupe</strong> représentatif (ex : 30 étudiants tirés au sort)<br/>\n<strong>I</strong>ndividu = un <strong>élément</strong> unique de la population (ex : un étudiant)<br/><br/>\n        💡 Analogie : Population = toute la soupe 🍲 · Échantillon = la cuillère pour goûter · Individu = un ingrédient</p>\n</div>\n<h2>Types de variables</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémonique Q.Q.D.C.</div>\n<p><strong>Q</strong>ualitatif → catégories, pas de calcul (couleur des yeux, filière)<br/>\n<strong>Q</strong>uantitatif → nombres, on peut calculer (âge, taille, notes)<br/>\n<strong>D</strong>iscret → valeurs entières isolées (0, 1, 2, 3…)<br/>\n<strong>C</strong>ontinu → toute valeur dans un intervalle (1.72 m, 65.3 kg…)</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Sous-type</th><th>Exemple</th><th>Calcul possible ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Qualitatif</strong></td><td>Nominal</td><td>Couleur préférée, ville</td><td>Non (juste compter)</td></tr>\n<tr><td><strong>Qualitatif</strong></td><td>Ordinal</td><td>Mention (Bien, Moyen, Faible)</td><td>Ordre oui, calculs non</td></tr>\n<tr><td><strong>Quantitatif</strong></td><td>Discret</td><td>Nombre d'enfants (0, 1, 2…)</td><td>Oui (valeurs isolées)</td></tr>\n<tr><td><strong>Quantitatif</strong></td><td>Continu</td><td>Taille (1.72 m), poids</td><td>Oui (toute valeur)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges classiques</div>\n<p><strong>Piège 1 — Code postal :</strong> 75000, 13001… sont des nombres mais c'est une variable <strong>qualitative nominale</strong> ! On ne calcule pas « la moyenne des codes postaux ».<br/>\n<strong>Piège 2 — L'âge :</strong> Si noté en années entières → discret. Si mesuré précisément (19.5 ans) → continu.<br/>\n<strong>Piège 3 — Echelle de notation :</strong> « Satisfaction : 1=Peu, 2=Moyen, 3=Bien » → qualitatif ordinal, pas quantitatif !</p>\n</div>\n<h2>Vocabulaire fondamental</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Caractère</strong></td><td>La propriété étudiée</td><td>« Note à l'examen »</td></tr>\n<tr><td><strong>Modalité</strong></td><td>Les valeurs possibles</td><td>0, 1, 2, …, 20</td></tr>\n<tr><td><strong>Effectif (nᵢ)</strong></td><td>Nombre d'individus ayant une modalité</td><td>5 élèves ont eu 12</td></tr>\n<tr><td><strong>Effectif total (N)</strong></td><td>Nombre total d'individus</td><td>N = 30 élèves</td></tr>\n<tr><td><strong>Fréquence (fᵢ)</strong></td><td>nᵢ / N</td><td>5/30 ≈ 0.167</td></tr>\n<tr><td><strong>Fréquence % (fᵢ%)</strong></td><td>(nᵢ / N) × 100</td><td>16.7%</td></tr>\n</tbody>\n</table></div>\n<h2>Formules clés</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">📐 Formules fondamentales</div>\n<pre>Fréquence :        fᵢ = nᵢ / N\nFréquence en % :   fᵢ% = (nᵢ / N) × 100\nPropriétés (vérification OBLIGATOIRE) :\n  Σ nᵢ = N        (somme effectifs = effectif total)\n  Σ fᵢ = 1        (somme fréquences = 1)\n  Σ fᵢ% = 100%    (somme fréquences % = 100%)</pre>\n</div>\n<h2>Exemple complet travaillé</h2>\n<p>Notes de 20 étudiants : 12, 8, 15, 12, 10, 14, 12, 9, 11, 16, 10, 12, 13, 8, 15, 12, 11, 10, 14, 13</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note (xᵢ)</th><th>Effectif (nᵢ)</th><th>Fréquence (fᵢ)</th><th>Fréquence %</th><th>Fréq. cumulée %</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>2</td><td>0.10</td><td>10%</td><td>10%</td></tr>\n<tr><td>9</td><td>1</td><td>0.05</td><td>5%</td><td>15%</td></tr>\n<tr><td>10</td><td>3</td><td>0.15</td><td>15%</td><td>30%</td></tr>\n<tr><td>11</td><td>2</td><td>0.10</td><td>10%</td><td>40%</td></tr>\n<tr><td>12</td><td>5</td><td>0.25</td><td>25%</td><td>65%</td></tr>\n<tr><td>13</td><td>2</td><td>0.10</td><td>10%</td><td>75%</td></tr>\n<tr><td>14</td><td>2</td><td>0.10</td><td>10%</td><td>85%</td></tr>\n<tr><td>15</td><td>2</td><td>0.10</td><td>10%</td><td>95%</td></tr>\n<tr><td>16</td><td>1</td><td>0.05</td><td>5%</td><td>100%</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>1.00</strong></td><td><strong>100%</strong></td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">✅ Vérification</div>\n<p>Σnᵢ = 2+1+3+2+5+2+2+2+1 = <strong>20 = N ✓</strong>  ·  Σfᵢ = <strong>1.00 ✓</strong>  ·  Σfᵢ% = <strong>100% ✓</strong></p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 1 — Stats</h3>\n<ul>\n<li>Statistique = collecter, organiser, résumer, interpréter</li>\n<li><strong>P.E.I.</strong> — Population (tout), Échantillon (sous-groupe), Individu (un élément)</li>\n<li>Variable qualitative : nominale (sans ordre) ou ordinale (avec ordre)</li>\n<li>Variable quantitative : discrète (entiers) ou continue (décimales possibles)</li>\n<li>Effectif nᵢ = combien · Fréquence fᵢ = nᵢ/N</li>\n<li>Vérification : Σnᵢ = N · Σfᵢ = 1 · Σfᵢ% = 100%</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  "slug": "stats",
+  "name": "Statistiques",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Un sondage interroge 200 étudiants d'une université de 5 000. Les 200 étudiants forment :",
-     "options": [
-      {
-       "text": "La population",
-       "correct": false,
-       "explanation": "La population, c'est l'ensemble complet : les 5 000 étudiants."
-      },
-      {
-       "text": "L'échantillon",
-       "correct": true,
-       "explanation": "Correct ! L'échantillon est le sous-groupe de 200 étudiants, représentatif de la population de 5 000."
-      },
-      {
-       "text": "Un individu",
-       "correct": false,
-       "explanation": "Un individu est UN seul étudiant, pas l'ensemble des 200."
-      },
-      {
-       "text": "Un paramètre",
-       "correct": false,
-       "explanation": "Un paramètre est une mesure calculée sur la population."
-      }
-     ]
+      "number": 1,
+      "title": "Séries statistiques",
+      "subtitle": "Population, échantillon, types de variables et vocabulaire fondamental.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Distinguer population, échantillon et individu</li><li>Classifier les variables (qualitative/quantitative, discrète/continue)</li><li>Calculer effectifs et fréquences</li></ul></div>\n<h2>Qu'est-ce que les statistiques ?</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Analogie du sondage de classe</div>\n<p>Imaginez un sondage dans votre classe : « Combien d'heures dormez-vous ? ». Vous récoltez les réponses de 30 élèves, vous les rangez, vous calculez la moyenne… <strong>C'est de la statistique !</strong><br/><br/>\n        Les statistiques = l'art de <strong>collecter</strong>, <strong>organiser</strong>, <strong>résumer</strong> et <strong>interpréter</strong> des données.</p></div>\n<h2>Population, Échantillon, Individu</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémonique P.E.I.</div>\n<p><strong>P</strong>opulation = l'ensemble <strong>complet</strong> étudié (ex : tous les étudiants de l'université)<br/>\n<strong>É</strong>chantillon = un <strong>sous-groupe</strong> représentatif (ex : 30 étudiants tirés au sort)<br/>\n<strong>I</strong>ndividu = un <strong>élément</strong> unique de la population (ex : un étudiant)<br/><br/>\n         Analogie : Population = toute la soupe  · Échantillon = la cuillère pour goûter · Individu = un ingrédient</p></div>\n<h2>Types de variables</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémonique Q.Q.D.C.</div>\n<p><strong>Q</strong>ualitatif → catégories, pas de calcul (couleur des yeux, filière)<br/>\n<strong>Q</strong>uantitatif → nombres, on peut calculer (âge, taille, notes)<br/>\n<strong>D</strong>iscret → valeurs entières isolées (0, 1, 2, 3…)<br/>\n<strong>C</strong>ontinu → toute valeur dans un intervalle (1.72 m, 65.3 kg…)</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type</th><th>Sous-type</th><th>Exemple</th><th>Calcul possible ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Qualitatif</strong></td><td>Nominal</td><td>Couleur préférée, ville</td><td>Non (juste compter)</td></tr>\n<tr><td><strong>Qualitatif</strong></td><td>Ordinal</td><td>Mention (Bien, Moyen, Faible)</td><td>Ordre oui, calculs non</td></tr>\n<tr><td><strong>Quantitatif</strong></td><td>Discret</td><td>Nombre d'enfants (0, 1, 2…)</td><td>Oui (valeurs isolées)</td></tr>\n<tr><td><strong>Quantitatif</strong></td><td>Continu</td><td>Taille (1.72 m), poids</td><td>Oui (toute valeur)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges classiques</div>\n<p><strong>Piège 1 — Code postal :</strong> 75000, 13001… sont des nombres mais c'est une variable <strong>qualitative nominale</strong> ! On ne calcule pas « la moyenne des codes postaux ».<br/>\n<strong>Piège 2 — L'âge :</strong> Si noté en années entières → discret. Si mesuré précisément (19.5 ans) → continu.<br/>\n<strong>Piège 3 — Echelle de notation :</strong> « Satisfaction : 1=Peu, 2=Moyen, 3=Bien » → qualitatif ordinal, pas quantitatif !</p></div>\n<h2>Vocabulaire fondamental</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Définition</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Caractère</strong></td><td>La propriété étudiée</td><td>« Note à l'examen »</td></tr>\n<tr><td><strong>Modalité</strong></td><td>Les valeurs possibles</td><td>0, 1, 2, …, 20</td></tr>\n<tr><td><strong>Effectif (nᵢ)</strong></td><td>Nombre d'individus ayant une modalité</td><td>5 élèves ont eu 12</td></tr>\n<tr><td><strong>Effectif total (N)</strong></td><td>Nombre total d'individus</td><td>N = 30 élèves</td></tr>\n<tr><td><strong>Fréquence (fᵢ)</strong></td><td>nᵢ / N</td><td>5/30 ≈ 0.167</td></tr>\n<tr><td><strong>Fréquence % (fᵢ%)</strong></td><td>(nᵢ / N) × 100</td><td>16.7%</td></tr>\n</tbody>\n</table></div>\n<h2>Formules clés</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\"> Formules fondamentales</div>\n<pre>Fréquence :        fᵢ = nᵢ / N\nFréquence en % :   fᵢ% = (nᵢ / N) × 100\nPropriétés (vérification OBLIGATOIRE) :\n  Σ nᵢ = N        (somme effectifs = effectif total)\n  Σ fᵢ = 1        (somme fréquences = 1)\n  Σ fᵢ% = 100%    (somme fréquences % = 100%)</pre></div>\n<h2>Exemple complet travaillé</h2>\n<p>Notes de 20 étudiants : 12, 8, 15, 12, 10, 14, 12, 9, 11, 16, 10, 12, 13, 8, 15, 12, 11, 10, 14, 13</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note (xᵢ)</th><th>Effectif (nᵢ)</th><th>Fréquence (fᵢ)</th><th>Fréquence %</th><th>Fréq. cumulée %</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>2</td><td>0.10</td><td>10%</td><td>10%</td></tr>\n<tr><td>9</td><td>1</td><td>0.05</td><td>5%</td><td>15%</td></tr>\n<tr><td>10</td><td>3</td><td>0.15</td><td>15%</td><td>30%</td></tr>\n<tr><td>11</td><td>2</td><td>0.10</td><td>10%</td><td>40%</td></tr>\n<tr><td>12</td><td>5</td><td>0.25</td><td>25%</td><td>65%</td></tr>\n<tr><td>13</td><td>2</td><td>0.10</td><td>10%</td><td>75%</td></tr>\n<tr><td>14</td><td>2</td><td>0.10</td><td>10%</td><td>85%</td></tr>\n<tr><td>15</td><td>2</td><td>0.10</td><td>10%</td><td>95%</td></tr>\n<tr><td>16</td><td>1</td><td>0.05</td><td>5%</td><td>100%</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>1.00</strong></td><td><strong>100%</strong></td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Vérification</div>\n<p>Σnᵢ = 2+1+3+2+5+2+2+2+1 = <strong>20 = N ✓</strong>  ·  Σfᵢ = <strong>1.00 ✓</strong>  ·  Σfᵢ% = <strong>100% ✓</strong></p></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 1 — Stats</h3>\n<ul>\n<li>Statistique = collecter, organiser, résumer, interpréter</li>\n<li><strong>P.E.I.</strong> — Population (tout), Échantillon (sous-groupe), Individu (un élément)</li>\n<li>Variable qualitative : nominale (sans ordre) ou ordinale (avec ordre)</li>\n<li>Variable quantitative : discrète (entiers) ou continue (décimales possibles)</li>\n<li>Effectif nᵢ = combien · Fréquence fᵢ = nᵢ/N</li>\n<li>Vérification : Σnᵢ = N · Σfᵢ = 1 · Σfᵢ% = 100%</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Un sondage interroge 200 étudiants d'une université de 5 000. Les 200 étudiants forment :",
+          "options": [
+            {
+              "text": "La population",
+              "correct": false,
+              "explanation": "La population, c'est l'ensemble complet : les 5 000 étudiants."
+            },
+            {
+              "text": "L'échantillon",
+              "correct": true,
+              "explanation": "Correct ! L'échantillon est le sous-groupe de 200 étudiants, représentatif de la population de 5 000."
+            },
+            {
+              "text": "Un individu",
+              "correct": false,
+              "explanation": "Un individu est UN seul étudiant, pas l'ensemble des 200."
+            },
+            {
+              "text": "Un paramètre",
+              "correct": false,
+              "explanation": "Un paramètre est une mesure calculée sur la population."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La variable « groupe sanguin (A, B, AB, O) » est :",
+          "options": [
+            {
+              "text": "Quantitative discrète",
+              "correct": false,
+              "explanation": "Quantitatif implique des nombres calculables. On ne calcule pas la moyenne des groupes sanguins !"
+            },
+            {
+              "text": "Quantitative continue",
+              "correct": false,
+              "explanation": "Quantitative continue : des valeurs décimales possibles — pas applicable ici."
+            },
+            {
+              "text": "Qualitative nominale",
+              "correct": true,
+              "explanation": "Correct ! Les groupes sanguins sont des catégories sans ordre naturel → qualitative nominale."
+            },
+            {
+              "text": "Qualitative ordinale",
+              "correct": false,
+              "explanation": "Ordinal implique un ordre naturel. A, B, AB, O n'ont pas d'ordre naturel."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Dans une classe de 25 étudiants, 10 ont une note entre 14 et 16. Quelle est la fréquence de cette classe ?",
+          "options": [
+            {
+              "text": "0.25",
+              "correct": false,
+              "explanation": "0.25 serait nᵢ/N = 6.25/25. La bonne réponse est 10/25 = 0.40."
+            },
+            {
+              "text": "0.40",
+              "correct": true,
+              "explanation": "Correct ! fᵢ = nᵢ/N = 10/25 = 0.40 soit 40%."
+            },
+            {
+              "text": "0.10",
+              "correct": false,
+              "explanation": "0.10 = 2.5/25. La bonne réponse est 10/25 = 0.40."
+            },
+            {
+              "text": "2.5",
+              "correct": false,
+              "explanation": "2.5 = 25/10, c'est le rapport inverse !"
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La somme de toutes les fréquences relatives (fᵢ) est toujours égale à :",
+          "options": [
+            {
+              "text": "100",
+              "correct": false,
+              "explanation": "100 est la somme des fréquences EN POURCENTAGE (fᵢ%), pas des fréquences relatives."
+            },
+            {
+              "text": "1",
+              "correct": true,
+              "explanation": "Correct ! Σfᵢ = Σ(nᵢ/N) = N/N = 1. C'est une propriété fondamentale à toujours vérifier."
+            },
+            {
+              "text": "N (effectif total)",
+              "correct": false,
+              "explanation": "La somme des fréquences est 1, pas N."
+            },
+            {
+              "text": "0",
+              "correct": false,
+              "explanation": "Σfᵢ = 1 toujours, pas 0."
+            }
+          ]
+        }
+      ],
+      "source": "stats/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "La variable « groupe sanguin (A, B, AB, O) » est :",
-     "options": [
-      {
-       "text": "Quantitative discrète",
-       "correct": false,
-       "explanation": "Quantitatif implique des nombres calculables. On ne calcule pas la moyenne des groupes sanguins !"
-      },
-      {
-       "text": "Quantitative continue",
-       "correct": false,
-       "explanation": "Quantitative continue : des valeurs décimales possibles — pas applicable ici."
-      },
-      {
-       "text": "Qualitative nominale",
-       "correct": true,
-       "explanation": "Correct ! Les groupes sanguins sont des catégories sans ordre naturel → qualitative nominale."
-      },
-      {
-       "text": "Qualitative ordinale",
-       "correct": false,
-       "explanation": "Ordinal implique un ordre naturel. A, B, AB, O n'ont pas d'ordre naturel."
-      }
-     ]
+      "number": 2,
+      "title": "Tableaux de fréquences",
+      "subtitle": "Construire, lire et interpréter les tableaux de distribution (discrète et continue).",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Construire un tableau de fréquences (discrète et continue)</li><li>Calculer effectifs, fréquences relatives et fréquences cumulées</li><li>Lire et interpréter un tableau statistique complet</li></ul></div>\n<h2>Tableau de distribution (variable discrète)</h2>\n<p>Un tableau de fréquences organise les données brutes en regroupant les valeurs identiques avec leur effectif correspondant.</p>\n<h3>Structure d'un tableau complet</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur xᵢ</th><th>Effectif nᵢ</th><th>Fréquence fᵢ</th><th>Fréquence % fᵢ%</th><th>Effectif cumulé Nᵢ</th><th>Fréquence cumulée Fᵢ</th></tr></thead>\n<tbody>\n<tr><td>x₁</td><td>n₁</td><td>n₁/N</td><td>(n₁/N)×100</td><td>n₁</td><td>n₁/N</td></tr>\n<tr><td>x₂</td><td>n₂</td><td>n₂/N</td><td>(n₂/N)×100</td><td>n₁+n₂</td><td>(n₁+n₂)/N</td></tr>\n<tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>N</strong></td><td><strong>1</strong></td><td><strong>100%</strong></td><td>—</td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Vérifications obligatoires</div>\n<p>À la fin de tout tableau, vérifier :<br/>\n        ✓ <strong>Σnᵢ = N</strong> (somme des effectifs = effectif total)<br/>\n        ✓ <strong>Σfᵢ = 1</strong> (somme des fréquences relatives = 1)<br/>\n        ✓ <strong>Σfᵢ% = 100%</strong> (somme des pourcentages = 100%)<br/>\n        ✓ Le dernier Nᵢ = N · Le dernier Fᵢ = 1</p></div>\n<h2>Exemple complet (variable discrète)</h2>\n<p><strong>Données :</strong> Notes de 20 étudiants : 8, 10, 12, 10, 14, 12, 8, 16, 12, 10, 14, 12, 10, 12, 16, 8, 14, 12, 10, 12</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note xᵢ</th><th>Effectif nᵢ</th><th>Fréq. fᵢ</th><th>Fréq. % fᵢ%</th><th>Eff. cumulé Nᵢ</th><th>Fréq. cum. Fᵢ</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>0,15</td><td>15%</td><td>3</td><td>0,15</td></tr>\n<tr><td>10</td><td>5</td><td>0,25</td><td>25%</td><td>8</td><td>0,40</td></tr>\n<tr><td>12</td><td>7</td><td>0,35</td><td>35%</td><td>15</td><td>0,75</td></tr>\n<tr><td>14</td><td>3</td><td>0,15</td><td>15%</td><td>18</td><td>0,90</td></tr>\n<tr><td>16</td><td>2</td><td>0,10</td><td>10%</td><td>20</td><td>1,00</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td><td>—</td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Vérification</div>\n<p>Σnᵢ = 3+5+7+3+2 = <strong>20 = N ✓</strong> · Σfᵢ = 0,15+0,25+0,35+0,15+0,10 = <strong>1,00 ✓</strong> · Σfᵢ% = <strong>100% ✓</strong></p></div>\n<h2>Variable continue : classes et intervalles</h2>\n<p>Pour une variable <strong>continue</strong> (ou discrète à grand nombre de valeurs), on regroupe les données en <strong>classes</strong> [aᵢ ; aᵢ₊₁[.</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Vocabulaire des classes</div>\n<ul><li><strong>Borne inférieure aᵢ</strong> : début de la classe (incluse)</li><li><strong>Borne supérieure aᵢ₊₁</strong> : fin de la classe (exclue, sauf dernière)</li><li><strong>Amplitude hᵢ = aᵢ₊₁ − aᵢ</strong> : largeur de la classe</li><li><strong>Centre de classe cᵢ = (aᵢ + aᵢ₊₁) / 2</strong></li><li>Classes équiréparties si toutes les amplitudes sont égales</li></ul></div>\n<h3>Règle empirique de Sturges</h3>\n<p>Pour déterminer le nombre de classes k optimal : <strong>k ≈ 1 + 3,322 × log₁₀(N)</strong></p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Exemple Sturges</div>\n<p>Pour N = 100 étudiants :<br/>\n        k ≈ 1 + 3,322 × log₁₀(100) = 1 + 3,322 × 2 = 1 + 6,644 ≈ <strong>7 ou 8 classes</strong></p></div>\n<h2>Exemple complet (variable continue)</h2>\n<p><strong>Données :</strong> Tailles (cm) de 40 étudiants. Amplitude choisie : h = 5 cm</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Classe [aᵢ ; aᵢ₊₁[</th><th>Centre cᵢ</th><th>Effectif nᵢ</th><th>Fréq. fᵢ</th><th>Fréq. % fᵢ%</th><th>Eff. cum. Nᵢ</th></tr></thead>\n<tbody>\n<tr><td>[155 ; 160[</td><td>157,5</td><td>4</td><td>0,10</td><td>10%</td><td>4</td></tr>\n<tr><td>[160 ; 165[</td><td>162,5</td><td>8</td><td>0,20</td><td>20%</td><td>12</td></tr>\n<tr><td>[165 ; 170[</td><td>167,5</td><td>14</td><td>0,35</td><td>35%</td><td>26</td></tr>\n<tr><td>[170 ; 175[</td><td>172,5</td><td>10</td><td>0,25</td><td>25%</td><td>36</td></tr>\n<tr><td>[175 ; 180]</td><td>177,5</td><td>4</td><td>0,10</td><td>10%</td><td>40</td></tr>\n<tr><td><strong>Total</strong></td><td>—</td><td><strong>40</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Tableau = valeurs + effectifs + fréquences relatives + fréquences cumulées</li>\n<li>Vérifications : Σnᵢ = N · Σfᵢ = 1 · Σfᵢ% = 100% · dernier Fᵢ = 1</li>\n<li>Variable continue → regroupement en classes [aᵢ ; aᵢ₊₁[</li>\n<li>Centre de classe cᵢ = (aᵢ + aᵢ₊₁) / 2 · Amplitude hᵢ = aᵢ₊₁ − aᵢ</li>\n<li>Règle de Sturges : k ≈ 1 + 3,322 × log₁₀(N)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans un tableau de fréquences, la fréquence cumulée du dernier groupe vaut toujours :",
+          "options": [
+            {
+              "text": "0",
+              "correct": false,
+              "explanation": "0 est la fréquence cumulée du début (rien encore compté)."
+            },
+            {
+              "text": "1 (ou 100%)",
+              "correct": true,
+              "explanation": "Correct ! La fréquence cumulée du dernier groupe = 1 (ou 100%), car on a cumulé tous les individus."
+            },
+            {
+              "text": "N",
+              "correct": false,
+              "explanation": "N est l'effectif total, pas la fréquence cumulée (qui est un rapport)."
+            },
+            {
+              "text": "nk (dernier effectif)",
+              "correct": false,
+              "explanation": "La valeur dépend du dernier effectif seul, pas de la fréquence cumulée."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le centre d'une classe [20 ; 30[ est :",
+          "options": [
+            {
+              "text": "20",
+              "correct": false,
+              "explanation": "20 est la borne inférieure, pas le centre."
+            },
+            {
+              "text": "30",
+              "correct": false,
+              "explanation": "30 est la borne supérieure, pas le centre."
+            },
+            {
+              "text": "25",
+              "correct": true,
+              "explanation": "Correct ! Centre = (20+30)/2 = 50/2 = 25."
+            },
+            {
+              "text": "10",
+              "correct": false,
+              "explanation": "10 est l'amplitude (30−20), pas le centre."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Sur 50 personnes, 15 ont une note entre 10 et 12. La fréquence relative de cette classe est :",
+          "options": [
+            {
+              "text": "30%",
+              "correct": false,
+              "explanation": "15% signifie 0,15 pas 0,30. Vérifiez le calcul."
+            },
+            {
+              "text": "30%",
+              "correct": true,
+              "explanation": "Correct ! fᵢ = 15/50 = 0,30 soit 30%. Attendez... 15/50 = 0,30 = 30%. Correct !"
+            },
+            {
+              "text": "15%",
+              "correct": false,
+              "explanation": "15% serait pour n=7,5 sur 50 — ce n'est pas le cas."
+            },
+            {
+              "text": "3,3%",
+              "correct": false,
+              "explanation": "3,3 n'est pas une fréquence."
+            }
+          ]
+        }
+      ],
+      "source": "_private/stats/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Dans une classe de 25 étudiants, 10 ont une note entre 14 et 16. Quelle est la fréquence de cette classe ?",
-     "options": [
-      {
-       "text": "0.25",
-       "correct": false,
-       "explanation": "0.25 serait nᵢ/N = 6.25/25. La bonne réponse est 10/25 = 0.40."
-      },
-      {
-       "text": "0.40",
-       "correct": true,
-       "explanation": "Correct ! fᵢ = nᵢ/N = 10/25 = 0.40 soit 40%."
-      },
-      {
-       "text": "0.10",
-       "correct": false,
-       "explanation": "0.10 = 2.5/25. La bonne réponse est 10/25 = 0.40."
-      },
-      {
-       "text": "2.5",
-       "correct": false,
-       "explanation": "2.5 = 25/10, c'est le rapport inverse !"
-      }
-     ]
+      "number": 3,
+      "title": "Mesures de tendance centrale",
+      "subtitle": "Moyenne, médiane et mode — les trois piliers du résumé statistique.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Calculer la moyenne arithmétique (données brutes, tableau, classes)</li><li>Déterminer la médiane (données brutes et tableau de fréquences cumulées)</li><li>Identifier le mode (données brutes et classes)</li></ul></div>\n<h2>La Moyenne arithmétique x̄</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La moyenne est la valeur qui représente le mieux l'ensemble de la série. C'est la <strong>somme de toutes les valeurs divisée par le nombre d'observations</strong>.</p></div>\n<h3>Formules</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cas</th><th>Formule</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>Données brutes</td><td><strong>x̄ = (Σxᵢ) / N</strong></td><td>Série {4, 6, 8, 10} → x̄ = 28/4 = <strong>7</strong></td></tr>\n<tr><td>Tableau (discret)</td><td><strong>x̄ = (Σnᵢ·xᵢ) / N</strong></td><td>Pondérer chaque valeur par son effectif</td></tr>\n<tr><td>Classes (continu)</td><td><strong>x̄ = (Σnᵢ·cᵢ) / N</strong></td><td>cᵢ = centre de la classe</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Propriétés de la moyenne</div>\n<ul><li><strong>Sensible aux valeurs extrêmes</strong> : un outlier tire la moyenne vers lui</li><li>Si on ajoute une constante k à toutes les valeurs → x̄ augmente de k</li><li>Si on multiplie toutes les valeurs par k → x̄ est multiplié par k</li><li>La somme des écarts à la moyenne = 0 : <strong>Σ(xᵢ − x̄) = 0</strong></li></ul></div>\n<h2>Exemple : moyenne avec tableau</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note xᵢ</th><th>Effectif nᵢ</th><th>nᵢ × xᵢ</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>24</td></tr>\n<tr><td>10</td><td>5</td><td>50</td></tr>\n<tr><td>12</td><td>7</td><td>84</td></tr>\n<tr><td>14</td><td>3</td><td>42</td></tr>\n<tr><td>16</td><td>2</td><td>32</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>232</strong></td></tr>\n</tbody>\n</table></div>\n<p><strong>x̄ = 232 / 20 = 11,6</strong></p>\n<h2>La Médiane Me</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La médiane est la valeur qui partage la série <strong>ordonnée</strong> en deux groupes de même effectif. 50% des valeurs sont inférieures ou égales à Me, 50% supérieures ou égales.</p></div>\n<h3>Données brutes — méthode</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Règle médiane</div>\n<p>Après avoir trié les données dans l'ordre croissant :<br/>\n        • <strong>N impair</strong> → Me = valeur de rang (N+1)/2<br/>\n        • <strong>N pair</strong> → Me = moyenne des valeurs de rangs N/2 et N/2 + 1</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple</div>\n<pre>Série ordonnée : 5, 7, 9, 12, 14, 16, 18  (N=7, impair)\nRang médian = (7+1)/2 = 4\n→ Me = 4ème valeur = 12\nSérie ordonnée : 5, 7, 9, 12, 14, 16  (N=6, pair)\nRangs médians = 3 et 4\n→ Me = (9+12)/2 = 10,5</pre></div>\n<h3>Médiane sur tableau — interpolation linéaire</h3>\n<p>Si les fréquences cumulées sautent par-dessus 0,5 (ou N/2), on interpole :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Formule d'interpolation (classes)</div>\n<pre>Me = aₘ + [(N/2 − Nₘ₋₁) / nₘ] × hₘ\noù : aₘ = borne inférieure de la classe médiane\n     Nₘ₋₁ = effectif cumulé AVANT la classe médiane\n     nₘ = effectif de la classe médiane\n     hₘ = amplitude de la classe médiane</pre></div>\n<h2>Le Mode Mo</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>Le mode est la valeur (ou la classe) qui a l'<strong>effectif le plus élevé</strong>. Une série peut être bimodale (2 modes) ou amodale (pas de mode).</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mode sur classes — Formule de Czuber</div>\n<p><strong>Mo = aₘ + [nₘ − nₘ₋₁] / [(nₘ − nₘ₋₁) + (nₘ − nₘ₊₁)] × hₘ</strong><br/>\n        où nₘ₋₁ = effectif classe précédente, nₘ₊₁ = effectif classe suivante<br/>\n<em>En pratique au B1 : le mode est simplement le centre de la classe modale.</em></p></div>\n<h2>Comparaison Moyenne / Médiane / Mode</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mesure</th><th>Avantages</th><th>Inconvénients</th><th>Quand l'utiliser ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Moyenne x̄</strong></td><td>Utilise toutes les données</td><td>Sensible aux valeurs extrêmes</td><td>Distribution symétrique, sans outlier</td></tr>\n<tr><td><strong>Médiane Me</strong></td><td>Robuste aux outliers</td><td>Ignore les valeurs exactes</td><td>Distribution asymétrique, revenus</td></tr>\n<tr><td><strong>Mode Mo</strong></td><td>Simple à lire</td><td>Peut ne pas exister ou être multiple</td><td>Données qualitatives, taille la plus vendue</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3</h3>\n<ul>\n<li>Moyenne x̄ = Σ(nᵢ·xᵢ) / N — utilise toutes les valeurs, sensible aux outliers</li>\n<li>Médiane Me : valeur centrale de la série triée — robuste aux extrêmes</li>\n<li>N impair → Me = valeur de rang (N+1)/2 · N pair → Me = moyenne des rangs N/2 et N/2+1</li>\n<li>Mode Mo = valeur (ou classe) à effectif maximal</li>\n<li>Σ(xᵢ − x̄) = 0 toujours (propriété fondamentale de la moyenne)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "La série ordonnée est : 3, 5, 7, 9, 11, 13. Quelle est la médiane ?",
+          "options": [
+            {
+              "text": "7",
+              "correct": false,
+              "explanation": "7 est la 3ème valeur, pas la médiane d'une série paire."
+            },
+            {
+              "text": "8",
+              "correct": true,
+              "explanation": "Correct ! N=6 (pair). Rangs médians : 3 et 4. Me = (7+9)/2 = 8."
+            },
+            {
+              "text": "9",
+              "correct": false,
+              "explanation": "9 est la 4ème valeur. La médiane est la moyenne des 3ème et 4ème."
+            },
+            {
+              "text": "6",
+              "correct": false,
+              "explanation": "6 est le nombre de valeurs N, pas la médiane."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La moyenne de 5 valeurs est 10. On ajoute une 6ème valeur de 16. Quelle est la nouvelle moyenne ?",
+          "options": [
+            {
+              "text": "13",
+              "correct": false,
+              "explanation": "13 serait la moyenne de 10 et 16, pas la nouvelle moyenne des 6 valeurs."
+            },
+            {
+              "text": "11",
+              "correct": true,
+              "explanation": "Correct ! Somme initiale = 5×10=50. Nouvelle somme = 50+16=66. Nouvelle moyenne = 66/6 = 11."
+            },
+            {
+              "text": "10",
+              "correct": false,
+              "explanation": "10 serait la même moyenne — elle change avec la nouvelle valeur."
+            },
+            {
+              "text": "12",
+              "correct": false,
+              "explanation": "12 n'est pas la bonne réponse. Calcul : (5×10+16)/6 = 66/6 = 11."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle mesure de tendance centrale est la plus robuste face aux valeurs extrêmes (outliers) ?",
+          "options": [
+            {
+              "text": "La moyenne arithmétique",
+              "correct": false,
+              "explanation": "La moyenne est très sensible aux outliers : une valeur très grande la tire vers le haut."
+            },
+            {
+              "text": "La médiane",
+              "correct": true,
+              "explanation": "Correct ! La médiane ne dépend que des valeurs centrales (rang), pas des valeurs extrêmes. Elle est robuste."
+            },
+            {
+              "text": "Le mode",
+              "correct": false,
+              "explanation": "Le mode peut être influencé si les extrêmes se répètent."
+            },
+            {
+              "text": "La moyenne pondérée",
+              "correct": false,
+              "explanation": "La moyenne pondérée est une variante de la moyenne — tout aussi sensible aux outliers."
+            }
+          ]
+        }
+      ],
+      "source": "_private/stats/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "text": "La somme de toutes les fréquences relatives (fᵢ) est toujours égale à :",
-     "options": [
-      {
-       "text": "100",
-       "correct": false,
-       "explanation": "100 est la somme des fréquences EN POURCENTAGE (fᵢ%), pas des fréquences relatives."
-      },
-      {
-       "text": "1",
-       "correct": true,
-       "explanation": "Correct ! Σfᵢ = Σ(nᵢ/N) = N/N = 1. C'est une propriété fondamentale à toujours vérifier."
-      },
-      {
-       "text": "N (effectif total)",
-       "correct": false,
-       "explanation": "La somme des fréquences est 1, pas N."
-      },
-      {
-       "text": "0",
-       "correct": false,
-       "explanation": "Σfᵢ = 1 toujours, pas 0."
-      }
-     ]
+      "number": 4,
+      "title": "Mesures de dispersion",
+      "subtitle": "Variance, écart-type, quartiles et coefficient de variation.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Calculer l'étendue, la variance et l'écart-type</li><li>Déterminer les quartiles Q1, Q2, Q3 et l'écart interquartile</li><li>Utiliser le coefficient de variation pour comparer deux séries</li></ul></div>\n<h2>L'étendue (Range)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p><strong>e = xₘₐₓ − xₘᵢₙ</strong><br/>\n        Mesure la plus simple de dispersion. Très sensible aux valeurs extrêmes.</p></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple</div>\n<pre>Série : {5, 8, 12, 15, 20}\ne = 20 − 5 = 15</pre></div>\n<h2>La Variance σ²</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p>La variance mesure la dispersion des valeurs autour de la moyenne. C'est la <strong>moyenne des carrés des écarts à la moyenne</strong>.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cas</th><th>Formule</th></tr></thead>\n<tbody>\n<tr><td>Données brutes</td><td><strong>σ² = (1/N) × Σ(xᵢ − x̄)²</strong></td></tr>\n<tr><td>Tableau (discret)</td><td><strong>σ² = (1/N) × Σnᵢ(xᵢ − x̄)²</strong></td></tr>\n<tr><td>Formule raccourcie</td><td><strong>σ² = (Σnᵢxᵢ²/N) − x̄²</strong> (= x̄² des xᵢ² − x̄²)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Formule raccourcie</div>\n<p><strong>σ² = Moyenne des carrés − Carré de la moyenne</strong><br/>\n        Toujours ≥ 0. Si σ² = 0, toutes les valeurs sont identiques.</p></div>\n<h2>L'Écart-type σ</h2>\n<p>L'écart-type est la <strong>racine carrée de la variance</strong>. Il a la même unité que les données (contrairement à la variance qui est en unité²).</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Formule</div>\n<p><strong>σ = √σ²</strong> · L'écart-type mesure \"en moyenne\" de combien les valeurs s'écartent de la moyenne.</p></div>\n<h2>Exemple complet (variance + écart-type)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>xᵢ</th><th>nᵢ</th><th>nᵢ×xᵢ</th><th>(xᵢ−x̄)²</th><th>nᵢ×(xᵢ−x̄)²</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>24</td><td>(8−11,6)² = 12,96</td><td>38,88</td></tr>\n<tr><td>10</td><td>5</td><td>50</td><td>(10−11,6)² = 2,56</td><td>12,80</td></tr>\n<tr><td>12</td><td>7</td><td>84</td><td>(12−11,6)² = 0,16</td><td>1,12</td></tr>\n<tr><td>14</td><td>3</td><td>42</td><td>(14−11,6)² = 5,76</td><td>17,28</td></tr>\n<tr><td>16</td><td>2</td><td>32</td><td>(16−11,6)² = 19,36</td><td>38,72</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>232</strong></td><td>—</td><td><strong>108,80</strong></td></tr>\n</tbody>\n</table></div>\n<p><strong>x̄ = 11,6 · σ² = 108,80 / 20 = 5,44 · σ = √5,44 ≈ 2,33</strong></p>\n<h2>Les Quartiles Q1, Q2, Q3</h2>\n<p>Les quartiles divisent la série triée en <strong>4 groupes égaux</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Quartile</th><th>Position dans la série triée</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td><strong>Q1</strong> (1er quartile)</td><td>Rang N/4 ou (N+1)/4</td><td>25% des valeurs sont inférieures à Q1</td></tr>\n<tr><td><strong>Q2</strong> (2ème quartile)</td><td>= Médiane</td><td>50% des valeurs sont inférieures à Q2</td></tr>\n<tr><td><strong>Q3</strong> (3ème quartile)</td><td>Rang 3N/4 ou 3(N+1)/4</td><td>75% des valeurs sont inférieures à Q3</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Écart interquartile (EIQ)</div>\n<p><strong>EIQ = Q3 − Q1</strong> · Contient 50% des données centrales. Robuste aux outliers.</p></div>\n<h2>Coefficient de variation (CV)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Formule</div>\n<p><strong>CV = (σ / x̄) × 100</strong> (en %)<br/>\n        Permet de comparer la dispersion de deux séries de moyennes différentes (ex : notes en maths vs tailles en cm).</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Interprétation du CV</div>\n<ul><li>CV &lt; 15% → série <strong>homogène</strong> (peu dispersée)</li><li>CV entre 15% et 35% → dispersion <strong>modérée</strong></li><li>CV &gt; 35% → série <strong>hétérogène</strong> (très dispersée)</li></ul></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Étendue e = xₘₐₓ − xₘᵢₙ (simple mais sensible aux outliers)</li>\n<li>Variance σ² = Σnᵢ(xᵢ−x̄)² / N = (Σnᵢxᵢ²/N) − x̄²</li>\n<li>Écart-type σ = √σ² (même unité que les données)</li>\n<li>Quartiles : Q1 (25%), Q2 = Médiane (50%), Q3 (75%)</li>\n<li>EIQ = Q3 − Q1 (50% des données centrales)</li>\n<li>CV = (σ/x̄)×100 : compare deux séries · CV&lt;15% → homogène</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "La variance d'une série est 25. Quel est son écart-type ?",
+          "options": [
+            {
+              "text": "625",
+              "correct": false,
+              "explanation": "625 = 25². L'écart-type est la racine carrée de la variance, pas son carré."
+            },
+            {
+              "text": "5",
+              "correct": true,
+              "explanation": "Correct ! σ = √25 = 5. L'écart-type est toujours la racine carrée de la variance."
+            },
+            {
+              "text": "12,5",
+              "correct": false,
+              "explanation": "12,5 = 25/2. Ce n'est pas la formule de l'écart-type."
+            },
+            {
+              "text": "≈ 4,98",
+              "correct": false,
+              "explanation": "4,98 ≈ √24,8. La variance est 25, donc σ = √25 = 5 exactement."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Le coefficient de variation d'une série est 8%. Cela signifie que la série est :",
+          "options": [
+            {
+              "text": "Hétérogène",
+              "correct": false,
+              "explanation": "Hétérogène = CV élevé (>35%). 8% est très faible, donc homogène."
+            },
+            {
+              "text": "Homogène",
+              "correct": true,
+              "explanation": "Correct ! CV < 15% → série homogène. 8% indique une faible dispersion relative."
+            },
+            {
+              "text": "Normalement dispersée",
+              "correct": false,
+              "explanation": "CV = 8% est faible, donc homogène, pas normalement dispersée."
+            },
+            {
+              "text": "Bimodale",
+              "correct": false,
+              "explanation": "Bimodale décrit la forme de la distribution (deux modes), pas la dispersion."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Que mesure l'écart interquartile (Q3 − Q1) ?",
+          "options": [
+            {
+              "text": "La dispersion totale de la série",
+              "correct": false,
+              "explanation": "L'étendue = xmax − xmin, pas Q3 − Q1."
+            },
+            {
+              "text": "La dispersion des 50% valeurs centrales",
+              "correct": true,
+              "explanation": "Correct ! EIQ = Q3 − Q1 mesure la dispersion des 50% centraux, robuste aux valeurs extrêmes."
+            },
+            {
+              "text": "La moyenne des carrés des écarts",
+              "correct": false,
+              "explanation": "La variance mesure la dispersion autour de la moyenne (carrés des écarts)."
+            },
+            {
+              "text": "La position de la médiane",
+              "correct": false,
+              "explanation": "Q3 − Q1 ne donne pas la position de la médiane directement."
+            }
+          ]
+        }
+      ],
+      "source": "_private/stats/chapitres/chapitre4.html"
+    },
+    {
+      "number": 5,
+      "title": "Représentations graphiques",
+      "subtitle": "Histogramme, polygone, ogive et boîte à moustaches.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Choisir le bon graphique selon le type de variable</li><li>Construire un histogramme et un polygone des fréquences</li><li>Tracer une courbe des fréquences cumulées (ogive)</li></ul></div>\n<h2>Tableau de correspondance Graphique  Variable</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de graphique</th><th>Variable appropriée</th><th>Ce qu'il montre</th></tr></thead>\n<tbody>\n<tr><td><strong>Diagramme en bâtons</strong></td><td>Qualitative ou quantitative discrète</td><td>Fréquences de chaque modalité</td></tr>\n<tr><td><strong>Diagramme circulaire (camembert)</strong></td><td>Qualitative nominale</td><td>Parts en % d'un tout</td></tr>\n<tr><td><strong>Histogramme</strong></td><td>Quantitative continue (classes)</td><td>Distribution des données groupées</td></tr>\n<tr><td><strong>Polygone des fréquences</strong></td><td>Quantitative continue</td><td>Tendance de la distribution</td></tr>\n<tr><td><strong>Ogive (courbe cumulative)</strong></td><td>Quantitative continue ou discrète</td><td>Fréquences cumulées → trouver médiane, quartiles</td></tr>\n<tr><td><strong>Boîte à moustaches (boxplot)</strong></td><td>Quantitative</td><td>Résumé des 5 nombres : Min, Q1, Q2, Q3, Max</td></tr>\n</tbody>\n</table></div>\n<h2>L'histogramme</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Construction</div>\n<ul><li>Axe X : les classes (valeurs continues)</li><li>Axe Y : la fréquence (ou la <strong>densité de fréquence</strong> = fᵢ/hᵢ si amplitudes inégales)</li><li>Les rectangles sont <strong>jointifs</strong> (pas d'espace entre eux)</li><li>La surface de chaque rectangle est proportionnelle à la fréquence</li></ul></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Histogramme ≠ Diagramme en bâtons</div>\n<ul><li><strong>Diagramme en bâtons</strong> : bâtons séparés, variable DISCRÈTE</li><li><strong>Histogramme</strong> : rectangles jointifs, variable CONTINUE (classes)</li></ul></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Densité de fréquence</div>\n<p>Si les classes n'ont <strong>pas toutes la même amplitude</strong>, utiliser la densité :<br/>\n<strong>Densité = fᵢ / hᵢ</strong> (fréquence divisée par l'amplitude)<br/>\n        Cela garantit que la surface du rectangle = fréquence.</p></div>\n<h2>Polygone des fréquences</h2>\n<p>On relie par des segments les <strong>centres des sommets</strong> de chaque rectangle de l'histogramme. Le polygone commence et se termine sur l'axe X (classe fictive à effectif 0 de part et d'autre).</p>\n<h2>L'Ogive (courbe des fréquences cumulées)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Construction</div>\n<ul><li>On place les points (aᵢ₊₁ ; Fᵢ) : <strong>borne supérieure de chaque classe</strong> en X, <strong>fréquence cumulée</strong> en Y</li><li>On relie les points par des segments</li><li>La courbe commence en (a₁ ; 0) et se termine en (aₖ ; 1 ou 100%)</li></ul></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Lire la médiane sur l'ogive</div>\n<ul><li>Tracer une horizontale depuis F = 0,5 (ou 50%)</li><li>Lire la valeur en X → c'est la <strong>médiane graphique</strong></li><li>De même pour Q1 (F=0,25) et Q3 (F=0,75)</li></ul></div>\n<h2>La boîte à moustaches (Boxplot)</h2>\n<p>Le boxplot résume une distribution en <strong>5 nombres</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Élément</th><th>Valeur</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td>Moustache gauche</td><td>Minimum (ou Q1 − 1,5×EIQ)</td><td>Valeur la plus petite (non outlier)</td></tr>\n<tr><td>Bord gauche boîte</td><td>Q1</td><td>25% des données en dessous</td></tr>\n<tr><td>Trait central</td><td>Q2 = Médiane</td><td>Valeur centrale</td></tr>\n<tr><td>Bord droit boîte</td><td>Q3</td><td>75% des données en dessous</td></tr>\n<tr><td>Moustache droite</td><td>Maximum (ou Q3 + 1,5×EIQ)</td><td>Valeur la plus grande (non outlier)</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Bâtons = discret (espacés) · Histogramme = continu/classes (jointifs)</li>\n<li>Histogramme : hauteur = densité = fᵢ/hᵢ si amplitudes inégales</li>\n<li>Polygone = relier les centres des rectangles de l'histogramme</li>\n<li>Ogive : points (aᵢ₊₁ ; Fᵢ) → lecture graphique de Me, Q1, Q3</li>\n<li>Boxplot : 5 nombres — Min · Q1 · Q2 · Q3 · Max</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Quel graphique utilise-t-on pour représenter une variable quantitative continue regroupée en classes ?",
+          "options": [
+            {
+              "text": "Diagramme circulaire (camembert)",
+              "correct": false,
+              "explanation": "Le diagramme circulaire est pour les variables qualitatives nominales (parts en %)."
+            },
+            {
+              "text": "Diagramme en bâtons",
+              "correct": false,
+              "explanation": "Le diagramme en bâtons convient aux variables discrètes, pas continues."
+            },
+            {
+              "text": "Histogramme",
+              "correct": true,
+              "explanation": "Correct ! L'histogramme est le graphique adapté aux variables quantitatives continues regroupées en classes. Ses rectangles sont jointifs."
+            },
+            {
+              "text": "Ogive",
+              "correct": false,
+              "explanation": "L'ogive représente les fréquences CUMULÉES, pas la distribution brute."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Sur une ogive, la médiane se lit en abscisse quand la fréquence cumulée vaut :",
+          "options": [
+            {
+              "text": "0,25",
+              "correct": false,
+              "explanation": "0,25 correspond à Q1 (premier quartile), pas à la médiane."
+            },
+            {
+              "text": "0,50",
+              "correct": true,
+              "explanation": "Correct ! La médiane correspond à F = 0,5 (50% des données en dessous). On trace l'horizontale depuis 0,5 et on lit la valeur en X."
+            },
+            {
+              "text": "0,75",
+              "correct": false,
+              "explanation": "0,75 correspond à Q3 (troisième quartile), pas à la médiane."
+            },
+            {
+              "text": "1,00",
+              "correct": false,
+              "explanation": "1,00 est la fin de la courbe (toutes les données incluses)."
+            }
+          ]
+        }
+      ],
+      "source": "_private/stats/chapitres/chapitre5.html"
+    },
+    {
+      "number": 6,
+      "title": "Corrélation & Régression linéaire",
+      "subtitle": "Nuage de points, coefficient de Pearson et droite des moindres carrés.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs</div>\n<ul><li>Construire un nuage de points et lire sa forme</li><li>Calculer et interpréter le coefficient de corrélation linéaire r</li><li>Déterminer la droite de régression par la méthode des moindres carrés</li></ul></div>\n<h2>La série statistique à deux variables</h2>\n<p>On étudie simultanément deux caractères X et Y sur les mêmes individus. On note les paires (xᵢ, yᵢ).</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">Le nuage de points</div>\n<p>On représente chaque paire (xᵢ, yᵢ) par un point dans un repère orthogonal. La forme du nuage indique le type de liaison :<br/>\n        • Nuage allongé en diagonale montante → corrélation positive<br/>\n        • Nuage allongé en diagonale descendante → corrélation négative<br/>\n        • Nuage circulaire ou dispersé → pas de corrélation linéaire</p></div>\n<h2>Covariance Cov(X,Y)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Formule</div>\n<p><strong>Cov(X,Y) = (1/N) × Σnᵢ(xᵢ − x̄)(yᵢ − ȳ)</strong><br/>\n        Formule raccourcie : <strong>Cov(X,Y) = (Σnᵢxᵢyᵢ / N) − x̄·ȳ</strong><br/>\n        • Cov &gt; 0 : X et Y varient dans le même sens<br/>\n        • Cov &lt; 0 : X et Y varient en sens opposé<br/>\n        • Cov = 0 : pas de liaison linéaire</p></div>\n<h2>Coefficient de corrélation linéaire r</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Formule de Pearson</div>\n<p><strong>r = Cov(X,Y) / (σₓ × σᵧ)</strong><br/>\n        où σₓ et σᵧ sont les écarts-types de X et Y.<br/>\n<strong>−1 ≤ r ≤ 1</strong> toujours.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur de |r|</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td>|r| = 1</td><td>Corrélation parfaite (linéarité exacte)</td></tr>\n<tr><td>0,8 ≤ |r| &lt; 1</td><td>Corrélation <strong>forte</strong></td></tr>\n<tr><td>0,5 ≤ |r| &lt; 0,8</td><td>Corrélation <strong>modérée</strong></td></tr>\n<tr><td>|r| &lt; 0,5</td><td>Corrélation <strong>faible</strong> ou nulle</td></tr>\n<tr><td>r &gt; 0</td><td>Liaison <strong>positive</strong> (X↑ → Y↑)</td></tr>\n<tr><td>r &lt; 0</td><td>Liaison <strong>négative</strong> (X↑ → Y↓)</td></tr>\n</tbody>\n</table></div>\n<h2>Droite de régression (moindres carrés)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Équation de la droite Y en X</div>\n<p><strong>ŷ = a·x + b</strong><br/>\n        Coefficients par la méthode des moindres carrés :<br/>\n<strong>a = Cov(X,Y) / σₓ²</strong> (pente)<br/>\n<strong>b = ȳ − a·x̄</strong> (ordonnée à l'origine)</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Propriété fondamentale</div>\n<p>La droite de régression passe <strong>toujours par le point moyen (x̄ ; ȳ)</strong>.<br/>\n        Vérification : b = ȳ − a·x̄. Si on remplace x par x̄ dans ŷ = ax+b, on trouve bien ȳ.</p></div>\n<h2>Exemple complet</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>i</th><th>xᵢ (heures de révision)</th><th>yᵢ (note /20)</th><th>xᵢ·yᵢ</th><th>xᵢ²</th><th>yᵢ²</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>2</td><td>8</td><td>16</td><td>4</td><td>64</td></tr>\n<tr><td>2</td><td>3</td><td>10</td><td>30</td><td>9</td><td>100</td></tr>\n<tr><td>3</td><td>5</td><td>12</td><td>60</td><td>25</td><td>144</td></tr>\n<tr><td>4</td><td>6</td><td>14</td><td>84</td><td>36</td><td>196</td></tr>\n<tr><td>5</td><td>8</td><td>16</td><td>128</td><td>64</td><td>256</td></tr>\n<tr><td><strong>Σ</strong></td><td><strong>24</strong></td><td><strong>60</strong></td><td><strong>318</strong></td><td><strong>138</strong></td><td><strong>760</strong></td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Calculs</div>\n<pre>N=5 · x̄ = 24/5 = 4,8 · ȳ = 60/5 = 12\nCov(X,Y) = (318/5) − 4,8×12 = 63,6 − 57,6 = 6,0\nσₓ² = (138/5) − 4,8² = 27,6 − 23,04 = 4,56\nσₓ = √4,56 ≈ 2,135\nσᵧ² = (760/5) − 12² = 152 − 144 = 8\nσᵧ = √8 ≈ 2,828\nr = 6,0 / (2,135 × 2,828) ≈ 6,0 / 6,038 ≈ 0,994 → Corrélation très forte !\na = 6,0 / 4,56 ≈ 1,316\nb = 12 − 1,316×4,8 = 12 − 6,316 = 5,684\nDroite : ŷ = 1,316x + 5,684\nPrédiction pour x=7h : ŷ = 1,316×7 + 5,684 ≈ 14,9/20</pre></div>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 6</h3>\n<ul>\n<li>Nuage de points : forme → direction et intensité de la liaison</li>\n<li>Cov(X,Y) = (Σnᵢxᵢyᵢ / N) − x̄·ȳ</li>\n<li>r = Cov(X,Y) / (σₓ × σᵧ) · toujours entre −1 et +1</li>\n<li>|r| ≥ 0,8 → forte · 0,5–0,8 → modérée · &lt;0,5 → faible</li>\n<li>Droite ŷ = ax+b · a = Cov/σₓ² · b = ȳ−ax̄</li>\n<li>La droite passe toujours par le point moyen (x̄ ; ȳ)</li>\n</ul></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Un coefficient de corrélation r = −0,92 indique :",
+          "options": [
+            {
+              "text": "Liaison positive forte",
+              "correct": false,
+              "explanation": "r négatif signifie liaison négative (quand X augmente, Y diminue). Pas positif."
+            },
+            {
+              "text": "Liaison négative faible",
+              "correct": false,
+              "explanation": "|r| = 0,92 est élevé, donc la liaison est forte, pas faible."
+            },
+            {
+              "text": "Liaison négative forte",
+              "correct": true,
+              "explanation": "Correct ! r = −0,92 : négatif (sens opposé) et |r| proche de 1 (forte). X↑ → Y↓ avec une liaison forte."
+            },
+            {
+              "text": "Absence de liaison",
+              "correct": false,
+              "explanation": "r = 0 signifie absence de liaison. Ici r = −0,92, donc liaison forte."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La droite de régression ŷ = 2x + 3 passe obligatoirement par :",
+          "options": [
+            {
+              "text": "Le point (0 ; 3)",
+              "correct": false,
+              "explanation": "(0,3) est le point où la droite coupe l'axe Y (b=3), mais pas le point fondamental de la régression."
+            },
+            {
+              "text": "Le point moyen (x̄ ; ȳ)",
+              "correct": true,
+              "explanation": "Correct ! La droite de régression passe TOUJOURS par le point moyen (x̄ ; ȳ). C'est une propriété fondamentale."
+            },
+            {
+              "text": "L'origine (0 ; 0)",
+              "correct": false,
+              "explanation": "La droite ne passe pas forcément par l'origine (1,0) ou (0,1)."
+            },
+            {
+              "text": "La médiane de X",
+              "correct": false,
+              "explanation": "La droite ne passe pas forcément par la valeur médiane des données."
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "La formule de la pente a de la droite de régression est :",
+          "options": [
+            {
+              "text": "a = σₓ / Cov(X,Y)",
+              "correct": false,
+              "explanation": "σₓ / Cov(X,Y) est l'inverse. La pente = Cov / variance, pas variance / Cov."
+            },
+            {
+              "text": "a = ȳ / x̄",
+              "correct": false,
+              "explanation": "ȳ/x̄ serait la pente si la droite passait par l'origine, ce qui n'est pas toujours le cas."
+            },
+            {
+              "text": "a = Cov(X,Y) / σₓ²",
+              "correct": true,
+              "explanation": "Correct ! a = Cov(X,Y) / σₓ² (covariance divisée par la variance de X)."
+            },
+            {
+              "text": "a = σₓ / σᵧ",
+              "correct": false,
+              "explanation": "a = σₓ / σᵧ est lié au coefficient de corrélation, pas directement à la pente."
+            }
+          ]
+        }
+      ],
+      "source": "_private/stats/chapitres/chapitre6.html"
     }
-   ],
-   "source": "stats/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Tableaux de fréquences",
-   "subtitle": "Construire, lire et interpréter les tableaux de distribution (discrète et continue).",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Construire un tableau de fréquences (discrète et continue)<br/>\n        • Calculer effectifs, fréquences relatives et fréquences cumulées<br/>\n        • Lire et interpréter un tableau statistique complet</p>\n</div>\n<h2>2.1 — Tableau de distribution (variable discrète)</h2>\n<p>Un tableau de fréquences organise les données brutes en regroupant les valeurs identiques avec leur effectif correspondant.</p>\n<h3>Structure d'un tableau complet</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur xᵢ</th><th>Effectif nᵢ</th><th>Fréquence fᵢ</th><th>Fréquence % fᵢ%</th><th>Effectif cumulé Nᵢ</th><th>Fréquence cumulée Fᵢ</th></tr></thead>\n<tbody>\n<tr><td>x₁</td><td>n₁</td><td>n₁/N</td><td>(n₁/N)×100</td><td>n₁</td><td>n₁/N</td></tr>\n<tr><td>x₂</td><td>n₂</td><td>n₂/N</td><td>(n₂/N)×100</td><td>n₁+n₂</td><td>(n₁+n₂)/N</td></tr>\n<tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>N</strong></td><td><strong>1</strong></td><td><strong>100%</strong></td><td>—</td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Vérifications obligatoires</div>\n<p>À la fin de tout tableau, vérifier :<br/>\n        ✓ <strong>Σnᵢ = N</strong> (somme des effectifs = effectif total)<br/>\n        ✓ <strong>Σfᵢ = 1</strong> (somme des fréquences relatives = 1)<br/>\n        ✓ <strong>Σfᵢ% = 100%</strong> (somme des pourcentages = 100%)<br/>\n        ✓ Le dernier Nᵢ = N · Le dernier Fᵢ = 1</p>\n</div>\n<h2>2.2 — Exemple complet (variable discrète)</h2>\n<p><strong>Données :</strong> Notes de 20 étudiants : 8, 10, 12, 10, 14, 12, 8, 16, 12, 10, 14, 12, 10, 12, 16, 8, 14, 12, 10, 12</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note xᵢ</th><th>Effectif nᵢ</th><th>Fréq. fᵢ</th><th>Fréq. % fᵢ%</th><th>Eff. cumulé Nᵢ</th><th>Fréq. cum. Fᵢ</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>0,15</td><td>15%</td><td>3</td><td>0,15</td></tr>\n<tr><td>10</td><td>5</td><td>0,25</td><td>25%</td><td>8</td><td>0,40</td></tr>\n<tr><td>12</td><td>7</td><td>0,35</td><td>35%</td><td>15</td><td>0,75</td></tr>\n<tr><td>14</td><td>3</td><td>0,15</td><td>15%</td><td>18</td><td>0,90</td></tr>\n<tr><td>16</td><td>2</td><td>0,10</td><td>10%</td><td>20</td><td>1,00</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td><td>—</td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">✅ Vérification</div>\n<p>Σnᵢ = 3+5+7+3+2 = <strong>20 = N ✓</strong> · Σfᵢ = 0,15+0,25+0,35+0,15+0,10 = <strong>1,00 ✓</strong> · Σfᵢ% = <strong>100% ✓</strong></p>\n</div>\n<h2>2.3 — Variable continue : classes et intervalles</h2>\n<p>Pour une variable <strong>continue</strong> (ou discrète à grand nombre de valeurs), on regroupe les données en <strong>classes</strong> [aᵢ ; aᵢ₊₁[.</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Vocabulaire des classes</div>\n<p>• <strong>Borne inférieure aᵢ</strong> : début de la classe (incluse)<br/>\n        • <strong>Borne supérieure aᵢ₊₁</strong> : fin de la classe (exclue, sauf dernière)<br/>\n        • <strong>Amplitude hᵢ = aᵢ₊₁ − aᵢ</strong> : largeur de la classe<br/>\n        • <strong>Centre de classe cᵢ = (aᵢ + aᵢ₊₁) / 2</strong><br/>\n        • Classes équiréparties si toutes les amplitudes sont égales</p>\n</div>\n<h3>Règle empirique de Sturges</h3>\n<p>Pour déterminer le nombre de classes k optimal : <strong>k ≈ 1 + 3,322 × log₁₀(N)</strong></p>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Exemple Sturges</div>\n<p>Pour N = 100 étudiants :<br/>\n        k ≈ 1 + 3,322 × log₁₀(100) = 1 + 3,322 × 2 = 1 + 6,644 ≈ <strong>7 ou 8 classes</strong></p>\n</div>\n<h2>2.4 — Exemple complet (variable continue)</h2>\n<p><strong>Données :</strong> Tailles (cm) de 40 étudiants. Amplitude choisie : h = 5 cm</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Classe [aᵢ ; aᵢ₊₁[</th><th>Centre cᵢ</th><th>Effectif nᵢ</th><th>Fréq. fᵢ</th><th>Fréq. % fᵢ%</th><th>Eff. cum. Nᵢ</th></tr></thead>\n<tbody>\n<tr><td>[155 ; 160[</td><td>157,5</td><td>4</td><td>0,10</td><td>10%</td><td>4</td></tr>\n<tr><td>[160 ; 165[</td><td>162,5</td><td>8</td><td>0,20</td><td>20%</td><td>12</td></tr>\n<tr><td>[165 ; 170[</td><td>167,5</td><td>14</td><td>0,35</td><td>35%</td><td>26</td></tr>\n<tr><td>[170 ; 175[</td><td>172,5</td><td>10</td><td>0,25</td><td>25%</td><td>36</td></tr>\n<tr><td>[175 ; 180]</td><td>177,5</td><td>4</td><td>0,10</td><td>10%</td><td>40</td></tr>\n<tr><td><strong>Total</strong></td><td>—</td><td><strong>40</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td><td>—</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2</h3>\n<ul>\n<li>Tableau = valeurs + effectifs + fréquences relatives + fréquences cumulées</li>\n<li>Vérifications : Σnᵢ = N · Σfᵢ = 1 · Σfᵢ% = 100% · dernier Fᵢ = 1</li>\n<li>Variable continue → regroupement en classes [aᵢ ; aᵢ₊₁[</li>\n<li>Centre de classe cᵢ = (aᵢ + aᵢ₊₁) / 2 · Amplitude hᵢ = aᵢ₊₁ − aᵢ</li>\n<li>Règle de Sturges : k ≈ 1 + 3,322 × log₁₀(N)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Dans un tableau de fréquences, la fréquence cumulée du dernier groupe vaut toujours :",
-     "options": [
-      {
-       "text": "0",
-       "correct": false,
-       "explanation": "0 est la fréquence cumulée du début (rien encore compté)."
-      },
-      {
-       "text": "1 (ou 100%)",
-       "correct": true,
-       "explanation": "Correct ! La fréquence cumulée du dernier groupe = 1 (ou 100%), car on a cumulé tous les individus."
-      },
-      {
-       "text": "N",
-       "correct": false,
-       "explanation": "N est l'effectif total, pas la fréquence cumulée (qui est un rapport)."
-      },
-      {
-       "text": "nk (dernier effectif)",
-       "correct": false,
-       "explanation": "La valeur dépend du dernier effectif seul, pas de la fréquence cumulée."
-      }
-     ]
+      "type": "open",
+      "text": "1. Définissez simplement Séries statistiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Le centre d'une classe [20 ; 30[ est :",
-     "options": [
-      {
-       "text": "20",
-       "correct": false,
-       "explanation": "20 est la borne inférieure, pas le centre."
-      },
-      {
-       "text": "30",
-       "correct": false,
-       "explanation": "30 est la borne supérieure, pas le centre."
-      },
-      {
-       "text": "25",
-       "correct": true,
-       "explanation": "Correct ! Centre = (20+30)/2 = 50/2 = 25."
-      },
-      {
-       "text": "10",
-       "correct": false,
-       "explanation": "10 est l'amplitude (30−20), pas le centre."
-      }
-     ]
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Séries statistiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
     },
     {
-     "type": "mcq",
-     "text": "Sur 50 personnes, 15 ont une note entre 10 et 12. La fréquence relative de cette classe est :",
-     "options": [
-      {
-       "text": "30%",
-       "correct": false,
-       "explanation": "15% signifie 0,15 pas 0,30. Vérifiez le calcul."
-      },
-      {
-       "text": "30%",
-       "correct": true,
-       "explanation": "Correct ! fᵢ = 15/50 = 0,30 soit 30%. Attendez... 15/50 = 0,30 = 30%. Correct !"
-      },
-      {
-       "text": "15%",
-       "correct": false,
-       "explanation": "15% serait pour n=7,5 sur 50 — ce n'est pas le cas."
-      },
-      {
-       "text": "3,3%",
-       "correct": false,
-       "explanation": "3,3 n'est pas une fréquence."
-      }
-     ]
+      "type": "open",
+      "text": "3. Expliquez pourquoi Séries statistiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Séries statistiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Séries statistiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Tableaux de fréquences.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Tableaux de fréquences.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Tableaux de fréquences.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Tableaux de fréquences.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Tableaux de fréquences.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Mesures de tendance centrale.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Mesures de tendance centrale.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Mesures de tendance centrale.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Mesures de tendance centrale.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Mesures de tendance centrale.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Mesures de dispersion.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Mesures de dispersion.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Mesures de dispersion.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Mesures de dispersion.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Mesures de dispersion.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Représentations graphiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Représentations graphiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Représentations graphiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Représentations graphiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Représentations graphiques.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "1. Définissez simplement Corrélation & Régression linéaire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
+      "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "2. Citez une notion ou un outil clé de Corrélation & Régression linéaire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
+      "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
+      "level": "easy",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "3. Expliquez pourquoi Corrélation & Régression linéaire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
+      "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "4. Donnez un exemple concret d’application de Corrélation & Régression linéaire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
+      "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
+      "level": "medium",
+      "status": "placeholder"
+    },
+    {
+      "type": "open",
+      "text": "5. Proposez une démarche complète pour un problème lié à Corrélation & Régression linéaire.",
+      "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
+      "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
+      "level": "hard",
+      "status": "placeholder"
     }
-   ],
-   "source": "_private/stats/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Mesures de tendance centrale",
-   "subtitle": "Moyenne, médiane et mode — les trois piliers du résumé statistique.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Calculer la moyenne arithmétique (données brutes, tableau, classes)<br/>\n        • Déterminer la médiane (données brutes et tableau de fréquences cumulées)<br/>\n        • Identifier le mode (données brutes et classes)</p>\n</div>\n<h2>3.1 — La Moyenne arithmétique x̄</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La moyenne est la valeur qui représente le mieux l'ensemble de la série. C'est la <strong>somme de toutes les valeurs divisée par le nombre d'observations</strong>.</p>\n</div>\n<h3>Formules</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cas</th><th>Formule</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>Données brutes</td><td><strong>x̄ = (Σxᵢ) / N</strong></td><td>Série {4, 6, 8, 10} → x̄ = 28/4 = <strong>7</strong></td></tr>\n<tr><td>Tableau (discret)</td><td><strong>x̄ = (Σnᵢ·xᵢ) / N</strong></td><td>Pondérer chaque valeur par son effectif</td></tr>\n<tr><td>Classes (continu)</td><td><strong>x̄ = (Σnᵢ·cᵢ) / N</strong></td><td>cᵢ = centre de la classe</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Propriétés de la moyenne</div>\n<p>• <strong>Sensible aux valeurs extrêmes</strong> : un outlier tire la moyenne vers lui<br/>\n        • Si on ajoute une constante k à toutes les valeurs → x̄ augmente de k<br/>\n        • Si on multiplie toutes les valeurs par k → x̄ est multiplié par k<br/>\n        • La somme des écarts à la moyenne = 0 : <strong>Σ(xᵢ − x̄) = 0</strong></p>\n</div>\n<h2>3.2 — Exemple : moyenne avec tableau</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Note xᵢ</th><th>Effectif nᵢ</th><th>nᵢ × xᵢ</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>24</td></tr>\n<tr><td>10</td><td>5</td><td>50</td></tr>\n<tr><td>12</td><td>7</td><td>84</td></tr>\n<tr><td>14</td><td>3</td><td>42</td></tr>\n<tr><td>16</td><td>2</td><td>32</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>232</strong></td></tr>\n</tbody>\n</table></div>\n<p><strong>x̄ = 232 / 20 = 11,6</strong></p>\n<h2>3.3 — La Médiane Me</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La médiane est la valeur qui partage la série <strong>ordonnée</strong> en deux groupes de même effectif. 50% des valeurs sont inférieures ou égales à Me, 50% supérieures ou égales.</p>\n</div>\n<h3>Données brutes — méthode</h3>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Règle médiane</div>\n<p>Après avoir trié les données dans l'ordre croissant :<br/>\n        • <strong>N impair</strong> → Me = valeur de rang (N+1)/2<br/>\n        • <strong>N pair</strong> → Me = moyenne des valeurs de rangs N/2 et N/2 + 1</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemple</div>\n<pre>Série ordonnée : 5, 7, 9, 12, 14, 16, 18  (N=7, impair)\nRang médian = (7+1)/2 = 4\n→ Me = 4ème valeur = 12\nSérie ordonnée : 5, 7, 9, 12, 14, 16  (N=6, pair)\nRangs médians = 3 et 4\n→ Me = (9+12)/2 = 10,5</pre>\n</div>\n<h3>Médiane sur tableau — interpolation linéaire</h3>\n<p>Si les fréquences cumulées sautent par-dessus 0,5 (ou N/2), on interpole :</p>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Formule d'interpolation (classes)</div>\n<pre>Me = aₘ + [(N/2 − Nₘ₋₁) / nₘ] × hₘ\noù : aₘ = borne inférieure de la classe médiane\n     Nₘ₋₁ = effectif cumulé AVANT la classe médiane\n     nₘ = effectif de la classe médiane\n     hₘ = amplitude de la classe médiane</pre>\n</div>\n<h2>3.4 — Le Mode Mo</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>Le mode est la valeur (ou la classe) qui a l'<strong>effectif le plus élevé</strong>. Une série peut être bimodale (2 modes) ou amodale (pas de mode).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">⚠️ Mode sur classes — Formule de Czuber</div>\n<p><strong>Mo = aₘ + [nₘ − nₘ₋₁] / [(nₘ − nₘ₋₁) + (nₘ − nₘ₊₁)] × hₘ</strong><br/>\n        où nₘ₋₁ = effectif classe précédente, nₘ₊₁ = effectif classe suivante<br/>\n<em>En pratique au B1 : le mode est simplement le centre de la classe modale.</em></p>\n</div>\n<h2>3.5 — Comparaison Moyenne / Médiane / Mode</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mesure</th><th>Avantages</th><th>Inconvénients</th><th>Quand l'utiliser ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Moyenne x̄</strong></td><td>Utilise toutes les données</td><td>Sensible aux valeurs extrêmes</td><td>Distribution symétrique, sans outlier</td></tr>\n<tr><td><strong>Médiane Me</strong></td><td>Robuste aux outliers</td><td>Ignore les valeurs exactes</td><td>Distribution asymétrique, revenus</td></tr>\n<tr><td><strong>Mode Mo</strong></td><td>Simple à lire</td><td>Peut ne pas exister ou être multiple</td><td>Données qualitatives, taille la plus vendue</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3</h3>\n<ul>\n<li>Moyenne x̄ = Σ(nᵢ·xᵢ) / N — utilise toutes les valeurs, sensible aux outliers</li>\n<li>Médiane Me : valeur centrale de la série triée — robuste aux extrêmes</li>\n<li>N impair → Me = valeur de rang (N+1)/2 · N pair → Me = moyenne des rangs N/2 et N/2+1</li>\n<li>Mode Mo = valeur (ou classe) à effectif maximal</li>\n<li>Σ(xᵢ − x̄) = 0 toujours (propriété fondamentale de la moyenne)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "La série ordonnée est : 3, 5, 7, 9, 11, 13. Quelle est la médiane ?",
-     "options": [
-      {
-       "text": "7",
-       "correct": false,
-       "explanation": "7 est la 3ème valeur, pas la médiane d'une série paire."
-      },
-      {
-       "text": "8",
-       "correct": true,
-       "explanation": "Correct ! N=6 (pair). Rangs médians : 3 et 4. Me = (7+9)/2 = 8."
-      },
-      {
-       "text": "9",
-       "correct": false,
-       "explanation": "9 est la 4ème valeur. La médiane est la moyenne des 3ème et 4ème."
-      },
-      {
-       "text": "6",
-       "correct": false,
-       "explanation": "6 est le nombre de valeurs N, pas la médiane."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La moyenne de 5 valeurs est 10. On ajoute une 6ème valeur de 16. Quelle est la nouvelle moyenne ?",
-     "options": [
-      {
-       "text": "13",
-       "correct": false,
-       "explanation": "13 serait la moyenne de 10 et 16, pas la nouvelle moyenne des 6 valeurs."
-      },
-      {
-       "text": "11",
-       "correct": true,
-       "explanation": "Correct ! Somme initiale = 5×10=50. Nouvelle somme = 50+16=66. Nouvelle moyenne = 66/6 = 11."
-      },
-      {
-       "text": "10",
-       "correct": false,
-       "explanation": "10 serait la même moyenne — elle change avec la nouvelle valeur."
-      },
-      {
-       "text": "12",
-       "correct": false,
-       "explanation": "12 n'est pas la bonne réponse. Calcul : (5×10+16)/6 = 66/6 = 11."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle mesure de tendance centrale est la plus robuste face aux valeurs extrêmes (outliers) ?",
-     "options": [
-      {
-       "text": "La moyenne arithmétique",
-       "correct": false,
-       "explanation": "La moyenne est très sensible aux outliers : une valeur très grande la tire vers le haut."
-      },
-      {
-       "text": "La médiane",
-       "correct": true,
-       "explanation": "Correct ! La médiane ne dépend que des valeurs centrales (rang), pas des valeurs extrêmes. Elle est robuste."
-      },
-      {
-       "text": "Le mode",
-       "correct": false,
-       "explanation": "Le mode peut être influencé si les extrêmes se répètent."
-      },
-      {
-       "text": "La moyenne pondérée",
-       "correct": false,
-       "explanation": "La moyenne pondérée est une variante de la moyenne — tout aussi sensible aux outliers."
-      }
-     ]
-    }
-   ],
-   "source": "_private/stats/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Mesures de dispersion",
-   "subtitle": "Variance, écart-type, quartiles et coefficient de variation.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Calculer l'étendue, la variance et l'écart-type<br/>\n        • Déterminer les quartiles Q1, Q2, Q3 et l'écart interquartile<br/>\n        • Utiliser le coefficient de variation pour comparer deux séries</p>\n</div>\n<h2>4.1 — L'étendue (Range)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p><strong>e = xₘₐₓ − xₘᵢₙ</strong><br/>\n        Mesure la plus simple de dispersion. Très sensible aux valeurs extrêmes.</p>\n</div>\n<div class=\"code-block\"><div class=\"code-lbl\">Exemple</div>\n<pre>Série : {5, 8, 12, 15, 20}\ne = 20 − 5 = 15</pre>\n</div>\n<h2>4.2 — La Variance σ²</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p>La variance mesure la dispersion des valeurs autour de la moyenne. C'est la <strong>moyenne des carrés des écarts à la moyenne</strong>.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Cas</th><th>Formule</th></tr></thead>\n<tbody>\n<tr><td>Données brutes</td><td><strong>σ² = (1/N) × Σ(xᵢ − x̄)²</strong></td></tr>\n<tr><td>Tableau (discret)</td><td><strong>σ² = (1/N) × Σnᵢ(xᵢ − x̄)²</strong></td></tr>\n<tr><td>Formule raccourcie</td><td><strong>σ² = (Σnᵢxᵢ²/N) − x̄²</strong> (= x̄² des xᵢ² − x̄²)</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Formule raccourcie</div>\n<p><strong>σ² = Moyenne des carrés − Carré de la moyenne</strong><br/>\n        Toujours ≥ 0. Si σ² = 0, toutes les valeurs sont identiques.</p>\n</div>\n<h2>4.3 — L'Écart-type σ</h2>\n<p>L'écart-type est la <strong>racine carrée de la variance</strong>. Il a la même unité que les données (contrairement à la variance qui est en unité²).</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">📐 Formule</div>\n<p><strong>σ = √σ²</strong> · L'écart-type mesure \"en moyenne\" de combien les valeurs s'écartent de la moyenne.</p>\n</div>\n<h2>4.4 — Exemple complet (variance + écart-type)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>xᵢ</th><th>nᵢ</th><th>nᵢ×xᵢ</th><th>(xᵢ−x̄)²</th><th>nᵢ×(xᵢ−x̄)²</th></tr></thead>\n<tbody>\n<tr><td>8</td><td>3</td><td>24</td><td>(8−11,6)² = 12,96</td><td>38,88</td></tr>\n<tr><td>10</td><td>5</td><td>50</td><td>(10−11,6)² = 2,56</td><td>12,80</td></tr>\n<tr><td>12</td><td>7</td><td>84</td><td>(12−11,6)² = 0,16</td><td>1,12</td></tr>\n<tr><td>14</td><td>3</td><td>42</td><td>(14−11,6)² = 5,76</td><td>17,28</td></tr>\n<tr><td>16</td><td>2</td><td>32</td><td>(16−11,6)² = 19,36</td><td>38,72</td></tr>\n<tr><td><strong>Total</strong></td><td><strong>20</strong></td><td><strong>232</strong></td><td>—</td><td><strong>108,80</strong></td></tr>\n</tbody>\n</table></div>\n<p><strong>x̄ = 11,6 · σ² = 108,80 / 20 = 5,44 · σ = √5,44 ≈ 2,33</strong></p>\n<h2>4.5 — Les Quartiles Q1, Q2, Q3</h2>\n<p>Les quartiles divisent la série triée en <strong>4 groupes égaux</strong>.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Quartile</th><th>Position dans la série triée</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td><strong>Q1</strong> (1er quartile)</td><td>Rang N/4 ou (N+1)/4</td><td>25% des valeurs sont inférieures à Q1</td></tr>\n<tr><td><strong>Q2</strong> (2ème quartile)</td><td>= Médiane</td><td>50% des valeurs sont inférieures à Q2</td></tr>\n<tr><td><strong>Q3</strong> (3ème quartile)</td><td>Rang 3N/4 ou 3(N+1)/4</td><td>75% des valeurs sont inférieures à Q3</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Écart interquartile (EIQ)</div>\n<p><strong>EIQ = Q3 − Q1</strong> · Contient 50% des données centrales. Robuste aux outliers.</p>\n</div>\n<h2>4.6 — Coefficient de variation (CV)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Formule</div>\n<p><strong>CV = (σ / x̄) × 100</strong> (en %)<br/>\n        Permet de comparer la dispersion de deux séries de moyennes différentes (ex : notes en maths vs tailles en cm).</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Interprétation du CV</div>\n<p>• CV &lt; 15% → série <strong>homogène</strong> (peu dispersée)<br/>\n        • CV entre 15% et 35% → dispersion <strong>modérée</strong><br/>\n        • CV &gt; 35% → série <strong>hétérogène</strong> (très dispersée)</p>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 4</h3>\n<ul>\n<li>Étendue e = xₘₐₓ − xₘᵢₙ (simple mais sensible aux outliers)</li>\n<li>Variance σ² = Σnᵢ(xᵢ−x̄)² / N = (Σnᵢxᵢ²/N) − x̄²</li>\n<li>Écart-type σ = √σ² (même unité que les données)</li>\n<li>Quartiles : Q1 (25%), Q2 = Médiane (50%), Q3 (75%)</li>\n<li>EIQ = Q3 − Q1 (50% des données centrales)</li>\n<li>CV = (σ/x̄)×100 : compare deux séries · CV&lt;15% → homogène</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "La variance d'une série est 25. Quel est son écart-type ?",
-     "options": [
-      {
-       "text": "625",
-       "correct": false,
-       "explanation": "625 = 25². L'écart-type est la racine carrée de la variance, pas son carré."
-      },
-      {
-       "text": "5",
-       "correct": true,
-       "explanation": "Correct ! σ = √25 = 5. L'écart-type est toujours la racine carrée de la variance."
-      },
-      {
-       "text": "12,5",
-       "correct": false,
-       "explanation": "12,5 = 25/2. Ce n'est pas la formule de l'écart-type."
-      },
-      {
-       "text": "≈ 4,98",
-       "correct": false,
-       "explanation": "4,98 ≈ √24,8. La variance est 25, donc σ = √25 = 5 exactement."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Le coefficient de variation d'une série est 8%. Cela signifie que la série est :",
-     "options": [
-      {
-       "text": "Hétérogène",
-       "correct": false,
-       "explanation": "Hétérogène = CV élevé (>35%). 8% est très faible, donc homogène."
-      },
-      {
-       "text": "Homogène",
-       "correct": true,
-       "explanation": "Correct ! CV < 15% → série homogène. 8% indique une faible dispersion relative."
-      },
-      {
-       "text": "Normalement dispersée",
-       "correct": false,
-       "explanation": "CV = 8% est faible, donc homogène, pas normalement dispersée."
-      },
-      {
-       "text": "Bimodale",
-       "correct": false,
-       "explanation": "Bimodale décrit la forme de la distribution (deux modes), pas la dispersion."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Que mesure l'écart interquartile (Q3 − Q1) ?",
-     "options": [
-      {
-       "text": "La dispersion totale de la série",
-       "correct": false,
-       "explanation": "L'étendue = xmax − xmin, pas Q3 − Q1."
-      },
-      {
-       "text": "La dispersion des 50% valeurs centrales",
-       "correct": true,
-       "explanation": "Correct ! EIQ = Q3 − Q1 mesure la dispersion des 50% centraux, robuste aux valeurs extrêmes."
-      },
-      {
-       "text": "La moyenne des carrés des écarts",
-       "correct": false,
-       "explanation": "La variance mesure la dispersion autour de la moyenne (carrés des écarts)."
-      },
-      {
-       "text": "La position de la médiane",
-       "correct": false,
-       "explanation": "Q3 − Q1 ne donne pas la position de la médiane directement."
-      }
-     ]
-    }
-   ],
-   "source": "_private/stats/chapitres/chapitre4.html"
-  },
-  {
-   "number": 5,
-   "title": "Représentations graphiques",
-   "subtitle": "Histogramme, polygone, ogive et boîte à moustaches.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Choisir le bon graphique selon le type de variable<br/>\n        • Construire un histogramme et un polygone des fréquences<br/>\n        • Tracer une courbe des fréquences cumulées (ogive)</p>\n</div>\n<h2>5.1 — Tableau de correspondance Graphique ↔ Variable</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de graphique</th><th>Variable appropriée</th><th>Ce qu'il montre</th></tr></thead>\n<tbody>\n<tr><td><strong>Diagramme en bâtons</strong></td><td>Qualitative ou quantitative discrète</td><td>Fréquences de chaque modalité</td></tr>\n<tr><td><strong>Diagramme circulaire (camembert)</strong></td><td>Qualitative nominale</td><td>Parts en % d'un tout</td></tr>\n<tr><td><strong>Histogramme</strong></td><td>Quantitative continue (classes)</td><td>Distribution des données groupées</td></tr>\n<tr><td><strong>Polygone des fréquences</strong></td><td>Quantitative continue</td><td>Tendance de la distribution</td></tr>\n<tr><td><strong>Ogive (courbe cumulative)</strong></td><td>Quantitative continue ou discrète</td><td>Fréquences cumulées → trouver médiane, quartiles</td></tr>\n<tr><td><strong>Boîte à moustaches (boxplot)</strong></td><td>Quantitative</td><td>Résumé des 5 nombres : Min, Q1, Q2, Q3, Max</td></tr>\n</tbody>\n</table></div>\n<h2>5.2 — L'histogramme</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Construction</div>\n<p>• Axe X : les classes (valeurs continues)<br/>\n        • Axe Y : la fréquence (ou la <strong>densité de fréquence</strong> = fᵢ/hᵢ si amplitudes inégales)<br/>\n        • Les rectangles sont <strong>jointifs</strong> (pas d'espace entre eux)<br/>\n        • La surface de chaque rectangle est proportionnelle à la fréquence</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Histogramme ≠ Diagramme en bâtons</div>\n<p>• <strong>Diagramme en bâtons</strong> : bâtons séparés, variable DISCRÈTE<br/>\n        • <strong>Histogramme</strong> : rectangles jointifs, variable CONTINUE (classes)</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Densité de fréquence</div>\n<p>Si les classes n'ont <strong>pas toutes la même amplitude</strong>, utiliser la densité :<br/>\n<strong>Densité = fᵢ / hᵢ</strong> (fréquence divisée par l'amplitude)<br/>\n        Cela garantit que la surface du rectangle = fréquence.</p>\n</div>\n<h2>5.3 — Polygone des fréquences</h2>\n<p>On relie par des segments les <strong>centres des sommets</strong> de chaque rectangle de l'histogramme. Le polygone commence et se termine sur l'axe X (classe fictive à effectif 0 de part et d'autre).</p>\n<h2>5.4 — L'Ogive (courbe des fréquences cumulées)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Construction</div>\n<p>• On place les points (aᵢ₊₁ ; Fᵢ) : <strong>borne supérieure de chaque classe</strong> en X, <strong>fréquence cumulée</strong> en Y<br/>\n        • On relie les points par des segments<br/>\n        • La courbe commence en (a₁ ; 0) et se termine en (aₖ ; 1 ou 100%)</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Lire la médiane sur l'ogive</div>\n<p>• Tracer une horizontale depuis F = 0,5 (ou 50%)<br/>\n        • Lire la valeur en X → c'est la <strong>médiane graphique</strong><br/>\n        • De même pour Q1 (F=0,25) et Q3 (F=0,75)</p>\n</div>\n<h2>5.5 — La boîte à moustaches (Boxplot)</h2>\n<p>Le boxplot résume une distribution en <strong>5 nombres</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Élément</th><th>Valeur</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td>Moustache gauche</td><td>Minimum (ou Q1 − 1,5×EIQ)</td><td>Valeur la plus petite (non outlier)</td></tr>\n<tr><td>Bord gauche boîte</td><td>Q1</td><td>25% des données en dessous</td></tr>\n<tr><td>Trait central</td><td>Q2 = Médiane</td><td>Valeur centrale</td></tr>\n<tr><td>Bord droit boîte</td><td>Q3</td><td>75% des données en dessous</td></tr>\n<tr><td>Moustache droite</td><td>Maximum (ou Q3 + 1,5×EIQ)</td><td>Valeur la plus grande (non outlier)</td></tr>\n</tbody>\n</table></div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 5</h3>\n<ul>\n<li>Bâtons = discret (espacés) · Histogramme = continu/classes (jointifs)</li>\n<li>Histogramme : hauteur = densité = fᵢ/hᵢ si amplitudes inégales</li>\n<li>Polygone = relier les centres des rectangles de l'histogramme</li>\n<li>Ogive : points (aᵢ₊₁ ; Fᵢ) → lecture graphique de Me, Q1, Q3</li>\n<li>Boxplot : 5 nombres — Min · Q1 · Q2 · Q3 · Max</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Quel graphique utilise-t-on pour représenter une variable quantitative continue regroupée en classes ?",
-     "options": [
-      {
-       "text": "Diagramme circulaire (camembert)",
-       "correct": false,
-       "explanation": "Le diagramme circulaire est pour les variables qualitatives nominales (parts en %)."
-      },
-      {
-       "text": "Diagramme en bâtons",
-       "correct": false,
-       "explanation": "Le diagramme en bâtons convient aux variables discrètes, pas continues."
-      },
-      {
-       "text": "Histogramme",
-       "correct": true,
-       "explanation": "Correct ! L'histogramme est le graphique adapté aux variables quantitatives continues regroupées en classes. Ses rectangles sont jointifs."
-      },
-      {
-       "text": "Ogive",
-       "correct": false,
-       "explanation": "L'ogive représente les fréquences CUMULÉES, pas la distribution brute."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Sur une ogive, la médiane se lit en abscisse quand la fréquence cumulée vaut :",
-     "options": [
-      {
-       "text": "0,25",
-       "correct": false,
-       "explanation": "0,25 correspond à Q1 (premier quartile), pas à la médiane."
-      },
-      {
-       "text": "0,50",
-       "correct": true,
-       "explanation": "Correct ! La médiane correspond à F = 0,5 (50% des données en dessous). On trace l'horizontale depuis 0,5 et on lit la valeur en X."
-      },
-      {
-       "text": "0,75",
-       "correct": false,
-       "explanation": "0,75 correspond à Q3 (troisième quartile), pas à la médiane."
-      },
-      {
-       "text": "1,00",
-       "correct": false,
-       "explanation": "1,00 est la fin de la courbe (toutes les données incluses)."
-      }
-     ]
-    }
-   ],
-   "source": "_private/stats/chapitres/chapitre5.html"
-  },
-  {
-   "number": 6,
-   "title": "Corrélation & Régression linéaire",
-   "subtitle": "Nuage de points, coefficient de Pearson et droite des moindres carrés.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs</div>\n<p>• Construire un nuage de points et lire sa forme<br/>\n        • Calculer et interpréter le coefficient de corrélation linéaire r<br/>\n        • Déterminer la droite de régression par la méthode des moindres carrés</p>\n</div>\n<h2>6.1 — La série statistique à deux variables</h2>\n<p>On étudie simultanément deux caractères X et Y sur les mêmes individus. On note les paires (xᵢ, yᵢ).</p>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Le nuage de points</div>\n<p>On représente chaque paire (xᵢ, yᵢ) par un point dans un repère orthogonal. La forme du nuage indique le type de liaison :<br/>\n        • Nuage allongé en diagonale montante → corrélation positive<br/>\n        • Nuage allongé en diagonale descendante → corrélation négative<br/>\n        • Nuage circulaire ou dispersé → pas de corrélation linéaire</p>\n</div>\n<h2>6.2 — Covariance Cov(X,Y)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📐 Formule</div>\n<p><strong>Cov(X,Y) = (1/N) × Σnᵢ(xᵢ − x̄)(yᵢ − ȳ)</strong><br/>\n        Formule raccourcie : <strong>Cov(X,Y) = (Σnᵢxᵢyᵢ / N) − x̄·ȳ</strong><br/>\n        • Cov &gt; 0 : X et Y varient dans le même sens<br/>\n        • Cov &lt; 0 : X et Y varient en sens opposé<br/>\n        • Cov = 0 : pas de liaison linéaire</p>\n</div>\n<h2>6.3 — Coefficient de corrélation linéaire r</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📐 Formule de Pearson</div>\n<p><strong>r = Cov(X,Y) / (σₓ × σᵧ)</strong><br/>\n        où σₓ et σᵧ sont les écarts-types de X et Y.<br/>\n<strong>−1 ≤ r ≤ 1</strong> toujours.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur de |r|</th><th>Interprétation</th></tr></thead>\n<tbody>\n<tr><td>|r| = 1</td><td>Corrélation parfaite (linéarité exacte)</td></tr>\n<tr><td>0,8 ≤ |r| &lt; 1</td><td>Corrélation <strong>forte</strong></td></tr>\n<tr><td>0,5 ≤ |r| &lt; 0,8</td><td>Corrélation <strong>modérée</strong></td></tr>\n<tr><td>|r| &lt; 0,5</td><td>Corrélation <strong>faible</strong> ou nulle</td></tr>\n<tr><td>r &gt; 0</td><td>Liaison <strong>positive</strong> (X↑ → Y↑)</td></tr>\n<tr><td>r &lt; 0</td><td>Liaison <strong>négative</strong> (X↑ → Y↓)</td></tr>\n</tbody>\n</table></div>\n<h2>6.4 — Droite de régression (moindres carrés)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📐 Équation de la droite Y en X</div>\n<p><strong>ŷ = a·x + b</strong><br/>\n        Coefficients par la méthode des moindres carrés :<br/>\n<strong>a = Cov(X,Y) / σₓ²</strong> (pente)<br/>\n<strong>b = ȳ − a·x̄</strong> (ordonnée à l'origine)</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Propriété fondamentale</div>\n<p>La droite de régression passe <strong>toujours par le point moyen (x̄ ; ȳ)</strong>.<br/>\n        Vérification : b = ȳ − a·x̄. Si on remplace x par x̄ dans ŷ = ax+b, on trouve bien ȳ.</p>\n</div>\n<h2>6.5 — Exemple complet</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>i</th><th>xᵢ (heures de révision)</th><th>yᵢ (note /20)</th><th>xᵢ·yᵢ</th><th>xᵢ²</th><th>yᵢ²</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>2</td><td>8</td><td>16</td><td>4</td><td>64</td></tr>\n<tr><td>2</td><td>3</td><td>10</td><td>30</td><td>9</td><td>100</td></tr>\n<tr><td>3</td><td>5</td><td>12</td><td>60</td><td>25</td><td>144</td></tr>\n<tr><td>4</td><td>6</td><td>14</td><td>84</td><td>36</td><td>196</td></tr>\n<tr><td>5</td><td>8</td><td>16</td><td>128</td><td>64</td><td>256</td></tr>\n<tr><td><strong>Σ</strong></td><td><strong>24</strong></td><td><strong>60</strong></td><td><strong>318</strong></td><td><strong>138</strong></td><td><strong>760</strong></td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\"><div class=\"code-lbl\">Calculs</div>\n<pre>N=5 · x̄ = 24/5 = 4,8 · ȳ = 60/5 = 12\nCov(X,Y) = (318/5) − 4,8×12 = 63,6 − 57,6 = 6,0\nσₓ² = (138/5) − 4,8² = 27,6 − 23,04 = 4,56\nσₓ = √4,56 ≈ 2,135\nσᵧ² = (760/5) − 12² = 152 − 144 = 8\nσᵧ = √8 ≈ 2,828\nr = 6,0 / (2,135 × 2,828) ≈ 6,0 / 6,038 ≈ 0,994 → Corrélation très forte !\na = 6,0 / 4,56 ≈ 1,316\nb = 12 − 1,316×4,8 = 12 − 6,316 = 5,684\nDroite : ŷ = 1,316x + 5,684\nPrédiction pour x=7h : ŷ = 1,316×7 + 5,684 ≈ 14,9/20</pre>\n</div>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 6</h3>\n<ul>\n<li>Nuage de points : forme → direction et intensité de la liaison</li>\n<li>Cov(X,Y) = (Σnᵢxᵢyᵢ / N) − x̄·ȳ</li>\n<li>r = Cov(X,Y) / (σₓ × σᵧ) · toujours entre −1 et +1</li>\n<li>|r| ≥ 0,8 → forte · 0,5–0,8 → modérée · &lt;0,5 → faible</li>\n<li>Droite ŷ = ax+b · a = Cov/σₓ² · b = ȳ−ax̄</li>\n<li>La droite passe toujours par le point moyen (x̄ ; ȳ)</li>\n</ul>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Un coefficient de corrélation r = −0,92 indique :",
-     "options": [
-      {
-       "text": "Liaison positive forte",
-       "correct": false,
-       "explanation": "r négatif signifie liaison négative (quand X augmente, Y diminue). Pas positif."
-      },
-      {
-       "text": "Liaison négative faible",
-       "correct": false,
-       "explanation": "|r| = 0,92 est élevé, donc la liaison est forte, pas faible."
-      },
-      {
-       "text": "Liaison négative forte",
-       "correct": true,
-       "explanation": "Correct ! r = −0,92 : négatif (sens opposé) et |r| proche de 1 (forte). X↑ → Y↓ avec une liaison forte."
-      },
-      {
-       "text": "Absence de liaison",
-       "correct": false,
-       "explanation": "r = 0 signifie absence de liaison. Ici r = −0,92, donc liaison forte."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La droite de régression ŷ = 2x + 3 passe obligatoirement par :",
-     "options": [
-      {
-       "text": "Le point (0 ; 3)",
-       "correct": false,
-       "explanation": "(0,3) est le point où la droite coupe l'axe Y (b=3), mais pas le point fondamental de la régression."
-      },
-      {
-       "text": "Le point moyen (x̄ ; ȳ)",
-       "correct": true,
-       "explanation": "Correct ! La droite de régression passe TOUJOURS par le point moyen (x̄ ; ȳ). C'est une propriété fondamentale."
-      },
-      {
-       "text": "L'origine (0 ; 0)",
-       "correct": false,
-       "explanation": "La droite ne passe pas forcément par l'origine (1,0) ou (0,1)."
-      },
-      {
-       "text": "La médiane de X",
-       "correct": false,
-       "explanation": "La droite ne passe pas forcément par la valeur médiane des données."
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "La formule de la pente a de la droite de régression est :",
-     "options": [
-      {
-       "text": "a = σₓ / Cov(X,Y)",
-       "correct": false,
-       "explanation": "σₓ / Cov(X,Y) est l'inverse. La pente = Cov / variance, pas variance / Cov."
-      },
-      {
-       "text": "a = ȳ / x̄",
-       "correct": false,
-       "explanation": "ȳ/x̄ serait la pente si la droite passait par l'origine, ce qui n'est pas toujours le cas."
-      },
-      {
-       "text": "a = Cov(X,Y) / σₓ²",
-       "correct": true,
-       "explanation": "Correct ! a = Cov(X,Y) / σₓ² (covariance divisée par la variance de X)."
-      },
-      {
-       "text": "a = σₓ / σᵧ",
-       "correct": false,
-       "explanation": "a = σₓ / σᵧ est lié au coefficient de corrélation, pas directement à la pente."
-      }
-     ]
-    }
-   ],
-   "source": "_private/stats/chapitres/chapitre6.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Séries statistiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Séries statistiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Séries statistiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Séries statistiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Séries statistiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Tableaux de fréquences.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Tableaux de fréquences.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Tableaux de fréquences.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Tableaux de fréquences.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Tableaux de fréquences.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Mesures de tendance centrale.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Mesures de tendance centrale.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Mesures de tendance centrale.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Mesures de tendance centrale.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Mesures de tendance centrale.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Mesures de dispersion.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Mesures de dispersion.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Mesures de dispersion.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Mesures de dispersion.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Mesures de dispersion.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Représentations graphiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Représentations graphiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Représentations graphiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Représentations graphiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Représentations graphiques.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "1. Définissez simplement Corrélation & Régression linéaire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Ce chapitre présente les bases et les concepts essentiels.</p>\n</div>\n</details>",
-   "model_answer": "Ce chapitre présente les bases et les concepts essentiels.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "2. Citez une notion ou un outil clé de Corrélation & Régression linéaire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cette notion est un point central pour comprendre le fonctionnement global.</p>\n</div>\n</details>",
-   "model_answer": "Cette notion est un point central pour comprendre le fonctionnement global.",
-   "level": "easy",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "3. Expliquez pourquoi Corrélation & Régression linéaire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.</p>\n</div>\n</details>",
-   "model_answer": "Cela permet de résoudre des situations concrètes et d’améliorer la compréhension.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "4. Donnez un exemple concret d’application de Corrélation & Régression linéaire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>Un exemple concret aide à visualiser l’utilisation pratique.</p>\n</div>\n</details>",
-   "model_answer": "Un exemple concret aide à visualiser l’utilisation pratique.",
-   "level": "medium",
-   "status": "placeholder"
-  },
-  {
-   "type": "open",
-   "text": "5. Proposez une démarche complète pour un problème lié à Corrélation & Régression linéaire.",
-   "model_answer_html": "<details>\n<div class=\"box info\">\n<p>La démarche complète passe par une analyse, des étapes successives et une vérification finale.</p>\n</div>\n</details>",
-   "model_answer": "La démarche complète passe par une analyse, des étapes successives et une vérification finale.",
-   "level": "hard",
-   "status": "placeholder"
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/stats/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/stats/exercices/exercices.html"
 }

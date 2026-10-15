@@ -1,1229 +1,1229 @@
 {
- "slug": "devweb",
- "name": "Développement Web",
- "chapters": [
-  {
-   "number": 1,
-   "title": "HTML — Structure du Web",
-   "subtitle": "Le langage de base de tout site web : balises, structure, formulaires, tableaux et liens.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est HTML et son rôle dans le web<br/>\n        • Connaître la structure de base d'une page HTML<br/>\n        • Maîtriser les balises essentielles : texte, liens, images, listes<br/>\n        • Créer des tableaux et des formulaires HTML<br/>\n        • Comprendre la différence entre balises block et inline</p>\n</div>\n<h2>1.1 — Qu'est-ce que HTML ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition</div>\n<p><strong>HTML</strong> (<em>HyperText Markup Language</em>) est le langage de balisage standard utilisé pour créer et structurer le contenu d'une page web. Ce n'est pas un langage de programmation : il ne fait pas de calculs, il <strong>décrit la structure</strong> du contenu.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Le Squelette</div>\n<p>HTML = le <strong>squelette</strong> d'une page web.<br/>\n        CSS = la <strong>peau et les vêtements</strong> (apparence).<br/>\n        JavaScript = les <strong>muscles</strong> (actions et interactivité).<br/>\n        Retiens : <strong>S-P-M</strong> — Squelette, Peau, Muscles.</p>\n</div>\n<h3>Les 3 piliers du web</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Technologie</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>HTML</strong></td><td>Structure le contenu</td><td>Titre, paragraphe, image</td></tr>\n<tr><td><strong>CSS</strong></td><td>Stylise l'apparence</td><td>Couleurs, taille, disposition</td></tr>\n<tr><td><strong>JavaScript</strong></td><td>Ajoute l'interactivité</td><td>Bouton cliquable, animation</td></tr>\n</tbody>\n</table></div>\n<h2>1.2 — Structure d'une page HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📄 La structure de base</div>\n<p>Toute page HTML valide respecte une structure minimale obligatoire. C'est le <strong>squelette HTML</strong> — on l'appelle aussi <em>boilerplate</em>.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure de base HTML5</div>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n  &lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Titre de la page&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;!-- Contenu visible ici --&gt;\n    &lt;h1&gt;Bonjour le monde !&lt;/h1&gt;\n    &lt;p&gt;Mon premier paragraphe.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Déclare le type de document (HTML5)</td></tr>\n<tr><td><code>&lt;html lang=\"fr\"&gt;</code></td><td>Racine de la page, définit la langue</td></tr>\n<tr><td><code>&lt;head&gt;</code></td><td>Métadonnées non visibles (titre, CSS, charset…)</td></tr>\n<tr><td><code>&lt;meta charset=\"UTF-8\"&gt;</code></td><td>Encodage des caractères (accents, etc.)</td></tr>\n<tr><td><code>&lt;title&gt;</code></td><td>Titre affiché dans l'onglet du navigateur</td></tr>\n<tr><td><code>&lt;body&gt;</code></td><td>Contenu visible par l'utilisateur</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — HEAD vs BODY</div>\n<p><strong>HEAD</strong> = tête → ce que le navigateur pense mais ne montre pas (infos, réglages).<br/>\n<strong>BODY</strong> = corps → tout ce que l'utilisateur voit et lit.<br/>\n        Comme une personne : la tête réfléchit, le corps agit.</p>\n</div>\n<h2>1.3 — Les balises de texte</h2>\n<h3>Titres (h1 à h6)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Hiérarchie des titres</div>\n<pre><code>&lt;h1&gt;Titre principal (unique par page)&lt;/h1&gt;\n&lt;h2&gt;Titre de section&lt;/h2&gt;\n&lt;h3&gt;Sous-titre&lt;/h3&gt;\n&lt;h4&gt;Sous-sous-titre&lt;/h4&gt;\n&lt;h5&gt;Titre de niveau 5&lt;/h5&gt;\n&lt;h6&gt;Titre de niveau 6 (rarement utilisé)&lt;/h6&gt;</code></pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">💡 Règle importante</div>\n<p>Il ne doit y avoir qu'<strong>un seul &lt;h1&gt;</strong> par page (le titre principal). Les balises de titres structurent le contenu pour le référencement (SEO) et l'accessibilité.</p>\n</div>\n<h3>Paragraphes et formatage</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Balises texte courantes</div>\n<pre><code>&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;\n&lt;strong&gt;Texte en gras (important)&lt;/strong&gt;\n&lt;em&gt;Texte en italique (emphase)&lt;/em&gt;\n&lt;u&gt;Texte souligné&lt;/u&gt;\n&lt;br&gt;          &lt;!-- Saut de ligne --&gt;\n&lt;hr&gt;          &lt;!-- Ligne horizontale --&gt;\n&lt;span&gt;Texte inline sans sémantique&lt;/span&gt;\n&lt;div&gt;Bloc sans sémantique&lt;/div&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Type</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;p&gt;</code></td><td>Block</td><td>Paragraphe de texte</td></tr>\n<tr><td><code>&lt;div&gt;</code></td><td>Block</td><td>Conteneur générique</td></tr>\n<tr><td><code>&lt;span&gt;</code></td><td>Inline</td><td>Texte inline générique</td></tr>\n<tr><td><code>&lt;strong&gt;</code></td><td>Inline</td><td>Texte important (gras)</td></tr>\n<tr><td><code>&lt;em&gt;</code></td><td>Inline</td><td>Emphase (italique)</td></tr>\n<tr><td><code>&lt;br&gt;</code></td><td>Inline</td><td>Retour à la ligne</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Block vs Inline</div>\n<p><strong>Block</strong> = prend toute la largeur, commence sur une nouvelle ligne. Pense à des <em>briques</em> empilées.<br/>\n<strong>Inline</strong> = s'intègre dans le texte, ne crée pas de nouvelle ligne. Pense à des <em>mots</em> dans une phrase.</p>\n</div>\n<h2>1.4 — Liens et Images</h2>\n<h3>Les liens — balise &lt;a&gt;</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de liens</div>\n<pre><code>&lt;!-- Lien externe --&gt;\n&lt;a href=\"https://www.google.com\" target=\"_blank\"&gt;Ouvrir Google&lt;/a&gt;\n&lt;!-- Lien interne (même site) --&gt;\n&lt;a href=\"contact.html\"&gt;Page contact&lt;/a&gt;\n&lt;!-- Lien ancre (vers une section) --&gt;\n&lt;a href=\"#section2\"&gt;Aller à la section 2&lt;/a&gt;\n&lt;h2 id=\"section2\"&gt;Section 2&lt;/h2&gt;\n&lt;!-- Lien email --&gt;\n&lt;a href=\"mailto:contact@fkmott.com\"&gt;Nous contacter&lt;/a&gt;\n&lt;!-- Lien téléphone --&gt;\n&lt;a href=\"tel:+22899074665\"&gt;Appeler&lt;/a&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Valeur</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>href</code></td><td>URL ou chemin</td><td>Destination du lien (obligatoire)</td></tr>\n<tr><td><code>target=\"_blank\"</code></td><td>_blank</td><td>Ouvre dans un nouvel onglet</td></tr>\n<tr><td><code>target=\"_self\"</code></td><td>_self</td><td>Ouvre dans l'onglet actuel (défaut)</td></tr>\n<tr><td><code>title</code></td><td>Texte</td><td>Info-bulle au survol</td></tr>\n</tbody>\n</table></div>\n<h3>Les images — balise &lt;img&gt;</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Intégrer une image</div>\n<pre><code>&lt;!-- Image depuis un fichier local --&gt;\n&lt;img src=\"images/photo.jpg\" alt=\"Description de la photo\" width=\"400\" height=\"300\"&gt;\n&lt;!-- Image depuis une URL --&gt;\n&lt;img src=\"https://exemple.com/image.png\" alt=\"Image distante\"&gt;\n&lt;!-- Image cliquable (lien + image) --&gt;\n&lt;a href=\"galerie.html\"&gt;\n  &lt;img src=\"vignette.jpg\" alt=\"Voir la galerie\"&gt;\n&lt;/a&gt;</code></pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⚠️ L'attribut alt est obligatoire</div>\n<p>L'attribut <code>alt</code> décrit l'image pour les personnes malvoyantes (lecteurs d'écran) et s'affiche si l'image ne charge pas. Il est aussi utilisé par les moteurs de recherche. Ne jamais l'omettre !</p>\n</div>\n<h2>1.5 — Listes</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Les 3 types de listes</div>\n<pre><code>&lt;!-- Liste non ordonnée (puces) --&gt;\n&lt;ul&gt;\n  &lt;li&gt;HTML&lt;/li&gt;\n  &lt;li&gt;CSS&lt;/li&gt;\n  &lt;li&gt;JavaScript&lt;/li&gt;\n&lt;/ul&gt;\n&lt;!-- Liste ordonnée (numérotée) --&gt;\n&lt;ol&gt;\n  &lt;li&gt;Installer VS Code&lt;/li&gt;\n  &lt;li&gt;Créer un fichier index.html&lt;/li&gt;\n  &lt;li&gt;Écrire le code&lt;/li&gt;\n  &lt;li&gt;Ouvrir dans le navigateur&lt;/li&gt;\n&lt;/ol&gt;\n&lt;!-- Liste de définitions --&gt;\n&lt;dl&gt;\n  &lt;dt&gt;HTML&lt;/dt&gt;\n  &lt;dd&gt;Langage de balisage hypertexte&lt;/dd&gt;\n  &lt;dt&gt;CSS&lt;/dt&gt;\n  &lt;dd&gt;Feuilles de style en cascade&lt;/dd&gt;\n&lt;/dl&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Nom</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;ul&gt;</code></td><td>Unordered List</td><td>Liste à puces (ordre non important)</td></tr>\n<tr><td><code>&lt;ol&gt;</code></td><td>Ordered List</td><td>Liste numérotée (ordre important)</td></tr>\n<tr><td><code>&lt;dl&gt;</code></td><td>Definition List</td><td>Liste de termes et définitions</td></tr>\n<tr><td><code>&lt;li&gt;</code></td><td>List Item</td><td>Élément de liste (ul ou ol)</td></tr>\n<tr><td><code>&lt;dt&gt;</code></td><td>Definition Term</td><td>Terme à définir (dl)</td></tr>\n<tr><td><code>&lt;dd&gt;</code></td><td>Definition Description</td><td>Définition du terme (dl)</td></tr>\n</tbody>\n</table></div>\n<h2>1.6 — Tableaux HTML</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure d'un tableau complet</div>\n<pre><code>&lt;table&gt;\n  &lt;caption&gt;Résultats des étudiants&lt;/caption&gt;\n  &lt;thead&gt;               &lt;!-- En-tête du tableau --&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Nom&lt;/th&gt;\n      &lt;th&gt;Matière&lt;/th&gt;\n      &lt;th&gt;Note&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;               &lt;!-- Corps du tableau --&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Alice&lt;/td&gt;\n      &lt;td&gt;HTML&lt;/td&gt;\n      &lt;td&gt;18/20&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Bob&lt;/td&gt;\n      &lt;td&gt;CSS&lt;/td&gt;\n      &lt;td&gt;15/20&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n  &lt;tfoot&gt;               &lt;!-- Pied du tableau --&gt;\n    &lt;tr&gt;\n      &lt;td colspan=\"2\"&gt;Moyenne&lt;/td&gt;\n      &lt;td&gt;16,5/20&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Balise</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>colspan=\"N\"</code></td><td>td / th</td><td>Fusionner N colonnes horizontalement</td></tr>\n<tr><td><code>rowspan=\"N\"</code></td><td>td / th</td><td>Fusionner N lignes verticalement</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Structure tableau</div>\n<p><strong>T-T-B-F</strong> : <strong>T</strong>able → <strong>T</strong>head → <strong>B</strong>ody → <strong>F</strong>oot<br/>\n        Comme un document Word : table (le document), tête (en-tête), corps (contenu), pied (footer).<br/>\n        Dans chaque section : <code>&lt;tr&gt;</code> (ligne) → <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> (cellule).</p>\n</div>\n<h2>1.7 — Formulaires HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Rôle d'un formulaire</div>\n<p>Un formulaire permet à l'utilisateur de <strong>saisir et envoyer des données</strong> au serveur. Exemples : formulaire de connexion, d'inscription, de contact, de recherche.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Formulaire de contact complet</div>\n<pre><code>&lt;form action=\"traitement.php\" method=\"POST\"&gt;\n  &lt;!-- Champ texte --&gt;\n  &lt;label for=\"nom\"&gt;Nom :&lt;/label&gt;\n  &lt;input type=\"text\" id=\"nom\" name=\"nom\" placeholder=\"Ton nom\" required&gt;\n  &lt;!-- Email --&gt;\n  &lt;label for=\"email\"&gt;Email :&lt;/label&gt;\n  &lt;input type=\"email\" id=\"email\" name=\"email\" required&gt;\n  &lt;!-- Mot de passe --&gt;\n  &lt;label for=\"mdp\"&gt;Mot de passe :&lt;/label&gt;\n  &lt;input type=\"password\" id=\"mdp\" name=\"mdp\"&gt;\n  &lt;!-- Nombre --&gt;\n  &lt;label for=\"age\"&gt;Âge :&lt;/label&gt;\n  &lt;input type=\"number\" id=\"age\" name=\"age\" min=\"1\" max=\"120\"&gt;\n  &lt;!-- Liste déroulante --&gt;\n  &lt;label for=\"niveau\"&gt;Niveau :&lt;/label&gt;\n  &lt;select id=\"niveau\" name=\"niveau\"&gt;\n    &lt;option value=\"\"&gt;-- Choisir --&lt;/option&gt;\n    &lt;option value=\"b1\"&gt;Bachelor 1&lt;/option&gt;\n    &lt;option value=\"b2\"&gt;Bachelor 2&lt;/option&gt;\n  &lt;/select&gt;\n  &lt;!-- Boutons radio --&gt;\n  &lt;label&gt;Genre :&lt;/label&gt;\n  &lt;input type=\"radio\" id=\"h\" name=\"genre\" value=\"h\"&gt;\n  &lt;label for=\"h\"&gt;Homme&lt;/label&gt;\n  &lt;input type=\"radio\" id=\"f\" name=\"genre\" value=\"f\"&gt;\n  &lt;label for=\"f\"&gt;Femme&lt;/label&gt;\n  &lt;!-- Case à cocher --&gt;\n  &lt;input type=\"checkbox\" id=\"cgu\" name=\"cgu\"&gt;\n  &lt;label for=\"cgu\"&gt;J'accepte les CGU&lt;/label&gt;\n  &lt;!-- Zone de texte multiligne --&gt;\n  &lt;label for=\"message\"&gt;Message :&lt;/label&gt;\n  &lt;textarea id=\"message\" name=\"message\" rows=\"5\" cols=\"40\"&gt;&lt;/textarea&gt;\n  &lt;!-- Bouton d'envoi --&gt;\n  &lt;button type=\"submit\"&gt;Envoyer&lt;/button&gt;\n  &lt;button type=\"reset\"&gt;Réinitialiser&lt;/button&gt;\n&lt;/form&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>type=</th><th>Description</th><th>Validation auto</th></tr></thead>\n<tbody>\n<tr><td><code>text</code></td><td>Texte libre</td><td>Non</td></tr>\n<tr><td><code>email</code></td><td>Adresse email</td><td>Oui (format @)</td></tr>\n<tr><td><code>password</code></td><td>Mot de passe (masqué)</td><td>Non</td></tr>\n<tr><td><code>number</code></td><td>Nombre</td><td>Oui (min/max)</td></tr>\n<tr><td><code>tel</code></td><td>Téléphone</td><td>Format selon pays</td></tr>\n<tr><td><code>date</code></td><td>Sélecteur de date</td><td>Oui</td></tr>\n<tr><td><code>checkbox</code></td><td>Case à cocher</td><td>Non</td></tr>\n<tr><td><code>radio</code></td><td>Bouton radio (choix unique)</td><td>Non</td></tr>\n<tr><td><code>file</code></td><td>Upload de fichier</td><td>Non</td></tr>\n<tr><td><code>submit</code></td><td>Bouton d'envoi</td><td>Déclenche envoi</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — action vs method</div>\n<p><code>action</code> = <strong>où</strong> envoyer les données (URL du serveur).<br/>\n<code>method</code> = <strong>comment</strong> les envoyer :<br/>\n        → <code>GET</code> : données visibles dans l'URL (recherche, filtres).<br/>\n        → <code>POST</code> : données cachées dans le corps (login, paiement).</p>\n</div>\n<h2>1.8 — Balises sémantiques HTML5</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🏗️ La sémantique HTML5</div>\n<p>HTML5 introduit des balises <strong>sémantiques</strong> qui décrivent le rôle du contenu. Elles remplacent l'usage abusif de <code>&lt;div&gt;</code> et améliorent le SEO et l'accessibilité.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure sémantique d'une page</div>\n<pre><code>&lt;header&gt;        &lt;!-- En-tête du site (logo, nav) --&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;          &lt;!-- Contenu principal (unique par page) --&gt;\n  &lt;section&gt;     &lt;!-- Section thématique --&gt;\n    &lt;article&gt;   &lt;!-- Contenu autonome (article, post) --&gt;\n      &lt;aside&gt;   &lt;!-- Contenu secondaire (sidebar) --&gt;\n    &lt;/article&gt;\n  &lt;/section&gt;\n&lt;/main&gt;\n&lt;footer&gt;        &lt;!-- Pied de page (contact, copyright) --&gt;&lt;/footer&gt;</code></pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Rôle</th><th>Remplace</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;header&gt;</code></td><td>En-tête (logo, nav)</td><td><code>&lt;div id=\"header\"&gt;</code></td></tr>\n<tr><td><code>&lt;nav&gt;</code></td><td>Navigation principale</td><td><code>&lt;div id=\"nav\"&gt;</code></td></tr>\n<tr><td><code>&lt;main&gt;</code></td><td>Contenu principal</td><td><code>&lt;div id=\"main\"&gt;</code></td></tr>\n<tr><td><code>&lt;section&gt;</code></td><td>Section thématique</td><td><code>&lt;div class=\"section\"&gt;</code></td></tr>\n<tr><td><code>&lt;article&gt;</code></td><td>Contenu indépendant</td><td><code>&lt;div class=\"article\"&gt;</code></td></tr>\n<tr><td><code>&lt;aside&gt;</code></td><td>Contenu secondaire</td><td><code>&lt;div id=\"sidebar\"&gt;</code></td></tr>\n<tr><td><code>&lt;footer&gt;</code></td><td>Pied de page</td><td><code>&lt;div id=\"footer\"&gt;</code></td></tr>\n</tbody>\n</table></div>\n<h2>1.9 — Attributs globaux importants</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>id</code></td><td>Identifiant unique (1 seul par page)</td><td><code>id=\"menu\"</code></td></tr>\n<tr><td><code>class</code></td><td>Classe CSS (plusieurs éléments)</td><td><code>class=\"btn active\"</code></td></tr>\n<tr><td><code>style</code></td><td>CSS inline (à éviter)</td><td><code>style=\"color:red;\"</code></td></tr>\n<tr><td><code>title</code></td><td>Info-bulle au survol</td><td><code>title=\"Aide\"</code></td></tr>\n<tr><td><code>lang</code></td><td>Langue du contenu</td><td><code>lang=\"fr\"</code></td></tr>\n<tr><td><code>hidden</code></td><td>Cache l'élément</td><td><code>&lt;div hidden&gt;</code></td></tr>\n<tr><td><code>data-*</code></td><td>Données personnalisées</td><td><code>data-id=\"42\"</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — id vs class</div>\n<p><code>id</code> = comme un <strong>numéro de carte d'identité</strong> — unique dans toute la page.<br/>\n<code>class</code> = comme un <strong>uniforme scolaire</strong> — plusieurs élèves peuvent porter le même.\n        <br/>Règle : utilise <code>id</code> pour cibler UN élément en JS, <code>class</code> pour styliser PLUSIEURS en CSS.</p>\n</div>\n<h2>1.10 — Récapitulatif &amp; QCM</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📝 Ce qu'il faut retenir</div>\n<p>\n          • HTML structure le contenu, CSS le stylise, JS l'anime<br/>\n          • Toute page commence par <code>&lt;!DOCTYPE html&gt;</code><br/>\n          • <code>&lt;head&gt;</code> = métadonnées ; <code>&lt;body&gt;</code> = contenu visible<br/>\n          • Un seul <code>&lt;h1&gt;</code> par page<br/>\n          • <code>alt</code> est obligatoire sur toutes les images<br/>\n          • <code>id</code> est unique ; <code>class</code> est partageable<br/>\n          • POST pour les données sensibles, GET pour les recherches<br/>\n          • Les balises sémantiques (header, main, footer) améliorent le SEO\n        </p>\n</div>\n<div class=\"box\">\n<div class=\"box-lbl\">🧠 QCM de révision</div>\n</div>\n<div>\n<a>← Accueil Dev Web</a>\n<a>Ch.2 — CSS →</a>\n</div>\n</div>",
-   "questions": [
+  "slug": "devweb",
+  "name": "Développement Web",
+  "chapters": [
     {
-     "type": "mcq",
-     "text": "Que signifie HTML ?",
-     "options": [
-      {
-       "text": "HyperText Machine Language",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "HyperText Markup Language",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "High Tech Modern Layout",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
+      "number": 1,
+      "title": "HTML — Structure du Web",
+      "subtitle": "Le langage de base de tout site web : balises, structure, formulaires, tableaux et liens.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre ce qu'est HTML et son rôle dans le web</li><li>Connaître la structure de base d'une page HTML</li><li>Maîtriser les balises essentielles : texte, liens, images, listes</li><li>Créer des tableaux et des formulaires HTML</li><li>Comprendre la différence entre balises block et inline</li></ul></div>\n<h2>Qu'est-ce que HTML ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition</div>\n<p><strong>HTML</strong> (<em>HyperText Markup Language</em>) est le langage de balisage standard utilisé pour créer et structurer le contenu d'une page web. Ce n'est pas un langage de programmation : il ne fait pas de calculs, il <strong>décrit la structure</strong> du contenu.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Le Squelette</div>\n<p>HTML = le <strong>squelette</strong> d'une page web.<br/>\n        CSS = la <strong>peau et les vêtements</strong> (apparence).<br/>\n        JavaScript = les <strong>muscles</strong> (actions et interactivité).<br/>\n        Retiens : <strong>S-P-M</strong> — Squelette, Peau, Muscles.</p></div>\n<h3>Les 3 piliers du web</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Technologie</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>HTML</strong></td><td>Structure le contenu</td><td>Titre, paragraphe, image</td></tr>\n<tr><td><strong>CSS</strong></td><td>Stylise l'apparence</td><td>Couleurs, taille, disposition</td></tr>\n<tr><td><strong>JavaScript</strong></td><td>Ajoute l'interactivité</td><td>Bouton cliquable, animation</td></tr>\n</tbody>\n</table></div>\n<h2>Structure d'une page HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">La structure de base</div>\n<p>Toute page HTML valide respecte une structure minimale obligatoire. C'est le <strong>squelette HTML</strong> — on l'appelle aussi <em>boilerplate</em>.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure de base HTML5</div>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n  &lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Titre de la page&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;!-- Contenu visible ici --&gt;\n    &lt;h1&gt;Bonjour le monde !&lt;/h1&gt;\n    &lt;p&gt;Mon premier paragraphe.&lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Déclare le type de document (HTML5)</td></tr>\n<tr><td><code>&lt;html lang=\"fr\"&gt;</code></td><td>Racine de la page, définit la langue</td></tr>\n<tr><td><code>&lt;head&gt;</code></td><td>Métadonnées non visibles (titre, CSS, charset…)</td></tr>\n<tr><td><code>&lt;meta charset=\"UTF-8\"&gt;</code></td><td>Encodage des caractères (accents, etc.)</td></tr>\n<tr><td><code>&lt;title&gt;</code></td><td>Titre affiché dans l'onglet du navigateur</td></tr>\n<tr><td><code>&lt;body&gt;</code></td><td>Contenu visible par l'utilisateur</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — HEAD vs BODY</div>\n<p><strong>HEAD</strong> = tête → ce que le navigateur pense mais ne montre pas (infos, réglages).<br/>\n<strong>BODY</strong> = corps → tout ce que l'utilisateur voit et lit.<br/>\n        Comme une personne : la tête réfléchit, le corps agit.</p></div>\n<h2>Les balises de texte</h2>\n<h3>Titres (h1 à h6)</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Hiérarchie des titres</div>\n<pre><code>&lt;h1&gt;Titre principal (unique par page)&lt;/h1&gt;\n&lt;h2&gt;Titre de section&lt;/h2&gt;\n&lt;h3&gt;Sous-titre&lt;/h3&gt;\n&lt;h4&gt;Sous-sous-titre&lt;/h4&gt;\n&lt;h5&gt;Titre de niveau 5&lt;/h5&gt;\n&lt;h6&gt;Titre de niveau 6 (rarement utilisé)&lt;/h6&gt;</code></pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Règle importante</div>\n<p>Il ne doit y avoir qu'<strong>un seul &lt;h1&gt;</strong> par page (le titre principal). Les balises de titres structurent le contenu pour le référencement (SEO) et l'accessibilité.</p></div>\n<h3>Paragraphes et formatage</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Balises texte courantes</div>\n<pre><code>&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;\n&lt;strong&gt;Texte en gras (important)&lt;/strong&gt;\n&lt;em&gt;Texte en italique (emphase)&lt;/em&gt;\n&lt;u&gt;Texte souligné&lt;/u&gt;\n&lt;br&gt;          &lt;!-- Saut de ligne --&gt;\n&lt;hr&gt;          &lt;!-- Ligne horizontale --&gt;\n&lt;span&gt;Texte inline sans sémantique&lt;/span&gt;\n&lt;div&gt;Bloc sans sémantique&lt;/div&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Type</th><th>Usage</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;p&gt;</code></td><td>Block</td><td>Paragraphe de texte</td></tr>\n<tr><td><code>&lt;div&gt;</code></td><td>Block</td><td>Conteneur générique</td></tr>\n<tr><td><code>&lt;span&gt;</code></td><td>Inline</td><td>Texte inline générique</td></tr>\n<tr><td><code>&lt;strong&gt;</code></td><td>Inline</td><td>Texte important (gras)</td></tr>\n<tr><td><code>&lt;em&gt;</code></td><td>Inline</td><td>Emphase (italique)</td></tr>\n<tr><td><code>&lt;br&gt;</code></td><td>Inline</td><td>Retour à la ligne</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Block vs Inline</div>\n<p><strong>Block</strong> = prend toute la largeur, commence sur une nouvelle ligne. Pense à des <em>briques</em> empilées.<br/>\n<strong>Inline</strong> = s'intègre dans le texte, ne crée pas de nouvelle ligne. Pense à des <em>mots</em> dans une phrase.</p></div>\n<h2>Liens et Images</h2>\n<h3>Les liens — balise &lt;a&gt;</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Exemples de liens</div>\n<pre><code>&lt;!-- Lien externe --&gt;\n&lt;a href=\"https://www.google.com\" target=\"_blank\"&gt;Ouvrir Google&lt;/a&gt;\n&lt;!-- Lien interne (même site) --&gt;\n&lt;a href=\"contact.html\"&gt;Page contact&lt;/a&gt;\n&lt;!-- Lien ancre (vers une section) --&gt;\n&lt;a href=\"#section2\"&gt;Aller à la section 2&lt;/a&gt;\n&lt;h2 id=\"section2\"&gt;Section 2&lt;/h2&gt;\n&lt;!-- Lien email --&gt;\n&lt;a href=\"mailto:contact@fkmott.com\"&gt;Nous contacter&lt;/a&gt;\n&lt;!-- Lien téléphone --&gt;\n&lt;a href=\"tel:+22899074665\"&gt;Appeler&lt;/a&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Valeur</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>href</code></td><td>URL ou chemin</td><td>Destination du lien (obligatoire)</td></tr>\n<tr><td><code>target=\"_blank\"</code></td><td>_blank</td><td>Ouvre dans un nouvel onglet</td></tr>\n<tr><td><code>target=\"_self\"</code></td><td>_self</td><td>Ouvre dans l'onglet actuel (défaut)</td></tr>\n<tr><td><code>title</code></td><td>Texte</td><td>Info-bulle au survol</td></tr>\n</tbody>\n</table></div>\n<h3>Les images — balise &lt;img&gt;</h3>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Intégrer une image</div>\n<pre><code>&lt;!-- Image depuis un fichier local --&gt;\n&lt;img src=\"images/photo.jpg\" alt=\"Description de la photo\" width=\"400\" height=\"300\"&gt;\n&lt;!-- Image depuis une URL --&gt;\n&lt;img src=\"https://exemple.com/image.png\" alt=\"Image distante\"&gt;\n&lt;!-- Image cliquable (lien + image) --&gt;\n&lt;a href=\"galerie.html\"&gt;\n  &lt;img src=\"vignette.jpg\" alt=\"Voir la galerie\"&gt;\n&lt;/a&gt;</code></pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">L'attribut alt est obligatoire</div>\n<p>L'attribut <code>alt</code> décrit l'image pour les personnes malvoyantes (lecteurs d'écran) et s'affiche si l'image ne charge pas. Il est aussi utilisé par les moteurs de recherche. Ne jamais l'omettre !</p></div>\n<h2>Listes</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Les 3 types de listes</div>\n<pre><code>&lt;!-- Liste non ordonnée (puces) --&gt;\n&lt;ul&gt;\n  &lt;li&gt;HTML&lt;/li&gt;\n  &lt;li&gt;CSS&lt;/li&gt;\n  &lt;li&gt;JavaScript&lt;/li&gt;\n&lt;/ul&gt;\n&lt;!-- Liste ordonnée (numérotée) --&gt;\n&lt;ol&gt;\n  &lt;li&gt;Installer VS Code&lt;/li&gt;\n  &lt;li&gt;Créer un fichier index.html&lt;/li&gt;\n  &lt;li&gt;Écrire le code&lt;/li&gt;\n  &lt;li&gt;Ouvrir dans le navigateur&lt;/li&gt;\n&lt;/ol&gt;\n&lt;!-- Liste de définitions --&gt;\n&lt;dl&gt;\n  &lt;dt&gt;HTML&lt;/dt&gt;\n  &lt;dd&gt;Langage de balisage hypertexte&lt;/dd&gt;\n  &lt;dt&gt;CSS&lt;/dt&gt;\n  &lt;dd&gt;Feuilles de style en cascade&lt;/dd&gt;\n&lt;/dl&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Nom</th><th>Utilisation</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;ul&gt;</code></td><td>Unordered List</td><td>Liste à puces (ordre non important)</td></tr>\n<tr><td><code>&lt;ol&gt;</code></td><td>Ordered List</td><td>Liste numérotée (ordre important)</td></tr>\n<tr><td><code>&lt;dl&gt;</code></td><td>Definition List</td><td>Liste de termes et définitions</td></tr>\n<tr><td><code>&lt;li&gt;</code></td><td>List Item</td><td>Élément de liste (ul ou ol)</td></tr>\n<tr><td><code>&lt;dt&gt;</code></td><td>Definition Term</td><td>Terme à définir (dl)</td></tr>\n<tr><td><code>&lt;dd&gt;</code></td><td>Definition Description</td><td>Définition du terme (dl)</td></tr>\n</tbody>\n</table></div>\n<h2>Tableaux HTML</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure d'un tableau complet</div>\n<pre><code>&lt;table&gt;\n  &lt;caption&gt;Résultats des étudiants&lt;/caption&gt;\n  &lt;thead&gt;               &lt;!-- En-tête du tableau --&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Nom&lt;/th&gt;\n      &lt;th&gt;Matière&lt;/th&gt;\n      &lt;th&gt;Note&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;               &lt;!-- Corps du tableau --&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Alice&lt;/td&gt;\n      &lt;td&gt;HTML&lt;/td&gt;\n      &lt;td&gt;18/20&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;Bob&lt;/td&gt;\n      &lt;td&gt;CSS&lt;/td&gt;\n      &lt;td&gt;15/20&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n  &lt;tfoot&gt;               &lt;!-- Pied du tableau --&gt;\n    &lt;tr&gt;\n      &lt;td colspan=\"2\"&gt;Moyenne&lt;/td&gt;\n      &lt;td&gt;16,5/20&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tfoot&gt;\n&lt;/table&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Balise</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>colspan=\"N\"</code></td><td>td / th</td><td>Fusionner N colonnes horizontalement</td></tr>\n<tr><td><code>rowspan=\"N\"</code></td><td>td / th</td><td>Fusionner N lignes verticalement</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Structure tableau</div>\n<p><strong>T-T-B-F</strong> : <strong>T</strong>able → <strong>T</strong>head → <strong>B</strong>ody → <strong>F</strong>oot<br/>\n        Comme un document Word : table (le document), tête (en-tête), corps (contenu), pied (footer).<br/>\n        Dans chaque section : <code>&lt;tr&gt;</code> (ligne) → <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> (cellule).</p></div>\n<h2>Formulaires HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Rôle d'un formulaire</div>\n<p>Un formulaire permet à l'utilisateur de <strong>saisir et envoyer des données</strong> au serveur. Exemples : formulaire de connexion, d'inscription, de contact, de recherche.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Formulaire de contact complet</div>\n<pre><code>&lt;form action=\"traitement.php\" method=\"POST\"&gt;\n  &lt;!-- Champ texte --&gt;\n  &lt;label for=\"nom\"&gt;Nom :&lt;/label&gt;\n  &lt;input type=\"text\" id=\"nom\" name=\"nom\" placeholder=\"Ton nom\" required&gt;\n  &lt;!-- Email --&gt;\n  &lt;label for=\"email\"&gt;Email :&lt;/label&gt;\n  &lt;input type=\"email\" id=\"email\" name=\"email\" required&gt;\n  &lt;!-- Mot de passe --&gt;\n  &lt;label for=\"mdp\"&gt;Mot de passe :&lt;/label&gt;\n  &lt;input type=\"password\" id=\"mdp\" name=\"mdp\"&gt;\n  &lt;!-- Nombre --&gt;\n  &lt;label for=\"age\"&gt;Âge :&lt;/label&gt;\n  &lt;input type=\"number\" id=\"age\" name=\"age\" min=\"1\" max=\"120\"&gt;\n  &lt;!-- Liste déroulante --&gt;\n  &lt;label for=\"niveau\"&gt;Niveau :&lt;/label&gt;\n  &lt;select id=\"niveau\" name=\"niveau\"&gt;\n    &lt;option value=\"\"&gt;-- Choisir --&lt;/option&gt;\n    &lt;option value=\"b1\"&gt;Bachelor 1&lt;/option&gt;\n    &lt;option value=\"b2\"&gt;Bachelor 2&lt;/option&gt;\n  &lt;/select&gt;\n  &lt;!-- Boutons radio --&gt;\n  &lt;label&gt;Genre :&lt;/label&gt;\n  &lt;input type=\"radio\" id=\"h\" name=\"genre\" value=\"h\"&gt;\n  &lt;label for=\"h\"&gt;Homme&lt;/label&gt;\n  &lt;input type=\"radio\" id=\"f\" name=\"genre\" value=\"f\"&gt;\n  &lt;label for=\"f\"&gt;Femme&lt;/label&gt;\n  &lt;!-- Case à cocher --&gt;\n  &lt;input type=\"checkbox\" id=\"cgu\" name=\"cgu\"&gt;\n  &lt;label for=\"cgu\"&gt;J'accepte les CGU&lt;/label&gt;\n  &lt;!-- Zone de texte multiligne --&gt;\n  &lt;label for=\"message\"&gt;Message :&lt;/label&gt;\n  &lt;textarea id=\"message\" name=\"message\" rows=\"5\" cols=\"40\"&gt;&lt;/textarea&gt;\n  &lt;!-- Bouton d'envoi --&gt;\n  &lt;button type=\"submit\"&gt;Envoyer&lt;/button&gt;\n  &lt;button type=\"reset\"&gt;Réinitialiser&lt;/button&gt;\n&lt;/form&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>type=</th><th>Description</th><th>Validation auto</th></tr></thead>\n<tbody>\n<tr><td><code>text</code></td><td>Texte libre</td><td>Non</td></tr>\n<tr><td><code>email</code></td><td>Adresse email</td><td>Oui (format @)</td></tr>\n<tr><td><code>password</code></td><td>Mot de passe (masqué)</td><td>Non</td></tr>\n<tr><td><code>number</code></td><td>Nombre</td><td>Oui (min/max)</td></tr>\n<tr><td><code>tel</code></td><td>Téléphone</td><td>Format selon pays</td></tr>\n<tr><td><code>date</code></td><td>Sélecteur de date</td><td>Oui</td></tr>\n<tr><td><code>checkbox</code></td><td>Case à cocher</td><td>Non</td></tr>\n<tr><td><code>radio</code></td><td>Bouton radio (choix unique)</td><td>Non</td></tr>\n<tr><td><code>file</code></td><td>Upload de fichier</td><td>Non</td></tr>\n<tr><td><code>submit</code></td><td>Bouton d'envoi</td><td>Déclenche envoi</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — action vs method</div>\n<p><code>action</code> = <strong>où</strong> envoyer les données (URL du serveur).<br/>\n<code>method</code> = <strong>comment</strong> les envoyer :<br/>\n        → <code>GET</code> : données visibles dans l'URL (recherche, filtres).<br/>\n        → <code>POST</code> : données cachées dans le corps (login, paiement).</p></div>\n<h2>Balises sémantiques HTML5</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">La sémantique HTML5</div>\n<p>HTML5 introduit des balises <strong>sémantiques</strong> qui décrivent le rôle du contenu. Elles remplacent l'usage abusif de <code>&lt;div&gt;</code> et améliorent le SEO et l'accessibilité.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Structure sémantique d'une page</div>\n<pre><code>&lt;header&gt;        &lt;!-- En-tête du site (logo, nav) --&gt;\n  &lt;nav&gt;...&lt;/nav&gt;\n&lt;/header&gt;\n&lt;main&gt;          &lt;!-- Contenu principal (unique par page) --&gt;\n  &lt;section&gt;     &lt;!-- Section thématique --&gt;\n    &lt;article&gt;   &lt;!-- Contenu autonome (article, post) --&gt;\n      &lt;aside&gt;   &lt;!-- Contenu secondaire (sidebar) --&gt;\n    &lt;/article&gt;\n  &lt;/section&gt;\n&lt;/main&gt;\n&lt;footer&gt;        &lt;!-- Pied de page (contact, copyright) --&gt;&lt;/footer&gt;</code></pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Balise</th><th>Rôle</th><th>Remplace</th></tr></thead>\n<tbody>\n<tr><td><code>&lt;header&gt;</code></td><td>En-tête (logo, nav)</td><td><code>&lt;div id=\"header\"&gt;</code></td></tr>\n<tr><td><code>&lt;nav&gt;</code></td><td>Navigation principale</td><td><code>&lt;div id=\"nav\"&gt;</code></td></tr>\n<tr><td><code>&lt;main&gt;</code></td><td>Contenu principal</td><td><code>&lt;div id=\"main\"&gt;</code></td></tr>\n<tr><td><code>&lt;section&gt;</code></td><td>Section thématique</td><td><code>&lt;div class=\"section\"&gt;</code></td></tr>\n<tr><td><code>&lt;article&gt;</code></td><td>Contenu indépendant</td><td><code>&lt;div class=\"article\"&gt;</code></td></tr>\n<tr><td><code>&lt;aside&gt;</code></td><td>Contenu secondaire</td><td><code>&lt;div id=\"sidebar\"&gt;</code></td></tr>\n<tr><td><code>&lt;footer&gt;</code></td><td>Pied de page</td><td><code>&lt;div id=\"footer\"&gt;</code></td></tr>\n</tbody>\n</table></div>\n<h2>Attributs globaux importants</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Attribut</th><th>Description</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>id</code></td><td>Identifiant unique (1 seul par page)</td><td><code>id=\"menu\"</code></td></tr>\n<tr><td><code>class</code></td><td>Classe CSS (plusieurs éléments)</td><td><code>class=\"btn active\"</code></td></tr>\n<tr><td><code>style</code></td><td>CSS inline (à éviter)</td><td><code>style=\"color:red;\"</code></td></tr>\n<tr><td><code>title</code></td><td>Info-bulle au survol</td><td><code>title=\"Aide\"</code></td></tr>\n<tr><td><code>lang</code></td><td>Langue du contenu</td><td><code>lang=\"fr\"</code></td></tr>\n<tr><td><code>hidden</code></td><td>Cache l'élément</td><td><code>&lt;div hidden&gt;</code></td></tr>\n<tr><td><code>data-*</code></td><td>Données personnalisées</td><td><code>data-id=\"42\"</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — id vs class</div>\n<p><code>id</code> = comme un <strong>numéro de carte d'identité</strong> — unique dans toute la page.<br/>\n<code>class</code> = comme un <strong>uniforme scolaire</strong> — plusieurs élèves peuvent porter le même.\n        <br/>Règle : utilise <code>id</code> pour cibler UN élément en JS, <code>class</code> pour styliser PLUSIEURS en CSS.</p></div>\n<h2>Récapitulatif &amp; QCM</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Ce qu'il faut retenir</div>\n<ul><li>HTML structure le contenu, CSS le stylise, JS l'anime</li><li>Toute page commence par <code>&lt;!DOCTYPE html&gt;</code></li><li><code>&lt;head&gt;</code> = métadonnées ; <code>&lt;body&gt;</code> = contenu visible</li><li>Un seul <code>&lt;h1&gt;</code> par page</li><li><code>alt</code> est obligatoire sur toutes les images</li><li><code>id</code> est unique ; <code>class</code> est partageable</li><li>POST pour les données sensibles, GET pour les recherches</li><li>Les balises sémantiques (header, main, footer) améliorent le SEO</li></ul></div>\n<div class=\"box\">\n<div class=\"box-lbl\">QCM de révision</div></div>\n<div>\n<a>← Accueil Dev Web</a>\n<a>Ch.2 — CSS →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que signifie HTML ?",
+          "options": [
+            {
+              "text": "HyperText Machine Language",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "HyperText Markup Language",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "High Tech Modern Layout",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle balise est unique sur une page ?",
+          "options": [
+            {
+              "text": "<p>",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "<div>",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "<h1>",
+              "correct": true,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pour fusionner 3 colonnes dans un tableau, on utilise :",
+          "options": [
+            {
+              "text": "colspan=\"3\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "rowspan=\"3\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "merge=\"3\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle méthode de formulaire est recommandée pour un login ?",
+          "options": [
+            {
+              "text": "GET",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "POST",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "PUT",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle balise remplace sémantiquement <div id=\"nav\"> ?",
+          "options": [
+            {
+              "text": "<menu>",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "<section>",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "<nav>",
+              "correct": true,
+              "explanation": ""
+            }
+          ]
+        }
+      ],
+      "source": "devweb/chapitres/chapitre1.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle balise est unique sur une page ?",
-     "options": [
-      {
-       "text": "<p>",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "<div>",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "<h1>",
-       "correct": true,
-       "explanation": ""
-      }
-     ]
+      "number": 2,
+      "title": "CSS — Mise en forme",
+      "subtitle": "CSS donne vie à vos pages HTML : couleurs, tailles, marges, positionnement. On part des codes écrits en classe pour comprendre chaque propriété.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre comment lier un fichier CSS à une page HTML</li><li>Maîtriser les sélecteurs : balise, classe (<code>.</code>), ID (<code>#</code>)</li><li>Appliquer les propriétés de texte, de boîte et de positionnement</li><li>Comprendre les effets visuels des codes CSS écrits en classe</li><li>Utiliser <code>:hover</code>, <code>float</code>, <code>transition</code> et <code>border-radius</code></li></ul></div>\n<h2>Lier CSS à HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">3 façons d'ajouter du CSS</div>\n<p>Il y a 3 méthodes, du moins recommandé au plus recommandé :</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode</th><th>Où ?</th><th>Exemple</th><th>Recommandé ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Inline</strong></td><td>Dans la balise HTML</td><td><code>&lt;p&gt;</code></td><td> À éviter</td></tr>\n<tr><td><strong>Interne</strong></td><td>Dans <code>&lt;style&gt;</code> du <code>&lt;head&gt;</code></td><td><code>&lt;style&gt; h1{color:red;} &lt;/style&gt;</code></td><td> Petits projets</td></tr>\n<tr><td><strong>Externe</strong></td><td>Fichier <code>.css</code> séparé</td><td><code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code></td><td> Toujours</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Ce qu'on a fait en classe — index.html lie style.css</div>\n<pre>&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;title&gt;Exemple&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;  ← lien vers le fichier CSS\n&lt;/head&gt;</pre></div>\n<h2>Sélecteurs CSS</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Les 3 sélecteurs de base</div>\n<ul><li><code>h1 { }</code> → sélecteur de <strong>balise</strong> : cible TOUTES les balises h1</li><li><code>.doc { }</code> → sélecteur de <strong>classe</strong> : cible tout élément avec <code>class=\"doc\"</code></li><li><code>#ok { }</code> → sélecteur d'<strong>ID</strong> : cible l'élément unique avec <code>id=\"ok\"</code></li><li>Astuce : <strong>point = classe</strong>, <strong>dièse = id</strong></li></ul></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css du cours — analyse complète</div>\n<pre>/* ── Sélecteur de classe : .doc ── */\n.doc {\n    color: blue;              /* couleur du texte : bleu */\n    letter-spacing: 5px;      /* espace entre les lettres */\n    margin-left: 400px;       /* décalage vers la droite */\n    text-decoration: underline; /* texte souligné */\n}\n/* ── Sélecteur d'ID : #ok ── */\n#ok {\n    color: blue;\n    letter-spacing: 5px;\n    margin-left: 400px;\n    text-decoration: underline;\n}\n/* → .doc et #ok ont le même effet ici\n   Différence : .doc peut être utilisé plusieurs fois,\n   #ok ne peut être utilisé qu'UNE seule fois par page */\n/* ── Classes pour les listes colorées ── */\n.part1 { color: green; font-weight: bold; }\n.part2 { color: blue;  font-weight: bold; }\n.part3 { color: red;   font-weight: bold; }\n/* ── Sélecteur de balise ── */\nh1 { text-align: center; }</pre></div>\n<div class=\"css-demo\">\n<div class=\"css-demo-label\"> Rendu visuel</div>\n<div class=\"demo-frame\">\n<p>Texte avec class=\"doc\" — bleu, espacé, souligné</p>\n<ul>\n<li>Marteau 1 — .part1 (vert gras)</li>\n<li>Marteau 2 — .part2 (bleu gras)</li>\n<li>Marteau 3 — .part3 (rouge gras)</li>\n</ul>\nh1 centré</div></div>\n<h2>Propriétés de texte essentielles</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Valeurs courantes</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>color</code></td><td>blue, red, #fff, rgb()</td><td>Couleur du texte</td></tr>\n<tr><td><code>font-size</code></td><td>14px, 1rem, 1.2em</td><td>Taille de la police</td></tr>\n<tr><td><code>font-weight</code></td><td>bold, normal, 700</td><td>Gras</td></tr>\n<tr><td><code>font-family</code></td><td>Arial, Georgia, serif</td><td>Police de caractères</td></tr>\n<tr><td><code>text-align</code></td><td>center, left, right</td><td>Alignement du texte</td></tr>\n<tr><td><code>text-decoration</code></td><td>underline, none, line-through</td><td>Soulignement / barré</td></tr>\n<tr><td><code>letter-spacing</code></td><td>5px, -1px</td><td>Espace entre les lettres</td></tr>\n</tbody>\n</table></div>\n<h2>Box Model : marges et espacements</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Le Box Model</div>\n<p>Chaque élément HTML est une boîte composée de 4 couches (de l'intérieur vers l'extérieur) :<br/>\n<strong>Contenu → Padding → Border → Margin</strong></p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>padding</code></td><td>Espace <strong>intérieur</strong> (entre contenu et bordure)</td><td><code>padding: 40px;</code></td></tr>\n<tr><td><code>margin</code></td><td>Espace <strong>extérieur</strong> (entre la boîte et ce qui est autour)</td><td><code>margin: 0 auto;</code></td></tr>\n<tr><td><code>border</code></td><td>Bordure de la boîte</td><td><code>border: 2px solid black;</code></td></tr>\n<tr><td><code>width</code></td><td>Largeur</td><td><code>width: 500px;</code></td></tr>\n<tr><td><code>border-radius</code></td><td>Coins arrondis</td><td><code>border-radius: 5px;</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — margin: 0 auto</div>\n<p><code>margin: 0 auto;</code> = <strong>0</strong> en haut/bas + <strong>auto</strong> à gauche et à droite.<br/>\n        Auto = le navigateur calcule automatiquement des marges égales des deux côtés → l'élément est <strong>centré horizontalement</strong>.<br/>\n         Ça ne fonctionne que si l'élément a une largeur définie (<code>width</code>).</p></div>\n<h2>Le formulaire stylisé du cours</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Code CSS du formulaire — ce qu'on a écrit en classe</div>\n<p>Dans <code>style.css</code>, on a stylisé le formulaire d'inscription avec la classe <code>.form</code> :</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css — .form (formulaire gris centré)</div>\n<pre>.form {\n    background-color: lightgray;  /* fond gris clair */\n    padding: 40px;                /* espace intérieur 40px */\n    border-radius: 5px;           /* coins légèrement arrondis */\n    border: 2px solid black;      /* bordure noire 2px */\n    width: 500px;                 /* largeur fixe */\n    margin: 0 auto;               /* centré horizontalement */\n}\n.form label {\n    display: flex;                /* les éléments s'affichent en ligne */\n    align-items: center;          /* centrés verticalement */\n    justify-content: space-between; /* le champ s'aligne à droite */\n    margin-bottom: 15px;          /* espace entre chaque champ */\n}\n.form input[type=\"text\"],\n.form input[type=\"email\"],\n.form input[type=\"password\"] {\n    width: 400px;\n    padding: 10px;\n    border: 1px solid gray;\n    border-radius: 4px;\n}</pre></div>\n<div class=\"css-demo\">\n<div class=\"css-demo-label\"> Rendu du formulaire</div>\n<div class=\"demo-frame\">\n<div>\n<div>\n<span>Nom</span></div>\n<div>\n<span>Email</span></div>\n<div></div></div></div></div>\n<h2>Le bouton avec effet :hover</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css — .button et .button:hover</div>\n<pre>/* État normal du bouton */\n.button {\n    background-color: blue;\n    border: 2px solid blue;\n    color: black;              /* texte noir par défaut */\n    padding: 10px 30px;\n    font-size: 14px;\n    cursor: pointer;           /* curseur en forme de main */\n    border-radius: 4px;\n    display: block;\n    margin: 20px auto;\n    transition-duration: 1s;   /* animation de 1 seconde */\n}\n/* État au survol de la souris */\n.button:hover {\n    background-color: blue;\n    color: white;              /* texte devient blanc */\n    padding: 12px 40px;        /* bouton légèrement plus grand */\n    font-size: 16px;\n    transition-duration: 0.3s; /* animation rapide (0.3s) */\n}</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Ce qu'il faut retenir sur :hover et transition</div>\n<ul><li><code>:hover</code> = pseudo-classe CSS qui s'active quand la souris <strong>survole</strong> l'élément</li><li><code>transition-duration</code> = durée de l'animation entre l'état normal et l'état hover</li><li>Dans cet exemple : texte passe de <strong>noir → blanc</strong> et le bouton s'agrandit légèrement</li><li><code>cursor: pointer</code> = affiche la main  au survol (comme sur un lien)</li></ul></div>\n<h2>Le CV : float et border-collapse</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">cv.css — les règles clés</div>\n<pre>body {\n    font-family: Arial, sans-serif;\n    padding: 20px;\n}\n/* Tableau principal du CV */\n.main-table {\n    width: 90%;\n    margin: 0 auto;             /* centré */\n    border: 1px solid black;\n    border-collapse: collapse;  /* ← les bordures se touchent */\n}\n.main-table td { padding: 15px; }\n/* Sous-tableaux (rubriques) */\n.sub-table {\n    width: 100%;\n    border-collapse: collapse;\n    border: none;               /* ← pas de bordure sur les sous-tableaux */\n}\n/* Titres des rubriques */\nh2 {\n    font-family: Georgia, serif;  /* police avec empattements (classique) */\n    border-bottom: 1px solid gray; /* ← trait gris sous le titre de rubrique */\n    padding-bottom: 5px;\n}\n/* Photo du CV */\nimg {\n    float: right;              /* ← la photo se place à droite */\n    border: 1px solid gray;\n}</pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Explication de border-collapse</div>\n<p>Par défaut les cellules d'un tableau ont chacune leur propre bordure → il y a un <strong>double trait</strong> entre deux cellules.<br/>\n<code>border-collapse: collapse</code> = les bordures adjacentes <strong>fusionnent</strong> en un seul trait propre.<br/>\n        C'est pour ça qu'on l'utilise sur presque tous les tableaux HTML stylisés.</p></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">float: right — comment ça marche</div>\n<p>Quand on écrit <code>img { float: right; }</code> :<br/>\n        1. L'image est retirée du flux normal<br/>\n        2. Elle est placée à droite de son conteneur<br/>\n        3. Le texte qui suit s'enroule automatiquement à gauche de l'image<br/>\n        C'est exactement ce qu'on a fait dans le CV : la photo est à droite, les infos à gauche.</p></div>\n<h2>Récapitulatif des propriétés CSS du cours</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété CSS</th><th>Ce qu'elle fait</th><th>Vu dans</th></tr></thead>\n<tbody>\n<tr><td><code>color: blue</code></td><td>Texte bleu</td><td>style.css — .doc</td></tr>\n<tr><td><code>letter-spacing: 5px</code></td><td>Espace entre lettres</td><td>style.css — .doc</td></tr>\n<tr><td><code>text-decoration: underline</code></td><td>Texte souligné</td><td>style.css — .doc</td></tr>\n<tr><td><code>font-weight: bold</code></td><td>Texte en gras</td><td>style.css — .part1/2/3</td></tr>\n<tr><td><code>text-align: center</code></td><td>Texte centré</td><td>style.css — h1</td></tr>\n<tr><td><code>background-color: lightgray</code></td><td>Fond gris clair</td><td>style.css — .form</td></tr>\n<tr><td><code>padding: 40px</code></td><td>Espace intérieur</td><td>style.css — .form</td></tr>\n<tr><td><code>border-radius: 5px</code></td><td>Coins arrondis</td><td>style.css — .form</td></tr>\n<tr><td><code>border: 2px solid black</code></td><td>Bordure noire</td><td>style.css — .form</td></tr>\n<tr><td><code>margin: 0 auto</code></td><td>Centrage horizontal</td><td>style.css — .form, cv.css</td></tr>\n<tr><td><code>width: 500px</code></td><td>Largeur fixe</td><td>style.css — .form</td></tr>\n<tr><td><code>display: flex</code></td><td>Affichage flexible en ligne</td><td>style.css — .form label</td></tr>\n<tr><td><code>cursor: pointer</code></td><td>Curseur en forme de main</td><td>style.css — .button</td></tr>\n<tr><td><code>transition-duration: 0.3s</code></td><td>Animation douce</td><td>style.css — .button:hover</td></tr>\n<tr><td><code>:hover</code></td><td>Style au survol souris</td><td>style.css — .button:hover</td></tr>\n<tr><td><code>float: right</code></td><td>Élément flottant à droite</td><td>cv.css — img</td></tr>\n<tr><td><code>border-collapse: collapse</code></td><td>Bordures fusionnées</td><td>cv.css — tableau</td></tr>\n<tr><td><code>font-family: Georgia</code></td><td>Police avec empattements</td><td>cv.css — h2</td></tr>\n<tr><td><code>border-bottom: 1px solid gray</code></td><td>Trait gris sous le titre</td><td>cv.css — h2</td></tr>\n</tbody>\n</table></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 2 CSS</h3>\n<ul>\n<li>Lier CSS : <code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code> dans le head</li>\n<li>3 sélecteurs : <strong>balise</strong> (h1), <strong>classe</strong> (.doc), <strong>ID</strong> (#ok)</li>\n<li><code>margin: 0 auto</code> + <code>width</code> = centrage horizontal</li>\n<li><code>:hover</code> = style au survol · <code>transition-duration</code> = animation</li>\n<li><code>float: right</code> = élément à droite, texte s'enroule</li>\n<li><code>border-collapse: collapse</code> = bordures fusionnées dans les tableaux</li>\n<li><code>border-bottom</code> = trait uniquement en bas (effet rubrique de CV)</li>\n</ul></div>\n<div>\n<a> Ch.1 — HTML</a>\n<a>Ch.3 — JavaScript →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans le CSS du cours, .doc { color: blue; letter-spacing: 5px; } — que signifie letter-spacing: 5px ?",
+          "options": [
+            {
+              "text": "La taille de la police est de 5px",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Il y a 5px d'espace entre chaque lettre",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "La marge gauche est de 5px",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'interligne est de 5px",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "letter-spacing contrôle l'espace entre chaque lettre (espacement interlettre). Ici 5px = les lettres sont bien séparées, c'est l'effet 'DOCUMENT' espacé dans le style.css du cours."
+        },
+        {
+          "type": "mcq",
+          "text": "Pourquoi a-t-on utilisé margin: 0 auto; sur la classe .form ?",
+          "options": [
+            {
+              "text": "Pour supprimer toutes les marges",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour centrer le formulaire horizontalement dans la page",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Pour ajouter un padding automatique",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour que le formulaire prenne toute la largeur",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "margin: 0 auto; sur un élément de largeur fixe (width: 500px) centre l'élément horizontalement : le navigateur calcule des marges gauche et droite égales automatiquement."
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence entre .doc { } et #ok { } dans le style.css du cours ?",
+          "options": [
+            {
+              "text": "Aucune différence, ils font la même chose",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".doc peut être utilisé plusieurs fois, #ok une seule fois (ID unique)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "#ok s'applique à toutes les balises h1",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": ".doc est plus prioritaire que #ok",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": ".doc est un sélecteur de classe : il peut être appliqué à plusieurs éléments dans la page. #ok est un sélecteur d'ID : un ID doit être unique dans toute la page HTML."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans .button:hover { color: white; transition-duration: 0.3s; } — quand ce style s'applique-t-il ?",
+          "options": [
+            {
+              "text": "Quand on clique sur le bouton",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Quand la souris passe au-dessus du bouton (survol)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Après 0.3 secondes au chargement",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Uniquement sur mobile",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": ":hover est une pseudo-classe CSS qui s'applique uniquement lors du survol de la souris. transition-duration: 0.3s rend le changement d'état progressif (animation douce de 0.3s)."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le cv.css : img { float: right; } — quel est l'effet visuel ?",
+          "options": [
+            {
+              "text": "L'image est centrée sur la page",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'image s'affiche en dessous du texte",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "L'image se place à droite et le texte s'enroule à sa gauche",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "L'image disparaît",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "float: right retire l'image du flux normal et la colle à droite de son conteneur. Le texte qui suit s'enroule automatiquement à gauche de l'image — c'est le comportement classique pour les photos dans un CV."
+        },
+        {
+          "type": "mcq",
+          "text": "Pourquoi utilise-t-on border-collapse: collapse; sur le tableau du CV ?",
+          "options": [
+            {
+              "text": "Pour cacher les bordures du tableau",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour que les bordures des cellules adjacentes fusionnent en un seul trait",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Pour ajouter de l'espace entre les cellules",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour rendre le tableau responsive",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "Par défaut, les cellules d'un tableau ont chacune leur propre bordure, créant un double trait entre deux cellules. border-collapse: collapse fusionne ces bordures adjacentes en un seul trait."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le CSS du cours, comment appelle-t-on le sélecteur .form label { display: flex; justify-content: space-between; } ?",
+          "options": [
+            {
+              "text": "Un sélecteur d'ID imbriqué",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un sélecteur descendant (cible les label à l'intérieur de .form)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Un sélecteur universel",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un sélecteur :hover",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": ".form label est un sélecteur descendant : il cible tous les éléments label qui sont à l'intérieur d'un élément ayant la classe .form. display: flex + justify-content: space-between aligne le texte du label à gauche et le champ à droite."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans le cv.css : h2 { border-bottom: 1px solid gray; } — quel est l'effet visuel ?",
+          "options": [
+            {
+              "text": "Un cadre gris autour du titre",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Un trait gris sous chaque titre h2, comme une ligne de séparation",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Le titre devient gris",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Une ombre portée sous le titre",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "border-bottom: 1px solid gray ajoute uniquement un trait gris en bas de chaque h2, créant visuellement une ligne de séparation sous les titres de rubriques, comme dans le CV."
+        }
+      ],
+      "source": "_private/devweb/chapitres/chapitre2.html"
     },
     {
-     "type": "mcq",
-     "text": "Pour fusionner 3 colonnes dans un tableau, on utilise :",
-     "options": [
-      {
-       "text": "colspan=\"3\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "rowspan=\"3\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "merge=\"3\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
+      "number": 3,
+      "title": "JavaScript",
+      "subtitle": "JavaScript rend les pages interactives. On analyse ligne par ligne les codes qu'on a écrits en classe : variables, types, fonctions, conditions, boucles et tableaux.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre les variables JS et leurs types (<code>typeof</code>)</li><li>Maîtriser <code>alert()</code>, <code>prompt()</code>, <code>console.log()</code></li><li>Écrire et lire des fonctions avec <code>if/else</code> et retour de valeur</li><li>Utiliser les boucles <code>for</code> et les tableaux</li><li>Comprendre le piège <code>parseInt()</code> vs concaténation</li></ul></div>\n<h2>Lier JavaScript à HTML</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Méthode 1 — Script externe (recommandé)</div>\n<pre>&lt;!-- Dans le head ou en bas du body --&gt;\n&lt;script src=\"javascript.js\"&gt;&lt;/script&gt;</pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Méthode 2 — Script inline dans l'attribut (HTML du cours)</div>\n<pre>&lt;!-- Ce qu'on a fait dans var.html --&gt;\n&lt;input type=\"submit\" value=\"calculer\" onclick=\"Additionner()\"&gt;\n&lt;!-- onclick=\"...\" → appelle la fonction JS quand on clique --&gt;</pre></div>\n<h2>Les variables et les types (var.js)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Déclaration de variables en JS</div>\n<p>En JavaScript on déclare une variable avec <code>var</code> (ou <code>let</code> / <code>const</code> en JS moderne). Une variable peut changer de valeur et de type.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">var.js — code exact du cours avec explications</div>\n<pre>// ── Déclaration des variables ──\nvar xprime = \"25\";       // ← String (chaîne de caractères)\nvar y = -75;              // ← Number (nombre entier)\nvar z = 3.14;             // ← Number (nombre décimal)\nvar prenom = \"pierre\";    // ← String\nvar a = true, b = false;  // ← Boolean (vrai/faux)\nvar n = null;             // ← null (valeur vide intentionnelle)\nvar u = undefined;        // ← undefined (variable non initialisée)\nvar nn = NaN;             // ← NaN = Not a Number\n// ── Réaffectation ──\nx = \"quatre\";             // ← x change de valeur (était \"25\")\n// ── Affichage avec typeof ──\nalert(\"Variable x : \" + typeof(x) +\n    \"\\nVariable y : \" + typeof(y) +\n    \"\\nVariable a : \" + typeof(a) +\n    \"\\nVariable n : \" + typeof(n) +\n    \"\\nVariable u : \" + typeof(u) +\n    \"\\nVariable nn : \" + typeof(nn));</pre></div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultat de l'alerte :</span><br/>\n        Variable x : <span class=\"ok\">string</span><br/>\n        Variable y : <span class=\"ok\">number</span><br/>\n        Variable a : <span class=\"ok\">boolean</span><br/>\n        Variable n : <span class=\"warn\">object</span>  ← piège ! typeof null === \"object\"<br/>\n        Variable u : <span class=\"ok\">undefined</span><br/>\n        Variable nn : <span class=\"warn\">number</span>  ← piège ! typeof NaN === \"number\"</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Les 2 pièges de typeof — souvent à l'examen</div>\n<ul><li><code>typeof null</code> retourne <code>\"object\"</code> (et non \"null\") — c'est une erreur historique de JavaScript qui n'a jamais été corrigée</li><li><code>typeof NaN</code> retourne <code>\"number\"</code> (et non \"nan\") — NaN signifie \"Not a Number\" mais son type est quand même number</li></ul></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur</th><th>Type JS</th><th>typeof retourne</th></tr></thead>\n<tbody>\n<tr><td><code>\"25\"</code>, <code>\"pierre\"</code></td><td>String</td><td><code>\"string\"</code></td></tr>\n<tr><td><code>-75</code>, <code>3.14</code></td><td>Number</td><td><code>\"number\"</code></td></tr>\n<tr><td><code>true</code>, <code>false</code></td><td>Boolean</td><td><code>\"boolean\"</code></td></tr>\n<tr><td><code>null</code></td><td>—</td><td><code>\"object\"</code> </td></tr>\n<tr><td><code>undefined</code></td><td>—</td><td><code>\"undefined\"</code></td></tr>\n<tr><td><code>NaN</code></td><td>—</td><td><code>\"number\"</code> </td></tr>\n</tbody>\n</table></div>\n<h2>alert(), prompt(), console.log()</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Rôle</th><th>Retourne</th></tr></thead>\n<tbody>\n<tr><td><code>alert(\"message\")</code></td><td>Affiche une boîte popup — l'utilisateur clique OK</td><td>rien (undefined)</td></tr>\n<tr><td><code>prompt(\"question\")</code></td><td>Affiche une boîte avec un champ de saisie</td><td>la valeur saisie (String) ou null si Annuler</td></tr>\n<tr><td><code>console.log(valeur)</code></td><td>Affiche dans la console du navigateur (F12)</td><td>rien</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège majeur — prompt() retourne toujours une String</div>\n<p><code>prompt()</code> renvoie <strong>toujours une chaîne de caractères</strong>, même si l'utilisateur tape un nombre.<br/>\n        Conséquence : <code>\"5\" + \"3\" = \"53\"</code> (concaténation) et non <code>8</code> (addition)<br/>\n        Solution : convertir avec <code>parseInt()</code> (entier) ou <code>parseFloat()</code> (décimal)</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Démonstration du piège parseInt</div>\n<pre>//  Sans parseInt — concaténation\nvar a = prompt(\"Nombre 1 ?\");  // l'utilisateur tape : 5  → a = \"5\" (string)\nvar b = prompt(\"Nombre 2 ?\");  // l'utilisateur tape : 3  → b = \"3\" (string)\nalert(a + b);  // → affiche \"53\" (pas 8 !)\n//  Avec parseInt — addition\nvar a = parseInt(prompt(\"Nombre 1 ?\"));  // \"5\" → 5 (number)\nvar b = parseInt(prompt(\"Nombre 2 ?\"));  // \"3\" → 3 (number)\nalert(a + b);  // → affiche 8</pre></div>\n<h2>Les fonctions (fonction.js)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Syntaxe d'une fonction JS</div>\n<p>Une fonction est un bloc de code réutilisable, défini une fois, appelé plusieurs fois.</p></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>function nomFonction(parametre1, parametre2) {\n    // instructions\n    return valeur;  // ← optionnel, retourne un résultat\n}</pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">fonction.js — Additionner() du cours (var.html)</div>\n<pre>// ── Fonction Additionner ──\nfunction Additionner() {\n    var a = parseInt(prompt('Entrez le premier nombre :'));\n    var b = parseInt(prompt('Entrez le deuxième nombre :'));\n    alert(a + b);\n}\n// ── Appel dans HTML ──\n// &lt;input type=\"submit\" value=\"calculer\" onclick=\"Additionner()\"&gt;\n// Exemple : utilisateur entre 5 puis 3\n// → parseInt(\"5\") = 5, parseInt(\"3\") = 3\n// → alert(5 + 3) → affiche 8</pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">fonction.js — reverseTab() : inverser un tableau</div>\n<pre>// ── Fonction reverseTab ──\nfunction reverseTab(tab) {\n    var resultat = [];                    // tableau vide au départ\n    for (var i = tab.length - 1; i &gt;= 0; i--) {  // on part de la fin\n        resultat.push(tab[i]);            // on ajoute à l'envers\n    }\n    return resultat;\n}\n// ── Test ──\nvar noms = ['Rafael', 'Mathilde', 'Ahmed'];\nvar inverse = reverseTab(noms);\nconsole.log(inverse);\n// ── Résultat ──\n// noms.length = 3 → index : 0='Rafael', 1='Mathilde', 2='Ahmed'\n// i part de 2 : push('Ahmed') → push('Mathilde') → push('Rafael')\n// → ['Ahmed', 'Mathilde', 'Rafael']</pre></div>\n<div class=\"console-out\">\n<span class=\"cmt\">// console.log(reverseTab(['Rafael', 'Mathilde', 'Ahmed'])) :</span><br/>\n<span class=\"ok\">['Ahmed', 'Mathilde', 'Rafael']</span></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Comprendre la boucle de reverseTab</div>\n<ul><li><code>tab.length - 1</code> = dernier index (pour 3 éléments → index 2)</li><li><code>i &gt;= 0</code> = on continue tant qu'on n'a pas dépassé le premier élément</li><li><code>i--</code> = on recule d'un index à chaque tour (décrémentation)</li><li><code>resultat.push(tab[i])</code> = on ajoute l'élément courant à la fin de <code>resultat</code></li><li>Tour 1 : i=2 → push('Ahmed') · Tour 2 : i=1 → push('Mathilde') · Tour 3 : i=0 → push('Rafael')</li></ul></div>\n<h2>Conditions : if / else if / else (getmax.js)</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">getmax.js — trouver le maximum de 3 nombres</div>\n<pre>// ── getMax : retourne le plus grand des 3 ──\nfunction getMax(a, b, c) {\n    if (a &gt;= b &amp;&amp; a &gt;= c) {       // si a est &gt;= aux deux autres\n        return a;\n    } else if (b &gt;= a &amp;&amp; b &gt;= c) { // sinon si b est &gt;= aux deux autres\n        return b;\n    } else {                        // sinon c'est forcément c\n        return c;\n    }\n}\n// ── Tests ──\nconsole.log(getMax(5, 9, 1));   // → 9\nconsole.log(getMax(2, 3, 10));  // → 10\nconsole.log(getMax(7, 7, 3));   // → 7 (a &gt;= b même si égaux)</pre></div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultats :</span><br/>\n        getMax(5, 9, 1)  → <span class=\"ok\">9</span> <span class=\"cmt\">// 9&gt;=5 ET 9&gt;=1 → vrai</span><br/>\n        getMax(2, 3, 10) → <span class=\"ok\">10</span> <span class=\"cmt\">// 10&gt;=2 ET 10&gt;=3 → vrai</span><br/>\n        getMax(7, 7, 3)  → <span class=\"ok\">7</span> <span class=\"cmt\">// 7&gt;=7 ET 7&gt;=3 → vrai (égalité ok)</span></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>&amp;&amp;</code></td><td>ET logique — les deux conditions vraies</td><td><code>a &gt;= b &amp;&amp; a &gt;= c</code></td></tr>\n<tr><td><code>||</code></td><td>OU logique — au moins une vraie</td><td><code>a &gt; 0 || b &gt; 0</code></td></tr>\n<tr><td><code>!</code></td><td>NON logique — inverse</td><td><code>!true === false</code></td></tr>\n<tr><td><code>&gt;=</code></td><td>Supérieur ou égal</td><td><code>9 &gt;= 9</code> → true</td></tr>\n<tr><td><code>===</code></td><td>Égalité stricte (valeur ET type)</td><td><code>5 === \"5\"</code> → false</td></tr>\n<tr><td><code>==</code></td><td>Égalité faible (valeur seulement)</td><td><code>5 == \"5\"</code> → true</td></tr>\n</tbody>\n</table></div>\n<h2>Les boucles for</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe de la boucle for</div>\n<pre>for (initialisation; condition; incrément) {\n    // instructions répétées\n}\n// Exemple — afficher 1 à 5\nfor (var i = 1; i &lt;= 5; i++) {\n    console.log(i);  // affiche : 1, 2, 3, 4, 5\n}\n// Exemple — parcourir un tableau\nvar fruits = ['Mangue', 'Ananas', 'Banane'];\nfor (var i = 0; i &lt; fruits.length; i++) {\n    console.log(fruits[i]);\n}\n// → Mangue, Ananas, Banane\n// Boucle décroissante (comme dans reverseTab)\nfor (var i = fruits.length - 1; i &gt;= 0; i--) {\n    console.log(fruits[i]);\n}\n// → Banane, Ananas, Mangue</pre></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Anatomie du for — 3 parties séparées par ;</div>\n<p><code>for (</code><strong>var i = 0</strong><code>;</code> <strong>i &lt; 5</strong><code>;</code> <strong>i++</strong><code>)</code><br/>\n        1. <strong>Initialisation</strong> : on crée le compteur, exécuté une seule fois<br/>\n        2. <strong>Condition</strong> : tant que vraie, la boucle continue (vérifiée avant chaque tour)<br/>\n        3. <strong>Incrément</strong> : mis à jour après chaque tour (<code>i++</code> = i augmente de 1, <code>i--</code> = i diminue)</p></div>\n<h2>Les tableaux (Arrays)</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Créer et manipuler un tableau</div>\n<pre>// ── Déclaration ──\nvar noms = ['Rafael', 'Mathilde', 'Ahmed'];  // tableau de 3 éléments\n// ── Accès par index (commence à 0) ──\nconsole.log(noms[0]);  // → 'Rafael'\nconsole.log(noms[1]);  // → 'Mathilde'\nconsole.log(noms[2]);  // → 'Ahmed'\n// ── Propriété length ──\nconsole.log(noms.length);  // → 3\n// ── Méthode push ──\nnoms.push('Sophie');       // ajoute à la fin\nconsole.log(noms.length);  // → 4\n// ── Dernier index ──\nvar dernierIndex = noms.length - 1;  // 4 - 1 = 3\nconsole.log(noms[dernierIndex]);      // → 'Sophie'</pre></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode / Propriété</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>.length</code></td><td>Nombre d'éléments</td><td><code>noms.length</code> → 3</td></tr>\n<tr><td><code>.push(val)</code></td><td>Ajoute à la fin</td><td><code>noms.push('Ali')</code></td></tr>\n<tr><td><code>.pop()</code></td><td>Retire le dernier</td><td><code>noms.pop()</code></td></tr>\n<tr><td><code>[index]</code></td><td>Accès par position (début à 0)</td><td><code>noms[0]</code> → 'Rafael'</td></tr>\n</tbody>\n</table></div>\n<h2>javascript.js : le fichier complet du cours</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">javascript.js — code complet annoté</div>\n<pre>// ── Variables de base ──\nvar x = 2;\nvar y = 3;\n// ── Opérations ──\nconsole.log(\"addition :\", x + y);        // → 5\nconsole.log(\"soustraction :\", x - y);    // → -1\nconsole.log(\"multiplication :\", x * y);  // → 6\nconsole.log(\"division :\", x / y);        // → 0.666...\nconsole.log(\"modulo :\", x % y);          // → 2 (reste de 2/3)\n// ── Chaîne de caractères ──\nvar nom = \"Pierre\";\nvar prenom = \"Dupont\";\nconsole.log(nom + \" \" + prenom);         // → \"Pierre Dupont\"\nconsole.log(nom.length);                 // → 6 (nb de caractères)\nconsole.log(nom.toUpperCase());          // → \"PIERRE\"\nconsole.log(nom.toLowerCase());          // → \"pierre\"\n// ── Tableau ──\nvar fruits = ['Mangue', 'Ananas', 'Banane'];\nconsole.log(fruits[0]);                  // → 'Mangue'\nconsole.log(fruits.length);             // → 3\n// ── Boucle ──\nfor (var i = 0; i &lt; fruits.length; i++) {\n    console.log(fruits[i]);              // → Mangue, Ananas, Banane\n}</pre></div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultats dans la console (F12 → Onglet Console) :</span><br/>\n        addition : <span class=\"ok\">5</span><br/>\n        soustraction : <span class=\"ok\">-1</span><br/>\n        multiplication : <span class=\"ok\">6</span><br/>\n        division : <span class=\"ok\">0.6666666666666666</span><br/>\n        modulo : <span class=\"ok\">2</span><br/>\n        Pierre Dupont<br/>\n<span class=\"ok\">6</span><br/>\n<span class=\"ok\">PIERRE</span><br/>\n<span class=\"ok\">pierre</span><br/>\n<span class=\"ok\">Mangue</span><br/>\n<span class=\"ok\">Ananas</span><br/>\n<span class=\"ok\">Banane</span></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Méthodes utiles sur les chaînes</div>\n<ul><li><code>\"Pierre\".length</code> → <code>6</code> (nombre de caractères)</li><li><code>\"Pierre\".toUpperCase()</code> → <code>\"PIERRE\"</code></li><li><code>\"Pierre\".toLowerCase()</code> → <code>\"pierre\"</code></li><li><code>\"Bonjour\".substring(0, 3)</code> → <code>\"Bon\"</code> (de l'index 0 à 3 exclu)</li></ul></div>\n<h2>Résumé des fonctions du cours (fiches JS)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Fichier source</th></tr></thead>\n<tbody>\n<tr><td><code>Additionner()</code></td><td>Demande 2 nombres via prompt, affiche la somme</td><td>fonction.js</td></tr>\n<tr><td><code>reverseTab(tab)</code></td><td>Retourne un tableau dans l'ordre inverse</td><td>fonction.js</td></tr>\n<tr><td><code>getMax(a, b, c)</code></td><td>Retourne le plus grand des 3 nombres</td><td>getmax.js</td></tr>\n</tbody>\n</table></div>\n<h2>QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>L'essentiel du Chapitre 3 JavaScript</h3>\n<ul>\n<li><code>typeof NaN</code> → <code>\"number\"</code> · <code>typeof null</code> → <code>\"object\"</code> — deux pièges classiques</li>\n<li><code>prompt()</code> retourne toujours une <strong>String</strong> → utiliser <code>parseInt()</code> avant d'additionner</li>\n<li><code>getMax(a,b,c)</code> : if + <code>&amp;&amp;</code> + <code>&gt;=</code> pour comparer 3 valeurs</li>\n<li><code>reverseTab(tab)</code> : boucle for décroissante (<code>i = tab.length - 1</code>, <code>i--</code>) + <code>.push()</code></li>\n<li>Tableau : index commence à <strong>0</strong> · <code>.length</code> · <code>.push()</code></li>\n<li>Boucle for : <code>for(init ; condition ; incrément)</code></li>\n<li>Chaînes : <code>.length</code> · <code>.toUpperCase()</code> · <code>.toLowerCase()</code></li>\n</ul></div>\n<div>\n<a> Ch.2 — CSS</a>\n<a>Ch.4 — WordPress →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Dans var.js, qu'affiche typeof(null) ?",
+          "options": [
+            {
+              "text": "\"null\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"undefined\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"object\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "\"string\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "typeof null retourne 'object' — c'est un bug historique de JavaScript jamais corrigé. null est une valeur vide intentionnelle mais son type est signalé comme 'object'."
+        },
+        {
+          "type": "mcq",
+          "text": "Sans parseInt(), que retourne prompt() quand l'utilisateur saisit 7 ?",
+          "options": [
+            {
+              "text": "Le nombre 7 (type number)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "La chaîne \"7\" (type string)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "true",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "undefined",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "prompt() retourne toujours une chaîne de caractères (String), même si l'utilisateur tape un chiffre. C'est pourquoi on utilise parseInt() pour convertir avant d'additionner."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans getmax.js, que retourne getMax(7, 7, 3) ?",
+          "options": [
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "14",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "7",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "undefined",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "getMax(7, 7, 3) → le premier if teste a >= b && a >= c : 7 >= 7 ET 7 >= 3 → les deux vrais → retourne a = 7. L'égalité fonctionne grâce à >= (supérieur OU égal)."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans reverseTab(['A','B','C']), quel est l'index de départ de la boucle for ?",
+          "options": [
+            {
+              "text": "0",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "2 (tab.length - 1)",
+              "correct": true,
+              "explanation": ""
+            }
+          ],
+          "explanation": "tab.length - 1 = 3 - 1 = 2 : on part de l'index 2 (le dernier élément 'C'), puis on décrémente : i=2 → push('C'), i=1 → push('B'), i=0 → push('A')."
+        },
+        {
+          "type": "mcq",
+          "text": "Que fait resultat.push(tab[i]) dans reverseTab ?",
+          "options": [
+            {
+              "text": "Supprime le premier élément de resultat",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ajoute tab[i] à la fin du tableau resultat",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Remplace tous les éléments de resultat",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Trie resultat par ordre alphabétique",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": ".push() ajoute un élément à la fin d'un tableau. Dans reverseTab, on ajoute tab[i] (en partant du dernier index) dans le tableau resultat initialement vide."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans javascript.js, que retourne \"Pierre\".length ?",
+          "options": [
+            {
+              "text": "5",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "6",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "7",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"number\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "'Pierre' contient 6 caractères : P-i-e-r-r-e. .length compte tous les caractères y compris les espaces et les accents. Ici pas d'espace ni accent donc 6."
+        },
+        {
+          "type": "mcq",
+          "text": "Que donne 10 % 3 (modulo) en JavaScript ?",
+          "options": [
+            {
+              "text": "3",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "1",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "0.33",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "30",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "L'opérateur modulo % retourne le reste de la division entière. 10 / 3 = 3 reste 1, donc 10 % 3 = 1. Très utile pour savoir si un nombre est pair (n % 2 === 0)."
+        },
+        {
+          "type": "mcq",
+          "text": "Dans la boucle for (var i = 0; i < fruits.length; i++) avec fruits de 3 éléments — combien de tours ?",
+          "options": [
+            {
+              "text": "2 tours (i=0 et i=1)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "4 tours (i=0 à i=3)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "3 tours (i=0, i=1, i=2)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "1 seul tour",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "explanation": "La boucle va de i=0 à i < 3 (fruits.length = 3) : i prend les valeurs 0, 1, 2 → 3 tours. Quand i=3, la condition i < 3 est fausse, la boucle s'arrête."
+        }
+      ],
+      "source": "_private/devweb/chapitres/chapitre3.html"
     },
     {
-     "type": "mcq",
-     "text": "Quelle méthode de formulaire est recommandée pour un login ?",
-     "options": [
-      {
-       "text": "GET",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "POST",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "PUT",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle balise remplace sémantiquement <div id=\"nav\"> ?",
-     "options": [
-      {
-       "text": "<menu>",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "<section>",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "<nav>",
-       "correct": true,
-       "explanation": ""
-      }
-     ]
+      "number": 4,
+      "title": "WordPress — Gestion de Site Web",
+      "subtitle": "Créer, personnaliser et administrer un site professionnel sans coder avec le CMS le plus utilisé au monde.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs du chapitre</div>\n<ul><li>Comprendre ce qu'est un CMS et WordPress</li><li>Installer WordPress et naviguer dans le tableau de bord</li><li>Distinguer Pages, Articles, Catégories et Médias</li><li>Installer et configurer des thèmes et plugins</li><li>Personnaliser un site et comprendre les réglages essentiels</li></ul></div>\n<h2>Qu'est-ce qu'un CMS ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Définition — CMS</div>\n<p>Un <strong>CMS</strong> (<em>Content Management System</em> — Système de Gestion de Contenu) est un logiciel qui permet de créer, modifier et gérer un site web <strong>sans maîtriser le code</strong>. Le contenu est stocké en base de données et affiché dynamiquement.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>CMS</th><th>Part de marché</th><th>Usage principal</th></tr></thead>\n<tbody>\n<tr><td><strong>WordPress</strong></td><td>~43% du web</td><td>Blog, vitrine, e-commerce</td></tr>\n<tr><td>Wix</td><td>~3%</td><td>Sites personnels, portfolio</td></tr>\n<tr><td>Shopify</td><td>~4%</td><td>E-commerce uniquement</td></tr>\n<tr><td>Joomla</td><td>~2%</td><td>Portails, communautés</td></tr>\n<tr><td>Drupal</td><td>~1%</td><td>Sites institutionnels complexes</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — CMS</div>\n<p><strong>C</strong>reate, <strong>M</strong>anage, <strong>S</strong>hare — c'est exactement ce que fait un CMS.<br/>\n        Pense à un CMS comme à <strong>Microsoft Word pour les sites web</strong> : tu écris, tu mets en forme, tu publies — sans toucher au code HTML/CSS.</p></div>\n<h2>WordPress.org vs WordPress.com</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>WordPress.org</th><th>WordPress.com</th></tr></thead>\n<tbody>\n<tr><td><strong>Type</strong></td><td>Logiciel à installer (auto-hébergé)</td><td>Service hébergé (SaaS)</td></tr>\n<tr><td><strong>Hébergement</strong></td><td>À fournir soi-même</td><td>Inclus (limité en gratuit)</td></tr>\n<tr><td><strong>Plugins</strong></td><td>Tous (60 000+)</td><td>Limités selon le plan</td></tr>\n<tr><td><strong>Thèmes</strong></td><td>Tous</td><td>Limités</td></tr>\n<tr><td><strong>Contrôle</strong></td><td>Total</td><td>Partiel</td></tr>\n<tr><td><strong>Coût</strong></td><td>Gratuit + hébergement (~2$/mois)</td><td>Gratuit (limité) ou payant</td></tr>\n<tr><td><strong>Recommandé pour</strong></td><td>Projets professionnels</td><td>Débutants, blogs personnels</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">En cours B1, on parle de WordPress.org</div>\n<p>L'examen porte sur WordPress auto-hébergé (wordpress.org). C'est le WordPress que tu installes sur un hébergeur comme OVH, Hostinger ou en local avec XAMPP.</p></div>\n<h2>Installation de WordPress</h2>\n<h3>Prérequis (pile LAMP/WAMP)</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Version minimale</th></tr></thead>\n<tbody>\n<tr><td><strong>PHP</strong></td><td>Langage serveur de WordPress</td><td>PHP 7.4+</td></tr>\n<tr><td><strong>MySQL / MariaDB</strong></td><td>Base de données</td><td>MySQL 5.7+</td></tr>\n<tr><td><strong>Apache / Nginx</strong></td><td>Serveur web</td><td>Toute version récente</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Étapes d'installation (Famous 5-Minute Install)</div>\n<pre><code>1. Télécharger WordPress → wordpress.org/download\n2. Extraire l'archive dans le dossier web (ex: /var/www/html/)\n3. Créer une base de données MySQL :\n   CREATE DATABASE wp_monsite;\n   CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'motdepasse';\n   GRANT ALL ON wp_monsite.* TO 'wp_user'@'localhost';\n4. Renommer wp-config-sample.php → wp-config.php\n5. Renseigner wp-config.php :\n   define('DB_NAME',     'wp_monsite');\n   define('DB_USER',     'wp_user');\n   define('DB_PASSWORD', 'motdepasse');\n   define('DB_HOST',     'localhost');\n6. Accéder à http://monsite.com/wp-admin/install.php\n7. Remplir : titre du site, identifiant admin, mot de passe, email\n8. Cliquer \"Installer WordPress\" → Terminé en ~5 minutes !</code></pre></div>\n<h2>Le Tableau de Bord (Dashboard)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Accès au tableau de bord</div>\n<p>URL : <code>https://monsite.com/wp-admin</code><br/>\n        C'est le <strong>cerveau</strong> de WordPress — tout se gère depuis ici.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Menu</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td> <strong>Tableau de bord</strong></td><td>Vue d'ensemble du site</td></tr>\n<tr><td> <strong>Articles</strong></td><td>Gérer les publications du blog</td></tr>\n<tr><td> <strong>Médias</strong></td><td>Images, vidéos, fichiers uploadés</td></tr>\n<tr><td> <strong>Pages</strong></td><td>Accueil, Contact, À propos…</td></tr>\n<tr><td> <strong>Commentaires</strong></td><td>Modérer les commentaires</td></tr>\n<tr><td> <strong>Apparence</strong></td><td>Thèmes, menus, personnalisation</td></tr>\n<tr><td> <strong>Extensions</strong></td><td>Installer/activer des plugins</td></tr>\n<tr><td> <strong>Utilisateurs</strong></td><td>Gérer les comptes et rôles</td></tr>\n<tr><td> <strong>Réglages</strong></td><td>Configuration générale du site</td></tr>\n</tbody>\n</table></div>\n<h2>Pages vs Articles</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Pages vs Articles</div>\n<p><strong>Pages</strong> = contenu <strong>statique</strong>, intemporel. Exemples : Accueil, À propos, Contact. Pas de date, pas de catégorie. Pense à un <em>livre</em>.<br/>\n<strong>Articles</strong> = contenu <strong>dynamique</strong>, daté. Exemples : actualités, tutoriels, blog. Ont des catégories et des tags. Pense à un <em>journal</em>.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>Pages</th><th>Articles</th></tr></thead>\n<tbody>\n<tr><td>Date</td><td>Non visible</td><td>Oui (chronologique)</td></tr>\n<tr><td>Catégories</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Tags</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Flux RSS</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Hiérarchie</td><td>Oui (pages enfants)</td><td>Non</td></tr>\n<tr><td>Usage</td><td>Accueil, Contact, CGU</td><td>Blog, news, tutoriels</td></tr>\n</tbody>\n</table></div>\n<h2>Thèmes WordPress</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Qu'est-ce qu'un thème ?</div>\n<p>Un <strong>thème</strong> contrôle l'apparence visuelle du site (couleurs, typographie, mise en page). Il est séparé du contenu : changer de thème ne supprime pas tes articles ou pages.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de thème</th><th>Description</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Gratuits</strong></td><td>Disponibles sur wordpress.org/themes</td><td>Astra, OceanWP, Hello</td></tr>\n<tr><td><strong>Premium</strong></td><td>Achetés sur ThemeForest ou sites officiels</td><td>Divi, Avada, GeneratePress</td></tr>\n<tr><td><strong>Thème enfant</strong></td><td>Hérite du thème parent, personnalisable sans risque</td><td>Astra Child Theme</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Installer un thème</div>\n<pre><code>/* Méthode 1 : Depuis le dashboard */\nApparence → Thèmes → Ajouter → Rechercher → Installer → Activer\n/* Méthode 2 : Upload d'un fichier .zip */\nApparence → Thèmes → Ajouter → Mettre un thème en ligne → Choisir le fichier\n/* Méthode 3 : FTP */\nDéposer le dossier du thème dans : /wp-content/themes/</code></pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Toujours utiliser un thème enfant</div>\n<p>Si tu modifies directement le thème parent et qu'une mise à jour arrive, <strong>toutes tes modifications seront perdues</strong>. Un <strong>thème enfant</strong> hérite du parent mais protège tes personnalisations.</p></div>\n<h2>Extensions (Plugins)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">Qu'est-ce qu'un plugin ?</div>\n<p>Un <strong>plugin</strong> (extension) ajoute des fonctionnalités à WordPress sans modifier le cœur du système. Il y a plus de 60 000 plugins gratuits sur wordpress.org/plugins.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Besoin</th><th>Plugin recommandé</th></tr></thead>\n<tbody>\n<tr><td>SEO (référencement)</td><td>Yoast SEO, Rank Math</td></tr>\n<tr><td>Sécurité</td><td>Wordfence, iThemes Security</td></tr>\n<tr><td>Sauvegarde</td><td>UpdraftPlus</td></tr>\n<tr><td>Vitesse / Cache</td><td>WP Rocket, W3 Total Cache</td></tr>\n<tr><td>Formulaires de contact</td><td>Contact Form 7, WPForms</td></tr>\n<tr><td>E-commerce</td><td>WooCommerce</td></tr>\n<tr><td>Page builder</td><td>Elementor, Divi Builder</td></tr>\n<tr><td>Galerie photos</td><td>Envira Gallery, NextGEN</td></tr>\n<tr><td>Réseaux sociaux</td><td>Social Warfare, Smash Balloon</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Règle des plugins</div>\n<p>Moins de plugins = site plus rapide et plus sécurisé.<br/>\n        Règle des <strong>3V</strong> avant d'installer un plugin :<br/>\n        → <strong>V</strong>oix : beaucoup d'avis positifs (4+)<br/>\n        → <strong>V</strong>ersion : compatible avec ta version de WP<br/>\n        → <strong>V</strong>ie : dernière mise à jour récente (moins de 6 mois)</p></div>\n<h2>Rôles des Utilisateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Rôle</th><th>Permissions</th></tr></thead>\n<tbody>\n<tr><td><strong>Administrateur</strong></td><td>Accès complet à tout le site</td></tr>\n<tr><td><strong>Éditeur</strong></td><td>Gérer et publier tous les contenus (mais pas les plugins/thèmes)</td></tr>\n<tr><td><strong>Auteur</strong></td><td>Écrire et publier SES propres articles uniquement</td></tr>\n<tr><td><strong>Contributeur</strong></td><td>Écrire des articles mais ne peut pas publier (validation requise)</td></tr>\n<tr><td><strong>Abonné</strong></td><td>Gérer son profil uniquement, lire les contenus</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Mnémo — Rôles WP (du plus fort au plus faible)</div>\n<p><strong>A</strong>dmin → <strong>É</strong>diteur → <strong>A</strong>uteur → <strong>C</strong>ontributeur → <strong>A</strong>bonné<br/>\n        Mémo : <strong>\"A-É-A-C-A\"</strong> — \"Un Admin Éclairé Agit Correctement, Amigo !\"</p></div>\n<h2>Réglages Essentiels</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Réglages → Général</div>\n<pre><code>Titre du site        → Nom affiché dans le navigateur et les moteurs\nSlogan              → Sous-titre du site\nURL WordPress       → URL d'installation de WordPress\nURL du site         → URL publique (peut différer)\nEmail admin         → Notifications du site\nLangue              → Langue d'administration\nFuseau horaire      → Important pour la planification des articles</code></pre></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Réglages → Permaliens (très important !)</div>\n<pre><code>/* Réglages → Permaliens */\n/* Choisir \"Titre de la publication\" pour le meilleur SEO */\nStructure recommandée : /%postname%/\nExemple : monsite.com/mon-article-de-blog/\n/* Structures disponibles */\nPar défaut :     /?p=123             (mauvais pour SEO)\nDate et nom :    /2025/01/15/titre/  (trop long)\nMois et nom :    /2025/01/titre/\nNom :            /titre/             ← Recommandé ✓</code></pre></div>\n<h2>Structure des Fichiers WordPress</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Arborescence WordPress</div>\n<pre><code>wordpress/\n├── wp-admin/          ← Interface d'administration (NE PAS TOUCHER)\n├── wp-includes/       ← Cœur de WordPress (NE PAS TOUCHER)\n└── wp-content/        ← TES fichiers (modifier ici uniquement)\n    ├── themes/        ← Tes thèmes installés\n    ├── plugins/       ← Tes plugins installés\n    ├── uploads/       ← Tes médias (images, PDFs…)\n    └── cache/         ← Cache (généré automatiquement)\nwp-config.php          ← Configuration DB et clés de sécurité\n.htaccess              ← Configuration serveur Apache (permaliens)</code></pre></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Sécuriser WordPress</div>\n<ul><li>Changer le préfixe des tables DB (<code>wp_</code> par défaut → changer)</li><li>Ne jamais utiliser <code>admin</code> comme identifiant</li><li>Activer l'authentification à deux facteurs</li><li>Mettre à jour régulièrement WP, thèmes et plugins</li><li>Installer un plugin de sécurité (Wordfence)</li><li>Faire des sauvegardes régulières (UpdraftPlus)</li></ul></div>\n<div class=\"box\">\n<div class=\"box-lbl\">QCM de révision</div></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Cours terminé !</div>\n<p>Tu as couvert les 4 piliers du développement web B1 : <strong>HTML</strong> (structure), <strong>CSS</strong> (style), <strong>JavaScript</strong> (interactivité) et <strong>WordPress</strong> (CMS). Tu es maintenant prêt pour tes partiels !</p></div>\n<div>\n<a>← Ch.3 — JavaScript</a>\n<a>Exercices</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "text": "Que signifie CMS ?",
+          "options": [
+            {
+              "text": "Content Making System",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Content Management System",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Coded Management Software",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quelle est la différence principale entre une Page et un Article ?",
+          "options": [
+            {
+              "text": "Les pages ont des catégories, pas les articles",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les articles ne peuvent pas avoir d'images",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Les articles sont datés et catégorisés, les pages sont statiques",
+              "correct": true,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Pourquoi utiliser un thème enfant ?",
+          "options": [
+            {
+              "text": "Pour conserver ses modifications lors des mises à jour",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Pour avoir plus de plugins disponibles",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Pour accélérer le site",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Quel rôle peut publier les articles des autres utilisateurs ?",
+          "options": [
+            {
+              "text": "Auteur",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Éditeur",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Contributeur",
+              "correct": false,
+              "explanation": ""
+            }
+          ]
+        },
+        {
+          "type": "mcq",
+          "text": "Où placer tes thèmes et plugins WordPress ?",
+          "options": [
+            {
+              "text": "Dans wp-admin/",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Dans wp-includes/",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Dans wp-content/",
+              "correct": true,
+              "explanation": ""
+            }
+          ]
+        }
+      ],
+      "source": "_private/devweb/chapitres/chapitre4.html"
     }
-   ],
-   "source": "devweb/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "CSS — Mise en forme",
-   "subtitle": "CSS donne vie à vos pages HTML : couleurs, tailles, marges, positionnement. On part des codes écrits en classe pour comprendre chaque propriété.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre comment lier un fichier CSS à une page HTML<br/>\n        • Maîtriser les sélecteurs : balise, classe (<code>.</code>), ID (<code>#</code>)<br/>\n        • Appliquer les propriétés de texte, de boîte et de positionnement<br/>\n        • Comprendre les effets visuels des codes CSS écrits en classe<br/>\n        • Utiliser <code>:hover</code>, <code>float</code>, <code>transition</code> et <code>border-radius</code></p>\n</div>\n<h2>2.1 — Lier CSS à HTML</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 3 façons d'ajouter du CSS</div>\n<p>Il y a 3 méthodes, du moins recommandé au plus recommandé :</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode</th><th>Où ?</th><th>Exemple</th><th>Recommandé ?</th></tr></thead>\n<tbody>\n<tr><td><strong>Inline</strong></td><td>Dans la balise HTML</td><td><code>&lt;p style=\"color:red;\"&gt;</code></td><td>❌ À éviter</td></tr>\n<tr><td><strong>Interne</strong></td><td>Dans <code>&lt;style&gt;</code> du <code>&lt;head&gt;</code></td><td><code>&lt;style&gt; h1{color:red;} &lt;/style&gt;</code></td><td>⚠️ Petits projets</td></tr>\n<tr><td><strong>Externe</strong></td><td>Fichier <code>.css</code> séparé</td><td><code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code></td><td>✅ Toujours</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Ce qu'on a fait en classe — index.html lie style.css</div>\n<pre>&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;title&gt;Exemple&lt;/title&gt;\n    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;  ← lien vers le fichier CSS\n&lt;/head&gt;</pre>\n</div>\n<h2>2.2 — Sélecteurs CSS</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Les 3 sélecteurs de base</div>\n<p>• <code>h1 { }</code> → sélecteur de <strong>balise</strong> : cible TOUTES les balises h1<br/>\n        • <code>.doc { }</code> → sélecteur de <strong>classe</strong> : cible tout élément avec <code>class=\"doc\"</code><br/>\n        • <code>#ok { }</code> → sélecteur d'<strong>ID</strong> : cible l'élément unique avec <code>id=\"ok\"</code><br/>\n        Astuce : <strong>point = classe</strong>, <strong>dièse = id</strong></p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css du cours — analyse complète</div>\n<pre>/* ── Sélecteur de classe : .doc ── */\n.doc {\n    color: blue;              /* couleur du texte : bleu */\n    letter-spacing: 5px;      /* espace entre les lettres */\n    margin-left: 400px;       /* décalage vers la droite */\n    text-decoration: underline; /* texte souligné */\n}\n/* ── Sélecteur d'ID : #ok ── */\n#ok {\n    color: blue;\n    letter-spacing: 5px;\n    margin-left: 400px;\n    text-decoration: underline;\n}\n/* → .doc et #ok ont le même effet ici\n   Différence : .doc peut être utilisé plusieurs fois,\n   #ok ne peut être utilisé qu'UNE seule fois par page */\n/* ── Classes pour les listes colorées ── */\n.part1 { color: green; font-weight: bold; }\n.part2 { color: blue;  font-weight: bold; }\n.part3 { color: red;   font-weight: bold; }\n/* ── Sélecteur de balise ── */\nh1 { text-align: center; }</pre>\n</div>\n<div class=\"css-demo\">\n<div class=\"css-demo-label\">👁 Rendu visuel</div>\n<div class=\"demo-frame\">\n<p>Texte avec class=\"doc\" — bleu, espacé, souligné</p>\n<ul>\n<li>Marteau 1 — .part1 (vert gras)</li>\n<li>Marteau 2 — .part2 (bleu gras)</li>\n<li>Marteau 3 — .part3 (rouge gras)</li>\n</ul>\nh1 centré\n</div>\n</div>\n<h2>2.3 — Propriétés de texte essentielles</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Valeurs courantes</th><th>Effet</th></tr></thead>\n<tbody>\n<tr><td><code>color</code></td><td>blue, red, #fff, rgb()</td><td>Couleur du texte</td></tr>\n<tr><td><code>font-size</code></td><td>14px, 1rem, 1.2em</td><td>Taille de la police</td></tr>\n<tr><td><code>font-weight</code></td><td>bold, normal, 700</td><td>Gras</td></tr>\n<tr><td><code>font-family</code></td><td>Arial, Georgia, serif</td><td>Police de caractères</td></tr>\n<tr><td><code>text-align</code></td><td>center, left, right</td><td>Alignement du texte</td></tr>\n<tr><td><code>text-decoration</code></td><td>underline, none, line-through</td><td>Soulignement / barré</td></tr>\n<tr><td><code>letter-spacing</code></td><td>5px, -1px</td><td>Espace entre les lettres</td></tr>\n</tbody>\n</table></div>\n<h2>2.4 — Box Model : marges et espacements</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📦 Le Box Model</div>\n<p>Chaque élément HTML est une boîte composée de 4 couches (de l'intérieur vers l'extérieur) :<br/>\n<strong>Contenu → Padding → Border → Margin</strong></p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>padding</code></td><td>Espace <strong>intérieur</strong> (entre contenu et bordure)</td><td><code>padding: 40px;</code></td></tr>\n<tr><td><code>margin</code></td><td>Espace <strong>extérieur</strong> (entre la boîte et ce qui est autour)</td><td><code>margin: 0 auto;</code></td></tr>\n<tr><td><code>border</code></td><td>Bordure de la boîte</td><td><code>border: 2px solid black;</code></td></tr>\n<tr><td><code>width</code></td><td>Largeur</td><td><code>width: 500px;</code></td></tr>\n<tr><td><code>border-radius</code></td><td>Coins arrondis</td><td><code>border-radius: 5px;</code></td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — margin: 0 auto</div>\n<p><code>margin: 0 auto;</code> = <strong>0</strong> en haut/bas + <strong>auto</strong> à gauche et à droite.<br/>\n        Auto = le navigateur calcule automatiquement des marges égales des deux côtés → l'élément est <strong>centré horizontalement</strong>.<br/>\n        ⚠️ Ça ne fonctionne que si l'élément a une largeur définie (<code>width</code>).</p>\n</div>\n<h2>2.5 — Le formulaire stylisé du cours</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Code CSS du formulaire — ce qu'on a écrit en classe</div>\n<p>Dans <code>style.css</code>, on a stylisé le formulaire d'inscription avec la classe <code>.form</code> :</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css — .form (formulaire gris centré)</div>\n<pre>.form {\n    background-color: lightgray;  /* fond gris clair */\n    padding: 40px;                /* espace intérieur 40px */\n    border-radius: 5px;           /* coins légèrement arrondis */\n    border: 2px solid black;      /* bordure noire 2px */\n    width: 500px;                 /* largeur fixe */\n    margin: 0 auto;               /* centré horizontalement */\n}\n.form label {\n    display: flex;                /* les éléments s'affichent en ligne */\n    align-items: center;          /* centrés verticalement */\n    justify-content: space-between; /* le champ s'aligne à droite */\n    margin-bottom: 15px;          /* espace entre chaque champ */\n}\n.form input[type=\"text\"],\n.form input[type=\"email\"],\n.form input[type=\"password\"] {\n    width: 400px;\n    padding: 10px;\n    border: 1px solid gray;\n    border-radius: 4px;\n}</pre>\n</div>\n<div class=\"css-demo\">\n<div class=\"css-demo-label\">👁 Rendu du formulaire</div>\n<div class=\"demo-frame\">\n<div>\n<div>\n<span>Nom</span>\n</div>\n<div>\n<span>Email</span>\n</div>\n<div>\n</div>\n</div>\n</div>\n</div>\n<h2>2.6 — Le bouton avec effet :hover</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">style.css — .button et .button:hover</div>\n<pre>/* État normal du bouton */\n.button {\n    background-color: blue;\n    border: 2px solid blue;\n    color: black;              /* texte noir par défaut */\n    padding: 10px 30px;\n    font-size: 14px;\n    cursor: pointer;           /* curseur en forme de main */\n    border-radius: 4px;\n    display: block;\n    margin: 20px auto;\n    transition-duration: 1s;   /* animation de 1 seconde */\n}\n/* État au survol de la souris */\n.button:hover {\n    background-color: blue;\n    color: white;              /* texte devient blanc */\n    padding: 12px 40px;        /* bouton légèrement plus grand */\n    font-size: 16px;\n    transition-duration: 0.3s; /* animation rapide (0.3s) */\n}</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Ce qu'il faut retenir sur :hover et transition</div>\n<p>• <code>:hover</code> = pseudo-classe CSS qui s'active quand la souris <strong>survole</strong> l'élément<br/>\n        • <code>transition-duration</code> = durée de l'animation entre l'état normal et l'état hover<br/>\n        • Dans cet exemple : texte passe de <strong>noir → blanc</strong> et le bouton s'agrandit légèrement<br/>\n        • <code>cursor: pointer</code> = affiche la main ☝️ au survol (comme sur un lien)</p>\n</div>\n<h2>2.7 — Le CV : float et border-collapse</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">cv.css — les règles clés</div>\n<pre>body {\n    font-family: Arial, sans-serif;\n    padding: 20px;\n}\n/* Tableau principal du CV */\n.main-table {\n    width: 90%;\n    margin: 0 auto;             /* centré */\n    border: 1px solid black;\n    border-collapse: collapse;  /* ← les bordures se touchent */\n}\n.main-table td { padding: 15px; }\n/* Sous-tableaux (rubriques) */\n.sub-table {\n    width: 100%;\n    border-collapse: collapse;\n    border: none;               /* ← pas de bordure sur les sous-tableaux */\n}\n/* Titres des rubriques */\nh2 {\n    font-family: Georgia, serif;  /* police avec empattements (classique) */\n    border-bottom: 1px solid gray; /* ← trait gris sous le titre de rubrique */\n    padding-bottom: 5px;\n}\n/* Photo du CV */\nimg {\n    float: right;              /* ← la photo se place à droite */\n    border: 1px solid gray;\n}</pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Explication de border-collapse</div>\n<p>Par défaut les cellules d'un tableau ont chacune leur propre bordure → il y a un <strong>double trait</strong> entre deux cellules.<br/>\n<code>border-collapse: collapse</code> = les bordures adjacentes <strong>fusionnent</strong> en un seul trait propre.<br/>\n        C'est pour ça qu'on l'utilise sur presque tous les tableaux HTML stylisés.</p>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 float: right — comment ça marche</div>\n<p>Quand on écrit <code>img { float: right; }</code> :<br/>\n        1. L'image est retirée du flux normal<br/>\n        2. Elle est placée à droite de son conteneur<br/>\n        3. Le texte qui suit s'enroule automatiquement à gauche de l'image<br/>\n        C'est exactement ce qu'on a fait dans le CV : la photo est à droite, les infos à gauche.</p>\n</div>\n<h2>2.8 — Récapitulatif des propriétés CSS du cours</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Propriété CSS</th><th>Ce qu'elle fait</th><th>Vu dans</th></tr></thead>\n<tbody>\n<tr><td><code>color: blue</code></td><td>Texte bleu</td><td>style.css — .doc</td></tr>\n<tr><td><code>letter-spacing: 5px</code></td><td>Espace entre lettres</td><td>style.css — .doc</td></tr>\n<tr><td><code>text-decoration: underline</code></td><td>Texte souligné</td><td>style.css — .doc</td></tr>\n<tr><td><code>font-weight: bold</code></td><td>Texte en gras</td><td>style.css — .part1/2/3</td></tr>\n<tr><td><code>text-align: center</code></td><td>Texte centré</td><td>style.css — h1</td></tr>\n<tr><td><code>background-color: lightgray</code></td><td>Fond gris clair</td><td>style.css — .form</td></tr>\n<tr><td><code>padding: 40px</code></td><td>Espace intérieur</td><td>style.css — .form</td></tr>\n<tr><td><code>border-radius: 5px</code></td><td>Coins arrondis</td><td>style.css — .form</td></tr>\n<tr><td><code>border: 2px solid black</code></td><td>Bordure noire</td><td>style.css — .form</td></tr>\n<tr><td><code>margin: 0 auto</code></td><td>Centrage horizontal</td><td>style.css — .form, cv.css</td></tr>\n<tr><td><code>width: 500px</code></td><td>Largeur fixe</td><td>style.css — .form</td></tr>\n<tr><td><code>display: flex</code></td><td>Affichage flexible en ligne</td><td>style.css — .form label</td></tr>\n<tr><td><code>cursor: pointer</code></td><td>Curseur en forme de main</td><td>style.css — .button</td></tr>\n<tr><td><code>transition-duration: 0.3s</code></td><td>Animation douce</td><td>style.css — .button:hover</td></tr>\n<tr><td><code>:hover</code></td><td>Style au survol souris</td><td>style.css — .button:hover</td></tr>\n<tr><td><code>float: right</code></td><td>Élément flottant à droite</td><td>cv.css — img</td></tr>\n<tr><td><code>border-collapse: collapse</code></td><td>Bordures fusionnées</td><td>cv.css — tableau</td></tr>\n<tr><td><code>font-family: Georgia</code></td><td>Police avec empattements</td><td>cv.css — h2</td></tr>\n<tr><td><code>border-bottom: 1px solid gray</code></td><td>Trait gris sous le titre</td><td>cv.css — h2</td></tr>\n</tbody>\n</table></div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 2 CSS</h3>\n<ul>\n<li>Lier CSS : <code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code> dans le head</li>\n<li>3 sélecteurs : <strong>balise</strong> (h1), <strong>classe</strong> (.doc), <strong>ID</strong> (#ok)</li>\n<li><code>margin: 0 auto</code> + <code>width</code> = centrage horizontal</li>\n<li><code>:hover</code> = style au survol · <code>transition-duration</code> = animation</li>\n<li><code>float: right</code> = élément à droite, texte s'enroule</li>\n<li><code>border-collapse: collapse</code> = bordures fusionnées dans les tableaux</li>\n<li><code>border-bottom</code> = trait uniquement en bas (effet rubrique de CV)</li>\n</ul>\n</div>\n<div>\n<a>⬅ Ch.1 — HTML</a>\n<a>Ch.3 — JavaScript →</a>\n</div>\n</div>",
-   "questions": [
+  ],
+  "exercises": [
     {
-     "type": "mcq",
-     "text": "Dans le CSS du cours, .doc { color: blue; letter-spacing: 5px; } — que signifie letter-spacing: 5px ?",
-     "options": [
-      {
-       "text": "La taille de la police est de 5px",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Il y a 5px d'espace entre chaque lettre",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "La marge gauche est de 5px",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'interligne est de 5px",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "letter-spacing contrôle l'espace entre chaque lettre (espacement interlettre). Ici 5px = les lettres sont bien séparées, c'est l'effet 'DOCUMENT' espacé dans le style.css du cours."
+      "type": "mcq",
+      "text": "HTMLQ1. Quelle balise est obligatoire en tout premier dans un fichier HTML5 ?",
+      "options": [
+        {
+          "text": "<html>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<!DOCTYPE html>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "<head>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<meta charset=\"UTF-8\">",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "&lt;!DOCTYPE html&gt; doit toujours être la toute première ligne d'un fichier HTML5 — elle indique au navigateur la version du langage utilisée."
     },
     {
-     "type": "mcq",
-     "text": "Pourquoi a-t-on utilisé margin: 0 auto; sur la classe .form ?",
-     "options": [
-      {
-       "text": "Pour supprimer toutes les marges",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour centrer le formulaire horizontalement dans la page",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Pour ajouter un padding automatique",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour que le formulaire prenne toute la largeur",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "margin: 0 auto; sur un élément de largeur fixe (width: 500px) centre l'élément horizontalement : le navigateur calcule des marges gauche et droite égales automatiquement."
+      "type": "mcq",
+      "text": "HTMLQ2. Quelle balise crée une liste à puces (non ordonnée) ?",
+      "options": [
+        {
+          "text": "<ol>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<li>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<ul>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "<list>",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "&lt;ul&gt; (Unordered List) crée une liste à puces. &lt;ol&gt; (Ordered List) crée une liste numérotée. &lt;li&gt; est l'élément de liste à l'intérieur des deux."
     },
     {
-     "type": "mcq",
-     "text": "Quelle est la différence entre .doc { } et #ok { } dans le style.css du cours ?",
-     "options": [
-      {
-       "text": "Aucune différence, ils font la même chose",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".doc peut être utilisé plusieurs fois, #ok une seule fois (ID unique)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "#ok s'applique à toutes les balises h1",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": ".doc est plus prioritaire que #ok",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": ".doc est un sélecteur de classe : il peut être appliqué à plusieurs éléments dans la page. #ok est un sélecteur d'ID : un ID doit être unique dans toute la page HTML."
+      "type": "mcq",
+      "text": "HTMLQ3. Pour ouvrir un lien dans un nouvel onglet, on utilise :",
+      "options": [
+        {
+          "text": "href=\"_new\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "target=\"_blank\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "rel=\"noopener\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "open=\"tab\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "target=\"_blank\" ouvre le lien dans un nouvel onglet. target=\"_self\" (défaut) l'ouvre dans l'onglet actuel."
     },
     {
-     "type": "mcq",
-     "text": "Dans .button:hover { color: white; transition-duration: 0.3s; } — quand ce style s'applique-t-il ?",
-     "options": [
-      {
-       "text": "Quand on clique sur le bouton",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Quand la souris passe au-dessus du bouton (survol)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Après 0.3 secondes au chargement",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Uniquement sur mobile",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": ":hover est une pseudo-classe CSS qui s'applique uniquement lors du survol de la souris. transition-duration: 0.3s rend le changement d'état progressif (animation douce de 0.3s)."
+      "type": "mcq",
+      "text": "HTMLQ4. Pour fusionner 3 colonnes dans un tableau, on écrit :",
+      "options": [
+        {
+          "text": "rowspan=\"3\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "merge=\"3\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "colspan=\"3\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "span=\"3\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "colspan=\"3\" fusionne 3 colonnes horizontalement. rowspan=\"3\" fusionne 3 lignes verticalement."
     },
     {
-     "type": "mcq",
-     "text": "Dans le cv.css : img { float: right; } — quel est l'effet visuel ?",
-     "options": [
-      {
-       "text": "L'image est centrée sur la page",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'image s'affiche en dessous du texte",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "L'image se place à droite et le texte s'enroule à sa gauche",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "L'image disparaît",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "float: right retire l'image du flux normal et la colle à droite de son conteneur. Le texte qui suit s'enroule automatiquement à gauche de l'image — c'est le comportement classique pour les photos dans un CV."
+      "type": "mcq",
+      "text": "HTMLQ5. Quelle balise crée une cellule d'en-tête dans un tableau (texte gras centré) ?",
+      "options": [
+        {
+          "text": "<td>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<th>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "<tr>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<head>",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "&lt;th&gt; (Table Header) crée une cellule d'en-tête : son texte est automatiquement en gras et centré. &lt;td&gt; est une cellule ordinaire."
     },
     {
-     "type": "mcq",
-     "text": "Pourquoi utilise-t-on border-collapse: collapse; sur le tableau du CV ?",
-     "options": [
-      {
-       "text": "Pour cacher les bordures du tableau",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour que les bordures des cellules adjacentes fusionnent en un seul trait",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Pour ajouter de l'espace entre les cellules",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour rendre le tableau responsive",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "Par défaut, les cellules d'un tableau ont chacune leur propre bordure, créant un double trait entre deux cellules. border-collapse: collapse fusionne ces bordures adjacentes en un seul trait."
+      "type": "mcq",
+      "text": "HTMLQ6. Quel type d'input permet un seul choix parmi plusieurs options ?",
+      "options": [
+        {
+          "text": "type=\"checkbox\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "type=\"select\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "type=\"radio\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "type=\"unique\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "type=\"radio\" permet un choix unique parmi plusieurs options (un seul bouton radio peut être coché à la fois dans un groupe de même name). type=\"checkbox\" permet des choix multiples."
     },
     {
-     "type": "mcq",
-     "text": "Dans le CSS du cours, comment appelle-t-on le sélecteur .form label { display: flex; justify-content: space-between; } ?",
-     "options": [
-      {
-       "text": "Un sélecteur d'ID imbriqué",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un sélecteur descendant (cible les label à l'intérieur de .form)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Un sélecteur universel",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un sélecteur :hover",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": ".form label est un sélecteur descendant : il cible tous les éléments label qui sont à l'intérieur d'un élément ayant la classe .form. display: flex + justify-content: space-between aligne le texte du label à gauche et le champ à droite."
+      "type": "mcq",
+      "text": "HTMLQ7. Quelle méthode de formulaire envoie les données de façon invisible (pour un login) ?",
+      "options": [
+        {
+          "text": "GET",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "POST",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "SEND",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "PUT",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "POST envoie les données de façon invisible (dans le corps de la requête) — recommandé pour les mots de passe et données sensibles. GET les affiche dans l'URL."
     },
     {
-     "type": "mcq",
-     "text": "Dans le cv.css : h2 { border-bottom: 1px solid gray; } — quel est l'effet visuel ?",
-     "options": [
-      {
-       "text": "Un cadre gris autour du titre",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Un trait gris sous chaque titre h2, comme une ligne de séparation",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Le titre devient gris",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Une ombre portée sous le titre",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "border-bottom: 1px solid gray ajoute uniquement un trait gris en bas de chaque h2, créant visuellement une ligne de séparation sous les titres de rubriques, comme dans le CV."
+      "type": "mcq",
+      "text": "HTMLQ8. Quelle balise sémantique remplace <div id=\"nav\"> ?",
+      "options": [
+        {
+          "text": "<menu>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<aside>",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "<nav>",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "<header>",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "&lt;nav&gt; est la balise sémantique HTML5 qui remplace &lt;div id=\"nav\"&gt; pour la navigation principale."
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ9. Que fait margin: 0 auto; sur un élément de largeur fixe ?",
+      "options": [
+        {
+          "text": "Supprime toutes les marges",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Centre l'élément horizontalement",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Ajoute un padding automatique",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Place l'élément en position absolute",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "margin: 0 auto; sur un élément de largeur fixe (width définie) centre l'élément horizontalement dans son parent."
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ10. Que produit border-collapse: collapse; sur un tableau ?",
+      "options": [
+        {
+          "text": "Cache le tableau",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Les bordures des cellules se touchent (pas de double trait)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Ajoute un espace entre cellules",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Supprime toutes les bordures",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "border-collapse: collapse; colle les bordures des cellules adjacentes — résultat : une seule bordure entre deux cellules au lieu du double trait par défaut."
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ11. Dans ce CSS : .btn:hover { color: white; } — quand s'applique ce style ?",
+      "options": [
+        {
+          "text": "Quand le bouton est cliqué",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Quand la souris passe au-dessus du bouton",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Quand le bouton est désactivé",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Quand la page se charge",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": ":hover est une pseudo-classe CSS qui s'applique quand la souris passe au-dessus de l'élément (survol)."
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ12. Que fait float: right; sur une image ?",
+      "options": [
+        {
+          "text": "Centre l'image",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Place l'image à droite et le texte s'enroule autour",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Place l'image en dehors du flux",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Aligne l'image à droite sans affecter le texte",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "float: right; retire l'image du flux normal et la place à droite — le texte suivant s'enroule automatiquement autour d'elle."
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ13. Comment sélectionne-t-on en CSS un élément avec id=\"menu\" ?",
+      "options": [
+        {
+          "text": ".menu { }",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "menu { }",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "#menu { }",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "[menu] { }",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Le sélecteur d'ID utilise le signe # : #menu { } cible l'élément avec id=\"menu\". Le sélecteur de classe utilise . : .menu { }"
+    },
+    {
+      "type": "mcq",
+      "text": "CSSQ14. Que fait letter-spacing: 5px; ?",
+      "options": [
+        {
+          "text": "Agrandit la taille de la police à 5px",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Ajoute 5px d'espace entre chaque lettre",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Ajoute 5px d'espace entre les mots",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Décale le texte de 5px vers la droite",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "letter-spacing ajoute de l'espace entre chaque lettre (espacement interlettre). word-spacing ajoute de l'espace entre les mots."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ15. Que renvoie typeof NaN en JavaScript ?",
+      "options": [
+        {
+          "text": "\"nan\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"undefined\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"number\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "\"error\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "typeof NaN retourne \"number\" — c'est une particularité (piège) de JavaScript. NaN signifie Not a Number mais son type est bien number."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ16. Sans parseInt(), que donne \"5\" + \"3\" en JavaScript ?",
+      "options": [
+        {
+          "text": "8",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"53\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "15",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "NaN",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "Sans parseInt(), le + entre deux chaînes fait de la concaténation : \"5\" + \"3\" = \"53\". Avec parseInt() : parseInt(\"5\") + parseInt(\"3\") = 8."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ17. Que fait alert(\"Bonjour\") ?",
+      "options": [
+        {
+          "text": "Écrit \"Bonjour\" dans la page",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Affiche une boîte de dialogue popup avec \"Bonjour\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Envoie \"Bonjour\" au serveur",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Stocke \"Bonjour\" dans une variable",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "alert() affiche une boîte de dialogue modale (popup) avec le message. L'utilisateur doit cliquer OK pour fermer."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ18. Dans la fonction getMax(5, 9, 1) du cours, que retourne-t-elle ?",
+      "options": [
+        {
+          "text": "1",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "5",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "15",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "9",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "getMax(5, 9, 1) → 9. La fonction compare les 3 valeurs : 9 >= 5 ET 9 >= 1, donc la condition b >= a && b >= c est vraie."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ19. Quelle instruction JavaScript permet à l'utilisateur de saisir une valeur dans une boîte de dialogue ?",
+      "options": [
+        {
+          "text": "alert()",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "console.log()",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "prompt()",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "input()",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "prompt() affiche une boîte de dialogue avec un champ de saisie et retourne la valeur saisie sous forme de chaîne de caractères."
+    },
+    {
+      "type": "mcq",
+      "text": "JSQ20. Que fait resultat.push(tab[i]) dans la fonction reverseTab du cours ?",
+      "options": [
+        {
+          "text": "Supprime le dernier élément du tableau",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Ajoute l'élément tab[i] à la fin du tableau resultat",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Remplace le premier élément de resultat",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Trie le tableau par ordre alphabétique",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": ".push() ajoute un élément à la fin d'un tableau. Dans reverseTab, on ajoute tab[i] (en partant de la fin) dans le nouveau tableau resultat."
     }
-   ],
-   "source": "_private/devweb/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "JavaScript",
-   "subtitle": "JavaScript rend les pages interactives. On analyse ligne par ligne les codes qu'on a écrits en classe : variables, types, fonctions, conditions, boucles et tableaux.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre les variables JS et leurs types (<code>typeof</code>)<br/>\n        • Maîtriser <code>alert()</code>, <code>prompt()</code>, <code>console.log()</code><br/>\n        • Écrire et lire des fonctions avec <code>if/else</code> et retour de valeur<br/>\n        • Utiliser les boucles <code>for</code> et les tableaux<br/>\n        • Comprendre le piège <code>parseInt()</code> vs concaténation</p>\n</div>\n<h2>3.1 — Lier JavaScript à HTML</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Méthode 1 — Script externe (recommandé)</div>\n<pre>&lt;!-- Dans le head ou en bas du body --&gt;\n&lt;script src=\"javascript.js\"&gt;&lt;/script&gt;</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Méthode 2 — Script inline dans l'attribut (HTML du cours)</div>\n<pre>&lt;!-- Ce qu'on a fait dans var.html --&gt;\n&lt;input type=\"submit\" value=\"calculer\" onclick=\"Additionner()\"&gt;\n&lt;!-- onclick=\"...\" → appelle la fonction JS quand on clique --&gt;</pre>\n</div>\n<h2>3.2 — Les variables et les types (var.js)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Déclaration de variables en JS</div>\n<p>En JavaScript on déclare une variable avec <code>var</code> (ou <code>let</code> / <code>const</code> en JS moderne). Une variable peut changer de valeur et de type.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">var.js — code exact du cours avec explications</div>\n<pre>// ── Déclaration des variables ──\nvar xprime = \"25\";       // ← String (chaîne de caractères)\nvar y = -75;              // ← Number (nombre entier)\nvar z = 3.14;             // ← Number (nombre décimal)\nvar prenom = \"pierre\";    // ← String\nvar a = true, b = false;  // ← Boolean (vrai/faux)\nvar n = null;             // ← null (valeur vide intentionnelle)\nvar u = undefined;        // ← undefined (variable non initialisée)\nvar nn = NaN;             // ← NaN = Not a Number\n// ── Réaffectation ──\nx = \"quatre\";             // ← x change de valeur (était \"25\")\n// ── Affichage avec typeof ──\nalert(\"Variable x : \" + typeof(x) +\n    \"\\nVariable y : \" + typeof(y) +\n    \"\\nVariable a : \" + typeof(a) +\n    \"\\nVariable n : \" + typeof(n) +\n    \"\\nVariable u : \" + typeof(u) +\n    \"\\nVariable nn : \" + typeof(nn));</pre>\n</div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultat de l'alerte :</span><br/>\n        Variable x : <span class=\"ok\">string</span><br/>\n        Variable y : <span class=\"ok\">number</span><br/>\n        Variable a : <span class=\"ok\">boolean</span><br/>\n        Variable n : <span class=\"warn\">object</span>  ← piège ! typeof null === \"object\"<br/>\n        Variable u : <span class=\"ok\">undefined</span><br/>\n        Variable nn : <span class=\"warn\">number</span>  ← piège ! typeof NaN === \"number\"\n      </div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Les 2 pièges de typeof — souvent à l'examen</div>\n<p>• <code>typeof null</code> retourne <code>\"object\"</code> (et non \"null\") — c'est une erreur historique de JavaScript qui n'a jamais été corrigée<br/>\n        • <code>typeof NaN</code> retourne <code>\"number\"</code> (et non \"nan\") — NaN signifie \"Not a Number\" mais son type est quand même number</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Valeur</th><th>Type JS</th><th>typeof retourne</th></tr></thead>\n<tbody>\n<tr><td><code>\"25\"</code>, <code>\"pierre\"</code></td><td>String</td><td><code>\"string\"</code></td></tr>\n<tr><td><code>-75</code>, <code>3.14</code></td><td>Number</td><td><code>\"number\"</code></td></tr>\n<tr><td><code>true</code>, <code>false</code></td><td>Boolean</td><td><code>\"boolean\"</code></td></tr>\n<tr><td><code>null</code></td><td>—</td><td><code>\"object\"</code> ⚠️</td></tr>\n<tr><td><code>undefined</code></td><td>—</td><td><code>\"undefined\"</code></td></tr>\n<tr><td><code>NaN</code></td><td>—</td><td><code>\"number\"</code> ⚠️</td></tr>\n</tbody>\n</table></div>\n<h2>3.3 — alert(), prompt(), console.log()</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Rôle</th><th>Retourne</th></tr></thead>\n<tbody>\n<tr><td><code>alert(\"message\")</code></td><td>Affiche une boîte popup — l'utilisateur clique OK</td><td>rien (undefined)</td></tr>\n<tr><td><code>prompt(\"question\")</code></td><td>Affiche une boîte avec un champ de saisie</td><td>la valeur saisie (String) ou null si Annuler</td></tr>\n<tr><td><code>console.log(valeur)</code></td><td>Affiche dans la console du navigateur (F12)</td><td>rien</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège majeur — prompt() retourne toujours une String</div>\n<p><code>prompt()</code> renvoie <strong>toujours une chaîne de caractères</strong>, même si l'utilisateur tape un nombre.<br/>\n        Conséquence : <code>\"5\" + \"3\" = \"53\"</code> (concaténation) et non <code>8</code> (addition)<br/>\n        Solution : convertir avec <code>parseInt()</code> (entier) ou <code>parseFloat()</code> (décimal)</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Démonstration du piège parseInt</div>\n<pre>// ❌ Sans parseInt — concaténation\nvar a = prompt(\"Nombre 1 ?\");  // l'utilisateur tape : 5  → a = \"5\" (string)\nvar b = prompt(\"Nombre 2 ?\");  // l'utilisateur tape : 3  → b = \"3\" (string)\nalert(a + b);  // → affiche \"53\" (pas 8 !)\n// ✅ Avec parseInt — addition\nvar a = parseInt(prompt(\"Nombre 1 ?\"));  // \"5\" → 5 (number)\nvar b = parseInt(prompt(\"Nombre 2 ?\"));  // \"3\" → 3 (number)\nalert(a + b);  // → affiche 8</pre>\n</div>\n<h2>3.4 — Les fonctions (fonction.js)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Syntaxe d'une fonction JS</div>\n<p>Une fonction est un bloc de code réutilisable, défini une fois, appelé plusieurs fois.</p>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe générale</div>\n<pre>function nomFonction(parametre1, parametre2) {\n    // instructions\n    return valeur;  // ← optionnel, retourne un résultat\n}</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">fonction.js — Additionner() du cours (var.html)</div>\n<pre>// ── Fonction Additionner ──\nfunction Additionner() {\n    var a = parseInt(prompt('Entrez le premier nombre :'));\n    var b = parseInt(prompt('Entrez le deuxième nombre :'));\n    alert(a + b);\n}\n// ── Appel dans HTML ──\n// &lt;input type=\"submit\" value=\"calculer\" onclick=\"Additionner()\"&gt;\n// Exemple : utilisateur entre 5 puis 3\n// → parseInt(\"5\") = 5, parseInt(\"3\") = 3\n// → alert(5 + 3) → affiche 8</pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">fonction.js — reverseTab() : inverser un tableau</div>\n<pre>// ── Fonction reverseTab ──\nfunction reverseTab(tab) {\n    var resultat = [];                    // tableau vide au départ\n    for (var i = tab.length - 1; i &gt;= 0; i--) {  // on part de la fin\n        resultat.push(tab[i]);            // on ajoute à l'envers\n    }\n    return resultat;\n}\n// ── Test ──\nvar noms = ['Rafael', 'Mathilde', 'Ahmed'];\nvar inverse = reverseTab(noms);\nconsole.log(inverse);\n// ── Résultat ──\n// noms.length = 3 → index : 0='Rafael', 1='Mathilde', 2='Ahmed'\n// i part de 2 : push('Ahmed') → push('Mathilde') → push('Rafael')\n// → ['Ahmed', 'Mathilde', 'Rafael']</pre>\n</div>\n<div class=\"console-out\">\n<span class=\"cmt\">// console.log(reverseTab(['Rafael', 'Mathilde', 'Ahmed'])) :</span><br/>\n<span class=\"ok\">['Ahmed', 'Mathilde', 'Rafael']</span>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Comprendre la boucle de reverseTab</div>\n<p>• <code>tab.length - 1</code> = dernier index (pour 3 éléments → index 2)<br/>\n        • <code>i &gt;= 0</code> = on continue tant qu'on n'a pas dépassé le premier élément<br/>\n        • <code>i--</code> = on recule d'un index à chaque tour (décrémentation)<br/>\n        • <code>resultat.push(tab[i])</code> = on ajoute l'élément courant à la fin de <code>resultat</code><br/>\n        • Tour 1 : i=2 → push('Ahmed') · Tour 2 : i=1 → push('Mathilde') · Tour 3 : i=0 → push('Rafael')</p>\n</div>\n<h2>3.5 — Conditions : if / else if / else (getmax.js)</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">getmax.js — trouver le maximum de 3 nombres</div>\n<pre>// ── getMax : retourne le plus grand des 3 ──\nfunction getMax(a, b, c) {\n    if (a &gt;= b &amp;&amp; a &gt;= c) {       // si a est &gt;= aux deux autres\n        return a;\n    } else if (b &gt;= a &amp;&amp; b &gt;= c) { // sinon si b est &gt;= aux deux autres\n        return b;\n    } else {                        // sinon c'est forcément c\n        return c;\n    }\n}\n// ── Tests ──\nconsole.log(getMax(5, 9, 1));   // → 9\nconsole.log(getMax(2, 3, 10));  // → 10\nconsole.log(getMax(7, 7, 3));   // → 7 (a &gt;= b même si égaux)</pre>\n</div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultats :</span><br/>\n        getMax(5, 9, 1)  → <span class=\"ok\">9</span> <span class=\"cmt\">// 9&gt;=5 ET 9&gt;=1 → vrai</span><br/>\n        getMax(2, 3, 10) → <span class=\"ok\">10</span> <span class=\"cmt\">// 10&gt;=2 ET 10&gt;=3 → vrai</span><br/>\n        getMax(7, 7, 3)  → <span class=\"ok\">7</span> <span class=\"cmt\">// 7&gt;=7 ET 7&gt;=3 → vrai (égalité ok)</span>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Opérateur</th><th>Signification</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>&amp;&amp;</code></td><td>ET logique — les deux conditions vraies</td><td><code>a &gt;= b &amp;&amp; a &gt;= c</code></td></tr>\n<tr><td><code>||</code></td><td>OU logique — au moins une vraie</td><td><code>a &gt; 0 || b &gt; 0</code></td></tr>\n<tr><td><code>!</code></td><td>NON logique — inverse</td><td><code>!true === false</code></td></tr>\n<tr><td><code>&gt;=</code></td><td>Supérieur ou égal</td><td><code>9 &gt;= 9</code> → true</td></tr>\n<tr><td><code>===</code></td><td>Égalité stricte (valeur ET type)</td><td><code>5 === \"5\"</code> → false</td></tr>\n<tr><td><code>==</code></td><td>Égalité faible (valeur seulement)</td><td><code>5 == \"5\"</code> → true</td></tr>\n</tbody>\n</table></div>\n<h2>3.6 — Les boucles for</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Syntaxe de la boucle for</div>\n<pre>for (initialisation; condition; incrément) {\n    // instructions répétées\n}\n// Exemple — afficher 1 à 5\nfor (var i = 1; i &lt;= 5; i++) {\n    console.log(i);  // affiche : 1, 2, 3, 4, 5\n}\n// Exemple — parcourir un tableau\nvar fruits = ['Mangue', 'Ananas', 'Banane'];\nfor (var i = 0; i &lt; fruits.length; i++) {\n    console.log(fruits[i]);\n}\n// → Mangue, Ananas, Banane\n// Boucle décroissante (comme dans reverseTab)\nfor (var i = fruits.length - 1; i &gt;= 0; i--) {\n    console.log(fruits[i]);\n}\n// → Banane, Ananas, Mangue</pre>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Anatomie du for — 3 parties séparées par ;</div>\n<p><code>for (</code><strong>var i = 0</strong><code>;</code> <strong>i &lt; 5</strong><code>;</code> <strong>i++</strong><code>)</code><br/>\n        1. <strong>Initialisation</strong> : on crée le compteur, exécuté une seule fois<br/>\n        2. <strong>Condition</strong> : tant que vraie, la boucle continue (vérifiée avant chaque tour)<br/>\n        3. <strong>Incrément</strong> : mis à jour après chaque tour (<code>i++</code> = i augmente de 1, <code>i--</code> = i diminue)</p>\n</div>\n<h2>3.7 — Les tableaux (Arrays)</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Créer et manipuler un tableau</div>\n<pre>// ── Déclaration ──\nvar noms = ['Rafael', 'Mathilde', 'Ahmed'];  // tableau de 3 éléments\n// ── Accès par index (commence à 0) ──\nconsole.log(noms[0]);  // → 'Rafael'\nconsole.log(noms[1]);  // → 'Mathilde'\nconsole.log(noms[2]);  // → 'Ahmed'\n// ── Propriété length ──\nconsole.log(noms.length);  // → 3\n// ── Méthode push ──\nnoms.push('Sophie');       // ajoute à la fin\nconsole.log(noms.length);  // → 4\n// ── Dernier index ──\nvar dernierIndex = noms.length - 1;  // 4 - 1 = 3\nconsole.log(noms[dernierIndex]);      // → 'Sophie'</pre>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Méthode / Propriété</th><th>Rôle</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><code>.length</code></td><td>Nombre d'éléments</td><td><code>noms.length</code> → 3</td></tr>\n<tr><td><code>.push(val)</code></td><td>Ajoute à la fin</td><td><code>noms.push('Ali')</code></td></tr>\n<tr><td><code>.pop()</code></td><td>Retire le dernier</td><td><code>noms.pop()</code></td></tr>\n<tr><td><code>[index]</code></td><td>Accès par position (début à 0)</td><td><code>noms[0]</code> → 'Rafael'</td></tr>\n</tbody>\n</table></div>\n<h2>3.8 — javascript.js : le fichier complet du cours</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">javascript.js — code complet annoté</div>\n<pre>// ── Variables de base ──\nvar x = 2;\nvar y = 3;\n// ── Opérations ──\nconsole.log(\"addition :\", x + y);        // → 5\nconsole.log(\"soustraction :\", x - y);    // → -1\nconsole.log(\"multiplication :\", x * y);  // → 6\nconsole.log(\"division :\", x / y);        // → 0.666...\nconsole.log(\"modulo :\", x % y);          // → 2 (reste de 2/3)\n// ── Chaîne de caractères ──\nvar nom = \"Pierre\";\nvar prenom = \"Dupont\";\nconsole.log(nom + \" \" + prenom);         // → \"Pierre Dupont\"\nconsole.log(nom.length);                 // → 6 (nb de caractères)\nconsole.log(nom.toUpperCase());          // → \"PIERRE\"\nconsole.log(nom.toLowerCase());          // → \"pierre\"\n// ── Tableau ──\nvar fruits = ['Mangue', 'Ananas', 'Banane'];\nconsole.log(fruits[0]);                  // → 'Mangue'\nconsole.log(fruits.length);             // → 3\n// ── Boucle ──\nfor (var i = 0; i &lt; fruits.length; i++) {\n    console.log(fruits[i]);              // → Mangue, Ananas, Banane\n}</pre>\n</div>\n<div class=\"console-out\">\n<span class=\"cmt\">// Résultats dans la console (F12 → Onglet Console) :</span><br/>\n        addition : <span class=\"ok\">5</span><br/>\n        soustraction : <span class=\"ok\">-1</span><br/>\n        multiplication : <span class=\"ok\">6</span><br/>\n        division : <span class=\"ok\">0.6666666666666666</span><br/>\n        modulo : <span class=\"ok\">2</span><br/>\n        Pierre Dupont<br/>\n<span class=\"ok\">6</span><br/>\n<span class=\"ok\">PIERRE</span><br/>\n<span class=\"ok\">pierre</span><br/>\n<span class=\"ok\">Mangue</span><br/>\n<span class=\"ok\">Ananas</span><br/>\n<span class=\"ok\">Banane</span>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Méthodes utiles sur les chaînes</div>\n<p>• <code>\"Pierre\".length</code> → <code>6</code> (nombre de caractères)<br/>\n        • <code>\"Pierre\".toUpperCase()</code> → <code>\"PIERRE\"</code><br/>\n        • <code>\"Pierre\".toLowerCase()</code> → <code>\"pierre\"</code><br/>\n        • <code>\"Bonjour\".substring(0, 3)</code> → <code>\"Bon\"</code> (de l'index 0 à 3 exclu)</p>\n</div>\n<h2>3.9 — Résumé des fonctions du cours (fiches JS)</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Fonction</th><th>Ce qu'elle fait</th><th>Fichier source</th></tr></thead>\n<tbody>\n<tr><td><code>Additionner()</code></td><td>Demande 2 nombres via prompt, affiche la somme</td><td>fonction.js</td></tr>\n<tr><td><code>reverseTab(tab)</code></td><td>Retourne un tableau dans l'ordre inverse</td><td>fonction.js</td></tr>\n<tr><td><code>getMax(a, b, c)</code></td><td>Retourne le plus grand des 3 nombres</td><td>getmax.js</td></tr>\n</tbody>\n</table></div>\n<h2>✅ QCM — Teste tes connaissances</h2>\n<div class=\"summary\">\n<h3>📝 L'essentiel du Chapitre 3 JavaScript</h3>\n<ul>\n<li><code>typeof NaN</code> → <code>\"number\"</code> · <code>typeof null</code> → <code>\"object\"</code> — deux pièges classiques</li>\n<li><code>prompt()</code> retourne toujours une <strong>String</strong> → utiliser <code>parseInt()</code> avant d'additionner</li>\n<li><code>getMax(a,b,c)</code> : if + <code>&amp;&amp;</code> + <code>&gt;=</code> pour comparer 3 valeurs</li>\n<li><code>reverseTab(tab)</code> : boucle for décroissante (<code>i = tab.length - 1</code>, <code>i--</code>) + <code>.push()</code></li>\n<li>Tableau : index commence à <strong>0</strong> · <code>.length</code> · <code>.push()</code></li>\n<li>Boucle for : <code>for(init ; condition ; incrément)</code></li>\n<li>Chaînes : <code>.length</code> · <code>.toUpperCase()</code> · <code>.toLowerCase()</code></li>\n</ul>\n</div>\n<div>\n<a>⬅ Ch.2 — CSS</a>\n<a>Ch.4 — WordPress →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Dans var.js, qu'affiche typeof(null) ?",
-     "options": [
-      {
-       "text": "\"null\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"undefined\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"object\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "\"string\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "typeof null retourne 'object' — c'est un bug historique de JavaScript jamais corrigé. null est une valeur vide intentionnelle mais son type est signalé comme 'object'."
-    },
-    {
-     "type": "mcq",
-     "text": "Sans parseInt(), que retourne prompt() quand l'utilisateur saisit 7 ?",
-     "options": [
-      {
-       "text": "Le nombre 7 (type number)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "La chaîne \"7\" (type string)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "true",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "undefined",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "prompt() retourne toujours une chaîne de caractères (String), même si l'utilisateur tape un chiffre. C'est pourquoi on utilise parseInt() pour convertir avant d'additionner."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans getmax.js, que retourne getMax(7, 7, 3) ?",
-     "options": [
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "14",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "7",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "undefined",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "getMax(7, 7, 3) → le premier if teste a >= b && a >= c : 7 >= 7 ET 7 >= 3 → les deux vrais → retourne a = 7. L'égalité fonctionne grâce à >= (supérieur OU égal)."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans reverseTab(['A','B','C']), quel est l'index de départ de la boucle for ?",
-     "options": [
-      {
-       "text": "0",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "2 (tab.length - 1)",
-       "correct": true,
-       "explanation": ""
-      }
-     ],
-     "explanation": "tab.length - 1 = 3 - 1 = 2 : on part de l'index 2 (le dernier élément 'C'), puis on décrémente : i=2 → push('C'), i=1 → push('B'), i=0 → push('A')."
-    },
-    {
-     "type": "mcq",
-     "text": "Que fait resultat.push(tab[i]) dans reverseTab ?",
-     "options": [
-      {
-       "text": "Supprime le premier élément de resultat",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ajoute tab[i] à la fin du tableau resultat",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Remplace tous les éléments de resultat",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Trie resultat par ordre alphabétique",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": ".push() ajoute un élément à la fin d'un tableau. Dans reverseTab, on ajoute tab[i] (en partant du dernier index) dans le tableau resultat initialement vide."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans javascript.js, que retourne \"Pierre\".length ?",
-     "options": [
-      {
-       "text": "5",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "6",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "7",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"number\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "'Pierre' contient 6 caractères : P-i-e-r-r-e. .length compte tous les caractères y compris les espaces et les accents. Ici pas d'espace ni accent donc 6."
-    },
-    {
-     "type": "mcq",
-     "text": "Que donne 10 % 3 (modulo) en JavaScript ?",
-     "options": [
-      {
-       "text": "3",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "1",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "0.33",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "30",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "L'opérateur modulo % retourne le reste de la division entière. 10 / 3 = 3 reste 1, donc 10 % 3 = 1. Très utile pour savoir si un nombre est pair (n % 2 === 0)."
-    },
-    {
-     "type": "mcq",
-     "text": "Dans la boucle for (var i = 0; i < fruits.length; i++) avec fruits de 3 éléments — combien de tours ?",
-     "options": [
-      {
-       "text": "2 tours (i=0 et i=1)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "4 tours (i=0 à i=3)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "3 tours (i=0, i=1, i=2)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "1 seul tour",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "explanation": "La boucle va de i=0 à i < 3 (fruits.length = 3) : i prend les valeurs 0, 1, 2 → 3 tours. Quand i=3, la condition i < 3 est fausse, la boucle s'arrête."
-    }
-   ],
-   "source": "_private/devweb/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "WordPress — Gestion de Site Web",
-   "subtitle": "Créer, personnaliser et administrer un site professionnel sans coder avec le CMS le plus utilisé au monde.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs du chapitre</div>\n<p>• Comprendre ce qu'est un CMS et WordPress<br/>\n        • Installer WordPress et naviguer dans le tableau de bord<br/>\n        • Distinguer Pages, Articles, Catégories et Médias<br/>\n        • Installer et configurer des thèmes et plugins<br/>\n        • Personnaliser un site et comprendre les réglages essentiels</p>\n</div>\n<h2>4.1 — Qu'est-ce qu'un CMS ?</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">📋 Définition — CMS</div>\n<p>Un <strong>CMS</strong> (<em>Content Management System</em> — Système de Gestion de Contenu) est un logiciel qui permet de créer, modifier et gérer un site web <strong>sans maîtriser le code</strong>. Le contenu est stocké en base de données et affiché dynamiquement.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>CMS</th><th>Part de marché</th><th>Usage principal</th></tr></thead>\n<tbody>\n<tr><td><strong>WordPress</strong></td><td>~43% du web</td><td>Blog, vitrine, e-commerce</td></tr>\n<tr><td>Wix</td><td>~3%</td><td>Sites personnels, portfolio</td></tr>\n<tr><td>Shopify</td><td>~4%</td><td>E-commerce uniquement</td></tr>\n<tr><td>Joomla</td><td>~2%</td><td>Portails, communautés</td></tr>\n<tr><td>Drupal</td><td>~1%</td><td>Sites institutionnels complexes</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — CMS</div>\n<p><strong>C</strong>reate, <strong>M</strong>anage, <strong>S</strong>hare — c'est exactement ce que fait un CMS.<br/>\n        Pense à un CMS comme à <strong>Microsoft Word pour les sites web</strong> : tu écris, tu mets en forme, tu publies — sans toucher au code HTML/CSS.</p>\n</div>\n<h2>4.2 — WordPress.org vs WordPress.com</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>WordPress.org</th><th>WordPress.com</th></tr></thead>\n<tbody>\n<tr><td><strong>Type</strong></td><td>Logiciel à installer (auto-hébergé)</td><td>Service hébergé (SaaS)</td></tr>\n<tr><td><strong>Hébergement</strong></td><td>À fournir soi-même</td><td>Inclus (limité en gratuit)</td></tr>\n<tr><td><strong>Plugins</strong></td><td>Tous (60 000+)</td><td>Limités selon le plan</td></tr>\n<tr><td><strong>Thèmes</strong></td><td>Tous</td><td>Limités</td></tr>\n<tr><td><strong>Contrôle</strong></td><td>Total</td><td>Partiel</td></tr>\n<tr><td><strong>Coût</strong></td><td>Gratuit + hébergement (~2$/mois)</td><td>Gratuit (limité) ou payant</td></tr>\n<tr><td><strong>Recommandé pour</strong></td><td>Projets professionnels</td><td>Débutants, blogs personnels</td></tr>\n</tbody>\n</table></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">💡 En cours B1, on parle de WordPress.org</div>\n<p>L'examen porte sur WordPress auto-hébergé (wordpress.org). C'est le WordPress que tu installes sur un hébergeur comme OVH, Hostinger ou en local avec XAMPP.</p>\n</div>\n<h2>4.3 — Installation de WordPress</h2>\n<h3>Prérequis (pile LAMP/WAMP)</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Composant</th><th>Rôle</th><th>Version minimale</th></tr></thead>\n<tbody>\n<tr><td><strong>PHP</strong></td><td>Langage serveur de WordPress</td><td>PHP 7.4+</td></tr>\n<tr><td><strong>MySQL / MariaDB</strong></td><td>Base de données</td><td>MySQL 5.7+</td></tr>\n<tr><td><strong>Apache / Nginx</strong></td><td>Serveur web</td><td>Toute version récente</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Étapes d'installation (Famous 5-Minute Install)</div>\n<pre><code>1. Télécharger WordPress → wordpress.org/download\n2. Extraire l'archive dans le dossier web (ex: /var/www/html/)\n3. Créer une base de données MySQL :\n   CREATE DATABASE wp_monsite;\n   CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'motdepasse';\n   GRANT ALL ON wp_monsite.* TO 'wp_user'@'localhost';\n4. Renommer wp-config-sample.php → wp-config.php\n5. Renseigner wp-config.php :\n   define('DB_NAME',     'wp_monsite');\n   define('DB_USER',     'wp_user');\n   define('DB_PASSWORD', 'motdepasse');\n   define('DB_HOST',     'localhost');\n6. Accéder à http://monsite.com/wp-admin/install.php\n7. Remplir : titre du site, identifiant admin, mot de passe, email\n8. Cliquer \"Installer WordPress\" → Terminé en ~5 minutes !</code></pre>\n</div>\n<h2>4.4 — Le Tableau de Bord (Dashboard)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🖥️ Accès au tableau de bord</div>\n<p>URL : <code>https://monsite.com/wp-admin</code><br/>\n        C'est le <strong>cerveau</strong> de WordPress — tout se gère depuis ici.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Menu</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td>📊 <strong>Tableau de bord</strong></td><td>Vue d'ensemble du site</td></tr>\n<tr><td>📝 <strong>Articles</strong></td><td>Gérer les publications du blog</td></tr>\n<tr><td>🖼️ <strong>Médias</strong></td><td>Images, vidéos, fichiers uploadés</td></tr>\n<tr><td>📄 <strong>Pages</strong></td><td>Accueil, Contact, À propos…</td></tr>\n<tr><td>💬 <strong>Commentaires</strong></td><td>Modérer les commentaires</td></tr>\n<tr><td>🎨 <strong>Apparence</strong></td><td>Thèmes, menus, personnalisation</td></tr>\n<tr><td>🔌 <strong>Extensions</strong></td><td>Installer/activer des plugins</td></tr>\n<tr><td>👥 <strong>Utilisateurs</strong></td><td>Gérer les comptes et rôles</td></tr>\n<tr><td>⚙️ <strong>Réglages</strong></td><td>Configuration générale du site</td></tr>\n</tbody>\n</table></div>\n<h2>4.5 — Pages vs Articles</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Pages vs Articles</div>\n<p><strong>Pages</strong> = contenu <strong>statique</strong>, intemporel. Exemples : Accueil, À propos, Contact. Pas de date, pas de catégorie. Pense à un <em>livre</em>.<br/>\n<strong>Articles</strong> = contenu <strong>dynamique</strong>, daté. Exemples : actualités, tutoriels, blog. Ont des catégories et des tags. Pense à un <em>journal</em>.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Critère</th><th>Pages</th><th>Articles</th></tr></thead>\n<tbody>\n<tr><td>Date</td><td>Non visible</td><td>Oui (chronologique)</td></tr>\n<tr><td>Catégories</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Tags</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Flux RSS</td><td>Non</td><td>Oui</td></tr>\n<tr><td>Hiérarchie</td><td>Oui (pages enfants)</td><td>Non</td></tr>\n<tr><td>Usage</td><td>Accueil, Contact, CGU</td><td>Blog, news, tutoriels</td></tr>\n</tbody>\n</table></div>\n<h2>4.6 — Thèmes WordPress</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🎨 Qu'est-ce qu'un thème ?</div>\n<p>Un <strong>thème</strong> contrôle l'apparence visuelle du site (couleurs, typographie, mise en page). Il est séparé du contenu : changer de thème ne supprime pas tes articles ou pages.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Type de thème</th><th>Description</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td><strong>Gratuits</strong></td><td>Disponibles sur wordpress.org/themes</td><td>Astra, OceanWP, Hello</td></tr>\n<tr><td><strong>Premium</strong></td><td>Achetés sur ThemeForest ou sites officiels</td><td>Divi, Avada, GeneratePress</td></tr>\n<tr><td><strong>Thème enfant</strong></td><td>Hérite du thème parent, personnalisable sans risque</td><td>Astra Child Theme</td></tr>\n</tbody>\n</table></div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Installer un thème</div>\n<pre><code>/* Méthode 1 : Depuis le dashboard */\nApparence → Thèmes → Ajouter → Rechercher → Installer → Activer\n/* Méthode 2 : Upload d'un fichier .zip */\nApparence → Thèmes → Ajouter → Mettre un thème en ligne → Choisir le fichier\n/* Méthode 3 : FTP */\nDéposer le dossier du thème dans : /wp-content/themes/</code></pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">⚠️ Toujours utiliser un thème enfant</div>\n<p>Si tu modifies directement le thème parent et qu'une mise à jour arrive, <strong>toutes tes modifications seront perdues</strong>. Un <strong>thème enfant</strong> hérite du parent mais protège tes personnalisations.</p>\n</div>\n<h2>4.7 — Extensions (Plugins)</h2>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔌 Qu'est-ce qu'un plugin ?</div>\n<p>Un <strong>plugin</strong> (extension) ajoute des fonctionnalités à WordPress sans modifier le cœur du système. Il y a plus de 60 000 plugins gratuits sur wordpress.org/plugins.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Besoin</th><th>Plugin recommandé</th></tr></thead>\n<tbody>\n<tr><td>SEO (référencement)</td><td>Yoast SEO, Rank Math</td></tr>\n<tr><td>Sécurité</td><td>Wordfence, iThemes Security</td></tr>\n<tr><td>Sauvegarde</td><td>UpdraftPlus</td></tr>\n<tr><td>Vitesse / Cache</td><td>WP Rocket, W3 Total Cache</td></tr>\n<tr><td>Formulaires de contact</td><td>Contact Form 7, WPForms</td></tr>\n<tr><td>E-commerce</td><td>WooCommerce</td></tr>\n<tr><td>Page builder</td><td>Elementor, Divi Builder</td></tr>\n<tr><td>Galerie photos</td><td>Envira Gallery, NextGEN</td></tr>\n<tr><td>Réseaux sociaux</td><td>Social Warfare, Smash Balloon</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Règle des plugins</div>\n<p>Moins de plugins = site plus rapide et plus sécurisé.<br/>\n        Règle des <strong>3V</strong> avant d'installer un plugin :<br/>\n        → <strong>V</strong>oix : beaucoup d'avis positifs (4★+)<br/>\n        → <strong>V</strong>ersion : compatible avec ta version de WP<br/>\n        → <strong>V</strong>ie : dernière mise à jour récente (moins de 6 mois)</p>\n</div>\n<h2>4.8 — Rôles des Utilisateurs</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Rôle</th><th>Permissions</th></tr></thead>\n<tbody>\n<tr><td><strong>Administrateur</strong></td><td>Accès complet à tout le site</td></tr>\n<tr><td><strong>Éditeur</strong></td><td>Gérer et publier tous les contenus (mais pas les plugins/thèmes)</td></tr>\n<tr><td><strong>Auteur</strong></td><td>Écrire et publier SES propres articles uniquement</td></tr>\n<tr><td><strong>Contributeur</strong></td><td>Écrire des articles mais ne peut pas publier (validation requise)</td></tr>\n<tr><td><strong>Abonné</strong></td><td>Gérer son profil uniquement, lire les contenus</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Mnémo — Rôles WP (du plus fort au plus faible)</div>\n<p><strong>A</strong>dmin → <strong>É</strong>diteur → <strong>A</strong>uteur → <strong>C</strong>ontributeur → <strong>A</strong>bonné<br/>\n        Mémo : <strong>\"A-É-A-C-A\"</strong> — \"Un Admin Éclairé Agit Correctement, Amigo !\"</p>\n</div>\n<h2>4.9 — Réglages Essentiels</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Réglages → Général</div>\n<pre><code>Titre du site        → Nom affiché dans le navigateur et les moteurs\nSlogan              → Sous-titre du site\nURL WordPress       → URL d'installation de WordPress\nURL du site         → URL publique (peut différer)\nEmail admin         → Notifications du site\nLangue              → Langue d'administration\nFuseau horaire      → Important pour la planification des articles</code></pre>\n</div>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Réglages → Permaliens (très important !)</div>\n<pre><code>/* Réglages → Permaliens */\n/* Choisir \"Titre de la publication\" pour le meilleur SEO */\nStructure recommandée : /%postname%/\nExemple : monsite.com/mon-article-de-blog/\n/* Structures disponibles */\nPar défaut :     /?p=123             (mauvais pour SEO)\nDate et nom :    /2025/01/15/titre/  (trop long)\nMois et nom :    /2025/01/titre/\nNom :            /titre/             ← Recommandé ✓</code></pre>\n</div>\n<h2>4.10 — Structure des Fichiers WordPress</h2>\n<div class=\"code-block\">\n<div class=\"code-lbl\">Arborescence WordPress</div>\n<pre><code>wordpress/\n├── wp-admin/          ← Interface d'administration (NE PAS TOUCHER)\n├── wp-includes/       ← Cœur de WordPress (NE PAS TOUCHER)\n└── wp-content/        ← TES fichiers (modifier ici uniquement)\n    ├── themes/        ← Tes thèmes installés\n    ├── plugins/       ← Tes plugins installés\n    ├── uploads/       ← Tes médias (images, PDFs…)\n    └── cache/         ← Cache (généré automatiquement)\nwp-config.php          ← Configuration DB et clés de sécurité\n.htaccess              ← Configuration serveur Apache (permaliens)</code></pre>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🔐 Sécuriser WordPress</div>\n<p>• Changer le préfixe des tables DB (<code>wp_</code> par défaut → changer)<br/>\n        • Ne jamais utiliser <code>admin</code> comme identifiant<br/>\n        • Activer l'authentification à deux facteurs<br/>\n        • Mettre à jour régulièrement WP, thèmes et plugins<br/>\n        • Installer un plugin de sécurité (Wordfence)<br/>\n        • Faire des sauvegardes régulières (UpdraftPlus)</p>\n</div>\n<div class=\"box\">\n<div class=\"box-lbl\">🧠 QCM de révision</div>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🎉 Cours terminé !</div>\n<p>Tu as couvert les 4 piliers du développement web B1 : <strong>HTML</strong> (structure), <strong>CSS</strong> (style), <strong>JavaScript</strong> (interactivité) et <strong>WordPress</strong> (CMS). Tu es maintenant prêt pour tes partiels !</p>\n</div>\n<div>\n<a>← Ch.3 — JavaScript</a>\n<a>Exercices</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "text": "Que signifie CMS ?",
-     "options": [
-      {
-       "text": "Content Making System",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Content Management System",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Coded Management Software",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quelle est la différence principale entre une Page et un Article ?",
-     "options": [
-      {
-       "text": "Les pages ont des catégories, pas les articles",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les articles ne peuvent pas avoir d'images",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Les articles sont datés et catégorisés, les pages sont statiques",
-       "correct": true,
-       "explanation": ""
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Pourquoi utiliser un thème enfant ?",
-     "options": [
-      {
-       "text": "Pour conserver ses modifications lors des mises à jour",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Pour avoir plus de plugins disponibles",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Pour accélérer le site",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Quel rôle peut publier les articles des autres utilisateurs ?",
-     "options": [
-      {
-       "text": "Auteur",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Éditeur",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Contributeur",
-       "correct": false,
-       "explanation": ""
-      }
-     ]
-    },
-    {
-     "type": "mcq",
-     "text": "Où placer tes thèmes et plugins WordPress ?",
-     "options": [
-      {
-       "text": "Dans wp-admin/",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Dans wp-includes/",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Dans wp-content/",
-       "correct": true,
-       "explanation": ""
-      }
-     ]
-    }
-   ],
-   "source": "_private/devweb/chapitres/chapitre4.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "mcq",
-   "text": "HTMLQ1. Quelle balise est obligatoire en tout premier dans un fichier HTML5 ?",
-   "options": [
-    {
-     "text": "<html>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<!DOCTYPE html>",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "<head>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<meta charset=\"UTF-8\">",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "&lt;!DOCTYPE html&gt; doit toujours être la toute première ligne d'un fichier HTML5 — elle indique au navigateur la version du langage utilisée."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ2. Quelle balise crée une liste à puces (non ordonnée) ?",
-   "options": [
-    {
-     "text": "<ol>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<li>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<ul>",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "<list>",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "&lt;ul&gt; (Unordered List) crée une liste à puces. &lt;ol&gt; (Ordered List) crée une liste numérotée. &lt;li&gt; est l'élément de liste à l'intérieur des deux."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ3. Pour ouvrir un lien dans un nouvel onglet, on utilise :",
-   "options": [
-    {
-     "text": "href=\"_new\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "target=\"_blank\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "rel=\"noopener\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "open=\"tab\"",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "target=\"_blank\" ouvre le lien dans un nouvel onglet. target=\"_self\" (défaut) l'ouvre dans l'onglet actuel."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ4. Pour fusionner 3 colonnes dans un tableau, on écrit :",
-   "options": [
-    {
-     "text": "rowspan=\"3\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "merge=\"3\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "colspan=\"3\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "span=\"3\"",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "colspan=\"3\" fusionne 3 colonnes horizontalement. rowspan=\"3\" fusionne 3 lignes verticalement."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ5. Quelle balise crée une cellule d'en-tête dans un tableau (texte gras centré) ?",
-   "options": [
-    {
-     "text": "<td>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<th>",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "<tr>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<head>",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "&lt;th&gt; (Table Header) crée une cellule d'en-tête : son texte est automatiquement en gras et centré. &lt;td&gt; est une cellule ordinaire."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ6. Quel type d'input permet un seul choix parmi plusieurs options ?",
-   "options": [
-    {
-     "text": "type=\"checkbox\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "type=\"select\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "type=\"radio\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "type=\"unique\"",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "type=\"radio\" permet un choix unique parmi plusieurs options (un seul bouton radio peut être coché à la fois dans un groupe de même name). type=\"checkbox\" permet des choix multiples."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ7. Quelle méthode de formulaire envoie les données de façon invisible (pour un login) ?",
-   "options": [
-    {
-     "text": "GET",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "POST",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "SEND",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "PUT",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "POST envoie les données de façon invisible (dans le corps de la requête) — recommandé pour les mots de passe et données sensibles. GET les affiche dans l'URL."
-  },
-  {
-   "type": "mcq",
-   "text": "HTMLQ8. Quelle balise sémantique remplace <div id=\"nav\"> ?",
-   "options": [
-    {
-     "text": "<menu>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<aside>",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "<nav>",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "<header>",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "&lt;nav&gt; est la balise sémantique HTML5 qui remplace &lt;div id=\"nav\"&gt; pour la navigation principale."
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ9. Que fait margin: 0 auto; sur un élément de largeur fixe ?",
-   "options": [
-    {
-     "text": "Supprime toutes les marges",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Centre l'élément horizontalement",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Ajoute un padding automatique",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Place l'élément en position absolute",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "margin: 0 auto; sur un élément de largeur fixe (width définie) centre l'élément horizontalement dans son parent."
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ10. Que produit border-collapse: collapse; sur un tableau ?",
-   "options": [
-    {
-     "text": "Cache le tableau",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Les bordures des cellules se touchent (pas de double trait)",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Ajoute un espace entre cellules",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Supprime toutes les bordures",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "border-collapse: collapse; colle les bordures des cellules adjacentes — résultat : une seule bordure entre deux cellules au lieu du double trait par défaut."
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ11. Dans ce CSS : .btn:hover { color: white; } — quand s'applique ce style ?",
-   "options": [
-    {
-     "text": "Quand le bouton est cliqué",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Quand la souris passe au-dessus du bouton",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Quand le bouton est désactivé",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Quand la page se charge",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": ":hover est une pseudo-classe CSS qui s'applique quand la souris passe au-dessus de l'élément (survol)."
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ12. Que fait float: right; sur une image ?",
-   "options": [
-    {
-     "text": "Centre l'image",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Place l'image à droite et le texte s'enroule autour",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Place l'image en dehors du flux",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Aligne l'image à droite sans affecter le texte",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "float: right; retire l'image du flux normal et la place à droite — le texte suivant s'enroule automatiquement autour d'elle."
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ13. Comment sélectionne-t-on en CSS un élément avec id=\"menu\" ?",
-   "options": [
-    {
-     "text": ".menu { }",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "menu { }",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "#menu { }",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "[menu] { }",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Le sélecteur d'ID utilise le signe # : #menu { } cible l'élément avec id=\"menu\". Le sélecteur de classe utilise . : .menu { }"
-  },
-  {
-   "type": "mcq",
-   "text": "CSSQ14. Que fait letter-spacing: 5px; ?",
-   "options": [
-    {
-     "text": "Agrandit la taille de la police à 5px",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Ajoute 5px d'espace entre chaque lettre",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Ajoute 5px d'espace entre les mots",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Décale le texte de 5px vers la droite",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "letter-spacing ajoute de l'espace entre chaque lettre (espacement interlettre). word-spacing ajoute de l'espace entre les mots."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ15. Que renvoie typeof NaN en JavaScript ?",
-   "options": [
-    {
-     "text": "\"nan\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"undefined\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"number\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "\"error\"",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "typeof NaN retourne \"number\" — c'est une particularité (piège) de JavaScript. NaN signifie Not a Number mais son type est bien number."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ16. Sans parseInt(), que donne \"5\" + \"3\" en JavaScript ?",
-   "options": [
-    {
-     "text": "8",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"53\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "15",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "NaN",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "Sans parseInt(), le + entre deux chaînes fait de la concaténation : \"5\" + \"3\" = \"53\". Avec parseInt() : parseInt(\"5\") + parseInt(\"3\") = 8."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ17. Que fait alert(\"Bonjour\") ?",
-   "options": [
-    {
-     "text": "Écrit \"Bonjour\" dans la page",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Affiche une boîte de dialogue popup avec \"Bonjour\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Envoie \"Bonjour\" au serveur",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Stocke \"Bonjour\" dans une variable",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "alert() affiche une boîte de dialogue modale (popup) avec le message. L'utilisateur doit cliquer OK pour fermer."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ18. Dans la fonction getMax(5, 9, 1) du cours, que retourne-t-elle ?",
-   "options": [
-    {
-     "text": "1",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "5",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "15",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "9",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "getMax(5, 9, 1) → 9. La fonction compare les 3 valeurs : 9 >= 5 ET 9 >= 1, donc la condition b >= a && b >= c est vraie."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ19. Quelle instruction JavaScript permet à l'utilisateur de saisir une valeur dans une boîte de dialogue ?",
-   "options": [
-    {
-     "text": "alert()",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "console.log()",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "prompt()",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "input()",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "prompt() affiche une boîte de dialogue avec un champ de saisie et retourne la valeur saisie sous forme de chaîne de caractères."
-  },
-  {
-   "type": "mcq",
-   "text": "JSQ20. Que fait resultat.push(tab[i]) dans la fonction reverseTab du cours ?",
-   "options": [
-    {
-     "text": "Supprime le dernier élément du tableau",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Ajoute l'élément tab[i] à la fin du tableau resultat",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Remplace le premier élément de resultat",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Trie le tableau par ordre alphabétique",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": ".push() ajoute un élément à la fin d'un tableau. Dans reverseTab, on ajoute tab[i] (en partant de la fin) dans le nouveau tableau resultat."
-  }
- ],
- "simulators": [],
- "flashcards": [],
- "exercises_source": "_private/devweb/exercices/exercices.html"
+  ],
+  "simulators": [],
+  "flashcards": [],
+  "exercises_source": "_private/devweb/exercices/exercices.html"
 }

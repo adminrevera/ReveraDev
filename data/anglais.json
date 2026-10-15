@@ -1,1883 +1,1883 @@
 {
- "slug": "anglais",
- "name": "Anglais des Affaires",
- "chapters": [
-  {
-   "number": 1,
-   "title": "Business Vocabulary Basics",
-   "subtitle": "Le vocabulaire indispensable du monde professionnel anglophone : termes business généraux, jargon spécifique IT, faux-amis classiques et expressions idiomatiques. La base sur laquelle tout le reste du cours s'appuie.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la session</div>\n<p>• Identifier et utiliser 15+ mots de vocabulaire business à l'oral et à l'écrit<br/>\n        • Distinguer le langage familier du langage professionnel<br/>\n        • Reconnaître et corriger les faux-amis français-anglais les plus courants<br/>\n        • Réutiliser 3-4 expressions business dans des mises en situation professionnelles</p>\n</div>\n<h2>1.1 — Pourquoi ce vocabulaire change tout</h2>\n<div class=\"story-box\">\n        📧 <span class=\"story-who\">Clara écrit à Leo :</span> <em>\"Leo — the Tanaka project has a hard deadline on Friday. Please touch base with Zoe about the budget and stakeholders. I need you to get the ball rolling by tomorrow. Attached — the low-hanging fruit list. Don't forget to reply all to the team.\"</em><br/><br/>\n        😵 <span class=\"story-who\">Leo, perdu :</span> <em>\"Touch base ? Hard deadline ? Low-hanging fruit ? Is this English or a secret code ?\"</em>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Le problème de Leo (et peut-être le tien)</div>\n<p>Leo a un bon niveau d'anglais général mais ne connaît pas le <strong>jargon business</strong>. Ce n'est pas une question de grammaire : c'est une question de vocabulaire spécifique. Cette première session te donne exactement les mots qui transforment un email \"code secret\" en message limpide.</p>\n</div>\n<h2>1.2 — 💼 Vocabulaire Business Général</h2>\n<div class=\"section-accent\">\n<p>Ces quatre mots reviennent dans presque toutes les conversations professionnelles, IT ou non. Maîtrise-les en premier.</p>\n</div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">deadline</div>\n<div class=\"vocab-fr\">📌 date limite, échéance finale</div>\n<div class=\"vocab-ex\">\"The deadline for the task is Friday.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">stakeholder</div>\n<div class=\"vocab-fr\">📌 toute personne ayant un intérêt dans le projet</div>\n<div class=\"vocab-ex\">\"Please touch base with Zoe about the stakeholders.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">budget</div>\n<div class=\"vocab-fr\">📌 argent disponible / prévu</div>\n<div class=\"vocab-ex\">\"There is no money in the budget.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">client <span>≠ customer</span></div>\n<div class=\"vocab-fr\">📌 relation pro durable (≠ <em>customer</em>, achat ponctuel)</div>\n<div class=\"vocab-ex\">\"Client = long-term relationship, customer = one-time buyer.\"</div>\n</div>\n</div>\n<h2>1.3 — 💻 Vocabulaire IT-Spécifique</h2>\n<div class=\"section-accent\">\n<p>Les mots qu'un futur professionnel IT entendra en réunion presque tous les jours.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Sens simple</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Deployment</strong></td><td>Mettre un logiciel en ligne, le rendre disponible</td><td>\"The deployment is Friday at 10 PM.\"</td></tr>\n<tr><td><strong>Backend</strong></td><td>La partie invisible qui fait tourner le système (serveurs, bases de données)</td><td>\"The backend team fixed the database.\"</td></tr>\n<tr><td><strong>Frontend</strong></td><td>Ce que l'utilisateur voit et clique (boutons, menus, design)</td><td>\"The frontend developer changed the button color.\"</td></tr>\n<tr><td><strong>Sprint</strong></td><td>Courte période de travail (1 à 4 semaines) en méthode Agile</td><td>\"We will add a search bar this sprint.\"</td></tr>\n<tr><td><strong>UAT</strong></td><td>User Acceptance Testing — test final où les vrais utilisateurs essaient le logiciel</td><td>\"The client approved the software after UAT.\"</td></tr>\n</tbody>\n</table></div>\n<h2>1.4 — ⚠️ Faux-amis Français → Anglais</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Pièges classiques</div>\n<p>Un mot qui ressemble à du français… ne veut pas dire la même chose. Ces trois faux-amis créent des malentendus fréquents en contexte professionnel.</p>\n</div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">actually <span>≠ actuellement</span></div>\n<div class=\"vocab-fr\">📌 <em>actually</em> = en fait / <em>actuellement</em> = <em>currently</em></div>\n<div class=\"vocab-ex\">\"Actually, I am in a meeting\" = \"En fait, je suis en réunion.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">eventually <span>≠ éventuellement</span></div>\n<div class=\"vocab-fr\">📌 <em>eventually</em> = finalement / <em>éventuellement</em> = <em>possibly</em></div>\n<div class=\"vocab-ex\">\"We will eventually fix it\" = \"Nous le réparerons finalement.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">library <span>≠ librairie</span></div>\n<div class=\"vocab-fr\">📌 <em>library</em> = bibliothèque / <em>librairie</em> = <em>bookshop</em></div>\n<div class=\"vocab-ex\">\"I work in a library\" veut dire \"Je travaille dans une bibliothèque\" — pas que tu vends des livres !</div>\n</div>\n</div>\n<h2>1.5 — 🗣️ Expressions Business Utiles (et un peu drôles)</h2>\n<div class=\"section-accent\">\n<p>Ces expressions reviennent constamment en réunion. Les comprendre évite le \"Is this English or a secret code?\" de Leo.</p>\n</div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">touch base</div>\n<div class=\"vocab-fr\">📌 prendre contact / faire un point</div>\n<div class=\"vocab-ex\">\"I'll contact you\" → \"I'll touch base.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">get the ball rolling</div>\n<div class=\"vocab-fr\">📌 démarrer, lancer les choses</div>\n<div class=\"vocab-ex\">\"Let's start\" → \"Let's get the ball rolling.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">low-hanging fruit</div>\n<div class=\"vocab-fr\">📌 gains faciles, tâches simples à accomplir d'abord</div>\n<div class=\"vocab-ex\">\"Let's start with the low-hanging fruit first.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">circle back</div>\n<div class=\"vocab-fr\">📌 revenir sur un sujet plus tard</div>\n<div class=\"vocab-ex\">\"Let's circle back to that next week.\"</div>\n</div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">could you elaborate?</div>\n<div class=\"vocab-fr\">📌 pourrais-tu expliquer/préciser davantage ?</div>\n<div class=\"vocab-ex\">A: \"The server crashed.\" B: \"Could you elaborate?\"</div>\n</div>\n</div>\n<h2>1.6 — 📋 Mini-Glossaire pour Professionnels IT</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🎯 À retenir par cœur</div>\n<p>Voici les 15 mots-clés de la session, condensés. C'est exactement ce niveau de précision que Mme Tchogoue attend dans tes réponses.</p>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Terme</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td>1</td><td><strong>Client</strong></td><td>Relation client durable, à long terme</td></tr>\n<tr><td>2</td><td><strong>Customer</strong></td><td>Acheteur ponctuel ou occasionnel</td></tr>\n<tr><td>3</td><td><strong>Deadline</strong></td><td>Date limite pour finir un travail</td></tr>\n<tr><td>4</td><td><strong>Stakeholder</strong></td><td>Personne qui a un intérêt dans le projet</td></tr>\n<tr><td>5</td><td><strong>Budget</strong></td><td>Argent disponible / prévu</td></tr>\n<tr><td>6</td><td><strong>Invoice</strong></td><td>Facture pour des services ou produits</td></tr>\n<tr><td>7</td><td><strong>Deployment</strong></td><td>Mise en ligne d'un logiciel</td></tr>\n<tr><td>8</td><td><strong>Sprint</strong></td><td>Courte période de travail (Agile)</td></tr>\n<tr><td>9</td><td><strong>UAT</strong></td><td>User Acceptance Testing</td></tr>\n<tr><td>10</td><td><strong>Backend</strong></td><td>Partie invisible (serveurs, bases de données)</td></tr>\n<tr><td>11</td><td><strong>Frontend</strong></td><td>Ce que l'utilisateur voit et manipule</td></tr>\n<tr><td>12</td><td><strong>Touch base</strong></td><td>Prendre contact brièvement</td></tr>\n<tr><td>13</td><td><strong>Get the ball rolling</strong></td><td>Démarrer quelque chose</td></tr>\n<tr><td>14</td><td><strong>Low-hanging fruit</strong></td><td>Gains faciles</td></tr>\n<tr><td>15</td><td><strong>Circle back</strong></td><td>Revenir sur un sujet plus tard</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📌 Règle de classe</div>\n<p>Les devoirs sont <strong>obligatoires</strong>. Un devoir non fait en début de séance entraîne une pénalité de <strong>2 points</strong> sur l'évaluation. (Trouver 5 mots business sur un site IT type Stack Overflow ou une offre LinkedIn + écrire 3 phrases avec le vocabulaire du jour.)</p>\n</div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Professional Emails →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which word describes a long-term customer with an ongoing professional relationship?",
-     "options": [
-      {
-       "text": "Customer",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Client",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Stakeholder",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Vendor",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "What is a \"sprint\" in Agile methodology?",
-     "options": [
-      {
-       "text": "A final testing phase",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "A short work period (1–4 weeks) to finish specific tasks",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "A bill for services",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "A casual team meeting",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "What does UAT stand for?",
-     "options": [
-      {
-       "text": "Unified Application Testing",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Universal Access Token",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "User Acceptance Testing",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Updated API Template",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "In a business context, \"budget\" means:",
-     "options": [
-      {
-       "text": "Available / planned money",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Net profit",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "A type of invoice",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "A delay in the schedule",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which sentence is appropriate professional English?",
-     "options": [
-      {
-       "text": "\"Me want finish work soon yes.\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"Deadline Friday. Work weekend?\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"I would like to finish the work soon.\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "\"Client call. You talk. Not me.\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    }
-   ],
-   "source": "anglais/chapitres/chapitre1.html"
-  },
-  {
-   "number": 2,
-   "title": "Professional Email Writing",
-   "subtitle": "Comment écrire un email professionnel clair, poli et efficace : anatomie en 5 parties, méthode CLEAR pour le corps du message, formules de politesse, et tous les pièges à éviter. Un mauvais email = confusion, retards, clients mécontents.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la session</div>\n<p>• Identifier et nommer les 5 composantes clés d'un email professionnel<br/>\n        • Écrire des emails clairs et polis pour des situations IT courantes<br/>\n        • Distinguer le ton formel du ton semi-formel selon le destinataire<br/>\n        • Éviter les erreurs d'email les plus fréquentes</p>\n</div>\n<h2>2.1 — Pourquoi les emails comptent autant en IT</h2>\n<div class=\"story-box\">\n        ✅ <span class=\"story-who\">Email pro attendu :</span> <em>\"Server maintenance is delayed until Monday.\"</em><br/><br/>\n        ❌ <span class=\"story-who\">Email réellement envoyé par Leo :</span> <em>\"hey guys, the server thing is late lol. thx.\"</em><br/><br/>\n        😤 <span class=\"story-who\">Zoe, en réponse :</span> <em>\"Leo — please follow email etiquette.\"</em>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Une vérité simple</div>\n<p>Les clients te jugent sur tes emails. Un email bâclé = confusion, retards, patrons énervés. À l'inverse, un email bien structuré donne immédiatement une image de professionnalisme — même si ton accent ou ta grammaire n'est pas parfaite à l'oral.</p>\n</div>\n<h2>2.2 — 🧱 Anatomie d'un Email — 5 Parties</h2>\n<div class=\"email-anatomy\">\n<div class=\"email-part\"><div class=\"ep-num\">1</div><div class=\"ep-name\">Subject line</div><div class=\"ep-desc\">L'objet — la première chose lue, souvent la seule</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">2</div><div class=\"ep-name\">Salutation</div><div class=\"ep-desc\">La formule d'ouverture (greeting)</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">3</div><div class=\"ep-name\">Body</div><div class=\"ep-desc\">Le corps du message — le contenu principal</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">4</div><div class=\"ep-name\">Closing</div><div class=\"ep-desc\">La formule de clôture avant la signature</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">5</div><div class=\"ep-name\">Signature</div><div class=\"ep-desc\">Ta \"carte de visite numérique\"</div></div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🎯 À retenir</div>\n<p>Ces 5 parties sont systématiquement testées en évaluation : on te donnera un email à découper et tu devras écrire la bonne lettre (A-E) en face de chaque partie.</p>\n</div>\n<h2>2.3 — 🏷️ Subject Lines — Make or Break</h2>\n<p>Un mauvais objet condamne ton email à être ignoré ou mal compris.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>❌ Mauvais</th><th>✅ Bon</th></tr></thead>\n<tbody>\n<tr><td>\"Meeting\"</td><td>\"Project Kickoff — Wed 10am\"</td></tr>\n<tr><td>\"Issue with server\"</td><td>\"Server Outage — Urgent\"</td></tr>\n<tr><td>\"Hello\"</td><td>\"Introduction — New IT Team Member\"</td></tr>\n<tr><td>(vide)</td><td>\"Q3 Budget Update — Action Needed by Friday\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 La règle d'or</div>\n<p>Un bon objet est <strong>clair et spécifique</strong> : il dit quoi, et souvent quand. \"Server Outage — Urgent\" en dit plus en 3 mots que \"Issue with server\".</p>\n</div>\n<h2>2.4 — 👋 Salutations — À qui tu écris ?</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Registre</th><th>Exemple</th><th>Quand l'utiliser</th></tr></thead>\n<tbody>\n<tr><td><strong>Formel</strong></td><td>\"Dear Mr. Smith,\"</td><td>Nouveau client, supérieur que tu ne connais pas bien</td></tr>\n<tr><td><strong>Semi-formel</strong></td><td>\"Hello Sarah,\" / \"Hi John,\"</td><td>Collègue, client régulier</td></tr>\n<tr><td class=\"never-list\"><strong>Jamais</strong></td><td class=\"never-list\">\"Hey dude,\" / \"Yo,\"</td><td class=\"never-list\">Aucun contexte professionnel</td></tr>\n</tbody>\n</table></div>\n<h2>2.5 — 🧩 Le Corps du Message — La Méthode CLEAR</h2>\n<p>Pour structurer le corps de ton email, utilise les 5 lettres de <strong>CLEAR</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Lettre</th><th>Signifie</th><th>Question à se poser</th></tr></thead>\n<tbody>\n<tr><td><strong>C</strong></td><td>Context</td><td>Pourquoi j'écris ?</td></tr>\n<tr><td><strong>L</strong></td><td>Logistics</td><td>Quoi, quand, où ?</td></tr>\n<tr><td><strong>E</strong></td><td>Expectation</td><td>De quoi ai-je besoin ?</td></tr>\n<tr><td><strong>A</strong></td><td>Action</td><td>Que doit faire le destinataire ?</td></tr>\n<tr><td><strong>R</strong></td><td>Respect</td><td>Formule de remerciement</td></tr>\n</tbody>\n</table></div>\n<div class=\"doc-mock\">\n<div class=\"doc-from\">\n<strong>Subject:</strong> <span>Budget Approval Needed for Server Upgrade</span>\n</div>\n<p>Dear Ms. Rivera,</p>\n<p><span class=\"clear-tag\">C</span>We are planning to upgrade our main server next month because the current one is too slow and affects daily work.</p>\n<p><span class=\"clear-tag\">L</span>The upgrade will cost €5,000 and will take place on Saturday, June 10th, from 8 AM to 2 PM.</p>\n<p><span class=\"clear-tag\">E</span>I need your approval before Friday, June 2nd, so we can schedule the vendor.</p>\n<p><span class=\"clear-tag\">A</span>Could you please review the attached quote and reply with your approval?</p>\n<p><span class=\"clear-tag\">R</span>Thank you for your support.</p>\n<p>Best regards,<br/>Thomas Lee<br/>IT Manager</p>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💡 Pourquoi ça marche</div>\n<p>Chaque phrase a un rôle précis. Aucune répétition, aucune ambiguïté : le destinataire sait immédiatement quoi faire et avant quelle date. C'est exactement la structure attendue dans tes propres emails d'évaluation.</p>\n</div>\n<h2>2.6 — ✍️ Closing Lines &amp; Signature</h2>\n<div class=\"grid-2\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Formules de clôture</div>\n<p class=\"good-list\">✓ Best regards, (standard)<br/>✓ Kind regards, (amical)<br/>✓ Sincerely, (très formel)<br/>✓ Looking forward to your reply,</p>\n<p class=\"never-list\">✗ Jamais : Cheers, / Later, / XOXO</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Signature — ta carte de visite</div>\n<p class=\"good-list\">✓ Nom<br/>✓ Poste<br/>✓ Entreprise<br/>✓ Téléphone (optionnel)</p>\n<p class=\"never-list\">✗ Jamais : citations, emojis, images géantes</p>\n</div>\n</div>\n<h3>Formel vs. Semi-formel — connaître son interlocuteur</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Destinataire</th><th>Formulation</th></tr></thead>\n<tbody>\n<tr><td>Au patron</td><td>\"Could you please review the attached report?\"</td></tr>\n<tr><td>À un collègue</td><td>\"Can you check the attachment?\"</td></tr>\n<tr><td>À un client</td><td>\"I would appreciate it if you could…\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"doc-mock\">\n<div class=\"doc-from\"><strong>Subject:</strong> <span>hi</span></div>\n<p>Hey Jen,<br/>Can you send me that file? Need it by tomorrow. Gonna be late otherwise.<br/>Thanks!<br/>Tom</p>\n</div>\n<p>↓ réécrit en version formelle ↓</p>\n<div class=\"doc-mock\">\n<div class=\"doc-from\"><strong>Subject:</strong> <span>File Request — Deadline Tomorrow</span></div>\n<p>Dear Jen,<br/>Could you please send me the file? I need it by tomorrow to avoid missing the deadline.<br/>Thank you for your help.<br/>Best regards,<br/>Tom</p>\n</div>\n<h2>2.7 — 💥 Emails \"Désastres\" à Éviter</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Désastre</th><th>Exemple</th><th>Pourquoi c'est un problème</th></tr></thead>\n<tbody>\n<tr><td><strong>Pas d'objet</strong></td><td>(vide) \"Hey, there's a problem. Call me.\"</td><td>Impossible à retrouver, paraît urgent sans contexte</td></tr>\n<tr><td><strong>Reply All catastrophe</strong></td><td>Répondre \"Stop sending emails!!!\" à 200 personnes</td><td>\"Reply all\" est une arme — à utiliser avec précaution</td></tr>\n<tr><td><strong>Trop familier</strong></td><td>\"Yo team, gonna need that thing by tomorrow. k thx.\"</td><td>Aucun professionnalisme, ton et vocabulaire inadaptés</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Erreurs fréquentes à éviter absolument</div>\n<p>\n        • ALL CAPS (donne l'impression de crier)<br/>\n        • Aucune salutation ni clôture<br/>\n        • Oublier la pièce jointe annoncée<br/>\n        • Emojis dans un email professionnel<br/>\n        • \"Sent from my iPhone\" (trop décontracté pour un client)\n        </p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📌 Règle de classe</div>\n<p>Devoir obligatoire : écrire 3 emails (demande de réunion, suivi après réunion, excuse pour une erreur). Non fait en début de séance → pénalité de <strong>2 points</strong>.</p>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1 — Vocabulary Basics</a>\n<a class=\"ch-nav-btn\">Ch.3 — Oral Presentations →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which is the correct salutation for a formal email to a new client?",
-     "options": [
-      {
-       "text": "Hey dude,",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Hello Sarah,",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Dear Mr. Johnson,",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Yo team,",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "What is the most important quality of an email subject line?",
-     "options": [
-      {
-       "text": "Being funny",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Being clear and specific",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Using all capital letters",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Making it very short, one word",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which closing is appropriate for a professional business email?",
-     "options": [
-      {
-       "text": "Cheers,",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Later,",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "XOXO,",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Best regards,",
-       "correct": true,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "What happens if you accidentally click \"Reply All\" to 200 people?",
-     "options": [
-      {
-       "text": "Nothing — it's safe",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Everyone receives your email (disaster!)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "The email deletes itself",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Only your boss sees it",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "In the CLEAR method, what does the \"E\" stand for?",
-     "options": [
-      {
-       "text": "Email",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Expectation",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Explanation",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Ending",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    }
-   ],
-   "source": "_private/anglais/chapitres/chapitre2.html"
-  },
-  {
-   "number": 3,
-   "title": "Oral Presentations in a Business Context",
-   "subtitle": "Structurer une présentation business de 2-3 minutes, simplifier le jargon technique pour un public non-technique (la \"Grandma Rule\"), utiliser des transitions, et gérer son corps, sa voix et les questions du public.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la session</div>\n<p>• Structurer une présentation business de 2-3 minutes avec opening, body, closing clairs<br/>\n        • Utiliser 5+ phrases de transition (First, Next, Then, Finally, To summarize)<br/>\n        • Expliquer un problème IT technique à un public non-technique en langage simple<br/>\n        • Maintenir le contact visuel et un langage corporel confiant<br/>\n        • Gérer les questions-réponses avec des réponses polies</p>\n</div>\n<h2>3.1 — Pourquoi les présentations comptent en IT</h2>\n<div class=\"story-box\">\n        📋 <span class=\"story-who\">Consigne reçue par Leo :</span> <em>\"Present the server update to Mr. Tanaka. Five minutes. Tomorrow morning.\"</em><br/><br/>\n        😬 <span class=\"story-who\">Ce que Leo dit :</span> <em>\"So, like, basically, the thing is, um… our backend infrastructure, which is, you know, connected to the, uh, frontend modules, might have, like, some issues.\"</em>\n</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 La leçon</div>\n<p>Un patron ou un client ne se soucie pas du code — il se soucie des <strong>solutions</strong>. Cette session te donne une structure simple et puissante pour transformer un discours confus en présentation claire, même en 2 minutes.</p>\n</div>\n<h2>3.2 — 🏗️ La Structure en 3 Parties</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🧠 La règle d'or</div>\n<p><em>\"Tell them, tell them, tell them.\"</em> — Dis-leur ce que tu vas dire (opening), dis-le (body), dis-leur ce que tu as dit (closing).</p>\n</div>\n<div class=\"struct-flow\">\n<div class=\"struct-step\">\n<div class=\"ss-time\">~30 sec</div>\n<div class=\"ss-name\">Opening</div>\n<div class=\"ss-desc\">Hook + Roadmap : annonce ce que tu vas dire</div>\n</div>\n<div class=\"struct-arrow\">→</div>\n<div class=\"struct-step\">\n<div class=\"ss-time\">~1.5–2 min</div>\n<div class=\"ss-name\">Body</div>\n<div class=\"ss-desc\">Le contenu, sans jargon, en langage simple</div>\n</div>\n<div class=\"struct-arrow\">→</div>\n<div class=\"struct-step\">\n<div class=\"ss-time\">~30 sec</div>\n<div class=\"ss-name\">Closing</div>\n<div class=\"ss-desc\">Résumé + appel à l'action</div>\n</div>\n</div>\n<h3>Opening — Hook + Roadmap</h3>\n<p><strong>Hook :</strong> commence par une question, un fait ou une courte histoire. <strong>Roadmap :</strong> annonce le plan.</p>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td>Hook</td><td>\"Have you ever lost an hour of work because of a crash?\"</td></tr>\n<tr><td>Roadmap</td><td>\"Today I'll explain the problem, the solution, and the result.\"</td></tr>\n</tbody>\n</table></div>\n<h3>Closing — Summarize + Call to Action</h3>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td>Résumer</td><td>\"To sum up, we had a crash, we fixed it with a reboot, and now everything works.\"</td></tr>\n<tr><td>Appel à l'action</td><td>\"Please restart your computers tonight.\"</td></tr>\n</tbody>\n</table></div>\n<p class=\"never-list\">Ne jamais terminer par : \"That's it.\" / \"I'm done.\" / \"Yeah…\"</p>\n<h2>3.3 — 🧓 Le Corps : Simplifier le Jargon (The Grandma Rule)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ La règle de la grand-mère</div>\n<p>Si ta grand-mère ne peut pas comprendre, simplifie encore. Un client non-technique ne se soucie pas du <em>comment</em> — seulement du <em>quoi</em> et du <em>pourquoi ça le concerne</em>.</p>\n</div>\n<p>Exemple à transformer : <em>\"The deployment failed because of a CI/CD pipeline configuration mismatch.\"</em></p>\n<div class=\"jargon-ladder\">\n<div class=\"jargon-step\">🔴 <strong>Technique :</strong> \"The deployment failed because of a CI/CD pipeline configuration mismatch.\"</div>\n<div class=\"jargon-step\">🟡 <strong>Simplifié :</strong> \"The software release did not work because our automatic delivery system had a settings problem.\"</div>\n<div class=\"jargon-step\">🟢 <strong>Pour un client non-technique :</strong> \"We couldn't launch the update because the automatic system wasn't set up correctly.\"</div>\n<div class=\"jargon-step\">🟢🟢 <strong>Grandma Rule (très simple) :</strong> \"The computer system got confused and couldn't finish the job.\"</div>\n</div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme complexe</th><th>Remplacement simple</th></tr></thead>\n<tbody>\n<tr><td>Deployment</td><td>Software release</td></tr>\n<tr><td>Failed</td><td>Did not work</td></tr>\n<tr><td>CI/CD pipeline</td><td>Automatic delivery system</td></tr>\n<tr><td>Configuration mismatch</td><td>Settings problem</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 Autre exemple</div>\n<p class=\"never-list\">❌ \"We migrated the legacy monolith to microservices.\"</p>\n<p class=\"good-list\">✅ \"We moved our old, slow system to smaller, faster pieces.\"</p>\n</div>\n<h2>3.4 — 🔗 Transition Phrases — Ton meilleur ami</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Moment</th><th>Phrases</th></tr></thead>\n<tbody>\n<tr><td><strong>Pour commencer</strong></td><td>\"First…\", \"To begin with…\"</td></tr>\n<tr><td><strong>Pour avancer</strong></td><td>\"Next…\", \"Now let's look at…\"</td></tr>\n<tr><td><strong>Pour conclure</strong></td><td>\"Finally…\", \"In conclusion…\", \"To summarize…\"</td></tr>\n</tbody>\n</table></div>\n<h2>3.5 — 🧍 Langage Corporel &amp; Voix</h2>\n<div class=\"grid-2\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🧍 Body Language — Stand Like You Belong</div>\n<p class=\"good-list\">✓ Se tenir droit (pas affalé)<br/>✓ Contact visuel (regarder les gens, pas le plafond)<br/>✓ Mains visibles (pas dans les poches)<br/>✓ Ne jamais lire ses notes mot à mot</p>\n</div>\n<div class=\"box info\">\n<div class=\"box-lbl\">🗣️ Voice — Don't Be a Robot</div>\n<p>• Parler lentement (le stress fait parler trop vite)<br/>• Faire des pauses entre les idées<br/>• Insister sur les mots importants : <em>\"The server crashed, not the network.\"</em></p>\n</div>\n</div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">💪 Gérer le trac</div>\n<p>Respire profondément avant de commencer. Il est tout à fait acceptable de dire <em>\"Let me think about that.\"</em> Le public veut que tu réussisses — même les meilleurs orateurs ont le trac.</p>\n</div>\n<h2>3.6 — ❓ Q&amp;A — Répondre avec Grâce</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Situation</th><th>Réponse appropriée</th></tr></thead>\n<tbody>\n<tr><td>Tu ne connais pas la réponse</td><td>\"That's a great question. Let me follow up after class.\"</td></tr>\n<tr><td>Tu n'as pas compris la question</td><td>\"Could you rephrase the question?\"</td></tr>\n<tr><td class=\"never-list\">À ne jamais dire</td><td class=\"never-list\">\"That's a stupid question.\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">📋 Grille d'évaluation rapide</div>\n<p>Structure (opening/body/closing) — Yes / Almost / Not yet<br/>\n        Langage simple (pas de jargon) — Yes / Almost / Not yet<br/>\n        Contact visuel — Yes / Almost / Not yet</p>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">📌 Note de classe</div>\n<p><em>\"A presentation is like a pizza — even bad pizza is still pretty good.\"</em> L'objectif n'est pas la perfection, c'est la clarté.</p>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2 — Professional Emails</a>\n<a class=\"ch-nav-btn\">Ch.4 — Pronunciation &amp; Fluency →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "What are the three parts of a good presentation structure?",
-     "options": [
-      {
-       "text": "Hello, Goodbye, Thank you",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Opening, Body, Closing",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "Problem, Complaint, Solution",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Slide 1, Slide 2, Slide 3",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which phrase is a good transition to move to a new topic?",
-     "options": [
-      {
-       "text": "\"That's it.\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"Um... so...\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"Next, let's look at...\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "\"I'm done.\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "When explaining a technical problem to a non-technical client, you should:",
-     "options": [
-      {
-       "text": "Use as much jargon as possible",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Speak very fast",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Read directly from your notes",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Simplify your language (the Grandma Rule)",
-       "correct": true,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "If you don't know the answer during Q&A, you should say:",
-     "options": [
-      {
-       "text": "\"That's a stupid question.\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"I don't know.\" (and stop talking)",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"That's a great question. Let me follow up after class.\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "\"Next question!\"",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which is a good way to end a presentation?",
-     "options": [
-      {
-       "text": "\"Yeah... that's it.\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "\"To sum up... please restart your computers tonight.\"",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "\"I'm done.\"",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Just stop talking and sit down",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    }
-   ],
-   "source": "_private/anglais/chapitres/chapitre3.html"
-  },
-  {
-   "number": 4,
-   "title": "Pronunciation & Fluency Techniques",
-   "subtitle": "Les sons qui posent problème aux francophones, l'accentuation des mots et des phrases, les groupes de souffle (thought groups), les liaisons et les réductions informelles (gonna/wanna). De quoi sonner plus naturel et plus confiant à l'oral.",
-   "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">🎯 Objectifs de la session</div>\n<p>• Prononcer correctement les sons /θ/, /ð/, /h/ et les terminaisons -ed<br/>\n        • Placer l'accent tonique correctement sur les mots et les phrases<br/>\n        • Faire des pauses naturelles (thought groups) au lieu de parler comme un robot<br/>\n        • Reconnaître quand les réductions (gonna, wanna, gotta) sont acceptables ou non</p>\n</div>\n<h2>4.1 — Pourquoi la prononciation compte</h2>\n<div class=\"story-box\">\n        🗣️ <span class=\"story-who\">Leo, en présentation :</span> <em>\"Ze sערveur crashed because ov ze network.\" </em><br/><br/>\n        🙂 <span class=\"story-who\">Le client comprend quand même</span> — mais une prononciation plus naturelle inspire davantage confiance et professionnalisme, surtout en clientèle internationale.\n      </div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">💡 Bonne nouvelle</div>\n<p>Tu n'as pas besoin d'un accent parfait. L'objectif est d'être <strong>compris facilement</strong> et de paraître <strong>confiant</strong>. Quelques ajustements ciblés font une énorme différence.</p>\n</div>\n<h2>4.2 — 🔊 Les Sons Difficiles pour les Francophones</h2>\n<div class=\"sound-grid\">\n<div class=\"sound-card\"><div class=\"sym\">/θ/</div><div class=\"sw\">\"th\" sourd — <em>think, three, throughput</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">/ð/</div><div class=\"sw\">\"th\" sonore — <em>this, the, that</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">/h/</div><div class=\"sw\">souffle initial — <em>hello, hard, happy</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">e muet</div><div class=\"sw\">\"e\" final silencieux — <em>code, file, deploy<u>e</u></em></div></div>\n</div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Piège fréquent</div>\n<p>Le francophone remplace souvent /θ/ et /ð/ par /s/ ou /z/ (\"zink\" au lieu de \"think\"), et prononce le \"h\" comme silencieux (\"appy\" au lieu de \"happy\"). Place le bout de la langue entre les dents pour /θ/ et /ð/, et expire un vrai souffle pour le \"h\".</p>\n</div>\n<h3>Les terminaisons -ed (3 façons de les prononcer)</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Son</th><th>Quand</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td>/t/</td><td>Après un son sourd (p, k, s, ch, sh, f)</td><td>worked, deployed→non; <em>checked, finished</em></td></tr>\n<tr><td>/d/</td><td>Après un son sonore (b, g, v, z, l, m, n)</td><td><em>called, opened, played</em></td></tr>\n<tr><td>/ɪd/</td><td>Après \"t\" ou \"d\"</td><td><em>wanted, needed, updated</em></td></tr>\n</tbody>\n</table></div>\n<h2>4.3 — 🎵 Word Stress &amp; Sentence Stress</h2>\n<p>En anglais, l'accent tonique peut <strong>changer le sens</strong> du mot.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mot</th><th>Nom (accent 1ère syllabe)</th><th>Verbe (accent 2ème syllabe)</th></tr></thead>\n<tbody>\n<tr><td>record</td><td class=\"stress-word\"><span class=\"up\">RE</span><span class=\"down\">cord</span> (un enregistrement)</td><td class=\"stress-word\"><span class=\"down\">re</span><span class=\"up\">CORD</span> (enregistrer)</td></tr>\n<tr><td>present</td><td class=\"stress-word\"><span class=\"up\">PRE</span><span class=\"down\">sent</span> (un cadeau / une présentation)</td><td class=\"stress-word\"><span class=\"down\">pre</span><span class=\"up\">SENT</span> (présenter)</td></tr>\n<tr><td>conduct</td><td class=\"stress-word\"><span class=\"up\">CON</span><span class=\"down\">duct</span> (une conduite)</td><td class=\"stress-word\"><span class=\"down\">con</span><span class=\"up\">DUCT</span> (mener, diriger)</td></tr>\n<tr><td>object</td><td class=\"stress-word\"><span class=\"up\">OB</span><span class=\"down\">ject</span> (un objet)</td><td class=\"stress-word\"><span class=\"down\">ob</span><span class=\"up\">JECT</span> (s'opposer)</td></tr>\n</tbody>\n</table></div>\n<h3>Sentence Stress — l'accentuation change le sens</h3>\n<p>La phrase <em>\"I didn't delete the file.\"</em> peut avoir 4 sens différents selon le mot accentué :</p>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td><strong>I</strong> didn't delete the file.</td><td>→ Ce n'est pas <strong>moi</strong> qui l'ai fait.</td></tr>\n<tr><td>I <strong>didn't</strong> delete the file.</td><td>→ Insistance sur la négation.</td></tr>\n<tr><td>I didn't <strong>delete</strong> the file.</td><td>→ Je l'ai peut-être modifié, mais pas supprimé.</td></tr>\n<tr><td>I didn't delete <strong>the file</strong>.</td><td>→ C'est précisément <strong>ce fichier</strong> qui n'a pas été supprimé.</td></tr>\n</tbody>\n</table></div>\n<h2>4.4 — ⏸️ Thought Groups — Ne Sonne Pas Comme un Robot</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">🧠 La technique</div>\n<p>Découpe tes phrases en petits groupes de sens et fais une courte pause entre chaque groupe — exactement comme une virgule à l'oral.</p>\n</div>\n<p class=\"never-list\">❌ \"Thedeploymentfailedbecauseoftheconfigurationproblemandwehadtorollback\"</p>\n<p class=\"good-list\">✅ \"The deployment failed — because of a configuration problem — and we had to roll back.\"</p>\n<h3>Linking Sounds — Les liaisons</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Écrit</th><th>Prononcé (liaison)</th></tr></thead>\n<tbody>\n<tr><td>Get on</td><td>\"Geton\"</td></tr>\n<tr><td>Not at all</td><td>\"Notatall\"</td></tr>\n<tr><td>An apple</td><td>\"Anapple\"</td></tr>\n</tbody>\n</table></div>\n<h3>Intonation</h3>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td>↗️ Montante</td><td>Questions fermées — \"Did you check the server?\"</td></tr>\n<tr><td>↘️ Descendante</td><td>Affirmations, questions ouvertes — \"What time is the meeting?\"</td></tr>\n</tbody>\n</table></div>\n<h2>4.5 — 💬 Reductions — Gonna, Wanna, Gotta</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Forme complète</th><th>Réduction</th><th>Contexte</th></tr></thead>\n<tbody>\n<tr><td>going to</td><td><em>gonna</em></td><td class=\"good-list\">✅ entre collègues, à l'oral informel</td></tr>\n<tr><td>want to</td><td><em>wanna</em></td><td class=\"good-list\">✅ entre collègues, à l'oral informel</td></tr>\n<tr><td>got to / have to</td><td><em>gotta</em></td><td class=\"good-list\">✅ entre collègues, à l'oral informel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">⚠️ Jamais à l'écrit professionnel</div>\n<p class=\"never-list\">❌ \"I'm gonna send the report\" dans un email à un client.<br/>\n        ✅ À l'écrit ou devant un client important : <em>\"I am going to send the report.\"</em></p>\n</div>\n<h2>4.6 — 📋 Bilan du Cours — Le Parcours de Leo</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Session</th><th>Problème de Leo</th><th>Solution apprise</th></tr></thead>\n<tbody>\n<tr><td>1 — Vocabulary</td><td>Ne comprend pas \"touch base\", \"low-hanging fruit\"…</td><td>Vocabulaire business &amp; IT, faux-amis, expressions</td></tr>\n<tr><td>2 — Emails</td><td>Email trop familier (\"hey guys… lol\")</td><td>Anatomie de l'email, méthode CLEAR, ton adapté</td></tr>\n<tr><td>3 — Presentations</td><td>Discours confus, plein de \"um\" et de jargon</td><td>Structure 3 parties, Grandma Rule, transitions</td></tr>\n<tr><td>4 — Pronunciation</td><td>Accent qui gêne la compréhension</td><td>Sons clés, accentuation, thought groups, réductions</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">🏆 Et maintenant ?</div>\n<p>Tu as toutes les bases du <strong>Business English pour l'IT</strong> : vocabulaire, emails, présentations, prononciation. Direction le <a>centre d'exercices</a> pour t'entraîner, ou le <a>simulateur d'examen</a> pour te tester en conditions réelles.</p>\n</div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3 — Oral Presentations</a>\n<a class=\"ch-nav-btn\">Simulateur d'examen →</a>\n</div>\n</div>",
-   "questions": [
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "Which sound is commonly mispronounced by French speakers as /s/ or /z/?",
-     "options": [
-      {
-       "text": "/p/",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "/θ/ and /ð/ (the \"th\" sounds)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "/k/",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "/m/",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "How many different ways can the \"-ed\" ending be pronounced?",
-     "options": [
-      {
-       "text": "1",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "2",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "3 (/t/, /d/, /ɪd/)",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "4",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "In the word \"record\" used as a noun (a recording), where is the stress?",
-     "options": [
-      {
-       "text": "On the first syllable: RE-cord",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "On the second syllable: re-CORD",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "No stress at all",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "It depends on the speaker's mood",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    },
-    {
-     "type": "mcq",
-     "explanation": "",
-     "text": "When is it acceptable to use \"gonna\" instead of \"going to\"?",
-     "options": [
-      {
-       "text": "In a formal email to a new client",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "In a casual conversation with a colleague",
-       "correct": true,
-       "explanation": ""
-      },
-      {
-       "text": "In a written business report",
-       "correct": false,
-       "explanation": ""
-      },
-      {
-       "text": "Never, under any circumstances",
-       "correct": false,
-       "explanation": ""
-      }
-     ],
-     "_answer_missing": false
-    }
-   ],
-   "source": "_private/anglais/chapitres/chapitre4.html"
-  }
- ],
- "exercises": [
-  {
-   "type": "mcq",
-   "text": "What does stakeholder mean in a business context?",
-   "options": [
-    {
-     "text": "A long-term paying customer",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Someone who has an interest in the project",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "A software bug",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "An unpaid invoice",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B est correct. Un stakeholder est toute personne ayant un intérêt direct dans le projet (client, manager, équipe…), pas forcément celle qui paie.",
-   "label": "Question 1 · Session 1 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "Which IT term describes the part of a software that users can see and click?",
-   "options": [
-    {
-     "text": "Backend",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Frontend",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Deployment",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Sprint",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B — Frontend. Le frontend est l'interface visible (boutons, menus, design) ; le backend est la partie invisible (serveurs, bases de données).",
-   "label": "Question 2 · Session 1 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "The English word actually (a famous false friend) really means:",
-   "options": [
-    {
-     "text": "In fact",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Currently",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Eventually",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Soon",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A — In fact. Actually ≠ actuellement ! \"Actuellement\" se traduit par currently. Un faux-ami classique.",
-   "label": "Question 3 · Session 1 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Which expression means \"to start something\"?",
-   "options": [
-    {
-     "text": "Circle back",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Low-hanging fruit",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Get the ball rolling",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Touch base",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ C — Get the ball rolling. \"Circle back\" = revenir sur un sujet plus tard. \"Touch base\" = prendre contact. \"Low-hanging fruit\" = gains faciles.",
-   "label": "Question 4 · Session 1 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Which part of an email is often the first — and sometimes the only — thing read?",
-   "options": [
-    {
-     "text": "Subject line",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Signature",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Closing",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Salutation",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A — Subject line. Si l'objet n'est pas clair, le reste de l'email risque d'être ignoré.",
-   "label": "Question 5 · Session 2 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "In the CLEAR method for writing emails, what does the \"L\" stand for?",
-   "options": [
-    {
-     "text": "Language",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Logistics",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Letter",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Length",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B — Logistics. C-L-E-A-R = Context, Logistics, Expectation, Action, Respect.",
-   "label": "Question 6 · Session 2 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Which closing line is appropriate for a professional business email?",
-   "options": [
-    {
-     "text": "Cheers,",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Kind regards,",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Later,",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "XOXO,",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B — Kind regards, est standard et professionnel. Les autres options sont bien trop familières pour un email business.",
-   "label": "Question 7 · Session 2 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "What's the problem with writing an entire email in CAPITAL LETTERS?",
-   "options": [
-    {
-     "text": "It looks like you're shouting",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "It's faster to read",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "It's more formal",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "There's no problem at all",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A. ALL CAPS donne l'impression de crier — c'est une des erreurs d'email les plus citées en cours.",
-   "label": "Question 8 · Session 2 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "What is the \"Grandma Rule\" when explaining something technical?",
-   "options": [
-    {
-     "text": "Always mention your grandmother",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Speak as fast as possible",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Use as much technical jargon as possible",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "If your grandmother couldn't understand it, simplify it further",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ D. La \"Grandma Rule\" force à simplifier le jargon pour un public non-technique — exactement ce qui est demandé en évaluation (\"Simplify the Jargon\").",
-   "label": "Question 9 · Session 3 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Which is a good way to open a presentation?",
-   "options": [
-    {
-     "text": "\"Have you ever lost an hour of work because of a crash?\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "\"So, um, basically...\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"Let's just start, I guess.\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"Today, uh, stuff happened.\"",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A. Un bon \"hook\" capte l'attention immédiatement — ici une question relatable, suivie d'une roadmap.",
-   "label": "Question 10 · Session 3 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "If you don't understand a question during Q&A, what should you do?",
-   "options": [
-    {
-     "text": "Ignore it and move on",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Say \"that's a stupid question\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Pretend you understood",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Politely ask the person to rephrase the question",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ D. \"Could you rephrase the question?\" est toujours une réponse acceptable et professionnelle.",
-   "label": "Question 11 · Session 3 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Which is good body language during a presentation?",
-   "options": [
-    {
-     "text": "Maintaining eye contact with the audience",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "Reading your notes word for word",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Keeping your hands in your pockets",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Looking at the ceiling",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A. Le contact visuel transmet de la confiance — c'est un point systématiquement noté en grille d'évaluation.",
-   "label": "Question 12 · Session 3 ·",
-   "section": "qcm",
-   "level": "easy"
-  },
-  {
-   "type": "mcq",
-   "text": "Between \"PREsent\" (noun, a gift) and \"preSENT\" (verb, to show), what actually changes?",
-   "options": [
-    {
-     "text": "Which syllable is stressed",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "The spelling",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "The number of letters",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Nothing changes",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A. En anglais, l'accent tonique seul peut transformer un nom en verbe : PREsent (nom) / preSENT (verbe). Idem pour record, conduct, object.",
-   "label": "Question 13 · Session 4 ·",
-   "section": "qcm",
-   "level": "hard"
-  },
-  {
-   "type": "mcq",
-   "text": "Which sentence uses the reduction \"gonna\" appropriately?",
-   "options": [
-    {
-     "text": "\"Dear Mr. Smith, I'm gonna review your contract.\"",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "\"Hey, I'm gonna grab a coffee, want one?\"",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "(in an official written report)",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "(closing line of a formal presentation)",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B. \"Gonna\" est acceptable entre collègues à l'oral informel — jamais à l'écrit professionnel ou devant un client important.",
-   "label": "Question 14 · Session 4 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "Why is it useful to pause between \"thought groups\" when speaking?",
-   "options": [
-    {
-     "text": "It makes you sound more natural instead of like a robot",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "It makes you talk slower for no reason",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "It's only useful when reading poetry",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "It has no real benefit",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ A. Les pauses entre groupes de sens remplacent les virgules à l'oral — sans elles, on parle comme un robot qui ne respire jamais.",
-   "label": "Question 15 · Session 4 ·",
-   "section": "qcm",
-   "level": "medium"
-  },
-  {
-   "type": "mcq",
-   "text": "What is \"sentence stress\"?",
-   "options": [
-    {
-     "text": "Speaking very loudly throughout the sentence",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Emphasizing certain words to change meaning or focus",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "A type of grammar tense",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "Saying every word at exactly the same volume",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ B. \"I didn't delete the file\" n'a pas le même sens que \"I didn't delete the file\" — le mot accentué porte le sens principal.",
-   "label": "Question 16 · Session 4 ·",
-   "section": "qcm",
-   "level": "hard"
-  },
-  {
-   "type": "true_false",
-   "text": "Eye contact with the audience makes you look more confident.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ True. Le contact visuel est un des critères directement notés sur la grille d'évaluation des présentations.",
-   "label": "Affirmation 1",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "Speaking faster is always better during a presentation.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. Parler trop vite empêche le public de suivre. Mieux vaut parler lentement et faire des pauses.",
-   "label": "Affirmation 2",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "It is okay to pause between ideas — it helps the audience understand.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ True. Les pauses (\"thought groups\") structurent le discours et laissent le temps au public d'assimiler chaque idée.",
-   "label": "Affirmation 3",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "A \"customer\" and a \"client\" mean exactly the same thing in business English.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. Client = relation durable. Customer = achat ponctuel. Deux nuances différentes.",
-   "label": "Affirmation 4",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "The subject line is often the only part of an email that gets read.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ True. Un objet vague ou absent fait courir le risque que ton email soit ignoré.",
-   "label": "Affirmation 5",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "It's fine to use emojis in a professional business email.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. Les emojis figurent dans la liste officielle des erreurs à éviter dans un email professionnel.",
-   "label": "Affirmation 6",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "\"Touch base\" means to physically touch something.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. \"Touch base\" est une expression idiomatique qui signifie \"prendre contact\" — rien de physique.",
-   "label": "Affirmation 7",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "\"Gonna\" and \"wanna\" are acceptable in formal written business emails.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. Ces réductions sont réservées à l'oral informel — jamais à l'écrit professionnel.",
-   "label": "Affirmation 8",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "The CLEAR method helps structure the body of a professional email.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ True. Context, Logistics, Expectation, Action, Respect — les 5 étapes du corps d'un email clair.",
-   "label": "Affirmation 9",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "Your closing in a presentation should summarize what you said and include a call to action.",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": true,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": false,
-     "explanation": ""
-    }
-   ],
-   "explanation": "✅ True. \"Tell them what you told them\" — résumer, puis donner une action claire au public.",
-   "label": "Affirmation 10",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "If you don't know the answer during Q&A, the best response is \"that's a stupid question.\"",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. C'est exactement la phrase à ne jamais dire ! Préfère : \"That's a great question, let me follow up.\"",
-   "label": "Affirmation 11",
-   "section": "tf"
-  },
-  {
-   "type": "true_false",
-   "text": "The English word \"actually\" means the same thing as the French word \"actuellement\".",
-   "options": [
-    {
-     "text": "✅ True",
-     "correct": false,
-     "explanation": ""
-    },
-    {
-     "text": "❌ False",
-     "correct": true,
-     "explanation": ""
-    }
-   ],
-   "explanation": "❌ False. Faux-ami classique : \"actually\" = en fait. \"Actuellement\" se traduit par \"currently\".",
-   "label": "Affirmation 12",
-   "section": "tf"
-  },
-  {
-   "type": "gap",
-   "text": "The _____ for this project is Friday, so we need to finish soon.",
-   "answers": [
-    "deadline"
-   ],
-   "hint": "📌 date limite",
-   "explanation": "Réponse : deadline",
-   "label": "Phrase 1 · Vocabulaire",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "Please _____ with Sarah about the budget before the meeting.",
-   "answers": [
-    "touch base"
-   ],
-   "hint": "📌 expression : prendre contact (2 mots)",
-   "explanation": "Réponse : touch base",
-   "label": "Phrase 2 · Expression business",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "Before we launch, the client must complete _____ to confirm everything works correctly.",
-   "answers": [
-    "UAT"
-   ],
-   "hint": "📌 acronyme : User Acceptance Testing",
-   "explanation": "Réponse : UAT",
-   "label": "Phrase 3 · Vocabulaire IT",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "\"Dear Mr. Johnson,\" is an example of a _____ salutation.",
-   "answers": [
-    "formal"
-   ],
-   "hint": "📌 registre de langue",
-   "explanation": "Réponse : formal",
-   "label": "Phrase 4 · Email",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "\"Best regards,\" and \"Kind regards,\" are examples of a professional email _____ line.",
-   "answers": [
-    "closing"
-   ],
-   "hint": "📌 partie de l'anatomie de l'email",
-   "explanation": "Réponse : closing",
-   "label": "Phrase 5 · Email",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "_____ , let's look at the solution we implemented.",
-   "answers": [
-    "next"
-   ],
-   "hint": "📌 phrase de transition",
-   "explanation": "Réponse : Next",
-   "label": "Phrase 6 · Présentation",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "Instead of saying \"CI/CD pipeline\", a simpler way to say it is \"automatic _____ system\".",
-   "answers": [
-    "delivery"
-   ],
-   "hint": "📌 Grandma Rule",
-   "explanation": "Réponse : delivery",
-   "label": "Phrase 7 · Simplifier le jargon",
-   "section": "gap"
-  },
-  {
-   "type": "gap",
-   "text": "\"I'm _____ send the report after lunch\" is fine between colleagues, but never in a formal email.",
-   "answers": [
-    "gonna"
-   ],
-   "hint": "📌 réduction informelle de \"going to\"",
-   "explanation": "Réponse : gonna",
-   "label": "Phrase 8 · Prononciation",
-   "section": "gap"
-  },
-  {
-   "type": "reorder",
-   "text": "Number the sentences of this presentation about a server crash in the correct order.",
-   "items": [
-    {
-     "text": "\"Good morning, everyone. Today I'll talk about the server crash.\"",
-     "position": 1
-    },
-    {
-     "text": "\"First, let me explain what caused the crash.\"",
-     "position": 2
-    },
-    {
-     "text": "\"Next, I'll show you how we solved the problem.\"",
-     "position": 3
-    },
-    {
-     "text": "\"To summarize, we fixed the server and everything is working now.\"",
-     "position": 4
-    },
-    {
-     "text": "\"Finally, please restart your computers tonight.\"",
-     "position": 5
-    }
-   ],
-   "label": "Exercice 1 ·",
-   "section": "reorder",
-   "level": "medium"
-  },
-  {
-   "type": "reorder",
-   "text": "Number the steps of the CLEAR method in the correct order.",
-   "items": [
-    {
-     "text": "State the context — why you are writing.",
-     "position": 1
-    },
-    {
-     "text": "Give the logistics — what, when, where.",
-     "position": 2
-    },
-    {
-     "text": "Explain your expectation — what you need from the reader.",
-     "position": 3
-    },
-    {
-     "text": "Request a clear action from the reader.",
-     "position": 4
-    },
-    {
-     "text": "Thank them — show respect.",
-     "position": 5
-    }
-   ],
-   "label": "Exercice 2 ·",
-   "section": "reorder",
-   "level": "medium"
-  },
-  {
-   "type": "reorder",
-   "text": "Number the steps of handling a Q&A session in the correct order.",
-   "items": [
-    {
-     "text": "Listen carefully to the full question.",
-     "position": 1
-    },
-    {
-     "text": "Pause for a moment to think before answering.",
-     "position": 2
-    },
-    {
-     "text": "Answer clearly and directly.",
-     "position": 3
-    },
-    {
-     "text": "If you don't know, say \"that's a great question, let me follow up.\"",
-     "position": 4
-    },
-    {
-     "text": "Thank the person for their question.",
-     "position": 5
-    }
-   ],
-   "label": "Exercice 3 ·",
-   "section": "reorder",
-   "level": "hard"
-  },
-  {
-   "type": "open",
-   "text": "Technique : \"The deployment failed because of a CI/CD pipeline configuration mismatch.\"",
-   "model_answer": "Proposition : \"We couldn't launch the update because our automatic delivery system had a settings problem.\"",
-   "label": "Jargon 1",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Technique : \"We migrated our legacy monolith to microservices.\"",
-   "model_answer": "Proposition : \"We moved our old, slow system into smaller, faster pieces.\"",
-   "label": "Jargon 2",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Technique : \"The UAT phase revealed several critical bugs in the backend.\"",
-   "model_answer": "Proposition : \"When real users tested the software, they found several serious problems behind the scenes.\"",
-   "label": "Jargon 3",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Subject: (empty)\"hey, the server thing is late lol. thx.\"",
-   "model_answer": "Proposition :Subject: Server Maintenance DelayDear Team,I am writing to inform you that server maintenance has been delayed until Monday. Thank you for your understanding.Best regards,[Name]",
-   "label": "Désastre 1",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Subject: hi\"Can you send me that file? Need it by tomorrow. Gonna be late otherwise. Thanks! Tom\"",
-   "model_answer": "Proposition :Subject: File Request — Deadline TomorrowDear Jen,Could you please send me the file? I need it by tomorrow to avoid missing the deadline. Thank you for your help.Best regards,Tom",
-   "label": "Désastre 2",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Sujet : \"A software update that caused problems for users.\"",
-   "model_answer": "Proposition : \"Hello everyone. Have you ever had a software update break something you rely on? Today I'll explain the problem we caused, the solution we found, and the result.\"",
-   "label": "Sujet : \"A software update that caused problems for users.\"",
-   "section": "ateliers"
-  },
-  {
-   "type": "open",
-   "text": "Situation : reprogrammer une réunion de mardi à jeudi 15h avec un collègue",
-   "model_answer": "Proposition :Subject: Meeting Rescheduled — Thursday 3 PMHi [Name],Could we move our Tuesday meeting to Thursday at 3 PM instead? Something came up that I need to handle. Let me know if that works for you.Best regards,[Your name]",
-   "label": "Situation : reprogrammer une réunion de mardi à jeudi 15h avec un collègue",
-   "section": "ateliers"
-  },
-  {
-   "type": "matching",
-   "text": "Associer chaque terme à son exemple",
-   "pairs": [
-    {
-     "term": "Subject line",
-     "example": "\"Subject: Q4 Budget Update — Action Needed\""
-    },
-    {
-     "term": "Salutation",
-     "example": "\"Dear Mr. Johnson,\""
-    },
-    {
-     "term": "Body",
-     "example": "\"I am writing to inform you that the server upgrade is scheduled for Friday.\""
-    },
-    {
-     "term": "Closing",
-     "example": "\"Best regards,\""
-    },
-    {
-     "term": "Signature",
-     "example": "\"Thomas Lee / IT Project Manager\""
-    }
-   ],
-   "section": "ateliers"
-  }
- ],
- "simulators": [
-  {
-   "source": "_private/anglais/chapitres/simulateur-examen.html",
-   "variables": {
-    "EXAM_VARIANTS": [
-     {
-      "label": "Sujet A",
-      "mcq": [
-       {
-        "q": "What does <em>budget</em> mean in a business context?",
-        "opts": [
-         "Available / planned money",
-         "Net profit after taxes",
-         "A type of invoice",
-         "A delay in the schedule"
-        ],
-        "correct": 0
-       },
-       {
-        "q": "Which subject line follows good email practice?",
-        "opts": [
-         "\"Meeting\"",
-         "\"Hello\"",
-         "\"Server Outage — Urgent\"",
-         "(left empty)"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "What is the purpose of the \"roadmap\" in a presentation opening?",
-        "opts": [
-         "To show a literal map",
-         "To announce what you will cover",
-         "To list your sources",
-         "To thank the audience"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "Which \"-ed\" ending is pronounced /ɪd/?",
-        "opts": [
-         "worked",
-         "called",
-         "wanted",
-         "played"
-        ],
-        "correct": 2
-       }
+  "slug": "anglais",
+  "name": "Anglais des Affaires",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Business Vocabulary Basics",
+      "subtitle": "Le vocabulaire indispensable du monde professionnel anglophone : termes business généraux, jargon spécifique IT, faux-amis classiques et expressions idiomatiques. La base sur laquelle tout le reste du cours s'appuie.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs de la session</div>\n<ul><li>Identifier et utiliser 15+ mots de vocabulaire business à l'oral et à l'écrit</li><li>Distinguer le langage familier du langage professionnel</li><li>Reconnaître et corriger les faux-amis français-anglais les plus courants</li><li>Réutiliser 3-4 expressions business dans des mises en situation professionnelles</li></ul></div>\n<h2>Pourquoi ce vocabulaire change tout</h2>\n<div class=\"story-box\">\n         <span class=\"story-who\">Clara écrit à Leo :</span> <em>\"Leo — the Tanaka project has a hard deadline on Friday. Please touch base with Zoe about the budget and stakeholders. I need you to get the ball rolling by tomorrow. Attached — the low-hanging fruit list. Don't forget to reply all to the team.\"</em><br/><br/>\n         <span class=\"story-who\">Leo, perdu :</span> <em>\"Touch base ? Hard deadline ? Low-hanging fruit ? Is this English or a secret code ?\"</em></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Le problème de Leo (et peut-être le tien)</div>\n<p>Leo a un bon niveau d'anglais général mais ne connaît pas le <strong>jargon business</strong>. Ce n'est pas une question de grammaire : c'est une question de vocabulaire spécifique. Cette première session te donne exactement les mots qui transforment un email \"code secret\" en message limpide.</p></div>\n<h2>Vocabulaire Business Général</h2>\n<div class=\"section-accent\">\n<p>Ces quatre mots reviennent dans presque toutes les conversations professionnelles, IT ou non. Maîtrise-les en premier.</p></div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">deadline</div>\n<div class=\"vocab-fr\"> date limite, échéance finale</div>\n<div class=\"vocab-ex\">\"The deadline for the task is Friday.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">stakeholder</div>\n<div class=\"vocab-fr\"> toute personne ayant un intérêt dans le projet</div>\n<div class=\"vocab-ex\">\"Please touch base with Zoe about the stakeholders.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">budget</div>\n<div class=\"vocab-fr\"> argent disponible / prévu</div>\n<div class=\"vocab-ex\">\"There is no money in the budget.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-gen\">Général</span></div>\n<div class=\"vocab-en\">client <span>≠ customer</span></div>\n<div class=\"vocab-fr\"> relation pro durable (≠ <em>customer</em>, achat ponctuel)</div>\n<div class=\"vocab-ex\">\"Client = long-term relationship, customer = one-time buyer.\"</div></div></div>\n<h2>Vocabulaire IT-Spécifique</h2>\n<div class=\"section-accent\">\n<p>Les mots qu'un futur professionnel IT entendra en réunion presque tous les jours.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme</th><th>Sens simple</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td><strong>Deployment</strong></td><td>Mettre un logiciel en ligne, le rendre disponible</td><td>\"The deployment is Friday at 10 PM.\"</td></tr>\n<tr><td><strong>Backend</strong></td><td>La partie invisible qui fait tourner le système (serveurs, bases de données)</td><td>\"The backend team fixed the database.\"</td></tr>\n<tr><td><strong>Frontend</strong></td><td>Ce que l'utilisateur voit et clique (boutons, menus, design)</td><td>\"The frontend developer changed the button color.\"</td></tr>\n<tr><td><strong>Sprint</strong></td><td>Courte période de travail (1 à 4 semaines) en méthode Agile</td><td>\"We will add a search bar this sprint.\"</td></tr>\n<tr><td><strong>UAT</strong></td><td>User Acceptance Testing — test final où les vrais utilisateurs essaient le logiciel</td><td>\"The client approved the software after UAT.\"</td></tr>\n</tbody>\n</table></div>\n<h2>Faux-amis Français → Anglais</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Pièges classiques</div>\n<p>Un mot qui ressemble à du français… ne veut pas dire la même chose. Ces trois faux-amis créent des malentendus fréquents en contexte professionnel.</p></div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">actually <span>≠ actuellement</span></div>\n<div class=\"vocab-fr\"> <em>actually</em> = en fait / <em>actuellement</em> = <em>currently</em></div>\n<div class=\"vocab-ex\">\"Actually, I am in a meeting\" = \"En fait, je suis en réunion.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">eventually <span>≠ éventuellement</span></div>\n<div class=\"vocab-fr\"> <em>eventually</em> = finalement / <em>éventuellement</em> = <em>possibly</em></div>\n<div class=\"vocab-ex\">\"We will eventually fix it\" = \"Nous le réparerons finalement.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-ff\">Faux-ami</span></div>\n<div class=\"vocab-en\">library <span>≠ librairie</span></div>\n<div class=\"vocab-fr\"> <em>library</em> = bibliothèque / <em>librairie</em> = <em>bookshop</em></div>\n<div class=\"vocab-ex\">\"I work in a library\" veut dire \"Je travaille dans une bibliothèque\" — pas que tu vends des livres !</div></div></div>\n<h2>Expressions Business Utiles (et un peu drôles)</h2>\n<div class=\"section-accent\">\n<p>Ces expressions reviennent constamment en réunion. Les comprendre évite le \"Is this English or a secret code?\" de Leo.</p></div>\n<div class=\"vocab-grid\">\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">touch base</div>\n<div class=\"vocab-fr\"> prendre contact / faire un point</div>\n<div class=\"vocab-ex\">\"I'll contact you\" → \"I'll touch base.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">get the ball rolling</div>\n<div class=\"vocab-fr\"> démarrer, lancer les choses</div>\n<div class=\"vocab-ex\">\"Let's start\" → \"Let's get the ball rolling.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">low-hanging fruit</div>\n<div class=\"vocab-fr\"> gains faciles, tâches simples à accomplir d'abord</div>\n<div class=\"vocab-ex\">\"Let's start with the low-hanging fruit first.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">circle back</div>\n<div class=\"vocab-fr\"> revenir sur un sujet plus tard</div>\n<div class=\"vocab-ex\">\"Let's circle back to that next week.\"</div></div>\n<div class=\"vocab-card\">\n<div><span class=\"vocab-tag tag-exp\">Expression</span></div>\n<div class=\"vocab-en\">could you elaborate?</div>\n<div class=\"vocab-fr\"> pourrais-tu expliquer/préciser davantage ?</div>\n<div class=\"vocab-ex\">A: \"The server crashed.\" B: \"Could you elaborate?\"</div></div></div>\n<h2>Mini-Glossaire pour Professionnels IT</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">À retenir par cœur</div>\n<p>Voici les 15 mots-clés de la session, condensés. C'est exactement ce niveau de précision que Mme Tchogoue attend dans tes réponses.</p></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>#</th><th>Terme</th><th>Définition</th></tr></thead>\n<tbody>\n<tr><td>1</td><td><strong>Client</strong></td><td>Relation client durable, à long terme</td></tr>\n<tr><td>2</td><td><strong>Customer</strong></td><td>Acheteur ponctuel ou occasionnel</td></tr>\n<tr><td>3</td><td><strong>Deadline</strong></td><td>Date limite pour finir un travail</td></tr>\n<tr><td>4</td><td><strong>Stakeholder</strong></td><td>Personne qui a un intérêt dans le projet</td></tr>\n<tr><td>5</td><td><strong>Budget</strong></td><td>Argent disponible / prévu</td></tr>\n<tr><td>6</td><td><strong>Invoice</strong></td><td>Facture pour des services ou produits</td></tr>\n<tr><td>7</td><td><strong>Deployment</strong></td><td>Mise en ligne d'un logiciel</td></tr>\n<tr><td>8</td><td><strong>Sprint</strong></td><td>Courte période de travail (Agile)</td></tr>\n<tr><td>9</td><td><strong>UAT</strong></td><td>User Acceptance Testing</td></tr>\n<tr><td>10</td><td><strong>Backend</strong></td><td>Partie invisible (serveurs, bases de données)</td></tr>\n<tr><td>11</td><td><strong>Frontend</strong></td><td>Ce que l'utilisateur voit et manipule</td></tr>\n<tr><td>12</td><td><strong>Touch base</strong></td><td>Prendre contact brièvement</td></tr>\n<tr><td>13</td><td><strong>Get the ball rolling</strong></td><td>Démarrer quelque chose</td></tr>\n<tr><td>14</td><td><strong>Low-hanging fruit</strong></td><td>Gains faciles</td></tr>\n<tr><td>15</td><td><strong>Circle back</strong></td><td>Revenir sur un sujet plus tard</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Règle de classe</div>\n<p>Les devoirs sont <strong>obligatoires</strong>. Un devoir non fait en début de séance entraîne une pénalité de <strong>2 points</strong> sur l'évaluation. (Trouver 5 mots business sur un site IT type Stack Overflow ou une offre LinkedIn + écrire 3 phrases avec le vocabulaire du jour.)</p></div>\n<div class=\"ch-nav\">\n<span></span>\n<a class=\"ch-nav-btn\">Ch.2 — Professional Emails →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which word describes a long-term customer with an ongoing professional relationship?",
+          "options": [
+            {
+              "text": "Customer",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Client",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Stakeholder",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Vendor",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "What is a \"sprint\" in Agile methodology?",
+          "options": [
+            {
+              "text": "A final testing phase",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "A short work period (1–4 weeks) to finish specific tasks",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "A bill for services",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "A casual team meeting",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "What does UAT stand for?",
+          "options": [
+            {
+              "text": "Unified Application Testing",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Universal Access Token",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "User Acceptance Testing",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Updated API Template",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "In a business context, \"budget\" means:",
+          "options": [
+            {
+              "text": "Available / planned money",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Net profit",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "A type of invoice",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "A delay in the schedule",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which sentence is appropriate professional English?",
+          "options": [
+            {
+              "text": "\"Me want finish work soon yes.\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"Deadline Friday. Work weekend?\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"I would like to finish the work soon.\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "\"Client call. You talk. Not me.\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
       ],
-      "tf": [
-       {
-        "stmt": "A \"client\" refers to a one-time buyer.",
-        "correct": false
-       },
-       {
-        "stmt": "It's acceptable to write an email entirely in capital letters to show urgency.",
-        "correct": false
-       },
-       {
-        "stmt": "The Grandma Rule means simplifying technical language for a non-technical audience.",
-        "correct": true
-       },
-       {
-        "stmt": "Pausing between thought groups makes you sound more natural when speaking.",
-        "correct": true
-       }
+      "source": "anglais/chapitres/chapitre1.html"
+    },
+    {
+      "number": 2,
+      "title": "Professional Email Writing",
+      "subtitle": "Comment écrire un email professionnel clair, poli et efficace : anatomie en 5 parties, méthode CLEAR pour le corps du message, formules de politesse, et tous les pièges à éviter. Un mauvais email = confusion, retards, clients mécontents.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs de la session</div>\n<ul><li>Identifier et nommer les 5 composantes clés d'un email professionnel</li><li>Écrire des emails clairs et polis pour des situations IT courantes</li><li>Distinguer le ton formel du ton semi-formel selon le destinataire</li><li>Éviter les erreurs d'email les plus fréquentes</li></ul></div>\n<h2>Pourquoi les emails comptent autant en IT</h2>\n<div class=\"story-box\">\n         <span class=\"story-who\">Email pro attendu :</span> <em>\"Server maintenance is delayed until Monday.\"</em><br/><br/>\n         <span class=\"story-who\">Email réellement envoyé par Leo :</span> <em>\"hey guys, the server thing is late lol. thx.\"</em><br/><br/>\n         <span class=\"story-who\">Zoe, en réponse :</span> <em>\"Leo — please follow email etiquette.\"</em></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Une vérité simple</div>\n<p>Les clients te jugent sur tes emails. Un email bâclé = confusion, retards, patrons énervés. À l'inverse, un email bien structuré donne immédiatement une image de professionnalisme — même si ton accent ou ta grammaire n'est pas parfaite à l'oral.</p></div>\n<h2>Anatomie d'un Email — 5 Parties</h2>\n<div class=\"email-anatomy\">\n<div class=\"email-part\"><div class=\"ep-num\">1</div><div class=\"ep-name\">Subject line</div><div class=\"ep-desc\">L'objet — la première chose lue, souvent la seule</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">2</div><div class=\"ep-name\">Salutation</div><div class=\"ep-desc\">La formule d'ouverture (greeting)</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">3</div><div class=\"ep-name\">Body</div><div class=\"ep-desc\">Le corps du message — le contenu principal</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">4</div><div class=\"ep-name\">Closing</div><div class=\"ep-desc\">La formule de clôture avant la signature</div></div>\n<div class=\"email-part\"><div class=\"ep-num\">5</div><div class=\"ep-name\">Signature</div><div class=\"ep-desc\">Ta \"carte de visite numérique\"</div></div></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">À retenir</div>\n<p>Ces 5 parties sont systématiquement testées en évaluation : on te donnera un email à découper et tu devras écrire la bonne lettre (A-E) en face de chaque partie.</p></div>\n<h2>Subject Lines — Make or Break</h2>\n<p>Un mauvais objet condamne ton email à être ignoré ou mal compris.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th> Mauvais</th><th> Bon</th></tr></thead>\n<tbody>\n<tr><td>\"Meeting\"</td><td>\"Project Kickoff — Wed 10am\"</td></tr>\n<tr><td>\"Issue with server\"</td><td>\"Server Outage — Urgent\"</td></tr>\n<tr><td>\"Hello\"</td><td>\"Introduction — New IT Team Member\"</td></tr>\n<tr><td>(vide)</td><td>\"Q3 Budget Update — Action Needed by Friday\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">La règle d'or</div>\n<p>Un bon objet est <strong>clair et spécifique</strong> : il dit quoi, et souvent quand. \"Server Outage — Urgent\" en dit plus en 3 mots que \"Issue with server\".</p></div>\n<h2>Salutations — À qui tu écris ?</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Registre</th><th>Exemple</th><th>Quand l'utiliser</th></tr></thead>\n<tbody>\n<tr><td><strong>Formel</strong></td><td>\"Dear Mr. Smith,\"</td><td>Nouveau client, supérieur que tu ne connais pas bien</td></tr>\n<tr><td><strong>Semi-formel</strong></td><td>\"Hello Sarah,\" / \"Hi John,\"</td><td>Collègue, client régulier</td></tr>\n<tr><td class=\"never-list\"><strong>Jamais</strong></td><td class=\"never-list\">\"Hey dude,\" / \"Yo,\"</td><td class=\"never-list\">Aucun contexte professionnel</td></tr>\n</tbody>\n</table></div>\n<h2>Le Corps du Message — La Méthode CLEAR</h2>\n<p>Pour structurer le corps de ton email, utilise les 5 lettres de <strong>CLEAR</strong> :</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Lettre</th><th>Signifie</th><th>Question à se poser</th></tr></thead>\n<tbody>\n<tr><td><strong>C</strong></td><td>Context</td><td>Pourquoi j'écris ?</td></tr>\n<tr><td><strong>L</strong></td><td>Logistics</td><td>Quoi, quand, où ?</td></tr>\n<tr><td><strong>E</strong></td><td>Expectation</td><td>De quoi ai-je besoin ?</td></tr>\n<tr><td><strong>A</strong></td><td>Action</td><td>Que doit faire le destinataire ?</td></tr>\n<tr><td><strong>R</strong></td><td>Respect</td><td>Formule de remerciement</td></tr>\n</tbody>\n</table></div>\n<div class=\"doc-mock\">\n<div class=\"doc-from\">\n<strong>Subject:</strong> <span>Budget Approval Needed for Server Upgrade</span></div>\n<p>Dear Ms. Rivera,</p>\n<p><span class=\"clear-tag\">C</span>We are planning to upgrade our main server next month because the current one is too slow and affects daily work.</p>\n<p><span class=\"clear-tag\">L</span>The upgrade will cost €5,000 and will take place on Saturday, June 10th, from 8 AM to 2 PM.</p>\n<p><span class=\"clear-tag\">E</span>I need your approval before Friday, June 2nd, so we can schedule the vendor.</p>\n<p><span class=\"clear-tag\">A</span>Could you please review the attached quote and reply with your approval?</p>\n<p><span class=\"clear-tag\">R</span>Thank you for your support.</p>\n<p>Best regards,<br/>Thomas Lee<br/>IT Manager</p></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Pourquoi ça marche</div>\n<p>Chaque phrase a un rôle précis. Aucune répétition, aucune ambiguïté : le destinataire sait immédiatement quoi faire et avant quelle date. C'est exactement la structure attendue dans tes propres emails d'évaluation.</p></div>\n<h2>Closing Lines &amp; Signature</h2>\n<div class=\"grid-2\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Formules de clôture</div>\n<p class=\"good-list\">✓ Best regards, (standard)<br/>✓ Kind regards, (amical)<br/>✓ Sincerely, (très formel)<br/>✓ Looking forward to your reply,</p>\n<p class=\"never-list\">✗ Jamais : Cheers, / Later, / XOXO</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Signature — ta carte de visite</div>\n<p class=\"good-list\">✓ Nom<br/>✓ Poste<br/>✓ Entreprise<br/>✓ Téléphone (optionnel)</p>\n<p class=\"never-list\">✗ Jamais : citations, emojis, images géantes</p></div></div>\n<h3>Formel vs. Semi-formel — connaître son interlocuteur</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Destinataire</th><th>Formulation</th></tr></thead>\n<tbody>\n<tr><td>Au patron</td><td>\"Could you please review the attached report?\"</td></tr>\n<tr><td>À un collègue</td><td>\"Can you check the attachment?\"</td></tr>\n<tr><td>À un client</td><td>\"I would appreciate it if you could…\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"doc-mock\">\n<div class=\"doc-from\"><strong>Subject:</strong> <span>hi</span></div>\n<p>Hey Jen,<br/>Can you send me that file? Need it by tomorrow. Gonna be late otherwise.<br/>Thanks!<br/>Tom</p></div>\n<p>↓ réécrit en version formelle ↓</p>\n<div class=\"doc-mock\">\n<div class=\"doc-from\"><strong>Subject:</strong> <span>File Request — Deadline Tomorrow</span></div>\n<p>Dear Jen,<br/>Could you please send me the file? I need it by tomorrow to avoid missing the deadline.<br/>Thank you for your help.<br/>Best regards,<br/>Tom</p></div>\n<h2>Emails \"Désastres\" à Éviter</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Désastre</th><th>Exemple</th><th>Pourquoi c'est un problème</th></tr></thead>\n<tbody>\n<tr><td><strong>Pas d'objet</strong></td><td>(vide) \"Hey, there's a problem. Call me.\"</td><td>Impossible à retrouver, paraît urgent sans contexte</td></tr>\n<tr><td><strong>Reply All catastrophe</strong></td><td>Répondre \"Stop sending emails!!!\" à 200 personnes</td><td>\"Reply all\" est une arme — à utiliser avec précaution</td></tr>\n<tr><td><strong>Trop familier</strong></td><td>\"Yo team, gonna need that thing by tomorrow. k thx.\"</td><td>Aucun professionnalisme, ton et vocabulaire inadaptés</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Erreurs fréquentes à éviter absolument</div>\n<ul><li>ALL CAPS (donne l'impression de crier)</li><li>Aucune salutation ni clôture</li><li>Oublier la pièce jointe annoncée</li><li>Emojis dans un email professionnel</li><li>\"Sent from my iPhone\" (trop décontracté pour un client)</li></ul></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Règle de classe</div>\n<p>Devoir obligatoire : écrire 3 emails (demande de réunion, suivi après réunion, excuse pour une erreur). Non fait en début de séance → pénalité de <strong>2 points</strong>.</p></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.1 — Vocabulary Basics</a>\n<a class=\"ch-nav-btn\">Ch.3 — Oral Presentations →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which is the correct salutation for a formal email to a new client?",
+          "options": [
+            {
+              "text": "Hey dude,",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Hello Sarah,",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Dear Mr. Johnson,",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Yo team,",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "What is the most important quality of an email subject line?",
+          "options": [
+            {
+              "text": "Being funny",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Being clear and specific",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Using all capital letters",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Making it very short, one word",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which closing is appropriate for a professional business email?",
+          "options": [
+            {
+              "text": "Cheers,",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Later,",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "XOXO,",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Best regards,",
+              "correct": true,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "What happens if you accidentally click \"Reply All\" to 200 people?",
+          "options": [
+            {
+              "text": "Nothing — it's safe",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Everyone receives your email (disaster!)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "The email deletes itself",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Only your boss sees it",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "In the CLEAR method, what does the \"E\" stand for?",
+          "options": [
+            {
+              "text": "Email",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Expectation",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Explanation",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Ending",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
       ],
-      "jargon": {
-       "source": "\"The rollback failed due to a dependency conflict in the staging environment.\"",
-       "model": "We tried to undo the recent change, but it didn't work because two parts of the system needed different versions of the same tool. We are still testing this safely before applying it to the real system."
-      },
-      "reorder": [
-       {
-        "text": "Good morning, everyone. Today I'll present our new feature.",
-        "correct": 1
-       },
-       {
-        "text": "First, var me explain why we built it.",
-        "correct": 2
-       },
-       {
-        "text": "Next, I'll show you a quick demo.",
-        "correct": 3
-       },
-       {
-        "text": "To summarize, this feature will save you time every day.",
-        "correct": 4
-       },
-       {
-        "text": "Finally, please try it out and send us your feedback.",
-        "correct": 5
-       }
+      "source": "_private/anglais/chapitres/chapitre2.html"
+    },
+    {
+      "number": 3,
+      "title": "Oral Presentations in a Business Context",
+      "subtitle": "Structurer une présentation business de 2-3 minutes, simplifier le jargon technique pour un public non-technique (la \"Grandma Rule\"), utiliser des transitions, et gérer son corps, sa voix et les questions du public.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs de la session</div>\n<ul><li>Structurer une présentation business de 2-3 minutes avec opening, body, closing clairs</li><li>Utiliser 5+ phrases de transition (First, Next, Then, Finally, To summarize)</li><li>Expliquer un problème IT technique à un public non-technique en langage simple</li><li>Maintenir le contact visuel et un langage corporel confiant</li><li>Gérer les questions-réponses avec des réponses polies</li></ul></div>\n<h2>Pourquoi les présentations comptent en IT</h2>\n<div class=\"story-box\">\n         <span class=\"story-who\">Consigne reçue par Leo :</span> <em>\"Present the server update to Mr. Tanaka. Five minutes. Tomorrow morning.\"</em><br/><br/>\n         <span class=\"story-who\">Ce que Leo dit :</span> <em>\"So, like, basically, the thing is, um… our backend infrastructure, which is, you know, connected to the, uh, frontend modules, might have, like, some issues.\"</em></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">La leçon</div>\n<p>Un patron ou un client ne se soucie pas du code — il se soucie des <strong>solutions</strong>. Cette session te donne une structure simple et puissante pour transformer un discours confus en présentation claire, même en 2 minutes.</p></div>\n<h2>La Structure en 3 Parties</h2>\n<div class=\"box tip\">\n<div class=\"box-lbl\">La règle d'or</div>\n<p><em>\"Tell them, tell them, tell them.\"</em> — Dis-leur ce que tu vas dire (opening), dis-le (body), dis-leur ce que tu as dit (closing).</p></div>\n<div class=\"struct-flow\">\n<div class=\"struct-step\">\n<div class=\"ss-time\">~30 sec</div>\n<div class=\"ss-name\">Opening</div>\n<div class=\"ss-desc\">Hook + Roadmap : annonce ce que tu vas dire</div></div>\n<div class=\"struct-arrow\">→</div>\n<div class=\"struct-step\">\n<div class=\"ss-time\">~1.5–2 min</div>\n<div class=\"ss-name\">Body</div>\n<div class=\"ss-desc\">Le contenu, sans jargon, en langage simple</div></div>\n<div class=\"struct-arrow\">→</div>\n<div class=\"struct-step\">\n<div class=\"ss-time\">~30 sec</div>\n<div class=\"ss-name\">Closing</div>\n<div class=\"ss-desc\">Résumé + appel à l'action</div></div></div>\n<h3>Opening — Hook + Roadmap</h3>\n<p><strong>Hook :</strong> commence par une question, un fait ou une courte histoire. <strong>Roadmap :</strong> annonce le plan.</p>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td>Hook</td><td>\"Have you ever lost an hour of work because of a crash?\"</td></tr>\n<tr><td>Roadmap</td><td>\"Today I'll explain the problem, the solution, and the result.\"</td></tr>\n</tbody>\n</table></div>\n<h3>Closing — Summarize + Call to Action</h3>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td>Résumer</td><td>\"To sum up, we had a crash, we fixed it with a reboot, and now everything works.\"</td></tr>\n<tr><td>Appel à l'action</td><td>\"Please restart your computers tonight.\"</td></tr>\n</tbody>\n</table></div>\n<p class=\"never-list\">Ne jamais terminer par : \"That's it.\" / \"I'm done.\" / \"Yeah…\"</p>\n<h2>Le Corps : Simplifier le Jargon (The Grandma Rule)</h2>\n<div class=\"box warn\">\n<div class=\"box-lbl\">La règle de la grand-mère</div>\n<p>Si ta grand-mère ne peut pas comprendre, simplifie encore. Un client non-technique ne se soucie pas du <em>comment</em> — seulement du <em>quoi</em> et du <em>pourquoi ça le concerne</em>.</p></div>\n<p>Exemple à transformer : <em>\"The deployment failed because of a CI/CD pipeline configuration mismatch.\"</em></p>\n<div class=\"jargon-ladder\">\n<div class=\"jargon-step\"> <strong>Technique :</strong> \"The deployment failed because of a CI/CD pipeline configuration mismatch.\"</div>\n<div class=\"jargon-step\"> <strong>Simplifié :</strong> \"The software release did not work because our automatic delivery system had a settings problem.\"</div>\n<div class=\"jargon-step\"> <strong>Pour un client non-technique :</strong> \"We couldn't launch the update because the automatic system wasn't set up correctly.\"</div>\n<div class=\"jargon-step\"> <strong>Grandma Rule (très simple) :</strong> \"The computer system got confused and couldn't finish the job.\"</div></div>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Terme complexe</th><th>Remplacement simple</th></tr></thead>\n<tbody>\n<tr><td>Deployment</td><td>Software release</td></tr>\n<tr><td>Failed</td><td>Did not work</td></tr>\n<tr><td>CI/CD pipeline</td><td>Automatic delivery system</td></tr>\n<tr><td>Configuration mismatch</td><td>Settings problem</td></tr>\n</tbody>\n</table></div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Autre exemple</div>\n<p class=\"never-list\"> \"We migrated the legacy monolith to microservices.\"</p>\n<p class=\"good-list\"> \"We moved our old, slow system to smaller, faster pieces.\"</p></div>\n<h2>Transition Phrases — Ton meilleur ami</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Moment</th><th>Phrases</th></tr></thead>\n<tbody>\n<tr><td><strong>Pour commencer</strong></td><td>\"First…\", \"To begin with…\"</td></tr>\n<tr><td><strong>Pour avancer</strong></td><td>\"Next…\", \"Now let's look at…\"</td></tr>\n<tr><td><strong>Pour conclure</strong></td><td>\"Finally…\", \"In conclusion…\", \"To summarize…\"</td></tr>\n</tbody>\n</table></div>\n<h2>Langage Corporel &amp; Voix</h2>\n<div class=\"grid-2\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Body Language — Stand Like You Belong</div>\n<p class=\"good-list\">✓ Se tenir droit (pas affalé)<br/>✓ Contact visuel (regarder les gens, pas le plafond)<br/>✓ Mains visibles (pas dans les poches)<br/>✓ Ne jamais lire ses notes mot à mot</p></div>\n<div class=\"box info\">\n<div class=\"box-lbl\">Voice — Don't Be a Robot</div>\n<ul><li>Parler lentement (le stress fait parler trop vite)</li><li>Faire des pauses entre les idées</li><li>Insister sur les mots importants : <em>\"The server crashed, not the network.\"</em></li></ul></div></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Gérer le trac</div>\n<p>Respire profondément avant de commencer. Il est tout à fait acceptable de dire <em>\"Let me think about that.\"</em> Le public veut que tu réussisses — même les meilleurs orateurs ont le trac.</p></div>\n<h2>Q&amp;A — Répondre avec Grâce</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Situation</th><th>Réponse appropriée</th></tr></thead>\n<tbody>\n<tr><td>Tu ne connais pas la réponse</td><td>\"That's a great question. Let me follow up after class.\"</td></tr>\n<tr><td>Tu n'as pas compris la question</td><td>\"Could you rephrase the question?\"</td></tr>\n<tr><td class=\"never-list\">À ne jamais dire</td><td class=\"never-list\">\"That's a stupid question.\"</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Grille d'évaluation rapide</div>\n<p>Structure (opening/body/closing) — Yes / Almost / Not yet<br/>\n        Langage simple (pas de jargon) — Yes / Almost / Not yet<br/>\n        Contact visuel — Yes / Almost / Not yet</p></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Note de classe</div>\n<p><em>\"A presentation is like a pizza — even bad pizza is still pretty good.\"</em> L'objectif n'est pas la perfection, c'est la clarté.</p></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.2 — Professional Emails</a>\n<a class=\"ch-nav-btn\">Ch.4 — Pronunciation &amp; Fluency →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "What are the three parts of a good presentation structure?",
+          "options": [
+            {
+              "text": "Hello, Goodbye, Thank you",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Opening, Body, Closing",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "Problem, Complaint, Solution",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Slide 1, Slide 2, Slide 3",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which phrase is a good transition to move to a new topic?",
+          "options": [
+            {
+              "text": "\"That's it.\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"Um... so...\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"Next, let's look at...\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "\"I'm done.\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "When explaining a technical problem to a non-technical client, you should:",
+          "options": [
+            {
+              "text": "Use as much jargon as possible",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Speak very fast",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Read directly from your notes",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Simplify your language (the Grandma Rule)",
+              "correct": true,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "If you don't know the answer during Q&A, you should say:",
+          "options": [
+            {
+              "text": "\"That's a stupid question.\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"I don't know.\" (and stop talking)",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"That's a great question. Let me follow up after class.\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "\"Next question!\"",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which is a good way to end a presentation?",
+          "options": [
+            {
+              "text": "\"Yeah... that's it.\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "\"To sum up... please restart your computers tonight.\"",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "\"I'm done.\"",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Just stop talking and sit down",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
       ],
-      "writing": {
-       "instruction": "Write a short professional email (3–4 sentences) to a colleague asking them to review a report before Friday.",
-       "model": "Subject: Report Review Needed by Friday\n\nHi [Name],\nCould you please review the attached report before Friday? Your feedback would help us finalize it on time. Thank you for your help.\nBest regards,\n[Your name]"
+      "source": "_private/anglais/chapitres/chapitre3.html"
+    },
+    {
+      "number": 4,
+      "title": "Pronunciation & Fluency Techniques",
+      "subtitle": "Les sons qui posent problème aux francophones, l'accentuation des mots et des phrases, les groupes de souffle (thought groups), les liaisons et les réductions informelles (gonna/wanna). De quoi sonner plus naturel et plus confiant à l'oral.",
+      "body_html": "<div class=\"ch-body\">\n<div class=\"box info\">\n<div class=\"box-lbl\">Objectifs de la session</div>\n<ul><li>Prononcer correctement les sons /θ/, /ð/, /h/ et les terminaisons -ed</li><li>Placer l'accent tonique correctement sur les mots et les phrases</li><li>Faire des pauses naturelles (thought groups) au lieu de parler comme un robot</li><li>Reconnaître quand les réductions (gonna, wanna, gotta) sont acceptables ou non</li></ul></div>\n<h2>Pourquoi la prononciation compte</h2>\n<div class=\"story-box\">\n         <span class=\"story-who\">Leo, en présentation :</span> <em>\"Ze sערveur crashed because ov ze network.\" </em><br/><br/>\n         <span class=\"story-who\">Le client comprend quand même</span> — mais une prononciation plus naturelle inspire davantage confiance et professionnalisme, surtout en clientèle internationale.</div>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">Bonne nouvelle</div>\n<p>Tu n'as pas besoin d'un accent parfait. L'objectif est d'être <strong>compris facilement</strong> et de paraître <strong>confiant</strong>. Quelques ajustements ciblés font une énorme différence.</p></div>\n<h2>Les Sons Difficiles pour les Francophones</h2>\n<div class=\"sound-grid\">\n<div class=\"sound-card\"><div class=\"sym\">/θ/</div><div class=\"sw\">\"th\" sourd — <em>think, three, throughput</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">/ð/</div><div class=\"sw\">\"th\" sonore — <em>this, the, that</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">/h/</div><div class=\"sw\">souffle initial — <em>hello, hard, happy</em></div></div>\n<div class=\"sound-card\"><div class=\"sym\">e muet</div><div class=\"sw\">\"e\" final silencieux — <em>code, file, deploy<u>e</u></em></div></div></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Piège fréquent</div>\n<p>Le francophone remplace souvent /θ/ et /ð/ par /s/ ou /z/ (\"zink\" au lieu de \"think\"), et prononce le \"h\" comme silencieux (\"appy\" au lieu de \"happy\"). Place le bout de la langue entre les dents pour /θ/ et /ð/, et expire un vrai souffle pour le \"h\".</p></div>\n<h3>Les terminaisons -ed (3 façons de les prononcer)</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Son</th><th>Quand</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td>/t/</td><td>Après un son sourd (p, k, s, ch, sh, f)</td><td>worked, deployed→non; <em>checked, finished</em></td></tr>\n<tr><td>/d/</td><td>Après un son sonore (b, g, v, z, l, m, n)</td><td><em>called, opened, played</em></td></tr>\n<tr><td>/ɪd/</td><td>Après \"t\" ou \"d\"</td><td><em>wanted, needed, updated</em></td></tr>\n</tbody>\n</table></div>\n<h2>Word Stress &amp; Sentence Stress</h2>\n<p>En anglais, l'accent tonique peut <strong>changer le sens</strong> du mot.</p>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Mot</th><th>Nom (accent 1ère syllabe)</th><th>Verbe (accent 2ème syllabe)</th></tr></thead>\n<tbody>\n<tr><td>record</td><td class=\"stress-word\"><span class=\"up\">RE</span><span class=\"down\">cord</span> (un enregistrement)</td><td class=\"stress-word\"><span class=\"down\">re</span><span class=\"up\">CORD</span> (enregistrer)</td></tr>\n<tr><td>present</td><td class=\"stress-word\"><span class=\"up\">PRE</span><span class=\"down\">sent</span> (un cadeau / une présentation)</td><td class=\"stress-word\"><span class=\"down\">pre</span><span class=\"up\">SENT</span> (présenter)</td></tr>\n<tr><td>conduct</td><td class=\"stress-word\"><span class=\"up\">CON</span><span class=\"down\">duct</span> (une conduite)</td><td class=\"stress-word\"><span class=\"down\">con</span><span class=\"up\">DUCT</span> (mener, diriger)</td></tr>\n<tr><td>object</td><td class=\"stress-word\"><span class=\"up\">OB</span><span class=\"down\">ject</span> (un objet)</td><td class=\"stress-word\"><span class=\"down\">ob</span><span class=\"up\">JECT</span> (s'opposer)</td></tr>\n</tbody>\n</table></div>\n<h3>Sentence Stress — l'accentuation change le sens</h3>\n<p>La phrase <em>\"I didn't delete the file.\"</em> peut avoir 4 sens différents selon le mot accentué :</p>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td><strong>I</strong> didn't delete the file.</td><td>→ Ce n'est pas <strong>moi</strong> qui l'ai fait.</td></tr>\n<tr><td>I <strong>didn't</strong> delete the file.</td><td>→ Insistance sur la négation.</td></tr>\n<tr><td>I didn't <strong>delete</strong> the file.</td><td>→ Je l'ai peut-être modifié, mais pas supprimé.</td></tr>\n<tr><td>I didn't delete <strong>the file</strong>.</td><td>→ C'est précisément <strong>ce fichier</strong> qui n'a pas été supprimé.</td></tr>\n</tbody>\n</table></div>\n<h2>Thought Groups — Ne Sonne Pas Comme un Robot</h2>\n<div class=\"box mnem\">\n<div class=\"box-lbl\">La technique</div>\n<p>Découpe tes phrases en petits groupes de sens et fais une courte pause entre chaque groupe — exactement comme une virgule à l'oral.</p></div>\n<p class=\"never-list\"> \"Thedeploymentfailedbecauseoftheconfigurationproblemandwehadtorollback\"</p>\n<p class=\"good-list\"> \"The deployment failed — because of a configuration problem — and we had to roll back.\"</p>\n<h3>Linking Sounds — Les liaisons</h3>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Écrit</th><th>Prononcé (liaison)</th></tr></thead>\n<tbody>\n<tr><td>Get on</td><td>\"Geton\"</td></tr>\n<tr><td>Not at all</td><td>\"Notatall\"</td></tr>\n<tr><td>An apple</td><td>\"Anapple\"</td></tr>\n</tbody>\n</table></div>\n<h3>Intonation</h3>\n<div class=\"table-wrap\"><table>\n<tbody>\n<tr><td> Montante</td><td>Questions fermées — \"Did you check the server?\"</td></tr>\n<tr><td> Descendante</td><td>Affirmations, questions ouvertes — \"What time is the meeting?\"</td></tr>\n</tbody>\n</table></div>\n<h2>Reductions — Gonna, Wanna, Gotta</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Forme complète</th><th>Réduction</th><th>Contexte</th></tr></thead>\n<tbody>\n<tr><td>going to</td><td><em>gonna</em></td><td class=\"good-list\"> entre collègues, à l'oral informel</td></tr>\n<tr><td>want to</td><td><em>wanna</em></td><td class=\"good-list\"> entre collègues, à l'oral informel</td></tr>\n<tr><td>got to / have to</td><td><em>gotta</em></td><td class=\"good-list\"> entre collègues, à l'oral informel</td></tr>\n</tbody>\n</table></div>\n<div class=\"box warn\">\n<div class=\"box-lbl\">Jamais à l'écrit professionnel</div>\n<p class=\"never-list\"> \"I'm gonna send the report\" dans un email à un client.<br/>\n         À l'écrit ou devant un client important : <em>\"I am going to send the report.\"</em></p></div>\n<h2>Bilan du Cours — Le Parcours de Leo</h2>\n<div class=\"table-wrap\"><table>\n<thead><tr><th>Session</th><th>Problème de Leo</th><th>Solution apprise</th></tr></thead>\n<tbody>\n<tr><td>1 — Vocabulary</td><td>Ne comprend pas \"touch base\", \"low-hanging fruit\"…</td><td>Vocabulaire business &amp; IT, faux-amis, expressions</td></tr>\n<tr><td>2 — Emails</td><td>Email trop familier (\"hey guys… lol\")</td><td>Anatomie de l'email, méthode CLEAR, ton adapté</td></tr>\n<tr><td>3 — Presentations</td><td>Discours confus, plein de \"um\" et de jargon</td><td>Structure 3 parties, Grandma Rule, transitions</td></tr>\n<tr><td>4 — Pronunciation</td><td>Accent qui gêne la compréhension</td><td>Sons clés, accentuation, thought groups, réductions</td></tr>\n</tbody>\n</table></div>\n<div class=\"box tip\">\n<div class=\"box-lbl\">Et maintenant ?</div>\n<p>Tu as toutes les bases du <strong>Business English pour l'IT</strong> : vocabulaire, emails, présentations, prononciation. Direction le <a>centre d'exercices</a> pour t'entraîner, ou le <a>simulateur d'examen</a> pour te tester en conditions réelles.</p></div>\n<div class=\"ch-nav\">\n<a class=\"ch-nav-btn\">← Ch.3 — Oral Presentations</a>\n<a class=\"ch-nav-btn\">Simulateur d'examen →</a></div></div>",
+      "questions": [
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "Which sound is commonly mispronounced by French speakers as /s/ or /z/?",
+          "options": [
+            {
+              "text": "/p/",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "/θ/ and /ð/ (the \"th\" sounds)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "/k/",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "/m/",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "How many different ways can the \"-ed\" ending be pronounced?",
+          "options": [
+            {
+              "text": "1",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "2",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "3 (/t/, /d/, /ɪd/)",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "4",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "In the word \"record\" used as a noun (a recording), where is the stress?",
+          "options": [
+            {
+              "text": "On the first syllable: RE-cord",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "On the second syllable: re-CORD",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "No stress at all",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "It depends on the speaker's mood",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        },
+        {
+          "type": "mcq",
+          "explanation": "",
+          "text": "When is it acceptable to use \"gonna\" instead of \"going to\"?",
+          "options": [
+            {
+              "text": "In a formal email to a new client",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "In a casual conversation with a colleague",
+              "correct": true,
+              "explanation": ""
+            },
+            {
+              "text": "In a written business report",
+              "correct": false,
+              "explanation": ""
+            },
+            {
+              "text": "Never, under any circumstances",
+              "correct": false,
+              "explanation": ""
+            }
+          ],
+          "_answer_missing": false
+        }
+      ],
+      "source": "_private/anglais/chapitres/chapitre4.html"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "mcq",
+      "text": "What does stakeholder mean in a business context?",
+      "options": [
+        {
+          "text": "A long-term paying customer",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Someone who has an interest in the project",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "A software bug",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "An unpaid invoice",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B est correct. Un stakeholder est toute personne ayant un intérêt direct dans le projet (client, manager, équipe…), pas forcément celle qui paie.",
+      "label": "Question 1 · Session 1 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "Which IT term describes the part of a software that users can see and click?",
+      "options": [
+        {
+          "text": "Backend",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Frontend",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Deployment",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Sprint",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B — Frontend. Le frontend est l'interface visible (boutons, menus, design) ; le backend est la partie invisible (serveurs, bases de données).",
+      "label": "Question 2 · Session 1 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "The English word actually (a famous false friend) really means:",
+      "options": [
+        {
+          "text": "In fact",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Currently",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Eventually",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Soon",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A — In fact. Actually ≠ actuellement ! \"Actuellement\" se traduit par currently. Un faux-ami classique.",
+      "label": "Question 3 · Session 1 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Which expression means \"to start something\"?",
+      "options": [
+        {
+          "text": "Circle back",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Low-hanging fruit",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Get the ball rolling",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Touch base",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ C — Get the ball rolling. \"Circle back\" = revenir sur un sujet plus tard. \"Touch base\" = prendre contact. \"Low-hanging fruit\" = gains faciles.",
+      "label": "Question 4 · Session 1 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Which part of an email is often the first — and sometimes the only — thing read?",
+      "options": [
+        {
+          "text": "Subject line",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Signature",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Closing",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Salutation",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A — Subject line. Si l'objet n'est pas clair, le reste de l'email risque d'être ignoré.",
+      "label": "Question 5 · Session 2 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "In the CLEAR method for writing emails, what does the \"L\" stand for?",
+      "options": [
+        {
+          "text": "Language",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Logistics",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Letter",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Length",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B — Logistics. C-L-E-A-R = Context, Logistics, Expectation, Action, Respect.",
+      "label": "Question 6 · Session 2 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Which closing line is appropriate for a professional business email?",
+      "options": [
+        {
+          "text": "Cheers,",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Kind regards,",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Later,",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "XOXO,",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B — Kind regards, est standard et professionnel. Les autres options sont bien trop familières pour un email business.",
+      "label": "Question 7 · Session 2 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "What's the problem with writing an entire email in CAPITAL LETTERS?",
+      "options": [
+        {
+          "text": "It looks like you're shouting",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "It's faster to read",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "It's more formal",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "There's no problem at all",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A. ALL CAPS donne l'impression de crier — c'est une des erreurs d'email les plus citées en cours.",
+      "label": "Question 8 · Session 2 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "What is the \"Grandma Rule\" when explaining something technical?",
+      "options": [
+        {
+          "text": "Always mention your grandmother",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Speak as fast as possible",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Use as much technical jargon as possible",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "If your grandmother couldn't understand it, simplify it further",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ D. La \"Grandma Rule\" force à simplifier le jargon pour un public non-technique — exactement ce qui est demandé en évaluation (\"Simplify the Jargon\").",
+      "label": "Question 9 · Session 3 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Which is a good way to open a presentation?",
+      "options": [
+        {
+          "text": "\"Have you ever lost an hour of work because of a crash?\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "\"So, um, basically...\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"Let's just start, I guess.\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"Today, uh, stuff happened.\"",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A. Un bon \"hook\" capte l'attention immédiatement — ici une question relatable, suivie d'une roadmap.",
+      "label": "Question 10 · Session 3 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "If you don't understand a question during Q&A, what should you do?",
+      "options": [
+        {
+          "text": "Ignore it and move on",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Say \"that's a stupid question\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Pretend you understood",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Politely ask the person to rephrase the question",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ D. \"Could you rephrase the question?\" est toujours une réponse acceptable et professionnelle.",
+      "label": "Question 11 · Session 3 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Which is good body language during a presentation?",
+      "options": [
+        {
+          "text": "Maintaining eye contact with the audience",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "Reading your notes word for word",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Keeping your hands in your pockets",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Looking at the ceiling",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A. Le contact visuel transmet de la confiance — c'est un point systématiquement noté en grille d'évaluation.",
+      "label": "Question 12 · Session 3 ·",
+      "section": "qcm",
+      "level": "easy"
+    },
+    {
+      "type": "mcq",
+      "text": "Between \"PREsent\" (noun, a gift) and \"preSENT\" (verb, to show), what actually changes?",
+      "options": [
+        {
+          "text": "Which syllable is stressed",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "The spelling",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "The number of letters",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Nothing changes",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A. En anglais, l'accent tonique seul peut transformer un nom en verbe : PREsent (nom) / preSENT (verbe). Idem pour record, conduct, object.",
+      "label": "Question 13 · Session 4 ·",
+      "section": "qcm",
+      "level": "hard"
+    },
+    {
+      "type": "mcq",
+      "text": "Which sentence uses the reduction \"gonna\" appropriately?",
+      "options": [
+        {
+          "text": "\"Dear Mr. Smith, I'm gonna review your contract.\"",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "\"Hey, I'm gonna grab a coffee, want one?\"",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "(in an official written report)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "(closing line of a formal presentation)",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B. \"Gonna\" est acceptable entre collègues à l'oral informel — jamais à l'écrit professionnel ou devant un client important.",
+      "label": "Question 14 · Session 4 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "Why is it useful to pause between \"thought groups\" when speaking?",
+      "options": [
+        {
+          "text": "It makes you sound more natural instead of like a robot",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "It makes you talk slower for no reason",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "It's only useful when reading poetry",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "It has no real benefit",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ A. Les pauses entre groupes de sens remplacent les virgules à l'oral — sans elles, on parle comme un robot qui ne respire jamais.",
+      "label": "Question 15 · Session 4 ·",
+      "section": "qcm",
+      "level": "medium"
+    },
+    {
+      "type": "mcq",
+      "text": "What is \"sentence stress\"?",
+      "options": [
+        {
+          "text": "Speaking very loudly throughout the sentence",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Emphasizing certain words to change meaning or focus",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "A type of grammar tense",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "Saying every word at exactly the same volume",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ B. \"I didn't delete the file\" n'a pas le même sens que \"I didn't delete the file\" — le mot accentué porte le sens principal.",
+      "label": "Question 16 · Session 4 ·",
+      "section": "qcm",
+      "level": "hard"
+    },
+    {
+      "type": "true_false",
+      "text": "Eye contact with the audience makes you look more confident.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ True. Le contact visuel est un des critères directement notés sur la grille d'évaluation des présentations.",
+      "label": "Affirmation 1",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "Speaking faster is always better during a presentation.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. Parler trop vite empêche le public de suivre. Mieux vaut parler lentement et faire des pauses.",
+      "label": "Affirmation 2",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "It is okay to pause between ideas — it helps the audience understand.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ True. Les pauses (\"thought groups\") structurent le discours et laissent le temps au public d'assimiler chaque idée.",
+      "label": "Affirmation 3",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "A \"customer\" and a \"client\" mean exactly the same thing in business English.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. Client = relation durable. Customer = achat ponctuel. Deux nuances différentes.",
+      "label": "Affirmation 4",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "The subject line is often the only part of an email that gets read.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ True. Un objet vague ou absent fait courir le risque que ton email soit ignoré.",
+      "label": "Affirmation 5",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "It's fine to use emojis in a professional business email.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. Les emojis figurent dans la liste officielle des erreurs à éviter dans un email professionnel.",
+      "label": "Affirmation 6",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "\"Touch base\" means to physically touch something.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. \"Touch base\" est une expression idiomatique qui signifie \"prendre contact\" — rien de physique.",
+      "label": "Affirmation 7",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "\"Gonna\" and \"wanna\" are acceptable in formal written business emails.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. Ces réductions sont réservées à l'oral informel — jamais à l'écrit professionnel.",
+      "label": "Affirmation 8",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "The CLEAR method helps structure the body of a professional email.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ True. Context, Logistics, Expectation, Action, Respect — les 5 étapes du corps d'un email clair.",
+      "label": "Affirmation 9",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "Your closing in a presentation should summarize what you said and include a call to action.",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "✅ True. \"Tell them what you told them\" — résumer, puis donner une action claire au public.",
+      "label": "Affirmation 10",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "If you don't know the answer during Q&A, the best response is \"that's a stupid question.\"",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. C'est exactement la phrase à ne jamais dire ! Préfère : \"That's a great question, let me follow up.\"",
+      "label": "Affirmation 11",
+      "section": "tf"
+    },
+    {
+      "type": "true_false",
+      "text": "The English word \"actually\" means the same thing as the French word \"actuellement\".",
+      "options": [
+        {
+          "text": "✅ True",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "text": "❌ False",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "❌ False. Faux-ami classique : \"actually\" = en fait. \"Actuellement\" se traduit par \"currently\".",
+      "label": "Affirmation 12",
+      "section": "tf"
+    },
+    {
+      "type": "gap",
+      "text": "The _____ for this project is Friday, so we need to finish soon.",
+      "answers": [
+        "deadline"
+      ],
+      "hint": "📌 date limite",
+      "explanation": "Réponse : deadline",
+      "label": "Phrase 1 · Vocabulaire",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "Please _____ with Sarah about the budget before the meeting.",
+      "answers": [
+        "touch base"
+      ],
+      "hint": "📌 expression : prendre contact (2 mots)",
+      "explanation": "Réponse : touch base",
+      "label": "Phrase 2 · Expression business",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "Before we launch, the client must complete _____ to confirm everything works correctly.",
+      "answers": [
+        "UAT"
+      ],
+      "hint": "📌 acronyme : User Acceptance Testing",
+      "explanation": "Réponse : UAT",
+      "label": "Phrase 3 · Vocabulaire IT",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "\"Dear Mr. Johnson,\" is an example of a _____ salutation.",
+      "answers": [
+        "formal"
+      ],
+      "hint": "📌 registre de langue",
+      "explanation": "Réponse : formal",
+      "label": "Phrase 4 · Email",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "\"Best regards,\" and \"Kind regards,\" are examples of a professional email _____ line.",
+      "answers": [
+        "closing"
+      ],
+      "hint": "📌 partie de l'anatomie de l'email",
+      "explanation": "Réponse : closing",
+      "label": "Phrase 5 · Email",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "_____ , let's look at the solution we implemented.",
+      "answers": [
+        "next"
+      ],
+      "hint": "📌 phrase de transition",
+      "explanation": "Réponse : Next",
+      "label": "Phrase 6 · Présentation",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "Instead of saying \"CI/CD pipeline\", a simpler way to say it is \"automatic _____ system\".",
+      "answers": [
+        "delivery"
+      ],
+      "hint": "📌 Grandma Rule",
+      "explanation": "Réponse : delivery",
+      "label": "Phrase 7 · Simplifier le jargon",
+      "section": "gap"
+    },
+    {
+      "type": "gap",
+      "text": "\"I'm _____ send the report after lunch\" is fine between colleagues, but never in a formal email.",
+      "answers": [
+        "gonna"
+      ],
+      "hint": "📌 réduction informelle de \"going to\"",
+      "explanation": "Réponse : gonna",
+      "label": "Phrase 8 · Prononciation",
+      "section": "gap"
+    },
+    {
+      "type": "reorder",
+      "text": "Number the sentences of this presentation about a server crash in the correct order.",
+      "items": [
+        {
+          "text": "\"Good morning, everyone. Today I'll talk about the server crash.\"",
+          "position": 1
+        },
+        {
+          "text": "\"First, let me explain what caused the crash.\"",
+          "position": 2
+        },
+        {
+          "text": "\"Next, I'll show you how we solved the problem.\"",
+          "position": 3
+        },
+        {
+          "text": "\"To summarize, we fixed the server and everything is working now.\"",
+          "position": 4
+        },
+        {
+          "text": "\"Finally, please restart your computers tonight.\"",
+          "position": 5
+        }
+      ],
+      "label": "Exercice 1 ·",
+      "section": "reorder",
+      "level": "medium"
+    },
+    {
+      "type": "reorder",
+      "text": "Number the steps of the CLEAR method in the correct order.",
+      "items": [
+        {
+          "text": "State the context — why you are writing.",
+          "position": 1
+        },
+        {
+          "text": "Give the logistics — what, when, where.",
+          "position": 2
+        },
+        {
+          "text": "Explain your expectation — what you need from the reader.",
+          "position": 3
+        },
+        {
+          "text": "Request a clear action from the reader.",
+          "position": 4
+        },
+        {
+          "text": "Thank them — show respect.",
+          "position": 5
+        }
+      ],
+      "label": "Exercice 2 ·",
+      "section": "reorder",
+      "level": "medium"
+    },
+    {
+      "type": "reorder",
+      "text": "Number the steps of handling a Q&A session in the correct order.",
+      "items": [
+        {
+          "text": "Listen carefully to the full question.",
+          "position": 1
+        },
+        {
+          "text": "Pause for a moment to think before answering.",
+          "position": 2
+        },
+        {
+          "text": "Answer clearly and directly.",
+          "position": 3
+        },
+        {
+          "text": "If you don't know, say \"that's a great question, let me follow up.\"",
+          "position": 4
+        },
+        {
+          "text": "Thank the person for their question.",
+          "position": 5
+        }
+      ],
+      "label": "Exercice 3 ·",
+      "section": "reorder",
+      "level": "hard"
+    },
+    {
+      "type": "open",
+      "text": "Technique : \"The deployment failed because of a CI/CD pipeline configuration mismatch.\"",
+      "model_answer": "Proposition : \"We couldn't launch the update because our automatic delivery system had a settings problem.\"",
+      "label": "Jargon 1",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Technique : \"We migrated our legacy monolith to microservices.\"",
+      "model_answer": "Proposition : \"We moved our old, slow system into smaller, faster pieces.\"",
+      "label": "Jargon 2",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Technique : \"The UAT phase revealed several critical bugs in the backend.\"",
+      "model_answer": "Proposition : \"When real users tested the software, they found several serious problems behind the scenes.\"",
+      "label": "Jargon 3",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Subject: (empty)\"hey, the server thing is late lol. thx.\"",
+      "model_answer": "Proposition :Subject: Server Maintenance DelayDear Team,I am writing to inform you that server maintenance has been delayed until Monday. Thank you for your understanding.Best regards,[Name]",
+      "label": "Désastre 1",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Subject: hi\"Can you send me that file? Need it by tomorrow. Gonna be late otherwise. Thanks! Tom\"",
+      "model_answer": "Proposition :Subject: File Request — Deadline TomorrowDear Jen,Could you please send me the file? I need it by tomorrow to avoid missing the deadline. Thank you for your help.Best regards,Tom",
+      "label": "Désastre 2",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Sujet : \"A software update that caused problems for users.\"",
+      "model_answer": "Proposition : \"Hello everyone. Have you ever had a software update break something you rely on? Today I'll explain the problem we caused, the solution we found, and the result.\"",
+      "label": "Sujet : \"A software update that caused problems for users.\"",
+      "section": "ateliers"
+    },
+    {
+      "type": "open",
+      "text": "Situation : reprogrammer une réunion de mardi à jeudi 15h avec un collègue",
+      "model_answer": "Proposition :Subject: Meeting Rescheduled — Thursday 3 PMHi [Name],Could we move our Tuesday meeting to Thursday at 3 PM instead? Something came up that I need to handle. Let me know if that works for you.Best regards,[Your name]",
+      "label": "Situation : reprogrammer une réunion de mardi à jeudi 15h avec un collègue",
+      "section": "ateliers"
+    },
+    {
+      "type": "matching",
+      "text": "Associer chaque terme à son exemple",
+      "pairs": [
+        {
+          "term": "Subject line",
+          "example": "\"Subject: Q4 Budget Update — Action Needed\""
+        },
+        {
+          "term": "Salutation",
+          "example": "\"Dear Mr. Johnson,\""
+        },
+        {
+          "term": "Body",
+          "example": "\"I am writing to inform you that the server upgrade is scheduled for Friday.\""
+        },
+        {
+          "term": "Closing",
+          "example": "\"Best regards,\""
+        },
+        {
+          "term": "Signature",
+          "example": "\"Thomas Lee / IT Project Manager\""
+        }
+      ],
+      "section": "ateliers"
+    }
+  ],
+  "simulators": [
+    {
+      "source": "_private/anglais/chapitres/simulateur-examen.html",
+      "variables": {
+        "EXAM_VARIANTS": [
+          {
+            "label": "Sujet A",
+            "mcq": [
+              {
+                "q": "What does <em>budget</em> mean in a business context?",
+                "opts": [
+                  "Available / planned money",
+                  "Net profit after taxes",
+                  "A type of invoice",
+                  "A delay in the schedule"
+                ],
+                "correct": 0
+              },
+              {
+                "q": "Which subject line follows good email practice?",
+                "opts": [
+                  "\"Meeting\"",
+                  "\"Hello\"",
+                  "\"Server Outage — Urgent\"",
+                  "(left empty)"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "What is the purpose of the \"roadmap\" in a presentation opening?",
+                "opts": [
+                  "To show a literal map",
+                  "To announce what you will cover",
+                  "To list your sources",
+                  "To thank the audience"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "Which \"-ed\" ending is pronounced /ɪd/?",
+                "opts": [
+                  "worked",
+                  "called",
+                  "wanted",
+                  "played"
+                ],
+                "correct": 2
+              }
+            ],
+            "tf": [
+              {
+                "stmt": "A \"client\" refers to a one-time buyer.",
+                "correct": false
+              },
+              {
+                "stmt": "It's acceptable to write an email entirely in capital letters to show urgency.",
+                "correct": false
+              },
+              {
+                "stmt": "The Grandma Rule means simplifying technical language for a non-technical audience.",
+                "correct": true
+              },
+              {
+                "stmt": "Pausing between thought groups makes you sound more natural when speaking.",
+                "correct": true
+              }
+            ],
+            "jargon": {
+              "source": "\"The rollback failed due to a dependency conflict in the staging environment.\"",
+              "model": "We tried to undo the recent change, but it didn't work because two parts of the system needed different versions of the same tool. We are still testing this safely before applying it to the real system."
+            },
+            "reorder": [
+              {
+                "text": "Good morning, everyone. Today I'll present our new feature.",
+                "correct": 1
+              },
+              {
+                "text": "First, var me explain why we built it.",
+                "correct": 2
+              },
+              {
+                "text": "Next, I'll show you a quick demo.",
+                "correct": 3
+              },
+              {
+                "text": "To summarize, this feature will save you time every day.",
+                "correct": 4
+              },
+              {
+                "text": "Finally, please try it out and send us your feedback.",
+                "correct": 5
+              }
+            ],
+            "writing": {
+              "instruction": "Write a short professional email (3–4 sentences) to a colleague asking them to review a report before Friday.",
+              "model": "Subject: Report Review Needed by Friday\n\nHi [Name],\nCould you please review the attached report before Friday? Your feedback would help us finalize it on time. Thank you for your help.\nBest regards,\n[Your name]"
+            }
+          },
+          {
+            "label": "Sujet B",
+            "mcq": [
+              {
+                "q": "Which word is the correct IT term for the invisible part of a system (servers, databases)?",
+                "opts": [
+                  "Frontend",
+                  "Backend",
+                  "Sprint",
+                  "UAT"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "Which closing line is appropriate for a professional email?",
+                "opts": [
+                  "Cheers,",
+                  "Kind regards,",
+                  "Later,",
+                  "XOXO,"
+                ],
+                "correct": 1
+              },
+              {
+                "q": "What should you say if you don't know the answer during Q&amp;A?",
+                "opts": [
+                  "\"That's a stupid question.\"",
+                  "\"I have no idea.\"",
+                  "\"That's a great question, var me follow up.\"",
+                  "(say nothing and move on)"
+                ],
+                "correct": 2
+              },
+              {
+                "q": "In \"reCORD\" (verb) vs \"RECord\" (noun), what actually changes?",
+                "opts": [
+                  "The spelling",
+                  "Which syllable is stressed",
+                  "The meaning is identical",
+                  "Nothing changes"
+                ],
+                "correct": 1
+              }
+            ],
+            "tf": [
+              {
+                "stmt": "\"Touch base\" is an expression that means to physically touch something.",
+                "correct": false
+              },
+              {
+                "stmt": "The subject line is often the only part of an email that gets read.",
+                "correct": true
+              },
+              {
+                "stmt": "\"Gonna\" and \"wanna\" are appropriate in formal written emails to clients.",
+                "correct": false
+              },
+              {
+                "stmt": "Maintaining eye contact with the audience is a sign of confidence during a presentation.",
+                "correct": true
+              }
+            ],
+            "jargon": {
+              "source": "\"We migrated our legacy monolith to a microservices architecture.\"",
+              "model": "We moved our old, slow system into smaller, separate pieces that work together. This should make future updates faster and easier."
+            },
+            "reorder": [
+              {
+                "text": "Listen carefully to the full question.",
+                "correct": 1
+              },
+              {
+                "text": "Pause for a moment to think before answering.",
+                "correct": 2
+              },
+              {
+                "text": "Answer clearly and directly.",
+                "correct": 3
+              },
+              {
+                "text": "If you don't know, say \"that's a great question, var me follow up.\"",
+                "correct": 4
+              },
+              {
+                "text": "Thank the person for their question.",
+                "correct": 5
+              }
+            ],
+            "writing": {
+              "instruction": "Write the opening (hook + roadmap) of a presentation about a security update that affects all employees.",
+              "model": "Good morning everyone. Have you ever worried about your password being stolen? Today I'll explain the new security update, how it affects you, and what you need to do."
+            }
+          }
+        ]
       }
-     },
-     {
-      "label": "Sujet B",
-      "mcq": [
-       {
-        "q": "Which word is the correct IT term for the invisible part of a system (servers, databases)?",
-        "opts": [
-         "Frontend",
-         "Backend",
-         "Sprint",
-         "UAT"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "Which closing line is appropriate for a professional email?",
-        "opts": [
-         "Cheers,",
-         "Kind regards,",
-         "Later,",
-         "XOXO,"
-        ],
-        "correct": 1
-       },
-       {
-        "q": "What should you say if you don't know the answer during Q&amp;A?",
-        "opts": [
-         "\"That's a stupid question.\"",
-         "\"I have no idea.\"",
-         "\"That's a great question, var me follow up.\"",
-         "(say nothing and move on)"
-        ],
-        "correct": 2
-       },
-       {
-        "q": "In \"reCORD\" (verb) vs \"RECord\" (noun), what actually changes?",
-        "opts": [
-         "The spelling",
-         "Which syllable is stressed",
-         "The meaning is identical",
-         "Nothing changes"
-        ],
-        "correct": 1
-       }
-      ],
-      "tf": [
-       {
-        "stmt": "\"Touch base\" is an expression that means to physically touch something.",
-        "correct": false
-       },
-       {
-        "stmt": "The subject line is often the only part of an email that gets read.",
-        "correct": true
-       },
-       {
-        "stmt": "\"Gonna\" and \"wanna\" are appropriate in formal written emails to clients.",
-        "correct": false
-       },
-       {
-        "stmt": "Maintaining eye contact with the audience is a sign of confidence during a presentation.",
-        "correct": true
-       }
-      ],
-      "jargon": {
-       "source": "\"We migrated our legacy monolith to a microservices architecture.\"",
-       "model": "We moved our old, slow system into smaller, separate pieces that work together. This should make future updates faster and easier."
-      },
-      "reorder": [
-       {
-        "text": "Listen carefully to the full question.",
-        "correct": 1
-       },
-       {
-        "text": "Pause for a moment to think before answering.",
-        "correct": 2
-       },
-       {
-        "text": "Answer clearly and directly.",
-        "correct": 3
-       },
-       {
-        "text": "If you don't know, say \"that's a great question, var me follow up.\"",
-        "correct": 4
-       },
-       {
-        "text": "Thank the person for their question.",
-        "correct": 5
-       }
-      ],
-      "writing": {
-       "instruction": "Write the opening (hook + roadmap) of a presentation about a security update that affects all employees.",
-       "model": "Good morning everyone. Have you ever worried about your password being stolen? Today I'll explain the new security update, how it affects you, and what you need to do."
-      }
-     }
-    ]
-   }
-  }
- ],
- "flashcards": [
-  {
-   "front": "stakeholder",
-   "back": "partie prenante / personne ayant un intérêt dans le projet",
-   "tag": "Session 1"
-  },
-  {
-   "front": "deadline",
-   "back": "date limite, échéance",
-   "tag": "Session 1"
-  },
-  {
-   "front": "budget",
-   "back": "argent disponible / prévu",
-   "tag": "Session 1"
-  },
-  {
-   "front": "client vs customer",
-   "back": "relation durable vs achat ponctuel",
-   "tag": "Session 1"
-  },
-  {
-   "front": "deployment",
-   "back": "mise en ligne d'un logiciel",
-   "tag": "Session 1"
-  },
-  {
-   "front": "backend / frontend",
-   "back": "partie invisible / partie visible",
-   "tag": "Session 1"
-  },
-  {
-   "front": "sprint",
-   "back": "courte période de travail (Agile)",
-   "tag": "Session 1"
-  },
-  {
-   "front": "UAT",
-   "back": "User Acceptance Testing — test final utilisateurs",
-   "tag": "Session 1"
-  },
-  {
-   "front": "actually",
-   "back": "en fait (≠ actuellement = currently)",
-   "tag": "Session 1"
-  },
-  {
-   "front": "eventually",
-   "back": "finalement (≠ éventuellement = possibly)",
-   "tag": "Session 1"
-  },
-  {
-   "front": "library",
-   "back": "bibliothèque (≠ librairie = bookshop)",
-   "tag": "Session 1"
-  },
-  {
-   "front": "touch base",
-   "back": "prendre contact, faire un point",
-   "tag": "Session 1"
-  },
-  {
-   "front": "get the ball rolling",
-   "back": "démarrer quelque chose",
-   "tag": "Session 1"
-  },
-  {
-   "front": "low-hanging fruit",
-   "back": "gains faciles",
-   "tag": "Session 1"
-  },
-  {
-   "front": "circle back",
-   "back": "revenir sur un sujet plus tard",
-   "tag": "Session 1"
-  },
-  {
-   "front": "could you elaborate?",
-   "back": "pourrais-tu préciser ?",
-   "tag": "Session 1"
-  },
-  {
-   "front": "subject line",
-   "back": "objet de l'email",
-   "tag": "Session 2"
-  },
-  {
-   "front": "salutation",
-   "back": "formule d'ouverture",
-   "tag": "Session 2"
-  },
-  {
-   "front": "CLEAR method",
-   "back": "Context, Logistics, Expectation, Action, Respect",
-   "tag": "Session 2"
-  },
-  {
-   "front": "closing line",
-   "back": "formule de clôture",
-   "tag": "Session 2"
-  },
-  {
-   "front": "Could you please...?",
-   "back": "formule polie pour demander quelque chose",
-   "tag": "Session 2"
-  },
-  {
-   "front": "reply all",
-   "back": "répondre à tout le monde — à utiliser avec précaution !",
-   "tag": "Session 2"
-  },
-  {
-   "front": "hook",
-   "back": "accroche en début de présentation",
-   "tag": "Session 3"
-  },
-  {
-   "front": "roadmap",
-   "back": "annonce du plan d'une présentation",
-   "tag": "Session 3"
-  },
-  {
-   "front": "the Grandma Rule",
-   "back": "si grand-mère ne comprend pas, simplifie encore",
-   "tag": "Session 3"
-  },
-  {
-   "front": "call to action",
-   "back": "action demandée au public en fin de présentation",
-   "tag": "Session 3"
-  },
-  {
-   "front": "That's a great question, var me follow up.",
-   "back": "réponse polie quand on ne connaît pas la réponse",
-   "tag": "Session 3"
-  },
-  {
-   "front": "thought group",
-   "back": "groupe de mots séparé par une pause à l'oral",
-   "tag": "Session 4"
-  },
-  {
-   "front": "word stress",
-   "back": "accent tonique sur une syllabe",
-   "tag": "Session 4"
-  },
-  {
-   "front": "gonna / wanna / gotta",
-   "back": "réductions informelles — jamais à l'écrit pro",
-   "tag": "Session 4"
-  }
- ],
- "exercises_source": "_private/anglais/exercices/exercices.html"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "stakeholder",
+      "back": "partie prenante / personne ayant un intérêt dans le projet",
+      "tag": "Session 1"
+    },
+    {
+      "front": "deadline",
+      "back": "date limite, échéance",
+      "tag": "Session 1"
+    },
+    {
+      "front": "budget",
+      "back": "argent disponible / prévu",
+      "tag": "Session 1"
+    },
+    {
+      "front": "client vs customer",
+      "back": "relation durable vs achat ponctuel",
+      "tag": "Session 1"
+    },
+    {
+      "front": "deployment",
+      "back": "mise en ligne d'un logiciel",
+      "tag": "Session 1"
+    },
+    {
+      "front": "backend / frontend",
+      "back": "partie invisible / partie visible",
+      "tag": "Session 1"
+    },
+    {
+      "front": "sprint",
+      "back": "courte période de travail (Agile)",
+      "tag": "Session 1"
+    },
+    {
+      "front": "UAT",
+      "back": "User Acceptance Testing — test final utilisateurs",
+      "tag": "Session 1"
+    },
+    {
+      "front": "actually",
+      "back": "en fait (≠ actuellement = currently)",
+      "tag": "Session 1"
+    },
+    {
+      "front": "eventually",
+      "back": "finalement (≠ éventuellement = possibly)",
+      "tag": "Session 1"
+    },
+    {
+      "front": "library",
+      "back": "bibliothèque (≠ librairie = bookshop)",
+      "tag": "Session 1"
+    },
+    {
+      "front": "touch base",
+      "back": "prendre contact, faire un point",
+      "tag": "Session 1"
+    },
+    {
+      "front": "get the ball rolling",
+      "back": "démarrer quelque chose",
+      "tag": "Session 1"
+    },
+    {
+      "front": "low-hanging fruit",
+      "back": "gains faciles",
+      "tag": "Session 1"
+    },
+    {
+      "front": "circle back",
+      "back": "revenir sur un sujet plus tard",
+      "tag": "Session 1"
+    },
+    {
+      "front": "could you elaborate?",
+      "back": "pourrais-tu préciser ?",
+      "tag": "Session 1"
+    },
+    {
+      "front": "subject line",
+      "back": "objet de l'email",
+      "tag": "Session 2"
+    },
+    {
+      "front": "salutation",
+      "back": "formule d'ouverture",
+      "tag": "Session 2"
+    },
+    {
+      "front": "CLEAR method",
+      "back": "Context, Logistics, Expectation, Action, Respect",
+      "tag": "Session 2"
+    },
+    {
+      "front": "closing line",
+      "back": "formule de clôture",
+      "tag": "Session 2"
+    },
+    {
+      "front": "Could you please...?",
+      "back": "formule polie pour demander quelque chose",
+      "tag": "Session 2"
+    },
+    {
+      "front": "reply all",
+      "back": "répondre à tout le monde — à utiliser avec précaution !",
+      "tag": "Session 2"
+    },
+    {
+      "front": "hook",
+      "back": "accroche en début de présentation",
+      "tag": "Session 3"
+    },
+    {
+      "front": "roadmap",
+      "back": "annonce du plan d'une présentation",
+      "tag": "Session 3"
+    },
+    {
+      "front": "the Grandma Rule",
+      "back": "si grand-mère ne comprend pas, simplifie encore",
+      "tag": "Session 3"
+    },
+    {
+      "front": "call to action",
+      "back": "action demandée au public en fin de présentation",
+      "tag": "Session 3"
+    },
+    {
+      "front": "That's a great question, var me follow up.",
+      "back": "réponse polie quand on ne connaît pas la réponse",
+      "tag": "Session 3"
+    },
+    {
+      "front": "thought group",
+      "back": "groupe de mots séparé par une pause à l'oral",
+      "tag": "Session 4"
+    },
+    {
+      "front": "word stress",
+      "back": "accent tonique sur une syllabe",
+      "tag": "Session 4"
+    },
+    {
+      "front": "gonna / wanna / gotta",
+      "back": "réductions informelles — jamais à l'écrit pro",
+      "tag": "Session 4"
+    }
+  ],
+  "exercises_source": "_private/anglais/exercices/exercices.html"
 }
