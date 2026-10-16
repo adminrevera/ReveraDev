@@ -44,6 +44,18 @@ autorisée l’URL de callback affichée par Supabase (habituellement
 `https://<project-ref>.supabase.co/auth/v1/callback`). Garde `/auth/callback` de l’application
 dans les Redirect URLs autorisées par Supabase pour les environnements local et de production.
 
+## Interface et wireframes
+
+L’interface utilise Tailwind CSS v4 et shadcn/ui. Les primitives et leur configuration se trouvent
+dans `components/ui/` et `components.json`; les couleurs du thème Revera restent définies dans
+`app/globals.css`. Pour ajouter un composant, utilise `npx shadcn@latest add <composant>`.
+
+Les maquettes de référence sont conservées dans `wireframes/`. L’inscription suit ces étapes :
+méthode, identifiants, prénom, objectifs, niveau (si disponible), puis rappels. Après validation,
+`/onboarding/bienvenue` affiche un écran persistant qui mène au premier cours. Le lecteur suit la
+maquette de lecture continue : le quiz ne s’ouvre qu’après le défilement complet et le délai de
+lecture configuré.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { markChapterRead, startChapterReading } from "@/app/actions/quiz";
+import { markChapterRead, startChapterReading } from "@/app/actions/reading";
 
 export default function ChapterReadMarker({ itemId }: { itemId: string }) {
   const markerRef = useRef<HTMLDivElement>(null);
@@ -64,6 +64,10 @@ export default function ChapterReadMarker({ itemId }: { itemId: string }) {
         setCanConfirm(true);
         return;
       }
+      if (result.alreadyRead) {
+        router.refresh();
+        return;
+      }
 
       readyRef.current = true;
       minimumSecondsRef.current = result.minimumSeconds;
@@ -93,7 +97,7 @@ export default function ChapterReadMarker({ itemId }: { itemId: string }) {
       setMessage("Le chronomètre n’a pas pu démarrer. Réessaie.");
       setCanConfirm(true);
     }
-  }, [confirmRead, itemId]);
+  }, [confirmRead, itemId, router]);
 
   useEffect(() => {
     const generation = ++generationRef.current;

@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${youngSerif.variable}`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${youngSerif.variable}`}
     >
       <body className="min-h-screen">{children}</body>
     </html>

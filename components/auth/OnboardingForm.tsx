@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState, useTransition } from "react";
 import { completeOnboarding } from "@/app/actions/auth";
 import FlowShell from "@/components/auth/FlowShell";
-import Lumi from "@/components/brand/Lumi";
 
 // Objectifs proposés (plusieurs choix possibles). Liste à valider avec l'équipe.
 const goals = [
@@ -44,9 +43,7 @@ export default function OnboardingForm({
   const [pushOn, setPushOn] = useState(true);
   const [emailOn, setEmailOn] = useState(false);
   const [reminderTime, setReminderTime] = useState("18:00");
-  const [first, setFirst] = useState<{ id: string | null; title: string | null }>({ id: null, title: null });
   const [errorMessage, setErrorMessage] = useState("");
-  const [done, setDone] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const institutions = useMemo(() => Array.from(new Set(levels.map((level) => level.track.institution.name))), [levels]);
@@ -68,12 +65,14 @@ export default function OnboardingForm({
 
   const hasLevels = levels.length > 0;
   const nameValid = displayName.trim().length >= 2 && displayName.trim().length <= 60;
-  // L'inscription compte 5 écrans : méthode et identifiants (inscription), puis ces trois écrans.
-  const total = 5;
+  const total = hasLevels ? 6 : 5;
 
   function back() {
     setErrorMessage("");
-    setStep((current) => Math.max(1, current - 1));
+    setStep((current) => {
+      if (!hasLevels && current === 3) return 2;
+      return Math.max(1, current - 1);
+    });
   }
 
   function finish(skipReminders = false) {
@@ -92,41 +91,13 @@ export default function OnboardingForm({
           setErrorMessage(result.error);
           return;
         }
-        setFirst({ id: result.firstItemId, title: result.firstTitle });
-        setDone(true);
+        router.replace("/onboarding/bienvenue");
+        router.refresh();
       } catch (error) {
         console.error("Onboarding failed:", error);
         setErrorMessage("Impossible d’enregistrer ton profil. Réessaie.");
       }
     });
-  }
-
-  if (done) {
-    const firstName = displayName.trim().split(/\s+/)[0];
-    return (
-      <main className="relative isolate flex min-h-svh flex-col items-center justify-center px-6 text-center">
-        <div aria-hidden="true" className="halo pointer-events-none absolute inset-0 -z-10 opacity-75" />
-        <div className="w-full max-w-[420px]">
-          <div className="mx-auto mb-6 w-fit"><Lumi size={150} mood="contente" /></div>
-          <h1 className="text-[clamp(30px,8vw,40px)] font-semibold leading-[1.1] tracking-[-0.04em]">
-            Bienvenue, <span className="font-serif font-normal italic text-accent">{firstName}.</span>
-          </h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted">Ton parcours est prêt. Lis un cours, puis valide-le avec le quiz pour débloquer la suite.</p>
-          {first.title && <p className="mt-4 rounded-2xl border border-line bg-panel px-4 py-3 text-sm"><span className="block font-mono text-[10px] uppercase tracking-[.16em] text-amber">Ton premier cours</span><span className="mt-1 block font-medium">{first.title}</span></p>}
-          <button
-            type="button"
-            className={`${primary} mt-8`}
-            onClick={() => {
-              router.replace(first.id ? `/parcours/${first.id}` : "/dashboard");
-              router.refresh();
-            }}
-          >
-            {first.id ? "Commencer le premier cours" : "C’est parti"}
-          </button>
-          {first.id && <button type="button" className="mt-3 text-sm text-muted underline underline-offset-4" onClick={() => { router.replace("/dashboard"); router.refresh(); }}>Aller à l’accueil</button>}
-        </div>
-      </main>
-    );
   }
 
   const planNote = requestedPlan && requestedPlan !== "free" && step === 1 && (
@@ -140,7 +111,7 @@ export default function OnboardingForm({
 
   const toggleGoal = (value: string) =>
     setChosenGoals((current) => (current.includes(value) ? current.filter((entry) => entry !== value) : [...current, value]));
-  const goNext = () => setStep(hasLevels ? 2 : 3);
+  const goNext = () => setStep((current) => current + 1);
 
   if (step === 1) {
     return (
@@ -149,7 +120,7 @@ export default function OnboardingForm({
         total={total}
         title="Comment doit-on t’appeler ?"
         subtitle="Ton prénom apparaît sur ton profil et dans la ligue (sous la forme « Prénom N. »)."
-        footer={<button type="button" className={primary} disabled={!nameValid || chosenGoals.length === 0} onClick={goNext}>Continuer</button>}
+        footer={<button type="button" className={primary} disabled={!nameValid} onClick={goNext}>Continuer</button>}
       >
         {planNote}
         <div className="grid gap-2">
@@ -167,6 +138,20 @@ export default function OnboardingForm({
             className={inputClass}
           />
         </div>
+      </FlowShell>
+    );
+  }
+
+  if (step === 2) {
+    return (
+      <FlowShell
+        step={4}
+        total={total}
+        title="Qu’aimerais-tu accomplir ?"
+        subtitle="Choisis les objectifs qui te ressemblent. Tu pourras les modifier plus tard."
+        onBack={back}
+        footer={<button type="button" className={primary} disabled={chosenGoals.length === 0} onClick={goNext}>Continuer</button>}
+      >
         <fieldset className="mt-2">
           <legend className="text-sm font-medium">Quels sont tes objectifs ? <span className="font-normal text-muted">Plusieurs choix possibles</span></legend>
           <div className="mt-3 grid grid-cols-2 gap-2.5">
@@ -187,15 +172,15 @@ export default function OnboardingForm({
     );
   }
 
-  if (step === 2) {
+  if (hasLevels && step === 3) {
     return (
       <FlowShell
-        step={4}
+        step={5}
         total={total}
         title="Où étudies-tu ?"
         subtitle="Pour te proposer les bonnes matières."
         onBack={back}
-        footer={<button type="button" className={primary} disabled={!levelId} onClick={() => setStep(3)}>Continuer</button>}
+        footer={<button type="button" className={primary} disabled={!levelId} onClick={goNext}>Continuer</button>}
       >
         <div className="grid gap-2">
           <label htmlFor="onboarding-institution" className="text-sm font-medium">Établissement</label>
@@ -224,11 +209,11 @@ export default function OnboardingForm({
 
   return (
     <FlowShell
-      step={5}
+      step={total}
       total={total}
       title="Veux-tu des rappels ?"
       subtitle="Pour garder ta série sans y penser."
-      onBack={() => { setErrorMessage(""); setStep(hasLevels ? 2 : 1); }}
+      onBack={back}
       footer={
         <>
           {error}

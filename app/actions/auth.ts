@@ -1,7 +1,6 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { getFirstCourse } from "@/lib/student/first-course";
 import { createClient } from "@/lib/supabase/server";
 
 const goals = new Set(["exams", "regularity", "confidence", "gaps", "ahead", "compete"]);
@@ -81,6 +80,5 @@ export async function completeOnboarding(
     return { error: `Le profil est enregistré, mais la session n’a pas pu être actualisée : ${updateError.message}` };
   }
 
-  const first = levelIdInput ? await getFirstCourse(levelIdInput).catch(() => null) : null;
-  return { error: null, firstItemId: first?.id ?? null, firstTitle: first ? `${first.subject.name} · ${first.title}` : null };
+  return { error: null };
 }

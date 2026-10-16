@@ -24,7 +24,7 @@ export default function HelpChat({ groupId }: { groupId: string }) {
     return () => window.clearInterval(timer);
   }, [load]);
 
-  useEffect(() => { endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }); }, [messages.length]);
+  useEffect(() => { endRef.current?.scrollIntoView({ behavior: "auto", block: "end" }); }, [messages.length]);
 
   function send() {
     const body = value.trim();

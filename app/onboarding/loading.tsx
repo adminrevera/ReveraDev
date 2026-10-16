@@ -1,1 +1,1 @@
-export { default } from "@/components/student/StudentRouteLoading";
+export { default } from "@/components/auth/OnboardingLoading";

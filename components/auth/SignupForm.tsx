@@ -87,7 +87,7 @@ export default function SignupForm({ selectedPlan }: { selectedPlan: "free" | "p
     return (
       <FlowShell
         step={2}
-        total={5}
+        total={6}
         title="Vérifie ta boîte e-mail"
         subtitle="Un lien de confirmation vient de t’être envoyé."
         footer={<button type="button" className={outline} onClick={() => { setConfirmationSent(false); setScreen("credentials"); }}>Changer d’adresse e-mail</button>}
@@ -105,7 +105,7 @@ export default function SignupForm({ selectedPlan }: { selectedPlan: "free" | "p
     return (
       <FlowShell
         step={1}
-        total={5}
+        total={6}
         backHref="/"
         title="Crée ton compte"
         subtitle="Choisis comment tu veux t’inscrire."
@@ -130,7 +130,7 @@ export default function SignupForm({ selectedPlan }: { selectedPlan: "free" | "p
     <form onSubmit={handleSubmit} noValidate>
       <FlowShell
         step={2}
-        total={5}
+        total={6}
         onBack={() => { setErrorMessage(""); setScreen("method"); }}
         title="Ton e-mail et ton mot de passe"
         subtitle="Tu t’en serviras pour te reconnecter."

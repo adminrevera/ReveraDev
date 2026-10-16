@@ -4,12 +4,73 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireStudentProfile } from "@/lib/auth/access";
 import { splitCourseParts } from "@/lib/course-format";
+import { getReadingMinimumSeconds } from "@/lib/reading-settings";
 import { getStudentChapter } from "@/lib/student/content";
 import { prisma } from "@/lib/prisma";
 
 // Lecture guidée : à la première lecture (et tant que le chapitre n'est pas validé), le cours s'affiche partie par partie.
 // Chaque « Continuer » est enregistré côté serveur : c'est la trace que l'étudiant a lu, sans attente de 60 s.
 const MIN_SECONDS_PER_PART = 2;
+
+export async function startChapterReading(itemIdInput: string) {
+  const { profile } = await requireStudentProfile();
+  const parsed = z.string().uuid().safeParse(itemIdInput);
+  if (!parsed.success) return { error: "Ce chapitre n’est pas disponible." } as const;
+
+  const [item, minimumSeconds] = await Promise.all([
+    getStudentChapter(profile, parsed.data),
+    getReadingMinimumSeconds(),
+  ]);
+  if (!item?.publishedVersion) return { error: "Ce chapitre n’est pas encore accessible." } as const;
+  if (!item.publishedVersion.bodyHtml?.trim()) return { error: "Le cours de ce chapitre n’est pas encore disponible." } as const;
+
+  const existing = await prisma.chapterProgress.findUnique({
+    where: { userId_itemId: { userId: profile.id, itemId: item.id } },
+    select: { readAt: true },
+  });
+  if (existing?.readAt) return { error: null, minimumSeconds, alreadyRead: true } as const;
+
+  await prisma.chapterProgress.upsert({
+    where: { userId_itemId: { userId: profile.id, itemId: item.id } },
+    create: { userId: profile.id, itemId: item.id, lastVisitedAt: new Date() },
+    update: { lastVisitedAt: new Date() },
+  });
+  return { error: null, minimumSeconds, alreadyRead: false } as const;
+}
+
+export async function markChapterRead(itemIdInput: string) {
+  const { profile } = await requireStudentProfile();
+  const parsed = z.string().uuid().safeParse(itemIdInput);
+  if (!parsed.success) return { error: "Ce chapitre n’est pas disponible." } as const;
+
+  const item = await getStudentChapter(profile, parsed.data);
+  if (!item?.publishedVersion) return { error: "Ce chapitre n’est pas encore accessible." } as const;
+  if (!item.publishedVersion.bodyHtml?.trim()) return { error: "Le cours de ce chapitre n’est pas encore disponible." } as const;
+
+  const [existing, minimumSeconds] = await Promise.all([
+    prisma.chapterProgress.findUnique({
+      where: { userId_itemId: { userId: profile.id, itemId: item.id } },
+      select: { readAt: true, lastVisitedAt: true },
+    }),
+    getReadingMinimumSeconds(),
+  ]);
+  if (existing?.readAt) return { error: null } as const;
+  if (!existing) return { error: "Ouvre d’abord le cours pour commencer ta lecture." } as const;
+
+  const now = new Date();
+  const elapsedSeconds = (now.getTime() - existing.lastVisitedAt.getTime()) / 1000;
+  if (elapsedSeconds < minimumSeconds) {
+    return { error: `Prends encore ${Math.ceil(minimumSeconds - elapsedSeconds)} seconde(s) pour lire ce cours.` } as const;
+  }
+
+  await prisma.chapterProgress.update({
+    where: { userId_itemId: { userId: profile.id, itemId: item.id } },
+    data: { readAt: now, lastVisitedAt: now },
+  });
+  revalidatePath("/parcours");
+  revalidatePath(`/parcours/${item.id}`);
+  return { error: null } as const;
+}
 
 export async function advanceChapterPart(itemIdInput: string, partIndexInput: number) {
   const { profile } = await requireStudentProfile();

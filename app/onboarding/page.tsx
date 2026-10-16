@@ -38,7 +38,7 @@ export default async function OnboardingPage({
       },
     }),
   ]);
-  if (profile?.displayName) redirect("/dashboard");
+  if (profile?.displayName) redirect("/onboarding/bienvenue");
 
   const initialName =
     (typeof user.user_metadata?.displayName === "string" && user.user_metadata.displayName) ||

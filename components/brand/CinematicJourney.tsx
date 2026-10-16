@@ -98,13 +98,6 @@ export default function CinematicJourney() {
   const trackRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeIndexRef = useRef(0);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const backPortalRef = useRef<HTMLDivElement>(null);
-  const frontPortalRef = useRef<HTMLDivElement>(null);
-  const leftLightRef = useRef<HTMLDivElement>(null);
-  const rightLightRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLElement>(null);
-  const progressFillRef = useRef<HTMLSpanElement>(null);
   const scene = scenes[activeIndex];
   const Preview = previews[activeIndex];
 
@@ -112,50 +105,29 @@ export default function CinematicJourney() {
     const track = trackRef.current;
     if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    let frame = 0;
     let visible = false;
     const update = () => {
       if (!visible) return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const rect = track.getBoundingClientRect();
-        const distance = track.offsetHeight - window.innerHeight;
-        const progress = distance > 0 ? Math.min(1, Math.max(0, -rect.top / distance)) : 0;
-        const phase = progress * (scenes.length - 1);
-        const nextIndex = Math.min(scenes.length - 1, Math.round(phase));
-        const focus = 1 - Math.abs(phase - nextIndex);
+      const distance = track.offsetHeight - window.innerHeight;
+      const progress = distance > 0
+        ? Math.min(1, Math.max(0, -track.getBoundingClientRect().top / distance))
+        : 0;
+      const nextIndex = Math.min(scenes.length - 1, Math.round(progress * (scenes.length - 1)));
 
-        if (nextIndex !== activeIndexRef.current) {
-          activeIndexRef.current = nextIndex;
-          setActiveIndex(nextIndex);
-        }
-
-        if (gridRef.current) {
-          gridRef.current.style.transform = `perspective(900px) rotateX(${68 - progress * 8}deg) scale(${1 + progress * 0.2}) translateY(${progress * 24}px)`;
-        }
-        const portalTransform = `translate(-50%, -50%) rotateX(${67 - progress * 13}deg)`;
-        if (backPortalRef.current) backPortalRef.current.style.transform = `${portalTransform} scale(${0.78 + progress * 0.55})`;
-        if (frontPortalRef.current) frontPortalRef.current.style.transform = `${portalTransform} scale(${0.9 + progress * 0.48})`;
-        const lightOpacity = String(0.13 + progress * 0.12);
-        if (leftLightRef.current) leftLightRef.current.style.opacity = lightOpacity;
-        if (rightLightRef.current) rightLightRef.current.style.opacity = lightOpacity;
-        if (cardRef.current) {
-          cardRef.current.style.transform = `perspective(1200px) translate3d(0, ${Math.abs(phase - nextIndex) * 22}px, ${-80 + progress * 160 + focus * 12}px) rotateY(${(phase - nextIndex) * 7}deg)`;
-        }
-        if (progressFillRef.current) progressFillRef.current.style.transform = `scaleX(${progress})`;
-      });
+      if (nextIndex !== activeIndexRef.current) {
+        activeIndexRef.current = nextIndex;
+        setActiveIndex(nextIndex);
+      }
     };
 
     const observer = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       if (visible) update();
-      else cancelAnimationFrame(frame);
     }, { rootMargin: "100px 0px" });
     observer.observe(track);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
-      cancelAnimationFrame(frame);
       observer.disconnect();
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
@@ -171,20 +143,11 @@ export default function CinematicJourney() {
     >
       <div className="cinematic-stage">
         <div className="cinematic-world" aria-hidden="true">
-          <div
-            ref={gridRef}
-            className="cinematic-grid"
-          />
-          <div
-            ref={backPortalRef}
-            className="cinematic-portal cinematic-portal-back"
-          />
-          <div
-            ref={frontPortalRef}
-            className="cinematic-portal cinematic-portal-front"
-          />
-          <div ref={leftLightRef} className="cinematic-light cinematic-light-left" />
-          <div ref={rightLightRef} className="cinematic-light cinematic-light-right" />
+          <div className="cinematic-grid" />
+          <div className="cinematic-portal cinematic-portal-back" />
+          <div className="cinematic-portal cinematic-portal-front" />
+          <div className="cinematic-light cinematic-light-left" />
+          <div className="cinematic-light cinematic-light-right" />
         </div>
 
         <div className="cinematic-heading">
@@ -202,7 +165,6 @@ export default function CinematicJourney() {
         <div className="cinematic-card-stack">
           <article
             key={scene.label}
-            ref={cardRef}
             className="cinematic-scene-card"
             aria-live="polite"
           >
@@ -236,7 +198,10 @@ export default function CinematicJourney() {
         </ol>
 
         <div className="cinematic-progress" aria-hidden="true">
-          <span ref={progressFillRef} className="cinematic-progress-fill" />
+          <span
+            className="cinematic-progress-fill"
+            style={{ transform: `scaleX(${(activeIndex + 1) / scenes.length})` }}
+          />
         </div>
         <p className="cinematic-scroll-label" aria-hidden="true">CONTINUE À DÉFILER <span>↓</span></p>
       </div>

@@ -28,7 +28,7 @@ export default function GuidedReader({ itemId, parts, partsRead, alreadyRead, co
   }, [alreadyRead, itemId, partsRead]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [index]);
 
   const last = index === total - 1;
